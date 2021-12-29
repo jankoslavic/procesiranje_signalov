@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discrete Fourier integral transform &#8212; Signal Processing with Python</title>
+    <title>Discrete Fourier integral transform &#8212; Procesiranje signalov s Pythonom</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -81,7 +81,7 @@
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Signal Processing with Python</h1>
+      <h1 class="site-logo" id="site-title">Procesiranje signalov s Pythonom</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -100,11 +100,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../markdown.html">
    Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01%20-%20Introduction.html">
-   Introduction to Signal processing
   </a>
  </li>
  <li class="toctree-l1">
@@ -214,11 +209,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://jankoslavic.github.io/signal_processing"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks/3. Discrete Fourier transform, Fast FT, convolution, windows.html&body=Your%20issue%20content%20here."><button
+            href="https://jankoslavic.github.io/signal_processing/issues/new?title=Issue%20on%20page%20%2Fnotebooks/3. Discrete Fourier transform, Fast FT, convolution, windows.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -233,23 +228,6 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/3. Discrete Fourier transform, Fast FT, convolution, windows.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
         </div>
 
@@ -391,7 +369,7 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.9051645043232102, 0.8903248731681891]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.9191185128569659, 0.9279786849471183]
 </pre></div>
 </div>
 </div>
@@ -451,7 +429,7 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.00282767, 1.78924272, 0.4327335 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.00321352, 1.79090443, 0.43489227])
 </pre></div>
 </div>
 </div>
@@ -463,7 +441,7 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        , 90.03589798, 89.7568721 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        , 89.94697291, 89.66855946])
 </pre></div>
 </div>
 </div>
@@ -535,7 +513,7 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.9051645043232102, 0.7859226762208741]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.9191185128569659, 0.7854358928491185]
 </pre></div>
 </div>
 </div>
@@ -555,7 +533,7 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x154cf868040&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2016ce70700&gt;]
 </pre></div>
 </div>
 <img alt="../_images/3. Discrete Fourier transform, Fast FT, convolution, windows_27_1.png" src="../_images/3. Discrete Fourier transform, Fast FT, convolution, windows_27_1.png" />
@@ -641,7 +619,7 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.89462136, 0.00141384, 0.89462136])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.89545222, 0.00160676, 0.89545222])
 </pre></div>
 </div>
 </div>
@@ -667,7 +645,7 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.00765429, 0.89466164, 0.21651824])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.00772202, 0.89550944, 0.21759223])
 </pre></div>
 </div>
 </div>
@@ -707,8 +685,8 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.75777498 +0.j        , -0.84225378-88.56749742j,
-       -0.8068504 +21.42011524j])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.76447949 +0.j        , -1.00559372-88.64973146j,
+       -0.79902047+21.5268071j ])
 </pre></div>
 </div>
 </div>
@@ -745,7 +723,77 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.54 ms ± 35.4 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">33</span><span class="o">-</span><span class="n">fc7f70b668f8</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;timeit&#39;</span><span class="p">,</span> <span class="s1">&#39;X(x1,t1,f1)&#39;</span><span class="p">)</span>
+
+<span class="nn">c:\python39\lib\site-packages\IPython\core\interactiveshell.py</span> in <span class="ni">run_line_magic</span><span class="nt">(self, magic_name, line, _stack_depth)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2342</span>                 <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;local_ns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_local_scope</span><span class="p">(</span><span class="n">stack_depth</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2343</span>             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2344</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2345</span>             <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">   </span><span class="mi">2346</span> 
+
+<span class="nn">c:\python39\lib\site-packages\decorator.py</span> in <span class="ni">fun</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>                 <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">232</span>             <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">fun</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="n">fun</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__doc__</span>
+
+<span class="nn">c:\python39\lib\site-packages\IPython\core\magic.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(f, *a, **k)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="c1"># but it&#39;s overkill for just that one bit of state.</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">def</span> <span class="nf">magic_deco</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">call</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> 
+<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+
+<span class="nn">c:\python39\lib\site-packages\IPython\core\magics\execution.py</span> in <span class="ni">timeit</span><span class="nt">(self, line, cell, local_ns)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1171</span>                     <span class="k">break</span>
+<span class="g g-Whitespace">   </span><span class="mi">1172</span> 
+<span class="ne">-&gt; </span><span class="mi">1173</span>         <span class="n">all_runs</span> <span class="o">=</span> <span class="n">timer</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">repeat</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1174</span>         <span class="n">best</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_runs</span><span class="p">)</span> <span class="o">/</span> <span class="n">number</span>
+<span class="g g-Whitespace">   </span><span class="mi">1175</span>         <span class="n">worst</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">all_runs</span><span class="p">)</span> <span class="o">/</span> <span class="n">number</span>
+
+<span class="nn">c:\python39\lib\timeit.py</span> in <span class="ni">repeat</span><span class="nt">(self, repeat, number)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>         <span class="n">r</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">repeat</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>             <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span>             <span class="n">r</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span>         <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">c:\python39\lib\site-packages\IPython\core\magics\execution.py</span> in <span class="ni">timeit</span><span class="nt">(self, number)</span>
+<span class="g g-Whitespace">    </span><span class="mi">167</span>         <span class="n">gc</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">169</span>             <span class="n">timing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span>             <span class="k">if</span> <span class="n">gcold</span><span class="p">:</span>
+
+<span class="nn">&lt;magic-timeit&gt;</span> in <span class="ni">inner</span><span class="nt">(_it, _timer)</span>
+
+<span class="nn">&lt;ipython-input-2-2a808c51584a&gt;</span> in <span class="ni">X</span><span class="nt">(x, t, f)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">X</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">Xf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_f</span><span class="p">)</span> <span class="k">for</span> <span class="n">_f</span> <span class="ow">in</span> <span class="n">f</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">def</span> <span class="nf">xr</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+
+<span class="nn">&lt;ipython-input-2-2a808c51584a&gt;</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">X</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">Xf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_f</span><span class="p">)</span> <span class="k">for</span> <span class="n">_f</span> <span class="ow">in</span> <span class="n">f</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">def</span> <span class="nf">xr</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+
+<span class="nn">&lt;ipython-input-2-2a808c51584a&gt;</span> in <span class="ni">Xf</span><span class="nt">(x, t, f, predznak)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">Xf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">predznak</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">predznak</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">X</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -757,7 +805,7 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.53 µs ± 298 ns per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.7 µs ± 4.59 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -896,10 +944,10 @@ x(t)\,e^{-j\,2\,\pi\,f\,t}\,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\python39\lib\site-packages\matplotlib\cbook\__init__.py:1333: ComplexWarning: Casting complex values to real discards the imaginary part
-  return np.asarray(x, float)
-c:\python39\lib\site-packages\matplotlib\cbook\__init__.py:1333: ComplexWarning: Casting complex values to real discards the imaginary part
-  return np.asarray(x, float)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\users\slavic\appdata\local\programs\python\python38\lib\site-packages\numpy\core\_asarray.py:83: ComplexWarning: Casting complex values to real discards the imaginary part
+  return array(a, dtype, copy=False, order=order)
+c:\users\slavic\appdata\local\programs\python\python38\lib\site-packages\numpy\core\_asarray.py:83: ComplexWarning: Casting complex values to real discards the imaginary part
+  return array(a, dtype, copy=False, order=order)
 </pre></div>
 </div>
 <img alt="../_images/3. Discrete Fourier transform, Fast FT, convolution, windows_62_1.png" src="../_images/3. Discrete Fourier transform, Fast FT, convolution, windows_62_1.png" />
@@ -1097,8 +1145,8 @@ $<span class="math notranslate nohighlight">\(H(\omega)=-j\,\textrm{sgn}(\omega)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-52-2792be175bd9&gt;:2: RuntimeWarning: divide by zero encountered in true_divide
-  h = 1/(np.pi*th)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\slavic\AppData\Local\Continuum\anaconda3\lib\site-packages\ipykernel_launcher.py:2: RuntimeWarning: divide by zero encountered in true_divide
+  
 </pre></div>
 </div>
 </div>
@@ -1158,8 +1206,8 @@ $<span class="math notranslate nohighlight">\(H(\omega)=-j\,\textrm{sgn}(\omega)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.60355057+0.19211611j, 0.52090449+0.35792516j,
-       0.43517561+0.4003878j ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.99871785+0.31790176j, 0.98023927+0.62992162j,
+       0.95340044+0.77444752j])
 </pre></div>
 </div>
 </div>
@@ -1209,11 +1257,7 @@ $<span class="math notranslate nohighlight">\(H(\omega)=-j\,\textrm{sgn}(\omega)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\python39\lib\site-packages\matplotlib\cbook\__init__.py:1333: ComplexWarning: Casting complex values to real discards the imaginary part
-  return np.asarray(x, float)
-</pre></div>
-</div>
-<img alt="../_images/3. Discrete Fourier transform, Fast FT, convolution, windows_87_1.png" src="../_images/3. Discrete Fourier transform, Fast FT, convolution, windows_87_1.png" />
+<img alt="../_images/3. Discrete Fourier transform, Fast FT, convolution, windows_87_0.png" src="../_images/3. Discrete Fourier transform, Fast FT, convolution, windows_87_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1276,7 +1320,7 @@ Zato ker FFT čas začne pri času 0s, Diskretna oblika FT kakor je definirana z
     <div class="container">
       <p>
         
-          By Janko Slavič and Domen Gorjup<br/>
+          By Janko Slavič<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
