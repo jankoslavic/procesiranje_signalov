@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uvod v procesiranje signalov &#8212; Procesiranje signalov s Pythonom</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fourier series, integral and transform" href="02%20-%20Fourier%20series%2C%20integral%20and%20transform.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Procesiranje signalov s Pythonom</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Uvod v procesiranje signalov
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02%20-%20Fourier%20series%2C%20integral%20and%20transform.html">
+   Fourier series, integral and transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03%20-%20Discrete%20Fourier%20transform.html">
+   Discrete Fourier transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04%20-%20Convolution%20and%20linear%20time%20invariant%20systems.html">
+   Convolution and linear time invariant systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05%20-%20Applying%20windows%20to%20signals.html">
+   Applying windows to signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06%20-%20Spectral%20leakage%20and%20aliasing.html">
+   Spectral leakage and aliasing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07%20-%20Random%20processes.html">
+   Random precesses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08%20-%20Correlation%20function%20and%20spectra.html">
+   Correlation function and spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09%20-%20Spectral%20moments%2C%20stationarity%2C%20ergodicity.html">
+   Spectral moments, stationarity, ergodicity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks_side_notes_etc.html">
+   Jupyter Notebook files
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/01 - Uvod.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://jankoslavic.github.io/signal_processing"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://jankoslavic.github.io/signal_processing/issues/new?title=Issue%20on%20page%20%2Fnotebooks/01 - Uvod.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaj-je-procesiranje-signalov">
+   Kaj je procesiranje signalov?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaj-je-proces">
+   Kaj je proces?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaj-je-model">
+   Kaj je model?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaj-linearni-casovno-invariantni-sistem">
+   Kaj linearni, časovno invariantni sistem?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaj-je-negotovost">
+   Kaj je negotovost?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zvezni-diskretni-popis-sistemov">
+   Zvezni/diskretni popis sistemov
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#klasifikacija-podatkov">
+   Klasifikacija podatkov
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deterministic-process">
+   Deterministic process
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="uvod-v-procesiranje-signalov">
+<span id="sec-intro"></span><h1>Uvod v procesiranje signalov<a class="headerlink" href="#uvod-v-procesiranje-signalov" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="kaj-je-procesiranje-signalov">
+<h2>Kaj je procesiranje signalov?<a class="headerlink" href="#kaj-je-procesiranje-signalov" title="Permalink to this headline">¶</a></h2>
+<p>Termin <em>procesiranje signalov</em> uporabljamo za označitev različnih metod obdelave izmerjenih podatkov z namenom, da razkrijemo informacije skritev v takih meritvah.</p>
+<p>Kot primer si lahko pogledamo meritve na novem/poškodovanem ležaju (za podrobnosti glejte vir <span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="../markdown.html#id3">2011</a>]</span>). Slika spodaj prikazuje meritev sile na dobrem in dveh poškodovanih ležajih. V meritvah vidimo določene razlike, ampak ali lahko iz meritev identificiramo <em>tip</em> poškodbe? Nadalje ali lahko iz meritev identificiramo <em>velikost</em> poškodbe?</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./data/bearing/new 1A.npy&#39;</span><span class="p">)</span>
+<span class="n">radial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./data/bearing/radial Low 1A.npy&#39;</span><span class="p">)</span>
+<span class="n">contamination</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./data/bearing/contam low 2A.npy&#39;</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new</span><span class="p">))</span> <span class="o">*</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">5000</span>
+
+<span class="n">sel</span> <span class="o">=</span> <span class="n">time</span><span class="o">&lt;</span><span class="mf">0.5</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">new</span><span class="p">[</span><span class="n">sel</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dober ležaj&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">radial</span><span class="p">[</span><span class="n">sel</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;poškodovan ležaj 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">contamination</span><span class="p">[</span><span class="n">sel</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;poškodovan ležaj 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [t]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sila [N]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01 - Uvod_2_0.png" src="../_images/01 - Uvod_2_0.png" />
+</div>
+</div>
+<p>Spodaj je prikazana slika frekvenčne prenosne funkcije (<em>ang.</em> FRF, Frequency Response Function), ki za linearni, časovno invariantni sistem v frekvenčni domeni popisuje vzbujanje sistema z njegovim odzivom. Zadnji stavek vsebuje veliko terminov, ki jih v nadaljevanju razdelali in spoznali. V celoti pa bomo frekvenčno prenosno funkcijo razumeli šele proti koncu te knjige.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyuff</span>
+
+<span class="n">uff</span> <span class="o">=</span> <span class="n">pyuff</span><span class="o">.</span><span class="n">UFF</span><span class="p">(</span><span class="s1">&#39;./data/uff/beam.uff&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read_sets</span><span class="p">(</span><span class="n">setn</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="n">uff</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">H1</span> <span class="o">=</span> <span class="n">uff</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+
+<span class="n">sel</span> <span class="o">=</span> <span class="n">fr</span><span class="o">&lt;</span><span class="mi">1000</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">fr</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H1</span><span class="p">[</span><span class="n">sel</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;H1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;FRF [m$\,$s$^{-2}$/N]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01 - Uvod_4_0.png" src="../_images/01 - Uvod_4_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="kaj-je-proces">
+<h2>Kaj je proces?<a class="headerlink" href="#kaj-je-proces" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="kaj-je-model">
+<h2>Kaj je model?<a class="headerlink" href="#kaj-je-model" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="kaj-linearni-casovno-invariantni-sistem">
+<h2>Kaj linearni, časovno invariantni sistem?<a class="headerlink" href="#kaj-linearni-casovno-invariantni-sistem" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="kaj-je-negotovost">
+<h2>Kaj je negotovost?<a class="headerlink" href="#kaj-je-negotovost" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="zvezni-diskretni-popis-sistemov">
+<h2>Zvezni/diskretni popis sistemov<a class="headerlink" href="#zvezni-diskretni-popis-sistemov" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="klasifikacija-podatkov">
+<h2>Klasifikacija podatkov<a class="headerlink" href="#klasifikacija-podatkov" title="Permalink to this headline">¶</a></h2>
+<p>Tukaj je potrebno povezati vsa poglavja, ki sledijo. Narediti pregle. To se bo naredilo na koncu.</p>
+<p>Povezati je treba termine kot so:</p>
+<ul class="simple">
+<li><p>proces</p></li>
+<li><p>sistem</p></li>
+<li><p>linearni časovno neodvisni sistem</p></li>
+<li><p>impulzni odziv</p></li>
+<li><p>konvolucija</p></li>
+<li><p>Fourierjeva transformacija</p></li>
+<li><p>časovna ali frekvenčna domena</p></li>
+<li><p>naključni ali deterministični proces</p></li>
+</ul>
+<p>Signal processing deals with the analysis of processes which can in general be <a class="reference internal" href="#sec-deterministic"><span class="std std-ref"><strong>deterministic</strong></span></a> or  <a class="reference internal" href="07%20-%20Random%20processes.html#sec-random"><span class="std std-ref"><strong>random</strong></span></a>. Deterministic process is the process that can (with a reasonable accuracy) be described with an explicit mathematical relation. Random process is a process than cannot be described with an explicit mathematical relation, but requires probability statements and statistical averages.</p>
+<p>This chapter will give a general introduction which is required for the following chapters. Greater details can be found in books by <span id="id2">Bendat and Piersol [<a class="reference internal" href="../markdown.html#id150">2011</a>]</span>, <span id="id3">Shin and Hammond [<a class="reference internal" href="../markdown.html#id172">2008</a>]</span>, <span id="id4">Newland [<a class="reference internal" href="../markdown.html#id87">2012</a>]</span> and <span id="id5">Rice [<a class="reference internal" href="../markdown.html#id65">1945</a>]</span>.</p>
+</div>
+<div class="section" id="deterministic-process">
+<span id="sec-deterministic"></span><h2>Deterministic process<a class="headerlink" href="#deterministic-process" title="Permalink to this headline">¶</a></h2>
+<p>Deterministic data from a deterministic process is that which can be unambiguously deduced through mathematical relationships and conditions. Values within the sequence, such as a time history, can be successfully extrapolated or predicted, to at least within the tolerable error margin. When considering for instance the measured data from a deterministic dynamic system it is expected that, under equal conditions, the observed repeated system response will always be equal, as is, for example, for a mathematical pendulum, released from the same height.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02%20-%20Fourier%20series%2C%20integral%20and%20transform.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fourier series, integral and transform</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Janko Slavič<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
