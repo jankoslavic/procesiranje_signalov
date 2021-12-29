@@ -313,6 +313,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [t]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sila [N]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -324,6 +325,14 @@
 <p>Spodaj je prikazana slika frekvenčne prenosne funkcije (<em>ang.</em> FRF, Frequency Response Function), ki za linearni, časovno invariantni sistem v frekvenčni domeni popisuje vzbujanje sistema z njegovim odzivom. Zadnji stavek vsebuje veliko terminov, ki jih v nadaljevanju razdelali in spoznali. V celoti pa bomo frekvenčno prenosno funkcijo razumeli šele proti koncu te knjige.</p>
 <p>test side note margin</p>
 <p>test sidebar</p>
+<div class="margin sidebar">
+<p class="sidebar-title">An optional title</p>
+<p>My margin content</p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title">An optional title 2</p>
+<p>My margin content 2</p>
+</div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyuff</span>
@@ -336,12 +345,13 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">fr</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H1</span><span class="p">[</span><span class="n">sel</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;H1&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;FRF [m$\,$s$^{-2}$/N]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01 - Uvod_6_0.png" src="../_images/01 - Uvod_6_0.png" />
+<img alt="../_images/01 - Uvod_8_0.png" src="../_images/01 - Uvod_8_0.png" />
 </div>
 </div>
 </div>
