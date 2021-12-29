@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "c:\python39\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "c:\python39\lib\site-packages\nbclient\client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\python39\lib\site-packages\nbclient\util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "c:\python39\lib\site-packages\nbclient\util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "c:\python39\lib\asyncio\base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "c:\python39\lib\site-packages\nbclient\client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "c:\python39\lib\site-packages\nbclient\client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "c:\python39\lib\site-packages\nbclient\client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+import matplotlib.pyplot as plt
+
+new = np.load('./data/bearing/new 1A.npy')
+radial = np.load('./data/bearing/radial Low 1A.npy')
+contamination = np.load('./data/bearing/contam low 2A.npy')
+time = np.arange(len(new)) * 1./5000
+
+sel = time<0.5
+plt.plot(time[sel], new[sel, 2], alpha=0.5, label='dober ležaj')
+plt.plot(time[sel], radial[sel, 2], alpha=0.5, label='poškodovan ležaj 1')
+plt.plot(time[sel], contamination[sel, 2], alpha=0.3, label='poškodovan ležaj 2')
+plt.xlabel('Čas [t]')
+plt.ylabel('Sila [N]')
+plt.ylim(-0.1, 0.1)
+plt.grid()
+plt.legend();
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[1;32m<ipython-input-1-514248d3505d>[0m in [0;36m<module>[1;34m[0m
+[0;32m      2[0m [1;32mimport[0m [0mmatplotlib[0m[1;33m.[0m[0mpyplot[0m [1;32mas[0m [0mplt[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      3[0m [1;33m[0m[0m
+[1;32m----> 4[1;33m [0mnew[0m [1;33m=[0m [0mnp[0m[1;33m.[0m[0mload[0m[1;33m([0m[1;34m'./data/bearing/new 1A.npy'[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      5[0m [0mradial[0m [1;33m=[0m [0mnp[0m[1;33m.[0m[0mload[0m[1;33m([0m[1;34m'./data/bearing/radial Low 1A.npy'[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m      6[0m [0mcontamination[0m [1;33m=[0m [0mnp[0m[1;33m.[0m[0mload[0m[1;33m([0m[1;34m'./data/bearing/contam low 2A.npy'[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;32mc:\python39\lib\site-packages\numpy\lib\npyio.py[0m in [0;36mload[1;34m(file, mmap_mode, allow_pickle, fix_imports, encoding)[0m
+[0;32m    415[0m             [0mown_fid[0m [1;33m=[0m [1;32mFalse[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    416[0m         [1;32melse[0m[1;33m:[0m[1;33m[0m[1;33m[0m[0m
+[1;32m--> 417[1;33m             [0mfid[0m [1;33m=[0m [0mstack[0m[1;33m.[0m[0menter_context[0m[1;33m([0m[0mopen[0m[1;33m([0m[0mos_fspath[0m[1;33m([0m[0mfile[0m[1;33m)[0m[1;33m,[0m [1;34m"rb"[0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m    418[0m             [0mown_fid[0m [1;33m=[0m [1;32mTrue[0m[1;33m[0m[1;33m[0m[0m
+[0;32m    419[0m [1;33m[0m[0m
+
+[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './data/bearing/new 1A.npy'
+FileNotFoundError: [Errno 2] No such file or directory: './data/bearing/new 1A.npy'
+
