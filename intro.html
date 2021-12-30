@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Procesiranje signalov s Pythonom</title>
+    <title>Predgovor &#8212; Procesiranje signalov s Pythonom</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,6 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Uvod v procesiranje signalov" href="notebooks/01%20-%20Uvod.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -67,8 +68,88 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-2 bd-sidebar site-navigation show single-page" id="site-navigation">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Procesiranje signalov s Pythonom</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Predgovor
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/01%20-%20Uvod.html">
+   Uvod v procesiranje signalov
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/02%20-%20Fourier%20series%2C%20integral%20and%20transform.html">
+   Fourier series, integral and transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/03%20-%20Discrete%20Fourier%20transform.html">
+   Discrete Fourier transform
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/04%20-%20Convolution%20and%20linear%20time%20invariant%20systems.html">
+   Convolution and linear time invariant systems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/05%20-%20Applying%20windows%20to%20signals.html">
+   Applying windows to signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/06%20-%20Spectral%20leakage%20and%20aliasing.html">
+   Spectral leakage and aliasing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/07%20-%20Random%20processes.html">
+   Random precesses
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/08%20-%20Correlation%20function%20and%20spectra.html">
+   Correlation function and spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks/09%20-%20Spectral%20moments%2C%20stationarity%2C%20ergodicity.html">
+   Spectral moments, stationarity, ergodicity
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -83,7 +164,33 @@
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
             
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
             
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -116,59 +223,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toctree-l1 toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="intro.html#document-notebooks/01 - Uvod">
-   Uvod v procesiranje signalov
-  </a>
- </li>
- <li class="toctree-l1 toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="intro.html#document-notebooks/02 - Fourier series, integral and transform">
-   Fourier series, integral and transform
-  </a>
- </li>
- <li class="toctree-l1 toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="intro.html#document-notebooks/03 - Discrete Fourier transform">
-   Discrete Fourier transform
-  </a>
- </li>
- <li class="toctree-l1 toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="intro.html#document-notebooks/04 - Convolution and linear time invariant systems">
-   Convolution and linear time invariant systems
-  </a>
- </li>
- <li class="toctree-l1 toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="intro.html#document-notebooks/05 - Applying windows to signals">
-   Applying windows to signals
-  </a>
- </li>
- <li class="toctree-l1 toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="intro.html#document-notebooks/06 - Spectral leakage and aliasing">
-   Spectral leakage and aliasing
-  </a>
- </li>
- <li class="toctree-l1 toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="intro.html#document-notebooks/07 - Random processes">
-   Random precesses
-  </a>
- </li>
- <li class="toctree-l1 toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="intro.html#document-notebooks/08 - Correlation function and spectra">
-   Correlation function and spectra
-  </a>
- </li>
- <li class="toctree-l1 toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="intro.html#document-notebooks/09 - Spectral moments, stationarity, ergodicity">
-   Spectral moments, stationarity, ergodicity
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -179,8 +233,8 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="predgovor">
 <h1>Predgovor<a class="headerlink" href="#predgovor" title="Permalink to this headline">¶</a></h1>
-<p>Ta knjiga je nastala na podlagi raziskovalno-razvojnega dela Laboratorija za dinamiko strojev in konstrukcij. Procesiranje signalov je elementarni del več deset člankov objavljenih v vodilnih revijah področja (npr.: Mechanical Systems and Signal Processing, Elsevier) kakor tudi bistveni vsebinski del naprav za končno kontrolo, ki so implementirana v slovenski in tuji industriji. Procesiranje signalov predstavlja tudi pomeben del monografije na temo vibracijskega utrujanja (glejte: <span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="intro.html#id2">2020</a>]</span>), ki kot prva povezuje spektralne metode identifikacije poškodovanosti s teorijo strukturne dinamike.</p>
-<p>Knjigo na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili avtorjem referenčnih monografij, ki so postavili temelje teorije naključnih procesov:  <span id="id2">Rice [<a class="reference internal" href="intro.html#id65">1945</a>]</span>, <span id="id3">Bendat and Piersol [<a class="reference internal" href="intro.html#id150">2011</a>]</span>,  <span id="id4">Newland [<a class="reference internal" href="intro.html#id87">2012</a>]</span>. Ta knjiga bo osredotočena na procesiranje signalov za uporabo v inženirski praksi na področju analize vibracij in zvota ter bo v določeni meri sledila viru <span id="id5">Shin and Hammond [<a class="reference internal" href="intro.html#id172">2008</a>]</span>. Mogoče se v tem trenutku zdi, da naključni procesi z inženirskimi izzivi nimajo veliko skupnega, ampak proti koncu te knjige bomo ugotovili, da tudi obravnava praktično katerega-koli realnega sistema brez teorije naključnih procesov, najmanj zaradi negotovosti pri merjenju, ni mogoča.</p>
+<p>Ta knjiga je nastala na podlagi raziskovalno-razvojnega dela Laboratorija za dinamiko strojev in konstrukcij. Procesiranje signalov je elementarni del več deset člankov objavljenih v vodilnih revijah področja (npr.: Mechanical Systems and Signal Processing, Elsevier) kakor tudi bistveni vsebinski del naprav za končno kontrolo, ki so implementirana v slovenski in tuji industriji. Procesiranje signalov predstavlja tudi pomeben del monografije na temo vibracijskega utrujanja (glejte: <span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="bibliography.html#id2">2020</a>]</span>), ki kot prva povezuje spektralne metode identifikacije poškodovanosti s teorijo strukturne dinamike.</p>
+<p>Knjigo na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili avtorjem referenčnih monografij, ki so postavili temelje teorije naključnih procesov:  <span id="id2">Rice [<a class="reference internal" href="bibliography.html#id65">1945</a>]</span>, <span id="id3">Bendat and Piersol [<a class="reference internal" href="bibliography.html#id150">2011</a>]</span>,  <span id="id4">Newland [<a class="reference internal" href="bibliography.html#id87">2012</a>]</span>. Ta knjiga bo osredotočena na procesiranje signalov za uporabo v inženirski praksi na področju analize vibracij in zvota ter bo v določeni meri sledila viru <span id="id5">Shin and Hammond [<a class="reference internal" href="bibliography.html#id172">2008</a>]</span>. Mogoče se v tem trenutku zdi, da naključni procesi z inženirskimi izzivi nimajo veliko skupnega, ampak proti koncu te knjige bomo ugotovili, da tudi obravnava praktično katerega-koli realnega sistema brez teorije naključnih procesov, najmanj zaradi negotovosti pri merjenju, ni mogoča.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Here is a note!</p>
@@ -191,141 +245,6 @@
 </div>
 <p>Check out the content pages bundled with this sample book to see more.</p>
 <div class="toctree-wrapper compound">
-<span id="document-notebooks/01 - Uvod"></span><div class="tex2jax_ignore mathjax_ignore section" id="uvod-v-procesiranje-signalov">
-<span id="sec-intro"></span><h2>Uvod v procesiranje signalov<a class="headerlink" href="#uvod-v-procesiranje-signalov" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="kaj-je-procesiranje-signalov">
-<h3>Kaj je procesiranje signalov?<a class="headerlink" href="#kaj-je-procesiranje-signalov" title="Permalink to this headline">¶</a></h3>
-<p>Termin <em>procesiranje signalov</em> uporabljamo za označitev različnih metod obdelave izmerjenih podatkov z namenom, da razkrijemo informacije skritev v takih meritvah. S procesiranjem signalom želimo identificirati/karakterizirati različne fizikalne procese, kot primer takih procesov lahko vidimo klasične inženirske izzive (npr.: napake na ležajih, dinamske lastnosti struktur), pa tudi izzive v biologiji (npr.: sekvenciranje genoma), astronomiji (npr.: merjenje črne luknje), družboslovju (npr.: širjenje corona virusa) in podobno.</p>
-<p>Kot primer si lahko pogledamo meritve na novem/poškodovanem ležaju (za podrobnosti glejte vir <span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="intro.html#id3">2011</a>]</span>). Slika spodaj prikazuje meritev sile na dobrem in dveh poškodovanih ležajih. V meritvah vidimo določene razlike, ampak ali lahko iz meritev identificiramo <em>tip</em> poškodbe? Nadalje ali lahko iz meritev identificiramo <em>velikost</em> poškodbe?</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">new</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./data/bearing/new 1A.npy&#39;</span><span class="p">)</span>
-<span class="n">radial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./data/bearing/radial Low 1A.npy&#39;</span><span class="p">)</span>
-<span class="n">contamination</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;./data/bearing/contam low 2A.npy&#39;</span><span class="p">)</span>
-<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new</span><span class="p">))</span> <span class="o">*</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">5000</span>
-
-<span class="n">sel</span> <span class="o">=</span> <span class="n">time</span><span class="o">&lt;</span><span class="mf">0.5</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">new</span><span class="p">[</span><span class="n">sel</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dober ležaj&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">radial</span><span class="p">[</span><span class="n">sel</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;poškodovan ležaj 1&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">contamination</span><span class="p">[</span><span class="n">sel</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;poškodovan ležaj 2&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [t]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sila [N]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/01 - Uvod_2_0.png" src="_images/01 - Uvod_2_0.png" />
-</div>
-</div>
-<p>Spodaj je prikazana slika frekvenčne prenosne funkcije (<em>ang.</em> FRF, Frequency Response Function), ki za linearni, časovno invariantni sistem v frekvenčni domeni popisuje vzbujanje sistema z njegovim odzivom (primer je vzet iz paketa pyUFF). Zadnji stavek vsebuje veliko terminov, ki jih v nadaljevanju razdelali in spoznali. V celoti pa bomo frekvenčno prenosno funkcijo razumeli šele proti koncu te knjige.</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyuff</span>
-
-<span class="n">uff</span> <span class="o">=</span> <span class="n">pyuff</span><span class="o">.</span><span class="n">UFF</span><span class="p">(</span><span class="s1">&#39;./data/uff/beam.uff&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read_sets</span><span class="p">(</span><span class="n">setn</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">fr</span> <span class="o">=</span> <span class="n">uff</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
-<span class="n">H1</span> <span class="o">=</span> <span class="n">uff</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
-
-<span class="n">sel</span> <span class="o">=</span> <span class="n">fr</span><span class="o">&lt;</span><span class="mi">1000</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">fr</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H1</span><span class="p">[</span><span class="n">sel</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;H1&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;FRF [m$\,$s$^{-2}$/N]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/01 - Uvod_4_0.png" src="_images/01 - Uvod_4_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="kaj-je-model">
-<h3>Kaj je model?<a class="headerlink" href="#kaj-je-model" title="Permalink to this headline">¶</a></h3>
-<p>Procese, ki jih želimo karakterizirati</p>
-</div>
-<div class="section" id="kaj-linearni-casovno-invariantni-sistem">
-<h3>Kaj linearni, časovno invariantni sistem?<a class="headerlink" href="#kaj-linearni-casovno-invariantni-sistem" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="kaj-je-negotovost">
-<h3>Kaj je negotovost?<a class="headerlink" href="#kaj-je-negotovost" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="zvezni-diskretni-popis-sistemov">
-<h3>Zvezni/diskretni popis sistemov<a class="headerlink" href="#zvezni-diskretni-popis-sistemov" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="klasifikacija-podatkov">
-<h3>Klasifikacija podatkov<a class="headerlink" href="#klasifikacija-podatkov" title="Permalink to this headline">¶</a></h3>
-<p>Tukaj je potrebno povezati vsa poglavja, ki sledijo. Narediti pregle. To se bo naredilo na koncu.</p>
-<p>Povezati je treba termine kot so:</p>
-<ul class="simple">
-<li><p>proces</p></li>
-<li><p>sistem</p></li>
-<li><p>linearni časovno neodvisni sistem</p></li>
-<li><p>impulzni odziv</p></li>
-<li><p>konvolucija</p></li>
-<li><p>Fourierjeva transformacija</p></li>
-<li><p>časovna ali frekvenčna domena</p></li>
-<li><p>naključni ali deterministični proces</p></li>
-</ul>
-<p>Signal processing deals with the analysis of processes which can in general be <a class="reference internal" href="#sec-deterministic"><span class="std std-ref"><strong>deterministic</strong></span></a> or  <a class="reference internal" href="intro.html#sec-random"><span class="std std-ref"><strong>random</strong></span></a>. Deterministic process is the process that can (with a reasonable accuracy) be described with an explicit mathematical relation. Random process is a process than cannot be described with an explicit mathematical relation, but requires probability statements and statistical averages.</p>
-<p>This chapter will give a general introduction which is required for the following chapters. Greater details can be found in books by <span id="id2"></span>, <span id="id3"></span>, <span id="id4">Newland [<a class="reference internal" href="intro.html#id87">2012</a>]</span> and <span id="id5"></span>.</p>
-</div>
-<div class="section" id="deterministic-process">
-<span id="sec-deterministic"></span><h3>Deterministic process<a class="headerlink" href="#deterministic-process" title="Permalink to this headline">¶</a></h3>
-<p>Deterministic data from a deterministic process is that which can be unambiguously deduced through mathematical relationships and conditions. Values within the sequence, such as a time history, can be successfully extrapolated or predicted, to at least within the tolerable error margin. When considering for instance the measured data from a deterministic dynamic system it is expected that, under equal conditions, the observed repeated system response will always be equal, as is, for example, for a mathematical pendulum, released from the same height.</p>
-</div>
-</div>
-<span id="document-notebooks/02 - Fourier series, integral and transform"></span><div class="tex2jax_ignore mathjax_ignore section" id="fourier-series-integral-and-transform">
-<h2>Fourier series, integral and transform<a class="headerlink" href="#fourier-series-integral-and-transform" title="Permalink to this headline">¶</a></h2>
-</div>
-<span id="document-notebooks/03 - Discrete Fourier transform"></span><div class="tex2jax_ignore mathjax_ignore section" id="discrete-fourier-transform">
-<h2>Discrete Fourier transform<a class="headerlink" href="#discrete-fourier-transform" title="Permalink to this headline">¶</a></h2>
-</div>
-<span id="document-notebooks/04 - Convolution and linear time invariant systems"></span><div class="tex2jax_ignore mathjax_ignore section" id="convolution-and-linear-time-invariant-systems">
-<h2>Convolution and linear time invariant systems<a class="headerlink" href="#convolution-and-linear-time-invariant-systems" title="Permalink to this headline">¶</a></h2>
-</div>
-<span id="document-notebooks/05 - Applying windows to signals"></span><div class="tex2jax_ignore mathjax_ignore section" id="applying-windows-to-signals">
-<h2>Applying windows to signals<a class="headerlink" href="#applying-windows-to-signals" title="Permalink to this headline">¶</a></h2>
-</div>
-<span id="document-notebooks/06 - Spectral leakage and aliasing"></span><div class="tex2jax_ignore mathjax_ignore section" id="spectral-leakage-and-aliasing">
-<h2>Spectral leakage and aliasing<a class="headerlink" href="#spectral-leakage-and-aliasing" title="Permalink to this headline">¶</a></h2>
-</div>
-<span id="document-notebooks/07 - Random processes"></span><div class="tex2jax_ignore mathjax_ignore section" id="random-precesses">
-<span id="sec-random"></span><h2>Random precesses<a class="headerlink" href="#random-precesses" title="Permalink to this headline">¶</a></h2>
-</div>
-<span id="document-notebooks/08 - Correlation function and spectra"></span><div class="tex2jax_ignore mathjax_ignore section" id="correlation-function-and-spectra">
-<h2>Correlation function and spectra<a class="headerlink" href="#correlation-function-and-spectra" title="Permalink to this headline">¶</a></h2>
-</div>
-<span id="document-notebooks/09 - Spectral moments, stationarity, ergodicity"></span><div class="tex2jax_ignore mathjax_ignore section" id="spectral-moments-stationarity-ergodicity">
-<h2>Spectral moments, stationarity, ergodicity<a class="headerlink" href="#spectral-moments-stationarity-ergodicity" title="Permalink to this headline">¶</a></h2>
-</div>
-<span id="document-bibliography"></span><p id="id1"><dl class="citation">
-<dt class="label" id="id150"><span class="brackets">BP11</span></dt>
-<dd><p>Julius S. Bendat and Allan G. Piersol. <em>Random Data: Analysis and Measurement Procedures</em>. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.</p>
-</dd>
-<dt class="label" id="id87"><span class="brackets">New12</span></dt>
-<dd><p>David E. Newland. <em>An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis</em>. Courier Corporation, 3$^\text rd$ edition, 2012.</p>
-</dd>
-<dt class="label" id="id65"><span class="brackets">Ric45</span></dt>
-<dd><p>Stephen O. Rice. Mathematical analysis of random noise. <em>The Bell System Technical Journal</em>, 24(1):46–156, 1945.</p>
-</dd>
-<dt class="label" id="id172"><span class="brackets">SH08</span></dt>
-<dd><p>Kihong Shin and Joseph Hammond. <em>Fundamentals of Signal Processing for Sound and Vibration Engineers</em>. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: <a class="reference external" href="http://adsabs.harvard.edu/abs/1991VKILV...1Q....P">http://adsabs.harvard.edu/abs/1991VKILV...1Q....P</a>, <a class="reference external" href="https://doi.org/10.1016/0016-0032(60)90684-0">doi:10.1016/0016-0032(60)90684-0</a>.</p>
-</dd>
-<dt class="label" id="id2"><span class="brackets">SlavivcBoltevzarMrvsnik+20</span></dt>
-<dd><p>Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. <em>Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments</em>. Elsevier, 2020.</p>
-</dd>
-<dt class="label" id="id3"><span class="brackets">SlavivcBrkovicBoltevzar11</span></dt>
-<dd><p>Janko Slavič, Aleksandar Brković, and Miha Boltežar. Typical bearing-fault rating using force measurements: application to real data. <em>Journal of Vibration and Control</em>, 17(14):2164–2174, 2011.</p>
-</dd>
-</dl>
-</p>
 </div>
 </div>
 
@@ -354,6 +273,13 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="notebooks/01%20-%20Uvod.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Uvod v procesiranje signalov</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
