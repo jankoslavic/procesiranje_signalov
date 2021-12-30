@@ -8,8 +8,8 @@
    inkscape:version="1.1-alpha (17bc918, 2021-03-28)"
    sodipodi:docname="sistem-in-out.svg"
    inkscape:export-filename="C:\_j\Work Janko\Pedagosko delo\_predavanja\Procesiranje signalov\signal_processing\notebooks\images\sistem-in-out.png"
-   inkscape:export-xdpi="300"
-   inkscape:export-ydpi="300"
+   inkscape:export-xdpi="300.42712"
+   inkscape:export-ydpi="300.42712"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -94,13 +94,13 @@
        id="path1079-0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:pccmti10;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;-inkscape-font-specification:'pccmti10, Normal';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
        x="12.02475"
        y="25.545193"
        id="text4024"><tspan
          sodipodi:role="line"
          id="tspan4022"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:pccmti10;-inkscape-font-specification:pccmti10;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055993px;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';stroke-width:0.264583;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          x="12.02475"
          y="25.545193">x(t)</tspan></text>
     <text
