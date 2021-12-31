@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -235,13 +237,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kaj-je-model">
-   Kaj je model?
+  <a class="reference internal nav-link" href="#kaj-je-sistem-model">
+   Kaj je sistem/model?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kaj-linearni-casovno-invariantni-sistem">
-   Kaj linearni, časovno invariantni sistem?
+   Kaj linearni časovno invariantni sistem?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -281,7 +283,7 @@
 <div class="section" id="kaj-je-procesiranje-signalov">
 <h2>Kaj je procesiranje signalov?<a class="headerlink" href="#kaj-je-procesiranje-signalov" title="Permalink to this headline">¶</a></h2>
 <p>Termin <em>procesiranje signalov</em> uporabljamo za označitev različnih metod obdelave izmerjenih podatkov z namenom, da razkrijemo informacije skritev v takih meritvah. S procesiranjem signalom želimo identificirati/karakterizirati različne fizikalne procese, kot primer takih procesov lahko vidimo klasične inženirske izzive (npr.: napake na ležajih, dinamske lastnosti struktur), pa tudi izzive v biologiji (npr.: sekvenciranje genoma), astronomiji (npr.: merjenje črne luknje), družboslovju (npr.: širjenje corona virusa) in podobno.</p>
-<p>Kot primer si lahko pogledamo meritve na novem/poškodovanem ležaju (za podrobnosti, glejte vir <span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id3">2011</a>]</span>). Slika spodaj prikazuje meritev sile na dobrem in dveh poškodovanih ležajih. V meritvah vidimo določene razlike, ampak ali lahko iz meritev identificiramo <em>tip</em> poškodbe? Nadalje ali lahko iz meritev identificiramo <em>velikost</em> poškodbe? Na ta in podobna vprašanja bomo poskušali odgovoriti tekom te knjige.</p>
+<p>Kot primer si lahko pogledamo meritve na novem/poškodovanem ležaju (za podrobnosti, glejte vir <span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id4">2011</a>]</span>). Slika spodaj prikazuje meritev sile na dobrem in dveh poškodovanih ležajih. V meritvah vidimo določene razlike, ampak ali lahko iz meritev identificiramo <em>tip</em> poškodbe? Nadalje ali lahko iz meritev identificiramo <em>velikost</em> poškodbe? Na ta in podobna vprašanja bomo poskušali odgovoriti tekom te knjige.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -330,15 +332,17 @@
 <img alt="../_images/01 - Uvod_4_0.png" src="../_images/01 - Uvod_4_0.png" />
 </div>
 </div>
-<p>Dinamske in druge sisteme ponavadi poskušamo opisati na podlagi modelov; parametre modelov pa identificirati s procesiranjem signalov. Spodanja slika prikazuje poljuben sistem, katerega vzbujanje</p>
-<p><img alt="sistem-in-out" src="../_images/sistem-in-out.svg" /></p>
 </div>
-<div class="section" id="kaj-je-model">
-<h2>Kaj je model?<a class="headerlink" href="#kaj-je-model" title="Permalink to this headline">¶</a></h2>
-<p>Procese, ki jih želimo karakterizirati</p>
+<div class="section" id="kaj-je-sistem-model">
+<h2>Kaj je sistem/model?<a class="headerlink" href="#kaj-je-sistem-model" title="Permalink to this headline">¶</a></h2>
+<p>Dinamske in druge sisteme ponavadi poskušamo opisati na podlagi modelov; parametre modelov pa identificirati s procesiranjem signalov. Spodanja slika prikazuje poljuben sistem, katerega vzbujanje opišemo v času s <span class="math notranslate nohighlight">\(x(t)\)</span>, odziv pa s <span class="math notranslate nohighlight">\(y(t)\)</span>. Kot primer vzbujanja <span class="math notranslate nohighlight">\(x(t)\)</span> sistema si lahko predstavljamo v silo, ki deluje na neko maso, kot odziv <span class="math notranslate nohighlight">\(y(t)\)</span> pa napetost na zaznavalu pospeška ali zvočnega tlaka. Odziv je ponavadi res napetost, ki je ponavadi proporcionalna neki merjeni veličini (npr.: pospešek, zvočni tlak), vendar pa je odziv lahko povezan tudi npr. z intenziteto slikovnega elementa v sliki (glejte <span id="id2">Gorjup <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id2">2021</a>]</span>).</p>
+<p><img alt="sistem-in-out" src="../_images/sistem-in-out.svg" /></p>
+<p>Tukaj se bomo omejili na takšne sistem kjer odziv rezultat preteklih in trenutnega vzbujanja (takšnim sistemom rečemo, da so <em>kavzalni</em>). Podobno se bomo omejili samo na takšne sisteme, kjer odziv ne vpliva nazaj na vzbujanje in najprej bomo predpostavili, da imamo samo eno vzbujanje in samo en odziv.</p>
 </div>
 <div class="section" id="kaj-linearni-casovno-invariantni-sistem">
-<h2>Kaj linearni, časovno invariantni sistem?<a class="headerlink" href="#kaj-linearni-casovno-invariantni-sistem" title="Permalink to this headline">¶</a></h2>
+<h2>Kaj linearni časovno invariantni sistem?<a class="headerlink" href="#kaj-linearni-casovno-invariantni-sistem" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight" id="equation-my-label">
+<span class="eqno">(1)<a class="headerlink" href="#equation-my-label" title="Permalink to this equation">¶</a></span>\[w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}\]</div>
 </div>
 <div class="section" id="kaj-je-negotovost">
 <h2>Kaj je negotovost?<a class="headerlink" href="#kaj-je-negotovost" title="Permalink to this headline">¶</a></h2>
@@ -361,7 +365,7 @@
 <li><p>naključni ali deterministični proces</p></li>
 </ul>
 <p>Signal processing deals with the analysis of processes which can in general be <a class="reference internal" href="#sec-deterministic"><span class="std std-ref"><strong>deterministic</strong></span></a> or  <a class="reference internal" href="07%20-%20Random%20processes.html#sec-random"><span class="std std-ref"><strong>random</strong></span></a>. Deterministic process is the process that can (with a reasonable accuracy) be described with an explicit mathematical relation. Random process is a process than cannot be described with an explicit mathematical relation, but requires probability statements and statistical averages.</p>
-<p>This chapter will give a general introduction which is required for the following chapters. Greater details can be found in books by <span id="id2"></span>, <span id="id3"></span>, <span id="id4">Newland [<a class="reference internal" href="../bibliography.html#id87">2012</a>]</span> and <span id="id5"></span>.</p>
+<p>This chapter will give a general introduction which is required for the following chapters. Greater details can be found in books by <span id="id3"></span>, <span id="id4"></span>, <span id="id5">Newland [<a class="reference internal" href="../bibliography.html#id88">2012</a>]</span> and <span id="id6"></span>.</p>
 </div>
 <div class="section" id="deterministic-process">
 <span id="sec-deterministic"></span><h2>Deterministic process<a class="headerlink" href="#deterministic-process" title="Permalink to this headline">¶</a></h2>
