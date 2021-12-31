@@ -247,11 +247,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kaj-je-negotovost">
-   Kaj je negotovost?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#zvezni-diskretni-popis-sistemov">
    Zvezni/diskretni popis sistemov
   </a>
@@ -356,9 +351,15 @@ k\,y(t)=h(t) * (k\,x(t)),
 \[
 y(t-\tau)=h(t) * x(t-\tau).
 \]</div>
-</div>
-<div class="section" id="kaj-je-negotovost">
-<h2>Kaj je negotovost?<a class="headerlink" href="#kaj-je-negotovost" title="Permalink to this headline">¶</a></h2>
+<p>Konvolucijo bomo spoznali pozneje in v času ni ravno enostavna operacija; k sreči bomo v poglavju (TBA) spoznali, da <em>Fourierova transformacija</em> konvolucijo v časovni domeni preoblikuje v preprosto množenje v frekvenčni domeni:</p>
+<div class="math notranslate nohighlight">
+\[
+Y(f)=H(f)\,X(f).
+\]</div>
+<p>Kjer <span class="math notranslate nohighlight">\(f\)</span> označuje frekvenco, <span class="math notranslate nohighlight">\(Y(f)\)</span>, <span class="math notranslate nohighlight">\(H(f)\)</span> in <span class="math notranslate nohighlight">\(X(f)\)</span> pa predstavljajo Fourierovo transformacijo <span class="math notranslate nohighlight">\(y(t)\)</span>, <span class="math notranslate nohighlight">\(h(t)\)</span> in <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
+<p>Sistem lahko enolično identificiramo, če identificiramo <span class="math notranslate nohighlight">\(H(t)\)</span> v frekvenčni domeni. Če sta vzbujanje <span class="math notranslate nohighlight">\(X(f)\)</span> in odziv <span class="math notranslate nohighlight">\(Y(f)\)</span> v frekvenčni domeni znana, je identifikacija (teoretično) skrajno enostavna <span class="math notranslate nohighlight">\(H(f)=Y(f)/X(f)\)</span>. V praksi je problem v tem, da je meritev vzbujanja in odziva obremenjena z merilnimi in drugimi negotovostmi; Sistem relnega sistema prikazuje spodnja slika; <span class="math notranslate nohighlight">\(n_x(t)\)</span> in <span class="math notranslate nohighlight">\(n_y(t)\)</span> predstavljata šum na strani vzbujanja in odziva, <span class="math notranslate nohighlight">\(x_m(t)\)</span> in <span class="math notranslate nohighlight">\(y_m(t)\)</span> pa predstavljata izmerjeno vzbujanje in izmerjeni odziv.</p>
+<p><img alt="sistem-in-out-sum" src="../_images/sistem-in-out-sum.svg" /></p>
+<p>Izmerjeno vzbujanje <span class="math notranslate nohighlight">\(x_m(t)\)</span> je očitno drugačno od tistega, ki vzbuja sistem <span class="math notranslate nohighlight">\(x(t)\)</span> in izmerjeni odziv <span class="math notranslate nohighlight">\(y_m(t)\)</span> je očitno durgače kakor je dejanski odziv <span class="math notranslate nohighlight">\(y(t)\)</span>. Glede na merilne in druge negotovosti frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(H(f)\)</span> ne moremo določiti, pač pa ga lahko samo ocenjujemo. Nalogo dodatno oteži dejstvo, da je vzbujanje <span class="math notranslate nohighlight">\(X(f)\)</span> lahko naključno in pozneje bomo tako govorili o cenilki frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(\tilde{H}(f)\)</span> (glejte poglavje (TBA)).</p>
 </div>
 <div class="section" id="zvezni-diskretni-popis-sistemov">
 <h2>Zvezni/diskretni popis sistemov<a class="headerlink" href="#zvezni-diskretni-popis-sistemov" title="Permalink to this headline">¶</a></h2>
