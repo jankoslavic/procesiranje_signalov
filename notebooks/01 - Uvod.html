@@ -264,8 +264,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zvezni-diskretni-popis-sistemov">
-   Zvezni/diskretni popis sistemov
+  <a class="reference internal nav-link" href="#zvezni-diskretni-podatki">
+   Zvezni/diskretni podatki
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -380,8 +380,45 @@ Y(f)=H(f)\,X(f).
 <p><img alt="sistem-in-out-sum" src="../_images/sistem-in-out-sum.svg" /></p>
 <p>Izmerjeno vzbujanje <span class="math notranslate nohighlight">\(x_m(t)\)</span> je očitno drugačno od tistega, ki vzbuja sistem <span class="math notranslate nohighlight">\(x(t)\)</span> in izmerjeni odziv <span class="math notranslate nohighlight">\(y_m(t)\)</span> je očitno durgače kakor je dejanski odziv <span class="math notranslate nohighlight">\(y(t)\)</span>. Glede na merilne in druge negotovosti nimamo dostopa do dejanskega vzbujanja <span class="math notranslate nohighlight">\(x(t)\)</span> in dejanskega odziva <span class="math notranslate nohighlight">\(y(t)\)</span> in zato frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(H(f)\)</span> ne moremo določiti. V poglavju (TBA) si bomo pogledali kako <span class="math notranslate nohighlight">\(H(f)\)</span> ocenimo na podlagi veličin, ki jih lahko izmerimo (<span class="math notranslate nohighlight">\(x_m(t)\)</span> in <span class="math notranslate nohighlight">\(y_m(t)\)</span>) in to ob dejstvu, da tako negotovost v meritvi, kakor tudi vzbujanje lahko naključno porazdeljeno. Takrat bomo govorili o cenilki frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(\tilde{H}(f)\)</span> (glejte poglavje (TBA)).</p>
 </div>
-<div class="section" id="zvezni-diskretni-popis-sistemov">
-<h2>Zvezni/diskretni popis sistemov<a class="headerlink" href="#zvezni-diskretni-popis-sistemov" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zvezni-diskretni-podatki">
+<h2>Zvezni/diskretni podatki<a class="headerlink" href="#zvezni-diskretni-podatki" title="Permalink to this headline">¶</a></h2>
+<p>Inženirski procesi so ponavadi zvezni in jih zaznavamo s pomočjo različnih zaznaval, ki generirajo fizikalno merljivo veličino, t.i. signal. Signal ali časovna zgodovina je ponavadi tudi <em>zvezna</em> veličina (včasih bomo slišali tudi <em>analogna</em> veličina). Zaradi obdelave podatkov z računalnikom, te zvezne veličine diskretiziramo (glejte poglavje TBA). Ponavadi je taka diskretizacija narejena s konstantnim časovnim korakom. Spodnja slika prikazuje zvezno in diskretno časovno vrst. V splošnem ne govorimo niti o signalih, niti o časovnih v</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1"># na računalniku zvezne časovne vrste dejansko ne moremo generirati</span>
+<span class="c1"># &quot;zvezna&quot; bo samo dosti bolj gosta</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t2</span><span class="p">,</span> <span class="n">dt2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Zvezno&#39;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t2</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Diskretno $\Delta t$=0.5s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$\sin(t^2)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\python39\lib\site-packages\ipykernel\ipkernel.py:283: DeprecationWarning: `should_run_async` will not call `transform_cell` automatically in the future. Please pass the result to `transformed_cell` argument and any exception that happen during thetransform in `preprocessing_exc_tuple` in IPython 7.17 and above.
+  and should_run_async(code)
+&lt;&gt;:11: DeprecationWarning: invalid escape sequence \D
+&lt;&gt;:13: DeprecationWarning: invalid escape sequence \s
+&lt;&gt;:11: DeprecationWarning: invalid escape sequence \D
+&lt;&gt;:13: DeprecationWarning: invalid escape sequence \s
+&lt;ipython-input-3-581cc8f2ef68&gt;:11: DeprecationWarning: invalid escape sequence \D
+  plt.plot(t2, np.sin(t2**2), &#39;o&#39;,label=&#39;Diskretno $\Delta t$=0.5s&#39;)
+&lt;ipython-input-3-581cc8f2ef68&gt;:13: DeprecationWarning: invalid escape sequence \s
+  plt.ylabel(&#39;$\sin(t^2)$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/01 - Uvod_14_1.png" src="../_images/01 - Uvod_14_1.png" />
+</div>
+</div>
 </div>
 <div class="section" id="klasifikacija-podatkov">
 <h2>Klasifikacija podatkov<a class="headerlink" href="#klasifikacija-podatkov" title="Permalink to this headline">¶</a></h2>
