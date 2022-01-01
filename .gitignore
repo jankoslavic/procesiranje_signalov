@@ -8,7 +8,7 @@ __pycache__/
 
 # Jupyter-book
 _build/
-
+refresh2github.bat
 
 # Distribution / packaging
 .Python

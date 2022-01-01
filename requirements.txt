@@ -1,3 +1,10 @@
 jupyter-book
 matplotlib
 numpy
+tornado
+pyzmq
+ghp-import
+pyppeteer
+folium
+myst_nb
+pyuff

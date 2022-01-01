@@ -4,5 +4,14 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
+# - file: markdown
+- file: notebooks/01 - Uvod
+- file: notebooks/02 - Fourier series, integral and transform
+- file: notebooks/03 - Discrete Fourier transform
+- file: notebooks/04 - Convolution and linear time invariant systems
+- file: notebooks/05 - Applying windows to signals
+- file: notebooks/06 - Spectral leakage and aliasing
+- file: notebooks/07 - Random processes
+- file: notebooks/08 - Correlation function and spectra
+- file: notebooks/09 - Spectral moments, stationarity, ergodicity
+- file: bibliography
