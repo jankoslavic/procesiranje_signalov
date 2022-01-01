@@ -382,7 +382,7 @@ Y(f)=H(f)\,X(f).
 </div>
 <div class="section" id="zvezni-diskretni-podatki">
 <h2>Zvezni/diskretni podatki<a class="headerlink" href="#zvezni-diskretni-podatki" title="Permalink to this headline">¶</a></h2>
-<p>Inženirski procesi so ponavadi zvezni in jih zaznavamo s pomočjo različnih zaznaval, ki generirajo fizikalno merljivo veličino, t.i. signal. Signal ali časovna zgodovina je ponavadi tudi <em>zvezna</em> veličina (včasih bomo slišali tudi <em>analogna</em> veličina). Zaradi obdelave podatkov z računalnikom, te zvezne veličine diskretiziramo (glejte poglavje TBA). Ponavadi je taka diskretizacija narejena s konstantnim časovnim korakom. Spodnja slika prikazuje zvezno in diskretno časovno vrst. V splošnem ne govorimo niti o signalih, niti o časovnih v</p>
+<p>Inženirski procesi so ponavadi zvezni in jih zaznavamo s pomočjo različnih zaznaval, ki generirajo fizikalno merljivo veličino, t.i. signal. Signal ali časovna zgodovina je ponavadi tudi <em>zvezna</em> veličina (včasih bomo slišali tudi <em>analogna</em> veličina). Zaradi obdelave podatkov z računalnikom, te zvezne veličine diskretiziramo (glejte poglavje TBA). Ponavadi je taka diskretizacija narejena s konstantnim časovnim korakom. Spodnja slika prikazuje zvezno in diskretno časovno vrst. V splošnem ne govorimo niti o signalih, niti o časovnih vrstah, pač pa o podatkih (ang. <em>data</em>).</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -422,6 +422,18 @@ Y(f)=H(f)\,X(f).
 </div>
 <div class="section" id="klasifikacija-podatkov">
 <h2>Klasifikacija podatkov<a class="headerlink" href="#klasifikacija-podatkov" title="Permalink to this headline">¶</a></h2>
+<p>Klasifikacija podatkov (prirejeno po <span id="id3">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151">2011</a>], Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173">2008</a>]</span>) je prikazana na spodnji sliki.</p>
+<p><img alt="klasifikacija_podatkov" src="../_images/klasifikacija_podatkov.svg" /></p>
+<p>Podatke najprej delimo na:</p>
+<ul class="simple">
+<li><p><strong>deterministične</strong> (kdaj slišimo tudi <em>določljivostne</em>) to so podatki, ki imajo vrednosti v času enolično določene in</p></li>
+<li><p><strong>naključne</strong> kjer vrednosti v nekem trenutku ekzaktno ne vemo, je pa ta lahko določena z verjetnostno porazdelitvijo.</p></li>
+</ul>
+<p>Primer determinističnih podatkov je funkcija:
+$<span class="math notranslate nohighlight">\(
+x(t) = \sin(t),
+\)</span>$
+primer naključnih pa višina gladine razburkanega morja. Pri klasifikaciji podatkov ne smemo pozabiti, da imamo lahko podatke sestavljene iz determinističnega in naključnega dela.</p>
 <p>Tukaj je potrebno povezati vsa poglavja, ki sledijo. Narediti pregle. To se bo naredilo na koncu.</p>
 <p>Povezati je treba termine kot so:</p>
 <ul class="simple">
@@ -435,7 +447,7 @@ Y(f)=H(f)\,X(f).
 <li><p>naključni ali deterministični proces</p></li>
 </ul>
 <p>Signal processing deals with the analysis of processes which can in general be <a class="reference internal" href="#sec-deterministic"><span class="std std-ref"><strong>deterministic</strong></span></a> or  <a class="reference internal" href="07%20-%20Random%20processes.html#sec-random"><span class="std std-ref"><strong>random</strong></span></a>. Deterministic process is the process that can (with a reasonable accuracy) be described with an explicit mathematical relation. Random process is a process than cannot be described with an explicit mathematical relation, but requires probability statements and statistical averages.</p>
-<p>This chapter will give a general introduction which is required for the following chapters. Greater details can be found in books by <span id="id3"></span>, <span id="id4"></span>, <span id="id5">Newland [<a class="reference internal" href="../bibliography.html#id88">2012</a>]</span> and <span id="id6"></span>.</p>
+<p>This chapter will give a general introduction which is required for the following chapters. Greater details can be found in books by <span id="id4"></span>, <span id="id5"></span>, <span id="id6">Newland [<a class="reference internal" href="../bibliography.html#id88">2012</a>]</span> and <span id="id7"></span>.</p>
 </div>
 <div class="section" id="deterministic-process">
 <span id="sec-deterministic"></span><h2>Deterministic process<a class="headerlink" href="#deterministic-process" title="Permalink to this headline">¶</a></h2>
