@@ -201,11 +201,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://jankoslavic.github.io/signal_processing"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/jankoslavic/signal_processing"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://jankoslavic.github.io/signal_processing/issues/new?title=Issue%20on%20page%20%2Fnotebooks/01 - Uvod.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jankoslavic/signal_processing/issues/new?title=Issue%20on%20page%20%2Fnotebooks/01 - Uvod.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -220,6 +220,23 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jankoslavic/signal_processing/master?urlpath=tree/notebooks/notebooks/01 - Uvod.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
 
         </div>
 
@@ -308,7 +325,9 @@
 <p>Kot naslednji primer, je spodaj prikazana slika frekvenčne prenosne funkcije (<em>ang.</em> FRF, Frequency Response Function), ki za linearni časovno invariantni sistem (glejte poglavje <a class="reference internal" href="04%20-%20Convolution%20and%20linear%20time%20invariant%20systems.html#sec-konvolucija-lti"><span class="std std-ref">Convolution and linear time invariant systems</span></a>) v frekvenčni domeni povezuje vzbujanje sistema z njegovim odzivom (primer je vzet iz paketa pyUFF). Zadnji stavek vsebuje veliko terminov, ki jih v nadaljevanju razdelali in spoznali. Pravilna identifikacija frekvenčne prenosne funkcije je zelo pomembna za karakterizacijo dinamskih sistemov in kako jo pravilno identificiramo bomo v celoti razumeli šele proti koncu te knjige.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyuff</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pyuff</span>
 
 <span class="n">uff</span> <span class="o">=</span> <span class="n">pyuff</span><span class="o">.</span><span class="n">UFF</span><span class="p">(</span><span class="s1">&#39;./data/uff/beam.uff&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read_sets</span><span class="p">(</span><span class="n">setn</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">fr</span> <span class="o">=</span> <span class="n">uff</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
@@ -357,9 +376,9 @@ y(t-\tau)=h(t) * x(t-\tau).
 Y(f)=H(f)\,X(f).
 \]</div>
 <p>Kjer <span class="math notranslate nohighlight">\(f\)</span> označuje frekvenco, <span class="math notranslate nohighlight">\(Y(f)\)</span>, <span class="math notranslate nohighlight">\(H(f)\)</span> in <span class="math notranslate nohighlight">\(X(f)\)</span> pa predstavljajo Fourierovo transformacijo <span class="math notranslate nohighlight">\(y(t)\)</span>, <span class="math notranslate nohighlight">\(h(t)\)</span> in <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
-<p>Sistem lahko enolično identificiramo, če identificiramo <span class="math notranslate nohighlight">\(H(t)\)</span> v frekvenčni domeni. Če sta vzbujanje <span class="math notranslate nohighlight">\(X(f)\)</span> in odziv <span class="math notranslate nohighlight">\(Y(f)\)</span> v frekvenčni domeni znana, je identifikacija (teoretično) skrajno enostavna <span class="math notranslate nohighlight">\(H(f)=Y(f)/X(f)\)</span>. V praksi je problem v tem, da je meritev vzbujanja in odziva obremenjena z merilnimi in drugimi negotovostmi; Sistem relnega sistema prikazuje spodnja slika; <span class="math notranslate nohighlight">\(n_x(t)\)</span> in <span class="math notranslate nohighlight">\(n_y(t)\)</span> predstavljata šum na strani vzbujanja in odziva, <span class="math notranslate nohighlight">\(x_m(t)\)</span> in <span class="math notranslate nohighlight">\(y_m(t)\)</span> pa predstavljata izmerjeno vzbujanje in izmerjeni odziv.</p>
+<p>Sistem lahko enolično identificiramo, če identificiramo <span class="math notranslate nohighlight">\(H(t)\)</span> v frekvenčni domeni. Če sta vzbujanje <span class="math notranslate nohighlight">\(X(f)\)</span> in odziv <span class="math notranslate nohighlight">\(Y(f)\)</span> v frekvenčni domeni znana, je identifikacija (teoretično) skrajno enostavna <span class="math notranslate nohighlight">\(H(f)=Y(f)/X(f)\)</span>. V praksi je problem v tem, da je meritev vzbujanja in odziva obremenjena z merilnimi in drugimi negotovostmi; Sistem realnega sistema prikazuje spodnja slika; <span class="math notranslate nohighlight">\(n_x(t)\)</span> in <span class="math notranslate nohighlight">\(n_y(t)\)</span> predstavljata šum na strani vzbujanja in odziva, <span class="math notranslate nohighlight">\(x_m(t)\)</span> in <span class="math notranslate nohighlight">\(y_m(t)\)</span> pa predstavljata izmerjeno vzbujanje in izmerjeni odziv.</p>
 <p><img alt="sistem-in-out-sum" src="../_images/sistem-in-out-sum.svg" /></p>
-<p>Izmerjeno vzbujanje <span class="math notranslate nohighlight">\(x_m(t)\)</span> je očitno drugačno od tistega, ki vzbuja sistem <span class="math notranslate nohighlight">\(x(t)\)</span> in izmerjeni odziv <span class="math notranslate nohighlight">\(y_m(t)\)</span> je očitno durgače kakor je dejanski odziv <span class="math notranslate nohighlight">\(y(t)\)</span>. Glede na merilne in druge negotovosti frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(H(f)\)</span> ne moremo določiti, pač pa ga lahko samo ocenjujemo. Nalogo dodatno oteži dejstvo, da je vzbujanje <span class="math notranslate nohighlight">\(X(f)\)</span> lahko naključno in pozneje bomo tako govorili o cenilki frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(\tilde{H}(f)\)</span> (glejte poglavje (TBA)).</p>
+<p>Izmerjeno vzbujanje <span class="math notranslate nohighlight">\(x_m(t)\)</span> je očitno drugačno od tistega, ki vzbuja sistem <span class="math notranslate nohighlight">\(x(t)\)</span> in izmerjeni odziv <span class="math notranslate nohighlight">\(y_m(t)\)</span> je očitno durgače kakor je dejanski odziv <span class="math notranslate nohighlight">\(y(t)\)</span>. Glede na merilne in druge negotovosti nimamo dostopa do dejanskega vzbujanja <span class="math notranslate nohighlight">\(x(t)\)</span> in dejanskega odziva <span class="math notranslate nohighlight">\(y(t)\)</span> in zato frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(H(f)\)</span> ne moremo določiti. V poglavju (TBA) si bomo pogledali kako <span class="math notranslate nohighlight">\(H(f)\)</span> ocenimo na podlagi veličin, ki jih lahko izmerimo (<span class="math notranslate nohighlight">\(x_m(t)\)</span> in <span class="math notranslate nohighlight">\(y_m(t)\)</span>) in to ob dejstvu, da tako negotovost v meritvi, kakor tudi vzbujanje lahko naključno porazdeljeno. Takrat bomo govorili o cenilki frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(\tilde{H}(f)\)</span> (glejte poglavje (TBA)).</p>
 </div>
 <div class="section" id="zvezni-diskretni-popis-sistemov">
 <h2>Zvezni/diskretni popis sistemov<a class="headerlink" href="#zvezni-diskretni-popis-sistemov" title="Permalink to this headline">¶</a></h2>

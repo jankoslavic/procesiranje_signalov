@@ -198,13 +198,13 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:1.25;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="7.1100421"
-       y="25.545193"
+       y="25.016026"
        id="text4024"><tspan
          sodipodi:role="line"
          id="tspan4022"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
          x="7.1100421"
-         y="25.545193">x(t)</tspan></text>
+         y="25.016026">x(t)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -256,13 +256,13 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:1.25;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="6.9925642"
-       y="34.405998"
+       y="33.876831"
        id="text4024-16"><tspan
          sodipodi:role="line"
          id="tspan4022-7"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
          x="6.9925642"
-         y="34.405998">n<tspan
+         y="33.876831">n<tspan
    style="font-size:65%;baseline-shift:sub"
    id="tspan3695">x</tspan>(t)</tspan></text>
     <path
@@ -274,13 +274,13 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:1.25;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="44.15173"
-       y="25.545193"
+       y="25.016026"
        id="text6405"><tspan
          sodipodi:role="line"
          id="tspan6403"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
          x="44.15173"
-         y="25.545193">y(t)</tspan></text>
+         y="25.016026">y(t)</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.139237px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-3)"
        d="m 56.479258,27.275056 v 6.295705"
@@ -321,13 +321,13 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:1.25;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="44.034248"
-       y="34.405998"
+       y="33.876831"
        id="text6425"><tspan
          sodipodi:role="line"
          id="tspan6423"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
          x="44.034248"
-         y="34.405998">n<tspan
+         y="33.876831">n<tspan
    style="font-size:65%;baseline-shift:sub"
    id="tspan6421">y</tspan>(t)</tspan></text>
     <text
