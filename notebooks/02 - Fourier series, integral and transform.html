@@ -353,7 +353,7 @@ x(t) = X\,\sin(\omega\,t+\varphi),
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_40920</span><span class="o">/</span><span class="mf">1263292300.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_22400</span><span class="o">/</span><span class="mf">1263292300.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span> 
 <span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Harmonska funkcija: $x(t) = \sin(</span><span class="se">\\</span><span class="s1">omega\,t+</span><span class="se">\\</span><span class="s1">varphi); </span><span class="se">\\</span><span class="s1">omega=</span><span class="si">{</span><span class="n">ω</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">varphi=</span><span class="si">{</span><span class="n">ϕ</span><span class="si">}</span><span class="s1">$ &#39;</span><span class="p">)</span>
@@ -378,19 +378,6 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 \)</span></p>
 <p>kjer je <span class="math notranslate nohighlight">\(a_0\)</span> konstanta, <span class="math notranslate nohighlight">\(a_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te kosinusne komponente in <span class="math notranslate nohighlight">\(b_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te sinusne komponente.</p>
 <p>Spodaj si poglejmo primer harmonske funkcije, ki ustreza zgornjim omejitvam.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.18146983,  0.70885537, -0.02597163, -1.27892651,  0.38331397,
-       -0.6717263 ,  1.34118911,  1.8522366 , -0.4036722 ,  1.34552626])
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -441,7 +428,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_6_0.png" src="../_images/02 - Fourier series, integral and transform_6_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_4_0.png" src="../_images/02 - Fourier series, integral and transform_4_0.png" />
 </div>
 </div>
 <p>S pomočjo Eulerjeve formule:</p>
@@ -467,10 +454,22 @@ b_n\sin\big(\frac{2\,\pi\,n\,t}{T_p} \big)
 <p><span class="math notranslate nohighlight">\(
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
 \left[
-a_n\big( \frac{1}{2}e^{\mathrm{i}\,\alpha}+\frac{1}{2}e^{-\mathrm{i}\,\alpha}
-\big)+a_n\big( \frac{1}{2}e^{\mathrm{i}\,\alpha}+\frac{1}{2}e^{-\mathrm{i}\,\alpha}
+a_n\big( 
+\frac{1}{2}e^{\mathrm{i}\,\alpha}+\frac{1}{2}e^{-\mathrm{i}\,\alpha}
+\big)+
+b_n\big( 
+-\frac{1}{2}\,\mathrm{i}\,e^{\mathrm{i}\,\alpha}+\frac{1}{2}\,\mathrm{i}\,e^{-\mathrm{i}\,\alpha}
 \big)
-\right]
+\right].
+\)</span></p>
+<p>V zgornji enačbi smo uporabili <span class="math notranslate nohighlight">\(\alpha=2\,\pi\,n\,t/T_p\)</span>. Z nekaj nadaljnimi matamatičnimi koraki lahko zapišemo:</p>
+<p><span class="math notranslate nohighlight">\(
+x(t)=\sum_{n=-\infty}^{\infty}
+X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
+\)</span></p>
+<p>kjer velja: <span class="math notranslate nohighlight">\(X_n=X_{-n}^{*}\)</span> in <span class="math notranslate nohighlight">\({}^*\)</span> označuje kompleksno konjugirano vrednost:</p>
+<p><span class="math notranslate nohighlight">\(
+X_n = \frac{1}{2}a_n-\frac{1}{2}b_n; \qquad n\ge1
 \)</span></p>
 <p>Lahko Teorija (Fourierjeva transformacija - Fourierjev integral):</p>
 <div class="math notranslate nohighlight">
