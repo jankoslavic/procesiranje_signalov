@@ -400,7 +400,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Periodični podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
-<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{a_0}{2}</span><span class="s1">$&#39;</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
@@ -542,13 +542,13 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Klasična definicija&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Kompleksen zapis&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Definicija v kompleksni obliki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{a_0}{2}</span><span class="s1">$&#39;</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
             <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
-            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="o">+.</span><span class="mi">15</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="o">+.</span><span class="mi">13</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;&lt;-&#39;</span><span class="p">,</span>
                             <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3,rad=0&#39;</span><span class="p">,</span>
                             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
@@ -561,7 +561,7 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
                             <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3,rad=0&#39;</span><span class="p">,</span>
                             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -573,11 +573,18 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 </div>
 <div class="section" id="kompleksna-oblika-fourierovih-vrst">
 <h2>Kompleksna oblika Fourierovih vrst<a class="headerlink" href="#kompleksna-oblika-fourierovih-vrst" title="Permalink to this headline">¶</a></h2>
-<p>Zgoraj izpeljana enačba:</p>
+<p>Sedaj se lahko vrnemo na izvorno nalogo Fourierovih vrst: <em>popis poljubne periodične funkcije s superpozicijo razlinih harmonskih funkcij</em>. V začetku se bomo omejili to ali lahko identificiramo peridično funkcijo, ki je definirana z:</p>
 <p><span class="math notranslate nohighlight">\(
 x(t)=\sum_{n=-\infty}^{\infty}
-X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
+X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*
 \)</span></p>
+<p>Izkaže se, če <span class="math notranslate nohighlight">\(x(t)\)</span> pomnožimo s <span class="math notranslate nohighlight">\(e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span> ter nato integriramo po času:</p>
+<p><span class="math notranslate nohighlight">\(
+\underbrace{\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{\textrm{A}}=
+\underbrace{\int_0^{T_p} \sum_{n=-\infty}^{\infty}
+X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p} \,\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{\textrm{B}}
+\)</span></p>
+<p>V zgornji enačbi A lahko izračunamo, saj je <span class="math notranslate nohighlight">\(x(t)\)</span> znana funkcija.</p>
 <p>Zgoraj smo torej pisu ustreza vsota harmonskih funkcij:</p>
 <p><span class="math notranslate nohighlight">\(
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
@@ -632,10 +639,10 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
   return np.asarray(x, float)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23c50ba5820&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1fd1e163b50&gt;]
 </pre></div>
 </div>
-<img alt="../_images/02 - Fourier series, integral and transform_18_2.png" src="../_images/02 - Fourier series, integral and transform_18_2.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_19_2.png" src="../_images/02 - Fourier series, integral and transform_19_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -805,7 +812,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_26_0.png" src="../_images/02 - Fourier series, integral and transform_26_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_27_0.png" src="../_images/02 - Fourier series, integral and transform_27_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -938,7 +945,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_35_0.png" src="../_images/02 - Fourier series, integral and transform_35_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_36_0.png" src="../_images/02 - Fourier series, integral and transform_36_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -958,7 +965,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_36_0.png" src="../_images/02 - Fourier series, integral and transform_36_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_37_0.png" src="../_images/02 - Fourier series, integral and transform_37_0.png" />
 </div>
 </div>
 <div class="section" id="narascajoca-zaga">
@@ -974,7 +981,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_38_0.png" src="../_images/02 - Fourier series, integral and transform_38_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_39_0.png" src="../_images/02 - Fourier series, integral and transform_39_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -986,7 +993,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_39_0.png" src="../_images/02 - Fourier series, integral and transform_39_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_40_0.png" src="../_images/02 - Fourier series, integral and transform_40_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -998,7 +1005,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_40_0.png" src="../_images/02 - Fourier series, integral and transform_40_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_41_0.png" src="../_images/02 - Fourier series, integral and transform_41_0.png" />
 </div>
 </div>
 </div>
@@ -1018,7 +1025,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_42_0.png" src="../_images/02 - Fourier series, integral and transform_42_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_43_0.png" src="../_images/02 - Fourier series, integral and transform_43_0.png" />
 </div>
 </div>
 <p>Teorija (Fourierjeva transformacija - Fourierjev integral):</p>
@@ -1065,10 +1072,10 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x23c52dde1f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1fd1e248e20&gt;]
 </pre></div>
 </div>
-<img alt="../_images/02 - Fourier series, integral and transform_46_1.png" src="../_images/02 - Fourier series, integral and transform_46_1.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_47_1.png" src="../_images/02 - Fourier series, integral and transform_47_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1134,7 +1141,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_52_0.png" src="../_images/02 - Fourier series, integral and transform_52_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_53_0.png" src="../_images/02 - Fourier series, integral and transform_53_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1160,7 +1167,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_54_0.png" src="../_images/02 - Fourier series, integral and transform_54_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_55_0.png" src="../_images/02 - Fourier series, integral and transform_55_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1171,7 +1178,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_55_0.png" src="../_images/02 - Fourier series, integral and transform_55_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_56_0.png" src="../_images/02 - Fourier series, integral and transform_56_0.png" />
 </div>
 </div>
 </div>
@@ -1190,7 +1197,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_57_0.png" src="../_images/02 - Fourier series, integral and transform_57_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_58_0.png" src="../_images/02 - Fourier series, integral and transform_58_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1202,7 +1209,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_58_0.png" src="../_images/02 - Fourier series, integral and transform_58_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_59_0.png" src="../_images/02 - Fourier series, integral and transform_59_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1212,7 +1219,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_59_0.png" src="../_images/02 - Fourier series, integral and transform_59_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_60_0.png" src="../_images/02 - Fourier series, integral and transform_60_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1224,7 +1231,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_60_0.png" src="../_images/02 - Fourier series, integral and transform_60_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_61_0.png" src="../_images/02 - Fourier series, integral and transform_61_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1292,7 +1299,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_66_0.png" src="../_images/02 - Fourier series, integral and transform_66_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_67_0.png" src="../_images/02 - Fourier series, integral and transform_67_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1303,7 +1310,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_67_0.png" src="../_images/02 - Fourier series, integral and transform_67_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_68_0.png" src="../_images/02 - Fourier series, integral and transform_68_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1313,8 +1320,8 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.04794776, 0.04957386, 0.05012076, 0.04981146, 0.05012076,
-       0.04957386, 0.04794776])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.04740443, 0.04931114, 0.04952435, 0.05246041, 0.04952435,
+       0.04931114, 0.04740443])
 </pre></div>
 </div>
 </div>
@@ -1337,7 +1344,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_70_0.png" src="../_images/02 - Fourier series, integral and transform_70_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_71_0.png" src="../_images/02 - Fourier series, integral and transform_71_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1348,7 +1355,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_71_0.png" src="../_images/02 - Fourier series, integral and transform_71_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_72_0.png" src="../_images/02 - Fourier series, integral and transform_72_0.png" />
 </div>
 </div>
 </div>
