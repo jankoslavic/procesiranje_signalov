@@ -284,37 +284,20 @@
   <a class="reference internal nav-link" href="#nekateri-zgledi">
    Nekateri zgledi
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fourierjeve-vrste">
-   Fourierjeve vrste
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#narascajoca-zaga">
-     Naraščajoča žaga
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kompleksne-fourierjeve-vrste">
-   Kompleksne Fourierjeve vrste
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#amplitudni-fazni-spekter">
-   Amplitudni, fazni spekter
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pravokotna-udarna-motnja">
-     Pravokotna udarna motnja
+    <a class="reference internal nav-link" href="#kompleksno-periodicna-funkcija">
+     Kompleksno periodična funkcija
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#polsinusna-udarna-motnja">
-     Polsinusna udarna motnja
+    <a class="reference internal nav-link" href="#periodicna-funkcija">
+     Periodična funkcija
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analiticna-obravnava-periodicne-funkcije">
+     Analitična obravnava periodične funkcije
     </a>
    </li>
   </ul>
@@ -338,6 +321,7 @@
 <li><p>identifikacija harmonskih funkcij iz točke 1.</p></li>
 <li><p>posplošitev</p></li>
 </ol>
+<p>To poglavje je napisano na podlagi večjega števila virov in lastnega raziskovanja. Med knjižnjimi viri bralcu priporočam <span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173">2008</a>]</span>, med video vsebinami pa <a class="reference external" href="https://www.youtube.com/watch?v=r6sGWTCMz2k">Grant Sanderson: But what is a Fourier series? From heat flow to drawing with circles</a>.</p>
 <div class="section" id="zapis-periodicne-funkcije-kot-vsote-harmonskih-funkcij">
 <h2>Zapis periodične funkcije, kot vsote harmonskih funkcij<a class="headerlink" href="#zapis-periodicne-funkcije-kot-vsote-harmonskih-funkcij" title="Permalink to this headline">¶</a></h2>
 <p>Preden gremo v podrobnosti Fourierovih vrst, si pogljemo definicijo splošne harmonske funkcije:</p>
@@ -714,7 +698,7 @@ A_n\,\cos(2\pi\,n\,t/T_p-\varphi_n)\]</div>
 \begin{split}
 X_0&amp;=A_0&amp;=a_0\\
 X_n&amp;=\frac{A_n}{2}\,e^{-\mathrm{i}\varphi_n}&amp;=\frac{1}{2}(a_n-\mathrm{i}b_n)\\
-X_n&amp;=X_{-n}^*\\
+X_n&amp;=X_{-n}^*&amp;\\
 \end{split}
 \end{split}\]</div>
 <p>V tej knjigi bomo skoraj izključno uporabljali eksponentno obliko, saj je najbolj kompaktna, enostavna za uporabo in matematične izpeljave.</p>
@@ -722,7 +706,9 @@ X_n&amp;=X_{-n}^*\\
 </div>
 <div class="section" id="nekateri-zgledi">
 <h2>Nekateri zgledi<a class="headerlink" href="#nekateri-zgledi" title="Permalink to this headline">¶</a></h2>
-<p>Najprej si bomo pogledali periodičo funkcijo, ki smo jo spoznali že zgoraj. Funkcija je definirana z <span class="math notranslate nohighlight">\(N=10\)</span> harmonskimi komponentami <span class="math notranslate nohighlight">\(X_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nas uporaba zgoraj definiranih enačb vodi v točno identifikacijo le-teh.</p>
+<div class="section" id="kompleksno-periodicna-funkcija">
+<h3>Kompleksno periodična funkcija<a class="headerlink" href="#kompleksno-periodicna-funkcija" title="Permalink to this headline">¶</a></h3>
+<p>Najprej si bomo pogledali kompleksno periodično funkcijo, ki smo jo spoznali in definirali že zgoraj. Funkcija je definirana z <span class="math notranslate nohighlight">\(N=10\)</span> harmonskimi komponentami <span class="math notranslate nohighlight">\(X_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nas uporaba zgoraj definiranih enačb vodi v točno identifikacijo le-teh.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -770,7 +756,7 @@ X_n&amp;=X_{-n}^*\\
 <img alt="../_images/02 - Fourier series, integral and transform_28_0.png" src="../_images/02 - Fourier series, integral and transform_28_0.png" />
 </div>
 </div>
-<p>V primeru zgoraj je kompleksni vektor:</p>
+<p>V primeru zgoraj je peridočna funkcija generirana na podlagi vektorja kompleksnih amplitud:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span>
@@ -793,15 +779,15 @@ X_n&amp;=X_{-n}^*\\
 </div>
 </div>
 </div>
-<p>Opazimo, da je kompleksno konjugiran okoli središčnega elementa. Poljubni element lahko dobimo tako, da sledimo definiciji:</p>
+<p>Opazimo, da je vektor kompleksno konjugiran okoli središčnega elementa. Poljubni element lahko zgolj na podlagi časovne vrste <span class="math notranslate nohighlight">\(x(t)\)</span> določimo tako, da sledimo definiciji:</p>
 <div class="math notranslate nohighlight">
 \[
 X_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
 \]</div>
-<p>kar je v numerični implementaciji:</p>
+<p>kar je v numerični implementaciji (za <code class="docutils literal notranslate"><span class="pre">n=1</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1</span> <span class="c1"># poskusite še druge vrednosti, tudi n&gt;N!</span>
 <span class="n">sel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">&lt;=</span><span class="n">Tp</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
 </pre></div>
@@ -814,7 +800,7 @@ X_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 </div>
 </div>
 <p>Pri tem smo pazili, da smo izbrali (<code class="docutils literal notranslate"><span class="pre">sel</span></code>) samo eno periodo v časovni vrsti. Tukaj velja poudariti, da moramo integrirati po celotni periodi. Rezultat je <strong>točen</strong> do nivoja natančnosti zapisa v računalnik.</p>
-<p>Tukaj je vredno opozoriti, da moramo biti zelo natančni pri implementaciji izpeljanih izrazov. Hitro lahko dobimo <em>zelo dober</em> rezultat; vendar dokler ni <em>točen</em> do nivoja natančnosti zapisa v računalnik, do takrat je nekje napaka.</p>
+<p>Vredno je opozoriti, da moramo biti zelo natančni pri implementaciji izpeljanih izrazov. Hitro lahko dobimo <em>zelo dober</em> rezultat; vendar dokler ni <em>točen</em> do nivoja natančnosti zapisa v računalnik, do takrat je nekje napaka.</p>
 <p>Napako bi lahko naredili, če bi naša diskretizacija bila takšna, da ne bi ključevala točke pri 0s in točke pri <span class="math notranslate nohighlight">\(T_p\)</span>. Tako napako lahko preikusite tako, greste par vrstic navzgor v definicijo slike in vrstico:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -823,221 +809,169 @@ X_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>, ki imajo glede na Fourierove vrste srečamo v treh oblikah:
-<a class="reference external" href="https://www.youtube.com/watch?v=r6sGWTCMz2k">https://www.youtube.com/watch?v=r6sGWTCMz2k</a></p>
-<div class="cell docutils container">
+</div>
+<div class="section" id="periodicna-funkcija">
+<h3>Periodična funkcija<a class="headerlink" href="#periodicna-funkcija" title="Permalink to this headline">¶</a></h3>
+<p>Tukaj si bomo pogledali periodično funkcijo, ki pa ni kompleksno harmonska. Primer takšne funkcije je naraščajoča žaga prikazana na spodnji sliki.</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span><span class="c1">#dolžina časovne vrste</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span><span class="c1">#število točk</span>
-<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span><span class="mi">3</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;signal&#39;</span><span class="p">);</span>
-<span class="c1">#plt.plot(t,x2, &#39;.&#39;, label=&#39;cos fun n=1&#39;);</span>
-<span class="c1">#plt.plot(t,x*x2, &#39;.&#39;, label=&#39;podintegralska funkcija&#39;);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_36_0.png" src="../_images/02 - Fourier series, integral and transform_36_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.818594853651364
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.818594853651364
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="fourierjeve-vrste">
-<h2>Fourierjeve vrste<a class="headerlink" href="#fourierjeve-vrste" title="Permalink to this headline">¶</a></h2>
-<p>Teorija:</p>
-<p><span class="math notranslate nohighlight">\(
-x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
-\left[
-a_n\cos\left(\frac{2\,\pi\,n\,t}{T_p} \right)
-+
-b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
-\right]
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(
-a_0=\frac{2}{T_p}\int_0^{T_p}x(t)\,dt
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(
-a_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\cos\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,dt
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(
-b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,dt
-\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a0</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
-    <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">Tp</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="n">Tp</span>
 
-<span class="k">def</span> <span class="nf">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">fun</span><span class="p">):</span>
-    <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">Tp</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">fun</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="n">Tp</span>
 
-<span class="k">def</span> <span class="nf">an</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">)</span>
+<span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="o">%</span><span class="k">Tp</span>
 
-<span class="k">def</span> <span class="nf">bn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">an</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-
-<span class="k">def</span> <span class="nf">b</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">bn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-
-<span class="k">def</span> <span class="nf">rekonstr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="n">_a0</span> <span class="o">=</span> <span class="n">a0</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
-    <span class="n">_a</span>  <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-    <span class="n">_b</span>  <span class="o">=</span> <span class="n">b</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-    <span class="n">Tp</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">_a0</span><span class="o">/</span><span class="mi">2</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-        <span class="n">out</span> <span class="o">+=</span> <span class="n">_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span><span class="o">+</span>\
-               <span class="n">_b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">out</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Periodični podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.8185948536513636,
- 3.7470027081099033e-16,
- 4.579669976578771e-16,
- 5.551115123125783e-16,
- 4.579669976578771e-16]
-</pre></div>
+<img alt="../_images/02 - Fourier series, integral and transform_35_0.png" src="../_images/02 - Fourier series, integral and transform_35_0.png" />
 </div>
 </div>
-</div>
-<div class="cell docutils container">
+<p>Kljub temu, da funkcija ni kompleksno periodična, teorija Fourierovih vrst pa je bila izpeljana ob tej predpostavki, poskusimo identificirati harmonske komponente. Najprej to naredimo na diskretni časovni vrsti.
+Osredotočimo se na del podatkov, ki se ponavlja:</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.8322936730942849,
- -3.5561831257524545e-17,
- 3.0357660829594124e-16,
- -8.465450562766819e-16,
- -5.117434254131581e-16]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xr</span><span class="o">=</span><span class="n">rekonstr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.b&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">xr</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_45_0.png" src="../_images/02 - Fourier series, integral and transform_45_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span>  <span class="o">=</span> <span class="mf">1.</span><span class="c1">#dolžina časovne vrste</span>
-<span class="n">N</span>  <span class="o">=</span> <span class="mi">100</span><span class="c1">#število točk</span>
-<span class="n">t</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-<span class="n">fi</span> <span class="o">=</span> <span class="mi">0</span><span class="c1">#*2*np.pi*np.random.random()</span>
-<span class="n">xb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">fi</span><span class="p">)</span>
-<span class="n">x</span>  <span class="o">=</span> <span class="n">xb</span><span class="o">+</span><span class="mf">5.</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">xr</span> <span class="o">=</span> <span class="n">rekonstr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="c1">#spreminjaj število členov</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;signal&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">xb</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;signal brez šuma&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">xr</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;rekonstrukcija&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_46_0.png" src="../_images/02 - Fourier series, integral and transform_46_0.png" />
-</div>
-</div>
-<div class="section" id="narascajoca-zaga">
-<h3>Naraščajoča žaga<a class="headerlink" href="#narascajoca-zaga" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Tp</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">t</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Periodični podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_48_0.png" src="../_images/02 - Fourier series, integral and transform_48_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_37_0.png" src="../_images/02 - Fourier series, integral and transform_37_0.png" />
 </div>
 </div>
+<p>In identificiramo kompleksne amplitude:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span><span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$a_n$&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">b</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">60</span><span class="p">),</span><span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$b_n$&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>in jih lahko prikažemo v obliki amplitudnega <span class="math notranslate nohighlight">\(|X_n|\)</span> in faznega spektra <span class="math notranslate nohighlight">\(\angle X_n\)</span> (slika spodaj).</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$n</span><span class="se">\\</span><span class="s1">quad $[-]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|X_n|</span><span class="se">\\</span><span class="s1">quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplituda kontant $X_n$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span> 
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplituda kontant $X_n$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_n \quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+
+<span class="c1">#ax1.legend(loc=1)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span><span class="mf">2.</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span><span class="mf">2.</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_49_0.png" src="../_images/02 - Fourier series, integral and transform_49_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_41_0.png" src="../_images/02 - Fourier series, integral and transform_41_0.png" />
 </div>
 </div>
+<p>Na podlagi identificiranih kompleksnih amplitud, lahko definiramo kompleksno periodično funkcijo:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t)=\sum_{n=-N}^{N}
+X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*.
+\]</div>
+<p>Konkretna numerična koda je prikazana spodaj (pri tem smo uporabili novo numerično polje <code class="docutils literal notranslate"><span class="pre">x_r</span></code>, da ga ločimo od podatkov v obliki <code class="docutils literal notranslate"><span class="pre">x</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Izvorni podatki&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">rekonstr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rekontrukcija&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">x_r</span> <span class="o">+=</span> <span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
+<span class="n">x_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x_r</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Izvorni periodični podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_r</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Kompleksno periodična funkcija&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">6</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourier series, integral and transform_44_0.png" src="../_images/02 - Fourier series, integral and transform_44_0.png" />
+</div>
+</div>
+<p>Opazimo, da identificirana kompleksno harmonska funkcija relativno dobro opiše izvorne periodične podatke. Če bi število harmonskih (<span class="math notranslate nohighlight">\(N\)</span>) komponent povečali (kodo zgoraj lahko spremenite in spreminjate <span class="math notranslate nohighlight">\(N\)</span>, vendar mora veljati <code class="docutils literal notranslate"><span class="pre">N&lt;len(t)/2</span></code>; zakaj je <span class="math notranslate nohighlight">\(N\)</span> vezan na dolžino časovne vrste, bomo spoznali pozneje), bi se identificirana funkcija izvorni bolje prilegala, vendar pa bi na mestu nezveznosti še vedno imeli odstopanje. Odstopanje na mestu nezveznosti je znano pod terminom <em>Gibbsov</em> fenomen. Resnici na ljubo je večina inženirskih aplikacij zveznih in zato ponavadi Gibbsov fenomen nima večjega pomena.</p>
+</div>
+<div class="section" id="analiticna-obravnava-periodicne-funkcije">
+<h3>Analitična obravnava periodične funkcije<a class="headerlink" href="#analiticna-obravnava-periodicne-funkcije" title="Permalink to this headline">¶</a></h3>
+<p>Spodaj si bomo pogledali kako s pomočjo strojnega izpeljevanja določimo Fourierovo vrsto. Določimo dve spremenljivki. periodična funkcija bo kar naraščajoča žaga, ki bo proporcionalna s časom <code class="docutils literal notranslate"><span class="pre">t</span></code>, perioda bo <code class="docutils literal notranslate"><span class="pre">Tp</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, Tp&#39;</span><span class="p">)</span>
+<span class="n">x_r</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_series</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vrsta sestavljena iz prvih 5 členov torej je:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_r</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1045,354 +979,26 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 <img alt="../_images/02 - Fourier series, integral and transform_50_0.png" src="../_images/02 - Fourier series, integral and transform_50_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="kompleksne-fourierjeve-vrste">
-<h2>Kompleksne Fourierjeve vrste<a class="headerlink" href="#kompleksne-fourierjeve-vrste" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
+<p>In slika pri <code class="docutils literal notranslate"><span class="pre">Tp=2</span></code> in različnem številu členov v vrsti:</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span><span class="c1">#dolžina časovne vrste</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span><span class="c1">#število točk</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">φ</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">φ</span><span class="p">)</span><span class="c1"># + 1j*np.sin(2*np.pi*t + φ)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, Tp&#39;</span><span class="p">)</span>
+<span class="n">x_r</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_series</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">))</span>
+
+<span class="n">p0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x(t)=t&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;x(t)&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_r</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Tp</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;5 členov&#39;</span><span class="p">,</span>  <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_r</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">Tp</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;20 členov&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">p0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">p0</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/02 - Fourier series, integral and transform_52_0.png" src="../_images/02 - Fourier series, integral and transform_52_0.png" />
-</div>
-</div>
-<p>Teorija (Fourierjeva transformacija - Fourierjev integral):</p>
-<p><span class="math notranslate nohighlight">\(
-x(t)=\sum_{n=-\infty}^{\infty}
-c_n\,e^{j\,2\,\pi\,n\,t/T_p}
-\)</span></p>
-<p><span class="math notranslate nohighlight">\(
-c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
-\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">Tp</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
-
-<span class="k">def</span> <span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">cn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-
-<span class="k">def</span> <span class="nf">rekonstr_comp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="n">_c</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-    <span class="n">Tp</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">out</span> <span class="o">+=</span> <span class="n">_c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">out</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rek</span> <span class="o">=</span> <span class="n">rekonstr_comp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">rek</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x25ee485ac10&gt;]
-</pre></div>
-</div>
-<img alt="../_images/02 - Fourier series, integral and transform_56_1.png" src="../_images/02 - Fourier series, integral and transform_56_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.2080734182735714-0.4546487134128412j)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.2080734182735714+0.4546487134128412j)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0000000000000007
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">cn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span><span class="n">deg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xr</span><span class="o">=</span><span class="n">rekonstr_comp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">xr</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_62_0.png" src="../_images/02 - Fourier series, integral and transform_62_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">xr</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">t</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_64_0.png" src="../_images/02 - Fourier series, integral and transform_64_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">rekonstr_comp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span><span class="mi">10</span><span class="p">)));</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_65_0.png" src="../_images/02 - Fourier series, integral and transform_65_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="amplitudni-fazni-spekter">
-<h2>Amplitudni, fazni spekter<a class="headerlink" href="#amplitudni-fazni-spekter" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">f</span> <span class="o">=</span> <span class="mf">312.</span>
-<span class="n">φ</span> <span class="o">=</span> <span class="mi">1</span><span class="c1">#+0.*(np.pi*np.random.rand(N)-0.5)</span>
-<span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">φ</span><span class="p">)</span> <span class="c1">#+ .1*(np.random.rand(N)-0.5)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span><span class="n">x</span><span class="p">[:</span><span class="mi">100</span><span class="p">]);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_67_0.png" src="../_images/02 - Fourier series, integral and transform_67_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">)));</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">310</span><span class="p">,</span> <span class="mi">315</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_68_0.png" src="../_images/02 - Fourier series, integral and transform_68_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">)));</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_69_0.png" src="../_images/02 - Fourier series, integral and transform_69_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span><span class="n">deg</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="s1">&#39;.-&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">φ</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">310</span><span class="p">,</span><span class="mi">315</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_70_0.png" src="../_images/02 - Fourier series, integral and transform_70_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">312</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.49999999999999994
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">φ</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">cn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">312</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">cn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">313</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2.123203086109099
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="pravokotna-udarna-motnja">
-<h3>Pravokotna udarna motnja<a class="headerlink" href="#pravokotna-udarna-motnja" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">w</span> <span class="o">=</span> <span class="mf">0.05</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-<span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.5</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">&lt;-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.05</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_76_0.png" src="../_images/02 - Fourier series, integral and transform_76_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">N</span><span class="p">)),</span> <span class="s1">&#39;.-&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_77_0.png" src="../_images/02 - Fourier series, integral and transform_77_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.04749891, 0.04948412, 0.04923961, 0.0524492 , 0.04923961,
-       0.04948412, 0.04749891])
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="polsinusna-udarna-motnja">
-<h3>Polsinusna udarna motnja<a class="headerlink" href="#polsinusna-udarna-motnja" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">w</span> <span class="o">=</span> <span class="mf">0.05</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">T</span><span class="p">))</span>
-<span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">&gt;</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">&lt;-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.05</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_80_0.png" src="../_images/02 - Fourier series, integral and transform_80_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">N</span><span class="p">)),</span> <span class="s1">&#39;.-&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_81_0.png" src="../_images/02 - Fourier series, integral and transform_81_0.png" />
 </div>
 </div>
 </div>
