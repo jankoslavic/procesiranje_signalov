@@ -273,7 +273,17 @@
      Fourierove vrste v sinus-kosinusni obliki
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fourierove-vrste-v-amplitudno-fazni-obliki">
+     Fourierove vrste v amplitudno-fazni obliki
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nekateri-zgledi">
+   Nekateri zgledi
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fourierjeve-vrste">
@@ -345,7 +355,7 @@ x(t) = X\,\sin(\omega\,t+\varphi),
 
 <span class="n">T</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">X</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ω</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">ϕ</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -412,7 +422,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 
 
 <span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">a0</span> <span class="o">=</span> <span class="mf">1.</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
@@ -552,7 +562,7 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 
 
 <span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">a0</span> <span class="o">=</span> <span class="mf">1.</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
@@ -640,7 +650,7 @@ X_n\,e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 B_m= \sum_{n=-\infty}^{\infty}
 X_n\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \]</div>
-<p>Ker integriramo harmonsko funkcijo s frekvenco, ki je celi večkratnik osnovne frekvence <span class="math notranslate nohighlight">\(1/T_p\)</span>, je rezultat vedno 0 razen takrat, ko je <span class="math notranslate nohighlight">\(n=m\)</span>:</p>
+<p>Ker integriramo harmonsko funkcijo s frekvenco, ki je celi večkratnik osnovne frekvence <span class="math notranslate nohighlight">\(1/T_p\)</span>, je rezultat vedno 0, razen takrat, ko je <span class="math notranslate nohighlight">\(n=m\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t=
@@ -656,13 +666,13 @@ B_m = X_m\,T_p
 <p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznana kompleksna amplituda <span class="math notranslate nohighlight">\(X_m\)</span> definirana kot (kompleksna amplituda definira amplitudo in fazo):</p>
 <div class="math notranslate nohighlight">
 \[
-X_m = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t
+X_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t
 \]</div>
 <p>Izpeljali smo torej, da je posamezno harmonsko komponento relativno enostavno določiti; težava v praksi je, da dani podatki <span class="math notranslate nohighlight">\(x(t)\)</span> nujno ne izpolnjujejo vseh predpostavk, ki smo jih zgoraj naredili. Kljub temu, pa Fourierove vrste uporabljamo in nam dajejo odlične rezultate. Več si pogledamo v nadaljevanju.</p>
 </div>
 <div class="section" id="posplositev">
 <h2>Posplošitev<a class="headerlink" href="#posplositev" title="Permalink to this headline">¶</a></h2>
-<p>Za periodične podatke <span class="math notranslate nohighlight">\(x(t)\)</span> boste najpogosteje srečali dve definiciji Fourierjevih vrst: v eksponentni in sinus-kosinusni obliki. V tej knjigi bomo skoraj izključno uporabljali eksponentno obliko, saj je najbolj kompaktna, enostavna za uporabo in matematične izpeljave. Spodaj <span class="math notranslate nohighlight">\(T_p\)</span> predstavlja osnovno period in <span class="math notranslate nohighlight">\(N\)</span> število harmonskih komponent, ki jih upoštevamo (identificiramo).</p>
+<p>Fourierove vrste najpogosteje najdemo definirane v treh oblikah (<span class="math notranslate nohighlight">\(T_p\)</span> predstavlja osnovno period in <span class="math notranslate nohighlight">\(N\)</span> število harmonskih komponent, ki jih upoštevamo/identificiramo):</p>
 <div class="section" id="fourierove-vrste-v-eksponentni-kompleksni-obliki">
 <h3>Fourierove vrste v eksponentni (kompleksni) obliki<a class="headerlink" href="#fourierove-vrste-v-eksponentni-kompleksni-obliki" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
@@ -679,357 +689,88 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*
 <h3>Fourierove vrste v sinus-kosinusni obliki<a class="headerlink" href="#fourierove-vrste-v-sinus-kosinusni-obliki" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[
-a_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\cos(-2\pi\,n\,t/T_p)\,\mathrm{d}t
+a_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\cos(2\pi\,n\,t/T_p)\,\mathrm{d}t
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-b_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\sin(-2\pi\,n\,t/T_p)\,\mathrm{d}t
+b_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\sin(2\pi\,n\,t/T_p)\,\mathrm{d}t
 \]</div>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{N}
-a_n\,\sin(-2\pi\,n\,t/T_p)+
-b_n\,\cos(-2\pi\,n\,t/T_p)
+a_n\,\sin(2\pi\,n\,t/T_p)+
+b_n\,\cos(2\pi\,n\,t/T_p)
 \]</div>
-<div class="cell docutils container">
+</div>
+<div class="section" id="fourierove-vrste-v-amplitudno-fazni-obliki">
+<h3>Fourierove vrste v amplitudno-fazni obliki<a class="headerlink" href="#fourierove-vrste-v-amplitudno-fazni-obliki" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+x(t)=\frac{A_0}{2}+\sum_{n=1}^{N}
+A_n\,\cos(2\pi\,n\,t/T_p-\varphi_n)\]</div>
+<p>Kjer moramo amplitudo <span class="math notranslate nohighlight">\(A_n\)</span> in fazo <span class="math notranslate nohighlight">\(\varphi_n\)</span> določit s pomočjo eksponentne ali sinusno-kosinusne oblike in ob pomoči prehodov med posameznimi oblikami zapisov:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+X_0&amp;=A_0&amp;=a_0\\
+X_n&amp;=\frac{A_n}{2}\,e^{-\mathrm{i}\varphi_n}&amp;=\frac{1}{2}(a_n-\mathrm{i}b_n)\\
+X_n&amp;=X_{-n}^*\\
+\end{split}
+\end{split}\]</div>
+<p>V tej knjigi bomo skoraj izključno uporabljali eksponentno obliko, saj je najbolj kompaktna, enostavna za uporabo in matematične izpeljave.</p>
+</div>
+</div>
+<div class="section" id="nekateri-zgledi">
+<h2>Nekateri zgledi<a class="headerlink" href="#nekateri-zgledi" title="Permalink to this headline">¶</a></h2>
+<p>Najprej si bomo pogledali periodičo funkcijo, ki smo jo spoznali že zgoraj. Funkcija je definirana z <span class="math notranslate nohighlight">\(N=10\)</span> harmonskimi komponentami <span class="math notranslate nohighlight">\(X_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nas uporaba zgoraj definiranih enačb vodi v točno identifikacijo le-teh.</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.</span><span class="n">j</span><span class="o">*</span><span class="n">t</span><span class="p">)))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="n">j</span><span class="o">*</span><span class="n">t</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1f26dbcbd90&gt;]
-</pre></div>
-</div>
-<img alt="../_images/02 - Fourier series, integral and transform_25_1.png" src="../_images/02 - Fourier series, integral and transform_25_1.png" />
-</div>
-</div>
-<p>Zgoraj smo torej pisu ustreza vsota harmonskih funkcij:</p>
-<div class="math notranslate nohighlight">
-\[
-x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
-\left[
-a_n\cos\left(\frac{2\,\pi\,n\,t}{T_p} \right)
-+
-b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
-\right],
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+
+
+<span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">a0</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">rg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#skaliranje na koncu, da imajo višje komponente imajo manjšo amplitudo</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
 <span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="o">-</span><span class="mf">0.5</span><span class="n">j</span><span class="o">*</span><span class="n">b</span>
 <span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span>
 <span class="n">X</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="n">x1</span> <span class="o">=</span> <span class="n">a0</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="n">x1</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
-
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">2.</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.67910395+3.46944695e-18j, 0.62305295-1.56125113e-17j,
-       0.56648912-6.93889390e-18j, 0.50971393+1.73472348e-17j,
-       0.45302983+2.94902991e-17j, 0.39677026-3.98986399e-17j,
-       0.34132707-1.21430643e-17j, 0.2871709 +2.81892565e-17j,
-       0.23486097+1.75640752e-17j, 0.18504162+3.64291930e-17j])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
+    
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kompleksno periodična funkcija&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Definicija v kompleksni obliki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\python39\lib\site-packages\matplotlib\cbook\__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
-  return np.asarray(x, float)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1f26dd11400&gt;]
-</pre></div>
-</div>
-<img alt="../_images/02 - Fourier series, integral and transform_29_2.png" src="../_images/02 - Fourier series, integral and transform_29_2.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_28_0.png" src="../_images/02 - Fourier series, integral and transform_28_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.00000000e+000, 1.36953839e+000, 1.87563539e+000, 2.56875467e+000,
-       3.51800813e+000, 4.81804717e+000, 6.59850056e+000, 9.03689981e+000,
-       1.23763812e+001, 1.69499291e+001, 2.32135786e+001, 3.17918870e+001,
-       4.35402096e+001, 5.96299884e+001, 8.16655581e+001, 1.11844117e+002,
-       1.53174811e+002, 2.09778784e+002, 2.87300097e+002, 3.93468511e+002,
-       5.38870230e+002, 7.38003466e+002, 1.01072408e+003, 1.38422542e+003,
-       1.89574985e+003, 2.59630219e+003, 3.55573551e+003, 4.86971628e+003,
-       6.66926338e+003, 9.13381221e+003, 1.25091064e+004, 1.71317014e+004,
-       2.34625228e+004, 3.21328256e+004, 4.40071381e+004, 6.02694649e+004,
-       8.25413458e+004, 1.13043542e+005, 1.54817469e+005, 2.12028467e+005,
-       2.90381125e+005, 3.97688098e+005, 5.44649116e+005, 7.45917871e+005,
-       1.02156316e+006, 1.39906996e+006, 1.91608002e+006, 2.62414513e+006,
-       3.59386749e+006, 4.92193949e+006, 6.74078507e+006, 9.23176391e+006,
-       1.26432550e+007, 1.73154231e+007, 2.37141366e+007, 3.24774204e+007,
-       4.44790740e+007, 6.09157993e+007, 8.34265254e+007, 1.14255829e+008,
-       1.56477744e+008, 2.14302277e+008, 2.93495195e+008, 4.01952935e+008,
-       5.50489974e+008, 7.53917152e+008, 1.03251848e+009, 1.41407369e+009,
-       1.93662820e+009, 2.65228667e+009, 3.63240840e+009, 4.97472274e+009,
-       6.81307376e+009, 9.33076605e+009, 1.27788423e+010, 1.75011150e+010,
-       2.39684489e+010, 3.28257108e+010, 4.49560710e+010, 6.15690649e+010,
-       8.43211979e+010, 1.15481117e+011, 1.58155823e+011, 2.16600471e+011,
-       2.96642659e+011, 4.06263509e+011, 5.56393471e+011, 7.62002217e+011,
-       1.04359129e+012, 1.42923833e+012, 1.95739675e+012, 2.68072999e+012,
-       3.67136263e+012, 5.02807205e+012, 6.88613768e+012, 9.43082989e+012,
-       1.29158836e+013, 1.76887983e+013, 2.42254883e+013, 3.31777362e+013,
-       4.54381833e+013, 6.22293363e+013, 8.52254648e+013, 1.16719546e+014,
-       1.59851898e+014, 2.18923311e+014, 2.99823878e+014, 4.10620310e+014,
-       5.62360277e+014, 7.70173986e+014, 1.05478284e+015, 1.44456559e+015,
-       1.97838802e+015, 2.70947834e+015, 3.71073460e+015, 5.08199348e+015,
-       6.95998515e+015, 9.53196683e+015, 1.30543945e+016, 1.78784944e+016,
-       2.44852843e+016, 3.35335368e+016, 4.59254659e+016, 6.28966884e+016,
-       8.61394292e+016, 1.17971255e+017, 1.61566162e+017, 2.21271061e+017,
-       3.03039212e+017, 4.15023834e+017, 5.68391071e+017, 7.78433391e+017,
-       1.06609441e+018, 1.46005722e+018, 1.99960441e+018, 2.73853500e+018,
-       3.75052880e+018, 5.13649316e+018, 7.03462456e+018, 9.63418837e+018,
-       1.31943908e+019, 1.80702247e+019, 2.47478664e+019, 3.38931530e+019,
-       4.64179741e+019, 6.35711973e+019, 8.70631950e+019, 1.19236388e+020,
-       1.63298810e+020, 2.23643989e+020, 3.06289028e+020, 4.19474581e+020,
-       5.74486541e+020, 7.86781370e+020, 1.07752729e+021, 1.47571498e+021,
-       2.02104832e+021, 2.76790325e+021, 3.79074976e+021, 5.19157731e+021,
-       7.11006441e+021, 9.73750614e+021, 1.33358885e+022, 1.82640112e+022,
-       2.50132644e+022, 3.42566257e+022, 4.69157640e+022, 6.42529397e+022,
-       8.79968674e+022, 1.20515088e+023, 1.65050039e+023, 2.26042364e+023,
-       3.09573694e+023, 4.23973058e+023, 5.80647378e+023, 7.95218873e+023,
-       1.08908277e+024, 1.49154066e+024, 2.04272219e+024, 2.79758646e+024,
-       3.83140205e+024, 5.24725218e+024, 7.18631328e+024, 9.84193190e+024,
-       1.34789035e+025, 1.84598758e+025, 2.52815085e+025, 3.46239964e+025,
-       4.74188922e+025, 6.49419931e+025, 8.89405525e+025, 1.21807501e+026,
-       1.66820048e+026, 2.28466460e+026, 3.12893586e+026, 4.28519778e+026,
-       5.86874285e+026, 8.03746861e+026, 1.10076218e+027, 1.50753606e+027,
-       2.06462850e+027, 2.82758799e+027, 3.87249029e+027, 5.30352411e+027,
-       7.26337985e+027, 9.94747753e+027, 1.36234523e+028, 1.86578409e+028,
-       2.55526294e+028, 3.49953068e+028, 4.79274160e+028, 6.56384360e+028,
-       8.98943577e+028, 1.23113774e+029, 1.68609039e+029, 2.30916551e+029,
-       3.16249081e+029, 4.33115256e+029, 5.93167969e+029, 8.12366304e+029,
-       1.11256684e+030, 1.52370299e+030, 2.08676974e+030, 2.85791126e+030,
-       3.91401918e+030, 5.36039951e+030, 7.34127289e+030, 1.00541550e+031,
-       1.37695513e+031, 1.88579290e+031, 2.58266577e+031, 3.53705991e+031,
-       4.84413933e+031, 6.63423476e+031, 9.08583917e+031, 1.24434055e+032,
-       1.70417215e+032, 2.33392918e+032, 3.19640560e+032, 4.37760017e+032,
-       5.99529148e+032, 8.21078182e+032, 1.12449809e+033, 1.54004330e+033,
-       2.10914841e+033, 2.88855972e+033, 3.95599342e+033, 5.41788484e+033,
-       7.42000126e+033, 1.01619766e+034, 1.39172170e+034, 1.90601629e+034,
-       2.61036247e+034, 3.57499161e+034, 4.89608825e+034, 6.70538080e+034,
-       9.18327640e+034, 1.25768495e+035, 1.72244782e+035, 2.35895841e+035,
-       3.23068410e+035, 4.42454589e+035, 6.05958544e+035, 8.29883487e+035,
-       1.13655729e+036, 1.55655884e+036, 2.13176708e+036, 2.91953685e+036,
-       3.99841779e+036, 5.47598665e+036, 7.49957392e+036, 1.02709544e+037,
-       1.40664663e+037, 1.92645655e+037, 2.63835620e+037, 3.61333010e+037,
-       4.94859427e+037, 6.77728981e+037, 9.28175856e+037, 1.27117246e+038,
-       1.74091949e+038, 2.38425606e+038, 3.26533020e+038, 4.47199506e+038,
-       6.12456890e+038, 8.38783221e+038, 1.14874582e+039, 1.57325150e+039,
-       2.15462832e+039, 2.95084619e+039, 4.04129713e+039, 5.53471155e+039,
-       7.57999993e+039, 1.03811009e+040, 1.42173161e+040, 1.94711602e+040,
-       2.66665013e+040, 3.65207972e+040, 5.00166337e+040, 6.84996999e+040,
-       9.38129684e+040, 1.28480461e+041, 1.75958924e+041, 2.40982501e+041,
-       3.30034785e+041, 4.51995308e+041, 6.19024924e+041, 8.47778396e+041,
-       1.16106506e+042, 1.59012317e+042, 2.17773471e+042, 2.98249129e+042,
-       4.08463631e+042, 5.59406622e+042, 7.66128842e+042, 1.04924286e+043,
-       1.43697837e+043, 1.96799704e+043, 2.69524749e+043, 3.69124490e+043,
-       5.05530159e+043, 6.92342959e+043, 9.48190259e+043, 1.29858296e+044,
-       1.77845921e+044, 2.43566815e+044, 3.33574104e+044, 4.56842540e+044,
-       6.25663395e+044, 8.56870036e+044, 1.17351641e+045, 1.60717577e+045,
-       2.20108891e+045, 3.01447575e+045, 4.12844026e+045, 5.65405741e+045,
-       7.74344866e+045, 1.06049502e+046, 1.45238864e+046, 1.98910199e+046,
-       2.72415153e+046, 3.73083010e+046, 5.10951503e+046, 6.99767697e+046,
-       9.58358723e+046, 1.31250906e+047, 1.79753154e+047, 2.46178845e+047,
-       3.37151378e+047, 4.61741754e+047, 6.32373057e+047, 8.66059176e+047,
-       1.18610129e+048, 1.62441124e+048, 2.22469355e+048, 3.04680322e+048,
-       4.17271397e+048, 5.71469195e+048, 7.82649000e+048, 1.07186785e+049,
-       1.46796416e+049, 2.01043327e+049, 2.75336554e+049, 3.77083980e+049,
-       5.16430986e+049, 7.07272059e+049, 9.68636235e+049, 1.32658451e+050,
-       1.81680841e+050, 2.48818885e+050, 3.40767015e+050, 4.66693508e+050,
-       6.39154674e+050, 8.75346861e+050, 1.19882113e+051, 1.64183155e+051,
-       2.24855134e+051, 3.07947737e+051, 4.21746247e+051, 5.77597675e+051,
-       7.91042187e+051, 1.08336264e+052, 1.48370672e+052, 2.03199331e+052,
-       2.78289284e+052, 3.81127858e+052, 5.21969231e+052, 7.14856899e+052,
-       9.79023964e+052, 1.34081090e+053, 1.83629200e+053, 2.51487238e+053,
-       3.44421426e+053, 4.71698364e+053, 6.46009017e+053, 8.84734147e+053,
-       1.21167738e+054, 1.65943868e+054, 2.27266497e+054, 3.11250192e+054,
-       4.26269086e+054, 5.83791876e+054, 7.99525384e+054, 1.09498070e+055,
-       1.49961811e+055, 2.05378456e+055, 2.81273680e+055, 3.85215102e+055,
-       5.27566869e+055, 7.22523079e+055, 9.89523092e+055, 1.35518986e+056,
-       1.85598453e+056, 2.54184206e+056, 3.48115028e+056, 4.76756894e+056,
-       6.52936867e+056, 8.94222103e+056, 1.22467150e+057, 1.67723463e+057,
-       2.29703720e+057, 3.14588063e+057, 4.30840428e+057, 5.90052505e+057,
-       8.08099555e+057, 1.10672336e+058, 1.51570013e+058, 2.07580951e+058,
-       2.84290080e+058, 3.89346178e+058, 5.33224536e+058, 7.30271471e+058,
-       1.00013481e+059, 1.36972302e+059, 1.87588825e+059, 2.56910097e+059,
-       3.51848240e+059, 4.81869671e+059, 6.59939012e+059, 9.03811810e+059,
-       1.23780497e+060, 1.69522142e+060, 2.32167081e+060, 3.17961729e+060,
-       4.35460794e+060, 5.96380273e+060, 8.16765677e+060, 1.11859195e+061,
-       1.53195461e+061, 2.09807065e+061, 2.87338829e+061, 3.93521556e+061,
-       5.38942877e+061, 7.38102958e+061, 1.01086033e+062, 1.38441203e+062,
-       1.89600542e+062, 2.59665221e+062, 3.55621487e+062, 4.87037278e+062,
-       6.67016248e+062, 9.13504356e+062, 1.25107928e+063, 1.71340110e+063,
-       2.34656858e+063, 3.21371575e+063, 4.40130708e+063, 6.02775900e+063,
-       8.25524734e+063, 1.13058781e+064, 1.54838341e+064, 2.12057052e+064,
-       2.90420272e+064, 3.97741711e+064, 5.44722541e+064, 7.46018431e+064,
-       1.02170088e+065, 1.39925857e+065, 1.91633833e+065, 2.62449890e+065,
-       3.59435199e+065, 4.92260303e+065, 6.74169381e+065, 9.23300847e+065,
-       1.26449595e+066, 1.73177575e+066, 2.37173336e+066, 3.24817988e+066,
-       4.44850704e+066, 6.09240115e+066, 8.34377724e+066, 1.14271232e+067,
-       1.56498839e+067, 2.14331168e+067, 2.93534761e+067, 4.02007124e+067,
-       5.50564188e+067, 7.54018789e+067, 1.03265768e+068, 1.41426433e+068,
-       1.93688929e+068, 2.65264423e+068, 3.63289810e+068, 4.97539340e+068,
-       6.81399225e+068, 9.33202395e+068, 1.27805650e+069, 1.75034744e+069,
-       2.39716801e+069, 3.28301361e+069, 4.49621316e+069, 6.15773652e+069,
-       8.43325654e+069, 1.15496686e+070, 1.58177145e+070, 2.16629671e+070,
-       2.96682651e+070, 4.06318279e+070, 5.56468480e+070, 7.62104944e+070,
-       1.04373198e+071, 1.42943101e+071, 1.95766063e+071, 2.68109139e+071,
-       3.67185757e+071, 5.02874990e+071, 6.88706602e+071, 9.43210129e+071,
-       1.29176248e+072, 1.76911830e+072, 2.42287542e+072, 3.31822090e+072,
-       4.54443090e+072, 6.22377256e+072, 8.52369543e+072, 1.16735281e+073,
-       1.59873448e+073, 2.18952824e+073, 2.99864298e+073, 4.10675667e+073,
-       5.62436090e+073, 7.70277816e+073, 1.05492504e+074, 1.44476033e+074,
-       1.97865474e+074, 2.70984362e+074, 3.71123485e+074, 5.08267859e+074,
-       6.96092344e+074, 9.53325186e+074, 1.30561544e+075, 1.78809046e+075,
-       2.44885852e+075, 3.35380575e+075, 4.59316572e+075, 6.29051677e+075,
-       8.61510419e+075, 1.17987159e+076, 1.61587943e+076, 2.21300891e+076,
-       3.03080066e+076, 4.15079784e+076, 5.68467698e+076, 7.78538334e+076,
-       1.06623813e+077, 1.46025405e+077, 1.99987398e+077, 2.73890419e+077,
-       3.75103442e+077, 5.13718563e+077, 7.03557292e+077, 9.63548718e+077,
-       1.31961696e+078, 1.80726608e+078, 2.47512027e+078, 3.38977222e+078,
-       4.64242318e+078, 6.35797675e+078, 8.70749322e+078, 1.19252462e+079,
-       1.63320825e+079, 2.23674139e+079, 3.06330319e+079, 4.19531131e+079,
-       5.74563989e+079, 7.86887438e+079, 1.07767255e+080, 1.47591393e+080,
-       2.02132078e+080, 2.76827640e+080, 3.79126080e+080, 5.19227720e+080,
-       7.11102294e+080, 9.73881888e+080, 1.33376863e+081, 1.82664734e+081,
-       2.50166365e+081, 3.42612440e+081, 4.69220888e+081, 6.42616018e+081,
-       8.80087305e+081, 1.20531335e+082, 1.65072290e+082, 2.26072837e+082,
-       3.09615429e+082, 4.24030215e+082, 5.80725657e+082, 7.95326079e+082,
-       1.08922960e+083, 1.49174174e+083, 2.04299758e+083, 2.79796361e+083,
-       3.83191857e+083, 5.24795957e+083, 7.18728209e+083, 9.84325872e+083,
-       1.34807207e+084, 1.84623644e+084, 2.52849168e+084, 3.46286642e+084,
-       4.74252849e+084, 6.49507481e+084, 8.89525428e+084, 1.21823922e+085,
-       1.66842538e+085, 2.28497260e+085, 3.12935768e+085, 4.28577547e+085,
-       5.86953403e+085, 8.03855217e+085, 1.10091058e+086, 1.50773930e+086,
-       2.06490684e+086, 2.82796919e+086, 3.87301236e+086, 5.30423909e+086,
-       7.26435905e+086, 9.94881858e+086, 1.36252889e+087, 1.86603562e+087,
-       2.55560742e+087, 3.50000246e+087, 4.79338772e+087, 6.56472849e+087,
-       8.99064766e+087, 1.23130371e+088, 1.68631770e+088, 2.30947682e+088,
-       3.16291716e+088, 4.33173646e+088, 5.93247936e+088, 8.12475821e+088,
-       1.11271683e+089, 1.52390841e+089, 2.08705106e+089, 2.85829654e+089,
-       3.91454684e+089, 5.36112216e+089, 7.34226259e+089, 1.00555105e+090,
-       1.37714076e+090, 1.88604713e+090, 2.58301395e+090, 3.53753675e+090,
-       4.84479238e+090, 6.63512914e+090, 9.08706406e+090, 1.24450830e+091,
-       1.70440190e+091, 2.33424382e+091, 3.19683652e+091, 4.37819033e+091,
-       5.99609972e+091, 8.21188874e+091, 1.12464969e+092, 1.54025092e+092,
-       2.10943275e+092, 2.88894913e+092, 3.95652673e+092, 5.41861524e+092,
-       7.42100158e+092, 1.01633465e+093, 1.39190932e+093, 1.90627325e+093,
-       2.61071439e+093, 3.57547357e+093, 4.89674830e+093, 6.70628477e+093,
-       9.18451442e+093, 1.25785451e+094, 1.72268003e+094, 2.35927643e+094,
-       3.23111964e+094, 4.42514238e+094, 6.06040235e+094, 8.29995366e+094,
-       1.13671051e+095, 1.55676868e+095, 2.13205447e+095, 2.91993044e+095,
-       3.99895683e+095, 5.47672488e+095, 7.50058496e+095, 1.02723390e+096,
-       1.40683626e+096, 1.92671626e+096, 2.63871189e+096, 3.61381722e+096,
-       4.94926140e+096, 6.77820348e+096, 9.28300986e+096, 1.27134383e+097,
-       1.74115418e+097, 2.38457749e+097, 3.26577041e+097, 4.47259794e+097,
-       6.12539457e+097, 8.38896300e+097, 1.14890068e+098, 1.57346359e+098,
-       2.15491879e+098, 2.95124400e+098, 4.04184195e+098, 5.53545770e+098,
-       7.58102181e+098, 1.03825004e+099, 1.42192328e+099, 1.94737852e+099,
-       2.66700963e+099, 3.65257207e+099, 5.00233766e+099, 6.85089345e+099,
-       9.38256156e+099, 1.28497782e+100, 1.75982645e+100, 2.41014988e+100,
-       3.30079278e+100, 4.52056242e+100, 6.19108377e+100, 8.47892688e+100,
-       1.16122158e+101, 1.59033753e+101, 2.17802830e+101, 2.98289337e+101,
-       4.08518697e+101, 5.59482037e+101, 7.66232126e+101, 1.04938431e+102,
-       1.43717210e+102, 1.96826235e+102, 2.69561085e+102, 3.69174253e+102,
-       5.05598311e+102, 6.92436295e+102, 9.48318087e+102, 1.29875802e+103,
-       1.77869897e+103, 2.43599651e+103, 3.33619074e+103, 4.56904128e+103,
-       6.25747742e+103, 8.56985553e+103, 1.17367461e+104, 1.60739244e+104,
-       2.20138564e+104, 3.01488214e+104, 4.12899682e+104, 5.65481965e+104,
-       7.74449258e+104, 1.06063799e+105, 1.45258444e+105, 1.98937015e+105,
-       2.72451878e+105, 3.73133306e+105, 5.11020386e+105, 6.99862035e+105,
-       9.58487922e+105, 1.31268600e+106, 1.79777387e+106, 2.46212033e+106,
-       3.37196830e+106, 4.61804003e+106, 6.32458309e+106, 8.66175932e+106,
-       1.18626119e+107, 1.62463023e+107, 2.22499347e+107, 3.04721397e+107,
-       4.17327650e+107, 5.71546237e+107, 7.82754511e+107, 1.07201235e+108,
-       1.46816206e+108, 2.01070431e+108, 2.75373673e+108, 3.77134816e+108,
-       5.16500607e+108, 7.07367409e+108, 9.68766820e+108, 1.32676335e+109,
-       1.81705333e+109, 2.48852429e+109, 3.40812955e+109, 4.66756424e+109,
-       6.39240840e+109, 8.75464869e+109, 1.19898274e+110, 1.64205289e+110,
-       2.24885447e+110, 3.07989252e+110, 4.21803104e+110, 5.77675542e+110,
-       7.91148830e+110, 1.08350869e+111, 1.48390675e+111, 2.03226725e+111,
-       2.78326801e+111, 3.81179239e+111, 5.22039599e+111, 7.14953271e+111,
-       9.79155949e+111, 1.34099166e+112, 1.83653955e+112, 2.51521142e+112,
-       3.44467859e+112, 4.71761955e+112, 6.46096107e+112, 8.84853421e+112,
-       1.21184073e+113, 1.65966239e+113, 2.27297136e+113, 3.11292152e+113,
-       4.26326552e+113, 5.83870579e+113, 7.99633170e+113, 1.09512832e+114,
-       1.49982028e+114, 2.05406144e+114, 2.81311599e+114, 3.85267034e+114,
-       5.27637992e+114, 7.22620484e+114, 9.89656492e+114, 1.35537256e+115,
-       1.85623474e+115, 2.54218474e+115, 3.48161958e+115, 4.76821167e+115,
-       6.53024891e+115, 8.94342656e+115, 1.22483660e+116, 1.67746074e+116,
-       2.29734687e+116, 3.14630473e+116, 4.30898511e+116, 5.90132051e+116,
-       8.08208497e+116, 1.10687256e+117, 1.51590446e+117, 2.07608935e+117,
-       2.84328406e+117, 3.89398667e+117, 5.33296422e+117, 7.30369921e+117,
-       1.00026964e+118, 1.36990767e+118, 1.87614115e+118, 2.56944732e+118,
-       3.51895674e+118, 4.81934633e+118, 6.60027980e+118, 9.03933655e+118,
-       1.23797184e+119, 1.69544996e+119, 2.32198380e+119, 3.18004594e+119,
-       4.35519499e+119, 5.96460672e+119, 8.16875787e+119, 1.11874275e+120,
-       1.53216114e+120, 2.09835349e+120, 2.87377566e+120, 3.93574608e+120,
-       5.39015533e+120, 7.38202464e+120, 1.01099661e+121, 1.38459867e+121,
-       1.89626103e+121, 2.59700227e+121, 3.55669430e+121, 4.87102937e+121,
-       6.67106170e+121, 9.13627508e+121, 1.25124794e+122, 1.71363209e+122,
-       2.34688493e+122, 3.21414900e+122, 4.40190044e+122, 6.02857162e+122,
-       8.25636025e+122, 1.13074023e+123, 1.54859215e+123, 2.12085640e+123,
-       2.90459425e+123, 3.97795332e+123, 5.44795977e+123, 7.46119004e+123,
-       1.02183862e+124, 1.39944721e+124, 1.91659667e+124, 2.62485272e+124,
-       3.59483656e+124, 4.92326666e+124, 6.74260268e+124, 9.23425319e+124,
-       1.26466642e+125, 1.73200921e+125, 2.37205310e+125, 3.24861778e+125,
-       4.44910675e+125, 6.09322248e+125, 8.34490209e+125, 1.14286637e+126,
-       1.56519937e+126, 2.14360062e+126, 2.93574334e+126, 4.02061319e+126,
-       5.50638411e+126, 7.54120441e+126, 1.03279689e+127, 1.41445499e+127,
-       1.93715040e+127, 2.65300184e+127, 3.63338786e+127, 4.97606415e+127,
-       6.81491086e+127, 9.33328203e+127, 1.27822880e+128, 1.75058341e+128,
-       2.39749118e+128, 3.28345620e+128, 4.49681931e+128, 6.15856667e+128,
-       8.43439346e+128, 1.15512256e+129, 1.58198469e+129, 2.16658876e+129,
-       2.96722647e+129, 4.06373056e+129, 5.56543499e+129, 7.62207686e+129,
-       1.04387268e+130, 1.42962371e+130, 1.95792455e+130, 2.68145283e+130,
-       3.67235259e+130, 5.02942784e+130, 6.88799449e+130, 9.43337286e+130,
-       1.29193662e+131, 1.76935680e+131, 2.42320206e+131, 3.31866824e+131,
-       4.54504354e+131, 6.22461160e+131, 8.52484453e+131, 1.16751018e+132,
-       1.59895001e+132, 2.18982342e+132, 2.99904724e+132, 4.10731031e+132,
-       5.62511914e+132, 7.70381659e+132, 1.05506725e+133, 1.44495511e+133,
-       1.97892148e+133, 2.71020894e+133, 3.71173518e+133, 5.08336381e+133,
-       6.96186186e+133, 9.53453707e+133, 1.30579145e+134, 1.78833152e+134,
-       2.44918866e+134, 3.35425789e+134, 4.59378494e+134, 6.29136481e+134,
-       8.61626562e+134, 1.18003065e+135, 1.61609727e+135, 2.21330725e+135,
-       3.03120925e+135, 4.15135742e+135, 5.68544335e+135, 7.78643291e+135,
-       1.06638188e+136, 1.46045091e+136, 2.00014359e+136, 2.73927342e+136])
-</pre></div>
-</div>
-</div>
-</div>
+<p>V primeru zgoraj je kompleksni vektor:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span>
@@ -1052,41 +793,38 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 </div>
 </div>
 </div>
-<p>Lahko Teorija (Fourierjeva transformacija - Fourierjev integral):</p>
+<p>Opazimo, da je kompleksno konjugiran okoli središčnega elementa. Poljubni element lahko dobimo tako, da sledimo definiciji:</p>
 <div class="math notranslate nohighlight">
 \[
-x(t)=\sum_{n=-\infty}^{\infty}
-c_n\,e^{j\,2\,\pi\,n\,t/T_p}
+X_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
 \]</div>
-<div class="math notranslate nohighlight">
-\[
-c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
-\]</div>
-<p>,\qquad \textrm{kjer je: } \alpha=2,\pi,n,t/T_p</p>
+<p>kar je v numerični implementaciji:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">sel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">&lt;=</span><span class="n">Tp</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.06286511054669663+0.3116372312686761j)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pri tem smo pazili, da smo izbrali (<code class="docutils literal notranslate"><span class="pre">sel</span></code>) samo eno periodo v časovni vrsti. Tukaj velja poudariti, da moramo integrirati po celotni periodi. Rezultat je <strong>točen</strong> do nivoja natančnosti zapisa v računalnik.</p>
+<p>Tukaj je vredno opozoriti, da moramo biti zelo natančni pri implementaciji izpeljanih izrazov. Hitro lahko dobimo <em>zelo dober</em> rezultat; vendar dokler ni <em>točen</em> do nivoja natančnosti zapisa v računalnik, do takrat je nekje napaka.</p>
+<p>Napako bi lahko naredili, če bi naša diskretizacija bila takšna, da ne bi ključevala točke pri 0s in točke pri <span class="math notranslate nohighlight">\(T_p\)</span>. Tako napako lahko preikusite tako, greste par vrstic navzgor v definicijo slike in vrstico:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>spremenite v (301 v 300):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>, ki imajo glede na Fourierove vrste srečamo v treh oblikah:
 <a class="reference external" href="https://www.youtube.com/watch?v=r6sGWTCMz2k">https://www.youtube.com/watch?v=r6sGWTCMz2k</a></p>
-<p><strong>Kosinus - sinusna oblika</strong></p>
-<div class="math notranslate nohighlight">
-\[
-x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
-\left[
-a_n\cos\left(\frac{2\,\pi\,n\,t}{T_p} \right)
-+
-b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
-\right],
-\]</div>
-<p>kjer je statična komponenta:
-$<span class="math notranslate nohighlight">\(
-a_0=\frac{2}{T_p}\int_0^{T_p}x(t)\,dt,
-\)</span>$</p>
-<p>kosinusna komponentna:
-$<span class="math notranslate nohighlight">\(
-a_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\cos\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,dt
-\)</span>$</p>
-<p>in sinusna komponenta:
-$<span class="math notranslate nohighlight">\(
-b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,dt.
-\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1111,7 +849,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_37_0.png" src="../_images/02 - Fourier series, integral and transform_37_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_36_0.png" src="../_images/02 - Fourier series, integral and transform_36_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1135,7 +873,6 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.818594853651364
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1245,7 +982,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_46_0.png" src="../_images/02 - Fourier series, integral and transform_46_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_45_0.png" src="../_images/02 - Fourier series, integral and transform_45_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1265,7 +1002,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_47_0.png" src="../_images/02 - Fourier series, integral and transform_47_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_46_0.png" src="../_images/02 - Fourier series, integral and transform_46_0.png" />
 </div>
 </div>
 <div class="section" id="narascajoca-zaga">
@@ -1281,7 +1018,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_49_0.png" src="../_images/02 - Fourier series, integral and transform_49_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_48_0.png" src="../_images/02 - Fourier series, integral and transform_48_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1293,7 +1030,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_50_0.png" src="../_images/02 - Fourier series, integral and transform_50_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_49_0.png" src="../_images/02 - Fourier series, integral and transform_49_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1305,7 +1042,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_51_0.png" src="../_images/02 - Fourier series, integral and transform_51_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_50_0.png" src="../_images/02 - Fourier series, integral and transform_50_0.png" />
 </div>
 </div>
 </div>
@@ -1325,7 +1062,7 @@ b_n=\frac{2}{T_p}\int_0^{T_p}x(t)\,\sin\left(\frac{2\,\pi\,n\,t}{T_p}\right) \,d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_53_0.png" src="../_images/02 - Fourier series, integral and transform_53_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_52_0.png" src="../_images/02 - Fourier series, integral and transform_52_0.png" />
 </div>
 </div>
 <p>Teorija (Fourierjeva transformacija - Fourierjev integral):</p>
@@ -1372,10 +1109,10 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1f26dc5f250&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x25ee485ac10&gt;]
 </pre></div>
 </div>
-<img alt="../_images/02 - Fourier series, integral and transform_57_1.png" src="../_images/02 - Fourier series, integral and transform_57_1.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_56_1.png" src="../_images/02 - Fourier series, integral and transform_56_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1441,7 +1178,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_63_0.png" src="../_images/02 - Fourier series, integral and transform_63_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_62_0.png" src="../_images/02 - Fourier series, integral and transform_62_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1467,7 +1204,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_65_0.png" src="../_images/02 - Fourier series, integral and transform_65_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_64_0.png" src="../_images/02 - Fourier series, integral and transform_64_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1478,7 +1215,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_66_0.png" src="../_images/02 - Fourier series, integral and transform_66_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_65_0.png" src="../_images/02 - Fourier series, integral and transform_65_0.png" />
 </div>
 </div>
 </div>
@@ -1497,7 +1234,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_68_0.png" src="../_images/02 - Fourier series, integral and transform_68_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_67_0.png" src="../_images/02 - Fourier series, integral and transform_67_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1509,7 +1246,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_69_0.png" src="../_images/02 - Fourier series, integral and transform_69_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_68_0.png" src="../_images/02 - Fourier series, integral and transform_68_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1519,7 +1256,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_70_0.png" src="../_images/02 - Fourier series, integral and transform_70_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_69_0.png" src="../_images/02 - Fourier series, integral and transform_69_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1531,7 +1268,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_71_0.png" src="../_images/02 - Fourier series, integral and transform_71_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_70_0.png" src="../_images/02 - Fourier series, integral and transform_70_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1599,7 +1336,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_77_0.png" src="../_images/02 - Fourier series, integral and transform_77_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_76_0.png" src="../_images/02 - Fourier series, integral and transform_76_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1610,7 +1347,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_78_0.png" src="../_images/02 - Fourier series, integral and transform_78_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_77_0.png" src="../_images/02 - Fourier series, integral and transform_77_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1620,8 +1357,8 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.04870971, 0.04853183, 0.04958609, 0.04978484, 0.04958609,
-       0.04853183, 0.04870971])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.04749891, 0.04948412, 0.04923961, 0.0524492 , 0.04923961,
+       0.04948412, 0.04749891])
 </pre></div>
 </div>
 </div>
@@ -1644,7 +1381,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_81_0.png" src="../_images/02 - Fourier series, integral and transform_81_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_80_0.png" src="../_images/02 - Fourier series, integral and transform_80_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1655,7 +1392,7 @@ c_n=\frac{1}{T_p}\int_{-T_p/2}^{T_p/2}x(t)\,\,e^{-j\,2\,\pi\,n\,t/T_p} \,dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourier series, integral and transform_82_0.png" src="../_images/02 - Fourier series, integral and transform_82_0.png" />
+<img alt="../_images/02 - Fourier series, integral and transform_81_0.png" src="../_images/02 - Fourier series, integral and transform_81_0.png" />
 </div>
 </div>
 </div>
