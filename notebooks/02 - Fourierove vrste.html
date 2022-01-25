@@ -709,10 +709,11 @@ c_n\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
     T_p,&amp; \text{če } n= m\\
 \end{cases}
 \end{split}\]</div>
-<p>Sledi torej:
-$<span class="math notranslate nohighlight">\(
+<p>Sledi torej:</p>
+<div class="math notranslate nohighlight">
+\[
 B_m = c_m\,T_p
-\)</span>$</p>
+\]</div>
 <p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznan Fourierov koeficient <span class="math notranslate nohighlight">\(c_m\)</span> definirana kot (kompleksno število definira amplitudo in fazo):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1455,11 +1456,12 @@ u(t)=
 \frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
 \frac{1}{T_p}\int_0^{T_p}\sum_{n=-\infty}^{\infty}c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p}\,\sum_{m=-\infty}^{\infty}c_m^*\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\textrm{d}t
 \]</div>
-<p>kar poenostavimo v:
-$<span class="math notranslate nohighlight">\(
+<p>kar poenostavimo v:</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
 \frac{1}{T_p}\sum_{n=-\infty}^{\infty}\,\sum_{m=-\infty}^{\infty}c_n\,c_m^*\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t
-\)</span>$</p>
+\]</div>
 <p>Ker je integral harmonske funkcije na zaključeni periodi vedno nič razen, ko je frekvenca 0, je podintegralska funkcija enaka 1 in integral <span class="math notranslate nohighlight">\(T_p\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1469,12 +1471,13 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 0,&amp;\textrm{sicer.}\\
 \end{cases}
 \end{split}\]</div>
-<p>Sledi <strong>Parsevalov teorem</strong> ali tudi Parsevalova enakost:
-$<span class="math notranslate nohighlight">\(
+<p>Sledi <strong>Parsevalov teorem</strong> ali tudi Parsevalova enakost:</p>
+<div class="math notranslate nohighlight">
+\[
 \frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
 \sum_{n=-\infty}^{\infty}c_n\,c_n^*,
-\)</span>$
-ki poveže povprečno moč v času s močjo v frekvenčni domeni.</p>
+\]</div>
+<p>ki poveže povprečno moč v času s močjo v frekvenčni domeni.</p>
 <p>Poglejmo si konkreten zgled:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1582,11 +1585,12 @@ c_n &amp;= \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\m
 \[
 X_n= \sum_{i=0}^{N-1} x_i\,e^{-\mathrm{i}\,2\pi\,n\,i/N}
 \]</div>
-<p>imenujemo <strong>diskretna Fourierova transoformacija</strong> (DFT), in izraz:
-$<span class="math notranslate nohighlight">\(
+<p>imenujemo <strong>diskretna Fourierova transoformacija</strong> (DFT), in izraz:</p>
+<div class="math notranslate nohighlight">
+\[
 x_i=\frac{1}{N} \sum_{n=0}^{N-1} X_n\,e^{\mathrm{i}\,2\pi\,n\,i/N}
-\)</span>$
-<strong>inverzna diskretna Fourierova transoformacija</strong> (IDFT).</p>
+\]</div>
+<p><strong>inverzna diskretna Fourierova transoformacija</strong> (IDFT).</p>
 <p>Poudarti je treba, da v splošnem <span class="math notranslate nohighlight">\(X_n/N\ne c_n\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_n\)</span> periodična vrsta: <span class="math notranslate nohighlight">\(X_n=X_{n+k\,N}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> poljubno celo število.</p>
 </div>
 </div>
