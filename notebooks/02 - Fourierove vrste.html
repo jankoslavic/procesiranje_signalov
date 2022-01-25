@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Discrete Fourier transform" href="03%20-%20Discrete%20Fourier%20transform.html" />
+    <link rel="next" title="Fourierova integralska transformacija in zvezni linearni sistemi" href="03%20-%20Fourierova%20integralska%20transformacija%20in%20zvezni%20linearni%20sistemi.html" />
     <link rel="prev" title="Uvod v procesiranje signalov" href="01%20-%20Uvod.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -110,7 +110,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03%20-%20Discrete%20Fourier%20transform.html">
+  <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija%20in%20zvezni%20linearni%20sistemi.html">
+   Fourierova integralska transformacija in zvezni linearni sistemi
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03%20-%20Diskretna%20Fourierova%20transformacija.html">
    Discrete Fourier transform
   </a>
  </li>
@@ -278,6 +283,23 @@
      Fourierove vrste v amplitudno-fazni obliki
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nekatere-lastnosti-fourierovih-vrst">
+     Nekatere lastnosti Fourierovih vrst
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#odvodi-in-integrali-fourierovih-vrst">
+       Odvodi in integrali Fourierovih vrst
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fourirove-vrste-lihih-in-sodih-funkcij">
+       Fourirove vrste lihih in sodih funkcij
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -291,6 +313,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#odvod-integral-kompleksno-periodicne-funkcije">
+     Odvod / Integral kompleksno periodične funkcije
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#periodicna-funkcija">
      Periodična funkcija
     </a>
@@ -298,6 +325,45 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#analiticna-obravnava-periodicne-funkcije">
      Analitična obravnava periodične funkcije
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourierove-vrste-in-diracova-delta-funkcija">
+   Fourierove vrste in Diracova delta funkcija
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diracova-delta-funkcija">
+     Diracova delta funkcija
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#amplitudni-in-fazni-spekter">
+   Amplitudni in fazni spekter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parsevalov-teorem-in-mocnostni-spekter">
+   Parsevalov teorem in močnostni spekter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsevalov-teorem">
+     Parsevalov teorem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mocnostni-spekter">
+     Močnostni spekter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fourierove-vrste-in-diskretna-fourierova-transformacija">
+     Fourierove vrste in diskretna Fourierova transformacija
     </a>
    </li>
   </ul>
@@ -327,10 +393,10 @@
 <p>Preden gremo v podrobnosti Fourierovih vrst, si pogljemo definicijo splošne harmonske funkcije:</p>
 <div class="math notranslate nohighlight">
 \[
-x(t) = X\,\sin(\omega\,t+\varphi),
+x(t) = A\,\sin(\omega\,t+\varphi),
 \]</div>
-<p>kjer je <span class="math notranslate nohighlight">\(X\)</span> amplituda, <span class="math notranslate nohighlight">\(\omega\)</span> krožna frekvenca (enota: rad/s) in <span class="math notranslate nohighlight">\(\varphi\)</span> fazni kot (enota rad) glede na izhodišče časa. Pri tem je <span class="math notranslate nohighlight">\(\omega=2\,\pi\,f\)</span> in je <span class="math notranslate nohighlight">\(f\)</span> (sekundna) frekvenca (enota: 1/s=Hz). Pozitivna faza pomakne harmonsko funkcijo proti levi, negativna faza pa proti desni. Perioda <span class="math notranslate nohighlight">\(T\)</span>, ko se harmonska funkcija ponovi je definirana z krožno frekvenco: <span class="math notranslate nohighlight">\(T=2\,\pi/\omega\)</span>.</p>
-<p>Primer harmonske funkcije z amplitudo <span class="math notranslate nohighlight">\(X=1\)</span>, krožno frekvenco <span class="math notranslate nohighlight">\(\omega=1\,\)</span>rad/s in pozitivno fazo <span class="math notranslate nohighlight">\(\varphi=1\,\)</span>rad je prikazan spodaj.</p>
+<p>kjer je <span class="math notranslate nohighlight">\(A\)</span> amplituda, <span class="math notranslate nohighlight">\(\omega\)</span> krožna frekvenca (enota: rad/s) in <span class="math notranslate nohighlight">\(\varphi\)</span> fazni kot (enota rad) glede na izhodišče časa. Pri tem je <span class="math notranslate nohighlight">\(\omega=2\,\pi\,f\)</span> in je <span class="math notranslate nohighlight">\(f\)</span> (sekundna) frekvenca (enota: 1/s=Hz). Pozitivna faza pomakne harmonsko funkcijo proti levi, negativna faza pa proti desni. Perioda <span class="math notranslate nohighlight">\(T\)</span>, ko se harmonska funkcija ponovi je definirana z krožno frekvenco: <span class="math notranslate nohighlight">\(T=2\,\pi/\omega\)</span>.</p>
+<p>Primer harmonske funkcije z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>, krožno frekvenco <span class="math notranslate nohighlight">\(\omega=1\,\)</span>rad/s in pozitivno fazo <span class="math notranslate nohighlight">\(\varphi=1\,\)</span>rad je prikazan spodaj.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -338,20 +404,20 @@ x(t) = X\,\sin(\omega\,t+\varphi),
 
 
 <span class="n">T</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">X</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">ω</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">ϕ</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Harmonska funkcija: $x(t) = \sin(</span><span class="se">\\</span><span class="s1">omega\,t+</span><span class="se">\\</span><span class="s1">varphi); </span><span class="se">\\</span><span class="s1">omega=</span><span class="si">{</span><span class="n">ω</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">varphi=</span><span class="si">{</span><span class="n">ϕ</span><span class="si">}</span><span class="s1">$ &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Harmonska funkcija: $x(t) = A\,\sin(</span><span class="se">\\</span><span class="s1">omega\,t+</span><span class="se">\\</span><span class="s1">varphi); </span><span class="se">\\</span><span class="s1">omega=</span><span class="si">{</span><span class="n">ω</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">varphi=</span><span class="si">{</span><span class="n">ϕ</span><span class="si">}</span><span class="s1">$ &#39;</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">ϕ</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Harmonski podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">ϕ</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Harmonski podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">varphi$&#39;</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
@@ -361,11 +427,11 @@ x(t) = X\,\sin(\omega\,t+\varphi),
                             <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3,rad=0&#39;</span><span class="p">,</span>
                             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">,</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$A$&#39;</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
             <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
-            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">X</span><span class="o">+.</span><span class="mi">05</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">A</span><span class="o">+.</span><span class="mi">05</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;&lt;-&#39;</span><span class="p">,</span>
                             <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3,rad=0&#39;</span><span class="p">,</span>
                             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
@@ -510,19 +576,19 @@ x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
-X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
+c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 \]</div>
 <p>kjer velja:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-X_n = 
+c_n = 
 \begin{cases}
     \frac{1}{2}a_n-\frac{1}{2}\textrm{i}b_n,&amp; \text{če } n\geq +1\\
     \frac{1}{2}a_n,              &amp; \text{če } n = 0\\
     \frac{1}{2}a_{|n|}+\frac{1}{2}\textrm{i}b_{|n|},&amp; \text{če } n\leq -1\\
 \end{cases}
 \end{split}\]</div>
-<p>Ugotovimo, da velja <span class="math notranslate nohighlight">\(X_n=X_{-n}^{*}\)</span>, kjer smo z <span class="math notranslate nohighlight">\({}^*\)</span> označili kompleksno konjugirano vrednost.</p>
+<p>Ugotovimo, da velja <span class="math notranslate nohighlight">\(c_n=c_{-n}^{*}\)</span>, kjer smo z <span class="math notranslate nohighlight">\({}^*\)</span> označili kompleksno konjugirano vrednost.</p>
 <p>Da obe definiciji, klasična:</p>
 <div class="math notranslate nohighlight">
 \[x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
@@ -536,7 +602,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
-X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
+c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 \]</div>
 <p>vodita v isti rezultat se lahko prepričamo iz slike spodaj.</p>
 <div class="cell tag_hide-input docutils container">
@@ -554,10 +620,10 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 <span class="n">a</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#skaliranje na koncu, da imajo višje komponente imajo manjšo amplitudo</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
-<span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="o">-</span><span class="mf">0.5</span><span class="n">j</span><span class="o">*</span><span class="n">b</span>
-<span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">X</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="o">-</span><span class="mf">0.5</span><span class="n">j</span><span class="o">*</span><span class="n">b</span>
+<span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">c</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="n">x1</span> <span class="o">=</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
@@ -565,7 +631,7 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
     
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -613,26 +679,26 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
-X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*
+c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 \]</div>
-<p>lahko identificiramo harmonsko funkcijo s frekvenco <span class="math notranslate nohighlight">\(m\)</span> kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(X_m\,e^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>? Izkaže se, da je to relativno enostavno, če poskušamo izračunati integral periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> pomnožen z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, negativne frekvence <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
+<p>lahko identificiramo harmonsko funkcijo s frekvenco <span class="math notranslate nohighlight">\(m\)</span> kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(c_m\,e^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>? Izkaže se, da je to relativno enostavno, če poskušamo izračunati integral periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> pomnožen z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, negativne frekvence <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 \underbrace{\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{A_m}=
 \underbrace{\int_0^{T_p} \sum_{n=-\infty}^{\infty}
-X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p} \,\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{B_m}
+c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p} \,\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{B_m}
 \]</div>
 <p>Ker <span class="math notranslate nohighlight">\(x(t)\)</span> predstavlja znano periodično funkcijo (oz. podatke), lahko integral <span class="math notranslate nohighlight">\(A_m\)</span> izračunamo. <span class="math notranslate nohighlight">\(B_m\)</span> pa lahko poenostavimo v:</p>
 <div class="math notranslate nohighlight">
 \[
 B_m=\int_0^{T_p} \sum_{n=-\infty}^{\infty}
-X_n\,e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
+c_n\,e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \]</div>
-<p>Zamenjajmo sedaj vrstni red seštevanja in integriranja, ter izpostavimo konstanto <span class="math notranslate nohighlight">\(X_n\)</span>:</p>
+<p>Zamenjajmo sedaj vrstni red seštevanja in integriranja, ter izpostavimo konstanto <span class="math notranslate nohighlight">\(c_n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 B_m= \sum_{n=-\infty}^{\infty}
-X_n\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
+c_n\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \]</div>
 <p>Ker integriramo harmonsko funkcijo s frekvenco, ki je celi večkratnik osnovne frekvence <span class="math notranslate nohighlight">\(1/T_p\)</span>, je rezultat vedno 0, razen takrat, ko je <span class="math notranslate nohighlight">\(n=m\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -645,12 +711,12 @@ X_n\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \end{split}\]</div>
 <p>Sledi torej:
 $<span class="math notranslate nohighlight">\(
-B_m = X_m\,T_p
+B_m = c_m\,T_p
 \)</span>$</p>
-<p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznana kompleksna amplituda <span class="math notranslate nohighlight">\(X_m\)</span> definirana kot (kompleksna amplituda definira amplitudo in fazo):</p>
+<p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznan Fourierov koeficient <span class="math notranslate nohighlight">\(c_m\)</span> definirana kot (kompleksno število definira amplitudo in fazo):</p>
 <div class="math notranslate nohighlight">
 \[
-X_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t
+c_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t
 \]</div>
 <p>Izpeljali smo torej, da je posamezno harmonsko komponento relativno enostavno določiti; težava v praksi je, da dani podatki <span class="math notranslate nohighlight">\(x(t)\)</span> nujno ne izpolnjujejo vseh predpostavk, ki smo jih zgoraj naredili. Kljub temu, pa Fourierove vrste uporabljamo in nam dajejo odlične rezultate. Več si pogledamo v nadaljevanju.</p>
 </div>
@@ -658,19 +724,19 @@ X_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,
 <h2>Posplošitev<a class="headerlink" href="#posplositev" title="Permalink to this headline">¶</a></h2>
 <p>Fourierove vrste najpogosteje najdemo definirane v treh oblikah (<span class="math notranslate nohighlight">\(T_p\)</span> predstavlja osnovno period in <span class="math notranslate nohighlight">\(N\)</span> število harmonskih komponent, ki jih upoštevamo/identificiramo):</p>
 <div class="section" id="fourierove-vrste-v-eksponentni-kompleksni-obliki">
-<h3>Fourierove vrste v eksponentni (kompleksni) obliki<a class="headerlink" href="#fourierove-vrste-v-eksponentni-kompleksni-obliki" title="Permalink to this headline">¶</a></h3>
+<span id="sec-fv-exp"></span><h3>Fourierove vrste v eksponentni (kompleksni) obliki<a class="headerlink" href="#fourierove-vrste-v-eksponentni-kompleksni-obliki" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[
-X_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
+c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
 \]</div>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-N}^{N}
-X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*
+c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 \]</div>
 </div>
 <div class="section" id="fourierove-vrste-v-sinus-kosinusni-obliki">
-<h3>Fourierove vrste v sinus-kosinusni obliki<a class="headerlink" href="#fourierove-vrste-v-sinus-kosinusni-obliki" title="Permalink to this headline">¶</a></h3>
+<span id="sec-fv-sin-cos"></span><h3>Fourierove vrste v sinus-kosinusni obliki<a class="headerlink" href="#fourierove-vrste-v-sinus-kosinusni-obliki" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[
 a_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\cos(2\pi\,n\,t/T_p)\,\mathrm{d}t
@@ -696,19 +762,92 @@ A_n\,\cos(2\pi\,n\,t/T_p-\varphi_n)\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-X_0&amp;=A_0&amp;=a_0\\
-X_n&amp;=\frac{A_n}{2}\,e^{-\mathrm{i}\varphi_n}&amp;=\frac{1}{2}(a_n-\mathrm{i}b_n)\\
-X_n&amp;=X_{-n}^*&amp;\\
+c_0&amp;=A_0&amp;=a_0\\
+c_n&amp;=\frac{A_n}{2}\,e^{-\mathrm{i}\varphi_n}&amp;=\frac{1}{2}(a_n-\mathrm{i}b_n)\\
+c_n&amp;=c_{-n}^*&amp;\\
 \end{split}
 \end{split}\]</div>
 <p>V tej knjigi bomo skoraj izključno uporabljali eksponentno obliko, saj je najbolj kompaktna, enostavna za uporabo in matematične izpeljave.</p>
+</div>
+<div class="section" id="nekatere-lastnosti-fourierovih-vrst">
+<h3>Nekatere lastnosti Fourierovih vrst<a class="headerlink" href="#nekatere-lastnosti-fourierovih-vrst" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="odvodi-in-integrali-fourierovih-vrst">
+<h4>Odvodi in integrali Fourierovih vrst<a class="headerlink" href="#odvodi-in-integrali-fourierovih-vrst" title="Permalink to this headline">¶</a></h4>
+<p>Za periodično funkcijo, ki jo na področju zveznosti lahko popišemo s Fourierovimi vrstami govorimo, da izpolnjujejo <strong>Dirichletov pogoj</strong>. Če Dirichletov pogoj izpolnjuje tudi odvod <span class="math notranslate nohighlight">\(\dot(x)(t)\)</span>, potem je mogoče odvod izračunati neposredno iz Fourierovih vrst za <span class="math notranslate nohighlight">\(x(t)\)</span> pri čemer je treba odvajati posamezne člene.</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{x}(t)=\sum_{n=-N}^{N}
+\frac{\mathrm{i}\,2\pi\,n}{T_p}\,c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
+\]</div>
+<p>Analogno velja za integracijo:
+$<span class="math notranslate nohighlight">\(
+x(t)=\sum_{n=-N}^{N}
+\frac{T_p}{\mathrm{i}\,2\pi\,n}\,\dot{c}_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad \dot{c}_n=\dot{c}_{-n}^*,
+\)</span><span class="math notranslate nohighlight">\(
+kjer so \)</span>\dot{c}_n<span class="math notranslate nohighlight">\( konstante Fourierove vrste za \)</span>\dot{x}(t)$. Za primer, glejte zglede v nadaljevanju.</p>
+</div>
+<div class="section" id="fourirove-vrste-lihih-in-sodih-funkcij">
+<h4>Fourirove vrste lihih in sodih funkcij<a class="headerlink" href="#fourirove-vrste-lihih-in-sodih-funkcij" title="Permalink to this headline">¶</a></h4>
+<p>Funkcija <span class="math notranslate nohighlight">\(x(t)\)</span> je <strong>soda</strong>, če velja:</p>
+<div class="math notranslate nohighlight">
+\[
+x(-t)=x(t),
+\]</div>
+<p>takrat velja tudi:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^a x(t)\,\mathrm{d}t=0.
+\]</div>
+<p>Funkcija je <strong>liha</strong>, če velja:</p>
+<div class="math notranslate nohighlight">
+\[
+x(-t)=-x(t),
+\]</div>
+<p>takrat velja tudi
+$<span class="math notranslate nohighlight">\(
+\int_a^a x(t)\mathrm{d}t=2\,\int_0^a x(t)\,\mathrm{d}t.
+\)</span>$</p>
+<p>Izostavimo lahko da je funkcija <span class="math notranslate nohighlight">\(\cos()\)</span> soda, funkcija <span class="math notranslate nohighlight">\(\sin()\)</span> pa liha.</p>
+<p>Za poznejšo obravnavo bo pomemben produkt dveh funkcij (ko npr. pri izračunu koeficientov Fourierove vrste); ali je produkt  funkcij <span class="math notranslate nohighlight">\(x(t)\,y(t)\)</span> sodi ali lihi, je odvisno od sodosti in lihosti funkcij <span class="math notranslate nohighlight">\(x(t)\)</span> in <span class="math notranslate nohighlight">\(y(t)\)</span>. Odnosi so definirani v tabeli spodaj.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>če <span class="math notranslate nohighlight">\(x(t)\)</span></p></th>
+<th class="text-align:right head"><p>če <span class="math notranslate nohighlight">\(y(t)\)</span></p></th>
+<th class="text-align:center head"><p>je rezultat <span class="math notranslate nohighlight">\(x(t)\,y(t)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>liha</p></td>
+<td class="text-align:right"><p>liha</p></td>
+<td class="text-align:center"><p><em>soda</em></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>liha</p></td>
+<td class="text-align:right"><p>soda</p></td>
+<td class="text-align:center"><p><em>liha</em></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>soda</p></td>
+<td class="text-align:right"><p>liha</p></td>
+<td class="text-align:center"><p><em>liha</em></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>soda</p></td>
+<td class="text-align:right"><p>soda</p></td>
+<td class="text-align:center"><p><em>soda</em></p></td>
+</tr>
+</tbody>
+</table>
+<p>Glede na zgornjo tabelo lahko sklenemo (glejte tudi <a class="reference internal" href="#sec-fv-sin-cos"><span class="std std-ref">Fourierove vrste v sinus-kosinusni obliki</span></a>):</p>
+<ul class="simple">
+<li><p>če iščemo Fourierovo vrsto <em>sode</em> peridične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, potem bodo kosinusni členi <span class="math notranslate nohighlight">\(a_n\)</span> enaki nič (ker je produkt sode in sode funkcije soda funkcija; integral sode funkcije pa je 0).</p></li>
+<li><p>če iščemo Fourierovo vrsto <em>lihe</em> peridične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, potem bodo sinusni členi <span class="math notranslate nohighlight">\(b_n\)</span> enaki nič (ker je produkt lihe in lihe funkcije soda funkcija; integral sode funkcije pa je 0).</p></li>
+</ul>
+</div>
 </div>
 </div>
 <div class="section" id="nekateri-zgledi">
 <h2>Nekateri zgledi<a class="headerlink" href="#nekateri-zgledi" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="kompleksno-periodicna-funkcija">
 <h3>Kompleksno periodična funkcija<a class="headerlink" href="#kompleksno-periodicna-funkcija" title="Permalink to this headline">¶</a></h3>
-<p>Najprej si bomo pogledali kompleksno periodično funkcijo, ki smo jo spoznali in definirali že zgoraj. Funkcija je definirana z <span class="math notranslate nohighlight">\(N=10\)</span> harmonskimi komponentami <span class="math notranslate nohighlight">\(X_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nas uporaba zgoraj definiranih enačb vodi v točno identifikacijo le-teh.</p>
+<p>Najprej si bomo pogledali kompleksno periodično funkcijo, ki smo jo spoznali in definirali že zgoraj. Funkcija je definirana z <span class="math notranslate nohighlight">\(N=10\)</span> harmonskimi komponentami <span class="math notranslate nohighlight">\(c_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nas uporaba zgoraj definiranih enačb vodi v točno identifikacijo le-teh.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -724,14 +863,14 @@ X_n&amp;=X_{-n}^*&amp;\\
 <span class="n">a</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#skaliranje na koncu, da imajo višje komponente imajo manjšo amplitudo</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
-<span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="o">-</span><span class="mf">0.5</span><span class="n">j</span><span class="o">*</span><span class="n">b</span>
-<span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">X</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="o">-</span><span class="mf">0.5</span><span class="n">j</span><span class="o">*</span><span class="n">b</span>
+<span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">c</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
     
 
@@ -739,12 +878,12 @@ X_n&amp;=X_{-n}^*&amp;\\
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kompleksno periodična funkcija&#39;</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Definicija v kompleksni obliki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
@@ -753,13 +892,13 @@ X_n&amp;=X_{-n}^*&amp;\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_28_0.png" src="../_images/02 - Fourierove vrste_28_0.png" />
+<img alt="../_images/02 - Fourierove vrste_33_0.png" src="../_images/02 - Fourierove vrste_33_0.png" />
 </div>
 </div>
-<p>V primeru zgoraj je peridočna funkcija generirana na podlagi vektorja kompleksnih amplitud:</p>
+<p>V primeru zgoraj je peridočna funkcija generirana na podlagi vektorja Fourierovih koeficientov:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
 </pre></div>
 </div>
 </div>
@@ -782,7 +921,7 @@ X_n&amp;=X_{-n}^*&amp;\\
 <p>Opazimo, da je vektor kompleksno konjugiran okoli središčnega elementa. Poljubni element lahko zgolj na podlagi časovne vrste <span class="math notranslate nohighlight">\(x(t)\)</span> določimo tako, da sledimo definiciji:</p>
 <div class="math notranslate nohighlight">
 \[
-X_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
+c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
 \]</div>
 <p>kar je v numerični implementaciji (za <code class="docutils literal notranslate"><span class="pre">n=1</span></code>):</p>
 <div class="cell docutils container">
@@ -808,6 +947,91 @@ X_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 <p>spremenite v (301 v 300):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="odvod-integral-kompleksno-periodicne-funkcije">
+<h3>Odvod / Integral kompleksno periodične funkcije<a class="headerlink" href="#odvod-integral-kompleksno-periodicne-funkcije" title="Permalink to this headline">¶</a></h3>
+<p>Nadaljujemo z zgledom zgoraj in si najprej poglejmo, da je odvod po času res enak Fourierovi vrsti kjer smo vsakega od členov preprosto odvajali.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">a0</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">rg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#skaliranje na koncu, da imajo višje komponente imajo manjšo amplitudo</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="o">-</span><span class="mf">0.5</span><span class="n">j</span><span class="o">*</span><span class="n">b</span>
+<span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">c</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
+<span class="n">x_d_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">x_d_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span> <span class="c1"># ODVOD Z VRSTAMI</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">x_d_v</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="n">Tp</span>
+<span class="n">x_d_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x_d_v</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_d_t</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\dot</span><span class="si">{x}</span><span class="s1">(t)$ - izračunano v času&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_d_v</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\dot</span><span class="si">{x}</span><span class="s1">(t)$ - vrste&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_40_0.png" src="../_images/02 - Fourierove vrste_40_0.png" />
+</div>
+</div>
+<p>Zgornji primer lahko nadaljujemo in izvorni pomik <span class="math notranslate nohighlight">\(x(t)\)</span> identificiramo iz Fourierovih vrst za hitrost <span class="math notranslate nohighlight">\(\dot x(t)\)</span>, glejte kodo in sliko spodaj. Pri integriranju imamo težavo v primeru Fourierovega koeficienta s frekvenco 0 (statična komponenta); v kodi spodaj to frekvenco enostavno preskočimo, saj je ne moremo določiti. Podobno težavo bi imeli v času; če integriramo nedoločeni integral, potem pri integriranju rabimo začetno vrednost. Na sliki spodaj se zato med obema pristopoma pokaže odstopanje v velikosti statične komponente.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#x_d_t je hitrost, a_0 pa statična komponenta prenešena iz primera zgoraj</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># identifikacija Fourierovih koeficientov hitrosti</span>
+<span class="n">c_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">&lt;=</span><span class="n">Tp</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">c_d</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x_d_t</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
+
+<span class="n">x_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span> <span class="c1"># INTEGRAL Z VRSTAMI</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">x_v</span> <span class="o">+=</span> <span class="n">c_d</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
+<span class="n">x_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x_v</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x(t)$ - definicija&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_v</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x(t)$ - vrste iz koeficientov FV za hitrost $\dot</span><span class="si">{c}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_42_0.png" src="../_images/02 - Fourierove vrste_42_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="periodicna-funkcija">
@@ -838,7 +1062,7 @@ X_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_35_0.png" src="../_images/02 - Fourierove vrste_35_0.png" />
+<img alt="../_images/02 - Fourierove vrste_44_0.png" src="../_images/02 - Fourierove vrste_44_0.png" />
 </div>
 </div>
 <p>Kljub temu, da funkcija ni kompleksno periodična, teorija Fourierovih vrst pa je bila izpeljana ob tej predpostavki, poskusimo identificirati harmonske komponente. Najprej to naredimo na diskretni časovni vrsti.
@@ -868,66 +1092,49 @@ Osredotočimo se na del podatkov, ki se ponavlja:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_37_0.png" src="../_images/02 - Fourierove vrste_37_0.png" />
+<img alt="../_images/02 - Fourierove vrste_46_0.png" src="../_images/02 - Fourierove vrste_46_0.png" />
 </div>
 </div>
-<p>In identificiramo kompleksne amplitude:</p>
+<p>In identificiramo Fourierove koeficiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>in jih lahko prikažemo v obliki amplitudnega <span class="math notranslate nohighlight">\(|X_n|\)</span> in faznega spektra <span class="math notranslate nohighlight">\(\angle X_n\)</span> (slika spodaj).</p>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$n</span><span class="se">\\</span><span class="s1">quad $[-]&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|X_n|</span><span class="se">\\</span><span class="s1">quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplituda kontant $X_n$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
-
-<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span> 
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplituda kontant $X_n$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_n \quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
-
-<span class="c1">#ax1.legend(loc=1)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span><span class="mf">2.</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span><span class="mf">2.</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
+<span class="n">c</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_41_0.png" src="../_images/02 - Fourierove vrste_41_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-3.85108612e-16-0.03077684j, -3.83373888e-16-0.03442023j,
+       -5.03069808e-16-0.03894743j, -2.68882139e-16-0.04473743j,
+        1.52655666e-16-0.05242184j, -5.37764278e-17-0.06313752j,
+       -4.16333634e-17-0.07915815j, -5.63785130e-17-0.10578895j,
+       -6.24500451e-17-0.15894545j, -1.38777878e-17-0.31820516j,
+        1.00000000e+00+0.j        , -1.38777878e-17+0.31820516j,
+       -6.24500451e-17+0.15894545j, -5.63785130e-17+0.10578895j,
+       -4.16333634e-17+0.07915815j, -5.37764278e-17+0.06313752j,
+        1.52655666e-16+0.05242184j, -2.68882139e-16+0.04473743j,
+       -5.03069808e-16+0.03894743j, -3.83373888e-16+0.03442023j,
+       -3.85108612e-16+0.03077684j])
+</pre></div>
 </div>
 </div>
-<p>Na podlagi identificiranih kompleksnih amplitud, lahko definiramo kompleksno periodično funkcijo:</p>
+</div>
+<p>Na podlagi identificiranih Fourierovih koeficientov, lahko definiramo kompleksno periodično funkcijo:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-N}^{N}
-X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*.
+c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 \]</div>
 <p>Konkretna numerična koda je prikazana spodaj (pri tem smo uporabili novo numerično polje <code class="docutils literal notranslate"><span class="pre">x_r</span></code>, da ga ločimo od podatkov v obliki <code class="docutils literal notranslate"><span class="pre">x</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">x_r</span> <span class="o">+=</span> <span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
+    <span class="n">x_r</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
 <span class="n">x_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x_r</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
 </pre></div>
 </div>
@@ -949,20 +1156,20 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_44_0.png" src="../_images/02 - Fourierove vrste_44_0.png" />
+<img alt="../_images/02 - Fourierove vrste_51_0.png" src="../_images/02 - Fourierove vrste_51_0.png" />
 </div>
 </div>
-<p>Opazimo, da identificirana kompleksno harmonska funkcija relativno dobro opiše izvorne periodične podatke. Če bi število harmonskih (<span class="math notranslate nohighlight">\(N\)</span>) komponent povečali (kodo zgoraj lahko spremenite in spreminjate <span class="math notranslate nohighlight">\(N\)</span>, vendar mora veljati <code class="docutils literal notranslate"><span class="pre">N&lt;len(t)/2</span></code>; zakaj je <span class="math notranslate nohighlight">\(N\)</span> vezan na dolžino časovne vrste, bomo spoznali pozneje), bi se identificirana funkcija izvorni bolje prilegala, vendar pa bi na mestu nezveznosti še vedno imeli odstopanje. Odstopanje na mestu nezveznosti je znano pod terminom <em>Gibbsov</em> fenomen. Resnici na ljubo je večina inženirskih aplikacij zveznih in zato ponavadi Gibbsov fenomen nima večjega pomena.</p>
+<p>Opazimo, da identificirana kompleksno harmonska funkcija relativno dobro opiše izvorne periodične podatke. Če bi število harmonskih (<span class="math notranslate nohighlight">\(N\)</span>) komponent povečali, bi se identificirana funkcija izvorni bolje prilegala, vendar pa bi na mestu nezveznosti še vedno imeli odstopanje. Odstopanje na mestu nezveznosti je znano pod terminom <strong>Gibbsov</strong> fenomen. Resnici na ljubo je večina inženirskih aplikacij zveznih in zato ponavadi Gibbsov fenomen v praksi nima večjega pomena.</p>
 </div>
 <div class="section" id="analiticna-obravnava-periodicne-funkcije">
 <h3>Analitična obravnava periodične funkcije<a class="headerlink" href="#analiticna-obravnava-periodicne-funkcije" title="Permalink to this headline">¶</a></h3>
-<p>Spodaj si bomo pogledali kako s pomočjo strojnega izpeljevanja določimo Fourierovo vrsto. Določimo dve spremenljivki. periodična funkcija bo kar naraščajoča žaga, ki bo proporcionalna s časom <code class="docutils literal notranslate"><span class="pre">t</span></code>, perioda bo <code class="docutils literal notranslate"><span class="pre">Tp</span></code>:</p>
+<p>Zgoraj smo Fourierovo vrsto izračunali na diskrenih podatkih in smo zato omejeni koliko harmonskih komponent lahko izračunamo (<code class="docutils literal notranslate"><span class="pre">N&lt;len(t)/2</span></code>; zakaj je <span class="math notranslate nohighlight">\(N\)</span> vezan na dolžino časovne vrste, bomo spoznali pozneje). Tukaj si bomo pogledali obravnavo zveznih sistemov in s pomočjo strojnega izpeljevanja določili Fourierovo vrsto. Kot primer periodične funkcija si bomo izbrali naraščajočo žago, ki bo proporcionalna s časom <code class="docutils literal notranslate"><span class="pre">t</span></code>, perioda bo <code class="docutils literal notranslate"><span class="pre">Tp</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 
-<span class="n">t</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, Tp&#39;</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, Tp&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x_r</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_series</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -976,7 +1183,31 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_50_0.png" src="../_images/02 - Fourierove vrste_50_0.png" />
+<img alt="../_images/02 - Fourierove vrste_57_0.png" src="../_images/02 - Fourierove vrste_57_0.png" />
+</div>
+</div>
+<p>Posamezni člen lahko izračunamo tudi sami:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">c_n</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">Tp</span><span class="p">))</span><span class="o">.</span><span class="n">simplify</span><span class="p">()</span><span class="o">/</span><span class="n">Tp</span>
+<span class="n">c_n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_59_0.png" src="../_images/02 - Fourierove vrste_59_0.png" />
+</div>
+</div>
+<p>Da dobimo harmonsko komponento, moramo <code class="docutils literal notranslate"><span class="pre">c_n</span></code> pomnožiti s pripadajočo pozitivno in negativno frekvenco:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">c_n</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span><span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">c_n</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_61_0.png" src="../_images/02 - Fourierove vrste_61_0.png" />
 </div>
 </div>
 <p>In slika pri <code class="docutils literal notranslate"><span class="pre">Tp=2</span></code> in različnem številu členov v vrsti:</p>
@@ -998,9 +1229,365 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_52_0.png" src="../_images/02 - Fourierove vrste_52_0.png" />
+<img alt="../_images/02 - Fourierove vrste_63_0.png" src="../_images/02 - Fourierove vrste_63_0.png" />
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="fourierove-vrste-in-diracova-delta-funkcija">
+<h2>Fourierove vrste in Diracova delta funkcija<a class="headerlink" href="#fourierove-vrste-in-diracova-delta-funkcija" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="diracova-delta-funkcija">
+<h3>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Permalink to this headline">¶</a></h3>
+<p>Diracova delta funkcija (dejansko to posebna oblika funkcije, t.i. generalizirana funkcija) je definirana z:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta(t)=0 \quad\textrm{ za } t\ne 0 \qquad\textrm{ in } \qquad \int_{-\infty}^{+\infty}\delta(t)\,\textrm{d}t=1.
+\]</div>
+<p>Ker je integral Diracove delta funkcije 1, se včasih imenuje tudi funkcija enotskega impulza, definirana tudi kot:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\delta_{\varepsilon}=
+\begin{cases}
+\frac{1}{\varepsilon}&amp;\textrm{ za }\quad -\frac{\varepsilon}{2}\le t\le+\frac{\varepsilon}{2}\\
+0&amp; \textrm{sicer}.
+\end{cases}.
+\end{split}\]</div>
+<p>Pri definiranju enotskega impulza si lahko pomagamo tudi z <strong>koračno funkcijo</strong> (<strong>Heaviside funkcija</strong>), ki je definirana kot:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+u(t)=
+\begin{cases}
+1&amp;\textrm{ za }\quad t&gt;0\\
+0&amp; \textrm{sicer}.
+\end{cases}.
+\end{split}\]</div>
+<p>Dve koračni funkciji ste definirani spodaj:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">ε</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;t, \varepsilon&#39;</span><span class="p">)</span>
+<span class="n">unit_step</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">ε</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unit_step</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">ε</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">line_style</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> 
+              <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Koračna funkcija $u(t+</span><span class="se">\\</span><span class="s1">varepsilon/2)$&#39;</span><span class="p">)</span> 
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">unit_step</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">ε</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
+              <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Koračna funkcija $-u(t-</span><span class="se">\\</span><span class="s1">varepsilon/2)$&#39;</span><span class="p">)</span> 
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_69_0.png" src="../_images/02 - Fourierove vrste_69_0.png" />
+</div>
+</div>
+<p>Do enotskega impulza pridemo z uteženim seštevanjem dveh enotskih korakov:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta_{\varepsilon}=\frac{1}{\varepsilon}\Big(u\big(t+\frac{\varepsilon}{2}\big)-u\big(t-\frac{\varepsilon}{2}\big)\Big)
+\]</div>
+<p>Poglejmo si kako koračno funkcijo pretvorimo v enotski impulz:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">ε</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;t, \varepsilon&#39;</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ε</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+<span class="n">unit_step</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">ε</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># tukaj moramo pravilno normirati (H0), glej help!</span>
+<span class="n">δ_ε</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">ε</span> <span class="o">*</span> <span class="p">(</span><span class="n">unit_step</span><span class="o">-</span><span class="n">unit_step</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">ε</span><span class="p">,</span> <span class="o">-</span><span class="n">ε</span><span class="p">))</span>
+<span class="n">δ_ε</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_72_0.png" src="../_images/02 - Fourierove vrste_72_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">δ_ε</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span><span class="o">.</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">line_style</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> 
+              <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">delta_{</span><span class="se">\\</span><span class="s1">varepsilon}(t)$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_73_0.png" src="../_images/02 - Fourierove vrste_73_0.png" />
+</div>
+</div>
+<p>in nato integriramo (rezultat je pričakovano enak 1; spremenite <span class="math notranslate nohighlight">\(\varepsilon\)</span> v <code class="docutils literal notranslate"><span class="pre">podatki</span></code> zgoraj!):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">δ_ε</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_75_0.png" src="../_images/02 - Fourierove vrste_75_0.png" />
+</div>
+</div>
+<p>Med Dirakovo delta funkcijo in enotskim korakom velja tudi sledeča povezava (<span class="math notranslate nohighlight">\(u(t)\)</span> je koračna funkcija):</p>
+<div class="math notranslate nohighlight">
+\[
+\delta(t)=\lim_{\varepsilon\rightarrow 0}\delta_{\varepsilon}(t)=\frac{\textrm{d}}{\textrm{d}t}u(t).
+\]</div>
+<p>Pozneje bomo potrebovali sledeče lastnosti Dirakove delta funkcije:</p>
+<ol class="simple">
+<li><p>je soda: <span class="math notranslate nohighlight">\(\delta(t)=\delta(-t)\)</span></p></li>
+<li><p><em>sejalna lastnost</em>, to pomeni, da integral navadne funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> in premaknjene Dirakove funkcije <span class="math notranslate nohighlight">\(\delta(t-a)\)</span> vrne vrednost funkcije <span class="math notranslate nohighlight">\(x(a)\)</span>:<span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}x(t)\,\delta(t-a)\,\textrm{d}t= x(a)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}e^{\pm\textrm{i}\,2\,\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> ali tudi: <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}e^{\pm\textrm{i}\,a\,t}\,\textrm{d}t= 2\,\pi\,\delta(a)\)</span>, za dokaz glejte <span id="id2">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151">2011</a>], Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173">2008</a>]</span> (str. 40).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta(a\,t)=\delta(t)/|a|\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}f(t)\,\delta^{(n)}(t)\,\textrm{d}t= (-1)^n\,f^{(n)}(a)\)</span>, kjer <span class="math notranslate nohighlight">\(n\)</span> označuje odvod.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="amplitudni-in-fazni-spekter">
+<h2>Amplitudni in fazni spekter<a class="headerlink" href="#amplitudni-in-fazni-spekter" title="Permalink to this headline">¶</a></h2>
+<p>Fourierovi koeficienti <span class="math notranslate nohighlight">\(c_n\)</span>, ki jih obravnavamo pri Fourierovih vrstah, predstavljajo amplitudno in fazno informacijo o določeni harmonski komponenti. Poglejmo si primer periodičnega pravokotnega vala: slika spodaj.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># signal</span>
+<span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">))</span>
+
+<span class="c1"># Fourierove vrste</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#omejiti se moramo samo na eno periodo, sicer koeficienti niso pravilno izračunani</span>
+<span class="n">sel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">&lt;=</span><span class="n">Tp</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
+
+<span class="c1"># rekonstrukcija</span>
+<span class="n">x_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">x_r</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">_</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">_</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
+<span class="n">x_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x_r</span><span class="p">)</span> 
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Periodični podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_r</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rekonstukcija preko Fourierovih vrst&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_80_0.png" src="../_images/02 - Fourierove vrste_80_0.png" />
+</div>
+</div>
+<p>Pri pripravi podatkov zgoraj smo izračunali Fourierove koeficiente <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.005-4.16333634e-17j, -0.015+6.88404515e-02j,
+        0.005-7.44196371e-16j, -0.015+8.94748566e-02j,
+        0.005+8.23993651e-17j, -0.015+1.26275030e-01j,
+        0.005+2.35055031e-16j, -0.015+2.11577900e-01j,
+        0.005-2.99239800e-17j, -0.015+6.36410319e-01j,
+        0.005+0.00000000e+00j, -0.015-6.36410319e-01j,
+        0.005+2.99239800e-17j, -0.015-2.11577900e-01j,
+        0.005-2.35055031e-16j, -0.015-1.26275030e-01j,
+        0.005-8.23993651e-17j, -0.015-8.94748566e-02j,
+        0.005+7.44196371e-16j, -0.015-6.88404515e-02j,
+        0.005+4.16333634e-17j])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fourierove koeficiente lahko prikažemo v grafični obliki. Če prikažemo amplitudo kompleksnega števila <span class="math notranslate nohighlight">\(|c|\)</span>, potem govorimo o amplitudnem spektru: za določeni večkratnih osnovne frekvence <span class="math notranslate nohighlight">\(1/T_p\)</span> prikažemo vsebnost amplitude harmonske komponente. Podobno govorimo o faznem spektru, če prikažemo <span class="math notranslate nohighlight">\(\angle c_n\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$n</span><span class="se">\\</span><span class="s1">quad $[-]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|c_n|</span><span class="se">\\</span><span class="s1">quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplituda $c_n$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span> 
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Faza $c_n$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle c_n \quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+
+<span class="c1">#ax1.legend(loc=1)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span><span class="mf">2.</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span><span class="mf">2.</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_84_0.png" src="../_images/02 - Fourierove vrste_84_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="parsevalov-teorem-in-mocnostni-spekter">
+<h2>Parsevalov teorem in močnostni spekter<a class="headerlink" href="#parsevalov-teorem-in-mocnostni-spekter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="parsevalov-teorem">
+<h3>Parsevalov teorem<a class="headerlink" href="#parsevalov-teorem" title="Permalink to this headline">¶</a></h3>
+<p>Če je <span class="math notranslate nohighlight">\(x(t)\)</span> napetost merjena čez upor upornosti <span class="math notranslate nohighlight">\(1\Omega\)</span>, potem je trenutna moč enaka <span class="math notranslate nohighlight">\(P(t)=R\,x^2(t)\)</span>, povprečna moč periodičnega signala znotraj ene periode pa je:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t
+\]</div>
+<p>ker velja <span class="math notranslate nohighlight">\(x(t)=\sum_{n=-\infty}^{\infty}c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p}\)</span> in <span class="math notranslate nohighlight">\(x^2(t)=x(t)\,x^*(t)\)</span> je povprečna moč definirana tudi kot:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
+\frac{1}{T_p}\int_0^{T_p}\sum_{n=-\infty}^{\infty}c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p}\,\sum_{m=-\infty}^{\infty}c_m^*\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\textrm{d}t
+\]</div>
+<p>kar poenostavimo v:
+$<span class="math notranslate nohighlight">\(
+\frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
+\frac{1}{T_p}\sum_{n=-\infty}^{\infty}\,\sum_{m=-\infty}^{\infty}c_n\,c_m^*\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t
+\)</span>$</p>
+<p>Ker je integral harmonske funkcije na zaključeni periodi vedno nič razen, ko je frekvenca 0, je podintegralska funkcija enaka 1 in integral <span class="math notranslate nohighlight">\(T_p\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t=
+\begin{cases}
+T_p,&amp;\textrm{če}\quad m=n,\\
+0,&amp;\textrm{sicer.}\\
+\end{cases}
+\end{split}\]</div>
+<p>Sledi <strong>Parsevalov teorem</strong> ali tudi Parsevalova enakost:
+$<span class="math notranslate nohighlight">\(
+\frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
+\sum_{n=-\infty}^{\infty}c_n\,c_n^*,
+\)</span>$
+ki poveže povprečno moč v času s močjo v frekvenčni domeni.</p>
+<p>Poglejmo si konkreten zgled:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Tp</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">a0</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">rg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#skaliranje na koncu, da imajo višje komponente imajo manjšo amplitudo</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="o">-</span><span class="mf">0.5</span><span class="n">j</span><span class="o">*</span><span class="n">b</span>
+<span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">c</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">:])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">c</span><span class="p">[</span><span class="n">N</span><span class="o">+</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vrednost iz časa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_92_0.png" src="../_images/02 - Fourierove vrste_92_0.png" />
+</div>
+</div>
+<p>Vrednost na podlagi Fourierovih koeficientov:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.4912052334566629+0j)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Po pričakovanjih dobimo enako vrednost (do nivoja numerične napake)!</p>
+</div>
+<div class="section" id="mocnostni-spekter">
+<h3>Močnostni spekter<a class="headerlink" href="#mocnostni-spekter" title="Permalink to this headline">¶</a></h3>
+<p>Parsevalov teorem povprečno moč definira kot vsoto kvadratov Fourierovih koeficientov oz. frekvenčnih komponent. Prikaz kvadratov posameznih frekvenčnih komponent imenujemo močnostni spekter. Pri tem je treba poudariti, da močnostni spekter izgubi informacijo o fazi in je vedno definiran z realnimi vrednostmi.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1"># signal</span>
+<span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">))</span>
+
+<span class="c1"># Fourierove vrste</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#omejiti se moramo samo na eno periodo, sicer koeficienti niso pravilno izračunani</span>
+<span class="n">sel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="o">&lt;=</span><span class="n">Tp</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">t</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">Tp</span>
+
+    
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$n</span><span class="se">\\</span><span class="s1">quad $[-]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|c_n|^2</span><span class="se">\\</span><span class="s1">quad$[-]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conjugate</span><span class="p">(</span><span class="n">c</span><span class="p">)),</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplituda $c_n$&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_98_0.png" src="../_images/02 - Fourierove vrste_98_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="fourierove-vrste-in-diskretna-fourierova-transformacija">
+<h3>Fourierove vrste in diskretna Fourierova transformacija<a class="headerlink" href="#fourierove-vrste-in-diskretna-fourierova-transformacija" title="Permalink to this headline">¶</a></h3>
+<p>Pozneje bomo spoznali diskretno Fourierovo transformacijo, ki je z Fourierovimi vrstami zelo povezana. Povezavo lahko hitro razkrijemo, če predpostavimo diskretno časovno vrst <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span> in <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>, sledi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+c_n &amp;= \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t\\
+&amp;= \frac{1}{N\,\Delta t}\,\sum_{i=0}^{N-1} x(i\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,n\,\Delta t\,i/(N\,\Delta t)}\,\Delta t\\
+&amp;= \frac{1}{N}\,\underbrace{\sum_{i=0}^{N-1} x(i\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,n\,i/N}}_{X_n}\\
+&amp;= \frac{X_n}{N}\\
+\end{split}
+\end{split}\]</div>
+<p>Izraz:</p>
+<div class="math notranslate nohighlight">
+\[
+X_n= \sum_{i=0}^{N-1} x_i\,e^{-\mathrm{i}\,2\pi\,n\,i/N}
+\]</div>
+<p>imenujemo <strong>diskretna Fourierova transoformacija</strong> (DFT), in izraz:
+$<span class="math notranslate nohighlight">\(
+x_i=\frac{1}{N} \sum_{n=0}^{N-1} X_n\,e^{\mathrm{i}\,2\pi\,n\,i/N}
+\)</span>$
+<strong>inverzna diskretna Fourierova transoformacija</strong> (IDFT).</p>
+<p>Poudarti je treba, da v splošnem <span class="math notranslate nohighlight">\(X_n/N\ne c_n\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_n\)</span> periodična vrsta: <span class="math notranslate nohighlight">\(X_n=X_{n+k\,N}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> poljubno celo število.</p>
 </div>
 </div>
 </div>
@@ -1037,10 +1624,10 @@ X_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad X_n=X_{-n}^*.
             <p class="prev-next-title">Uvod v procesiranje signalov</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="03%20-%20Discrete%20Fourier%20transform.html" title="next page">
+    <a class='right-next' id="next-link" href="03%20-%20Fourierova%20integralska%20transformacija%20in%20zvezni%20linearni%20sistemi.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Discrete Fourier transform</p>
+        <p class="prev-next-title">Fourierova integralska transformacija in zvezni linearni sistemi</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
