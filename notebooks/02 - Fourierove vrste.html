@@ -339,6 +339,11 @@
      Diracova delta funkcija
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Fourierove vrste
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1330,7 +1335,7 @@ u(t)=
 \[
 \delta(t)=\lim_{\varepsilon\rightarrow 0}\delta_{\varepsilon}(t)=\frac{\textrm{d}}{\textrm{d}t}u(t).
 \]</div>
-<p>Pozneje bomo potrebovali sledeče lastnosti Dirakove delta funkcije:</p>
+<p>Pozneje bomo potrebovali sledeče lastnosti Diracove delta funkcije:</p>
 <ol class="simple">
 <li><p>je soda: <span class="math notranslate nohighlight">\(\delta(t)=\delta(-t)\)</span></p></li>
 <li><p><em>sejalna lastnost</em>, to pomeni, da integral navadne funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> in premaknjene Dirakove funkcije <span class="math notranslate nohighlight">\(\delta(t-a)\)</span> vrne vrednost funkcije <span class="math notranslate nohighlight">\(x(a)\)</span>:<span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}x(t)\,\delta(t-a)\,\textrm{d}t= x(a)\)</span>.</p></li>
@@ -1338,6 +1343,95 @@ u(t)=
 <li><p><span class="math notranslate nohighlight">\(\delta(a\,t)=\delta(t)/|a|\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}f(t)\,\delta^{(n)}(t)\,\textrm{d}t= (-1)^n\,f^{(n)}(a)\)</span>, kjer <span class="math notranslate nohighlight">\(n\)</span> označuje odvod.</p></li>
 </ol>
+</div>
+<div class="section" id="id3">
+<h3>Fourierove vrste<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Predpostavimo periodično padajočo žagasto funkcijo, kot je prikazana spodaj:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, Tp&#39;</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">Tp</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span>
+<span class="n">x_r</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">))</span>
+
+<span class="n">p0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x(t)=t&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;x(t)&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_r</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;5 členov&#39;</span><span class="p">,</span>  <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_r</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;20 členov&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">p0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">p0</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_80_0.png" src="../_images/02 - Fourierove vrste_80_0.png" />
+</div>
+</div>
+<p>Vrsta padajoče žagaste funkcije je definirana kot:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\pi\,n\,t}{T_p}\Big)
+\]</div>
+<p>Ali s pomočjo strojnega izpeljevanja:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, Tp&#39;</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">Tp</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span>
+<span class="n">x_r</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">))</span>
+
+<span class="n">x_r</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_82_0.png" src="../_images/02 - Fourierove vrste_82_0.png" />
+</div>
+</div>
+<p>Če odvajamo padajočo žagasto funkcijo v času, je rezultat enak:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot x(t) = -\frac{1}{T_p} + \sum_{n=-\infty}^{+\infty}\delta(t-n\,T_p)
+\]</div>
+<p>ker pa lahko odvajamo tudi vrsto, velja tudi:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot x(t) = \frac{2}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\cos\Big(\frac{2\pi\,n\,t}{T_p}\Big)
+\]</div>
+<p>enačenje obeh izrazov vodi v izraz:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=-\infty}^{+\infty}\delta(t-n\,T_p) =  \frac{1}{T_p} +\frac{2}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\cos\Big(\frac{2\pi\,n\,t}{T_p}\Big)
+\]</div>
+<p>Interpretacija je: periodični <em>vlak impulzov</em> (v angleščini je tukaj uveljavljen izraz <em>train of impulses</em>) ima obliki Fourierovih vrst koeficiente konstantne (<span class="math notranslate nohighlight">\(2/T_p\)</span>). Slednjo ugotovitev bomo pozneje potrebovali, ko bomo obravnavali vzorčenje signalov.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, Tp&#39;</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">Tp</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span>
+<span class="n">x_r</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_series</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">limits</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Tp</span><span class="p">))</span>
+
+<span class="n">p0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x_r</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;20 členov&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Vrsta: $</span><span class="se">\\</span><span class="s1">dot x(t)$&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">adaptive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nb_of_points</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x_r</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;5 členov&#39;</span><span class="p">,</span>  <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p0</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">p0</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/02 - Fourierove vrste_84_0.png" src="../_images/02 - Fourierove vrste_84_0.png" />
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="amplitudni-in-fazni-spekter">
@@ -1381,7 +1475,7 @@ u(t)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_80_0.png" src="../_images/02 - Fourierove vrste_80_0.png" />
+<img alt="../_images/02 - Fourierove vrste_87_0.png" src="../_images/02 - Fourierove vrste_87_0.png" />
 </div>
 </div>
 <p>Pri pripravi podatkov zgoraj smo izračunali Fourierove koeficiente <span class="math notranslate nohighlight">\(c\)</span>:</p>
@@ -1437,7 +1531,7 @@ u(t)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_84_0.png" src="../_images/02 - Fourierove vrste_84_0.png" />
+<img alt="../_images/02 - Fourierove vrste_91_0.png" src="../_images/02 - Fourierove vrste_91_0.png" />
 </div>
 </div>
 </div>
@@ -1511,7 +1605,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_92_0.png" src="../_images/02 - Fourierove vrste_92_0.png" />
+<img alt="../_images/02 - Fourierove vrste_99_0.png" src="../_images/02 - Fourierove vrste_99_0.png" />
 </div>
 </div>
 <p>Vrednost na podlagi Fourierovih koeficientov:</p>
@@ -1564,7 +1658,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_98_0.png" src="../_images/02 - Fourierove vrste_98_0.png" />
+<img alt="../_images/02 - Fourierove vrste_105_0.png" src="../_images/02 - Fourierove vrste_105_0.png" />
 </div>
 </div>
 </div>
