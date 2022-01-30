@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Discrete Fourier transform" href="03%20-%20Diskretna%20Fourierova%20transformacija.html" />
+    <link rel="next" title="Diskretna Fourierova transformacija" href="03%20-%20Diskretna%20Fourierova%20transformacija.html" />
     <link rel="prev" title="Fourierove vrste" href="02%20-%20Fourierove%20vrste.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -114,7 +116,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03%20-%20Diskretna%20Fourierova%20transformacija.html">
-   Discrete Fourier transform
+   Diskretna Fourierova transformacija
   </a>
  </li>
  <li class="toctree-l1">
@@ -254,8 +256,52 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="fourierova-integralska-transformacija-in-zvezni-linearni-sistemi">
+  <p>(sec:fourierova_int_transf=</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="fourierova-integralska-transformacija-in-zvezni-linearni-sistemi">
 <h1>Fourierova integralska transformacija in zvezni linearni sistemi<a class="headerlink" href="#fourierova-integralska-transformacija-in-zvezni-linearni-sistemi" title="Permalink to this headline">¶</a></h1>
+<p>Izračun Fourierove vrste temelji na periodi <span class="math notranslate nohighlight">\(T_p\)</span>; integral za izračun koeficientov lahko definiramo od <span class="math notranslate nohighlight">\(-T_p\)</span> do <span class="math notranslate nohighlight">\(+T_p\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+c_n=\frac{1}{T_p}\,\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{p}\,n\,t}\,\textrm{d} t,
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, osnovna krožna frekvenca gre proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemu težavam pri deljenju z 0, <span class="math notranslate nohighlight">\(c_n\)</span> pomnožimo s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{T_p\rightarrow \infty} c_n\,T_p=\underbrace{\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{n}\,t}\,\textrm{d} t}_{X(\omega_n)}.
+\]</div>
+<p>Ob predpostavki, da limita obstaja, zapišemo <strong>Fourierovo transformacijo</strong> (tudi <strong>Fourierov integral</strong>):</p>
+<div class="math notranslate nohighlight">
+\[
+X(\omega)= \mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty}x(t)\,e^{-\textrm{i}\,\omega\,t}\,\textrm{d} t,
+\]</div>
+<p>kjer smo namesto <span class="math notranslate nohighlight">\(\omega_{n}\)</span> zapisali <span class="math notranslate nohighlight">\(\omega\)</span>, saj je sedaj frekvenca zvezno definirana. <span class="math notranslate nohighlight">\(X(\omega)\)</span> predstavlja amplitudno frekvenčno gostoto, saj je <span class="math notranslate nohighlight">\(c_n\,T_p=c_n/\Delta f\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta f\)</span> frekvenčna pasovna širina (ang. <em>bandwidth</em>). S <span class="math notranslate nohighlight">\(\mathcal{F}\{\}\)</span> označimo Fourierovo transformacijo.</p>
+<p>Rekonstruirana zvezna funkcija, kadar <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>:
+$<span class="math notranslate nohighlight">\(
+x(t)=\lim_{T_p\rightarrow\infty}\sum_{n=-\infty}^{+\infty}
+X(\omega_n)\underbrace{\frac{1}{T_p}}_{\Delta f}\,e^{\mathrm{i}\,\overbrace{2\pi\,n/T_p}^{\omega_n}\,t}
+=\lim_{T_p\rightarrow\infty}\sum_{n=-\infty}^{+\infty}
+X(\omega_n)\,e^{\mathrm{i}\,\omega_n\,t}\Delta f,
+\)</span>$</p>
+<p>v limitni obliki, je izraz zvezen in ga imenujemo <strong>inverzna Fourierova transformacija</strong>, ter označimo z <span class="math notranslate nohighlight">\(\mathcal{F}^{-1}\{\}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t)=\mathcal{F}^{-1}\{X(\omega)\}=\frac{1}{2\pi}\int_{-\infty}^{+\infty}
+X(\omega)\,e^{\mathrm{i}\,\omega\,t}\textrm{d}\omega.
+\]</div>
+<p>V izrazu zgoraj smo uporabili <span class="math notranslate nohighlight">\(\textrm{d}f=\textrm{d}\omega/(2\pi)\)</span>.</p>
+<p>Če tukaj še enkrat ponovimo Fourierovo transformacijo in njeno inverzno obliko zapisano v krožni frekvenci:
+$<span class="math notranslate nohighlight">\(
+X(\omega)=\int_{-\infty}^{\infty} x(t)\,e^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t,
+\qquad
+x(t)=\frac{1}{2\,\pi}\int_{-\infty}^{\infty} X(\omega)\,e^{\,\textrm{i}\,\omega\,t}\,\textrm{d} \omega.
+\)</span>$</p>
+<p>V numeričnih metodah pa je frekvenca bolj pogosto definirana v sekundni frekvenci, takrat je Fourierova transformacija in njena inverzna oblika definirana kot:</p>
+<div class="math notranslate nohighlight">
+\[
+X(f)=\int_{-\infty}^{\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,
+\qquad
+x(t)=\int_{-\infty}^{\infty} X(f)\,e^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
+\]</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -293,7 +339,7 @@
     <a class='right-next' id="next-link" href="03%20-%20Diskretna%20Fourierova%20transformacija.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Discrete Fourier transform</p>
+        <p class="prev-next-title">Diskretna Fourierova transformacija</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

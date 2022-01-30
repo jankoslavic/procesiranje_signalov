@@ -116,7 +116,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03%20-%20Diskretna%20Fourierova%20transformacija.html">
-   Discrete Fourier transform
+   Diskretna Fourierova transformacija
   </a>
  </li>
  <li class="toctree-l1">
@@ -385,7 +385,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="fourierove-vrste">
-<h1>Fourierove vrste<a class="headerlink" href="#fourierove-vrste" title="Permalink to this headline">¶</a></h1>
+<span id="sec-fourierove-vrste"></span><h1>Fourierove vrste<a class="headerlink" href="#fourierove-vrste" title="Permalink to this headline">¶</a></h1>
 <p>Cilj Fourierovih vrst je, da bi poljubne (periodične) podatke opisali z vsoto harmonskih funkcij različnih osnovnih period. Ta cilj je v tem trenutku definiran relativno površno; vse detajle bomo pogledali v tem poglavju. Pot nas bo vodila preko sledečih korakov:</p>
 <ol class="simple">
 <li><p>zapis periodične funkcije, kot vsote harmonskih funkcij</p></li>
@@ -731,18 +731,20 @@ c_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,
 <p>Fourierove vrste najpogosteje najdemo definirane v treh oblikah (<span class="math notranslate nohighlight">\(T_p\)</span> predstavlja osnovno period in <span class="math notranslate nohighlight">\(N\)</span> število harmonskih komponent, ki jih upoštevamo/identificiramo):</p>
 <div class="section" id="fourierove-vrste-v-eksponentni-kompleksni-obliki">
 <span id="sec-fv-exp"></span><h3>Fourierove vrste v eksponentni (kompleksni) obliki<a class="headerlink" href="#fourierove-vrste-v-eksponentni-kompleksni-obliki" title="Permalink to this headline">¶</a></h3>
+<p>Fourierovi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
 c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
 \]</div>
-<div class="math notranslate nohighlight">
-\[
+<p>Rekonstruirana zvezna funkcija:
+$<span class="math notranslate nohighlight">\(
 x(t)=\sum_{n=-N}^{N}
 c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
-\]</div>
+\)</span>$</p>
 </div>
 <div class="section" id="fourierove-vrste-v-sinus-kosinusni-obliki">
 <span id="sec-fv-sin-cos"></span><h3>Fourierove vrste v sinus-kosinusni obliki<a class="headerlink" href="#fourierove-vrste-v-sinus-kosinusni-obliki" title="Permalink to this headline">¶</a></h3>
+<p>Fourierovi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
 a_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\cos(2\pi\,n\,t/T_p)\,\mathrm{d}t
@@ -751,15 +753,16 @@ a_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\cos(2\pi\,n\,t/T_p)\,\mathrm{d}t
 \[
 b_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\sin(2\pi\,n\,t/T_p)\,\mathrm{d}t
 \]</div>
-<div class="math notranslate nohighlight">
-\[
+<p>Rekonstruirana zvezna funkcija:
+$<span class="math notranslate nohighlight">\(
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{N}
 a_n\,\sin(2\pi\,n\,t/T_p)+
 b_n\,\cos(2\pi\,n\,t/T_p)
-\]</div>
+\)</span>$</p>
 </div>
 <div class="section" id="fourierove-vrste-v-amplitudno-fazni-obliki">
 <h3>Fourierove vrste v amplitudno-fazni obliki<a class="headerlink" href="#fourierove-vrste-v-amplitudno-fazni-obliki" title="Permalink to this headline">¶</a></h3>
+<p>Rekonstruirana zvezna funkcija:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\frac{A_0}{2}+\sum_{n=1}^{N}
