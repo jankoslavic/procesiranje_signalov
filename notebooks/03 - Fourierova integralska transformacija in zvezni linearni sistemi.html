@@ -248,6 +248,31 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nekateri-primeri-fourierove-transformacije">
+   Nekateri primeri Fourierove transformacije
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diracova-delta-funkcija">
+     Diracova delta funkcija
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simetricna-eksponentno-padajoca-funkcija">
+     Simetrična eksponentno padajoča funkcija
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -259,12 +284,12 @@
   <p>(sec:fourierova_int_transf=</p>
 <div class="tex2jax_ignore mathjax_ignore section" id="fourierova-integralska-transformacija-in-zvezni-linearni-sistemi">
 <h1>Fourierova integralska transformacija in zvezni linearni sistemi<a class="headerlink" href="#fourierova-integralska-transformacija-in-zvezni-linearni-sistemi" title="Permalink to this headline">¶</a></h1>
-<p>Izračun Fourierove vrste temelji na periodi <span class="math notranslate nohighlight">\(T_p\)</span>; integral za izračun koeficientov lahko definiramo od <span class="math notranslate nohighlight">\(-T_p\)</span> do <span class="math notranslate nohighlight">\(+T_p\)</span>:</p>
+<p>Izračun Fourierove vrste temelji na periodi <span class="math notranslate nohighlight">\(T_p\)</span>; integral za izračun koeficientov lahko definiramo od <span class="math notranslate nohighlight">\(-T_p/2\)</span> do <span class="math notranslate nohighlight">\(+T_p/2\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 c_n=\frac{1}{T_p}\,\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{p}\,n\,t}\,\textrm{d} t,
 \]</div>
-<p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, osnovna krožna frekvenca gre proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemu težavam pri deljenju z 0, <span class="math notranslate nohighlight">\(c_n\)</span> pomnožimo s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
+<p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, osnovna krožna frekvenca gre proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemu težavam pri deljenju z <span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(c_n\)</span> pomnožimo s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{T_p\rightarrow \infty} c_n\,T_p=\underbrace{\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{n}\,t}\,\textrm{d} t}_{X(\omega_n)}.
@@ -275,7 +300,7 @@ c_n=\frac{1}{T_p}\,\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{p}\,n\,t}
 X(\omega)= \mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty}x(t)\,e^{-\textrm{i}\,\omega\,t}\,\textrm{d} t,
 \]</div>
 <p>kjer smo namesto <span class="math notranslate nohighlight">\(\omega_{n}\)</span> zapisali <span class="math notranslate nohighlight">\(\omega\)</span>, saj je sedaj frekvenca zvezno definirana. <span class="math notranslate nohighlight">\(X(\omega)\)</span> predstavlja amplitudno frekvenčno gostoto, saj je <span class="math notranslate nohighlight">\(c_n\,T_p=c_n/\Delta f\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta f\)</span> frekvenčna pasovna širina (ang. <em>bandwidth</em>). S <span class="math notranslate nohighlight">\(\mathcal{F}\{\}\)</span> označimo Fourierovo transformacijo.</p>
-<p>Rekonstruirana zvezna funkcija, kadar <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>:
+<p>Poglejmo si sedaj še <strong>rekonstruirano zvezno funkcijo</strong>, kadar <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>:
 $<span class="math notranslate nohighlight">\(
 x(t)=\lim_{T_p\rightarrow\infty}\sum_{n=-\infty}^{+\infty}
 X(\omega_n)\underbrace{\frac{1}{T_p}}_{\Delta f}\,e^{\mathrm{i}\,\overbrace{2\pi\,n/T_p}^{\omega_n}\,t}
@@ -289,19 +314,249 @@ x(t)=\mathcal{F}^{-1}\{X(\omega)\}=\frac{1}{2\pi}\int_{-\infty}^{+\infty}
 X(\omega)\,e^{\mathrm{i}\,\omega\,t}\textrm{d}\omega.
 \]</div>
 <p>V izrazu zgoraj smo uporabili <span class="math notranslate nohighlight">\(\textrm{d}f=\textrm{d}\omega/(2\pi)\)</span>.</p>
-<p>Če tukaj še enkrat ponovimo Fourierovo transformacijo in njeno inverzno obliko zapisano v krožni frekvenci:
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Če tukaj še enkrat ponovimo Fourierovo transformacijo in njeno inverzno obliko zapisano v <strong>krožni frekvenci</strong>:
 $<span class="math notranslate nohighlight">\(
-X(\omega)=\int_{-\infty}^{\infty} x(t)\,e^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t,
+X(\omega)=\int_{-\infty}^{+\infty} x(t)\,e^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t,
 \qquad
-x(t)=\frac{1}{2\,\pi}\int_{-\infty}^{\infty} X(\omega)\,e^{\,\textrm{i}\,\omega\,t}\,\textrm{d} \omega.
+x(t)=\frac{1}{2\,\pi}\int_{-\infty}^{+\infty} X(\omega)\,e^{\,\textrm{i}\,\omega\,t}\,\textrm{d} \omega.
 \)</span>$</p>
-<p>V numeričnih metodah pa je frekvenca bolj pogosto definirana v sekundni frekvenci, takrat je Fourierova transformacija in njena inverzna oblika definirana kot:</p>
+</div>
+<p>V numeričnih metodah pa je frekvenca bolj pogosto definirana v <strong>sekundni frekvenci</strong>, takrat je Fourierova transformacija in njena inverzna oblika definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
-X(f)=\int_{-\infty}^{\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,
+X(f)=\int_{-\infty}^{+\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,
 \qquad
-x(t)=\int_{-\infty}^{\infty} X(f)\,e^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
+x(t)=\int_{-\infty}^{+\infty} X(f)\,e^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
 \]</div>
+<div class="section" id="nekateri-primeri-fourierove-transformacije">
+<h2>Nekateri primeri Fourierove transformacije<a class="headerlink" href="#nekateri-primeri-fourierove-transformacije" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="diracova-delta-funkcija">
+<h3>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Permalink to this headline">¶</a></h3>
+<p>Najprej si poglejmo Fourierovo transformacijo <strong>Diracove delta funkcije</strong> <span class="math notranslate nohighlight">\(\delta(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{F}\{\delta(t)\} = \int_{-\infty}^{+\infty} \delta(t)\,e^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t=e^{-\,\textrm{i}\,\omega\,0}=1,
+\]</div>
+<p>Na podlagi zgornje izpejave zaključimo, da Dirakova delta funkcija, ki je v času neskončno kratka v frekvenčni domeni zasede celotni spekter (vse frekvence). Veljalo bi tudi obratno, če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu bomo se pozneje vračali.</p>
+</div>
+<div class="section" id="simetricna-eksponentno-padajoca-funkcija">
+<h3>Simetrična eksponentno padajoča funkcija<a class="headerlink" href="#simetricna-eksponentno-padajoca-funkcija" title="Permalink to this headline">¶</a></h3>
+<p>Poglejmo si sedaj še <strong>simetrično eksponentno padajočo funkcijo</strong> <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
+\]</div>
+<p>Fourierova transformacija:
+$<span class="math notranslate nohighlight">\(
+\mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty} e^{-\delta\,|t|}\,e^{-\,\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{2\,\delta}{\delta^{2} + 4 \pi^{2}\,f^{2}}
+\)</span>$</p>
+<p>Opazimo, da je pri frekvenci 0 Hz ampituda <span class="math notranslate nohighlight">\(|X(0)|=2/\delta\)</span>, in pade na polovico začetne amplitude pri frekvenci: <span class="math notranslate nohighlight">\(f_{1/2}=\delta/(2\pi)\)</span>. Parameter <span class="math notranslate nohighlight">\(\delta\)</span> definiran časovni raztros; večja, ko je vrednost <span class="math notranslate nohighlight">\(\delta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni (glede na <span class="math notranslate nohighlight">\(f_{1/2}\)</span>). Podobno kakor pri delta funkciji, torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
+<p>Poglejmo si sedaj zgled v času in frekvenci:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t [s]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-.</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f [Hz]$&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Re$(X(f))$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-.</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Im$(X(f))$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_7_0.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_7_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_7_1.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_7_1.png" />
+</div>
+</div>
+<p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič (pri Fourierovih vrstah bi bili kosinusni členi različni od nič, sinusni pa enaki nič). To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelni bi bila imaginarna komponentna (slika spodaj).</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t [s]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-.</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f [Hz]$&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Re$(X(f))$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-.</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Im$(X(f))$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_9_0.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_9_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_9_1.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_9_1.png" />
+</div>
+</div>
+<p>Sicer pa tukaj velja poudariti, da realni podatki <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj). Tukaj velja poudariti, da so časovni podatki lahko v splošnem tudi komplekne oblike in takrat v frekvenčni domeni praviloma ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, d&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
+<span class="c1"># x = sym.I*x  # kompleksna časovna vrsta; to bo hitro</span>
+<span class="c1"># x = x + sym.I*sym.sign(t)*sym.exp(-δ*sym.Abs(t)) # kompleksna časovna vrsta; to bo trajalo</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t [s]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-.</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f [Hz]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> 
+         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">)</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-.</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span>
+         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_0.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_1.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_2.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_2.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t [s]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-.</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f [Hz]$&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Re$(X(f))$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-.</span><span class="mi">1</span><span class="p">,</span><span class="o">.</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Im$(X(f))$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_12_0.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_12_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_12_1.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{4 i \pi f}{4 \pi^{2} f^{2} + 0.01}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="n">doit</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\janko\AppData\Local\Temp/ipykernel_49284/2529516097.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="n">doit</span>
+             <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">unit_impulse</span><span class="p">(</span><span class="mi">51</span><span class="p">,</span> <span class="s1">&#39;mid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">T</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="mi">201</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ω</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ϕ</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Harmonska funkcija: $x(t) = A\,\sin(</span><span class="se">\\</span><span class="s1">omega\,t+</span><span class="se">\\</span><span class="s1">varphi); </span><span class="se">\\</span><span class="s1">omega=</span><span class="si">{</span><span class="n">ω</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">varphi=</span><span class="si">{</span><span class="n">ϕ</span><span class="si">}</span><span class="s1">$ &#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">ϕ</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Harmonski podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">varphi$&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span>
+                            <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3,rad=0&#39;</span><span class="p">,</span>
+                            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+            <span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$A$&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">A</span><span class="o">+.</span><span class="mi">05</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;&lt;-&#39;</span><span class="p">,</span>
+                            <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3,rad=0&#39;</span><span class="p">,</span>
+                            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+            <span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$T=</span><span class="se">\\</span><span class="s1">frac{2\,\pi}{</span><span class="se">\\</span><span class="s1">omega}$&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span> 
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">-</span><span class="n">ϕ</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;&lt;-&gt;&#39;</span><span class="p">,</span>
+                            <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3,rad=0&#39;</span><span class="p">,</span>
+                            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+            <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_17_0.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_17_0.png" />
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
