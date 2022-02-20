@@ -1,2 +1,2 @@
-# signal_processing
-Signal processing course
+# procesiranje_signalov
+Procesiranje signalov, Mag študij na Fakulteti za strojništvo UL
