@@ -268,6 +268,11 @@
      Simetrična eksponentno padajoča funkcija
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sinusna-funkcija">
+     Sinusna funkcija
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -452,6 +457,106 @@ $<span class="math notranslate nohighlight">\(
 <img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_0.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_0.png" />
 <img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_1.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_1.png" />
 <img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_2.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_11_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="sinusna-funkcija">
+<h3>Sinusna funkcija<a class="headerlink" href="#sinusna-funkcija" title="Permalink to this headline">¶</a></h3>
+<p>Predpostavimo sinusno funkcijo:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = A\,\sin(2\pi\,p\,t),
+\]</div>
+<p>ki jo preoblikujemo v:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = \frac{A}{2\,\textrm{i}}\,
+\left(e^{\textrm{i}\,2\pi\,p\,t)}-e^{-\textrm{i}\,2\pi\,p\,t)}
+\right)
+\]</div>
+<p>in potem nadaljujemo s strojnim izračunom Fourierove transformacije:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">A</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;A, t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{i A \mathcal{F}_{t}\left[e^{- 2 i \pi p t}\right]\left(f\right)}{2} - \frac{i A \mathcal{F}_{t}\left[e^{2 i \pi p t}\right]\left(f\right)}{2}\]</div>
+</div>
+</div>
+<p>Glede na lastnosti Diracove delta funkcije (glejte <span class="xref std std-ref">sec:fourierove_vrste)</span>) vemo <span class="math notranslate nohighlight">\(\mathcal{F}_{t}\left[e^{-2 \textrm{i}\,\pi\,p\,t}\right]\left(f\right)=\delta(-p-f)\)</span> in torej sledi:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{F}_{t}\left( A\,\sin(2\pi\,p\,t)\right)=
+\frac{\mathrm{i} A}{2} \delta(- f - p) - \frac{\mathrm{i} A}{2}\delta(- f + p)
+\]</div>
+<p>kar prikažemo na sliki spodaj.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">_</span><span class="si">{t}</span><span class="se">\\</span><span class="s1">left( A\,\sin(2\pi\,p\,t)</span><span class="se">\\</span><span class="s1">right)|$&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">()|$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="p">],</span> <span class="p">[</span><span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$-p$&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span>
+            <span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$+p$&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span>
+            <span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$A/2$&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="o">+.</span><span class="mi">1</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span>
+            <span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$A/2$&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="o">+.</span><span class="mi">1</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span>
+            <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_15_0.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_15_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">I</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span><span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \begin{cases} - \frac{A}{4 \pi p \left(- \frac{f}{p} + 1\right)} - \frac{A}{4 \pi f \left(1 - \frac{p}{f}\right)} &amp; \text{for}\: \left|{\arg{\left(f \right)} - \frac{\pi}{2}}\right| &lt; \frac{\pi}{2} \wedge \left|{\arg{\left(f \right)} + \frac{\pi}{2}}\right| &lt; \frac{\pi}{2} \\\int\limits_{-\infty}^{\infty} \left(- \frac{i A \left(e^{2 i \pi p t} - e^{- 2 i \pi p t}\right) e^{- 2 i \pi f t}}{2}\right)\, dt &amp; \text{otherwise} \end{cases}\end{split}\]</div>
 </div>
 </div>
 </div>
