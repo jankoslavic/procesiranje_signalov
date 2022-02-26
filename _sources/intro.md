@@ -6,18 +6,5 @@ Knjigo na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili 
 
 
 :::{note}
-Here is a note!
+Tako bomo označevali posebne opombe!
 :::
-
-:::{warning}
-Here is a warning!
-:::
-
-
-And here is a code block:
-
-```
-e = mc^2
-```
-
-Check out the content pages bundled with this sample book to see more.
