@@ -812,18 +812,19 @@ x(-t)=x(t),
 <p>takrat velja tudi:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_a^a x(t)\,\mathrm{d}t=0.
+\int_a^a x(t)\,\mathrm{d}t=2\,\int_0^a x(t)\,\mathrm{d}t.
 \]</div>
 <p>Funkcija je <strong>liha</strong>, če velja:</p>
 <div class="math notranslate nohighlight">
 \[
 x(-t)=-x(t),
 \]</div>
-<p>takrat velja tudi
-$<span class="math notranslate nohighlight">\(
-\int_a^a x(t)\mathrm{d}t=2\,\int_0^a x(t)\,\mathrm{d}t.
-\)</span>$</p>
-<p>Izostavimo lahko da je funkcija <span class="math notranslate nohighlight">\(\cos()\)</span> soda, funkcija <span class="math notranslate nohighlight">\(\sin()\)</span> pa liha.</p>
+<p>takrat velja tudi</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^a x(t)\,\mathrm{d}t=0.
+\]</div>
+<p>Izostavimo lahko, da je funkcija <span class="math notranslate nohighlight">\(\cos()\)</span> soda, funkcija <span class="math notranslate nohighlight">\(\sin()\)</span> pa liha.</p>
 <p>Za poznejšo obravnavo bo pomemben produkt dveh funkcij (ko npr. pri izračunu koeficientov Fourierove vrste); ali je produkt  funkcij <span class="math notranslate nohighlight">\(x(t)\,y(t)\)</span> sodi ali lihi, je odvisno od sodosti in lihosti funkcij <span class="math notranslate nohighlight">\(x(t)\)</span> in <span class="math notranslate nohighlight">\(y(t)\)</span>. Odnosi so definirani v tabeli spodaj.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -852,10 +853,13 @@ $<span class="math notranslate nohighlight">\(
 </tbody>
 </table>
 <p>Glede na zgornjo tabelo lahko sklenemo (glejte tudi <a class="reference internal" href="#sec-fv-sin-cos"><span class="std std-ref">Fourierove vrste v sinus-kosinusni obliki</span></a>):</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>če iščemo Fourierovo vrsto <em>sode</em> peridične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, potem bodo kosinusni členi <span class="math notranslate nohighlight">\(a_n\)</span> enaki nič (ker je produkt sode in sode funkcije soda funkcija; integral sode funkcije pa je 0).</p></li>
-<li><p>če iščemo Fourierovo vrsto <em>lihe</em> peridične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, potem bodo sinusni členi <span class="math notranslate nohighlight">\(b_n\)</span> enaki nič (ker je produkt lihe in lihe funkcije soda funkcija; integral sode funkcije pa je 0).</p></li>
+<li><p>če iščemo Fourierovo vrsto <em>sode</em> periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, potem bodo sinusni členi <span class="math notranslate nohighlight">\(b_n\)</span> enaki nič (ker je produkt sode in lihe funkcije liha funkcija; integral lihe funkcije pa je 0).</p></li>
+<li><p>če iščemo Fourierovo vrsto <em>lihe</em> peridične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, potem bodo cosinusni členi <span class="math notranslate nohighlight">\(a_n\)</span> enaki nič (ker je produkt lihe in sode funkcije liha funkcija; integral lihe funkcije pa je 0).</p></li>
 </ul>
+</div>
 </div>
 </div>
 </div>
