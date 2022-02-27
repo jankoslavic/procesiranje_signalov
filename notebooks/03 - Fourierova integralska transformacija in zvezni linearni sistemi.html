@@ -315,6 +315,16 @@
      Amplitudna modulacija (ang. modulation, tudi frequency-shifting)
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#odvajanje">
+     Odvajanje
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integriranje">
+     Integriranje
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -621,6 +631,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f },
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+
 <span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span><span class="p">)),</span> <span class="n">trig</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
@@ -642,25 +654,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f },
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_15128</span><span class="o">/</span><span class="mf">3614761255.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">podatki2</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$b=</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-<span class="g g-Whitespace">     </span><span class="mi">13</span>               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$b=</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">c:\python39\lib\site-packages\sympy\plotting\plot.py</span> in <span class="ni">plot</span><span class="nt">(show, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1726</span>             <span class="n">free</span> <span class="o">|=</span> <span class="n">a</span><span class="o">.</span><span class="n">free_symbols</span>
-<span class="g g-Whitespace">   </span><span class="mi">1727</span>             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">free</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1728</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1729</span>                     <span class="s1">&#39;The same variable should be used in all &#39;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1730</span>                     <span class="s1">&#39;univariate expressions being plotted.&#39;</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: The same variable should be used in all univariate expressions being plotted.
-</pre></div>
-</div>
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_17_0.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_17_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_17_1.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_17_1.png" />
 </div>
 </div>
 </div>
@@ -821,7 +816,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \mathcal{F}\{x(a\,t)\} = \frac{1}{|a|}\,X(f/a).
 \]</div>
 </div>
-<p>Zgornjo izpeljavo lahko podpremo z izpeljavo (za pozitivni <span class="math notranslate nohighlight">\(a\)</span>):</p>
+<p>Še izpeljava (za pozitivni <span class="math notranslate nohighlight">\(a\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -913,7 +908,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \mathcal{F}\{x(-t)\} = X(-f)\qquad \left(=X^*(f), \quad\textrm{če je } x(t)\textrm{ realna funkcija}\right).
 \]</div>
 </div>
-<p>Zgornjo izpeljavo lahko podpremo s strojno izpeljavo:</p>
+<p>Še izpeljava:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -944,7 +939,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \mathcal{F}\{x(t-t_0)\} = e^{-\textrm{i}\,2\pi\,f\,t_0}\,X(f).
 \]</div>
 </div>
-<p>Zgornjo izpeljavo lahko podpremo z izpeljavo:</p>
+<p>Še izpeljava:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1039,7 +1034,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \mathcal{F}\{x(t)\,\cos(2\pi\,f_0\,t)\} = \frac{1}{2}\big(X(f-f_0)+X(f+f_0)\big).
 \]</div>
 </div>
-<p>Zgornjo izpeljavo lahko podpremo z izpeljavo:</p>
+<p>Še izpeljava:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1107,6 +1102,173 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Amfm3-en-de.gif"></p>
+</div>
+<div class="section" id="odvajanje">
+<h3>Odvajanje<a class="headerlink" href="#odvajanje" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fourierova transformacija funkcije odvajane v času je z neodvajanj v relaciji:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{F}\{\dot x(t)\} = \textrm{i}\,2\pi\,f\,X(f)
+\]</div>
+<p>kjer velja, da gre <span class="math notranslate nohighlight">\(x(0)\rightarrow 0\)</span>, ko gre <span class="math notranslate nohighlight">\(t\rightarrow \pm\infty\)</span>.</p>
+</div>
+<p>Še izpeljava:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \int\limits_{-\infty}^{\infty} e^{- 2 i \pi f t} \frac{d}{d t} x{\left(t \right)}\, dt\]</div>
+</div>
+</div>
+<p>Uporabiti moramo integriranje po delih <span class="math notranslate nohighlight">\(u = e^{-\textrm{i}\,2\pi\,f\,t}\)</span>, <span class="math notranslate nohighlight">\(\textrm{d}v= \dot x(t)\,\textrm{d}t\)</span>; pripravimo <span class="math notranslate nohighlight">\(\textrm{d}u\)</span> in <span class="math notranslate nohighlight">\(v\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">dv</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">du</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">dv</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sledi, da moramo izraz (prvi del integriranja po delih):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span><span class="o">*</span><span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle x{\left(t \right)} e^{- 2 i \pi f t}\]</div>
+</div>
+</div>
+<p>izračunati ob mejah <span class="math notranslate nohighlight">\(+\infty\)</span> in <span class="math notranslate nohighlight">\(-\infty\)</span>; glede na definiricjo zgoraj, v obeh primerih velja <span class="math notranslate nohighlight">\(x(t)=0\)</span>.</p>
+<p>Preostane torej samo še drugi del integriranja po delih (in s tem smo dokazali zgodaj zapisano):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">du</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 2 i \pi f \int\limits_{-\infty}^{\infty} x{\left(t \right)} e^{- 2 i \pi f t}\, dt\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="integriranje">
+<h3>Integriranje<a class="headerlink" href="#integriranje" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fourierova transformacija funkcije integriranje v času je z osnovno v relaciji:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{F}\big{\{}\int_{-\infty}^t x(\tau)\,\textrm{d}\tau\big{\}} = \frac{X(f)}{\textrm{i}\,2\pi\,f}.
+\]</div>
+</div>
+<p>Izpeljava za integriranje sledi iz tiste za odvajanje:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{F}\{\dot x(t)\} = \textrm{i}\,2\pi\,f\,\mathcal{F}\{x(t)\},
+\]</div>
+<p>pri čemer naredimo zamenjavo funkcije: <span class="math notranslate nohighlight">\(u(t)=\dot x(t)\)</span> in <span class="math notranslate nohighlight">\(\int_{-\infty}^t u(t)\,\textrm{d}\tau=x(t)\)</span>:</p>
+<p>Odvajanje in integriranje v frekvenčni domeni sta zelo pomembni lastnosti Fourierove transformacije, saj nam omogočata enostaven prehod med odvajanimi in integriranimi podatki.</p>
+<p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacijo, saj temelji na razliki števil, ki se razlikujeta/jo malo (razlika pa se nato še deli z majhnim korakom). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljeno.</p>
+<p>Nadalje velja poudariti, da je časovno integriranje nestabilna numerična operacija, saj se napake na narejene na posameznem koraku seštevajo in s časom rastejo. Integracija v frekenčni domeni, taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0Hz, nedoločen rezultat (deljenje z 0).</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">x_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x_2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">x_3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="n">X_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">X_2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">X_3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_3</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_1(t)=</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x_1</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_2(t)=\dot x_1(t)=</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x_2</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_3(t)=\int x_2(t)dt=</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x_3</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_1(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_2(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_3</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_3(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_1(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_2(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_3</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_3(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_1(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_2(f)|$ z integracijo v frekvenčni domeni&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_1(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_2(f)$ z integracijo v frekvenčni domeni&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_0.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_1.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_2.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_2.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_3.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_3.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_4.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_4.png" />
+</div>
+</div>
 </div>
 </div>
 </div>
