@@ -7,7 +7,7 @@ chapters:
 # - file: markdown
 - file: notebooks/01 - Uvod
 - file: notebooks/02 - Fourierove vrste
-- file: notebooks/03 - Fourierova integralska transformacija in zvezni linearni sistemi.ipynb
+- file: notebooks/03 - Fourierova integralska transformacija.ipynb
 - file: notebooks/03 - Diskretna Fourierova transformacija.ipynb
 - file: notebooks/04 - Convolution and linear time invariant systems
 - file: notebooks/05 - Applying windows to signals
