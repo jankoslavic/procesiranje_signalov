@@ -325,6 +325,11 @@
      Integriranje
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#konvolucija">
+     Konvolucija
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1269,6 +1274,59 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <img alt="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_4.png" src="../_images/03 - Fourierova integralska transformacija in zvezni linearni sistemi_54_4.png" />
 </div>
 </div>
+</div>
+<div class="section" id="konvolucija">
+<h3>Konvolucija<a class="headerlink" href="#konvolucija" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fourierova transformacija konvolucije dveh funkcij, je v frekvenčni domeni enostaven produkt:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{F}\big{\{}x(t)*y(t)\big{\}} = X(f)\,Y(f).
+\]</div>
+</div>
+<p>Znak <span class="math notranslate nohighlight">\(*\)</span> označuje konvolucijo:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t)*y(t)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau\,\textrm{d}t
+\]</div>
+<p>Zgornjo povezavo lahko relativno enostavno izpeljemo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, tau, v&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span>
+        <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">)),</span>
+        <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \int\limits_{-\infty}^{\infty} e^{- 2 i \pi f t} \int\limits_{-\infty}^{\infty} x{\left(\tau \right)} y{\left(t - \tau \right)}\, d\tau\, dt\]</div>
+</div>
+</div>
+<p>Uvedemo še novo spremenljivko:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \int\limits_{-\infty}^{\infty} e^{- 2 i \pi f \left(\tau + v\right)} \int\limits_{-\infty}^{\infty} x{\left(\tau \right)} y{\left(v \right)}\, d\tau\, dv\]</div>
+</div>
+</div>
+<p>Zgoraj je očitno, da lahko integral po <span class="math notranslate nohighlight">\(\tau\)</span> in <span class="math notranslate nohighlight">\(v\)</span> ločimo, kjer vsak integal predstavlja Fourierovo transformiranko <span class="math notranslate nohighlight">\(X(t)\)</span> in <span class="math notranslate nohighlight">\(Y(f)\)</span>.</p>
+<p>Fourierova transformacija konvolucije je mogoče najbolj uporabna lastnost Fourierove transformacije, saj množenje v frekvenčni domeni bistveno pohitri izračun konvolucije dveh funkcij.</p>
 </div>
 </div>
 </div>
