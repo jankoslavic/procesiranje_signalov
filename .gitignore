@@ -131,3 +131,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+/notebooks/3. Discrete Fourier transform, Fast FT, convolution, windows.ipynb
+/notebooks/4. Digitalizacija, SNR, vzorčenje.ipynb
+/notebooks/4. ADC, SNR, sampling.ipynb
+/notebooks/3. Diskretna Fourierjeva transformacija, konvolucija, okna.ipynb
+/notebooks/2. Fourier transform and linear systems.ipynb
+/notebooks/1. Fourierjeve vrste.ipynb
