@@ -115,18 +115,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03%20-%20Diskretna%20Fourierova%20transformacija.html">
-   Diskretna Fourierova transformacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04%20-%20Convolution%20and%20linear%20time%20invariant%20systems.html">
-   Convolution and linear time invariant systems
+  <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html">
+   Linearni časovno invariantni sistemi
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05%20-%20Applying%20windows%20to%20signals.html">
    Applying windows to signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03%20-%20Diskretna%20Fourierova%20transformacija.html">
+   Diskretna Fourierova transformacija
   </a>
  </li>
  <li class="toctree-l1">
@@ -335,7 +335,7 @@
 <img alt="../_images/01 - Uvod_2_0.png" src="../_images/01 - Uvod_2_0.png" />
 </div>
 </div>
-<p>Kot naslednji primer, je spodaj prikazana slika frekvenčne prenosne funkcije (<em>ang.</em> FRF, Frequency Response Function), ki za linearni časovno invariantni sistem (glejte poglavje <a class="reference internal" href="04%20-%20Convolution%20and%20linear%20time%20invariant%20systems.html#sec-konvolucija-lti"><span class="std std-ref">Convolution and linear time invariant systems</span></a>) v frekvenčni domeni povezuje vzbujanje sistema z njegovim odzivom (primer je vzet iz paketa pyUFF). Zadnji stavek vsebuje veliko terminov, ki jih v nadaljevanju razdelali in spoznali. Pravilna identifikacija frekvenčne prenosne funkcije je zelo pomembna za karakterizacijo dinamskih sistemov in kako jo pravilno identificiramo bomo v celoti razumeli šele proti koncu te knjige.</p>
+<p>Kot naslednji primer, je spodaj prikazana slika frekvenčne prenosne funkcije (<em>ang.</em> FRF, Frequency Response Function), ki za linearni časovno invariantni sistem (glejte poglavje <span class="xref std std-ref">sec:konvolucija_LTI</span>) v frekvenčni domeni povezuje vzbujanje sistema z njegovim odzivom (primer je vzet iz paketa pyUFF). Zadnji stavek vsebuje veliko terminov, ki jih v nadaljevanju razdelali in spoznali. Pravilna identifikacija frekvenčne prenosne funkcije je zelo pomembna za karakterizacijo dinamskih sistemov in kako jo pravilno identificiramo bomo v celoti razumeli šele proti koncu te knjige.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -374,7 +374,7 @@
 <p class="admonition-title">Note</p>
 <p>LTI je angleška kratica in pomeni <strong>linear time-invariant systems</strong>.</p>
 </div>
-<p>Podrobneje si bomo take sisteme pogledali v poglavju <a class="reference internal" href="04%20-%20Convolution%20and%20linear%20time%20invariant%20systems.html#sec-konvolucija-lti"><span class="std std-ref">Convolution and linear time invariant systems</span></a>, tukaj, v uvodu, se jih bomo zgoj dotaknili. LČI sistemi se na idealni impulz odzovejo z impulznim odzivom, ki ga označimo s <span class="math notranslate nohighlight">\(h(t)\)</span>. Vzbujanje <span class="math notranslate nohighlight">\(x(t)\)</span> in odziv <span class="math notranslate nohighlight">\(y(t)\)</span> so za LČI sistem povezani z:</p>
+<p>Podrobneje si bomo take sisteme pogledali v poglavju <span class="xref std std-ref">sec:konvolucija_LTI</span>, tukaj, v uvodu, se jih bomo zgoj dotaknili. LČI sistemi se na idealni impulz odzovejo z impulznim odzivom, ki ga označimo s <span class="math notranslate nohighlight">\(h(t)\)</span>. Vzbujanje <span class="math notranslate nohighlight">\(x(t)\)</span> in odziv <span class="math notranslate nohighlight">\(y(t)\)</span> so za LČI sistem povezani z:</p>
 <div class="math notranslate nohighlight">
 \[
 y(t)=h(t) * x(t),
