@@ -330,25 +330,18 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fourierove-vrste-in-diracova-delta-funkcija">
-   Fourierove vrste in Diracova delta funkcija
+  <a class="reference internal nav-link" href="#diracova-delta-funkcija">
+   Diracova delta funkcija
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diracova-delta-funkcija">
-     Diracova delta funkcija
+    <a class="reference internal nav-link" href="#lastnosti-diracove-delta-funkcije">
+     Lastnosti Diracove delta funkcije
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#lastnosti-diracove-delta-funkcije">
-       Lastnosti Diracove delta funkcije
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Fourierove vrste
+    <a class="reference internal nav-link" href="#padajoca-zaga-in-njen-odvod">
+     Padajoča žaga in njen odvod
     </a>
    </li>
   </ul>
@@ -1254,10 +1247,8 @@ c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </div>
 </div>
-<div class="section" id="fourierove-vrste-in-diracova-delta-funkcija">
-<h2>Fourierove vrste in Diracova delta funkcija<a class="headerlink" href="#fourierove-vrste-in-diracova-delta-funkcija" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="diracova-delta-funkcija">
-<h3>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Permalink to this headline">¶</a></h3>
+<h2>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Permalink to this headline">¶</a></h2>
 <p>Diracova delta funkcija (dejansko to posebna oblika funkcije, t.i. generalizirana funkcija) je definirana z:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1298,7 +1289,7 @@ u(t)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_69_0.png" src="../_images/02 - Fourierove vrste_69_0.png" />
+<img alt="../_images/02 - Fourierove vrste_68_0.png" src="../_images/02 - Fourierove vrste_68_0.png" />
 </div>
 </div>
 <p>Do enotskega impulza pridemo z uteženim seštevanjem dveh enotskih korakov:</p>
@@ -1319,7 +1310,7 @@ u(t)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_72_0.png" src="../_images/02 - Fourierove vrste_72_0.png" />
+<img alt="../_images/02 - Fourierove vrste_71_0.png" src="../_images/02 - Fourierove vrste_71_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -1330,7 +1321,7 @@ u(t)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_73_0.png" src="../_images/02 - Fourierove vrste_73_0.png" />
+<img alt="../_images/02 - Fourierove vrste_72_0.png" src="../_images/02 - Fourierove vrste_72_0.png" />
 </div>
 </div>
 <p>in nato integriramo (rezultat je pričakovano enak 1; spremenite <span class="math notranslate nohighlight">\(\varepsilon\)</span> v <code class="docutils literal notranslate"><span class="pre">podatki</span></code> zgoraj!):</p>
@@ -1341,7 +1332,7 @@ u(t)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_75_0.png" src="../_images/02 - Fourierove vrste_75_0.png" />
+<img alt="../_images/02 - Fourierove vrste_74_0.png" src="../_images/02 - Fourierove vrste_74_0.png" />
 </div>
 </div>
 <p>Med Diracovo delta funkcijo in enotskim korakom velja tudi sledeča povezava (<span class="math notranslate nohighlight">\(u(t)\)</span> je koračna funkcija):</p>
@@ -1350,7 +1341,7 @@ u(t)=
 \delta(t)=\lim_{\varepsilon\rightarrow 0}\delta_{\varepsilon}(t)=\frac{\textrm{d}}{\textrm{d}t}u(t).
 \]</div>
 <div class="section" id="lastnosti-diracove-delta-funkcije">
-<span id="sec-dirac-lastnosti"></span><h4>Lastnosti Diracove delta funkcije<a class="headerlink" href="#lastnosti-diracove-delta-funkcije" title="Permalink to this headline">¶</a></h4>
+<span id="sec-dirac-lastnosti"></span><h3>Lastnosti Diracove delta funkcije<a class="headerlink" href="#lastnosti-diracove-delta-funkcije" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="simple">
@@ -1362,9 +1353,8 @@ u(t)=
 </ol>
 </div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3>Fourierove vrste<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="padajoca-zaga-in-njen-odvod">
+<h3>Padajoča žaga in njen odvod<a class="headerlink" href="#padajoca-zaga-in-njen-odvod" title="Permalink to this headline">¶</a></h3>
 <p>Predpostavimo periodično padajočo žagasto funkcijo, kot je prikazana spodaj:</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1386,7 +1376,7 @@ u(t)=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_80_0.png" src="../_images/02 - Fourierove vrste_80_0.png" />
+<img alt="../_images/02 - Fourierove vrste_79_0.png" src="../_images/02 - Fourierove vrste_79_0.png" />
 </div>
 </div>
 <p>Vrsta padajoče žagaste funkcije je definirana kot:</p>
@@ -1410,7 +1400,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_82_0.png" src="../_images/02 - Fourierove vrste_82_0.png" />
+<img alt="../_images/02 - Fourierove vrste_81_0.png" src="../_images/02 - Fourierove vrste_81_0.png" />
 </div>
 </div>
 <p>Če odvajamo padajočo žagasto funkcijo v času, je rezultat enak:</p>
@@ -1448,7 +1438,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_84_0.png" src="../_images/02 - Fourierove vrste_84_0.png" />
+<img alt="../_images/02 - Fourierove vrste_83_0.png" src="../_images/02 - Fourierove vrste_83_0.png" />
 </div>
 </div>
 </div>
@@ -1494,7 +1484,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_87_0.png" src="../_images/02 - Fourierove vrste_87_0.png" />
+<img alt="../_images/02 - Fourierove vrste_86_0.png" src="../_images/02 - Fourierove vrste_86_0.png" />
 </div>
 </div>
 <p>Pri pripravi podatkov zgoraj smo izračunali Fourierove koeficiente <span class="math notranslate nohighlight">\(c\)</span>:</p>
@@ -1550,7 +1540,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_91_0.png" src="../_images/02 - Fourierove vrste_91_0.png" />
+<img alt="../_images/02 - Fourierove vrste_90_0.png" src="../_images/02 - Fourierove vrste_90_0.png" />
 </div>
 </div>
 </div>
@@ -1624,7 +1614,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_99_0.png" src="../_images/02 - Fourierove vrste_99_0.png" />
+<img alt="../_images/02 - Fourierove vrste_98_0.png" src="../_images/02 - Fourierove vrste_98_0.png" />
 </div>
 </div>
 <p>Vrednost na podlagi Fourierovih koeficientov:</p>
@@ -1677,7 +1667,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02 - Fourierove vrste_105_0.png" src="../_images/02 - Fourierove vrste_105_0.png" />
+<img alt="../_images/02 - Fourierove vrste_104_0.png" src="../_images/02 - Fourierove vrste_104_0.png" />
 </div>
 </div>
 </div>
