@@ -524,7 +524,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 <img alt="../_images/02 - Fourierove vrste_5_0.png" src="../_images/02 - Fourierove vrste_5_0.png" />
 </div>
 </div>
-<p>Periodična funkcija kakor smo si jo pogledali zgoraj je ključnega pomena za razumevanje Fourierovih vrst in pozneje Fourierove transformacije (poglavje TBA). V nadaljevanju bomo periodično funkcijo najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
+<p>Periodična funkcija kakor smo si jo pogledali zgoraj je ključnega pomena za razumevanje Fourierovih vrst in pozneje Fourierove transformacije (glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">Fourierova integralska transformacija</span></a>). V nadaljevanju bomo periodično funkcijo najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
 <p>Zapis v kompleksno obliko začnemo s pomočjo Eulerjeve formule:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -577,7 +577,7 @@ x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
 \big)\,e^{-\mathrm{i}\,2\,\pi\,n\,t/T_p}+
 \right].
 \]</div>
-<p>Zgornjo enačbo lahko poenostavimo v:</p>
+<p>Zgornji izraz poenostavimo v:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
@@ -594,22 +594,28 @@ c_n =
 \end{cases}
 \end{split}\]</div>
 <p>Ugotovimo, da velja <span class="math notranslate nohighlight">\(c_n=c_{-n}^{*}\)</span>, kjer smo z <span class="math notranslate nohighlight">\({}^*\)</span> označili kompleksno konjugirano vrednost.</p>
-<p>Da obe definiciji, klasična:</p>
-<div class="math notranslate nohighlight">
-\[x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Zapis kompleksno periodične funkcije z realnimi koeficienti:
+$<span class="math notranslate nohighlight">\(x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
 \left[
 a_n\cos\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 +
 b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 \right]
-\]</div>
-<p>in zapis v kompleksni obliki:</p>
+\)</span>$</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Zapis kompleksno periodične funkcije s kompleksnimi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
 c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 \]</div>
-<p>vodita v isti rezultat se lahko prepričamo iz slike spodaj.</p>
+<p>::</p>
+<p>Oba zapisa zgoraj seveda vodita v isti rezultat (glejte primer spodaj).</p>
+</div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -680,13 +686,13 @@ c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 </div>
 <div class="section" id="identifikacija-harmonskih-funkcij-ki-sestavljajo-periodicno-funkcijo">
 <h2>Identifikacija harmonskih funkcij, ki sestavljajo periodično funkcijo<a class="headerlink" href="#identifikacija-harmonskih-funkcij-ki-sestavljajo-periodicno-funkcijo" title="Permalink to this headline">¶</a></h2>
-<p>Sedaj se lahko vrnemo na izvorno nalogo Fourierovih vrst: <em>popis poljubne periodične funkcije s superpozicijo različnih harmonskih funkcij</em>. Vprašanje torej je, ali v periodični funkciji:</p>
+<p>Sedaj se lahko vrnemo na izvorno nalogo Fourierovih vrst: <em>popis poljubne periodične funkcije s superpozicijo različnih harmonskih funkcij</em>. Vprašanje torej je: ali v periodični funkciji:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
 c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 \]</div>
-<p>lahko identificiramo harmonsko funkcijo s frekvenco <span class="math notranslate nohighlight">\(m\)</span> kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(c_m\,e^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>? Izkaže se, da je to relativno enostavno, če poskušamo izračunati integral periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> pomnožen z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, negativne frekvence <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
+<p>lahko identificiramo harmonsko funkcijo s frekvenco <span class="math notranslate nohighlight">\(m\)</span> kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(c_m\,e^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>? Izkaže se, da je to relativno enostavno, če poskušamo izračunati integral periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> pomnožen z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, ki ima negativno frekvenco <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 \underbrace{\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{A_m}=
@@ -719,31 +725,36 @@ c_n\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \[
 B_m = c_m\,T_p
 \]</div>
-<p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznan Fourierov koeficient <span class="math notranslate nohighlight">\(c_m\)</span> definirana kot (kompleksno število definira amplitudo in fazo):</p>
+<p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznan Fourierov koeficient <span class="math notranslate nohighlight">\(c_m\)</span> definirana kot (gre za kompleksno število z amplitudo in fazo):</p>
 <div class="math notranslate nohighlight">
 \[
 c_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t
 \]</div>
-<p>Izpeljali smo torej, da je posamezno harmonsko komponento relativno enostavno določiti; težava v praksi je, da dani podatki <span class="math notranslate nohighlight">\(x(t)\)</span> nujno ne izpolnjujejo vseh predpostavk, ki smo jih zgoraj naredili. Kljub temu, pa Fourierove vrste uporabljamo in nam dajejo odlične rezultate. Več si pogledamo v nadaljevanju.</p>
+<p>Izpeljali smo torej, da je posamezno harmonsko komponento relativno enostavno določiti; težava v praksi je, da dani podatki <span class="math notranslate nohighlight">\(x(t)\)</span> nujno ne izpolnjujejo vseh predpostavk, ki smo jih zgoraj naredili (npr. da je harmonik celi večkratnik osnovne frekvence). Kljub temu, pa Fourierove vrste uporabljamo in nam dajejo odlične rezultate.</p>
 </div>
 <div class="section" id="posplositev">
 <h2>Posplošitev<a class="headerlink" href="#posplositev" title="Permalink to this headline">¶</a></h2>
 <p>Fourierove vrste najpogosteje najdemo definirane v treh oblikah (<span class="math notranslate nohighlight">\(T_p\)</span> predstavlja osnovno period in <span class="math notranslate nohighlight">\(N\)</span> število harmonskih komponent, ki jih upoštevamo/identificiramo):</p>
 <div class="section" id="fourierove-vrste-v-eksponentni-kompleksni-obliki">
 <span id="sec-fv-exp"></span><h3>Fourierove vrste v eksponentni (kompleksni) obliki<a class="headerlink" href="#fourierove-vrste-v-eksponentni-kompleksni-obliki" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Fourierovi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
 c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
 \]</div>
-<p>Rekonstruirana zvezna funkcija:
-$<span class="math notranslate nohighlight">\(
+<div class="math notranslate nohighlight">
+\[
 x(t)=\sum_{n=-N}^{N}
 c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
-\)</span>$</p>
+\]</div>
+</div>
 </div>
 <div class="section" id="fourierove-vrste-v-sinus-cosinusni-obliki">
 <span id="sec-fv-sin-cos"></span><h3>Fourierove vrste v sinus-cosinusni obliki<a class="headerlink" href="#fourierove-vrste-v-sinus-cosinusni-obliki" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Fourierovi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -760,13 +771,18 @@ a_n\,\sin(2\pi\,n\,t/T_p)+
 b_n\,\cos(2\pi\,n\,t/T_p)
 \)</span>$</p>
 </div>
+</div>
 <div class="section" id="fourierove-vrste-v-amplitudno-fazni-obliki">
 <h3>Fourierove vrste v amplitudno-fazni obliki<a class="headerlink" href="#fourierove-vrste-v-amplitudno-fazni-obliki" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Rekonstruirana zvezna funkcija:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\frac{A_0}{2}+\sum_{n=1}^{N}
-A_n\,\cos(2\pi\,n\,t/T_p-\varphi_n)\]</div>
+A_n\,\cos(2\pi\,n\,t/T_p-\varphi_n)
+\]</div>
+</div>
 <p>Kjer moramo amplitudo <span class="math notranslate nohighlight">\(A_n\)</span> in fazo <span class="math notranslate nohighlight">\(\varphi_n\)</span> določit s pomočjo eksponentne ali sinusno-cosinusne oblike in ob pomoči prehodov med posameznimi oblikami zapisov:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -782,7 +798,11 @@ c_n&amp;=c_{-n}^*&amp;\\
 <h3>Nekatere lastnosti Fourierovih vrst<a class="headerlink" href="#nekatere-lastnosti-fourierovih-vrst" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="odvodi-in-integrali-fourierovih-vrst">
 <h4>Odvodi in integrali Fourierovih vrst<a class="headerlink" href="#odvodi-in-integrali-fourierovih-vrst" title="Permalink to this headline">¶</a></h4>
-<p>Za periodično funkcijo, ki jo na področju zveznosti lahko popišemo s Fourierovimi vrstami govorimo, da izpolnjujejo <strong>Dirichletov pogoj</strong>. Če Dirichletov pogoj izpolnjuje tudi odvod <span class="math notranslate nohighlight">\(\dot(x)(t)\)</span>, potem je mogoče odvod izračunati neposredno iz Fourierovih vrst za <span class="math notranslate nohighlight">\(x(t)\)</span> pri čemer je treba odvajati posamezne člene.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Za periodično funkcijo, ki jo na področju zveznosti lahko popišemo s Fourierovimi vrstami govorimo, da izpolnjujejo <strong>Dirichletov pogoj</strong>.</p>
+</div>
+<p>Če Dirichletov pogoj izpolnjuje tudi odvod <span class="math notranslate nohighlight">\(\dot x(t)\)</span>, potem je mogoče odvod izračunati neposredno iz Fourierovih vrst za <span class="math notranslate nohighlight">\(x(t)\)</span> pri čemer je treba odvajati posamezne člene.</p>
 <div class="math notranslate nohighlight">
 \[
 \dot{x}(t)=\sum_{n=-N}^{N}
@@ -952,8 +972,8 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 </div>
 </div>
 <p>Pri tem smo pazili, da smo izbrali (<code class="docutils literal notranslate"><span class="pre">sel</span></code>) samo eno periodo v časovni vrsti. Tukaj velja poudariti, da moramo integrirati po celotni periodi. Rezultat je <strong>točen</strong> do nivoja natančnosti zapisa v računalnik.</p>
-<p>Vredno je opozoriti, da moramo biti zelo natančni pri implementaciji izpeljanih izrazov. Hitro lahko dobimo <em>zelo dober</em> rezultat; vendar dokler ni <em>točen</em> do nivoja natančnosti zapisa v računalnik, do takrat je nekje napaka.</p>
-<p>Napako bi lahko naredili, če bi naša diskretizacija bila takšna, da ne bi ključevala točke pri 0s in točke pri <span class="math notranslate nohighlight">\(T_p\)</span>. Tako napako lahko preikusite tako, greste par vrstic navzgor v definicijo slike in vrstico:</p>
+<p>Vredno je opozoriti, da moramo biti zelo natančni pri implementaciji izpeljanih izrazov. Hitro lahko dobimo <em>zelo dober</em> rezultat; vendar dokler ni <em>točen</em> do nivoja natančnosti zapisa v računalnik, do takrat je nekje v implementaciji napaka.</p>
+<p>Napako bi lahko naredili, če bi naša diskretizacija bila takšna, da ne bi ključevala točke pri 0s in točke pri <span class="math notranslate nohighlight">\(T_p\)</span>. Tako napako lahko preiskuite tako, greste par vrstic navzgor v definicijo slike in vrstico:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -964,7 +984,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 </div>
 <div class="section" id="odvod-integral-kompleksno-periodicne-funkcije">
 <h3>Odvod / Integral kompleksno periodične funkcije<a class="headerlink" href="#odvod-integral-kompleksno-periodicne-funkcije" title="Permalink to this headline">¶</a></h3>
-<p>Nadaljujemo z zgledom zgoraj in si najprej poglejmo, da je odvod po času res enak Fourierovi vrsti kjer smo vsakega od členov preprosto odvajali.</p>
+<p>Nadaljujemo z zgledom zgoraj in si najprej poglejmo, da je odvod po času res enak Fourierovi vrsti, kjer smo vsakega od členov preprosto odvajali.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1249,11 +1269,15 @@ c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 <div class="section" id="diracova-delta-funkcija">
 <h2>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Permalink to this headline">¶</a></h2>
-<p>Diracova delta funkcija (dejansko to posebna oblika funkcije, t.i. generalizirana funkcija) je definirana z:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Diracova delta funkcija je definirana z:</p>
 <div class="math notranslate nohighlight">
 \[
 \delta(t)=0 \quad\textrm{ za } t\ne 0 \qquad\textrm{ in } \qquad \int_{-\infty}^{+\infty}\delta(t)\,\textrm{d}t=1.
 \]</div>
+</div>
+<p>Opomba: dejansko to ni navadna funkcije, ampak t.i. generalizirana funkcija.</p>
 <p>Ker je integral Diracove delta funkcije 1, se včasih imenuje tudi funkcija enotskega impulza, definirana tudi kot:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1411,14 +1435,18 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 <p>ker pa lahko odvajamo tudi vrsto, velja tudi:</p>
 <div class="math notranslate nohighlight">
 \[
-\dot x(t) = \frac{2}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\cos\Big(\frac{2\pi\,n\,t}{T_p}\Big)
+\dot x(t) = \frac{2}{T_p}\sum_{n=1}^{\infty}\cos\Big(\frac{2\pi\,n\,t}{T_p}\Big)
 \]</div>
 <p>enačenje obeh izrazov vodi v izraz:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Periodični <em>vlak impulzov</em> (ang. <em>train of impulses</em>) ima obliki Fourierovih vrst konstantne koeficiente (<span class="math notranslate nohighlight">\(2/T_p\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{n=-\infty}^{+\infty}\delta(t-n\,T_p) =  \frac{1}{T_p} +\frac{2}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\cos\Big(\frac{2\pi\,n\,t}{T_p}\Big)
+\sum_{n=-\infty}^{+\infty}\delta(t-n\,T_p) =  \frac{1}{T_p} +\frac{2}{T_p}\sum_{n=1}^{\infty}\cos\Big(\frac{2\pi\,n\,t}{T_p}\Big)
 \]</div>
-<p>Interpretacija je: periodični <em>vlak impulzov</em> (v angleščini je tukaj uveljavljen izraz <em>train of impulses</em>) ima obliki Fourierovih vrst koeficiente konstantne (<span class="math notranslate nohighlight">\(2/T_p\)</span>). Slednjo ugotovitev bomo pozneje potrebovali, ko bomo obravnavali vzorčenje signalov.</p>
+</div>
+<p>Slednjo ugotovitev bomo pozneje potrebovali, ko bomo obravnavali vzorčenje signalov.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1565,7 +1593,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 \frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
 \frac{1}{T_p}\sum_{n=-\infty}^{\infty}\,\sum_{m=-\infty}^{\infty}c_n\,c_m^*\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t
 \]</div>
-<p>Ker je integral harmonske funkcije na zaključeni periodi vedno nič razen, ko je frekvenca 0, je podintegralska funkcija enaka 1 in integral <span class="math notranslate nohighlight">\(T_p\)</span></p>
+<p>Integral harmonske funkcije na zaključeni periodi je vedno nič razen, ko je frekvenca 0. Ko je frekvenca enaka 0, je podintegralska funkcija enaka 1 in integral <span class="math notranslate nohighlight">\(T_p\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t=
@@ -1574,6 +1602,8 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 0,&amp;\textrm{sicer.}\\
 \end{cases}
 \end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Sledi <strong>Parsevalov teorem</strong> ali tudi Parsevalova enakost:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1581,6 +1611,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 \sum_{n=-\infty}^{\infty}c_n\,c_n^*,
 \]</div>
 <p>ki poveže povprečno moč v času s močjo v frekvenčni domeni.</p>
+</div>
 <p>Poglejmo si konkreten zgled:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
