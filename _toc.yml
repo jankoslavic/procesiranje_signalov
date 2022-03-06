@@ -8,9 +8,9 @@ chapters:
 - file: notebooks/01 - Uvod
 - file: notebooks/02 - Fourierove vrste
 - file: notebooks/03 - Fourierova integralska transformacija.ipynb
-- file: notebooks/03 - Diskretna Fourierova transformacija.ipynb
-- file: notebooks/04 - Convolution and linear time invariant systems
+- file: notebooks/04 - Linarni časovno invariantni sistmi.ipynb
 - file: notebooks/05 - Applying windows to signals
+- file: notebooks/03 - Diskretna Fourierova transformacija.ipynb
 - file: notebooks/06 - Spectral leakage and aliasing
 - file: notebooks/07 - Random processes
 - file: notebooks/08 - Correlation function and spectra
