@@ -283,22 +283,22 @@
      Fourierove vrste v amplitudno-fazni obliki
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nekatere-lastnosti-fourierovih-vrst">
+   Nekatere lastnosti Fourierovih vrst
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nekatere-lastnosti-fourierovih-vrst">
-     Nekatere lastnosti Fourierovih vrst
+    <a class="reference internal nav-link" href="#odvodi-in-integrali-fourierovih-vrst">
+     Odvodi in integrali Fourierovih vrst
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#odvodi-in-integrali-fourierovih-vrst">
-       Odvodi in integrali Fourierovih vrst
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fourirove-vrste-lihih-in-sodih-funkcij">
-       Fourirove vrste lihih in sodih funkcij
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fourirove-vrste-lihih-in-sodih-funkcij">
+     Fourirove vrste lihih in sodih funkcij
+    </a>
    </li>
   </ul>
  </li>
@@ -758,12 +758,13 @@ a_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\cos(2\pi\,n\,t/T_p)\,\mathrm{d}t
 \[
 b_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\sin(2\pi\,n\,t/T_p)\,\mathrm{d}t
 \]</div>
-<p>Rekonstruirana zvezna funkcija:
-$<span class="math notranslate nohighlight">\(
+<p>Rekonstruirana zvezna funkcija:</p>
+<div class="math notranslate nohighlight">
+\[
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{N}
-a_n\,\sin(2\pi\,n\,t/T_p)+
-b_n\,\cos(2\pi\,n\,t/T_p)
-\)</span>$</p>
+a_n\,\cos(2\pi\,n\,t/T_p)+
+b_n\,\sin(2\pi\,n\,t/T_p)
+\]</div>
 </div>
 </div>
 <div class="section" id="fourierove-vrste-v-amplitudno-fazni-obliki">
@@ -788,10 +789,11 @@ c_n&amp;=c_{-n}^*&amp;\\
 \end{split}\]</div>
 <p>V tej knjigi bomo skoraj izključno uporabljali eksponentno obliko, saj je najbolj kompaktna, enostavna za uporabo in matematične izpeljave.</p>
 </div>
+</div>
 <div class="section" id="nekatere-lastnosti-fourierovih-vrst">
-<h3>Nekatere lastnosti Fourierovih vrst<a class="headerlink" href="#nekatere-lastnosti-fourierovih-vrst" title="Permalink to this headline">¶</a></h3>
+<h2>Nekatere lastnosti Fourierovih vrst<a class="headerlink" href="#nekatere-lastnosti-fourierovih-vrst" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="odvodi-in-integrali-fourierovih-vrst">
-<h4>Odvodi in integrali Fourierovih vrst<a class="headerlink" href="#odvodi-in-integrali-fourierovih-vrst" title="Permalink to this headline">¶</a></h4>
+<h3>Odvodi in integrali Fourierovih vrst<a class="headerlink" href="#odvodi-in-integrali-fourierovih-vrst" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Za periodično funkcijo, ki jo na področju zveznosti lahko popišemo s Fourierovimi vrstami govorimo, da izpolnjujejo <strong>Dirichletov pogoj</strong>.</p>
@@ -802,15 +804,16 @@ c_n&amp;=c_{-n}^*&amp;\\
 \dot{x}(t)=\sum_{n=-N}^{N}
 \frac{\mathrm{i}\,2\pi\,n}{T_p}\,c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 \]</div>
-<p>Analogno velja za integracijo:
-$<span class="math notranslate nohighlight">\(
+<p>Analogno velja za integracijo:</p>
+<div class="math notranslate nohighlight">
+\[
 x(t)=\sum_{n=-N}^{N}
 \frac{T_p}{\mathrm{i}\,2\pi\,n}\,\dot{c}_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad \dot{c}_n=\dot{c}_{-n}^*,
-\)</span><span class="math notranslate nohighlight">\(
-kjer so \)</span>\dot{c}_n<span class="math notranslate nohighlight">\( konstante Fourierove vrste za \)</span>\dot{x}(t)$. Za primer, glejte zglede v nadaljevanju.</p>
+\]</div>
+<p>kjer so <span class="math notranslate nohighlight">\(\dot{c}_n\)</span> konstante Fourierove vrste za <span class="math notranslate nohighlight">\(\dot{x}(t)\)</span>. Za primer, glejte zglede v nadaljevanju.</p>
 </div>
 <div class="section" id="fourirove-vrste-lihih-in-sodih-funkcij">
-<h4>Fourirove vrste lihih in sodih funkcij<a class="headerlink" href="#fourirove-vrste-lihih-in-sodih-funkcij" title="Permalink to this headline">¶</a></h4>
+<h3>Fourirove vrste lihih in sodih funkcij<a class="headerlink" href="#fourirove-vrste-lihih-in-sodih-funkcij" title="Permalink to this headline">¶</a></h3>
 <p>Funkcija <span class="math notranslate nohighlight">\(x(t)\)</span> je <strong>soda</strong>, če velja:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -866,7 +869,6 @@ x(-t)=-x(t),
 <li><p>če iščemo Fourierovo vrsto <em>sode</em> periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, potem bodo sinusni členi <span class="math notranslate nohighlight">\(b_n\)</span> enaki nič (ker je produkt sode in lihe funkcije liha funkcija; integral lihe funkcije pa je 0).</p></li>
 <li><p>če iščemo Fourierovo vrsto <em>lihe</em> peridične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, potem bodo cosinusni členi <span class="math notranslate nohighlight">\(a_n\)</span> enaki nič (ker je produkt lihe in sode funkcije liha funkcija; integral lihe funkcije pa je 0).</p></li>
 </ul>
-</div>
 </div>
 </div>
 </div>
