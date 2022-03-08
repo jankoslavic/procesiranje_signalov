@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -246,6 +248,26 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistem-z-eno-prostostno-stopnjo">
+   Sistem z eno prostostno stopnjo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#free-response-homogeneous-solution">
+     Free-response (homogeneous solution)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -256,6 +278,119 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="linearni-casovno-invariantni-sistemi">
 <span id="sec-lti"></span><h1>Linearni časovno invariantni sistemi<a class="headerlink" href="#linearni-casovno-invariantni-sistemi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sistem-z-eno-prostostno-stopnjo">
+<h2>Sistem z eno prostostno stopnjo<a class="headerlink" href="#sistem-z-eno-prostostno-stopnjo" title="Permalink to this headline">¶</a></h2>
+<p>The model of a SDOF system can be described with a nonhomogeneous second order differential equation:</p>
+<div class="math notranslate nohighlight">
+\[
+m\,\ddot{x}(t)+c\,\dot{x}(t)+k\,x(t)=f(t),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(t)\)</span> is the excitation force. The solution of the nonhomogeneous equation is in the form of:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = x_{h}(t) + x_{p}(t),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{p}\)</span> is the particular solution and <span class="math notranslate nohighlight">\(x_{h}\)</span> the homogeneous solution.</p>
+<div class="section" id="free-response-homogeneous-solution">
+<h3>Free-response (homogeneous solution)<a class="headerlink" href="#free-response-homogeneous-solution" title="Permalink to this headline">¶</a></h3>
+<p>Without external force <span class="math notranslate nohighlight">\(f(t)=0\)</span>, the homogeneous solution is obtained from:</p>
+<div class="math notranslate nohighlight">
+\[
+m\,\ddot{x}_{h}(t)+c\,\dot{x}_{h}(t)+k\,x_{h}(t)=0.
+\]</div>
+<p>By assuming the solution to <span class="math notranslate nohighlight">\(x_{h}(t)\)</span> in the form of:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{h}(t)=X_{h}\,e^{\lambda \,t},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(X_{h}\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> are the unknown (to be determined) displacement amplitude and eigenvalue, respectively. With the assumption, the homogenous part takes the form of:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^2\,m\,X_{h}\,e^{\lambda \,t}+\lambda\,c\,X_{h}\,e^{\lambda \,t}+k\,X_{h}\,e^{\lambda \,t}=0.
+\]</div>
+<p>After extraction:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\lambda^2\,m+\lambda\,c+k\right)\,X_{h}\,e^{\lambda \,t}=0
+\]</div>
+<p>the non-trivial solution (<span class="math notranslate nohighlight">\(X_{h}\,e^{\lambda \,t}\neq0\)</span>) can be obtained from the characteristic equation:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^2\,m+\lambda\,c+k=0
+\]</div>
+<p>The solution of the characteristic equation~\eqref{eq:homogenous_characteristic} is:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{1,2}=-\frac{c}{2\,m} \pm \frac{\sqrt{c^2-4\,k\,m}}{2\,m},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda^2\)</span> are eigenvalues of the system and are in general complex valued.</p>
+<p>With regard to the relation between the inertial, elastic and damping forces the solution is:</p>
+<ul class="simple">
+<li><p><strong>overdamped</strong>: if the damping forces prevail the elastic and inertial forces (<span class="math notranslate nohighlight">\(c^2\geq 4\,k\,m\)</span>),</p></li>
+<li><p><strong>critically damped</strong>: if the damping forces equal the elastic and inertial forces (<span class="math notranslate nohighlight">\(c^2=4\,k\,m\)</span>),</p></li>
+<li><p><strong>underdamped</strong>: if the elastic and inertial forces prevail the damping forces (<span class="math notranslate nohighlight">\(c^2\leq 4\,k\,m\)</span>).</p></li>
+</ul>
+<p>In case of overdamped and critically damped system, the solution is real valued and motion is not oscillatory.</p>
+<p>In vibration fatigue research we are focused into underdamped case when the eigenvalues are complex resulting in oscillatory motion. Due to this reason this book focuses on underdamped case, only.</p>
+<p>In case of underdamped systems, the complex eigenvalues are conjugated pairs and the mass <span class="math notranslate nohighlight">\(m\)</span>, damping <span class="math notranslate nohighlight">\(c\)</span> and stiffness <span class="math notranslate nohighlight">\(k\)</span> and can be related to the undamped angular natural frequency (also resonant frequency, eigenfrequency):</p>
+<div class="math notranslate nohighlight">
+\[
+\omega_0 = \sqrt{\frac{k}{m}}.
+\]</div>
+<p>It is important to note here that, in linear systems, the prestress does not change the natural frequency.</p>
+<p>Further, if critical damping is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+c_{c} = 2\,\sqrt{k\,m},
+\]</div>
+<p>then the damping can be defined using the damping ratio:</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta = \frac{c}{c_{c}}.
+\]</div>
+<p>With the undamped natural frequency <span class="math notranslate nohighlight">\(\omega_0\)</span> and the damping ratio <span class="math notranslate nohighlight">\(\zeta\)</span>, the homogeneous differential equation can be rewritten to standard form:</p>
+<div class="math notranslate nohighlight">
+\[
+\ddot{x}_{h}(t)+2\,\zeta\,\omega_0\,\dot{x}_{h}(t)+\omega_0^2\,x_{h}(t)=0.
+\]</div>
+<p>Further, <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(\zeta\)</span> can be inserted into the Eq.\eqref{eq:lambda_12}:</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_{1,2}=-\zeta\, \omega_0 \pm \mathrm{i}\,\omega_{d},
+\]</div>
+<p>where:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega_{d} = \omega_0\,\sqrt{1-\zeta^2}
+\]</div>
+<p>is called the damped angular natural frequency.</p>
+<p>The response of the system is obtained using the eigenvalues from Eq. \eqref{eq:eigenvalue} in Eq.\eqref{eq:predisposed_solution}:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+    x_{h}(t)&amp;=X_{h,1}\,e^{\lambda_1 \,t}+X_{h,2}\,e^{\lambda_2 \,t}\\
+    &amp;=e^{-\zeta\, \omega_0\,t}\,
+    \left(
+    X_{h,1}\,e^{+ \mathrm{i}\, \omega_{d}\,t}+X_{h,2}\,e^{- \mathrm{i}\, \omega_{d} \,t}
+    \right).
+\end{split}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(X_{h,1}\)</span> and <span class="math notranslate nohighlight">\(X_{h,2}\)</span> depend on the initial condition.</p>
+<p>Later, it will be clear that the initial conditions where the system starts from the equilibrium with a non-zero velocity:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+		x(0)&amp;=0\to&amp; X_{h,1}+X_{h,2}&amp;=0\\
+		\dot x(0)&amp;=\dot x_0\to&amp; X_{h,1}\,\lambda_1+X_{h,2}\,\lambda_2&amp;=\dot x_0
+	\end{aligned}
+\end{split}\]</div>
+<p>are particularly important. From Eq. \eqref{eq:initial_velocity} the following solution is obtained:</p>
+<div class="math notranslate nohighlight">
+\[
+x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\zeta\,\omega_0\,t}\,\sin(\omega_{d}\,t).
+\]</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

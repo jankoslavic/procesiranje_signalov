@@ -296,6 +296,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linearnost-ang-linearity">
+     Linearnost (ang. linearity)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#casovno-skaliranje-ang-time-scaling">
      Časovno skaliranje (ang. time scaling)
     </a>
@@ -336,6 +341,11 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourierove-vrste-in-diskretna-fourierova-transformacija">
+   Fourierove vrste in diskretna Fourierova transformacija
+  </a>
  </li>
 </ul>
 
@@ -816,6 +826,88 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 <div class="section" id="lastnosti-fourierove-transformacije">
 <h2>Lastnosti Fourierove transformacije<a class="headerlink" href="#lastnosti-fourierove-transformacije" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linearnost-ang-linearity">
+<h3>Linearnost (ang. linearity)<a class="headerlink" href="#linearnost-ang-linearity" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fourierova transformacija je linarna, kar pomeni:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{F}\{a\,x(t)+b\,y(t)\} = a\,X(f) + b\,Y(f).
+\]</div>
+</div>
+<p>Še izpeljava:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, b&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">y</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \int\limits_{-\infty}^{\infty} \left(a x{\left(t \right)} + b y{\left(t \right)}\right) e^{- 2 i \pi f t}\, dt\]</div>
+</div>
+</div>
+<p>Izraz razširimo; ker sta <span class="math notranslate nohighlight">\(a\)</span> in <span class="math notranslate nohighlight">\(b\)</span> konstanti, potrdimo linearnost:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \int\limits_{-\infty}^{\infty} a x{\left(t \right)} e^{- 2 i \pi f t}\, dt + \int\limits_{-\infty}^{\infty} b y{\left(t \right)} e^{- 2 i \pi f t}\, dt\]</div>
+</div>
+</div>
+<p>Spodaj si poglejmo konkreten primer.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, a, b&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x_2</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x_1</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x_1</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span>
+
+<span class="n">X_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">X_2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_1(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_2(t)=a\,x_1(t)+b\,x_1(t), a=</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">, b=</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_1(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|X_2(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_31_0.png" src="../_images/03 - Fourierova integralska transformacija_31_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_31_1.png" src="../_images/03 - Fourierova integralska transformacija_31_1.png" />
+</div>
+</div>
+</div>
 <div class="section" id="casovno-skaliranje-ang-time-scaling">
 <h3>Časovno skaliranje (ang. time scaling)<a class="headerlink" href="#casovno-skaliranje-ang-time-scaling" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
@@ -880,8 +972,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_29_0.png" src="../_images/03 - Fourierova integralska transformacija_29_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_29_1.png" src="../_images/03 - Fourierova integralska transformacija_29_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_35_0.png" src="../_images/03 - Fourierova integralska transformacija_35_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_35_1.png" src="../_images/03 - Fourierova integralska transformacija_35_1.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1022,10 +1114,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_38_0.png" src="../_images/03 - Fourierova integralska transformacija_38_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_38_1.png" src="../_images/03 - Fourierova integralska transformacija_38_1.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_38_2.png" src="../_images/03 - Fourierova integralska transformacija_38_2.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_38_3.png" src="../_images/03 - Fourierova integralska transformacija_38_3.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_44_0.png" src="../_images/03 - Fourierova integralska transformacija_44_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_44_1.png" src="../_images/03 - Fourierova integralska transformacija_44_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_44_2.png" src="../_images/03 - Fourierova integralska transformacija_44_2.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_44_3.png" src="../_images/03 - Fourierova integralska transformacija_44_3.png" />
 </div>
 </div>
 </div>
@@ -1106,8 +1198,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_42_0.png" src="../_images/03 - Fourierova integralska transformacija_42_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_42_1.png" src="../_images/03 - Fourierova integralska transformacija_42_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_48_0.png" src="../_images/03 - Fourierova integralska transformacija_48_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_48_1.png" src="../_images/03 - Fourierova integralska transformacija_48_1.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1272,11 +1364,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_54_0.png" src="../_images/03 - Fourierova integralska transformacija_54_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_54_1.png" src="../_images/03 - Fourierova integralska transformacija_54_1.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_54_2.png" src="../_images/03 - Fourierova integralska transformacija_54_2.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_54_3.png" src="../_images/03 - Fourierova integralska transformacija_54_3.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_54_4.png" src="../_images/03 - Fourierova integralska transformacija_54_4.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_60_0.png" src="../_images/03 - Fourierova integralska transformacija_60_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_60_1.png" src="../_images/03 - Fourierova integralska transformacija_60_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_60_2.png" src="../_images/03 - Fourierova integralska transformacija_60_2.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_60_3.png" src="../_images/03 - Fourierova integralska transformacija_60_3.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_60_4.png" src="../_images/03 - Fourierova integralska transformacija_60_4.png" />
 </div>
 </div>
 </div>
@@ -1375,8 +1467,8 @@ x(t)*y(t)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_60_0.png" src="../_images/03 - Fourierova integralska transformacija_60_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_60_1.png" src="../_images/03 - Fourierova integralska transformacija_60_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_66_0.png" src="../_images/03 - Fourierova integralska transformacija_66_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_66_1.png" src="../_images/03 - Fourierova integralska transformacija_66_1.png" />
 </div>
 </div>
 </div>
@@ -1441,11 +1533,40 @@ x(t)*y(t)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_63_0.png" src="../_images/03 - Fourierova integralska transformacija_63_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_63_1.png" src="../_images/03 - Fourierova integralska transformacija_63_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_69_0.png" src="../_images/03 - Fourierova integralska transformacija_69_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_69_1.png" src="../_images/03 - Fourierova integralska transformacija_69_1.png" />
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="fourierove-vrste-in-diskretna-fourierova-transformacija">
+<h2>Fourierove vrste in diskretna Fourierova transformacija<a class="headerlink" href="#fourierove-vrste-in-diskretna-fourierova-transformacija" title="Permalink to this headline">¶</a></h2>
+<p>Pozneje bomo spoznali diskretno Fourierovo transformacijo, ki je z Fourierovimi vrstami zelo povezana. Povezavo lahko hitro razkrijemo, če predpostavimo diskretno časovno vrst <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span> in <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>, sledi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+c_n &amp;= \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t\\
+&amp;= \frac{1}{N\,\Delta t}\,\sum_{i=0}^{N-1} x(i\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,n\,\Delta t\,i/(N\,\Delta t)}\,\Delta t\\
+&amp;= \frac{1}{N}\,\underbrace{\sum_{i=0}^{N-1} x(i\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,n\,i/N}}_{X_n}\\
+&amp;= \frac{X_n}{N}\\
+\end{split}
+\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Diskretna Fourierova transformacija</strong> (DFT):
+$<span class="math notranslate nohighlight">\(
+X_n= \sum_{i=0}^{N-1} x_i\,e^{-\mathrm{i}\,2\pi\,n\,i/N}
+\)</span>$</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Inverzna diskretna Fourierova transformacija</strong> (IDFT):</p>
+<div class="math notranslate nohighlight">
+\[
+x_i=\frac{1}{N} \sum_{n=0}^{N-1} X_n\,e^{\mathrm{i}\,2\pi\,n\,i/N}
+\]</div>
+</div>
+<p>Poudarti je treba, da v splošnem <span class="math notranslate nohighlight">\(X_n/N\ne c_n\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_n\)</span> periodična vrsta: <span class="math notranslate nohighlight">\(X_n=X_{n+k\,N}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> poljubno celo število.</p>
 </div>
 </div>
 
