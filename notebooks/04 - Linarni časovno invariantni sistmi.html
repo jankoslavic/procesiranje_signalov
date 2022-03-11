@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linearni časovno invariantni sistemi &#8212; Procesiranje signalov s Pythonom</title>
+    <title>Linearni časovno invariantni sistemi z eno prostostno stopnjo &#8212; Procesiranje signalov s Pythonom</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -116,7 +116,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Linearni časovno invariantni sistemi
+   Linearni časovno invariantni sistemi z eno prostostno stopnjo
   </a>
  </li>
  <li class="toctree-l1">
@@ -254,13 +254,28 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sistem-z-eno-prostostno-stopnjo">
-   Sistem z eno prostostno stopnjo
+  <a class="reference internal nav-link" href="#prosti-odziv-homogena-resitev">
+   Prosti odziv (homogena rešitev)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#harmonsko-vzbujanje">
+   Harmonsko vzbujanje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prehodni-odziv-in-odziv-v-stacionarnem-stanju">
+   Prehodni odziv in odziv v stacionarnem stanju.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frekvecna-prenosna-funkcija">
+   Frekvečna prenosna funkcija
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#free-response-homogeneous-solution">
-     Free-response (homogeneous solution)
+    <a class="reference internal nav-link" href="#razlicne-oblike-frf">
+     Različne oblike FRF
     </a>
    </li>
   </ul>
@@ -276,107 +291,103 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="linearni-casovno-invariantni-sistemi">
-<span id="sec-lti"></span><h1>Linearni časovno invariantni sistemi<a class="headerlink" href="#linearni-casovno-invariantni-sistemi" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="sistem-z-eno-prostostno-stopnjo">
-<h2>Sistem z eno prostostno stopnjo<a class="headerlink" href="#sistem-z-eno-prostostno-stopnjo" title="Permalink to this headline">¶</a></h2>
-<p>The model of a SDOF system can be described with a nonhomogeneous second order differential equation:</p>
-<div class="math notranslate nohighlight">
-\[
+  <div class="tex2jax_ignore mathjax_ignore section" id="linearni-casovno-invariantni-sistemi-z-eno-prostostno-stopnjo">
+<span id="sec-lti"></span><h1>Linearni časovno invariantni sistemi z eno prostostno stopnjo<a class="headerlink" href="#linearni-casovno-invariantni-sistemi-z-eno-prostostno-stopnjo" title="Permalink to this headline">¶</a></h1>
+<p>Sistema z eno prostostno stopnjo (ang. single degree of freedom system - SDOF) lahko opišemo z nehomogeno diferencialno enačbo drugega reda:
+$<span class="math notranslate nohighlight">\(
 m\,\ddot{x}(t)+c\,\dot{x}(t)+k\,x(t)=f(t),
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(f(t)\)</span> is the excitation force. The solution of the nonhomogeneous equation is in the form of:</p>
+\)</span>$</p>
+<p>kjer je <span class="math notranslate nohighlight">\(f(t)\)</span> vzbujevalna sila. Rešitev nehomogone enačbe je v obliki:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = x_{h}(t) + x_{p}(t),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(x_{p}\)</span> is the particular solution and <span class="math notranslate nohighlight">\(x_{h}\)</span> the homogeneous solution.</p>
-<div class="section" id="free-response-homogeneous-solution">
-<h3>Free-response (homogeneous solution)<a class="headerlink" href="#free-response-homogeneous-solution" title="Permalink to this headline">¶</a></h3>
-<p>Without external force <span class="math notranslate nohighlight">\(f(t)=0\)</span>, the homogeneous solution is obtained from:</p>
+<p>kjer je <span class="math notranslate nohighlight">\(x_{p}\)</span> partikularna in <span class="math notranslate nohighlight">\(x_{h}\)</span> homogena rešitev.</p>
+<div class="section" id="prosti-odziv-homogena-resitev">
+<h2>Prosti odziv (homogena rešitev)<a class="headerlink" href="#prosti-odziv-homogena-resitev" title="Permalink to this headline">¶</a></h2>
+<p>Če vzbujevalne sile ni <span class="math notranslate nohighlight">\(f(t)=0\)</span>, je homogena rešitev pridobljena iz:</p>
 <div class="math notranslate nohighlight">
 \[
 m\,\ddot{x}_{h}(t)+c\,\dot{x}_{h}(t)+k\,x_{h}(t)=0.
 \]</div>
-<p>By assuming the solution to <span class="math notranslate nohighlight">\(x_{h}(t)\)</span> in the form of:</p>
+<p>Uporabimo nastevek za rešitev <span class="math notranslate nohighlight">\(x_{h}(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 x_{h}(t)=X_{h}\,e^{\lambda \,t},
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(X_{h}\)</span> and <span class="math notranslate nohighlight">\(\lambda\)</span> are the unknown (to be determined) displacement amplitude and eigenvalue, respectively. With the assumption, the homogenous part takes the form of:</p>
+<p>kjer sta amplituda premika <span class="math notranslate nohighlight">\(X_{h}\)</span> in lastna vrednost <span class="math notranslate nohighlight">\(\lambda\)</span> neznani (in ju je treba določiti). Vstavimo nastavek v diferencialno enačbo:</p>
 <div class="math notranslate nohighlight">
 \[
 \lambda^2\,m\,X_{h}\,e^{\lambda \,t}+\lambda\,c\,X_{h}\,e^{\lambda \,t}+k\,X_{h}\,e^{\lambda \,t}=0.
 \]</div>
-<p>After extraction:</p>
+<p>Izraz uredimo:</p>
 <div class="math notranslate nohighlight">
 \[
-\left(\lambda^2\,m+\lambda\,c+k\right)\,X_{h}\,e^{\lambda \,t}=0
+\left(\lambda^2\,m+\lambda\,c+k\right)\,X_{h}\,e^{\lambda \,t}=0.
 \]</div>
-<p>the non-trivial solution (<span class="math notranslate nohighlight">\(X_{h}\,e^{\lambda \,t}\neq0\)</span>) can be obtained from the characteristic equation:</p>
+<p>Netrivialno (<span class="math notranslate nohighlight">\(X_{h}\,e^{\lambda \,t}\neq0\)</span>) rešitev določimo na podlagi karakteristične enačbe:</p>
 <div class="math notranslate nohighlight">
 \[
-\lambda^2\,m+\lambda\,c+k=0
+\lambda^2\,m+\lambda\,c+k=0.
 \]</div>
-<p>The solution of the characteristic equation~\eqref{eq:homogenous_characteristic} is:</p>
+<p>Rešitev karakteristične enačbe je:</p>
 <div class="math notranslate nohighlight">
 \[
 \lambda_{1,2}=-\frac{c}{2\,m} \pm \frac{\sqrt{c^2-4\,k\,m}}{2\,m},
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\lambda^2\)</span> are eigenvalues of the system and are in general complex valued.</p>
-<p>With regard to the relation between the inertial, elastic and damping forces the solution is:</p>
+<p>kjer sta <span class="math notranslate nohighlight">\(\lambda_{1,2}\)</span> lastni vrednosti sistema (v splošnem kompleksno število).</p>
+<p>Glede na razmerje med vztrajnostno, elastično in dušilno silo je rešitev:</p>
 <ul class="simple">
-<li><p><strong>overdamped</strong>: if the damping forces prevail the elastic and inertial forces (<span class="math notranslate nohighlight">\(c^2\geq 4\,k\,m\)</span>),</p></li>
-<li><p><strong>critically damped</strong>: if the damping forces equal the elastic and inertial forces (<span class="math notranslate nohighlight">\(c^2=4\,k\,m\)</span>),</p></li>
-<li><p><strong>underdamped</strong>: if the elastic and inertial forces prevail the damping forces (<span class="math notranslate nohighlight">\(c^2\leq 4\,k\,m\)</span>).</p></li>
+<li><p><strong>nadkritično dušeno</strong>: če sile dušenja prevladajo nad vztrajnostnimi in prožnostnimi sile (<span class="math notranslate nohighlight">\(c^2\geq 4\,k\,m\)</span>),</p></li>
+<li><p><strong>kritično dušeno</strong>: če so sile dušenja enake vztrajnostnim in prožnostnim silam (<span class="math notranslate nohighlight">\(c^2=4\,k\,m\)</span>),</p></li>
+<li><p><strong>podkritično dušeno</strong>: če vztrajnostne in prožnostne sile prevladajo nad dušilnimi (<span class="math notranslate nohighlight">\(c^2\leq 4\,k\,m\)</span>).</p></li>
 </ul>
-<p>In case of overdamped and critically damped system, the solution is real valued and motion is not oscillatory.</p>
-<p>In vibration fatigue research we are focused into underdamped case when the eigenvalues are complex resulting in oscillatory motion. Due to this reason this book focuses on underdamped case, only.</p>
-<p>In case of underdamped systems, the complex eigenvalues are conjugated pairs and the mass <span class="math notranslate nohighlight">\(m\)</span>, damping <span class="math notranslate nohighlight">\(c\)</span> and stiffness <span class="math notranslate nohighlight">\(k\)</span> and can be related to the undamped angular natural frequency (also resonant frequency, eigenfrequency):</p>
+<p>V primeru nadkritično in kritično dušenega sistema je rešitev v realni obliki in gibanje ni oscilatorno.</p>
+<p>V okviru te knjige se  osredotočamo na podkritično dušen primer, ko so kompleksne lastne vrednosti konjugirani pari. Masa <span class="math notranslate nohighlight">\(m\)</span>, dušenje <span class="math notranslate nohighlight">\(c\)</span> in togost <span class="math notranslate nohighlight">\(k\)</span> pa definirajo nedušeno lastno krožno frekvenco (tudi resonančna frekvenca, lastna frekvenca):</p>
 <div class="math notranslate nohighlight">
 \[
 \omega_0 = \sqrt{\frac{k}{m}}.
 \]</div>
-<p>It is important to note here that, in linear systems, the prestress does not change the natural frequency.</p>
-<p>Further, if critical damping is defined as:</p>
+<p>Tukaj je pomembno omeniti, da pri linearnih sistemih prednapetje ne spremeni lastne frekvence.</p>
+<p>Nadalje, če je kritično dušenje opredeljeno kot:</p>
 <div class="math notranslate nohighlight">
 \[
 c_{c} = 2\,\sqrt{k\,m},
 \]</div>
-<p>then the damping can be defined using the damping ratio:</p>
+<p>potem je dušenje mogoče definirati s pomočjo razmernika dušenja:</p>
 <div class="math notranslate nohighlight">
 \[
-\zeta = \frac{c}{c_{c}}.
+\delta = \frac{c}{c_{c}}.
 \]</div>
-<p>With the undamped natural frequency <span class="math notranslate nohighlight">\(\omega_0\)</span> and the damping ratio <span class="math notranslate nohighlight">\(\zeta\)</span>, the homogeneous differential equation can be rewritten to standard form:</p>
+<p>Z nezadušeno lastno frekvenco <span class="math notranslate nohighlight">\(\omega_0\)</span> in razmernika dušenja <span class="math notranslate nohighlight">\(\delta\)</span> lahko homogeno diferencialno enačbo prepišemo v standardno obliko:</p>
 <div class="math notranslate nohighlight">
 \[
-\ddot{x}_{h}(t)+2\,\zeta\,\omega_0\,\dot{x}_{h}(t)+\omega_0^2\,x_{h}(t)=0.
+\ddot{x}_{h}(t)+2\,\delta\,\omega_0\,\dot{x}_{h}(t)+\omega_0^2\,x_{h}(t) =0.
 \]</div>
-<p>Further, <span class="math notranslate nohighlight">\(\omega_0\)</span> and <span class="math notranslate nohighlight">\(\zeta\)</span> can be inserted into the Eq.\eqref{eq:lambda_12}:</p>
+<p>Nadalje lahko <span class="math notranslate nohighlight">\(\omega_0\)</span> in <span class="math notranslate nohighlight">\(\delta\)</span> vstavite v izraz za lastne vrednosti:</p>
 <div class="math notranslate nohighlight">
 \[
-\lambda_{1,2}=-\zeta\, \omega_0 \pm \mathrm{i}\,\omega_{d},
+\lambda_{1,2}=-\delta\, \omega_0 \pm \mathrm{i}\,\omega_{d},
 \]</div>
-<p>where:</p>
+<p>kje se:</p>
 <div class="math notranslate nohighlight">
 \[
-\omega_{d} = \omega_0\,\sqrt{1-\zeta^2}
+\omega_{d} = \omega_0\,\sqrt{1-\delta^2}
 \]</div>
-<p>is called the damped angular natural frequency.</p>
-<p>The response of the system is obtained using the eigenvalues from Eq. \eqref{eq:eigenvalue} in Eq.\eqref{eq:predisposed_solution}:</p>
+<p>imenuje dušena lastna krožna frekvenca.</p>
+<p>Izpeljane lastne vrednosti vstavimo v nastavek za homogeno rešitev <span class="math notranslate nohighlight">\(x_{h}(t)\)</span>. Ker imamo dve lastni vrednosti, je splošna rešitev vsota obeh:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-    x_{h}(t)&amp;=X_{h,1}\,e^{\lambda_1 \,t}+X_{h,2}\,e^{\lambda_2 \,t}\\
-    &amp;=e^{-\zeta\, \omega_0\,t}\,
-    \left(
-    X_{h,1}\,e^{+ \mathrm{i}\, \omega_{d}\,t}+X_{h,2}\,e^{- \mathrm{i}\, \omega_{d} \,t}
-    \right).
+     x_{h}(t)&amp;=X_{h,1}\,e^{\lambda_1 \,t}+X_{h,2}\,e^{\lambda_2 \,t}\\
+     &amp;=e^{-\delta\, \omega_0\,t}\,
+     \big(
+     X_{h,1}\,e^{+ \mathrm{i}\, \omega_{d}\,t}+X_{h,2}\,e^{- \mathrm{i}\, \omega_ {d} \,t}
+     \big),
 \end{split}
 \end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(X_{h,1}\)</span> and <span class="math notranslate nohighlight">\(X_{h,2}\)</span> depend on the initial condition.</p>
-<p>Later, it will be clear that the initial conditions where the system starts from the equilibrium with a non-zero velocity:</p>
+<p>kjer sta konstanti <span class="math notranslate nohighlight">\(X_{h,1}\)</span> in <span class="math notranslate nohighlight">\(X_{h,2}\)</span> odvisni od začetnih pogojev.</p>
+<p>Kasneje bo jasno, da so začetni pogoji, pri katerih sistem začne iz ravnotežja s hitrostjo, ki ni nič:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -384,11 +395,167 @@ c_{c} = 2\,\sqrt{k\,m},
 		\dot x(0)&amp;=\dot x_0\to&amp; X_{h,1}\,\lambda_1+X_{h,2}\,\lambda_2&amp;=\dot x_0
 	\end{aligned}
 \end{split}\]</div>
-<p>are particularly important. From Eq. \eqref{eq:initial_velocity} the following solution is obtained:</p>
+<p>še posebej pomembne in vodijo v rešitev:</p>
 <div class="math notranslate nohighlight">
 \[
-x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\zeta\,\omega_0\,t}\,\sin(\omega_{d}\,t).
+x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\,t).
 \]</div>
+<p>Odziv je sestavljen iz ovojnice <span class="math notranslate nohighlight">\({\dot x_0}/{\omega_{d}}\,\exp(-\delta\, \omega_0\,t)\)</span>, za katero je značilna stopnja razpada <span class="math notranslate nohighlight">\(\delta\, \omega_0\)</span> in nihajoči del <span class="math notranslate nohighlight">\(\sin(\omega_{d}\,t)\)</span>, glejte sliko spodaj.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, \omega_0, \omega_d, d_x_0, \delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+
+<span class="n">ω_d</span> <span class="o">=</span> <span class="n">ω_0</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">δ</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ovojnica</span> <span class="o">=</span> <span class="n">d_x_0</span><span class="o">/</span><span class="n">ω_d</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">ω_0</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">ovojnica</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ω_d</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ovojnica</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x_h(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ovojnica&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x_h(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04 - Linarni časovno invariantni sistmi_11_0.png" src="../_images/04 - Linarni časovno invariantni sistmi_11_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="harmonsko-vzbujanje">
+<h2>Harmonsko vzbujanje<a class="headerlink" href="#harmonsko-vzbujanje" title="Permalink to this headline">¶</a></h2>
+<p>Nadaljujemo z rešitvijo gibalne enačbe za primer harmonskega vzbujanja:</p>
+<div class="math notranslate nohighlight">
+\[
+	f(t)=F\,e^{ \mathrm{i}\,\omega\,t}=F\,\underbrace{\big(\cos(\omega\,t)+ \mathrm{i}\,\sin(\omega\,t)\big)}_{e^{ \mathrm{i}\,\omega\,t}},
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(F\)</span> amplituda sile (v splošnem kompleksna vrednost) in <span class="math notranslate nohighlight">\(\omega\)</span> krožna frekvenca vzbujanja.</p>
+<p>Partikulano rešitev <span class="math notranslate nohighlight">\(x_p(t)\)</span> določimo iz enačbe:</p>
+<div class="math notranslate nohighlight">
+\[
+	m\,\ddot{x}_{p}(t)+c\,\dot{x}_{p}(t)+k\,x_{p}(t)=f(t),
+\]</div>
+<p>tako, da predpostavimo harmonski odziv:</p>
+<div class="math notranslate nohighlight">
+\[
+	x_{p}(t)=X_{p}\,\,e^{ \mathrm{i}\,\omega\,t},
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(X_{p}\)</span> neznana kompleksna amplituda partikularne komponente (včasih imenovana tudi fazor). Nadaljujemo z izpeljavo:</p>
+<div class="math notranslate nohighlight">
+\[
+	-\omega^2\,m\,X_{p}\,e^{ \mathrm{i}\,\omega\,t}+ \mathrm{i}\,\omega\,c\,X_{p}\,e^{ \mathrm{i}\,\omega\,t}+k\,X_{p}\,\,e^{ \mathrm{i}\,\omega\,t}=F\,e^{ \mathrm{i}\,\omega\,t}.
+\]</div>
+<p>Netrivialna rešitev zahteva <span class="math notranslate nohighlight">\(e^{ \mathrm{i}\,\omega\,t}\neq 0\)</span> in zato rešitev iščemo na podlagi enačbe:</p>
+<div class="math notranslate nohighlight">
+\[
+	-\omega^2\,m\,X_{p}+  \mathrm{i}\,\omega\,c\,X_{p}+k\,X_{p}=F,
+\]</div>
+<p>kar vodi v določitev razmerja med odzivom <span class="math notranslate nohighlight">\(X_p\)</span> in vzbujanjem <span class="math notranslate nohighlight">\(F\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{X_{p}}{F}=\frac{1}{-\omega^2\,m+ \mathrm{i}\,\omega\,c+k}.
+\]</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">ω</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\omega, m, c, k&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
+
+<span class="n">α</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="o">-</span><span class="n">ω</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">ω</span><span class="o">*</span><span class="n">c</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">ω</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x_h(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ovojnica&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1">#p2 = sym.plot(x.subs(podatki), (t,0,50), line_color=&#39;C1&#39;, </span>
+<span class="c1">#             label=&#39;$x_h(t)$&#39;, show=False)</span>
+<span class="c1">#p1.extend(p2)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04 - Linarni časovno invariantni sistmi_16_0.png" src="../_images/04 - Linarni časovno invariantni sistmi_16_0.png" />
+</div>
+</div>
+<p>Partikularna rešitev je torej:</p>
+<div class="math notranslate nohighlight">
+\[
+	x_{p}(t)=\frac{1}{-\omega^2\,m+ \mathrm{i}\,\omega\,c+k}\,F%
+	\,e^{ \mathrm{i}\,\omega\,t}.
+\]</div>
+</div>
+<div class="section" id="prehodni-odziv-in-odziv-v-stacionarnem-stanju">
+<h2>Prehodni odziv in odziv v stacionarnem stanju.<a class="headerlink" href="#prehodni-odziv-in-odziv-v-stacionarnem-stanju" title="Permalink to this headline">¶</a></h2>
+<p>Najprej smo določili homogeno rešitev <span class="math notranslate nohighlight">\(x_{h}(t)\)</span>, katera predstavlja prehodni odziv na neko začetno motnjo. Partikularna rešitev <span class="math notranslate nohighlight">\(x_{p}(t)\)</span> predstavlja rešitev na stacionarno harmonsko motnjo. Rešitev v splošnem definira vsota obeh</p>
+</div>
+<div class="section" id="frekvecna-prenosna-funkcija">
+<h2>Frekvečna prenosna funkcija<a class="headerlink" href="#frekvecna-prenosna-funkcija" title="Permalink to this headline">¶</a></h2>
+<p>Najprej se bomo osredotočili zgolj na partikularno rešitev (vendar več ne bomo uporabljali podpisa <span class="math notranslate nohighlight">\(p\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+	\frac{X}{F}=\frac{1}{-\omega^2\,m+ \mathrm{i}\,\omega\,c+k}.
+\]</div>
+<p>Kot zgornji izraz predstavlja frekvenčni odziv, se imenuje <strong>frekvenčna prenosna funkcija</strong> (ang. Frequency Response Function, tudi FRF, glejte TBA za opis načina kako se FRF dobi iz homogene rešitve}:</p>
+<div class="math notranslate nohighlight">
+\[
+	\alpha(\omega)=\frac{1}{-\omega^2\,m+ \mathrm{i}\,\omega\,c+k}.
+\]</div>
+<p>Z uporabo nedušene laste krožne frekvence <span class="math notranslate nohighlight">\(\omega_0^2=k/m\)</span>, razmernika dušenja <span class="math notranslate nohighlight">\(c=\delta\,2\,\sqrt{k\,m}\)</span> in relativne frekvence <span class="math notranslate nohighlight">\(r=\frac{\omega}{\omega_0}\)</span>, dobimo frekvenčni odziv v standardni obliki:
+$<span class="math notranslate nohighlight">\(
+	\alpha(\omega)=\frac{1}{k}\cdot\frac{1}{1-r^2+2\, \mathrm{i}\,\delta\,r}.
+\)</span>$</p>
+<p><span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> se imenuje frekvenčna prenosna funkcija ali bolj natančno <strong>dimenzijska frekvenčna prenosna funkcija</strong> (ang. dimensional frequency response function). V nasprotju z <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> je <span class="math notranslate nohighlight">\(H_0(\omega)\)</span> opredeljena kot:</p>
+<div class="math notranslate nohighlight">
+\[
+	\begin{split}
+		H_0(\omega)&amp;=\frac{X(\omega)}{X_0}
+	\end{split}
+\]</div>
+<p>in se v nekaterih knjigah (npr.: <span id="id1">Géradin and Rixen [<a class="reference internal" href="../bibliography.html#id174">2015</a>]</span>) imenovana <strong>brezdimenzijska frekvenčna prenosna funkcija</strong> (ang. nondimensional frequency response function). V izrazu zgoraj je statični poves <span class="math notranslate nohighlight">\(X_0\)</span> zaradi statične sile <span class="math notranslate nohighlight">\(F\)</span> definiran kot:</p>
+<div class="math notranslate nohighlight">
+\[
+	X_0=\frac{F}{k}.
+\]</div>
+<p>Harmonski odziv <span class="math notranslate nohighlight">\(X(\omega)\)</span> lahko z brezdimenzionalno frekvenčno prenosno funkcijo definiramo kot:
+$<span class="math notranslate nohighlight">\(
+	\begin{split}
+		H_0(\omega)&amp;=\frac{X(\omega)}{X_0}\\
+		&amp;=\frac{k}{-\omega^2\,m+ \mathrm{i}\,\omega\,c+k}\\
+		&amp;=\frac{1}{1-r^2+ \mathrm{i}\,2\,\delta\,r},
+	\end{split}
+\)</span>$</p>
+<p>Oziroma:</p>
+<div class="math notranslate nohighlight">
+\[
+	\alpha(\omega)=\frac{H_0(\omega)}{k}.
+\]</div>
+<p>S FRF je mogoče odziv stacionarnega stanja pri harmonskem vzbujanju s <span class="math notranslate nohighlight">\(\omega_f\)</span> opisati z:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t)=\alpha(\omega=\omega_f)\,F\,e^{ \mathrm{i}\,\omega_f\,t}.
+\]</div>
+<div class="section" id="razlicne-oblike-frf">
+<h3>Različne oblike FRF<a class="headerlink" href="#razlicne-oblike-frf" title="Permalink to this headline">¶</a></h3>
+<p>Dimenzijski FRF je smiseln, saj je statični odklon <span class="math notranslate nohighlight">\(X_0\)</span> težko izmeriti in se pogosto merita vzbujevalna sila in odzivni pospešek. Namesto pospeška pogosto merimo še hitrost in premik). Posledično obstajajo različne oblike frekvenčne prenosne funkcije:
+$<span class="math notranslate nohighlight">\(
+	\begin{aligned}
+		\alpha(\omega)&amp;=\frac{X(\omega)}{F(\omega)},&amp;&amp;\textrm{podajnost ali receptanca (ang. receptance),}\\
+		Y(\omega)&amp;=\frac{\dot X(\omega)}{F(\omega)}= \mathrm{i}\,\omega\,\alpha(\omega),&amp;&amp;\textrm{pomičnost (ang. mobility),}\\
+		A(\omega)&amp;=\frac{\ddot X(\omega)}{F(\omega)}=-\omega^2\,\alpha(\omega),&amp;&amp;\textrm{pospešenost (ang. accelerance),}\\
+	\end{aligned}
+\)</span>$</p>
+<p>kjer <span class="math notranslate nohighlight">\(\dot X(\omega)\)</span> in <span class="math notranslate nohighlight">\(\ddot X(\omega)\)</span> označujejo kompleksni amplitudi hitrosti ali pospeška v frekvenčni domeni.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Inverzna vrednost pospešenosti <strong>dinamična masa</strong> (<span class="math notranslate nohighlight">\(F/\ddot{X}\)</span>), inverzna vrednost pomičnosti je <strong>mehanska impedanca</strong> (<span class="math notranslate nohighlight">\( F/\dot{X}\)</span>) in inverzna od podajnosti <strong>dinamična togost</strong> (<span class="math notranslate nohighlight">\(F/X\)</span>).</p>
+</div>
 </div>
 </div>
 </div>
