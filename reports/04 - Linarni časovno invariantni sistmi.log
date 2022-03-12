@@ -34,6 +34,6 @@ Here is a preview of the cell contents:
 -------------------
 ['import sympy as sym', "t, ω_0, ω_d, d_x_0, δ, A, B, τ = sym.symbols('t, \\omega_0, \\omega_d, d_x_0, \\delta, A, B, \\\\tau', real=True)", 'π = sym.pi', 'podatki = {ω_0: 1, d_x_0: 1, δ: 0.1, A: 3, B: 4}', '']
 ...
-['h = ovojnica * sym.sin(ω_d*t)*sym.Heaviside(t)', '', 'f = A*sym.sin(t/B)*(sym.Heaviside(t)-sym.Heaviside(t-B*π))', '', 'X = sym.integrate((f.subs(t, τ)*h.subs(t, t-τ)).subs(podatki), (τ, 0, t))']
+['', 'f = A*sym.sin(t/B)*(sym.Heaviside(t)-sym.Heaviside(t-B*π))', '', 'fh = (f.subs(t, τ)*h.subs(t, t-τ)).subs(podatki)', 'fh = sym.integrate(fh, (τ, 0, t))']
 -------------------
 
