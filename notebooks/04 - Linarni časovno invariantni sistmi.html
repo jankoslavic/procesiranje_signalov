@@ -280,6 +280,33 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lastnosti-linearnega-casovno-invariantnega-sistema">
+   Lastnosti linearnega časovno invariantnega sistema
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#odziv-na-periodicno-vzbujanje">
+   Odziv na periodično vzbujanje
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zapis-vzbujanja-s-fourierovimi-vrstami">
+     Zapis vzbujanja s Fourierovimi vrstami
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zapis-odziva-s-pomocjo-fourierovih-vrst">
+     Zapis odziva s pomočjo Fourierovih vrst
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#posplositev-na-poljubno-vzbujanje">
+   Posplošitev na poljubno vzbujanje
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -543,7 +570,7 @@ $<span class="math notranslate nohighlight">\(
 \[
 	X_0=\frac{F}{k}.
 \]</div>
-<div class="admonition note">
+<div class="admonition note" id="sec-harmonski-odziv">
 <p class="admonition-title">Note</p>
 <p>Harmonski odziv <span class="math notranslate nohighlight">\(X(\omega)\)</span> lahko z brezdimenzionalno frekvenčno prenosno funkcijo definiramo kot:</p>
 <div class="math notranslate nohighlight">
@@ -616,6 +643,104 @@ x(t)=\alpha(\omega=\omega_f)\,F\,e^{ \mathrm{i}\,\omega_f\,t}.
 <p class="admonition-title">Note</p>
 <p>Inverzna vrednost pospešenosti <strong>dinamična masa</strong> (<span class="math notranslate nohighlight">\(F/\ddot{X}\)</span>), inverzna vrednost pomičnosti je <strong>mehanska impedanca</strong> (<span class="math notranslate nohighlight">\( F/\dot{X}\)</span>) in inverzna od podajnosti <strong>dinamična togost</strong> (<span class="math notranslate nohighlight">\(F/X\)</span>).</p>
 </div>
+</div>
+</div>
+<div class="section" id="lastnosti-linearnega-casovno-invariantnega-sistema">
+<h2>Lastnosti linearnega časovno invariantnega sistema<a class="headerlink" href="#lastnosti-linearnega-casovno-invariantnega-sistema" title="Permalink to this headline">¶</a></h2>
+<p>Diferencialna enačba za sistem z eno prostostno stopnjo lahko razmemo kot sistem, ki poveže vzbujanje (input) z odzivom  (output):
+$<span class="math notranslate nohighlight">\(
+	\underbrace{f(t)}_{\textrm{Vzbujanje}}\to {\textrm{Sistem}}\to \underbrace{x(t)}_{\textrm{Odziv}}.
+\)</span>$</p>
+<p>Sistem je <strong>linearen</strong>, če ima lastnosti <strong>aditivnosti</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+f_1(t)+f_2(t)  \to  {\textrm{Linearen sistem}} \to   x_1(t)+x_2(t)
+\]</div>
+<p>in <strong>skalirnosti</strong> (tudi <em>homogenost</em>):</p>
+<div class="math notranslate nohighlight">
+\[
+a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t) 
+\]</div>
+<p>Če je sistem linearen, lahko uporabimo načelo <strong>superpozicije</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+		   a_1\,f_1(t)+a_2\,f_2(t)   \to   {\textrm{Linearen sistem}}  \to    a_1\,x_1(t)+a_2\,x_2(t) 
+\]</div>
+<p>Še ena pomembna lastnost je časovna <strong>invariantnost</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+  f(t-t_0)   \to   {\textrm{Časovno invarianten sistem}}  \to    x(t-t_0) 
+\]</div>
+</div>
+<div class="section" id="odziv-na-periodicno-vzbujanje">
+<h2>Odziv na periodično vzbujanje<a class="headerlink" href="#odziv-na-periodicno-vzbujanje" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zapis-vzbujanja-s-fourierovimi-vrstami">
+<h3>Zapis vzbujanja s Fourierovimi vrstami<a class="headerlink" href="#zapis-vzbujanja-s-fourierovimi-vrstami" title="Permalink to this headline">¶</a></h3>
+<p>Glede <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-exp"><span class="std std-ref">Fourierove vrste v eksponentni (kompleksni) obliki</span></a> lahko periodično vzbujanje <span class="math notranslate nohighlight">\(f(t)\)</span> zapišemo kot:</p>
+<div class="math notranslate nohighlight">
+\[
+	f(t) = \sum_{n=-\infty}^{+\infty} c_n\,e^{ \mathrm{i}\,n\,\omega_{p}\,t},
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(\omega_{p}\)</span> osnovna krožna frekvenca periodičnega vzbujanja:</p>
+<div class="math notranslate nohighlight">
+\[
+	\omega_{p} = \frac{2\,\pi}{T}.
+\]</div>
+<p>in so Fourierovi  (kompleksni) koeficienti <span class="math notranslate nohighlight">\(c_n\)</span> za <span class="math notranslate nohighlight">\(n\in \mathbb{Z}\)</span> definirani kot:</p>
+<div class="math notranslate nohighlight">
+\[
+	c_n = \frac{1}{T}\,\int_{\tau}^{\tau+T}f(t)\,e^{- \mathrm{i}\,n\,\omega_{p}\,t}\,\textrm{d} t,
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(c_0\)</span> povprečna vrednost <span class="math notranslate nohighlight">\(f(t)\)</span>. Velja tudi <span class="math notranslate nohighlight">\(c_{-n}=c_n^*\)</span>, kjer <span class="math notranslate nohighlight">\({}^*\)</span> označuje kompleksno konjugacijo.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ker velja princip superpozicije, lahko vzbujanje razstavimo na poljubno komponent; tukaj vzbujanje razstavimo na posamezne člene Fourierove vrste; Fourierov koevicient <span class="math notranslate nohighlight">\(c_n\)</span> tako definira eno harmonsko komponento.</p>
+</div>
+</div>
+<div class="section" id="zapis-odziva-s-pomocjo-fourierovih-vrst">
+<h3>Zapis odziva s pomočjo Fourierovih vrst<a class="headerlink" href="#zapis-odziva-s-pomocjo-fourierovih-vrst" title="Permalink to this headline">¶</a></h3>
+<p>Tukaj nadaljujemo izračunom rešitve za vsako harmonsko komponento vzbujanja posebej (glejte <span class="xref std std-ref">sec:harmonski_odziv</span>)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	\begin{split}
+		X_n&amp;=X_{0,n}\,H_0(\omega_{p}\,n)\\
+		&amp;=\frac{c_n}{k}\,H_0(\omega_{p}\,n)\\
+		&amp;=c_n\,\alpha(\omega_{p}\,n),
+	\end{split}
+\end{split}\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(c_n\)</span> definiran zgoraj pri periodične vzbujanju s silo.</p>
+<p>Ko imamo enkrat <span class="math notranslate nohighlight">\(X_n\)</span> določen, lahko izračunamo odziv te harmonske komponente v času:</p>
+<div class="math notranslate nohighlight">
+\[
+	x_n(t)=X_n\,\,e^{ \mathrm{i}\,n\,\omega_{p}\,t}
+\]</div>
+<p>in se vrnemo k principu superpozicije ter odzive seštejemo:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = \sum_{n=-\infty}^{+\infty} x_n(t).
+\]</div>
+</div>
+</div>
+<div class="section" id="posplositev-na-poljubno-vzbujanje">
+<h2>Posplošitev na poljubno vzbujanje<a class="headerlink" href="#posplositev-na-poljubno-vzbujanje" title="Permalink to this headline">¶</a></h2>
+<p>Fourierova transformacija predstavlja posplošitev Fourierovih vrst tudi na neperiodične podatke. Izpeljave, ki smo jih s pomočjo Fourierovih vrst naredili za periodično vzbujanje, lahko tako posplošimo.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fourierova transformacija vzbujanja:</p>
+<div class="math notranslate nohighlight">
+\[
+	F(f)=\mathcal{F}\{f(t)\}
+\]</div>
+<p>vzbujanje razstavi na harmonske komponente <span class="math notranslate nohighlight">\(F(f)\)</span>, ki jih nato rešimo po posameznih krožnih frekvencah <span class="math notranslate nohighlight">\(\omega\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	X(\omega)=\alpha(\omega)\,F(\omega)
+\]</div>
+<p>in nato naredimo spet nazaj prehod v čas:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t)=\mathcal{F}^{-1}\{X(\omega)\}.
+\]</div>
 </div>
 </div>
 </div>
