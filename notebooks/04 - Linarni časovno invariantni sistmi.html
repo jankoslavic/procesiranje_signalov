@@ -303,8 +303,18 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#posplositev-na-poljubno-vzbujanje">
-   Posplošitev na poljubno vzbujanje
+  <a class="reference internal nav-link" href="#posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje">
+   Posplošitev periodičnega vzbujanja na poljubno vzbujanje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vzbujanje-z-enotskim-impulzom">
+   Vzbujanje z enotskim impulzom
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje">
+   Posplošitev enotskega vzbujanja na poljubno vzbujanje
   </a>
  </li>
 </ul>
@@ -423,7 +433,7 @@ c_{c} = 2\,\sqrt{k\,m},
 	\end{aligned}
 \end{split}\]</div>
 <p>še posebej pomembne in vodijo v rešitev impulznega odziva.</p>
-<div class="admonition note">
+<div class="admonition note" id="sec-impulzna-odzivna-funkcija-d-x-0">
 <p class="admonition-title">Note</p>
 <p>Impulzna odzivna funkcija:</p>
 <div class="math notranslate nohighlight">
@@ -721,12 +731,12 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 \]</div>
 </div>
 </div>
-<div class="section" id="posplositev-na-poljubno-vzbujanje">
-<h2>Posplošitev na poljubno vzbujanje<a class="headerlink" href="#posplositev-na-poljubno-vzbujanje" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje">
+<h2>Posplošitev periodičnega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje" title="Permalink to this headline">¶</a></h2>
 <p>Fourierova transformacija predstavlja posplošitev Fourierovih vrst tudi na neperiodične podatke. Izpeljave, ki smo jih s pomočjo Fourierovih vrst naredili za periodično vzbujanje, lahko tako posplošimo.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Fourierova transformacija vzbujanja:</p>
+<p>Fourierova transformacija vzbujanja za prehod v frekvenčno domeno:</p>
 <div class="math notranslate nohighlight">
 \[
 	F(f)=\mathcal{F}\{f(t)\}
@@ -736,11 +746,200 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 \[
 	X(\omega)=\alpha(\omega)\,F(\omega)
 \]</div>
-<p>in nato naredimo spet nazaj prehod v čas:</p>
+<p>in nato naredimo spet nazaj prehod v časovno domeno:</p>
 <div class="math notranslate nohighlight">
 \[
 	x(t)=\mathcal{F}^{-1}\{X(\omega)\}.
 \]</div>
+</div>
+</div>
+<div class="section" id="vzbujanje-z-enotskim-impulzom">
+<h2>Vzbujanje z enotskim impulzom<a class="headerlink" href="#vzbujanje-z-enotskim-impulzom" title="Permalink to this headline">¶</a></h2>
+<p>Obravnavajmo sedaj vzbujanje enomasnega sistema z enostkim impulzom <span class="math notranslate nohighlight">\(f_1(t)=\delta(t-\tau)\)</span>, kjer je <span class="math notranslate nohighlight">\(\tau(t)\)</span> Diracova delta funkcija (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-cas"><span class="std std-ref">Diracova delta funkcija</span></a>):</p>
+<div class="math notranslate nohighlight">
+\[
+	\Delta I_1=\lim_{\Delta \tau\to 0}\int_{\tau}^{\tau+\Delta \tau}f_1(t)\,\textrm{d} =1.
+\]</div>
+<p>Enomasni sistem je ob času <span class="math notranslate nohighlight">\(\tau^-\)</span> v mirovanju, infinitezimalni čas pozneje <span class="math notranslate nohighlight">\(\tau^+\)</span>  pa ima zaradi enotskega impulza <span class="math notranslate nohighlight">\(\Delta I_1\)</span> hitrost:</p>
+<div class="math notranslate nohighlight">
+\[
+	\dot x_0 = \frac{\Delta I_1}{m}= \frac{1}{m}.
+\]</div>
+<p>Po enotskem impulzu <span class="math notranslate nohighlight">\(t\ge \tau\)</span> je sila <span class="math notranslate nohighlight">\(f_1(t)\)</span> nič in sistem se odziva glede na homogeno rešitev pri ničelnem začetnem premiku <span class="math notranslate nohighlight">\(x=0\)</span> in <span class="math notranslate nohighlight">\(\dot x=\dot x_0\)</span> (glejte <span class="xref std std-ref">sec:impulzna_odzivna_funkcija_d_x_0</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+	h(t-\tau)=x(t)=\frac{1}{m\,\omega_{d}}\,e^{-\zeta\,\omega_0\,(t-\tau)}\,\sin(\omega_{d}\,(t-\tau)),\quad \textrm{for: } t&gt;\tau,
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> <strong>impulzna prenosna funkcija</strong>.</p>
+<p>Odziv na enotski impult <strong>vzročnega sistema</strong> (tudi <strong>kavzalni sistem</strong>) je odvisen samo od preteklega (in trenutnega) vzbujanja, ne pa od prihodnjega. Vsi sistemi v tej knjigi veljajo za vzročne.</p>
+</div>
+<div class="section" id="posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje">
+<h2>Posplošitev enotskega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje" title="Permalink to this headline">¶</a></h2>
+<p>Splošno vzbujevalno silo (slika spodaj) lahko vidimo kot superpozicijo enotskih impulzov pomnoženih z določeno konstanto.</p>
+<img src='images/general_forcing.svg'>
+<p>Vsak neskončno kratek impulz bi povzročil odziv glede na impulzno prenosno funkcijo <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> pomnožen z amplitudo impulza <span class="math notranslate nohighlight">\(f(\tau)\,\Delta\tau\)</span>. Za linearne sisteme take odizve po principu superpozicioniran seštejemo:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = \sum_{\tau}f(\tau)\,h(t-\tau)\,\Delta \tau,\quad \textrm{za: } t&gt;\tau,
+\]</div>
+<p>zaradi infinitezimalno majhnih časovnih korakov <span class="math notranslate nohighlight">\(\Delta \tau\to0\)</span> vsota preide v integral:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = \int_0^t\,f(\tau)\,h(t-\tau)\,\textrm{d} \tau,\quad \textrm{za: } t&gt;\tau.
+\]</div>
+<p>Kjer zgornji izraz imenujemo <strong>konvolucijski integral</strong> ali konvolucija (kdaj tudi <strong>Duhamelov integral</strong>.</p>
+<p>Ker je impulzna prenosna funkcija <span class="math notranslate nohighlight">\(h(t-\tau)=0\)</span> za <span class="math notranslate nohighlight">\(t&lt;\tau\)</span>, se lahko spodnja meja integrala razširi v <span class="math notranslate nohighlight">\(-\infty\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = \int_{-\infty}^t\,f(\tau)\,h(t-\tau)\,\textrm{d}  \tau,\quad \textrm{za: } t&gt;\tau.
+\]</div>
+<p>Nadalje, če spremenimo spremenljivko integracije v <span class="math notranslate nohighlight">\(\tau_1=t-\tau\)</span> (<span class="math notranslate nohighlight">\(\textrm{d} \tau_1=-\textrm{d} \tau\)</span>), se meje integracije spremenijo v: <span class="math notranslate nohighlight">\(-\infty\to+ \infty\)</span> in <span class="math notranslate nohighlight">\(t\to 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = -\int_{+\infty}^0\,f(t-\tau_1)\,h(\tau_1)\,\textrm{d}  \tau_1 = \int_0^{+\infty}\,f(t-\tau_1)\,h(\tau_1)\,\textrm{d}  \tau_1,
+\]</div>
+<p>Sledi, da lahko povzamemo lastnost <strong>komutativnost konvolucije</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = \int_{-\infty}^{t}\,f(\tau)\,h(t-\tau)\,\textrm{d}  \tau =
+	\int_{0}^{+\infty}\,h(\tau)\,f(t-\tau)\,\textrm{d}  \tau,
+\]</div>
+<p>ali v kratki obliki:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = f(t) * h(t)= h(t)*f(t),
+\]</div>
+<p>kjer <span class="math notranslate nohighlight">\(*\)</span> označuje konvolucijo.</p>
+<p>Opomba: če je sistem <strong>ne-vzročen</strong> in je odziv odvisen tudi od prihodnjega vzbujanja vnosa, se meje integracije razširijo in komutativna lastnost konvolucije je:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = \int_{-\infty}^{+\infty}\,f(t-\tau)\,h(\tau)\,\textrm{d}  \tau =
+	\int_{-\infty}^{+\infty}\,f(\tau)\,h(t-\tau)\,\textrm{d}  \tau.
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_42784</span><span class="o">/</span><span class="mf">701091593.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;f&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - 0.753778361444409 \left(- \left(- 0.332961203344948 e^{0.2 \pi} \sin{\left(1.98997487421324 t - 2.98997487421324 \pi \right)} + 0.022271839554007 e^{0.2 \pi} \cos{\left(1.98997487421324 t - 2.98997487421324 \pi \right)}\right) e^{- 0.2 t} + \left(- 0.970515788497786 e^{0.2 \pi} \sin{\left(1.98997487421324 t - 0.98997487421324 \pi \right)} + 0.196068771799705 e^{0.2 \pi} \cos{\left(1.98997487421324 t - 0.98997487421324 \pi \right)}\right) e^{- 0.2 t} + \left(0.332961203344948 e^{0.2 t} \sin{\left(1.0 t \right)} + 0.022271839554007 e^{0.2 t} \cos{\left(1.0 t \right)}\right) e^{- 0.2 t} - \left(- 0.970515788497786 e^{0.2 t} \sin{\left(1.0 t \right)} + 0.196068771799705 e^{0.2 t} \cos{\left(1.0 t \right)}\right) e^{- 0.2 t}\right) \left(\theta\left(t - \pi\right)\right)^{2} - 0.753778361444409 \left(- \left(0.332961203344948 e^{0.2 t} \sin{\left(1.0 t \right)} + 0.022271839554007 e^{0.2 t} \cos{\left(1.0 t \right)}\right) e^{- 0.2 t} + \left(- 0.970515788497786 e^{0.2 t} \sin{\left(1.0 t \right)} + 0.196068771799705 e^{0.2 t} \cos{\left(1.0 t \right)}\right) e^{- 0.2 t} - \left(- 0.970515788497786 \sin{\left(1.98997487421324 t \right)} + 0.196068771799705 \cos{\left(1.98997487421324 t \right)}\right) e^{- 0.2 t} + \left(- 0.332961203344948 \sin{\left(1.98997487421324 t \right)} + 0.022271839554007 \cos{\left(1.98997487421324 t \right)}\right) e^{- 0.2 t}\right) \left(\theta\left(t\right)\right)^{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="p">{</span><span class="n">t</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.352939085211233\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Heaviside</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 0.352939085211233\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04 - Linarni časovno invariantni sistmi_52_0.png" src="../_images/04 - Linarni časovno invariantni sistmi_52_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x22559fd6bb0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, \omega_0, \omega_d, d_x_0, \delta, A, B, </span><span class="se">\\</span><span class="s1">tau&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="n">ω_d</span> <span class="o">=</span> <span class="n">ω_0</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">δ</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ovojnica</span> <span class="o">=</span> <span class="n">d_x_0</span><span class="o">/</span><span class="n">ω_d</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">ω_0</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">ovojnica</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ω_d</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">B</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">B</span><span class="o">*</span><span class="n">π</span><span class="p">))</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$h(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(t)*h(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
