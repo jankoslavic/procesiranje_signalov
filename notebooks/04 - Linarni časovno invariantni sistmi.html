@@ -317,6 +317,11 @@
    Posplošitev enotskega vzbujanja na poljubno vzbujanje
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#povezava-med-frekvencno-in-impulzno-prenosno-funkcijo">
+   Povezava med frekvenčno in impulzno prenosno funkcijo
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -857,6 +862,41 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 	\int_{-\infty}^{+\infty}\,f(\tau)\,h(t-\tau)\,\textrm{d}  \tau.
 \]</div>
 </div>
+</div>
+<div class="section" id="povezava-med-frekvencno-in-impulzno-prenosno-funkcijo">
+<h2>Povezava med frekvenčno in impulzno prenosno funkcijo<a class="headerlink" href="#povezava-med-frekvencno-in-impulzno-prenosno-funkcijo" title="Permalink to this headline">¶</a></h2>
+<p>V prejšnjih poglavjih sta bili predstavljeni frekvenčna prenosna funkcija <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in impulzna prenosna funkcija <span class="math notranslate nohighlight">\(h(t)\)</span>; prva je definirana v frekvenčni, druga v časovni domeni. V tem poglavju bomo dokazali, da <span class="math notranslate nohighlight">\(h(t)\)</span> in <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> tvorita par Fourierove transformacije.</p>
+<p>Fourierjeva transformacija enotskega impulza <span class="math notranslate nohighlight">\(f_1(t)=\delta(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	F_1(\omega)=\mathcal{F}\{f_1(t)\}
+	=\int_{-\infty}^{\infty}f_1(t)\,e^{- \mathrm{i}\,\omega\,t}\,\textrm{d} =1
+\]</div>
+<p>in posledično enotni impulz vzbuja vse frekvence enako.</p>
+<p>Enotski impulz prek frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> vodi v ozdiv <span class="math notranslate nohighlight">\(X_1(\omega)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	X_1(\omega)=\alpha(\omega)\,\underbrace{F_1(\omega)}_{=1}=\alpha(\omega).
+\]</div>
+<p>Da naredimo prehod v časovno domeno, uporabimo inverzno Fourierovo transformacijo:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+	\begin{split}
+		x_1(t)&amp;=\mathcal{F}^{-1}\{X_1(\omega)\}\\
+		&amp;=\mathcal{F}^{-1}\{\alpha(\omega)\}.
+	\end{split}
+\end{split}\]</div>
+<p>Po drugi strani pa je odziv <span class="math notranslate nohighlight">\(x_1(t)\)</span> na enotski impulz definiran tudi z impulzno prenosno funkcijo <span class="math notranslate nohighlight">\(x_1(t)=h(t)\)</span>, sledi:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Impulzna prenosna funkcija in frekvenčna prenosna funkcija sta <strong>Fourierov par</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+	h(t)=\mathcal{F}^{-1}\{\alpha(\omega)\}\qquad\textrm{ali}\qquad%
+	\alpha(\omega)=\mathcal{F}\{h(t)\}.
+\]</div>
+</div>
+<p>Opomba: Fourierov par označuje označuje dve spremenljivki, ena v časovni, druga v frekvenčni domeni, ki sta povezani prek Fourierove transformacije.</p>
 </div>
 </div>
 

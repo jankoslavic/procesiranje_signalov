@@ -1487,6 +1487,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">//</span><span class="mi">4</span><span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">T_p</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">T_p</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># zakaj je ta koda napačna?</span>
 <span class="c1"># t, dt = np.linspace(-0.5*Tp,1.5*Tp,201, retstep=True)</span>
@@ -1531,17 +1532,17 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-2.77555756e-17-1.97261469e-03j, -3.64291930e-17+6.95625956e-02j,
-       -1.70002901e-16-1.57829366e-03j,  3.15719673e-16+8.98508111e-02j,
-        1.11022302e-16-1.18384586e-03j,  4.85722573e-17+1.26228518e-01j,
-       -2.77555756e-17-7.89293161e-04j,  6.76542156e-17+2.10869640e-01j,
-       -2.08166817e-17-3.94665909e-04j,  4.33680869e-17+6.33344596e-01j,
-       -5.55111512e-17+0.00000000e+00j,  4.33680869e-17-6.33344596e-01j,
-       -2.08166817e-17+3.94665909e-04j,  6.76542156e-17-2.10869640e-01j,
-       -2.77555756e-17+7.89293161e-04j,  4.85722573e-17-1.26228518e-01j,
-        1.11022302e-16+1.18384586e-03j,  3.15719673e-16-8.98508111e-02j,
-       -1.70002901e-16+1.57829366e-03j, -3.64291930e-17-6.95625956e-02j,
-       -2.77555756e-17+1.97261469e-03j])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-2.77555756e-17-1.98252732e-03j, -3.12250226e-17+6.99121564e-02j,
+       -1.70002901e-16-1.58622479e-03j,  3.08780779e-16+9.03023227e-02j,
+        1.17961196e-16-1.18979483e-03j,  4.51028104e-17+1.26862832e-01j,
+       -3.81639165e-17-7.93259458e-04j,  6.59194921e-17+2.11929286e-01j,
+       -6.93889390e-18-3.96649155e-04j,  6.24500451e-17+6.36527232e-01j,
+        0.00000000e+00+0.00000000e+00j,  6.24500451e-17-6.36527232e-01j,
+       -6.93889390e-18+3.96649155e-04j,  6.59194921e-17-2.11929286e-01j,
+       -3.81639165e-17+7.93259458e-04j,  4.51028104e-17-1.26862832e-01j,
+        1.17961196e-16+1.18979483e-03j,  3.08780779e-16-9.03023227e-02j,
+       -1.70002901e-16+1.58622479e-03j, -3.12250226e-17-6.99121564e-02j,
+       -2.77555756e-17+1.98252732e-03j])
 </pre></div>
 </div>
 </div>
