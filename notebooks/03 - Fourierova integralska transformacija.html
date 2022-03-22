@@ -347,11 +347,6 @@
    Uporaba oken
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fourierove-vrste-in-diskretna-fourierova-transformacija">
-   Fourierove vrste in diskretna Fourierova transformacija
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -381,13 +376,14 @@ c_n=\frac{1}{T_p}\,\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{p}\,n\,t}
 X(\omega)= \mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty}x(t)\,e^{-\textrm{i}\,\omega\,t}\,\textrm{d} t,
 \]</div>
 <p>kjer smo namesto <span class="math notranslate nohighlight">\(\omega_{n}\)</span> zapisali <span class="math notranslate nohighlight">\(\omega\)</span>, saj je sedaj frekvenca zvezno definirana. <span class="math notranslate nohighlight">\(X(\omega)\)</span> predstavlja amplitudno frekvenčno gostoto, saj je <span class="math notranslate nohighlight">\(c_n\,T_p=c_n/\Delta f\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta f\)</span> frekvenčna pasovna širina (ang. <em>bandwidth</em>). S <span class="math notranslate nohighlight">\(\mathcal{F}\{\}\)</span> označimo Fourierovo transformacijo.</p>
-<p>Poglejmo si sedaj še <strong>rekonstruirano zvezno funkcijo</strong>, kadar <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>:
-$<span class="math notranslate nohighlight">\(
+<p>Poglejmo si sedaj še <strong>rekonstruirano zvezno funkcijo</strong>, kadar <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 x(t)=\lim_{T_p\rightarrow\infty}\sum_{n=-\infty}^{+\infty}
 X(\omega_n)\underbrace{\frac{1}{T_p}}_{\Delta f}\,e^{\mathrm{i}\,\overbrace{2\pi\,n/T_p}^{\omega_n}\,t}
 =\lim_{T_p\rightarrow\infty}\sum_{n=-\infty}^{+\infty}
 X(\omega_n)\,e^{\mathrm{i}\,\omega_n\,t}\Delta f,
-\)</span>$</p>
+\]</div>
 <p>v limitni obliki, je izraz zvezen in ga imenujemo <strong>inverzna Fourierova transformacija</strong>, ter označimo z <span class="math notranslate nohighlight">\(\mathcal{F}^{-1}\{\}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -433,10 +429,11 @@ x(t)=\int_{-\infty}^{+\infty} X(f)\,e^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
 \[
 x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 \]</div>
-<p>Fourierova transformacija:
-$<span class="math notranslate nohighlight">\(
+<p>Fourierova transformacija:</p>
+<div class="math notranslate nohighlight">
+\[
 \mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty} e^{-\delta\,|t|}\,e^{-\,\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{2\,\delta}{\delta^{2} + 4 \pi^{2}\,f^{2}}
-\)</span>$</p>
+\]</div>
 <p>Opazimo, da je pri frekvenci 0 Hz ampituda <span class="math notranslate nohighlight">\(|X(0)|=2/\delta\)</span>, in pade na polovico začetne amplitude pri frekvenci: <span class="math notranslate nohighlight">\(f_{1/2}=\delta/(2\pi)\)</span>. Parameter <span class="math notranslate nohighlight">\(\delta\)</span> definiran časovni raztros; večja, ko je vrednost <span class="math notranslate nohighlight">\(\delta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni (glede na <span class="math notranslate nohighlight">\(f_{1/2}\)</span>). Podobno kakor pri delta funkciji, torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
 <p>Poglejmo si sedaj zgled v času in frekvenci:</p>
 <div class="cell tag_hide-input docutils container">
@@ -776,10 +773,11 @@ e^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0\\
 \[
 x(t) = e^{-a\,t^2};\qquad a&gt;0.
 \]</div>
-<p>Fourierovo transformacijo izpeljemo (spodaj) in rezultira v:
-$<span class="math notranslate nohighlight">\(
+<p>Fourierovo transformacijo izpeljemo (spodaj) in rezultira v:</p>
+<div class="math notranslate nohighlight">
+\[
 X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
-\)</span>$</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1631,35 +1629,6 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 <img alt="../_images/03 - Fourierova integralska transformacija_72_1.png" src="../_images/03 - Fourierova integralska transformacija_72_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="fourierove-vrste-in-diskretna-fourierova-transformacija">
-<h2>Fourierove vrste in diskretna Fourierova transformacija<a class="headerlink" href="#fourierove-vrste-in-diskretna-fourierova-transformacija" title="Permalink to this headline">¶</a></h2>
-<p>Pozneje bomo spoznali diskretno Fourierovo transformacijo, ki je z Fourierovimi vrstami zelo povezana. Povezavo lahko hitro razkrijemo, če predpostavimo diskretno časovno vrst <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span> in <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>, sledi:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{split}
-c_n &amp;= \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t\\
-&amp;= \frac{1}{N\,\Delta t}\,\sum_{i=0}^{N-1} x(i\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,n\,\Delta t\,i/(N\,\Delta t)}\,\Delta t\\
-&amp;= \frac{1}{N}\,\underbrace{\sum_{i=0}^{N-1} x(i\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,n\,i/N}}_{X_n}\\
-&amp;= \frac{X_n}{N}\\
-\end{split}
-\end{split}\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Diskretna Fourierova transformacija</strong> (DFT):
-$<span class="math notranslate nohighlight">\(
-X_n= \sum_{i=0}^{N-1} x_i\,e^{-\mathrm{i}\,2\pi\,n\,i/N}
-\)</span>$</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Inverzna diskretna Fourierova transformacija</strong> (IDFT):</p>
-<div class="math notranslate nohighlight">
-\[
-x_i=\frac{1}{N} \sum_{n=0}^{N-1} X_n\,e^{\mathrm{i}\,2\pi\,n\,i/N}
-\]</div>
-</div>
-<p>Poudarti je treba, da v splošnem <span class="math notranslate nohighlight">\(X_n/N\ne c_n\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_n\)</span> periodična vrsta: <span class="math notranslate nohighlight">\(X_n=X_{n+k\,N}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> poljubno celo število.</p>
 </div>
 </div>
 
