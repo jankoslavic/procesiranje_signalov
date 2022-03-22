@@ -343,6 +343,11 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uporaba-oken">
+   Uporaba oken
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fourierove-vrste-in-diskretna-fourierova-transformacija">
    Fourierove vrste in diskretna Fourierova transformacija
   </a>
@@ -621,7 +626,7 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 </div>
 </div>
 <div class="section" id="pravokotni-impulz">
-<h3>Pravokotni impulz<a class="headerlink" href="#pravokotni-impulz" title="Permalink to this headline">¶</a></h3>
+<span id="sec-pravokotni-impulz"></span><h3>Pravokotni impulz<a class="headerlink" href="#pravokotni-impulz" title="Permalink to this headline">¶</a></h3>
 <p>Predpostavimo pravokotno funkcijo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1536,6 +1541,94 @@ x(t)*y(t)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\
 <img alt="../_images/03 - Fourierova integralska transformacija_69_0.png" src="../_images/03 - Fourierova integralska transformacija_69_0.png" />
 <img alt="../_images/03 - Fourierova integralska transformacija_69_1.png" src="../_images/03 - Fourierova integralska transformacija_69_1.png" />
 </div>
+</div>
+</div>
+</div>
+<div class="section" id="uporaba-oken">
+<h2>Uporaba oken<a class="headerlink" href="#uporaba-oken" title="Permalink to this headline">¶</a></h2>
+<p>Predpostavimo, da želimo izračunati Fourierovo tranformacijo determinističnega signala <span class="math notranslate nohighlight">\(x(t)\)</span>, ki je načeloma definiran od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>, vendar pa ga gledamo samo na območju od <span class="math notranslate nohighlight">\(-T/2\)</span> do <span class="math notranslate nohighlight">\(+T/2\)</span>. Rezultirajoč podatki tako so:</p>
+<div class="math notranslate nohighlight">
+\[
+x_T(t)=x(t)\,w(t),
+\]</div>
+<p>kjer je:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+w(t)=
+\begin{cases}
+1;\quad\textrm{za:}\quad |t|\le T/2\\
+0;\quad\textrm{sicer}.
+\end{cases}
+\end{split}\]</div>
+<p>Če pridobimo Fourierovo transformacijo <span class="math notranslate nohighlight">\(x_T(t)\)</span> velja:</p>
+<div class="math notranslate nohighlight">
+\[
+X_T(t)=\mathcal{F}\{x(t)\,w(t)\}= X(f)*W(f)=\int_{-\infty}^{+\infty} X(g)\,W(f-g)\,\textrm{d}g
+\]</div>
+<p>Sporočilo torej je: <span class="math notranslate nohighlight">\(X(f)\)</span> predstavlja frekvenčno transformiranko funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, ki jo lahko gledamo samo v nekem časovno omejenem oknu <span class="math notranslate nohighlight">\(w(t)\)</span>, le-to pa povzroči, da je Fourierova transformacija popačena. Pravokotni impulz <span class="math notranslate nohighlight">\(w(t)\)</span> smo si že pogledali zgoraj (<a href="#id1"><span class="problematic" id="id2">:sec:`pravokotni_impulz`</span></a>) in ugotovili, da je frekvenčna transformiranka definirana kot:</p>
+<div class="math notranslate nohighlight">
+\[
+W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
+\]</div>
+<p>kjer smo uporabili zapis, ki razkrije limito, ko gre <span class="math notranslate nohighlight">\(T\to 0\)</span>, gre: <span class="math notranslate nohighlight">\(W(0)=T\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># pravokotno</span>
+<span class="n">wp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">Tp</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># teoretično bi tukaj morali vzeti 1*T/2</span>
+<span class="n">wp</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">&gt;</span><span class="n">Tp</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">fT_teor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">Wp_teor</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">T</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span>
+
+<span class="c1">#Bartlett</span>
+<span class="n">wBartlett</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">wBartlett</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">wBartlett</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">WBartlett_teor</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#Hann</span>
+<span class="n">wHann</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">WHann_teor</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">fT_teor</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1">#Hamming</span>
+<span class="n">wHamming</span> <span class="o">=</span> <span class="mf">0.54</span><span class="o">+</span><span class="mf">0.46</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">)</span>
+<span class="n">WHamming_teor</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.54</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">0.08</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">wp</span><span class="p">,</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pravokotno - simuliramo T/4!&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">wBartlett</span><span class="p">,</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bartlett&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">wHann</span><span class="p">,</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hann&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">wHamming</span><span class="p">,</span><span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hamming&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Različna okna v časovni domeni&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ [$T$]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplituda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">narisi</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span>
+<span class="c1">#narisi = plt.semilogy #s to opcijo je treba popraviti ylim</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">narisi</span><span class="p">(</span><span class="n">fT_teor</span><span class="p">,</span> <span class="n">Wp_teor</span><span class="p">,</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pravokotno&#39;</span><span class="p">)</span>
+<span class="n">narisi</span><span class="p">(</span><span class="n">fT_teor</span><span class="p">,</span> <span class="n">WBartlett_teor</span><span class="p">,</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bartlett&#39;</span><span class="p">)</span>
+<span class="n">narisi</span><span class="p">(</span><span class="n">fT_teor</span><span class="p">,</span> <span class="n">WHann_teor</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hann&#39;</span><span class="p">)</span>
+<span class="n">narisi</span><span class="p">(</span><span class="n">fT_teor</span><span class="p">,</span> <span class="n">WHamming_teor</span><span class="p">,</span> <span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hamming&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Različna okna v frekvenčni domeni&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$f$ [1/T]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplituda&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_72_0.png" src="../_images/03 - Fourierova integralska transformacija_72_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_72_1.png" src="../_images/03 - Fourierova integralska transformacija_72_1.png" />
 </div>
 </div>
 </div>
