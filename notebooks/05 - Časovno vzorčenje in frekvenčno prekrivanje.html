@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Applying windows to signals &#8212; Procesiranje signalov s Pythonom</title>
+    <title>Enakomerno časovno vzorčenje in frekvenčno prekrivanje &#8212; Procesiranje signalov s Pythonom</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,6 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Diskretna Fourierova transformacija" href="03%20-%20Diskretna%20Fourierova%20transformacija.html" />
+    <link rel="prev" title="Linearni časovno invariantni sistemi z eno prostostno stopnjo" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,7 +98,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01%20-%20Uvod.html">
    Uvod v procesiranje signalov
@@ -115,8 +119,8 @@
    Linearni časovno invariantni sistemi z eno prostostno stopnjo
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Enakomerno časovno vzorčenje in frekvenčno prekrivanje
   </a>
  </li>
@@ -181,7 +185,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/05 - Applying windows to signals.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebooks/05 - Časovno vzorčenje in frekvenčno prekrivanje.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -201,7 +205,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/05 - Applying windows to signals.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/05 - Časovno vzorčenje in frekvenčno prekrivanje.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -222,7 +226,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/05 - Applying windows to signals.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/05 - Časovno vzorčenje in frekvenčno prekrivanje.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -239,6 +243,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourierove-vrste-in-diskretna-fourierova-transformacija">
+   Fourierove vrste in diskretna Fourierova transformacija
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -247,8 +264,98 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="applying-windows-to-signals">
-<h1>Applying windows to signals<a class="headerlink" href="#applying-windows-to-signals" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje">
+<h1>Enakomerno časovno vzorčenje in frekvenčno prekrivanje<a class="headerlink" href="#enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje" title="Permalink to this headline">¶</a></h1>
+<p>Doslej smo obravnavali zvezne podatke <span class="math notranslate nohighlight">\(x(t)\)</span>, pri eksperimentalnem delu pa se skoraj vedno srečamo s diskretnimi vrednostmi, ki so tipično zajeti z enakomernim časovnim vzorčenje <span class="math notranslate nohighlight">\(x(n\,\Delta t)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> <strong>čas (perioda) vzorčenja</strong> (<span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> je <strong>frekvenca vzorčenja</strong>).</p>
+<p>Pri razumevanju vzorčenih podatkov si pomagamo z <em>idealnim enakomerno vzorčenimi podatki</em> <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki so produkt zveznih podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> in vlaka impulzov <span class="math notranslate nohighlight">\(i(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x_s(t)=x(t)\,i(t),
+\]</div>
+<p>kjer je:</p>
+<div class="math notranslate nohighlight">
+\[
+i(t)= \sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t)
+\]</div>
+<p>Fourierova transformacija <span class="math notranslate nohighlight">\(x_s(t)\)</span> je:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+X_s(f)&amp;=\int_{-\infty}^{+\infty} x(t)\,\sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,\int_{-\infty}^{+\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\delta(t-n\,\Delta t)\,\textrm{d} t,\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}.
+\end{split}
+\end{split}\]</div>
+<p>Kjer smo v prehodu v zadnjo vrstico uporabili sejalno lastnost Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>).</p>
+<p>Fourierova transformacija <span class="math notranslate nohighlight">\(X_s(f)\)</span> se ponavlja (je periodična) s frekvenco <span class="math notranslate nohighlight">\(1/\Delta t\)</span>, to dokažemo tako:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+X_s(f+r/\Delta t)&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,(f+r/\Delta t)\,n\,\Delta t},\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,\underbrace{e^{-\textrm{i}\,2\pi\,r\,n}}_{=1},\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t},\\
+&amp;=X_s(f),
+\end{split}
+\end{split}\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(r\)</span> poljubno celo število. Sklenemo torej:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Fourierova transformacija</strong> podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> vzorčenih s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> je definirana kot vsota:</p>
+<div class="math notranslate nohighlight">
+\[
+X_s(f)=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}
+\]</div>
+<p>in je v frekvenčni domeni periodična s frekvenco <span class="math notranslate nohighlight">\(1/\Delta t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
+\]</div>
+</div>
+<p><strong>Inverzno Fourierovo transformacijo</strong> dobimo tako, izraz v frekvenčni domeni pomnožimo z <span class="math notranslate nohighlight">\(e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\)</span> in integriramo po frekvenci <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f=\int_{-1/2\Delta t}^{+1/2\Delta t}\,\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f,
+\]</div>
+<p>kjer smo integrirali samo po eni periodi v frekvenci (po več ne bi bilo smiselno, saj je <span class="math notranslate nohighlight">\(X_s(f)\)</span> periodična funkcija).</p>
+<p>Zgornji izraz preoblikujemo v:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,\underbrace{e^{-\textrm{i}\,2\pi\,f\,(n-p)\,n\,\Delta t}}_{=1,\textrm{ ko je } n=p\quad\textrm{sicer: }0}\,\textrm{d}f=x(p\,\Delta t)\,\frac{1}{\Delta t}.
+\]</div>
+<p>Izpeljali smo torej:</p>
+<div class="math notranslate nohighlight">
+\[
+x(p\,\Delta t) = \Delta t\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f
+\]</div>
+<div class="section" id="fourierove-vrste-in-diskretna-fourierova-transformacija">
+<h2>Fourierove vrste in diskretna Fourierova transformacija<a class="headerlink" href="#fourierove-vrste-in-diskretna-fourierova-transformacija" title="Permalink to this headline">¶</a></h2>
+<p>Pozneje bomo spoznali diskretno Fourierovo transformacijo, ki je z Fourierovimi vrstami zelo povezana. Povezavo lahko hitro razkrijemo, če predpostavimo diskretno časovno vrst <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span> in <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>, sledi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+c_n &amp;= \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t\\
+&amp;= \frac{1}{N\,\Delta t}\,\sum_{i=0}^{N-1} x(i\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,n\,\Delta t\,i/(N\,\Delta t)}\,\Delta t\\
+&amp;= \frac{1}{N}\,\underbrace{\sum_{i=0}^{N-1} x(i\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,n\,i/N}}_{X_n}\\
+&amp;= \frac{X_n}{N}\\
+\end{split}
+\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Diskretna Fourierova transformacija</strong> (DFT):
+$<span class="math notranslate nohighlight">\(
+X_n= \sum_{i=0}^{N-1} x_i\,e^{-\mathrm{i}\,2\pi\,n\,i/N}
+\)</span>$</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Inverzna diskretna Fourierova transformacija</strong> (IDFT):</p>
+<div class="math notranslate nohighlight">
+\[
+x_i=\frac{1}{N} \sum_{n=0}^{N-1} X_n\,e^{\mathrm{i}\,2\pi\,n\,i/N}
+\]</div>
+</div>
+<p>Poudarti je treba, da v splošnem <span class="math notranslate nohighlight">\(X_n/N\ne c_n\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_n\)</span> periodična vrsta: <span class="math notranslate nohighlight">\(X_n=X_{n+k\,N}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> poljubno celo število.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -275,7 +382,21 @@
               
         
             <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Linearni časovno invariantni sistemi z eno prostostno stopnjo</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03%20-%20Diskretna%20Fourierova%20transformacija.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Diskretna Fourierova transformacija</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>

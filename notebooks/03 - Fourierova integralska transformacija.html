@@ -120,18 +120,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="05%20-%20Applying%20windows%20to%20signals.html">
-   Applying windows to signals
+  <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">
+   Enakomerno časovno vzorčenje in frekvenčno prekrivanje
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03%20-%20Diskretna%20Fourierova%20transformacija.html">
    Diskretna Fourierova transformacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06%20-%20Spectral%20leakage%20and%20aliasing.html">
-   Spectral leakage and aliasing
   </a>
  </li>
  <li class="toctree-l1">
@@ -1388,7 +1383,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <p>Znak <span class="math notranslate nohighlight">\(*\)</span> označuje konvolucijo:</p>
 <div class="math notranslate nohighlight">
 \[
-x(t)*y(t)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau\,\textrm{d}t
+\int_{-\infty}^{+\infty}\big(x(t)*y(t)\big)\,e^{-\textrm{i}2\pi\,f\,t}\textrm{d}t=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau\,\,e^{-\textrm{i}2\pi\,f\,t}\,\textrm{d}t
 \]</div>
 <p>Zgornjo povezavo izpeljemo:</p>
 <div class="cell docutils container">
