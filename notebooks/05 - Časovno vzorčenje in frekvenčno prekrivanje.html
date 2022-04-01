@@ -249,6 +249,23 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enakomerno-casovno-vzorcenje">
+   Enakomerno časovno vzorčenje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frekvencno-prekrivanje">
+   Frekvenčno prekrivanje
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zgled-gaussov-impulz">
+     Zgled: Gaussov impulz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fourierove-vrste-in-diskretna-fourierova-transformacija">
    Fourierove vrste in diskretna Fourierova transformacija
   </a>
@@ -266,6 +283,8 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje">
 <h1>Enakomerno časovno vzorčenje in frekvenčno prekrivanje<a class="headerlink" href="#enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="enakomerno-casovno-vzorcenje">
+<h2>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Permalink to this headline">¶</a></h2>
 <p>Doslej smo obravnavali zvezne podatke <span class="math notranslate nohighlight">\(x(t)\)</span>, pri eksperimentalnem delu pa se skoraj vedno srečamo s diskretnimi vrednostmi, ki so tipično zajeti z enakomernim časovnim vzorčenje <span class="math notranslate nohighlight">\(x(n\,\Delta t)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> <strong>čas (perioda) vzorčenja</strong> (<span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> je <strong>frekvenca vzorčenja</strong>).</p>
 <p>Pri razumevanju vzorčenih podatkov si pomagamo z <em>idealnim enakomerno vzorčenimi podatki</em> <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki so produkt zveznih podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> in vlaka impulzov <span class="math notranslate nohighlight">\(i(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -311,7 +330,7 @@ X_s(f)=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\
 X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 \]</div>
 </div>
-<p><strong>Inverzno Fourierovo transformacijo</strong> dobimo tako, izraz v frekvenčni domeni pomnožimo z <span class="math notranslate nohighlight">\(e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\)</span> in integriramo po frekvenci <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<p>Poskusimo sedaj izpeljati inverzno Fourierovo transformacijo; najprej izraz v frekvenčni domeni pomnožimo z <span class="math notranslate nohighlight">\(e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\)</span> in integriramo po frekvenci <span class="math notranslate nohighlight">\(f\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f=\int_{-1/2\Delta t}^{+1/2\Delta t}\,\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f,
@@ -320,13 +339,128 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <p>Zgornji izraz preoblikujemo v:</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,\underbrace{e^{-\textrm{i}\,2\pi\,f\,(n-p)\,n\,\Delta t}}_{=1,\textrm{ ko je } n=p\quad\textrm{sicer: }0}\,\textrm{d}f=x(p\,\Delta t)\,\frac{1}{\Delta t}.
+\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,\underbrace{e^{-\textrm{i}\,2\pi\,f\,(n-p)\,\Delta t}}_{=1,\textrm{ ko je } n=p\quad\textrm{sicer: }0}\,\textrm{d}f=x(p\,\Delta t)\,\frac{1}{\Delta t}.
 \]</div>
-<p>Izpeljali smo torej:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Izpeljali smo torej <strong>inverzno Fourierovo transformacijo</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
 x(p\,\Delta t) = \Delta t\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f
 \]</div>
+<p>::</p>
+</div>
+</div>
+<div class="section" id="frekvencno-prekrivanje">
+<h2>Frekvenčno prekrivanje<a class="headerlink" href="#frekvencno-prekrivanje" title="Permalink to this headline">¶</a></h2>
+<p>Izkaže, da zgornji izraz popači frekvenčno sliko zveznih podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> (oz <span class="math notranslate nohighlight">\(X(f)\)</span> v frekvenčni domeni). Poglejmo detajle: vlak impulzov <span class="math notranslate nohighlight">\(i(t)\)</span> lahko vidimo kot periodične podatke s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> in jih popišemo s Fourierovo vrsto:</p>
+<div class="math notranslate nohighlight">
+\[
+i(t)= \sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t) = \sum_{n=-\infty}^{+\infty}c_n\,e^{\textrm{i}\,2\pi\,n\,t/\Delta t},
+\]</div>
+<p>kjer je:</p>
+<div class="math notranslate nohighlight">
+\[
+c_n=\frac{1}{\Delta t}\,\int_{-\Delta t/2}^{+\Delta t/2}i(t)\,e^{-\textrm{i}\,2\pi\,n\,t/\Delta t}\,\textrm{d}t=\frac{1}{\Delta t}.
+\]</div>
+<p>Sledi:</p>
+<div class="math notranslate nohighlight">
+\[
+i(t)= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}e^{\textrm{i}\,2\pi\,n\,t/\Delta t}.
+\]</div>
+<p>Fourierova transformacija <span class="math notranslate nohighlight">\(i(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+I(f)&amp;= \int_{-\infty}^{+\infty}\Big(\frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}e^{\textrm{i}\,2\pi\,n\,t/\Delta t}\Big)\, e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t,\\
+&amp;= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\int_{-\infty}^{+\infty}
+e^{\textrm{i}\,2\pi\,n\,t/\Delta t}\, e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t,\\
+&amp;= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\int_{-\infty}^{+\infty}
+e^{-\textrm{i}\,2\pi\,(f-n/\Delta t)\,t}\,\textrm{d}t,\\
+&amp;= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}
+\delta\Big(f-\frac{n}{\Delta t}\Big).\\
+\end{split}
+\end{split}\]</div>
+<p>Fourierova tranformacija <span class="math notranslate nohighlight">\(i(t)\)</span> je torej v frekvenčni domeni periodično ponavljajoča s frekvenčno periodo <span class="math notranslate nohighlight">\(1/\Delta t\)</span>.</p>
+<p>Poglejmo si sedaj povezavo <span class="math notranslate nohighlight">\(X(f)\)</span> in <span class="math notranslate nohighlight">\(X_s(f)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+X_s(f) =\mathcal{F}(i(t)\,x(t)) &amp;= I(f)*X(f)\\
+&amp;=\int_{-\infty}^{+\infty}I(p)\,X(f-p)\,\textrm{d}p\\
+&amp;=\int_{-\infty}^{+\infty}\frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}
+\delta\Big(f-\frac{n}{\Delta t}\Big)\,X(f-p)\,\textrm{d}p\\
+&amp;=\frac{1}{\Delta t}\,\sum_{n=-\infty}^{+\infty}\,\int_{-\infty}^{+\infty}\,
+\delta\Big(f-\frac{n}{\Delta t}\Big)\,X(f-p)\,\textrm{d}p\\
+&amp;=\frac{1}{\Delta t}\,\sum_{n=-\infty}^{+\infty}\,X\Big(f-\frac{n}{\Delta t}\Big)\\
+\end{split}
+\end{split}\]</div>
+<p>Kako interpretiramo zgornjo izpeljavo? Če imamo časovno vzorčene podakte <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki vodi v frekvenčni domeni do <span class="math notranslate nohighlight">\(X_s(f)\)</span>, imamo pri določeni frekvenci <span class="math notranslate nohighlight">\(f\)</span> vsebnost vsote zveznih podatkov <span class="math notranslate nohighlight">\(X(f)\)</span> pri frekvencah <span class="math notranslate nohighlight">\(f-n/\Delta t\)</span>.</p>
+<div class="section" id="zgled-gaussov-impulz">
+<h3>Zgled: Gaussov impulz<a class="headerlink" href="#zgled-gaussov-impulz" title="Permalink to this headline">¶</a></h3>
+<p>Časovno vzorčenje in frekvenčno prekrivanje si bomo tukaj pogledali na primeru Gaussovega okna, ki je v časovni in frekvenčni domeni definirano kot:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = e^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a};\qquad a&gt;0 
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># navodilo: spreminaj parameter `a`</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">Δt</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, Δt&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">Xs</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">Δt</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="o">-</span><span class="n">n</span><span class="o">/</span><span class="n">Δt</span><span class="p">),</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Δt</span><span class="p">:</span> <span class="o">.</span><span class="mi">2</span><span class="p">}</span>
+<span class="c1"># pripravimo vektorizirane funkcije za numpy</span>
+<span class="n">f_x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">f_X_abs</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">f_Xs_abs</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">Xs</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+
+<span class="c1"># zaloga vrednosti v času in frekvenci (t_g so &#39;gosti&#39; podatki za prikaz zvezne funkcije)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">])</span> <span class="c1"># približno število -N, da imamo časovni trak cca [-2,2]</span>
+<span class="n">t_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t_i</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># koliko sosednijih preslikav X(f) prikažemo</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">K</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span><span class="n">K</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span> <span class="n">num</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_g</span><span class="p">,</span> <span class="n">f_x</span><span class="p">(</span><span class="n">t_g</span><span class="p">),</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x(t)$, zvezno&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">f_x</span><span class="p">(</span><span class="n">t_i</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(t_i)$, vzorčenje: $</span><span class="se">\\</span><span class="s1">Delta t=$</span><span class="si">{</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="p">),</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$, zvezno&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">K</span><span class="p">,</span><span class="n">K</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="o">+</span><span class="n">i</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]),</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="p">)),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="o">+</span><span class="n">i</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]),</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|X(f+i/\Delta t)|$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="p">)),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f=i/\Delta t$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span><span class="o">*</span><span class="n">f_Xs_abs</span><span class="p">(</span><span class="n">fr</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">Delta t\,|X_s(f)|$, vzorčenje: $</span><span class="se">\\</span><span class="s1">Delta t=$</span><span class="si">{</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$f$ [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_13_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_13_0.png" />
+<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_13_1.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_13_1.png" />
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="fourierove-vrste-in-diskretna-fourierova-transformacija">
 <h2>Fourierove vrste in diskretna Fourierova transformacija<a class="headerlink" href="#fourierove-vrste-in-diskretna-fourierova-transformacija" title="Permalink to this headline">¶</a></h2>
 <p>Pozneje bomo spoznali diskretno Fourierovo transformacijo, ki je z Fourierovimi vrstami zelo povezana. Povezavo lahko hitro razkrijemo, če predpostavimo diskretno časovno vrst <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span> in <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>, sledi:</p>
