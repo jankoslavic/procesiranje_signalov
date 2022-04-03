@@ -283,18 +283,8 @@
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#digital-quantization">
-   Digital quantization
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#snr-signal-to-noise-ratio">
-   SNR - signal to noise ratio
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling">
-   Sampling
+  <a class="reference internal nav-link" href="#razmerje-med-signalom-in-sumom">
+   Razmerje med signalom in šumom
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -494,6 +484,34 @@ x(t) = e^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a};\qqua
 <img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_13_1.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_13_1.png" />
 </div>
 </div>
+<p>Spodnja slika prikazuje sintični primer z znano frekvenco sinusnega signala in predstvitvijo v frekvenčni domeni. Namig: frekvenso sinusnega signala <code class="docutils literal notranslate"><span class="pre">f</span></code> poskusite počasi dvigovati proti (in nad) frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="mf">5.5</span> <span class="c1"># &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">dt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mf">0.33</span><span class="p">)</span>
+
+<span class="n">X1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">f1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplitude spectra&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Expected peak&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;fs/2 = </span><span class="si">{</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">Hz&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_15_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_15_0.png" />
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="preprecevanje-frekvencnega-prekrivanja">
@@ -508,7 +526,7 @@ f_{np}&lt;\frac{f_s}{2}.
 <div class="section" id="kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne">
 <h2>Kvantizacija podatkov: pretvorba zveznih podatkov v diskretne<a class="headerlink" href="#kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne" title="Permalink to this headline">¶</a></h2>
 <p>Za obdelavo v računalnikih, moramo merjene zvezne podatke pretvorit v diskretne numerične vrednosti zajete z določeno frekvenco vzorčenja. Zajemne kartice danes omogočajo relativno hitro zajemanje (vsaj 100 kHz) pri relativno veliki dinamični globini (vsaj 24 bit). Tukaj si bomo bolj podrobno pogledali dinamično globino, ki predstavlja število diskretnih nivojev na kateri zajemna kartica razpozna analogne podatke.</p>
-<p>Zapis števil v računalniku je končne natančnosti, tipično današnji računalniki uporabljajo 64 bitno natančnost zapisa kar je bistveno več kakor pa je natančnost zajemnih merilnih kartic. Poglejmo si tukaj primer spodnje sinusuide, ki jo kvantiziramo na dveh območjih ([-1, 1] in [-5, 5]) s 4 bitno natančnostjo (16 nivojev). Če uporabimo 24 bitno kartico in tipično območje merjenja [-10, 10], je razlika med dvema nivojema kvantizacije približno 1e-6, ker je za večino meritev povsem dovolj. V kolikor pa uporabljamo sistem z nižjo dinamično globino, pa je treba biti na območje merjenja v povezavi z dinamično globino zelo pozoren in morebiti ojačati merjene podatke.</p>
+<p>Zapis števil v računalniku je končne natančnosti, tipično današnji računalniki uporabljajo 64 bitno natančnost zapisa kar je bistveno več kakor pa je natančnost zajemnih merilnih kartic. Poglejmo si tukaj primer spodnje sinusuide, ki jo kvantiziramo na dveh območjih ([-1, 1] in [-5, 5]) s 4 bitno natančnostjo (16 nivojev). Če uporabimo 24 bitno kartico in tipično območje merjenja [-10, 10], je razlika med dvema nivojema kvantizacije približno 1e-6, ker je za večino meritev povsem dovolj. V kolikor pa uporabljamo sistem z nižjo dinamično globino, pa je treba biti na območje merjenja v povezavi z dinamično globino zelo pozoren in morebiti ojačati merjene podatke. Pri merjenju je treba paziti tudi na <strong>porezane podatke</strong> (ang. <em>clipping</em>), ko je območje merjenja premajhno (primer spodaj: [-0.5, 0.5]).</p>
 <p>Opomba: koda za spodnjo sliko vključuje tudi primer, ko nam šum lahko pomaga, da izmerimo veličine, ki so manjše od nivoja kvantizacije.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -538,11 +556,13 @@ f_{np}&lt;\frac{f_s}{2}.
 <span class="n">levels</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">bits</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="n">get_quantized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bits</span> <span class="o">=</span> <span class="n">bits</span><span class="p">,</span> <span class="n">adc_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="n">x3</span> <span class="o">=</span> <span class="n">get_quantized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bits</span> <span class="o">=</span> <span class="n">bits</span><span class="p">,</span> <span class="n">adc_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">x4</span> <span class="o">=</span> <span class="n">get_quantized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bits</span> <span class="o">=</span> <span class="n">bits</span><span class="p">,</span> <span class="n">adc_range</span><span class="o">=</span><span class="p">(</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Kvantizacija podatkov&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija podatkov s </span><span class="si">{</span><span class="n">bits</span><span class="si">}</span><span class="s1"> biti (</span><span class="si">{</span><span class="n">levels</span><span class="si">}</span><span class="s1"> nivojev)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Zvezni podatki&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija na razponu [-1, 1] s </span><span class="si">{</span><span class="n">bits</span><span class="si">}</span><span class="s1"> biti (</span><span class="si">{</span><span class="n">levels</span><span class="si">}</span><span class="s1"> nivojev)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija na razponu [-5, 5] s </span><span class="si">{</span><span class="n">bits</span><span class="si">}</span><span class="s1"> biti (</span><span class="si">{</span><span class="n">levels</span><span class="si">}</span><span class="s1"> nivojev)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija na razponu [-1, 1]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija na razponu [-5, 5]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="s1">&#39;C4&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija na razponu [-0.5, 0.5] - porezani podatki&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -551,116 +571,47 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_17_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_17_0.png" />
+<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_19_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_19_0.png" />
 </div>
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="digital-quantization">
-<h1>Digital quantization<a class="headerlink" href="#digital-quantization" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
+<div class="tex2jax_ignore mathjax_ignore section" id="razmerje-med-signalom-in-sumom">
+<h1>Razmerje med signalom in šumom<a class="headerlink" href="#razmerje-med-signalom-in-sumom" title="Permalink to this headline">¶</a></h1>
+<p>Razliko med kvantizirano in dejansko vrednostjo lahko obravnavamo kot naključni šum <span class="math notranslate nohighlight">\(e\)</span> z enakomerno porazdelitvijo znotraj koraka kvantizacije. Standardna deviacija takega šuma je definirana kot (<span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173">2008</a>]</span>, str: 133):</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_e=\frac{A/2^b}{\sqrt{12}},
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(A\)</span> celotni razpon območja kvantizacije in je <span class="math notranslate nohighlight">\(b\)</span> število bitov kvantizacije, brez bita za predznak. Pri 24 bitni kvantizaciji na območju od -10 do 10 (<span class="math notranslate nohighlight">\(A=20\)</span>) je standardna deviacija šuma:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_e = \frac{20/2^{23}}{\sqrt{12}}=6.88\cdot 10^{-7},
+\]</div>
+<p>Da vrednotimo delež koristnih informacij proti šumu, si pomagamo z:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Razmerjem med signalom in šumom (ang. <em>signal-to-noise ratio</em>):</p>
+<div class="math notranslate nohighlight">
+\[
+\textrm{SNR}=10\log_{10}\Big(\frac{\sigma_x^2}{\sigma_e^2}\Big),
+\]</div>
+<p>kjer <span class="math notranslate nohighlight">\(\sigma_x^2\)</span> in <span class="math notranslate nohighlight">\(\sigma_e^2\)</span> predstavljata moč koristnih informacij (<em>signal</em> <span class="math notranslate nohighlight">\(x\)</span>) in šuma (<span class="math notranslate nohighlight">\(e\)</span>).</p>
+</div>
+<p>Če predpostavimo, da je <span class="math notranslate nohighlight">\(\sigma_x=A/4\)</span> (da preprečimo rezanje podatkov), izpeljemo:</p>
+<div class="math notranslate nohighlight">
+\[
+\textrm{SNR}=10\log_{10}\Big(\frac{(A/4)^2}{\big(\frac{A/2^b}{\sqrt{12}}\big)^2}\Big)=
+10\log_{10}\big(3/4\cdot 2^{2b}\big)\approx -1.25+6\,b\,\textrm{dB},
+\]</div>
+<p>V primeru 12 bitne kvantizacije je <span class="math notranslate nohighlight">\(b=11\)</span> in imamo na voljo približno 66 dB dinamičnega razpona, v primeru 24 bitne kvantizacije pa bi bil teoretični razpon približno 137 dB. V praksi imamo opravka še z drugimi viri šuma, ki vodijo v to, da so vrednosti SNR bistveno nižje. Spodaj je prikazan idealiziran primer šuma in podatkov, ki niso obremenjeni s šumom.</p>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_quantized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bits</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">adc_range</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)):</span>
-    <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">adc_range</span>
-    <span class="n">x2</span><span class="p">[</span><span class="n">x</span><span class="o">&lt;=</span><span class="n">lo</span><span class="p">]</span> <span class="o">=</span> <span class="n">lo</span>
-    <span class="n">x2</span><span class="p">[</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">hi</span><span class="p">]</span> <span class="o">=</span> <span class="n">hi</span>
-    <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">qnt</span> <span class="o">=</span> <span class="n">lo</span><span class="o">+</span><span class="n">delta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">x2</span><span class="o">-</span><span class="n">lo</span><span class="p">)</span><span class="o">/</span><span class="n">delta</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">qnt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hanning</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="c1">#w = np.ones(len(x))</span>
-<span class="c1">#x2 = w*x2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">levels</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Continuous&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Quantization at </span><span class="si">{</span><span class="n">levels</span><span class="si">}</span><span class="s1"> levels&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_22_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_22_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N_</span> <span class="o">=</span> <span class="n">N</span>
-<span class="n">N_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="c1"># v primeru okna</span>
-<span class="n">X1</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
-<span class="n">X2</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="n">N_</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">f1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">dt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Amplitude spectra</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span>
-<span class="n">a</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X1</span><span class="p">),</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Continuous&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">a</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X2</span><span class="p">),</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Quantization at </span><span class="si">{</span><span class="n">levels</span><span class="si">}</span><span class="s1"> levels&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="c1">#plt.ylim(1e-5, 1.1)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_25_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_25_0.png" />
-</div>
-</div>
-<p>Phase spectra</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">X1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Continuous&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">X2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Quantization at </span><span class="si">{</span><span class="n">levels</span><span class="si">}</span><span class="s1"> levels&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">fr</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">fr</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">)</span>
-<span class="c1">#plt.ylim(, 1.)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">fr</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">fr</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_27_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_27_0.png" />
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="snr-signal-to-noise-ratio">
-<h1>SNR - signal to noise ratio<a class="headerlink" href="#snr-signal-to-noise-ratio" title="Permalink to this headline">¶</a></h1>
-<p>Definition:</p>
-<p><span class="math notranslate nohighlight">\(SNR=10\log_{10}\frac{\sigma_{s}^2}{\sigma_{n}^2}=20\log_{10}\frac{\sigma_{s}}{\sigma_{n}}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\sigma_{s}\)</span> - signal standard deviation</p>
-<p><span class="math notranslate nohighlight">\(\sigma_{n}\)</span> - noise standard deviation</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">1.5</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">w</span> <span class="o">=</span> <span class="mf">0.5</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -668,100 +619,19 @@ f_{np}&lt;\frac{f_s}{2}.
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">T</span><span class="p">))</span>
 <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="mf">0.5</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="p">,</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">w</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Noise&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal + noise&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_30_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_30_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">SNR</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">noise</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">signal</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">noise</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SNR</span><span class="p">(</span><span class="o">.</span><span class="mi">01</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-40.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SNR</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.34068147925132
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="sampling">
-<h1>Sampling<a class="headerlink" href="#sampling" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">f</span> <span class="o">=</span> <span class="mf">5.3</span>
-<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mf">0.33</span><span class="p">)</span>
-<span class="n">n</span> <span class="o">=</span> <span class="o">.</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Noise&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal + noise&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_35_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_35_0.png" />
-</div>
-</div>
-<p>Frekvenca vzorčenja</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">dt</span>
-<span class="n">fs</span><span class="o">/</span><span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">f1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">dt</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f1</span><span class="p">[</span><span class="n">f1</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X1</span><span class="p">[</span><span class="n">f1</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplitude spectra&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Expected peak&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fs/2&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Prikaz podatkov s SNR=</span><span class="si">{</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">dB&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Šum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal + šum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_38_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_38_0.png" />
+<img alt="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_24_0.png" src="../_images/05 - Časovno vzorčenje in frekvenčno prekrivanje_24_0.png" />
 </div>
 </div>
 <div class="section" id="fourierove-vrste-in-diskretna-fourierova-transformacija">
