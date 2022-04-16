@@ -258,6 +258,16 @@
    Fourierove vrste in diskretna Fourierova transformacija
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frekvencna-locljivost-in-dodajanje-nicel">
+   Frekvenčna ločljivost in dodajanje ničel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simetrija-dft-za-realne-podatke">
+   Simetrija DFT za realne podatke
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -330,8 +340,9 @@ e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\p
 <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -383,9 +394,10 @@ e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\p
 
 <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -472,10 +484,11 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="c1"># spodnja fs rezultira v vključenost zadnje točke. Rezultat bo napačen!</span>
 <span class="c1">#fs = 100/1.01010101010101</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 
 <span class="n">X_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -511,6 +524,86 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 </div>
 </div>
 <p>Če v kodi zgoraj spremenimo <code class="docutils literal notranslate"><span class="pre">fs</span></code> ali število točk tako, da je zadnja točka eksplicitno vključena, rezultat ne bo enak tistemu iz Fourierovih vrst!</p>
+</div>
+<div class="section" id="frekvencna-locljivost-in-dodajanje-nicel">
+<h2>Frekvenčna ločljivost in dodajanje ničel<a class="headerlink" href="#frekvencna-locljivost-in-dodajanje-nicel" title="Permalink to this headline">¶</a></h2>
+<p>Frekvenčna ločljivost DFT je definirana z dolžino diskretne časovne vrste <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span>; dolžina take vrste je torej <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>, zato sledi, da je frekvenčna ločljivost:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta f= \frac{1}{N\,\Delta t}.
+\]</div>
+<p>Z daljšo časovno vrsto, bi lahko imeli tudi boljšo frekvenčno ločljivost. Kadar dodatnih točk diskretne vrste ne moremo pridobiti, lahko frekvenčno ločljivost povečamo z dodajanjem ničel:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\tilde{x}_n=
+\begin{cases}
+x_n;\quad &amp; 0\le n\le N-1\\
+0;\quad &amp; N\le n\le L-1
+\end{cases}
+\end{split}\]</div>
+<p>sledi:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Diskretna Fourierova transformacija z dodajanjem ničel</strong> (ang. <em>zero-padding</em>):</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{X}_k = \sum_{n=0}^{L-1} \tilde{x}_n\,e^{-\mathrm{i}\,2\pi\,k\,n/L}
+= \sum_{n=0}^{N-1} \tilde{x}_n\,e^{-\mathrm{i}\,2\pi\,k\,n/L}.
+\]</div>
+</div>
+<p>Na takšen pridobimo frekvenčno ločjivost:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta f = \frac{1}{L\,\Delta t},
+\]</div>
+<p>pri tem pa je treba poudariti, da gre samo za frekvenčno interpolacijo, ki nam omogoča bolj podroben vpogled; novih informacij z dodajanjem ničel ne dodajamo. Podobno kakor pri DFT, lahko ničle dodajamo v frekvenčni domeni in nato z inverzno diskretno Fourierovo transformacijo pridobimo bolj goste oz interpolirane časovne podatke.</p>
+<p>Pri dodajanju ničel je potrebno paziti na normiranje podatkov (TBA).</p>
+</div>
+<div class="section" id="simetrija-dft-za-realne-podatke">
+<h2>Simetrija DFT za realne podatke<a class="headerlink" href="#simetrija-dft-za-realne-podatke" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Za realne podatke v frekvenčni domeni velja:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\textrm{Re}\big(X(k)\big)&amp;=\textrm{Re}\big(X(N-k)\big)\\
+\textrm{Im}\big(X(k)\big)&amp;=-\textrm{Im}\big(X(N-k)\big)\\
+|X(k)|&amp;=|X(N-k)|\\
+\angle X(k)&amp;=\angle X(N-k)
+\end{split}
+\end{split}\]</div>
+</div>
+<p>Ker je večina inženirskih podatkov v časovni domeni realnih, je smiselno, da se uporabi ustrezno prilagojena metoda hitre Fourierove transformacije; ta se v paketu dotopa prek klica <code class="docutils literal notranslate"><span class="pre">numpy.fft.rfft()</span></code>. Navedene lastnosti preverimo na kodi v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (opomba: k časovnim signalom dodamo šum, da ni faza zelo blizu 0):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">X_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="o">-</span><span class="n">freq</span><span class="p">[:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">freq</span><span class="p">[:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="n">freq_r</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">X_r</span><span class="p">))</span>
+<span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">X_r</span><span class="p">),</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
