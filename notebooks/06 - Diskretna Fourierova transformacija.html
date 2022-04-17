@@ -331,9 +331,12 @@ x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k\,e^{\mathrm{i}\,2\pi\,k\,n/N}.
 <p>Ker velja:</p>
 <div class="math notranslate nohighlight">
 \[
-e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\pi\,k\,n/N}\,\underbrace{e^{\mathrm{i}\,2\pi\,k\,N/N}}_{=\cos(2\pi\,k)=1}
+e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\pi\,k\,n/N}\,\underbrace{e^{\mathrm{i}\,2\pi\,k\,N/N}}_{=\cos(2\pi\,k)=1}.
 \]</div>
-<p>tudi tukaj ugotovimo, da je <span class="math notranslate nohighlight">\(x_n\)</span> periodična vrsta <span class="math notranslate nohighlight">\(x_n=x_{n+N}\)</span>. Posledica je, da smo res začeli z vzorčenimi podatki v času <span class="math notranslate nohighlight">\(x_n\)</span>, ki niso periodični; rezultat z inverzno DFT pa je periodičen.</p>
+<div class="admonition note" id="sec-dft-periodicno">
+<p class="admonition-title">Note</p>
+<p>Ugotovimo, da je <span class="math notranslate nohighlight">\(x_n\)</span> periodična vrsta <span class="math notranslate nohighlight">\(x_n=x_{n+N}\)</span>. Res smo začeli z vzorčenimi podatki v času <span class="math notranslate nohighlight">\(x_n\)</span>, ki niso periodični; rezultat z inverzno DFT pa je periodičen.</p>
+</div>
 <div class="section" id="hitra-fourierova-transformacija">
 <h2>Hitra Fourierova transformacija<a class="headerlink" href="#hitra-fourierova-transformacija" title="Permalink to this headline">¶</a></h2>
 <p>Hitra Fourierova transformacija (ang. <em>Fast Fourier Transform</em> - FFT) je ime numeričnega algoritma za diskretno Fourierovo transformacijo. DFT ima numerični obseg proporcionalen z <span class="math notranslate nohighlight">\(N^2\)</span>, kar zapišemo kot: (<span class="math notranslate nohighlight">\(\mathcal{O}(N^2)\)</span>). Kot avtorja hitre Fourierove transformacije štejeta James Cooley in John Tukey, ki sta algoritem objavila v letu 1965 (glejte: <a class="reference external" href="https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf">vir</a>), pozneje pa se je izkazalo, da je podoben algoritem že bistveno prej, v neobjavljenem delu iz leta 1805, odkril Carl Friedrich Gauss. Algoritem ima to bistveno lastnost, da je numerično bistveno hitrejši: <span class="math notranslate nohighlight">\(\mathcal{O}(N\log(N))\)</span>; ker numerični obseg več ne narašča kvadratično s številom elementov, je to bistveno povečalo uporabnost DFT in nekateri algoritem FFT smatrajo kot enega najbolj pomembnih algoritmov, saj je imel in še ima zelo pomemben družbeno-ekonomski vpliv. Kot zanimivost lahko tukaj povemo, da algoritem ni bil patentiran (glejte: <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">vir</a>). Zaradi simetrije v podatkih, je hitrost izračuna najvišja, če je število vzorcev enako <span class="math notranslate nohighlight">\(2^n\)</span>, kjer <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>.</p>
@@ -655,7 +658,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </div>
 <div class="section" id="konvolucija-periodicnih-podatkov">
 <h2>Konvolucija periodičnih podatkov<a class="headerlink" href="#konvolucija-periodicnih-podatkov" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">sec:konvolucija_funkcij</span></code>_</p>
+<p>Konvolucijo funkcij v primeru Fourierove integralske transformacije smo obravnavali v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-konvolucija-funkcij"><span class="std std-ref">Konvolucija funkcij</span></a>, tukaj si bomo pogledali posebnosti pri obravnavi dveh periodičnih vrst (glejte: <span class="xref std std-ref">sec:DFT_periodicno</span>) enake dolžine: <span class="math notranslate nohighlight">\(x_i\)</span> in <span class="math notranslate nohighlight">\(y_i\)</span>.</p>
 </div>
 </div>
 
