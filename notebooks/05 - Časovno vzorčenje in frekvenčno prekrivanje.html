@@ -301,7 +301,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje">
 <h1>Enakomerno časovno vzorčenje in frekvenčno prekrivanje<a class="headerlink" href="#enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="enakomerno-casovno-vzorcenje">
-<h2>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Permalink to this headline">¶</a></h2>
+<span id="sec-enakomerno-casovno-vzorcenje"></span><h2>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Permalink to this headline">¶</a></h2>
 <p>Doslej smo obravnavali zvezne podatke <span class="math notranslate nohighlight">\(x(t)\)</span>, pri eksperimentalnem delu pa se skoraj vedno srečamo s diskretnimi vrednostmi, ki so tipično zajeti z enakomernim časovnim vzorčenje <span class="math notranslate nohighlight">\(x(n\,\Delta t)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> <strong>čas (perioda) vzorčenja</strong> (<span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> je <strong>frekvenca vzorčenja</strong>).</p>
 <p>Pri razumevanju vzorčenih podatkov si pomagamo z <em>idealnim enakomerno vzorčenimi podatki</em> <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki so produkt zveznih podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> in vlaka impulzov <span class="math notranslate nohighlight">\(i(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -334,7 +334,7 @@ X_s(f+r/\Delta t)&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i
 \end{split}
 \end{split}\]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(r\)</span> poljubno celo število. Sklenemo torej:</p>
-<div class="admonition note" id="sec-ft-neskoncna-vrsta">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Fourierova transformacija</strong> podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> vzorčenih s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> je definirana kot vsota:</p>
 <div class="math notranslate nohighlight">
@@ -358,7 +358,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 \[
 \sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,\underbrace{e^{-\textrm{i}\,2\pi\,f\,(n-p)\,\Delta t}}_{=1,\textrm{ ko je } n=p\quad\textrm{sicer: }0}\,\textrm{d}f=x(p\,\Delta t)\,\frac{1}{\Delta t}.
 \]</div>
-<div class="admonition note" id="sec-ift-neskoncna-vrsta">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Izpeljali smo torej <strong>inverzno Fourierovo transformacijo</strong>:</p>
 <div class="math notranslate nohighlight">
