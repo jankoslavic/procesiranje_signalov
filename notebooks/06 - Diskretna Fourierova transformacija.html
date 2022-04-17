@@ -286,10 +286,14 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="diskretna-fourierova-transformacija">
 <span id="sec-dft"></span><h1>Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Permalink to this headline">¶</a></h1>
-<p>Predhodno smo spoznali Fourierovo transformacijo za vzorčne podatke (glejte: <span class="xref std std-ref">sec:FT_neskoncna_vrsta</span> in <span class="xref std std-ref">(sec:IFT_neskoncna_vrsta)</span>), kjer je vzorčenje s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
+<p>Predhodno smo spoznali Fourierovo transformacijo za vzorčne podatke (glejte: <span class="xref std std-ref">sec:FT_neskoncna_vrsta</span> in <span class="xref std std-ref">sec:IFT_neskoncna_vrsta</span>), kjer je vzorčenje s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Diskretna Fourierova transformacija</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
+\]</div>
 <p>kjer velja <span class="math notranslate nohighlight">\(x_n = x(n\,\Delta t)\)</span> in <span class="math notranslate nohighlight">\(X_k=X(k/(N\,\Delta t))\)</span>. Ker je DFT periodična z <span class="math notranslate nohighlight">\(1/\Delta t\)</span> (<span class="math notranslate nohighlight">\(X_k=X_{k+N}\)</span>), je treba izračunati samo <span class="math notranslate nohighlight">\(N\)</span> členov, torej <span class="math notranslate nohighlight">\(k=[0,1,\dots\,N-1]\)</span>.</p>
 </div>
 <p>Da velja <span class="math notranslate nohighlight">\(X_k=X_{k+N}\)</span> dokažemo z:</p>
