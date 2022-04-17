@@ -268,6 +268,11 @@
    Simetrija DFT za realne podatke
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#konvolucija-periodicnih-podatkov">
+   Konvolucija periodičnih podatkov
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -387,53 +392,6 @@ e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\p
 <img alt="../_images/06 - Diskretna Fourierova transformacija_11_1.png" src="../_images/06 - Diskretna Fourierova transformacija_11_1.png" />
 </div>
 </div>
-<p>Če imamo opravka z realnimi podatki, potem je ponavadi raje uporabimo metodo <code class="docutils literal notranslate"><span class="pre">numpy.fft.rfft</span></code>, ki daje popolnoma enake rezultate, vendar samo za pozitivno frekvenčno os:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
-
-<span class="n">X_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">freq_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">freq</span><span class="o">==</span><span class="n">fr</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">freq</span><span class="o">==</span><span class="n">fr</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([-1.62040942e-14-50.j]), array([50.]))
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">X_r</span><span class="p">[</span><span class="n">freq_r</span><span class="o">==</span><span class="n">fr</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_r</span><span class="p">[</span><span class="n">freq_r</span><span class="o">==</span><span class="n">fr</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([-1.49438567e-14-50.j]), array([50.]))
-</pre></div>
-</div>
-</div>
-</div>
-<p>Inverzna DFT je dosegljiva prek metod <code class="docutils literal notranslate"><span class="pre">numpy.fft.ifft</span></code> oz. <code class="docutils literal notranslate"><span class="pre">numpy.fft.irfft</span></code> v primer realnih podatkov v časovni domeni.</p>
 </div>
 <div class="section" id="fourierove-vrste-in-diskretna-fourierova-transformacija">
 <h2>Fourierove vrste in diskretna Fourierova transformacija<a class="headerlink" href="#fourierove-vrste-in-diskretna-fourierova-transformacija" title="Permalink to this headline">¶</a></h2>
@@ -558,6 +516,50 @@ x_n;\quad &amp; 0\le n\le N-1\\
 \]</div>
 <p>pri tem pa je treba poudariti, da gre samo za frekvenčno interpolacijo, ki nam omogoča bolj podroben vpogled; novih informacij z dodajanjem ničel ne dodajamo. Podobno kakor pri DFT, lahko ničle dodajamo v frekvenčni domeni in nato z inverzno diskretno Fourierovo transformacijo pridobimo bolj goste oz interpolirane časovne podatke.</p>
 <p>Pri dodajanju ničel je potrebno paziti na normiranje podatkov (TBA).</p>
+<p>Spodnji primer prikazuje uporabo dodajanja ničel; s pomočjo komentarjev v kodi raziščite delovanje.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">N</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># tukaj poskusite z 20 (sinusuida se zaključi; rezultat brez dodajanja niče je točen!)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># dodajanje ničel</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">X_kx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<span class="n">freq_kx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena - amplitudni spekter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_kx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_kx</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">x dodajanje ničel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Brez dodajanja ničel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frekvenca [Hz], $\Delta f=$</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06 - Diskretna Fourierova transformacija_27_0.png" src="../_images/06 - Diskretna Fourierova transformacija_27_0.png" />
+<img alt="../_images/06 - Diskretna Fourierova transformacija_27_1.png" src="../_images/06 - Diskretna Fourierova transformacija_27_1.png" />
+</div>
+</div>
 </div>
 <div class="section" id="simetrija-dft-za-realne-podatke">
 <h2>Simetrija DFT za realne podatke<a class="headerlink" href="#simetrija-dft-za-realne-podatke" title="Permalink to this headline">¶</a></h2>
@@ -574,7 +576,8 @@ x_n;\quad &amp; 0\le n\le N-1\\
 \end{split}
 \end{split}\]</div>
 </div>
-<p>Ker je večina inženirskih podatkov v časovni domeni realnih, je smiselno, da se uporabi ustrezno prilagojena metoda hitre Fourierove transformacije; ta se v paketu dotopa prek klica <code class="docutils literal notranslate"><span class="pre">numpy.fft.rfft()</span></code>. Navedene lastnosti preverimo na kodi v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (opomba: k časovnim signalom dodamo šum, da ni faza zelo blizu 0):</p>
+<p>Ker je večina inženirskih podatkov v časovni domeni realnih, je smiselno, da se uporabi ustrezno prilagojena metoda hitre Fourierove transformacije; ta se v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dostopa prek klica <code class="docutils literal notranslate"><span class="pre">numpy.fft.rfft()</span></code>. Inverzna DFT je dosegljiva prek metod <code class="docutils literal notranslate"><span class="pre">numpy.fft.ifft</span></code> oz. <code class="docutils literal notranslate"><span class="pre">numpy.fft.irfft</span></code> v primer realnih podatkov v časovni domeni.</p>
+<p>Navedene lastnosti preverimo na kodi v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (opomba: k časovnim signalom dodamo šum, da ni faza zelo blizu 0):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -585,6 +588,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -604,6 +608,54 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </div>
 </div>
 </div>
+<p>Še primer od zgoraj z <code class="docutils literal notranslate"><span class="pre">numpy.fft.rfft()</span></code>:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">N</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># tukaj poskusite z 20 (sinusuida se zaključi; rezultat brez dodajanja niče je točen!)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># dodajanje ničel</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">X_kx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<span class="n">freq_kx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena - amplitudni spekter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_kx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_kx</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">x dodajanje ničel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Brez dodajanja ničel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frekvenca [Hz], $\Delta f=$</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06 - Diskretna Fourierova transformacija_32_0.png" src="../_images/06 - Diskretna Fourierova transformacija_32_0.png" />
+<img alt="../_images/06 - Diskretna Fourierova transformacija_32_1.png" src="../_images/06 - Diskretna Fourierova transformacija_32_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="konvolucija-periodicnih-podatkov">
+<h2>Konvolucija periodičnih podatkov<a class="headerlink" href="#konvolucija-periodicnih-podatkov" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">sec:konvolucija_funkcij</span></code>_</p>
 </div>
 </div>
 
