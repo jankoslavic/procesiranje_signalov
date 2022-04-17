@@ -286,7 +286,7 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="diskretna-fourierova-transformacija">
 <span id="sec-dft"></span><h1>Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Permalink to this headline">¶</a></h1>
-<p>Predhodno smo spoznali Fourierovo transformacijo za vzorčene podatke (glejte: <span class="xref std std-ref">sec:FT_neskoncna_vrsta</span> in <span class="xref std std-ref">sec:IFT_neskoncna_vrsta</span>), kjer je vzorčenje s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
+<p>Predhodno smo spoznali Fourierovo transformacijo za vzorčene podatke (glejte: <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html#sec-enakomerno-casovno-vzorcenje"><span class="std std-ref">Enakomerno časovno vzorčenje</span></a>), kjer je vzorčenje s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Diskretna Fourierova transformacija</strong>:</p>
@@ -655,6 +655,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <img alt="../_images/06 - Diskretna Fourierova transformacija_33_1.png" src="../_images/06 - Diskretna Fourierova transformacija_33_1.png" />
 </div>
 </div>
+<p>(sec:krozna_konvolucija)_</p>
 </div>
 <div class="section" id="konvolucija-periodicnih-podatkov">
 <h2>Konvolucija periodičnih podatkov<a class="headerlink" href="#konvolucija-periodicnih-podatkov" title="Permalink to this headline">¶</a></h2>
@@ -670,12 +671,29 @@ Y_k = \sum_{n=0}^{N-1} y_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
 <p>Podobno kakor za funkcije, velja tudi za periodične časovne vrste, da je DFT konvolucije v časovni domeni produkt frekvenčnih transformirank v frekvenčni domeni.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Konvolucija periodičnih podatkov:</p>
+<p>Konvolucija periodičnih podatkov (tudi krožna konvolucija, ang. <em>circular convolution</em>):</p>
 <div class="math notranslate nohighlight">
 \[
-\textrm{DFT}\big\{x_n*y_n\big\}=X_k\,Y_k
+\textrm{DFT}\big\{x_n*y_n\big\}=X_k\,Y_k,
 \]</div>
+<p>Da se poudari, da gre za krožno konvolucijo, se kdaj uporabi tudi znak <span class="math notranslate nohighlight">\(\circledast\)</span>: <span class="math notranslate nohighlight">\(x_n\circledast y_n\)</span>.</p>
 </div>
+<p>Poudarjanje periodičnosti <span class="math notranslate nohighlight">\(x_n\)</span> n <span class="math notranslate nohighlight">\(y_n\)</span> je nujno sicer (krožna) konvolucija ni mogoča; to bo jasno iz sledeče izpeljave:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\textrm{DFT}\big\{x_n\circledast y_n\big\}&amp;=\textrm{DFT}\big\{\sum_r^{N-1}x_r\,y_{n-r}\big\}\\
+&amp;=\sum_n^{N-1}\sum_r^{N-1}x_r\,y_{n-r}\,e^{-\textrm{i}\,2\,\pi\,n\,k/N}\\
+&amp;=\underbrace{\sum_r^{N-1}x_r\,\,e^{-\textrm{i}\,2\,\pi\,r\,k/N}}_{X_k}\,\underbrace{\sum_n^{N-1}y_{n-r}\,e^{-\textrm{i}\,2\,\pi\,(n-r)\,k/N}}_{Y_k}\\
+&amp;=X_k\,Y_k
+\end{split}
+\end{split}\]</div>
+<p>Pri zgornji izpeljavi je treba poudariti, da vsota po <span class="math notranslate nohighlight">\(r\)</span> v predzadnji vrstici vključuje tudi vsoto po <span class="math notranslate nohighlight">\(n\)</span>, ker pa je vsota po <span class="math notranslate nohighlight">\(n\)</span> zaradi periodičnosti neodvisna od <span class="math notranslate nohighlight">\(r\)</span>, se lahko vsoti po <span class="math notranslate nohighlight">\(r\)</span> in <span class="math notranslate nohighlight">\(n\)</span> izvedeta neodvisno. Zaradi periodičnosti <span class="math notranslate nohighlight">\(y_n\)</span>, za vsak <span class="math notranslate nohighlight">\(r\)</span> torej velja:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_n^{N-1}y_{n-r}\,e^{-\textrm{i}\,2\,\pi\,(n-r)\,k/N}=\sum_n^{N-1}y_{n}\,e^{-\textrm{i}\,2\,\pi\,n\,k/N}=Y_k
+\]</div>
+<p>Če vrsti <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span> ne bi bili periodični, konvolucija končnih vrst ne bi bila tako enostavna.</p>
 </div>
 </div>
 
