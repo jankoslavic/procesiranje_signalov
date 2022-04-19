@@ -552,7 +552,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 <p><img alt="sdof_homo_part_trans_steady" src="../_images/sdof_homo_part_trans_steady.svg" /></p>
 </div>
 <div class="section" id="frekvecna-prenosna-funkcija">
-<h2>Frekvečna prenosna funkcija<a class="headerlink" href="#frekvecna-prenosna-funkcija" title="Permalink to this headline">¶</a></h2>
+<span id="sec-frf"></span><h2>Frekvečna prenosna funkcija<a class="headerlink" href="#frekvecna-prenosna-funkcija" title="Permalink to this headline">¶</a></h2>
 <p>Najprej se bomo osredotočili zgolj na partikularno rešitev (vendar več ne bomo uporabljali podpisa <span class="math notranslate nohighlight">\(p\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -584,7 +584,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 \[
 	X_0=\frac{F}{k}.
 \]</div>
-<div class="admonition note" id="sec-harmonski-odziv">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Harmonski odziv <span class="math notranslate nohighlight">\(X(\omega)\)</span> lahko z brezdimenzionalno frekvenčno prenosno funkcijo definiramo kot:</p>
 <div class="math notranslate nohighlight">
@@ -714,7 +714,7 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 </div>
 <div class="section" id="zapis-odziva-s-pomocjo-fourierovih-vrst">
 <h3>Zapis odziva s pomočjo Fourierovih vrst<a class="headerlink" href="#zapis-odziva-s-pomocjo-fourierovih-vrst" title="Permalink to this headline">¶</a></h3>
-<p>Tukaj nadaljujemo izračunom rešitve za vsako harmonsko komponento vzbujanja posebej (glejte <span class="xref std std-ref">sec:harmonski_odziv</span>)</p>
+<p>Tukaj nadaljujemo izračunom rešitve za vsako harmonsko komponento vzbujanja posebej (glejte <a class="reference internal" href="#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>)</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 	\begin{split}
@@ -744,9 +744,9 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 <p>Fourierova transformacija vzbujanja za prehod v frekvenčno domeno:</p>
 <div class="math notranslate nohighlight">
 \[
-	F(f)=\mathcal{F}\{f(t)\}
+	F(\omega)=\mathcal{F}\{f(t)\}
 \]</div>
-<p>vzbujanje razstavi na harmonske komponente <span class="math notranslate nohighlight">\(F(f)\)</span>, ki jih nato rešimo po posameznih krožnih frekvencah <span class="math notranslate nohighlight">\(\omega\)</span>:</p>
+<p>vzbujanje razstavi na harmonske komponente <span class="math notranslate nohighlight">\(F(\omega)\)</span>, ki jih nato rešimo po posameznih krožnih frekvencah <span class="math notranslate nohighlight">\(\omega\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 	X(\omega)=\alpha(\omega)\,F(\omega)
