@@ -770,10 +770,10 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 </div>
 <div class="section" id="vzbujanje-z-enotskim-impulzom">
 <h2>Vzbujanje z enotskim impulzom<a class="headerlink" href="#vzbujanje-z-enotskim-impulzom" title="Permalink to this headline">¶</a></h2>
-<p>Obravnavajmo sedaj vzbujanje enomasnega sistema z enostkim impulzom <span class="math notranslate nohighlight">\(f_1(t)=\delta(t-\tau)\)</span>, kjer je <span class="math notranslate nohighlight">\(\tau(t)\)</span> Diracova delta funkcija (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-cas"><span class="std std-ref">Diracova delta funkcija</span></a>):</p>
+<p>Obravnavajmo sedaj vzbujanje enomasnega sistema z enostkim impulzom <span class="math notranslate nohighlight">\(f_1(t)=\delta(t-\tau)\)</span>, kjer je <span class="math notranslate nohighlight">\(\delta(t)\)</span> Diracova delta funkcija (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-cas"><span class="std std-ref">Diracova delta funkcija</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
-	\Delta I_1=\lim_{\Delta \tau\to 0}\int_{\tau}^{\tau+\Delta \tau}f_1(t)\,\textrm{d} =1.
+	\Delta I_1=\lim_{\Delta \tau\to 0}\int_{\tau}^{\tau+\Delta \tau}f_1(t)\,\textrm{d}t =1.
 \]</div>
 <p>Enomasni sistem je ob času <span class="math notranslate nohighlight">\(\tau^-\)</span> v mirovanju, infinitezimalni čas pozneje <span class="math notranslate nohighlight">\(\tau^+\)</span>  pa ima zaradi enotskega impulza <span class="math notranslate nohighlight">\(\Delta I_1\)</span> hitrost:</p>
 <div class="math notranslate nohighlight">
@@ -808,7 +808,7 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 \[
 	x(t) = \int_{-\infty}^t\,f(\tau)\,h(t-\tau)\,\textrm{d}  \tau,\quad \textrm{za: } t&gt;\tau.
 \]</div>
-<p>Nadalje, če spremenimo spremenljivko integracije v <span class="math notranslate nohighlight">\(\tau_1=t-\tau\)</span> (<span class="math notranslate nohighlight">\(\textrm{d} \tau_1=-\textrm{d} \tau\)</span>), se meje integracije spremenijo v: <span class="math notranslate nohighlight">\(-\infty\to+ \infty\)</span> in <span class="math notranslate nohighlight">\(t\to 0\)</span>:</p>
+<p>Nadalje, če spremenimo spremenljivko integracije v <span class="math notranslate nohighlight">\(\tau_1=t-\tau\)</span> (posledično velja: <span class="math notranslate nohighlight">\(\textrm{d} \tau_1=-\textrm{d} \tau\)</span>), se meje integracije spremenijo v: <span class="math notranslate nohighlight">\(-\infty\to+ \infty\)</span> in <span class="math notranslate nohighlight">\(t\to 0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 	x(t) = -\int_{+\infty}^0\,f(t-\tau_1)\,h(\tau_1)\,\textrm{d}  \tau_1 = \int_0^{+\infty}\,f(t-\tau_1)\,h(\tau_1)\,\textrm{d}  \tau_1,
@@ -875,7 +875,7 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 <div class="math notranslate nohighlight">
 \[
 	F_1(\omega)=\mathcal{F}\{f_1(t)\}
-	=\int_{-\infty}^{\infty}f_1(t)\,e^{- \mathrm{i}\,\omega\,t}\,\textrm{d} =1
+	=\int_{-\infty}^{\infty}f_1(t)\,e^{- \mathrm{i}\,\omega\,t}\,\textrm{d} t =1
 \]</div>
 <p>in posledično enotni impulz vzbuja vse frekvence enako.</p>
 <p>Enotski impulz prek frekvenčne prenosne funkcije <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> vodi v ozdiv <span class="math notranslate nohighlight">\(X_1(\omega)\)</span>:</p>
