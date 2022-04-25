@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Osnove naključnih procesov &#8212; Procesiranje signalov s Pythonom</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Correlation function and spectra" href="08%20-%20Correlation%20function%20and%20spectra.html" />
+    <link rel="prev" title="Diskretna Fourierova transformacija" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Procesiranje signalov s Pythonom</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Predgovor
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01%20-%20Uvod.html">
+   Uvod v procesiranje signalov
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02%20-%20Fourierove%20vrste.html">
+   Fourierove vrste
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">
+   Fourierova integralska transformacija
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html">
+   Linearni časovno invariantni sistemi z eno prostostno stopnjo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">
+   Enakomerno časovno vzorčenje in frekvenčno prekrivanje
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">
+   Diskretna Fourierova transformacija
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Osnove naključnih procesov
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08%20-%20Correlation%20function%20and%20spectra.html">
+   Correlation function and spectra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09%20-%20Spectral%20moments%2C%20stationarity%2C%20ergodicity.html">
+   Spectral moments, stationarity, ergodicity
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/07 - Naključni procesi.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jankoslavic/procesiranje_signalov"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/07 - Naključni procesi.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/07 - Naključni procesi.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaj-je-nakljucni-proces">
+   Kaj je naključni proces?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalna-porazdelitev-gaussov-proces">
+   Normalna porazdelitev (Gaussov proces)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#momenti-funkcije-gostote-verjetnosti">
+   Momenti funkcije gostote verjetnosti
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="osnove-nakljucnih-procesov">
+<span id="sec-random"></span><h1>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this headline">¶</a></h1>
+<p>Dinamične obremenitve pogosto niso deterministične; primeri naključnih obremenitve so: obremenitve zaradi morskih valov, hrapavost ceste in vibracije zaradi pogonskega motorja. Take obremenitve je treba obravnavati kot <strong>naključne procese</strong>. V tem poglavju si bomo pogledali kako to naredimo in kako jih potem uspešno uporabimo pri obravnavi dinamskih sistemov.</p>
+<p>Naključnih podatkov v nasprotju z determinističnimi podatki ni mogoče natančno predvideti, določene značilnosti pa lahko razberemo z analizo njihovih segmentov; če na primer pomerimo hrapavost segmenta površine, lahko z določeno verjetnostjo sklepamo o značilnostih hrapavosti drugih segmentov. Pri opisu naključnih procesov si pogosto pomagamo s predpostavko naključni porazdelitvi procesa (npr. normalno ali Gaussovo porazdeljen proces).</p>
+<p>Medtem, ko bi lahko naključni proces analizirali v časovni domeni, obstajajo pomanjkljivosti za uporabo takega pristopa. Za ustrezno vrednotenje procesa je treba v časovni domeni opraviti dovolj veliko število vzorčnih meritev (ali opazovanj), ki jih nato analiziramo kot skupino (ansambel, ang. <em>ensemble</em>). Kakor bomo videli pozneje, je strukturno dinamiko in naključne procese v frekvenčni domeni bistveno elegantneje analizirati.</p>
+<p>Referenčna besedila, ki poglobljeno obravnavajo to temo, ki jih priporočajo bralcu, so <span id="id1">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151">2011</a>]</span>, <span id="id2">Newland [<a class="reference internal" href="../bibliography.html#id88">2012</a>]</span> ter <span id="id3">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173">2008</a>]</span>. Nekatere vsebine so povzete po <span id="id4">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id3">2020</a>]</span>.</p>
+<div class="section" id="kaj-je-nakljucni-proces">
+<h2>Kaj je naključni proces?<a class="headerlink" href="#kaj-je-nakljucni-proces" title="Permalink to this headline">¶</a></h2>
+<p>Naključni proces je definiran s kombinacijo <strong>funkcije gostote verjetnosti</strong> (ang. <em>Probability Density Function</em> - PDF) in <strong>spektralno gostoto moči</strong> (ang. <em>Power Spectral Density</em> - PSD).</p>
+<p>Slika spodaj prikazuje ansambel <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> vzorčnih funkcij (opazovanj) <span class="math notranslate nohighlight">\(x_k(t)\)</span>, pri čemer je vsako opazovanje <span class="math notranslate nohighlight">\(k\)</span> sestavljeno iz naključne spremenljivke v času <span class="math notranslate nohighlight">\(t_i\)</span>: <span class="math notranslate nohighlight">\(x_k(t_i)\)</span>. Kot bo obravnavano kasneje, predpostavki o stacionarnosti in ergodičnosti bistveno poenostavijo analizo naključnih podatkov (več pozneje).</p>
+<p><img alt="random_ensemble" src="../_images/random_ensemble.svg" /></p>
+</div>
+<div class="section" id="normalna-porazdelitev-gaussov-proces">
+<h2>Normalna porazdelitev (Gaussov proces)<a class="headerlink" href="#normalna-porazdelitev-gaussov-proces" title="Permalink to this headline">¶</a></h2>
+<p>Gaussova porazdelitev je pogosto opažena pri različnih fizikalnih pojavih, njeno razširjenost pa pojasnjuje centralni limitni teorem (glejte <span id="id5">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151">2011</a>]</span>. Na splošno je Gaussov proces tisti, pri katerem verjetnost kombinacije naključnih spremenljivk ob določenih časih <span class="math notranslate nohighlight">\(\left\{x(t_i)\right\}\)</span> sledi večdimenzionalni Gaussovi porazdelitvi. Če pogledamo samo en trenutek v času <span class="math notranslate nohighlight">\(t\)</span>, verjetnost amplitude <span class="math notranslate nohighlight">\(x\)</span> ureja normalna funkcija gostote verjetnosti (PDF) <span class="math notranslate nohighlight">\(p(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+p(x) = \frac{1}{\sigma \, \sqrt{2 \, \pi}} \, \mathrm{e}^{-\frac{(x-\mu)^2}{2 \,\sigma^2}}
+\]</div>
+<p>Tukaj je <span class="math notranslate nohighlight">\(\mu\)</span> povprečna vrednost, <span class="math notranslate nohighlight">\(\sigma\)</span> je standardni odklon (deviacija) oziroma <span class="math notranslate nohighlight">\(\sigma^2\)</span> varianca.
+Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in varianca <span class="math notranslate nohighlight">\(\sigma^2\)</span> določata obliko PDF in se pogosto imenujeta prvi moment in drugi centralni moment; izračunamo ju s pomočjo funkcije gostote verjetnosti:</p>
+<div class="math notranslate nohighlight">
+\[
+\mu = \int_{-\infty}^{+\infty} x \, p(x)\, \textrm{d} x,
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sigma^2 = \int_{-\infty}^{+\infty} (x - \mu)^2 \, p(x)\, \textrm{d} x.
+\]</div>
+<p>Primer različnih normalnih porazdelitev prikazuje slika spodaj.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">μ</span><span class="p">:</span> <span class="mf">0.</span><span class="p">}</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">σ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">σ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mu=</span><span class="si">{</span><span class="n">μ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">sigma=</span><span class="si">{</span><span class="n">σ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Porazdelitev verjetnosti&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$p(x)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">μ</span><span class="p">:</span> <span class="mf">0.</span><span class="p">}</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">σ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">σ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mu=</span><span class="si">{</span><span class="n">μ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">sigma=</span><span class="si">{</span><span class="n">σ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">μ</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">σ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">σ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mu=</span><span class="si">{</span><span class="n">μ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">sigma=</span><span class="si">{</span><span class="n">σ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07 - Naključni procesi_9_0.png" src="../_images/07 - Naključni procesi_9_0.png" />
+</div>
+</div>
+<p>S spodnjim izračunom lahko preverimo, da sta prvi moment in drugi centralni moment za Gaussovo/normalno porazdelitev dejansko <span class="math notranslate nohighlight">\(\mu\)</span>  in <span class="math notranslate nohighlight">\(\sigma^2\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">m1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">cm2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+
+<span class="n">m1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \mu\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \sigma^{2}\]</div>
+</div>
+</div>
+<p>Spodaj je še primer numeričnega generiranja normalne porazdelitve in primerjava s teoretično funkcijo gostote verjetnosti.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">μ</span><span class="p">:</span> <span class="mf">0.</span><span class="p">}</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">))</span>
+
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">podatki</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">podatki</span><span class="p">[</span><span class="n">σ</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Naključni dogodek&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vrednost $x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Gostota verjetnosti - histogram&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">σ</span><span class="p">],</span><span class="mi">3</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">σ</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Funkcija gostote verjetnosti&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07 - Naključni procesi_14_0.png" src="../_images/07 - Naključni procesi_14_0.png" />
+<img alt="../_images/07 - Naključni procesi_14_1.png" src="../_images/07 - Naključni procesi_14_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="momenti-funkcije-gostote-verjetnosti">
+<h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Permalink to this headline">¶</a></h2>
+<p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeksa <span class="math notranslate nohighlight">\(k\)</span>) označimo kot:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\mu_x(t) &amp;= E[x(t)],\\
+\mu_y(t) &amp;= E[y(t)].\\
+\end{split}
+\end{split}\]</div>
+<p>Povprečje se lahko spreminja s časom <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Zgornji izraz posplošimo tako, da definiramo <strong><span class="math notranslate nohighlight">\(n\)</span>-ti moment funkcije gostote verjetnosti</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mu_{x}^n(t)= E[x^n(t)] = \int_{-\infty}^{+\infty} x^n\, p(x)\, \textrm{d} x
+\]</div>
+</div>
+<p><em>Kovariančne funkcije</em> so za dva procesa definirane <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t) \right\}\)</span> kot:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+C_{xx}(t, t+\tau) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [x(t+\tau) - \mu_x(t+ \tau)]\big{]}, \\
+C_{yy}(t, t+\tau) &amp;= E \big{[}[y(t) - \mu_y(t)] \, [y(t+\tau) - \mu_y(t+ \tau)]\big{]}, \\
+C_{xy}(t, t+\tau) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t+\tau) - \mu_y(t+ \tau)]\big{]} \\
+\end{split}
+\end{split}\]</div>
+<p>Poseben primer, vreden pozornosti, je pri <span class="math notranslate nohighlight">\(\tau = 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+C_{xx}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)]^2\big{]}= \sigma_x^2(t), \\
+C_{yy}(t, t) &amp;= E \big{[}[y(t) - \mu_y(t)]^2\big{]}= \sigma_y^2(t), \\
+C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{xy}(t)\\
+\end{split}
+\end{split}\]</div>
+<p>Varianci <span class="math notranslate nohighlight">\(\sigma_x^2(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma_y^2(t)\)</span> sta tako definirani in <span class="math notranslate nohighlight">\(C_{xy}(t)\)</span> je kovarianca med <span class="math notranslate nohighlight">\(\left \{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> ob času <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Če bi analizirali proces dvodimenzionalni normalni porazdelitvi, bi bile lastnosti <span class="math notranslate nohighlight">\(\sigma_x^2(t)\)</span>, <span class="math notranslate nohighlight">\(\sigma_y^2(t)\)</span> in <span class="math notranslate nohighlight">\(C_{xy}(t)\)</span> dovolj za  popis verjetnosti v določenih časovnih točkah <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Zgornji izraz posplošimo tako, da definiramo <strong><span class="math notranslate nohighlight">\(n\)</span>-ti centralni moment funkcije gostote verjetnosti</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma^n(t)= E[(x(t)-\mu_x)^n] = \int_{-\infty}^{+\infty} (x-\mu_x)^n\, p(x)\, \textrm{d} x
+\]</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Za naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> pravimo, da sta <strong>šibko stacionarna</strong>, ko so srednje vrednosti in kovariančne funkcije časovno neodvisne. Procesi se štejejo za <strong>močno stacionarne</strong>, ko so časovno neodvisni tudi statistični momenti višjega reda in križni momenti. Šibka in močna stacionarnost sovpadata za Gaussov proces (funkcijo porazdelitve verjetnosti je mogoče izpeljati samo iz srednjih vrednosti in kovarianc <span id="id6">[<a class="reference internal" href="../bibliography.html#id88">Newland, 2012</a>]</span>).</p>
+</div>
+<p>\emph{Auto-korelacija}\index{korelacija!auto} <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in \emph{navzkrižna korelacija}\index{korelacija!navzkrižno} funkciji <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> so uvedeni za stacionarne naključne procese, ki so enaki kovariančnim funkcijam, kadar imajo procesi ničelno povprečje:
+\begin{equation}\label{eq:random_process_correlation_functions}
+\begin{split}
+R_{xx}(\tau) &amp;= E \levo[ x_k(t) , x_k(t+\tau)\desno], \
+R_{yy}(\tau) &amp;= E \levo[ y_k(t) , y_k(t+\tau)\desno], \
+R_{xy}(\tau) &amp;= E \levo[ x_k(t) , y_k(t+\tau)\desno]. \
+\end{split}
+\end{enačba}
+\nomenklatura[BRxx]{<span class="math notranslate nohighlight">\(R_{xx}\)</span>}{Auto-korelacijske funkcije}%
+\nomenklatura[BRxy]{<span class="math notranslate nohighlight">\(R_{xy}\)</span>}{Navzkrižna korelacija}%</p>
+<p>Pričakovano vrednost <span class="math notranslate nohighlight">\(x\)</span> v določenem času <span class="math notranslate nohighlight">\(t\)</span> je mogoče določiti tudi iz njegove verjetnostne porazdelitve <span class="math notranslate nohighlight">\(p(x)\)</span>, če je taka porazdelitev znana v skladu z enačbami. (\ref{eq:random_process_first_moment_1}) in (\ref{eq:random_process_second_central_moment_1}):
+\begin{equation}\label{eq:random_process_first_moment_2}
+E \left[x(t)\right] = \int_{-\infty}^{+\infty} x, p(x), \textrm{d} x = \mu_x(t).
+\end{enačba}
+Ustrezno lahko izračunamo tudi varianco <span class="math notranslate nohighlight">\(\sigma_x^2\)</span> ali drugi centralni moment, izračunan po definiciji o srednji vrednosti:
+\begin{equation}\label{eq:random_process_second_central_moment_2}
+E \left[\left(x(t) - \mu_x\right)^2\right] = \int_{-</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_44204</span><span class="o">/</span><span class="mf">2167009006.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span>
+
+<span class="ne">NameError</span>: name &#39;a&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Diskretna Fourierova transformacija</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="08%20-%20Correlation%20function%20and%20spectra.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Correlation function and spectra</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Janko Slavič<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
