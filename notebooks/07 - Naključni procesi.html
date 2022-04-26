@@ -263,6 +263,11 @@
    Momenti funkcije gostote verjetnosti
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ergodicnost">
+   Ergodičnost
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -467,6 +472,46 @@ R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 \end{split}
 \end{split}\]</div>
 </div>
+</div>
+<div class="section" id="ergodicnost">
+<h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Permalink to this headline">¶</a></h2>
+<p>Namesto, da srednjo vrednost določamo čez ansambel, lahko srednjo vrednost določimo na podlagi časovnega povprečja:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\mu_x(k) &amp;= \lim_{T \to \infty} \frac{1}{T}\int_{0}^{T} x_k(t)\, \textrm{d}  t, \\
+\mu_y(k) &amp;= \lim_{T \to \infty} \frac{1}{T} \int_{0}^{T} y_k(t)\, \textrm{d}  t.\\
+\end{split}
+\end{split}\]</div>
+<p>Prerosto povedano: če bi hkrati vrglo igralno kocko za <em>Človek ne jezi</em> se 1000 ljudi, bi dobili zelo podoben rezultat kakor pa, če bi ena oseba vrgla kocko 1000 krat. Pri tem moramo predpostaviti, da zaporedni dogodki v času (ko meče ena oseba) niso med seboj povezani. V zgornji emačbi tako opazujemo <span class="math notranslate nohighlight">\(k\)</span>-ti proces v času.</p>
+<p>Podobno lahko trdimo za kovariančno funkcijo:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+C_{xx}(\tau, k) &amp;= \lim_{T \to \infty} \frac{1}{T} \int_{0}^{T} \left[x_k(t)-\mu_x(k)\right] \, \left[x_k(t+\tau) - \mu_x(k)\right] \textrm{d}  t \\
+&amp;= R_{xx}(\tau, k) - \mu_x^2(k), \\
+C_{yy}(\tau, k) &amp;= \lim_{T \to \infty} \frac{1}{T} \int_{0}^{T} \left[y_k(t)-\mu_y(k)\right] \, \left[y_k(t+\tau) - \mu_y(k)\right] \textrm{d}  t \\
+&amp;= R_{yy}(\tau, k) - \mu_y^2(k), \\
+C_{xy}(\tau, k) &amp;= \lim_{T \to \infty} \frac{1}{T} \int_{0}^{T} \left[x_k(t)-\mu_x(k)\right] \, \left[y_k(t+\tau) - \mu_y(k)\right] \textrm{d}  t \\
+&amp;= R_{xy}(\tau, k) - \mu_x(k) \, \mu_y(k). \\
+\end{split}
+\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Proces rečemo, da je <strong>šibko ergodičen</strong> (ang. <em>weakly ergodic</em>), če so časovna povprečja enaka povprečjem ansambla, neodvisno od izbranega <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\mu_x(k) &amp;= \mu_x, \\
+\mu_y(k) &amp;= \mu_y, \\
+C_{xx}(\tau, k) &amp;= C_{xx}(\tau), \\
+C_{yy}(\tau, k) &amp;= C_{yy}(\tau), \\
+C_{xy}(\tau, k) &amp;= C_{xy}(\tau). \\
+\end{split}
+\end{split}\]</div>
+</div>
+<p>Če pogoji šibke ergodičnosti veljajo za vse statistične lastnosti višjega reda, je proces <strong>močno ergodičen</strong> (ang. <em>strongly ergodic</em>). Za Gaussovo porazdelitev pa sta močna in šibka ergodičnost zamenljiva izraza, kot je bilo v primeru stacionarnosti - prvi moment in drugi centralni moment sta dovolj za enolični opis Gaussove porazdelitve. V takih primerih so statistične lastnosti vsake ločene vzorčne funkcije reprezentativne za celoten ansambel. Pri nadaljnji analizi ergodičnih procesov lahko torej indeks <span class="math notranslate nohighlight">\(k\)</span> izpustimo in vzorčno funkcijo, ki v celoti opisuje lastnosti naključnega procesa, označimo z <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
+<p>Ergodičnost je pomembna iz različnih razlogov: poenostavlja nadaljnjo teoretično obravnavo naključnih procesov; še pomembneje pa je, da omogoča analizo dejansko izmerjenih naključnih podatkov. Namesto analize velikega ansambla časovnih zgodovin pri istem času <span class="math notranslate nohighlight">\(t\)</span>, običajno zadostuje, da si ogledamo eno samo časovno zgodovino in na podlagi predpostavke ergodičnosti izluščimo iz nje potrebne statistične lastnosti.</p>
 </div>
 </div>
 
