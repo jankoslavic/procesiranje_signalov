@@ -455,39 +455,17 @@ C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{
 <p class="admonition-title">Note</p>
 <p>Za naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> pravimo, da sta <strong>šibko stacionarna</strong>, ko so srednje vrednosti in kovariančne funkcije časovno neodvisne. Procesi se štejejo za <strong>močno stacionarne</strong>, ko so časovno neodvisni tudi statistični momenti višjega reda in križni momenti. Šibka in močna stacionarnost sovpadata za Gaussov proces (funkcijo porazdelitve verjetnosti je mogoče izpeljati samo iz srednjih vrednosti in kovarianc <span id="id6">[<a class="reference internal" href="../bibliography.html#id88">Newland, 2012</a>]</span>).</p>
 </div>
-<p>\emph{Auto-korelacija}\index{korelacija!auto} <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in \emph{navzkrižna korelacija}\index{korelacija!navzkrižno} funkciji <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> so uvedeni za stacionarne naključne procese, ki so enaki kovariančnim funkcijam, kadar imajo procesi ničelno povprečje:
-\begin{equation}\label{eq:random_process_correlation_functions}
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Auto-korelacijska</strong> <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in <strong>križno korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> se uporabljajo za stacionarne naključne procese in je enaka kovariančnim funkcijam v primeru procesa z in ničelno srednjo vrednostjo:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{split}
-R_{xx}(\tau) &amp;= E \levo[ x_k(t) , x_k(t+\tau)\desno], \
-R_{yy}(\tau) &amp;= E \levo[ y_k(t) , y_k(t+\tau)\desno], \
-R_{xy}(\tau) &amp;= E \levo[ x_k(t) , y_k(t+\tau)\desno]. \
+R_{xx}(\tau) &amp;= E[ x_k(t) \, x_k(t+\tau)], \\
+R_{yy}(\tau) &amp;= E[ y_k(t) \, y_k(t+\tau)], \note\
+R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 \end{split}
-\end{enačba}
-\nomenklatura[BRxx]{<span class="math notranslate nohighlight">\(R_{xx}\)</span>}{Auto-korelacijske funkcije}%
-\nomenklatura[BRxy]{<span class="math notranslate nohighlight">\(R_{xy}\)</span>}{Navzkrižna korelacija}%</p>
-<p>Pričakovano vrednost <span class="math notranslate nohighlight">\(x\)</span> v določenem času <span class="math notranslate nohighlight">\(t\)</span> je mogoče določiti tudi iz njegove verjetnostne porazdelitve <span class="math notranslate nohighlight">\(p(x)\)</span>, če je taka porazdelitev znana v skladu z enačbami. (\ref{eq:random_process_first_moment_1}) in (\ref{eq:random_process_second_central_moment_1}):
-\begin{equation}\label{eq:random_process_first_moment_2}
-E \left[x(t)\right] = \int_{-\infty}^{+\infty} x, p(x), \textrm{d} x = \mu_x(t).
-\end{enačba}
-Ustrezno lahko izračunamo tudi varianco <span class="math notranslate nohighlight">\(\sigma_x^2\)</span> ali drugi centralni moment, izračunan po definiciji o srednji vrednosti:
-\begin{equation}\label{eq:random_process_second_central_moment_2}
-E \left[\left(x(t) - \mu_x\right)^2\right] = \int_{-</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_44204</span><span class="o">/</span><span class="mf">2167009006.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span>
-
-<span class="ne">NameError</span>: name &#39;a&#39; is not defined
-</pre></div>
-</div>
-</div>
+\end{split}\]</div>
 </div>
 </div>
 </div>
