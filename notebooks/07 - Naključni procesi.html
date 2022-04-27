@@ -268,6 +268,11 @@
    Ergodičnost
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spektralna-gostota-moci-psd">
+   Spektralna gostota moči (PSD)
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -282,8 +287,8 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="osnove-nakljucnih-procesov">
 <span id="sec-random"></span><h1>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this headline">¶</a></h1>
 <p>Dinamične obremenitve pogosto niso deterministične; primeri naključnih obremenitve so: obremenitve zaradi morskih valov, hrapavost ceste in vibracije zaradi pogonskega motorja. Take obremenitve je treba obravnavati kot <strong>naključne procese</strong>. V tem poglavju si bomo pogledali kako to naredimo in kako jih potem uspešno uporabimo pri obravnavi dinamskih sistemov.</p>
-<p>Naključnih podatkov v nasprotju z determinističnimi podatki ni mogoče natančno predvideti, določene značilnosti pa lahko razberemo z analizo njihovih segmentov; če na primer pomerimo hrapavost segmenta površine, lahko z določeno verjetnostjo sklepamo o značilnostih hrapavosti drugih segmentov. Pri opisu naključnih procesov si pogosto pomagamo s predpostavko naključni porazdelitvi procesa (npr. normalno ali Gaussovo porazdeljen proces).</p>
-<p>Medtem, ko bi lahko naključni proces analizirali v časovni domeni, obstajajo pomanjkljivosti za uporabo takega pristopa. Za ustrezno vrednotenje procesa je treba v časovni domeni opraviti dovolj veliko število vzorčnih meritev (ali opazovanj), ki jih nato analiziramo kot skupino (ansambel, ang. <em>ensemble</em>). Kakor bomo videli pozneje, je strukturno dinamiko in naključne procese v frekvenčni domeni bistveno elegantneje analizirati.</p>
+<p>Naključnih podatkov v nasprotju z determinističnimi podatki ni mogoče natančno predvideti, določene značilnosti pa lahko razberemo z analizo njihovih segmentov; če na primer pomerimo hrapavost segmenta površine, lahko z določeno verjetnostjo sklepamo o značilnostih hrapavosti drugih segmentov. Pri opisu naključnih procesov si pogosto pomagamo s predpostavko porazdelitve procesa (npr. normalno porazdeljen proces).</p>
+<p>Medtem ko bi lahko naključni proces analizirali v časovni domeni, obstajajo pomanjkljivosti za uporabo takega pristopa. Za ustrezno vrednotenje procesa je treba v časovni domeni opraviti dovolj veliko število vzorčnih meritev (ali opazovanj), ki jih nato analiziramo kot skupino (ansambel, ang. <em>ensemble</em>). Kakor bomo videli pozneje, je strukturno dinamiko in naključne procese v frekvenčni domeni bistveno elegantneje analizirati.</p>
 <p>Referenčna besedila, ki poglobljeno obravnavajo to temo, ki jih priporočajo bralcu, so <span id="id1">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151">2011</a>]</span>, <span id="id2">Newland [<a class="reference internal" href="../bibliography.html#id88">2012</a>]</span> ter <span id="id3">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173">2008</a>]</span>. Nekatere vsebine so povzete po <span id="id4">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id3">2020</a>]</span>.</p>
 <div class="section" id="kaj-je-nakljucni-proces">
 <h2>Kaj je naključni proces?<a class="headerlink" href="#kaj-je-nakljucni-proces" title="Permalink to this headline">¶</a></h2>
@@ -411,7 +416,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 <div class="section" id="momenti-funkcije-gostote-verjetnosti">
 <h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Permalink to this headline">¶</a></h2>
-<p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeksa <span class="math notranslate nohighlight">\(k\)</span>) označimo kot:</p>
+<p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeks <span class="math notranslate nohighlight">\(k\)</span>) označimo kot:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -462,12 +467,12 @@ C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Auto-korelacijska</strong> <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in <strong>križno korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> se uporabljajo za stacionarne naključne procese in je enaka kovariančnim funkcijam v primeru procesa z in ničelno srednjo vrednostjo:</p>
+<p><strong>Auto-korelacijska</strong> <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in <strong>križno korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> se uporabljajo za stacionarne naključne procese in je enaka kovariančnim funkcijam v primeru procesa z ničelno srednjo vrednostjo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
 R_{xx}(\tau) &amp;= E[ x_k(t) \, x_k(t+\tau)], \\
-R_{yy}(\tau) &amp;= E[ y_k(t) \, y_k(t+\tau)], \note\
+R_{yy}(\tau) &amp;= E[ y_k(t) \, y_k(t+\tau)], \\
 R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 \end{split}
 \end{split}\]</div>
@@ -475,7 +480,7 @@ R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 </div>
 <div class="section" id="ergodicnost">
 <h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Permalink to this headline">¶</a></h2>
-<p>Namesto, da srednjo vrednost določamo čez ansambel, lahko srednjo vrednost določimo na podlagi časovnega povprečja:</p>
+<p>Namesto, da srednjo vrednost določamo čez ansambel dogodkov, lahko srednjo vrednost določimo na podlagi časovnega povprečja:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -483,7 +488,7 @@ R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 \mu_y(k) &amp;= \lim_{T \to \infty} \frac{1}{T} \int_{0}^{T} y_k(t)\, \textrm{d}  t.\\
 \end{split}
 \end{split}\]</div>
-<p>Prerosto povedano: če bi hkrati vrglo igralno kocko za <em>Človek ne jezi</em> se 1000 ljudi, bi dobili zelo podoben rezultat kakor pa, če bi ena oseba vrgla kocko 1000 krat. Pri tem moramo predpostaviti, da zaporedni dogodki v času (ko meče ena oseba) niso med seboj povezani. V zgornji emačbi tako opazujemo <span class="math notranslate nohighlight">\(k\)</span>-ti proces v času.</p>
+<p>Preprosto povedano: če bi hkrati vrglo igralno kocko za <em>Človek ne jezi</em> se 1000 ljudi, bi dobili zelo podoben rezultat kakor pa, če bi ena oseba vrgla kocko 1000 krat. Pri tem moramo predpostaviti, da zaporedni dogodki v času (ko meče ena oseba) niso med seboj povezani. V zgornji enačbi tako opazujemo <span class="math notranslate nohighlight">\(k\)</span>-ti proces v času.</p>
 <p>Podobno lahko trdimo za kovariančno funkcijo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -498,7 +503,7 @@ C_{xy}(\tau, k) &amp;= \lim_{T \to \infty} \frac{1}{T} \int_{0}^{T} \left[x_k(t)
 \end{split}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Proces rečemo, da je <strong>šibko ergodičen</strong> (ang. <em>weakly ergodic</em>), če so časovna povprečja enaka povprečjem ansambla, neodvisno od izbranega <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<p>Proces rečemo, da je <strong>šibko ergodičen</strong> (ang. <em>weakly ergodic</em>), če so časovna povprečja enaka povprečjem ansambla dogodkov, neodvisno od izbranega <span class="math notranslate nohighlight">\(k\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -512,6 +517,69 @@ C_{xy}(\tau, k) &amp;= C_{xy}(\tau). \\
 </div>
 <p>Če pogoji šibke ergodičnosti veljajo za vse statistične lastnosti višjega reda, je proces <strong>močno ergodičen</strong> (ang. <em>strongly ergodic</em>). Za Gaussovo porazdelitev pa sta močna in šibka ergodičnost zamenljiva izraza, kot je bilo v primeru stacionarnosti - prvi moment in drugi centralni moment sta dovolj za enolični opis Gaussove porazdelitve. V takih primerih so statistične lastnosti vsake ločene vzorčne funkcije reprezentativne za celoten ansambel. Pri nadaljnji analizi ergodičnih procesov lahko torej indeks <span class="math notranslate nohighlight">\(k\)</span> izpustimo in vzorčno funkcijo, ki v celoti opisuje lastnosti naključnega procesa, označimo z <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
 <p>Ergodičnost je pomembna iz različnih razlogov: poenostavlja nadaljnjo teoretično obravnavo naključnih procesov; še pomembneje pa je, da omogoča analizo dejansko izmerjenih naključnih podatkov. Namesto analize velikega ansambla časovnih zgodovin pri istem času <span class="math notranslate nohighlight">\(t\)</span>, običajno zadostuje, da si ogledamo eno samo časovno zgodovino in na podlagi predpostavke ergodičnosti izluščimo iz nje potrebne statistične lastnosti.</p>
+<p>V strukturni dinamiki ponavadi predpostavimo, da ima proces ničelno povprečje in je zato varianco <span class="math notranslate nohighlight">\(\sigma_x^2\)</span> za takšen poseben primer mogoče izračunati na različne načine:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+\sigma_x^2 &amp;= E \left[x^2(t)\right] = \int_{-\infty}^{+\infty} x^2 \, p(x)\, \textrm{d} x \\
+&amp;= \lim_{T \to \infty} \frac{1}{2 \, T} \int_{-T}^{T} x^2(t)\,\textrm{d} t \\
+&amp;= \int_{-\infty}^{+\infty} S_{xx}(f)\,\textrm{d} f. \\
+\end{split}
+\end{split}\]</div>
+<p>Kjer smo z <span class="math notranslate nohighlight">\(S_{xx}(f)\)</span> označili spektralno gostoto moči (ang. <em>power spectral density</em>) in smo se v tej vrstici naslonili na Parsevalov teorem. V naslednjem poglavju si bomo spektralno gostoto moči pogledali bolj podrobno. Opomba: če obravnavamo normalno porazdeljeni proces z ničelno srednjo vrednostjo, je varianca edini manjkajoči parameter, ki tako porazdelitev enolično določi.</p>
+</div>
+<div class="section" id="spektralna-gostota-moci-psd">
+<h2>Spektralna gostota moči (PSD)<a class="headerlink" href="#spektralna-gostota-moci-psd" title="Permalink to this headline">¶</a></h2>
+<p>Spektralna gostota moči opisuje frekvenčno gostoto moči naključnega procesa in dopolnjuje funkcijo gostote verjetnosti (<span class="math notranslate nohighlight">\(p(x)\)</span>) pri definiciji določenega naključnega procesa; ista gostota verjetnosti ima lahko v frekvenčni domeni zelo različne gostote spektralne moči (PSD). PSD ponavadi pridobimo s Fourierjevo transformacijo, običajno z uporabo algoritma FFT.</p>
+<p>Definicija PSD temelji na avtokorelacijski funkciji <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, ki implicitno vsebuje frekvenčno vsebino <span class="math notranslate nohighlight">\(x(t)\)</span>, hkrati pa izpolnjuje Dirichletov pogoj (vsaj v primeru procesov z ničelno srednjo vrednostjo):</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-\infty}^{+\infty} \left|x(t)\right| \textrm{d} t &lt; \infty.
+\]</div>
+<p>Ker sta avto korelacijska funkcija in PSD par Fourierjeve transformacije, lahko za naključna procesa <span class="math notranslate nohighlight">\(x(t)\)</span> in <span class="math notranslate nohighlight">\(y(t)\)</span> zapišemo naslednje (Wiener-Khinchine) odnose:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+S_{xx}(f) &amp;= \mathcal{F}\{R_{xx}(\tau)\}, \\
+S_{yy}(f) &amp;= \mathcal{F}\{R_{yy}(\tau)\}, \\
+S_{xy}(f) &amp;= \mathcal{F}\{R_{xy}(\tau)\}.
+\end{split}
+\end{split}\]</div>
+<p>PSD <span class="math notranslate nohighlight">\(S_{xx}(f)\)</span> in <span class="math notranslate nohighlight">\(S_{yy}(f)\)</span> (imenovana tudi auto-spektralna gostota) sta sodi funkciji s pozitivnimi realnimi vrednostmi. Križna spektralna gostota} <span class="math notranslate nohighlight">\(S_{xy}(f)\)</span> ima v splošnem kompleksne vrednosti.</p>
+<p>V realnim meritvah je časovna zgodovina končne dolžine in Diricletov pogoj je izpolnjen; iz Fourierove transformacije <span class="math notranslate nohighlight">\(k\)</span>-te časovne zgodovine:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+X_k(f, T) = \int_0^T x_k(t) \,e^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d} t, \\
+Y_k(f, T) = \int_0^T y_k(t) \,e^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d} t \\
+\end{split}
+\end{split}\]</div>
+<p>lahko z množenje Fourierovih transformirank  določimo križno spektralno gostoto:</p>
+<div class="math notranslate nohighlight">
+\[
+S_{xy}(f, T, k) = \frac{1}{T}\, X_k^*(f, T) \, Y_k(f, T)
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Avto (PSD)</strong> in <strong>križna (CSD)</strong> spektralna gostota je torej za primer ergodičnega procesa definirana kot (brez indeksa <span class="math notranslate nohighlight">\(k\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}\label{eq:Sxx_Syy_ergodic}
+S_{xx}(f) &amp;= \frac{1}{T}\, X^*(f) \, X(f)\qquad\text{PSD},\\
+S_{xy}(f) &amp;= \frac{1}{T}\, X^*(f) \, Y(f)\qquad\text{CSD},
+\end{split}
+\end{split}\]</div>
+</div>
+<p>Avto-spektralna gostota <span class="math notranslate nohighlight">\(S_{xx}\)</span> pokriva negativne in pozitivne frekvence in se zato imenuje tudi <em>dvostranska</em> funkcija spektralne gostote. Pogosto se uporablja enostranska funkcija spektralne gostote~<span class="math notranslate nohighlight">\(G_{xx}\)</span>, ki je definirana kot:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+G_{xx} = 
+\begin{cases}
+2\,S_{xx}(f), &amp; f&gt;0\\
+S_{xx}(f),&amp; f=0\\
+0,&amp;f&lt;0.
+\end{cases}
+\end{split}\]</div>
 </div>
 </div>
 
