@@ -272,6 +272,25 @@
   <a class="reference internal nav-link" href="#spektralna-gostota-moci-psd">
    Spektralna gostota moči (PSD)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zgled">
+     Zgled
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spektralni-momenti">
+   Spektralni momenti
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Zgled
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -580,6 +599,246 @@ S_{xx}(f),&amp; f=0\\
 0,&amp;f&lt;0.
 \end{cases}
 \end{split}\]</div>
+<div class="section" id="zgled">
+<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">¶</a></h3>
+<p>Poglejmo si sedaj zgled in najprej izračunajmo varianco s pomočjo definicije normalne porazdelitve z ničelno srednjo vrednostjo <span class="math notranslate nohighlight">\(\mu=0\)</span> in standardno deviacijo <span class="math notranslate nohighlight">\(\sigma=3\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_x^2 = E \left[x^2(t)\right] = \int_{-\infty}^{+\infty} x^2 \, p(x)\, \textrm{d} x
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="mf">3.</span><span class="p">,</span> <span class="n">μ</span><span class="p">:</span> <span class="mf">0.</span><span class="p">}</span>
+
+<span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 9.0\]</div>
+</div>
+</div>
+<p>Pridobili smo pričakovano vrednost <span class="math notranslate nohighlight">\(\sigma^2=9\)</span>. Nadaljujemo z integriranjem časovne vrste v času:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_x^2 = \lim_{T \to \infty} \frac{1}{2 \, T} \int_{-T}^{T} x^2(t)\,\textrm{d} t
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">σ</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">time</span><span class="p">,</span>  <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">σ</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.01211481059612
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ker gre za numerične podatke smo pridobii vrednost, ki je bolj ali manj blizu pričakovani vrednosti <span class="math notranslate nohighlight">\(\sigma^2=9\)</span> (poskusite spremeniti <code class="docutils literal notranslate"><span class="pre">N</span></code>). Nadaljujemo z izračunom variance v frekvenčni domeni:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_x^2 = \int_{-\infty}^{+\infty} S_{xx}(f)\,\textrm{d} f
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">Sxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="n">X</span>
+<span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">Sxx</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.012100217005628
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ali z uporabo enostranskega amplitudnega spektra:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">Gxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="n">X</span>
+<span class="n">Gxx</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">Gxx</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">Gxx</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.012101617720317
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="spektralni-momenti">
+<h2>Spektralni momenti<a class="headerlink" href="#spektralni-momenti" title="Permalink to this headline">¶</a></h2>
+<p>Zaradi definicije PSD sledi, da je površina pod krivuljo enaka pričakovani kvadratni vrednosti <span class="math notranslate nohighlight">\(E[x^2]\)</span> procesa (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-parseval"><span class="std std-ref">Parsevalov teorem in močnostni spekter</span></a>):</p>
+<div class="math notranslate nohighlight">
+\[
+m_0 = E \left[x^2(t)\right] = \int_{-\infty}^{+\infty} S_{xx}(\omega)\, \textrm{d} \omega,
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(m_0\)</span> ničelni spektralni moment enak varianci <span class="math notranslate nohighlight">\(\sigma_x^2\)</span> procesa ničelne srednje vrednosti. Višji sodi momenti ustrezajo variancem časovnih odvodov prvotnega naključnega procesa:</p>
+<div class="math notranslate nohighlight">
+\[
+m_2 = E \left[\dot{x}^2(t)\right] = \int_{-\infty}^{+\infty} \omega^2 \, S_{xx}(\omega) \,\textrm{d} \omega.
+\]</div>
+<p>Splošni izraz za <span class="math notranslate nohighlight">\(i\)</span>-ti spektralni moment <span class="math notranslate nohighlight">\(m_i\)</span> lahko zapišemo v obliki:</p>
+<div class="math notranslate nohighlight">
+\[
+m_i = \int_{-\infty}^{+\infty} \omega^i \, S_{xx}(\omega) \textrm{d} \omega=\int_{0}^{+\infty} \omega ^i \, G_{xx}(\omega) \,\textrm{d} \omega
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(G_{xx}\)</span> enostranski PSD. Treba je poudariti, da če je PSD podan v Hz (<span class="math notranslate nohighlight">\(G_{xx}(f)\)</span>) je treba pozabiti na pravilno normiranje z <span class="math notranslate nohighlight">\((2\pi\,f)^i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
+\]</div>
+<div class="section" id="id7">
+<h3>Zgled<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Poglejmo si ponovno zgled; najprej definirajmo harmonski odziv z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>. Varianca pomika je pričakovana: <span class="math notranslate nohighlight">\((A/\sqrt{2})^2=0.5\,A\)</span>, varianca hitrosti:  hitrosti pa <span class="math notranslate nohighlight">\(((2\pi\,f_0\,A)/\sqrt{2})^2=2\pi^2\,f_0^2\,A\)</span> in varianca pospeška <span class="math notranslate nohighlight">\((((2\pi\,f_0)^2\,A)/\sqrt{2})^2=2^3(\pi\,f_0)^4\,A\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1_000_000</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">f_0</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">time</span><span class="p">,</span>  <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f_0</span><span class="o">*</span><span class="n">time</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Prvih 5000 točk determinističnega signala&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[:</span><span class="mi">5000</span><span class="p">],</span> <span class="n">x</span><span class="p">[:</span><span class="mi">5000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5000000000000002
+</pre></div>
+</div>
+<img alt="../_images/07 - Naključni procesi_45_1.png" src="../_images/07 - Naključni procesi_45_1.png" />
+</div>
+</div>
+<p>Definirajmo funkcijo spektralnih momentov:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">spektralni_moment</span><span class="p">(</span><span class="n">X_r</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">Gxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">*</span><span class="n">X</span>
+    <span class="n">Gxx</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">Gxx</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">freq</span><span class="p">)</span><span class="o">**</span><span class="n">i</span> <span class="o">*</span> <span class="n">Gxx</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In preverimo ali res dobimo pričakovano vrednost (<span class="math notranslate nohighlight">\(0.5\,A=0.5\)</span>) tudi v frekvenčni domeni:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spektralni_moment</span><span class="p">(</span><span class="n">X_r</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.49999950000000004
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">f_0</span><span class="o">**</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>77927272827.20193
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za hitrost pričakujemo <span class="math notranslate nohighlight">\(2\pi^2\,f_0^2\,A=197392.08\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spektralni_moment</span><span class="p">(</span><span class="n">X_r</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>197392.0431326003
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ali v času:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">dt</span>
+<span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>197389.49045450424
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za pospešek pričakujemo <span class="math notranslate nohighlight">\(2^3(\pi\,f_0)^4\,A=77927272827.2\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spektralni_moment</span><span class="p">(</span><span class="n">X_r</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100537780441.40175
+</pre></div>
+</div>
+</div>
+</div>
+<p>Opazimo že relativno veliko odstopanje, razlog je v numerični napaki</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">/</span><span class="n">dt</span>
+<span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>77925221885.31581
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
