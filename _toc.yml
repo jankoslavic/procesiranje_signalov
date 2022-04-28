@@ -12,7 +12,7 @@ chapters:
 - file: notebooks/05 - Časovno vzorčenje in frekvenčno prekrivanje
 - file: notebooks/06 - Diskretna Fourierova transformacija.ipynb
 - file: notebooks/06 - Spectral leakage and aliasing
-- file: notebooks/07 - Random processes
+- file: notebooks/07 - Naključni procesi
 - file: notebooks/08 - Correlation function and spectra
 - file: notebooks/09 - Spectral moments, stationarity, ergodicity
 - file: bibliography
