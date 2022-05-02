@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spectral moments, stationarity, ergodicity &#8212; Procesiranje signalov s Pythonom</title>
+    <title>Odziv linearnih sistemov na naključno vzbujanje &#8212; Procesiranje signalov s Pythonom</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="../bibliography.html" />
-    <link rel="prev" title="Odziv linearnih sistemov na naključno vzbujanje" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" />
+    <link rel="next" title="Spectral moments, stationarity, ergodicity" href="09%20-%20Spectral%20moments%2C%20stationarity%2C%20ergodicity.html" />
+    <link rel="prev" title="Osnove naključnih procesov" href="07%20-%20Naklju%C4%8Dni%20procesi.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -132,13 +134,13 @@
    Osnove naključnih procesov
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Odziv linearnih sistemov na naključno vzbujanje
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="09%20-%20Spectral%20moments%2C%20stationarity%2C%20ergodicity.html">
    Spectral moments, stationarity, ergodicity
   </a>
  </li>
@@ -183,7 +185,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/09 - Spectral moments, stationarity, ergodicity.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebooks/08 - Odziv linearnih sistemov na naključno vzbujanje.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -203,7 +205,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/09 - Spectral moments, stationarity, ergodicity.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/08 - Odziv linearnih sistemov na naključno vzbujanje.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -224,7 +226,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/09 - Spectral moments, stationarity, ergodicity.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/08 - Odziv linearnih sistemov na naključno vzbujanje.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -241,6 +243,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#srednja-vrednost-odziva">
+   Srednja vrednost odziva
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#avtokorelacija">
+   Avtokorelacija
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#krizna-korelacija">
+   Križna korelacija
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -249,8 +274,126 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="spectral-moments-stationarity-ergodicity">
-<h1>Spectral moments, stationarity, ergodicity<a class="headerlink" href="#spectral-moments-stationarity-ergodicity" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="odziv-linearnih-sistemov-na-nakljucno-vzbujanje">
+<h1>Odziv linearnih sistemov na naključno vzbujanje<a class="headerlink" href="#odziv-linearnih-sistemov-na-nakljucno-vzbujanje" title="Permalink to this headline">¶</a></h1>
+<p>Vrnimo se k linearnemu sistemu z eno prostostno stopnjo (glejte lastnosti: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-lti-lastnosti"><span class="std std-ref">Lastnosti linearnega časovno invariantnega sistema</span></a>):</p>
+<div class="math notranslate nohighlight">
+\[
+	\underbrace{f(t)}_{\textrm{Vzbujanje}}\to {\textrm{Sistem}}\to \underbrace{x(t)}_{\textrm{Odziv}}.
+\]</div>
+<p>Odziv na deterministično vzbujanje izračunamo s pomočjo konvolucije:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = \int_{-\infty}^{t}\,f(\tau)\,h(t-\tau)\,\textrm{d}  \tau =
+	\int_{0}^{+\infty}\,h(\tau)\,f(t-\tau)\,\textrm{d}  \tau,
+\]</div>
+<p>kjer je <span class="math notranslate nohighlight">\(h(t)\)</span> impulzna prenosna funkcija, ki definira linearni sistem.</p>
+<div class="section" id="srednja-vrednost-odziva">
+<h2>Srednja vrednost odziva<a class="headerlink" href="#srednja-vrednost-odziva" title="Permalink to this headline">¶</a></h2>
+<p>V nadaljevanju bomo predpostavili, da je vzbujanje <span class="math notranslate nohighlight">\(f(t)\)</span> naključno in izračunajmo najprej pričakovano srednjo vrednost odziva. Uporabiti moramo operator pričakovanja <span class="math notranslate nohighlight">\(E[]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+	\mu_x = E[x(t)] = E\Big[
+	\int_{0}^{+\infty}\,h(\tau)\,f(t-\tau)\,\textrm{d}  \tau \Big],
+\]</div>
+<p>ker je naključna vrednost samo pri vzbujanju <span class="math notranslate nohighlight">\(f(t)\)</span>, sledi</p>
+<div class="math notranslate nohighlight">
+\[
+	\mu_x = 
+	\int_{0}^{+\infty}\,h(\tau)\,E\big[f(t-\tau)\big]\,\textrm{d}  \tau
+    = 
+	\int_{0}^{+\infty}\,h(\tau)\,\mu_f\,\textrm{d}  \tau ,
+    = 
+	\mu_f\,\int_{0}^{+\infty}\,h(\tau)\,\textrm{d}  \tau ,
+\]</div>
+<p>Od tukaj pa sledi sklep:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Če opazujemo proces, ki ima na vhodu/vzbujanju srednjo vrednost enako nič, bo tudi srednja vrednost odziva enaka nič (ne glede na impulzno prenosno funkcijo):</p>
+<div class="math notranslate nohighlight">
+\[
+\mu_x = \mu_f\,\int_{0}^{+\infty}\,h(\tau)\,\textrm{d}  \tau ,
+\]</div>
+</div>
+</div>
+<div class="section" id="avtokorelacija">
+<h2>Avtokorelacija<a class="headerlink" href="#avtokorelacija" title="Permalink to this headline">¶</a></h2>
+<p>Tukaj želimo odgovoriti na vprašanje kako je avtokorelacija vzbujanja <span class="math notranslate nohighlight">\(R_{ff}(\tau)\)</span> povezana z avtokorelacijo odziva <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, poglejmo detajle:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+R_{xx}(\tau)&amp;=E\big[x(t)\,x(t+\tau)\big]\\
+&amp;=E\Big[\int_{0}^{+\infty}\int_{0}^{+\infty}\,h(\tau_1)\,f(t-\tau_1)\,\,h(\tau_2)\,f(t+\tau-\tau_2)\,\textrm{d}  \tau_1\,\textrm{d}  \tau_2\Big]
+\end{split}
+\end{split}\]</div>
+<p>Nadaljujemo z izpeljavo (<span class="math notranslate nohighlight">\(h(t)\)</span> nima pričakovanja, velja <span class="math notranslate nohighlight">\(h(t)=E[h(t)]\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+R_{xx}(\tau)
+=\int_{0}^{+\infty}\int_{0}^{+\infty}\,h(\tau_1)\,h(\tau_2)\,E\Big[f(t-\tau_1)\,f(t+\tau-\tau_2)\big]\,\textrm{d}  \tau_1\,\textrm{d}  \tau_2
+\]</div>
+<p>Uporabimo zamenjavo <span class="math notranslate nohighlight">\(t_1=t-\tau_1\)</span> iz česar sledi <span class="math notranslate nohighlight">\(E\Big[f(t-\tau_1)\,f(t+\tau-\tau_2)\big]=E\Big[f(t_1)\,f(t_1+\tau_1+\tau-\tau_2)\big]=R_{ff}(\tau+\tau_1-\tau_2)\)</span> in nato:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{xx}(\tau)
+=\int_{0}^{+\infty}\int_{0}^{+\infty}\,h(\tau_1)\,h(\tau_2)\,R_{ff}(\tau+\tau_1-\tau_2)\,\textrm{d}  \tau_1\,\textrm{d}  \tau_2
+\]</div>
+<p>Naredimo sedaj prehod v frekvenčno domeno:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+S_{xx} &amp;= \int_{-\infty}^{+\infty}R_{xx}(\tau)\,e^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
+&amp;=
+\underbrace{\int_{0}^{+\infty}\,h(\tau_1)\,e^{+\textrm{i}\,2\pi\,f\,\tau_1}\,\textrm{d}  \tau_1}_{H^*(f)}\,
+\underbrace{\int_{0}^{+\infty}\,h(\tau_2)\,e^{-\textrm{i}\,2\pi\,f\,\tau_2}\,\textrm{d}  \tau_2}_{H(f)}\,
+\underbrace{\int_{-\infty}^{+\infty}R_{ff}(u)\,e^{-\textrm{i}\,2\pi\,f\,u}\,\textrm{d}  u}_{S_{ff}(f)}.
+\end{split}
+\end{split}\]</div>
+<p>Opomba: v zgornjem izrazu smo uporabili zamenjavo: <span class="math notranslate nohighlight">\(u=\tau+\tau_1-\tau_2\)</span> in posledično <span class="math notranslate nohighlight">\(e^{-\textrm{i}\,2\pi\,f\,\tau}=e^{-\textrm{i}\,2\pi\,f\,(u-\tau_1+\tau_2)}\)</span> ter nato ločili integracijske spremenljivke.</p>
+<p>Končni rezultat je:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Avtospektralna gostota moči na odzivni strani je definirana kot:</p>
+<div class="math notranslate nohighlight">
+\[
+S_{xx} = H^*(f)\,H(f)\,S_{ff}(f).
+\]</div>
+</div>
+</div>
+<div class="section" id="krizna-korelacija">
+<h2>Križna korelacija<a class="headerlink" href="#krizna-korelacija" title="Permalink to this headline">¶</a></h2>
+<p>Poglejmo si sedaj še križno korelacijo vzbujanja <span class="math notranslate nohighlight">\(R_{fx}(\tau)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+R_{fx}(\tau)&amp;=E\big[f(t)\,x(t+\tau)\big]\\
+&amp;=E\Big[\int_{0}^{+\infty}f(t)\,h(\tau_1)\,f(t+\tau-\tau_1)\,\textrm{d}  \tau_1\Big]\\
+&amp;=\int_{0}^{+\infty}h(\tau_1)\,E\big[f(t)\,f(t+\tau-\tau_1)\big]\,\textrm{d}  \tau_1\\
+&amp;=\int_{0}^{+\infty}h(\tau_1)\,R_{ff}(\tau-\tau_1)\,\textrm{d}  \tau_1
+\end{split}
+\end{split}\]</div>
+<p>Naredimo sedaj prehod v frekvenčno domeno:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+S_{fx} &amp;= \int_{-\infty}^{+\infty}R_{fx}(\tau)\,e^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
+&amp;=
+\underbrace{\int_{0}^{+\infty}\,h(\tau_1)\,e^{-\textrm{i}\,2\pi\,f\,\tau_1}\,\textrm{d}  \tau_1}_{H(f)}\,
+\underbrace{\int_{-\infty}^{+\infty}R_{ff}(u)\,e^{-\textrm{i}\,2\pi\,f\,u}\,\textrm{d}  u}_{S_{ff}(f)}.
+\end{split}
+\end{split}\]</div>
+<p>Opomba: v zgornjem izrazu smo uporabili zamenjavo: <span class="math notranslate nohighlight">\(u=\tau-\tau_1\)</span> in posledično <span class="math notranslate nohighlight">\(e^{-\textrm{i}\,2\pi\,f\,\tau}=e^{-\textrm{i}\,2\pi\,f\,(u+\tau_1)}\)</span> ter nato ločili integracijske spremenljivke.
+Končni rezultat je:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Križnospektralna gostota moči je definirana kot:</p>
+<div class="math notranslate nohighlight">
+\[
+S_{fx} = H(f)\,S_{ff}(f).
+\]</div>
+</div>
+<p>Za razliko od avtospektralne gostoste križnospektralna gostota ohranja fazno informacijo!</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -278,17 +421,17 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="07%20-%20Naklju%C4%8Dni%20procesi.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Odziv linearnih sistemov na naključno vzbujanje</p>
+            <p class="prev-next-title">Osnove naključnih procesov</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
+    <a class='right-next' id="next-link" href="09%20-%20Spectral%20moments%2C%20stationarity%2C%20ergodicity.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Spectral moments, stationarity, ergodicity</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

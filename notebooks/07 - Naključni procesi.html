@@ -53,7 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Correlation function and spectra" href="08%20-%20Correlation%20function%20and%20spectra.html" />
+    <link rel="next" title="Odziv linearnih sistemov na naključno vzbujanje" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" />
     <link rel="prev" title="Diskretna Fourierova transformacija" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -135,8 +135,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="08%20-%20Correlation%20function%20and%20spectra.html">
-   Correlation function and spectra
+  <a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html">
+   Odziv linearnih sistemov na naključno vzbujanje
   </a>
  </li>
  <li class="toctree-l1">
@@ -435,7 +435,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 <div class="section" id="momenti-funkcije-gostote-verjetnosti">
 <h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Permalink to this headline">¶</a></h2>
-<p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeks <span class="math notranslate nohighlight">\(k\)</span>) označimo kot:</p>
+<p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeks <span class="math notranslate nohighlight">\(k\)</span>) označimo kot (<span class="math notranslate nohighlight">\(E[]\)</span> označuje <em>pričakovano vrednost</em>/posplošeno povprečje, ang. <em>expected value</em>, glejte tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Expected_value">povezavo</a>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -599,6 +599,7 @@ S_{xx}(f),&amp; f=0\\
 0,&amp;f&lt;0.
 \end{cases}
 \end{split}\]</div>
+<p>Podobno velja za <span class="math notranslate nohighlight">\(G_{xy}\)</span>, za dvostranski križno-spektralno gostoto velja <span class="math notranslate nohighlight">\(S_{xy}=S_{yx}^*\)</span>.</p>
 <div class="section" id="zgled">
 <h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">¶</a></h3>
 <p>Poglejmo si sedaj zgled in najprej izračunajmo varianco s pomočjo definicije normalne porazdelitve z ničelno srednjo vrednostjo <span class="math notranslate nohighlight">\(\mu=0\)</span> in standardno deviacijo <span class="math notranslate nohighlight">\(\sigma=3\)</span>:</p>
@@ -827,15 +828,16 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 </div>
 </div>
 </div>
-<p>Opazimo že relativno veliko odstopanje, razlog je v numerični napaki. Amplitudni spekter <span class="math notranslate nohighlight">\(X\)</span> ima zunaj <span class="math notranslate nohighlight">\(f_0\)</span> teoretično vrednosti 0 dejansko pa vrednost blizu nič, ker izraz za izračun četrtega spektralnega momenta visoke frekvence zelo poudari (<span class="math notranslate nohighlight">\((2\pi\,f)^4\)</span>), se poudari tudi numerična napaka. Boljši rezultat pridobimo, če se npr. frekvenčno omejimo:</p>
+<p>Opazimo že relativno veliko odstopanje, razlog je v numerični napaki. Amplitudni spekter <span class="math notranslate nohighlight">\(X\)</span> ima zunaj <span class="math notranslate nohighlight">\(f_0\)</span> teoretično vrednosti 0, dejansko pa vrednost blizu nič, ker izraz za izračun četrtega spektralnega momenta visoke frekvence zelo poudari (<span class="math notranslate nohighlight">\((2\pi\,f)^4\)</span>), se poudari tudi numerična napaka. Boljši rezultat pridobimo, če se npr. frekvenčno omejimo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spektralni_moment</span><span class="p">(</span><span class="n">X_r</span><span class="o">=</span><span class="n">X</span><span class="p">[</span><span class="n">freq</span><span class="o">&lt;</span><span class="p">(</span><span class="n">f_0</span><span class="o">+</span><span class="mi">10</span><span class="p">)],</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">[</span><span class="n">freq</span><span class="o">&lt;</span><span class="p">(</span><span class="n">f_0</span><span class="o">+</span><span class="mi">10</span><span class="p">)],</span> <span class="n">i</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">freq</span><span class="o">&gt;=</span><span class="p">(</span><span class="n">f_0</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">freq</span><span class="o">&lt;=</span><span class="p">(</span><span class="n">f_0</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">spektralni_moment</span><span class="p">(</span><span class="n">X_r</span><span class="o">=</span><span class="n">X</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">i</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>77926882014.27914
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>77926866536.70676
 </pre></div>
 </div>
 </div>
@@ -876,10 +878,10 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
             <p class="prev-next-title">Diskretna Fourierova transformacija</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="08%20-%20Correlation%20function%20and%20spectra.html" title="next page">
+    <a class='right-next' id="next-link" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Correlation function and spectra</p>
+        <p class="prev-next-title">Odziv linearnih sistemov na naključno vzbujanje</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
