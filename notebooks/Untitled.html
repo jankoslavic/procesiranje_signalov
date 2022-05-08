@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -722,7 +724,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\janko\AppData\Local\Temp/ipykernel_14868/3270737407.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\janko\AppData\Local\Temp/ipykernel_23052/3270737407.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(,</span><span class="n">x_d_v</span><span class="p">)</span>
                                <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -1382,6 +1384,320 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/Untitled_48_0.png" src="../_images/Untitled_48_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># navodilo: spreminaj parameter `a`</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">Δt</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, Δt&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="n">Xsum</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="o">-</span><span class="n">n</span><span class="o">/</span><span class="n">Δt</span><span class="p">),</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="n">Δt</span><span class="p">:</span> <span class="o">.</span><span class="mi">4</span><span class="p">}</span>
+<span class="c1"># pripravimo vektorizirane funkcije za numpy</span>
+<span class="n">f_x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">f_X_abs</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">f_Xsum_abs</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">Xsum</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+
+<span class="c1"># zaloga vrednosti v času in frekvenci (t_g so &#39;gosti&#39; podatki za prikaz zvezne funkcije)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">])</span> <span class="c1"># približno število -N, da imamo časovni trak cca [-2,2]</span>
+<span class="n">t_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">t_i</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># koliko sosednijih preslikav X(f) prikažemo</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">K</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span><span class="n">K</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span> <span class="n">num</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_g</span><span class="p">,</span> <span class="n">f_x</span><span class="p">(</span><span class="n">t_g</span><span class="p">),</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x(t)$, zvezno&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_i</span><span class="p">,</span> <span class="n">f_x</span><span class="p">(</span><span class="n">t_i</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(t_i)$, vzorčenje: $</span><span class="se">\\</span><span class="s1">Delta t=$</span><span class="si">{</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="p">),</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$, zvezno&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">K</span><span class="p">,</span><span class="n">K</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="o">+</span><span class="n">i</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]),</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="p">)),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="o">+</span><span class="n">i</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]),</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|X(f+i/\Delta t)|$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">f_X_abs</span><span class="p">(</span><span class="n">fr</span><span class="p">)),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f=i/\Delta t$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fr</span><span class="p">,</span> <span class="n">f_Xsum_abs</span><span class="p">(</span><span class="n">fr</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|\sum_n\,X(f-n/\Delta t)|$, $</span><span class="se">\\</span><span class="s1">Delta t=$</span><span class="si">{</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$f$ [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Untitled_49_0.png" src="../_images/Untitled_49_0.png" />
+<img alt="../_images/Untitled_49_1.png" src="../_images/Untitled_49_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="mf">5.5</span> <span class="c1"># &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">dt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mf">0.33</span><span class="p">)</span>
+
+<span class="n">X1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">f1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplitudni spekter&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pričakovani vrh&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;fs/2 = </span><span class="si">{</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">Hz&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Untitled_50_0.png" src="../_images/Untitled_50_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span> <span class="n">x</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x2ad1c73bfd0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Untitled_51_1.png" src="../_images/Untitled_51_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">[</span><span class="n">freq</span><span class="o">==</span><span class="n">fr</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.62040942e-14-50.j])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Untitled_54_0.png" src="../_images/Untitled_54_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena - amplitudni spekter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="n">N</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Untitled_55_0.png" src="../_images/Untitled_55_0.png" />
+<img alt="../_images/Untitled_55_1.png" src="../_images/Untitled_55_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, fr, Tp, A&#39;</span><span class="p">)</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
+
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">fr</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="n">Tp</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">Tp</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">Tp</span><span class="p">))</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{i}{2}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="c1"># spodnja fs rezultira v vključenost zadnje točke. Rezultat bo napačen!</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span><span class="o">/</span><span class="mf">1.01010101010101</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">X_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">X_r</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-6.21724894e-17+0.00000000e+00j,  6.41975693e-05-2.04279978e-03j,
+        2.92610276e-04-4.65090715e-03j,  8.57795408e-04-9.07452755e-03j,
+        2.64776402e-03-2.09592104e-02j,  7.74915074e-02-4.89262122e-01j,
+       -5.39849287e-03+2.82998907e-02j, -3.28188267e-03+1.46822991e-02j,
+       -2.61619651e-03+1.01894126e-02j, -2.29683315e-03+7.90575155e-03j,
+       -2.11241912e-03+6.50135754e-03j, -1.99399619e-03+5.53853748e-03j,
+       -1.91248079e-03+4.83037509e-03j, -1.85353959e-03+4.28327726e-03j,
+       -1.80932162e-03+3.84500417e-03j, -1.77518364e-03+3.48399406e-03j,
+       -1.74821424e-03+3.17998989e-03j, -1.72650185e-03+2.91935520e-03j,
+       -1.70874365e-03+2.69254916e-03j, -1.69402386e-03+2.49268041e-03j,
+       -1.68168178e-03+2.31463640e-03j, -1.67123009e-03+2.15453685e-03j,
+       -1.66230234e-03+2.00937835e-03j, -1.65461834e-03+1.87679610e-03j,
+       -1.64796066e-03+1.75489986e-03j, -1.64215836e-03+1.64215836e-03j,
+       -1.63707547e-03+1.53731619e-03j, -1.63260269e-03+1.43933288e-03j,
+       -1.62865133e-03+1.34733755e-03j, -1.62514883e-03+1.26059465e-03j,
+       -1.62203534e-03+1.17847766e-03j, -1.61926119e-03+1.10044877e-03j,
+       -1.61678487e-03+1.02604288e-03j, -1.61457151e-03+9.54854932e-04j,
+       -1.61259170e-03+8.86529787e-04j, -1.61082047e-03+8.20754023e-04j,
+       -1.60923661e-03+7.57249270e-04j, -1.60782203e-03+6.95766722e-04j,
+       -1.60656125e-03+6.36082597e-04j, -1.60544104e-03+5.77994339e-04j,
+       -1.60445006e-03+5.21317427e-04j, -1.60357865e-03+4.65882664e-04j,
+       -1.60281854e-03+4.11533854e-04j, -1.60216274e-03+3.58125803e-04j,
+       -1.60160538e-03+3.05522566e-04j, -1.60114155e-03+2.53595908e-04j,
+       -1.60076725e-03+2.02223932e-04j, -1.60047932e-03+1.51289839e-04j,
+       -1.60027534e-03+1.00680791e-04j, -1.60015362e-03+5.02868534e-05j,
+       -1.60011316e-03+0.00000000e+00j])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.49536083591806973
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fr</span>
+<span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">N</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># tukaj poskusite z 20 (sinusuida se zaključi; rezultat brez dodajanja niče je točen!)</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># dodajanje ničel</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">X_kx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">k</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<span class="n">freq_kx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena - amplitudni spekter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_kx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_kx</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">x dodajanje ničel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Brez dodajanja ničel&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frekvenca [Hz], $\Delta f=$</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Untitled_61_0.png" src="../_images/Untitled_61_0.png" />
+<img alt="../_images/Untitled_61_1.png" src="../_images/Untitled_61_1.png" />
 </div>
 </div>
 

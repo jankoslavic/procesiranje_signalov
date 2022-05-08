@@ -274,8 +274,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zgled">
-     Zgled
+    <a class="reference internal nav-link" href="#zgled-1">
+     Zgled 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zgled-2">
+     Zgled 2
     </a>
    </li>
   </ul>
@@ -286,7 +291,7 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#zgled">
      Zgled
     </a>
    </li>
@@ -589,7 +594,7 @@ S_{xy}(f) &amp;= \frac{1}{T}\, X^*(f) \, Y(f)\qquad\text{CSD},
 \end{split}
 \end{split}\]</div>
 </div>
-<p>Avto-spektralna gostota <span class="math notranslate nohighlight">\(S_{xx}\)</span> pokriva negativne in pozitivne frekvence in se zato imenuje tudi <em>dvostranska</em> funkcija spektralne gostote. Pogosto se uporablja enostranska funkcija spektralne gostote~<span class="math notranslate nohighlight">\(G_{xx}\)</span>, ki je definirana kot:</p>
+<p>Avto-spektralna gostota <span class="math notranslate nohighlight">\(S_{xx}\)</span> pokriva negativne in pozitivne frekvence in se zato imenuje tudi <em>dvostranska</em> funkcija spektralne gostote. Pogosto se uporablja enostranska funkcija spektralne gostote <span class="math notranslate nohighlight">\(G_{xx}\)</span>, ki je definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 G_{xx} = 
@@ -600,8 +605,65 @@ S_{xx}(f),&amp; f=0\\
 \end{cases}
 \end{split}\]</div>
 <p>Podobno velja za <span class="math notranslate nohighlight">\(G_{xy}\)</span>, za dvostranski križno-spektralno gostoto velja <span class="math notranslate nohighlight">\(S_{xy}=S_{yx}^*\)</span>.</p>
-<div class="section" id="zgled">
-<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="zgled-1">
+<h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Permalink to this headline">¶</a></h3>
+<p>Poglejmo si najprej izračun avtospektra s pomočjo Fourierove transformacije. Na koncu zgleda preverimo Parsevalov teorema v diskretni obliki:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_i x_i^2 = \frac{1}{N}\sum_i X_i^2.
+\]</div>
+<p>Pri zgledu bodite previdni kako se obravnava <span class="math notranslate nohighlight">\(S_{xx}\)</span> in <span class="math notranslate nohighlight">\(G_{xx}\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">1000</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas [t]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vrednost $x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gostota verjetnosti - histogram&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">Sxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+
+<span class="n">X_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">Gxx</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_r</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X_r</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avtospektralna gostota moči&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">Sxx</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$S_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vsota kvadratov v času: &#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;, vsota PSD (Sxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Sxx</span><span class="p">),</span> <span class="s1">&#39;, vsota PSD (Gxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Gxx</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07 - Naključni procesi_32_0.png" src="../_images/07 - Naključni procesi_32_0.png" />
+<img alt="../_images/07 - Naključni procesi_32_1.png" src="../_images/07 - Naključni procesi_32_1.png" />
+<img alt="../_images/07 - Naključni procesi_32_2.png" src="../_images/07 - Naključni procesi_32_2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vsota kvadratov v času:  4954.153851114969 , vsota PSD (Sxx):  4954.15385111497 , vsota PSD (Gxx):  4954.436439261966
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="zgled-2">
+<h3>Zgled 2<a class="headerlink" href="#zgled-2" title="Permalink to this headline">¶</a></h3>
 <p>Poglejmo si sedaj zgled in najprej izračunajmo varianco s pomočjo definicije normalne porazdelitve z ničelno srednjo vrednostjo <span class="math notranslate nohighlight">\(\mu=0\)</span> in standardno deviacijo <span class="math notranslate nohighlight">\(\sigma=3\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -718,8 +780,8 @@ m_i = \int_{-\infty}^{+\infty} \omega^i \, S_{xx}(\omega) \textrm{d} \omega=\int
 \[
 m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 \]</div>
-<div class="section" id="id7">
-<h3>Zgled<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="zgled">
+<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">¶</a></h3>
 <p>Poglejmo si ponovno zgled; najprej definirajmo harmonski odziv z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>. Varianca pomika je pričakovana: <span class="math notranslate nohighlight">\((A/\sqrt{2})^2=0.5\,A\)</span>, varianca hitrosti:  hitrosti pa <span class="math notranslate nohighlight">\(((2\pi\,f_0\,A)/\sqrt{2})^2=2\pi^2\,f_0^2\,A\)</span> in varianca pospeška <span class="math notranslate nohighlight">\((((2\pi\,f_0)^2\,A)/\sqrt{2})^2=2^3(\pi\,f_0)^4\,A\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -747,7 +809,7 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5000000000000002
 </pre></div>
 </div>
-<img alt="../_images/07 - Naključni procesi_45_1.png" src="../_images/07 - Naključni procesi_45_1.png" />
+<img alt="../_images/07 - Naključni procesi_47_1.png" src="../_images/07 - Naključni procesi_47_1.png" />
 </div>
 </div>
 <p>Definirajmo funkcijo spektralnih momentov:</p>
