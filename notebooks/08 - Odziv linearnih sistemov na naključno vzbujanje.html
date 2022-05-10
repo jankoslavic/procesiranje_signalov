@@ -270,6 +270,11 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#koherenca">
+   Koherenca
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -360,7 +365,7 @@ S_{xx} &amp;= \int_{-\infty}^{+\infty}R_{xx}(\tau)\,e^{-\textrm{i}\,2\pi\,f\,\ta
 <p>Končni rezultat je:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Avtospektralna gostota moči na odzivni strani je definirana kot:</p>
+<p>Avto-spektralna gostota moči na odzivni strani je definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
 S_{xx} = H^*(f)\,H(f)\,S_{ff}(f),
@@ -394,13 +399,13 @@ S_{fx} &amp;= \int_{-\infty}^{+\infty}R_{fx}(\tau)\,e^{-\textrm{i}\,2\pi\,f\,\ta
 Končni rezultat je:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Križnospektralna gostota moči je definirana kot:</p>
+<p>Križno-spektralna gostota moči je definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
 S_{fx} = H(f)\,S_{ff}(f).
 \]</div>
 </div>
-<p>Za razliko od avtospektralne gostoste križnospektralna gostota ohranja fazno informacijo!</p>
+<p>Za razliko od avto-spektralne gostoste, križno-spektralna gostota ohranja fazno informacijo!</p>
 <div class="section" id="zgled">
 <h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">¶</a></h3>
 <p>S pomočjo zgleda spodaj si bomo pogledali avto- in križno- spektralno gostoto na naključno generiranih, normalno porazdeljenih, podatkih.</p>
@@ -430,7 +435,7 @@ S_{fx} = H(f)\,S_{ff}(f).
 <span class="n">Gxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">H</span><span class="o">*</span><span class="n">Gff</span><span class="p">)</span>
 <span class="n">Gfx</span> <span class="o">=</span> <span class="n">H</span><span class="o">*</span><span class="n">Gff</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avtospektralna gostota moči&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avto-spektralna gostota moči&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">Gff</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Vzbujanje $G_</span><span class="si">{ff}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">Gxx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Odziv $G_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
@@ -459,6 +464,30 @@ S_{fx} = H(f)\,S_{ff}(f).
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="koherenca">
+<h2>Koherenca<a class="headerlink" href="#koherenca" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Koherenca je definirana kot:</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma_{fx}^2(f)=\frac{|G_{fx}(f)|^2}{G_{ff}(f)\,G_{xx}(f)}
+=\frac{|S_{fx}(f)|^2}{S_{ff}(f)\,S_{xx}(f)}
+\]</div>
+</div>
+<p>in predstavlja merilo linearne povezanosti med vhodom (vzbujanjem <span class="math notranslate nohighlight">\(f\)</span>) in izhodom (odzivom <span class="math notranslate nohighlight">\(x\)</span>) sistema.</p>
+<p>Ker velja:</p>
+<div class="math notranslate nohighlight">
+\[
+|\underbrace{S_{fx}(f)}_{\frac{1}{T}\, F^*(f) \, X(f)}|^2\le \underbrace{S_{ff}(f)}_{\frac{1}{T}\, F^*(f) \, F(f)}\,\overbrace{S_{xx}(f)}^{\frac{1}{T}\, X^*(f) \, X(f)},
+\]</div>
+<p>se koherenca <span class="math notranslate nohighlight">\(\gamma_{fx}^2(f)\)</span> nahaja v območju od 0 do 1:</p>
+<div class="math notranslate nohighlight">
+\[
+0\le\gamma_{fx}^2(f)\le 1
+\]</div>
+<p>Če je koherenca 0, to pomeni, da vzbujanje in odziv nista povezana, če je koherenca 1, pa to pomeni, da sta vzbujanje in odziv linearno odvisna. Odstopanje od 1 se izmeri tudi takrat, ko imamo v meritvi šum, obravnavamo nelinearen sistem ali pa je odziv posledica (tudi) drugih vzbujanj in ne samo <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
 </div>
 </div>
 

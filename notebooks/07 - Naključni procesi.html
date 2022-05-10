@@ -476,7 +476,7 @@ C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{
 \end{split}
 \end{split}\]</div>
 <p>Varianci <span class="math notranslate nohighlight">\(\sigma_x^2(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma_y^2(t)\)</span> sta tako definirani in <span class="math notranslate nohighlight">\(C_{xy}(t)\)</span> je kovarianca med <span class="math notranslate nohighlight">\(\left \{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> ob času <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<p>Če bi analizirali proces dvodimenzionalni normalni porazdelitvi, bi bile lastnosti <span class="math notranslate nohighlight">\(\sigma_x^2(t)\)</span>, <span class="math notranslate nohighlight">\(\sigma_y^2(t)\)</span> in <span class="math notranslate nohighlight">\(C_{xy}(t)\)</span> dovolj za  popis verjetnosti v določenih časovnih točkah <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Če bi analizirali proces z dvodimenzionalno normalno porazdelitvijo, bi bile lastnosti <span class="math notranslate nohighlight">\(\sigma_x^2(t)\)</span>, <span class="math notranslate nohighlight">\(\sigma_y^2(t)\)</span> in <span class="math notranslate nohighlight">\(C_{xy}(t)\)</span> dovolj za  popis verjetnosti v določenih časovnih točkah <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Zgornji izraz posplošimo tako, da definiramo <strong><span class="math notranslate nohighlight">\(n\)</span>-ti centralni moment funkcije gostote verjetnosti</strong>:</p>
@@ -491,7 +491,7 @@ C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Auto-korelacijska</strong> <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in <strong>križno korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> se uporabljajo za stacionarne naključne procese in je enaka kovariančnim funkcijam v primeru procesa z ničelno srednjo vrednostjo:</p>
+<p><strong>Auto-korelacijska</strong> <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in <strong>križno-korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> se uporabljajo za stacionarne naključne procese in je enaka kovariančnim funkcijam v primeru procesa z ničelno srednjo vrednostjo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -555,12 +555,12 @@ C_{xy}(\tau, k) &amp;= C_{xy}(\tau). \\
 <div class="section" id="spektralna-gostota-moci-psd">
 <h2>Spektralna gostota moči (PSD)<a class="headerlink" href="#spektralna-gostota-moci-psd" title="Permalink to this headline">¶</a></h2>
 <p>Spektralna gostota moči opisuje frekvenčno gostoto moči naključnega procesa in dopolnjuje funkcijo gostote verjetnosti (<span class="math notranslate nohighlight">\(p(x)\)</span>) pri definiciji določenega naključnega procesa; ista gostota verjetnosti ima lahko v frekvenčni domeni zelo različne gostote spektralne moči (PSD). PSD ponavadi pridobimo s Fourierjevo transformacijo, običajno z uporabo algoritma FFT.</p>
-<p>Definicija PSD temelji na avtokorelacijski funkciji <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, ki implicitno vsebuje frekvenčno vsebino <span class="math notranslate nohighlight">\(x(t)\)</span>, hkrati pa izpolnjuje Dirichletov pogoj (vsaj v primeru procesov z ničelno srednjo vrednostjo):</p>
+<p>Definicija PSD temelji na avto-korelacijski funkciji <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, ki implicitno vsebuje frekvenčno vsebino <span class="math notranslate nohighlight">\(x(t)\)</span>, hkrati pa izpolnjuje Dirichletov pogoj (vsaj v primeru procesov z ničelno srednjo vrednostjo):</p>
 <div class="math notranslate nohighlight">
 \[
 \int_{-\infty}^{+\infty} \left|x(t)\right| \textrm{d} t &lt; \infty.
 \]</div>
-<p>Ker sta avto korelacijska funkcija in PSD par Fourierjeve transformacije, lahko za naključna procesa <span class="math notranslate nohighlight">\(x(t)\)</span> in <span class="math notranslate nohighlight">\(y(t)\)</span> zapišemo naslednje (Wiener-Khinchine) odnose:</p>
+<p>Ker sta avto-korelacijska funkcija in PSD par Fourierjeve transformacije, lahko za naključna procesa <span class="math notranslate nohighlight">\(x(t)\)</span> in <span class="math notranslate nohighlight">\(y(t)\)</span> zapišemo naslednje (Wiener-Khinchine) odnose:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -569,7 +569,7 @@ S_{yy}(f) &amp;= \mathcal{F}\{R_{yy}(\tau)\}, \\
 S_{xy}(f) &amp;= \mathcal{F}\{R_{xy}(\tau)\}.
 \end{split}
 \end{split}\]</div>
-<p>PSD <span class="math notranslate nohighlight">\(S_{xx}(f)\)</span> in <span class="math notranslate nohighlight">\(S_{yy}(f)\)</span> (imenovana tudi auto-spektralna gostota) sta sodi funkciji s pozitivnimi realnimi vrednostmi. Križna spektralna gostota} <span class="math notranslate nohighlight">\(S_{xy}(f)\)</span> ima v splošnem kompleksne vrednosti.</p>
+<p>PSD <span class="math notranslate nohighlight">\(S_{xx}(f)\)</span> in <span class="math notranslate nohighlight">\(S_{yy}(f)\)</span> (imenovana tudi auto-spektralna gostota) sta sodi funkciji s pozitivnimi realnimi vrednostmi. Križna-spektralna gostota} <span class="math notranslate nohighlight">\(S_{xy}(f)\)</span> ima v splošnem kompleksne vrednosti.</p>
 <p>V realnim meritvah je časovna zgodovina končne dolžine in Diricletov pogoj je izpolnjen; iz Fourierove transformacije <span class="math notranslate nohighlight">\(k\)</span>-te časovne zgodovine:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -578,7 +578,7 @@ X_k(f, T) = \int_0^T x_k(t) \,e^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d
 Y_k(f, T) = \int_0^T y_k(t) \,e^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d} t \\
 \end{split}
 \end{split}\]</div>
-<p>lahko z množenje Fourierovih transformirank  določimo križno spektralno gostoto:</p>
+<p>lahko z množenje Fourierovih transformirank  določimo križno-spektralno gostoto:</p>
 <div class="math notranslate nohighlight">
 \[
 S_{xy}(f, T, k) = \frac{1}{T}\, X_k^*(f, T) \, Y_k(f, T)
@@ -607,7 +607,7 @@ S_{xx}(f),&amp; f=0\\
 <p>Podobno velja za <span class="math notranslate nohighlight">\(G_{xy}\)</span>, za dvostranski križno-spektralno gostoto velja <span class="math notranslate nohighlight">\(S_{xy}=S_{yx}^*\)</span>.</p>
 <div class="section" id="zgled-1">
 <h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Permalink to this headline">¶</a></h3>
-<p>Poglejmo si najprej izračun avtospektra s pomočjo Fourierove transformacije. Na koncu zgleda preverimo Parsevalov teorema v diskretni obliki:</p>
+<p>Poglejmo si najprej izračun avto-spektralne gostote s pomočjo Fourierove transformacije. Na koncu zgleda preverimo Parsevalov teorema v diskretni obliki:</p>
 <div class="math notranslate nohighlight">
 \[
 \sum_i x_i^2 = \frac{1}{N}\sum_i X_i^2.
@@ -642,7 +642,7 @@ S_{xx}(f),&amp; f=0\\
 <span class="n">Gxx</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_r</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X_r</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
 
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avtospektralna gostota moči&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avto-spektralna gostota moči&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">Sxx</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$S_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
