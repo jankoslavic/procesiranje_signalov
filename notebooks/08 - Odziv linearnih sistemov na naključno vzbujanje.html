@@ -275,6 +275,29 @@
    Koherenca
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cenilke-frekvencne-prenosne-funkcije">
+   Cenilke frekvenčne prenosne funkcije
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cenilka-hat-h-1">
+     Cenilka
+     <span class="math notranslate nohighlight">
+      \(\hat{H}_1\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cenilka-hat-h-2">
+     Cenilka
+     <span class="math notranslate nohighlight">
+      \(\hat{H}_2\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -488,6 +511,151 @@ S_{fx} = H(f)\,S_{ff}(f).
 0\le\gamma_{fx}^2(f)\le 1
 \]</div>
 <p>Če je koherenca 0, to pomeni, da vzbujanje in odziv nista povezana, če je koherenca 1, pa to pomeni, da sta vzbujanje in odziv linearno odvisna. Odstopanje od 1 se izmeri tudi takrat, ko imamo v meritvi šum, obravnavamo nelinearen sistem ali pa je odziv posledica (tudi) drugih vzbujanj in ne samo <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
+</div>
+<div class="section" id="cenilke-frekvencne-prenosne-funkcije">
+<h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Permalink to this headline">¶</a></h2>
+<p>Različne oblike frekvenčne prenosne funkcije (FRF) smo teoretično spoznali v poglavju: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>. Tukaj si bomo pogledali kako FRF ocenimo na podlagi izmerjenih podatkov, pri tem pa se bomo omejili na sisteme z enim (sočasnim) vzbujanjem in enim (sočasnim) odzivom (to so tako imenovani SISO sistemi: ang. <em>single input, single otput</em>).</p>
+<p>Linearni, časovno invariantni SISO sistem je mogoče predstaviti z blokovnim diagramom na sliki spodaj. Kjer je <span class="math notranslate nohighlight">\(f(t)\)</span> vzbujevalna sila, <span class="math notranslate nohighlight">\(h(t)\)</span> je funkcija impulznega odziva in <span class="math notranslate nohighlight">\(x(t)\)</span> je odziv; <span class="math notranslate nohighlight">\(F(\omega)\)</span>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in <span class="math notranslate nohighlight">\(X(\omega)\)</span> so njihovi pari v frekvenčni domeni.</p>
+<p><img alt="random_ensemble" src="../_images/FRF_nonoise.svg" /></p>
+<p>FRF je za naključni proces definirana z <span class="math notranslate nohighlight">\(\alpha(\omega)=S_{fx}/S_{ff}\)</span>, kjer sta <span class="math notranslate nohighlight">\(S_{ff}\)</span> in <span class="math notranslate nohighlight">\(S_{fx}\)</span> avto- in križna-spektralna gostota moči.</p>
+<p>Slika spodaj prikazuje SISO sistem, kjer sta <span class="math notranslate nohighlight">\(u(t)\)</span> in <span class="math notranslate nohighlight">\(v(t)\)</span> resnični vhod (vzbujanje) in resnični izhod (odziv) sistema. <span class="math notranslate nohighlight">\(m(t)\)</span> predstavlja izmerjen šum na vhodu~<span class="math notranslate nohighlight">\(f(t)\)</span> in <span class="math notranslate nohighlight">\(n(t)\)</span> predstavlja izmerjen šum na izhodu <span class="math notranslate nohighlight">\(x(t)\)</span>. Velike črke so ustrezne količine frekvenčne domene.</p>
+<p><img alt="random_ensemble" src="../_images/FRF_noise.svg" /></p>
+<p>Merilni šum je vedno prisoten in nam preprečuje, da bi izmerii dejanske vrednosti, ki vstopajo ali izstopajo v/iz sistema. Slika kaže, da v resnici ni mogoče izmeriti dejanskega vhoda v sistem~<span class="math notranslate nohighlight">\(u(t)\)</span> in tudi ni mogoče izmeriti dejanskega izhoda sistema~<span class="math notranslate nohighlight">\(v(t)\)</span>. Namesto tega merimo vhod s šumom:</p>
+<div class="math notranslate nohighlight">
+\[
+f(t)=u(t)+m(t)
+\]</div>
+<p>in izhod s šumom:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t)=v(t)+n(t).
+\]</div>
+<p>Za poljubne korelacije med signaloma <span class="math notranslate nohighlight">\(u(t)\)</span> in <span class="math notranslate nohighlight">\(v(t)\)</span> ter šumom <span class="math notranslate nohighlight">\(m(t)\)</span> in <span class="math notranslate nohighlight">\(n(t)\)</span>, lahko definiramo avto- in križno-spektralno gostoto moči:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+S_{ff}(\omega) &amp;= S_{uu}(\omega) + S_{mm}(\omega) + S_{mu}(\omega) + S_{um}(\omega),\\
+S_{xx}(\omega) &amp;= S_{vv}(\omega) + S_{nn}(\omega) + S_{nv}(\omega) + S_{vn}(\omega),\\
+S_{fx}(\omega) &amp;= S_{uv}(\omega) + S_{un}(\omega) + S_{mv}(\omega) + S_{mn}(\omega).
+\end{split}
+\end{split}\]</div>
+<p>Vhod <span class="math notranslate nohighlight">\(u(t)\)</span> in izhod <span class="math notranslate nohighlight">\(v(t)\)</span> sistema sta povezana s pomočjo FRF:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+S_{vv}(\omega)&amp;=|\alpha(\omega)|^2\,S_{uu}(\omega),\\
+S_{uv}(\omega)&amp;=\alpha(\omega)\,S_{uu}(\omega).
+\end{split}
+\end{split}\]</div>
+<p>V nadaljevanju bomo poskušali iz meritev s šumom (<span class="math notranslate nohighlight">\(f(t)=u(t)+m(t)\)</span> in <span class="math notranslate nohighlight">\(x(t)=v(t)+n(t)\)</span>) oceniti dejansko frekvečno prenosno funkcijo.</p>
+<div class="section" id="cenilka-hat-h-1">
+<h3>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_1\)</span><a class="headerlink" href="#cenilka-hat-h-1" title="Permalink to this headline">¶</a></h3>
+<p>Pri merjenju vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span> in odziva~<span class="math notranslate nohighlight">\(x(t)\)</span> slednji običajno pokriva višji dinamični razpon (v meritvi imamo relativno velike vrednosti in tudi relativno majhne) in je zato bolj občutljiv na merilni šum. Zaradi tega predpostavimo, da vhodnega šuma <span class="math notranslate nohighlight">\(m(t)=0\)</span> ni, posledično velja:</p>
+<div class="math notranslate nohighlight">
+\[
+S_{mm}(\omega)=0,\quad S_{mn}(\omega)=0,\quad S_{mu=0}(\omega)=0,\quad S_{mv}(\omega)=0
+\]</div>
+<p>in da izhodni šum <span class="math notranslate nohighlight">\(n(t)\)</span> ni koreliran s sistemom, torej velja:</p>
+<div class="math notranslate nohighlight">
+\[
+S_{un}(\omega)=0.
+\]</div>
+<p>Posledično se avto- in križne-spektralne gostote poenostavijo:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+S_{ff}(\omega) &amp;= S_{uu}(\omega),\\
+S_{xx}(\omega) &amp;= S_{vv}(\omega) + S_{nn}(\omega),\\
+S_{fx}(\omega) &amp;= S_{uv}(\omega).
+\end{split}
+\end{split}\]</div>
+<p>Iz zadnje enačbe lahko na podlagi merjenih podatkov (<span class="math notranslate nohighlight">\(x(t)\)</span> in <span class="math notranslate nohighlight">\(f(t)\)</span>) ocenimo dejansko FRF: <span class="math notranslate nohighlight">\(S_{fx}(\omega)=S_{uv}(\omega)\)</span>. S pomočjo povezave <span class="math notranslate nohighlight">\(S_{fx}(\omega)=\alpha(\omega)\,S_{ff}(\omega)\)</span> lahko FRF ocenimo kot:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_1(\omega)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+\hat{H}_1(\omega)&amp;=\hat{\alpha}_1(\omega)=\frac{\hat{S}_{fx}(\omega)}{\hat{S}_{ff }(\omega)},
+\end{split}
+\]</div>
+</div>
+<p>kjer smo uporabili simbol <span class="math notranslate nohighlight">\(\hat{~}\)</span> za označevanje ocene iz meritve. Pri tem je pomambno, da avto- <span class="math notranslate nohighlight">\(\hat{S}_{ff}(\omega)\)</span> in križne- <span class="math notranslate nohighlight">\(\hat{S}_{fx} (\omega)\)</span> spektralne gostote moči dobimo s povprečenjem naključnega procesa (glejte zgled spodaj).</p>
+<p>Za oceno kvalitete in linearnosti meritve, potrebujemo še koherenco:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+\hat{\gamma}_{fx}^2&amp;=\frac{|\hat{S}_{fx}|^2}{\hat{S}_{ff}\,\big(\underbrace{{S}_{vv}+S_{nn}}_{\hat{S}_{xx}}\big)},
+\end{split}
+\]</div>
+<p>kar kaže, da šum na izhodu <span class="math notranslate nohighlight">\(S_{nn}(\omega)\)</span> zmanjša koherenco in s tem kakovost ocenjenega FRF.</p>
+<p>Če vzbujevalnega šuma <span class="math notranslate nohighlight">\(m(t)\)</span> ni mogoče zanemariti, potem velja <span class="math notranslate nohighlight">\(S_{ff}=S_{uu}+S_{mm}\)</span> in:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+\hat{H}_1(\omega)&amp;=\frac{\hat{S}_{fx}(\omega)}{\hat{S}_{uu}(\omega)+\hat{S}_{mm}(\omega)},.
+\end{split}
+\]</div>
+<p>Sledi, da cenilka <span class="math notranslate nohighlight">\(\hat{H}_1\)</span> zaradi šuma na vhodu podceni pravi FRF <span class="math notranslate nohighlight">\(\alpha=S_{uv}/S_{uu}\)</span>.</p>
+</div>
+<div class="section" id="cenilka-hat-h-2">
+<h3>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_2\)</span><a class="headerlink" href="#cenilka-hat-h-2" title="Permalink to this headline">¶</a></h3>
+<p>Tukaj raziskujemo oceno FRF, ko šuma meritve na strani vzbujanja ni mogoče zanemariti, vendar ta ni koreliran s sistemom. Nadalje, predpostavimo, da je mogoče zanemariti šum na strani odziva <span class="math notranslate nohighlight">\(n(t)=0\)</span>, posledično velja:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+S_{ff}(\omega) &amp;= S_{uu}(\omega) + S_{mm}(\omega)\\
+S_{xx}(\omega) &amp;= S_{vv}(\omega)\\
+S_{fx}(\omega) &amp;= S_{uv}(\omega)
+\end{split}
+\end{split}\]</div>
+<p>in z uporabo:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+S_{xx}&amp;=S_{vv}\\
+&amp;=|\alpha(\omega)|^2\,S_{uu}\\
+&amp;=\alpha(\omega)\,\alpha(\omega)^*\,S_{uu}\\
+&amp;=\alpha(\omega)\,S_{xf},
+\end{split}
+\end{split}\]</div>
+<p>kjer smo v zadnji vrstici uporabili <span class="math notranslate nohighlight">\(S_{xf}=S_{vu}=\alpha(\omega)^*\,S_{uu}\)</span>.</p>
+<p>Posledično smo izpeljali cenilko za oceno FRF:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_2(\omega)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+\hat{H}_2(\omega)&amp;=\hat{\alpha}_2(\omega)=\frac{\hat{S}_{xx}}{\hat{S}_{xf}}.
+\end{split}
+\]</div>
+<p>::</p>
+<p>Funkcija koherence postane:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+\hat{\gamma}_{fx}^2&amp;=\frac{|\hat{S}_{fx}|^2}{\big(\underbrace{{S}_{uu}+{S}_{mm}}_{\hat{S}_{ff}}\big)\,\hat{S}_{xx}}
+\end{split}
+\]</div>
+</div>
+<p>kar kaže, da tudi šum na strani vzbujanja zmanjša koherenco in s tem kakovost ocenjenega FRF.</p>
+<p>Opazimo lahko, da če cenilko <span class="math notranslate nohighlight">\(\hat{H}_1\)</span> delimo s cenilko <span class="math notranslate nohighlight">\(\hat{H}_2\)</span>, dobimo cenilko koherence:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+\hat{\gamma}_{fx}^2&amp;=\frac{\hat{H}_1}{\hat{H}_2}.
+\end{split}
+\]</div>
+<p>Če šuma na strani odziva <span class="math notranslate nohighlight">\(n(t)\)</span> ni mogoče zanemariti, potem velja <span class="math notranslate nohighlight">\(S_{xx}=S_{vv}+S_{nn}\)</span> in:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{split}
+\hat{H}_2(\omega)&amp;=\frac{\hat{S}_{vv}+\hat{S}_{nn}}{\hat{S}_{xf}}.
+\end{split}
+\]</div>
+<p>V primeru šuma na odzivu cenilka <span class="math notranslate nohighlight">\(\hat{H}_2\)</span> torej preceni pravi FRF <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+</div>
 </div>
 </div>
 
