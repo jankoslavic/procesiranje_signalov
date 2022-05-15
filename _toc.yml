@@ -14,5 +14,4 @@ chapters:
 - file: notebooks/06 - Spectral leakage and aliasing
 - file: notebooks/07 - Naključni procesi
 - file: notebooks/08 - Odziv linearnih sistemov na naključno vzbujanje
-- file: notebooks/09 - Spectral moments, stationarity, ergodicity
 - file: bibliography
