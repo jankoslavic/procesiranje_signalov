@@ -243,63 +243,77 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#srednja-vrednost-odziva">
-   Srednja vrednost odziva
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Odziv linearnih sistemov na naključno vzbujanje
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#avtokorelacija">
-   Avtokorelacija
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#krizna-korelacija">
-   Križna korelacija
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zgled">
-     Zgled
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#srednja-vrednost-odziva">
+     Srednja vrednost odziva
     </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#avtokorelacija">
+     Avtokorelacija
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#krizna-korelacija">
+     Križna korelacija
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zgled">
+       Zgled
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#koherenca">
-   Koherenca
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zgled-2">
+   Zgled 2
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cenilke-frekvencne-prenosne-funkcije">
-   Cenilke frekvenčne prenosne funkcije
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cenilka-hat-h-1">
-     Cenilka
-     <span class="math notranslate nohighlight">
-      \(\hat{H}_1\)
-     </span>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#koherenca">
+     Koherenca
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cenilka-hat-h-2">
-     Cenilka
-     <span class="math notranslate nohighlight">
-      \(\hat{H}_2\)
-     </span>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cenilke-frekvencne-prenosne-funkcije">
+     Cenilke frekvenčne prenosne funkcije
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zgled-1">
-     Zgled 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zgled-2">
-     Zgled 2
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cenilka-hat-h-1">
+       Cenilka
+       <span class="math notranslate nohighlight">
+        \(\hat{H}_1\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cenilka-hat-h-2">
+       Cenilka
+       <span class="math notranslate nohighlight">
+        \(\hat{H}_2\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zgled-1">
+       Zgled 1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Zgled 2
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -444,13 +458,15 @@ S_{fx} = H(f)\,S_{ff}(f).
 
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="mi">250</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">250</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">fs</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
 <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
 
-<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
 <span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
-<span class="n">Gff</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">F</span><span class="p">)</span>
+<span class="n">G_ff</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">scale</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">F</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -460,12 +476,12 @@ S_{fx} = H(f)\,S_{ff}(f).
     <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="o">-</span><span class="n">omega</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">c</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
 
 <span class="n">H</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mf">1e5</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">Gxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">H</span><span class="o">*</span><span class="n">Gff</span><span class="p">)</span>
-<span class="n">Gfx</span> <span class="o">=</span> <span class="n">H</span><span class="o">*</span><span class="n">Gff</span>
+<span class="n">G_xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">H</span><span class="o">*</span><span class="n">G_ff</span><span class="p">)</span>
+<span class="n">G_fx</span> <span class="o">=</span> <span class="n">H</span><span class="o">*</span><span class="n">G_ff</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avto-spektralna gostota moči&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">Gff</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Vzbujanje $G_</span><span class="si">{ff}</span><span class="s1">$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">Gxx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Odziv $G_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">G_ff</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Vzbujanje $G_</span><span class="si">{ff}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">G_xx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Odziv $G_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -473,12 +489,12 @@ S_{fx} = H(f)\,S_{ff}(f).
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Avtospektralna gostota moči&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Gfx</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|G_</span><span class="si">{fx}</span><span class="s1">(f)|$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_fx</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|G_</span><span class="si">{fx}</span><span class="s1">(f)|$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|G_</span><span class="si">{fx}</span><span class="s1">(f)|$&#39;</span><span class="p">)</span>
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span> 
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Gfx</span><span class="p">),</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle G_</span><span class="si">{fx}</span><span class="s1">(f)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">G_fx</span><span class="p">),</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle G_</span><span class="si">{fx}</span><span class="s1">(f)$&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle G_</span><span class="si">{fx}</span><span class="s1">(f)$ [rad]&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -491,6 +507,61 @@ S_{fx} = H(f)\,S_{ff}(f).
 <img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_9_1.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_9_1.png" />
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="zgled-2">
+<h1>Zgled 2<a class="headerlink" href="#zgled-2" title="Permalink to this headline">¶</a></h1>
+<p>Poglejmo si še kako spektralno gostoto povprečimo in s tem zmanjšamo frekvenčno natančnost in amplitudni raztros.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+
+<span class="n">odsekov</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">N_</span> <span class="o">=</span> <span class="n">N</span><span class="o">//</span><span class="n">odsekov</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">boxcar</span><span class="p">(</span><span class="n">N_</span><span class="p">)</span>              <span class="c1"># okno</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="p">(</span><span class="n">win</span><span class="o">*</span><span class="n">win</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="n">G_ff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">odsekov</span><span class="p">):</span>
+    <span class="n">f_</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">N_</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">N_</span><span class="p">]</span>
+    <span class="n">f_w</span> <span class="o">=</span> <span class="n">win</span><span class="o">*</span><span class="n">f_</span>          <span class="c1"># okno</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">f_w</span><span class="p">)</span>  <span class="c1"># fft</span>
+    <span class="n">G_ff</span> <span class="o">+=</span> <span class="n">scale</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">F</span><span class="p">)</span> <span class="o">*</span> <span class="n">F</span> <span class="o">/</span> <span class="n">odsekov</span>
+
+<span class="n">G_ff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_ff</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">N_</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mf">1e5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">G_xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">H</span><span class="o">*</span><span class="n">G_ff</span><span class="p">)</span>
+<span class="n">G_fx</span> <span class="o">=</span> <span class="n">H</span><span class="o">*</span><span class="n">G_ff</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avto-spektralna gostota moči&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">G_ff</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Vzbujanje $G_</span><span class="si">{ff}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">G_xx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Odziv $G_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Avtospektralna gostota moči&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_fx</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|G_</span><span class="si">{fx}</span><span class="s1">(f)|$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|G_</span><span class="si">{fx}</span><span class="s1">(f)|$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span> 
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">G_fx</span><span class="p">),</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle G_</span><span class="si">{fx}</span><span class="s1">(f)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle G_</span><span class="si">{fx}</span><span class="s1">(f)$ [rad]&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_11_0.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_11_0.png" />
+<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_11_1.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_11_1.png" />
 </div>
 </div>
 <div class="section" id="koherenca">
@@ -555,7 +626,7 @@ S_{uv}(\omega)&amp;=\alpha(\omega)\,S_{uu}(\omega).
 <p>V nadaljevanju bomo poskušali iz meritev s šumom (<span class="math notranslate nohighlight">\(f(t)=u(t)+m(t)\)</span> in <span class="math notranslate nohighlight">\(x(t)=v(t)+n(t)\)</span>) oceniti dejansko frekvečno prenosno funkcijo.</p>
 <div class="section" id="cenilka-hat-h-1">
 <h3>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_1\)</span><a class="headerlink" href="#cenilka-hat-h-1" title="Permalink to this headline">¶</a></h3>
-<p>Pri merjenju vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span> in odziva~<span class="math notranslate nohighlight">\(x(t)\)</span> slednji običajno pokriva višji dinamični razpon (v meritvi imamo relativno velike vrednosti in tudi relativno majhne) in je zato bolj občutljiv na merilni šum. Zaradi tega predpostavimo, da vhodnega šuma <span class="math notranslate nohighlight">\(m(t)=0\)</span> ni, posledično velja:</p>
+<p>Pri merjenju vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span> in odziva~ x(t)<span class="math notranslate nohighlight">\( slednji običajno pokriva višji dinamični razpon (v meritvi imamo relativno velike vrednosti in tudi relativno majhne) in je zato bolj občutljiv na merilni šum. Zaradi tega predpostavimo, da vhodnega šuma \)</span>m(t)=0$ ni, posledično velja:</p>
 <div class="math notranslate nohighlight">
 \[
 S_{mm}(\omega)=0,\quad S_{mn}(\omega)=0,\quad S_{mu=0}(\omega)=0,\quad S_{mv}(\omega)=0
@@ -686,12 +757,13 @@ S_{xx}&amp;=S_{vv}\\
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">u</span> <span class="o">+</span> <span class="n">m</span> <span class="c1"># pomerjeno vzbujanje v času</span>
 
-<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">N</span> <span class="c1"># dejansko vzbujanje sistema</span>
-<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">/</span><span class="n">N</span> <span class="c1"># pomerjeno vzbujanje sistema</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="c1"># dejansko vzbujanje sistema</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c1"># pomerjeno vzbujanje sistema</span>
 <span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
 
-<span class="n">G_uu</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">U</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">U</span><span class="p">)</span>
-<span class="n">G_ff</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">F</span><span class="p">)</span>
+<span class="n">G_uu</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">scale</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">U</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">U</span><span class="p">)</span>
+<span class="n">G_ff</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">scale</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">F</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -702,15 +774,15 @@ S_{xx}&amp;=S_{vv}\\
 
 <span class="n">H</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mf">1e5</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">V</span> <span class="o">=</span> <span class="n">H</span><span class="o">*</span><span class="n">U</span>                      <span class="c1">#odziv brez šuma</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">V</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>        <span class="c1"># dejanski odziv v času</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>        <span class="c1"># dejanski odziv v času</span>
 <span class="n">σ_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">SNR_x</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span> <span class="c1"># na podlagi definirije 20*np.log10(σ_v/σ_n)</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">σ_n</span><span class="p">)</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">n</span>            <span class="c1"># pomerjen odziv sistema</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span> <span class="c1"># pomerjeno vzbujanje sistema</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># pomerjeno vzbujanje sistema</span>
 
-<span class="n">G_fx</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">F</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X</span>
-<span class="n">G_xx</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X</span><span class="p">)</span>
+<span class="n">G_fx</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">scale</span><span class="o">*</span><span class="n">F</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X</span>
+<span class="n">G_xx</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">scale</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X</span><span class="p">)</span>
 <span class="n">G_xf</span> <span class="o">=</span> <span class="n">G_fx</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span>
 
 <span class="n">H1</span> <span class="o">=</span> <span class="n">G_fx</span><span class="o">/</span><span class="n">G_ff</span>
@@ -742,13 +814,13 @@ S_{xx}&amp;=S_{vv}\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_26_0.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_26_0.png" />
-<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_26_1.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_26_1.png" />
+<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_28_0.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_28_0.png" />
+<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_28_1.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_28_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="zgled-2">
-<h3>Zgled 2<a class="headerlink" href="#zgled-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Zgled 2<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Nadaljujemo z zgledom in dodamo povprečenje po odsekih; s tem zmanjšamo frekvenčno natančnost in tudi raztros cenilke frekvenčne prenosne funkcije.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -757,7 +829,7 @@ S_{xx}&amp;=S_{vv}\\
 <span class="n">odsekov</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">N_</span> <span class="o">=</span> <span class="n">N</span><span class="o">//</span><span class="n">odsekov</span>
 <span class="n">win</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">hann</span><span class="p">(</span><span class="n">N_</span><span class="p">)</span>              <span class="c1"># okno</span>
-<span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">win</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="p">(</span><span class="n">win</span><span class="o">*</span><span class="n">win</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 
 <span class="n">G_fx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span> <span class="c1">#brisanje</span>
 <span class="n">G_ff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
@@ -809,8 +881,8 @@ S_{xx}&amp;=S_{vv}\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_28_0.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_28_0.png" />
-<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_28_1.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_28_1.png" />
+<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_30_0.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_30_0.png" />
+<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_30_1.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_30_1.png" />
 </div>
 </div>
 </div>
