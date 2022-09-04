@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Osnove naključnih procesov &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +20,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Odziv linearnih sistemov na naključno vzbujanje" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" />
@@ -62,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,14 +107,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Predgovor
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Predgovor
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01%20-%20Uvod.html">
    Uvod v procesiranje signalov
@@ -142,107 +159,209 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/07 - Naključni procesi.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/jankoslavic/procesiranje_signalov"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/07 - Naključni procesi.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/07 - Naključni procesi.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/07 - Naključni procesi.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jankoslavic/procesiranje_signalov"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/07 - Naključni procesi.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/07 - Naključni procesi.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kaj-je-nakljucni-proces">
    Kaj je naključni proces?
@@ -294,30 +413,97 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Osnove naključnih procesov</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaj-je-nakljucni-proces">
+   Kaj je naključni proces?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalna-porazdelitev-gaussov-proces">
+   Normalna porazdelitev (Gaussov proces)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#momenti-funkcije-gostote-verjetnosti">
+   Momenti funkcije gostote verjetnosti
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ergodicnost">
+   Ergodičnost
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spektralna-gostota-moci-psd">
+   Spektralna gostota moči (PSD)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zgled-1">
+     Zgled 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zgled-2">
+     Zgled 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spektralni-momenti">
+   Spektralni momenti
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zgled">
+     Zgled
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="osnove-nakljucnih-procesov">
-<span id="sec-random"></span><h1>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="osnove-nakljucnih-procesov">
+<span id="sec-random"></span><h1>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this headline">#</a></h1>
 <p>Dinamične obremenitve pogosto niso deterministične; primeri naključnih obremenitve so: obremenitve zaradi morskih valov, hrapavost ceste in vibracije zaradi pogonskega motorja. Take obremenitve je treba obravnavati kot <strong>naključne procese</strong>. V tem poglavju si bomo pogledali kako to naredimo in kako jih potem uspešno uporabimo pri obravnavi dinamskih sistemov.</p>
 <p>Naključnih podatkov v nasprotju z determinističnimi podatki ni mogoče natančno predvideti, določene značilnosti pa lahko razberemo z analizo njihovih segmentov; če na primer pomerimo hrapavost segmenta površine, lahko z določeno verjetnostjo sklepamo o značilnostih hrapavosti drugih segmentov. Pri opisu naključnih procesov si pogosto pomagamo s predpostavko porazdelitve procesa (npr. normalno porazdeljen proces).</p>
 <p>Medtem ko bi lahko naključni proces analizirali v časovni domeni, obstajajo pomanjkljivosti za uporabo takega pristopa. Za ustrezno vrednotenje procesa je treba v časovni domeni opraviti dovolj veliko število vzorčnih meritev (ali opazovanj), ki jih nato analiziramo kot skupino (ansambel, ang. <em>ensemble</em>). Kakor bomo videli pozneje, je strukturno dinamiko in naključne procese v frekvenčni domeni bistveno elegantneje analizirati.</p>
-<p>Referenčna besedila, ki poglobljeno obravnavajo to temo, ki jih priporočajo bralcu, so <span id="id1">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151">2011</a>]</span>, <span id="id2">Newland [<a class="reference internal" href="../bibliography.html#id88">2012</a>]</span> ter <span id="id3">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173">2008</a>]</span>. Nekatere vsebine so povzete po <span id="id4">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id3">2020</a>]</span>.</p>
-<div class="section" id="kaj-je-nakljucni-proces">
-<h2>Kaj je naključni proces?<a class="headerlink" href="#kaj-je-nakljucni-proces" title="Permalink to this headline">¶</a></h2>
+<p>Referenčna besedila, ki poglobljeno obravnavajo to temo, ki jih priporočajo bralcu, so <span id="id1">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>]</span>, <span id="id2">Newland [<a class="reference internal" href="../bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">2012</a>]</span> ter <span id="id3">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>. Nekatere vsebine so povzete po <span id="id4">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>.</p>
+<section id="kaj-je-nakljucni-proces">
+<h2>Kaj je naključni proces?<a class="headerlink" href="#kaj-je-nakljucni-proces" title="Permalink to this headline">#</a></h2>
 <p>Naključni proces je definiran s kombinacijo <strong>funkcije gostote verjetnosti</strong> (ang. <em>Probability Density Function</em> - PDF) in <strong>spektralno gostoto moči</strong> (ang. <em>Power Spectral Density</em> - PSD).</p>
 <p>Slika spodaj prikazuje ansambel <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> vzorčnih funkcij (opazovanj) <span class="math notranslate nohighlight">\(x_k(t)\)</span>, pri čemer je vsako opazovanje <span class="math notranslate nohighlight">\(k\)</span> sestavljeno iz naključne spremenljivke v času <span class="math notranslate nohighlight">\(t_i\)</span>: <span class="math notranslate nohighlight">\(x_k(t_i)\)</span>. Kot bo obravnavano kasneje, predpostavki o stacionarnosti in ergodičnosti bistveno poenostavijo analizo naključnih podatkov (več pozneje).</p>
 <p><img alt="random_ensemble" src="../_images/random_ensemble.svg" /></p>
-</div>
-<div class="section" id="normalna-porazdelitev-gaussov-proces">
-<h2>Normalna porazdelitev (Gaussov proces)<a class="headerlink" href="#normalna-porazdelitev-gaussov-proces" title="Permalink to this headline">¶</a></h2>
-<p>Gaussova porazdelitev je pogosto opažena pri različnih fizikalnih pojavih, njeno razširjenost pa pojasnjuje centralni limitni teorem (glejte <span id="id5">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151">2011</a>]</span>. Na splošno je Gaussov proces tisti, pri katerem verjetnost kombinacije naključnih spremenljivk ob določenih časih <span class="math notranslate nohighlight">\(\left\{x(t_i)\right\}\)</span> sledi večdimenzionalni Gaussovi porazdelitvi. Če pogledamo samo en trenutek v času <span class="math notranslate nohighlight">\(t\)</span>, verjetnost amplitude <span class="math notranslate nohighlight">\(x\)</span> ureja normalna funkcija gostote verjetnosti (PDF) <span class="math notranslate nohighlight">\(p(x)\)</span>:</p>
+</section>
+<section id="normalna-porazdelitev-gaussov-proces">
+<h2>Normalna porazdelitev (Gaussov proces)<a class="headerlink" href="#normalna-porazdelitev-gaussov-proces" title="Permalink to this headline">#</a></h2>
+<p>Gaussova porazdelitev je pogosto opažena pri različnih fizikalnih pojavih, njeno razširjenost pa pojasnjuje centralni limitni teorem (glejte <span id="id5">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>]</span>. Na splošno je Gaussov proces tisti, pri katerem verjetnost kombinacije naključnih spremenljivk ob določenih časih <span class="math notranslate nohighlight">\(\left\{x(t_i)\right\}\)</span> sledi večdimenzionalni Gaussovi porazdelitvi. Če pogledamo samo en trenutek v času <span class="math notranslate nohighlight">\(t\)</span>, verjetnost amplitude <span class="math notranslate nohighlight">\(x\)</span> ureja normalna funkcija gostote verjetnosti (PDF) <span class="math notranslate nohighlight">\(p(x)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 p(x) = \frac{1}{\sigma \, \sqrt{2 \, \pi}} \, \mathrm{e}^{-\frac{(x-\mu)^2}{2 \,\sigma^2}}
@@ -361,7 +547,16 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07 - Naključni procesi_9_0.png" src="../_images/07 - Naključni procesi_9_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <p>S spodnjim izračunom lahko preverimo, da sta prvi moment in drugi centralni moment za Gaussovo/normalno porazdelitev dejansko <span class="math notranslate nohighlight">\(\mu\)</span>  in <span class="math notranslate nohighlight">\(\sigma^2\)</span>:</p>
@@ -432,9 +627,9 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 <img alt="../_images/07 - Naključni procesi_14_1.png" src="../_images/07 - Naključni procesi_14_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="momenti-funkcije-gostote-verjetnosti">
-<h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="momenti-funkcije-gostote-verjetnosti">
+<h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Permalink to this headline">#</a></h2>
 <p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeks <span class="math notranslate nohighlight">\(k\)</span>) označimo kot (<span class="math notranslate nohighlight">\(E[]\)</span> označuje <em>pričakovano vrednost</em>/posplošeno povprečje, ang. <em>expected value</em>, glejte tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Expected_value">povezavo</a>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -482,7 +677,7 @@ C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Za naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> pravimo, da sta <strong>šibko stacionarna</strong>, ko so srednje vrednosti in kovariančne funkcije časovno neodvisne. Procesi se štejejo za <strong>močno stacionarne</strong>, ko so časovno neodvisni tudi statistični momenti višjega reda in križni momenti. Šibka in močna stacionarnost sovpadata za Gaussov proces (funkcijo porazdelitve verjetnosti je mogoče izpeljati samo iz srednjih vrednosti in kovarianc <span id="id6">[<a class="reference internal" href="../bibliography.html#id88">Newland, 2012</a>]</span>).</p>
+<p>Za naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> pravimo, da sta <strong>šibko stacionarna</strong>, ko so srednje vrednosti in kovariančne funkcije časovno neodvisne. Procesi se štejejo za <strong>močno stacionarne</strong>, ko so časovno neodvisni tudi statistični momenti višjega reda in križni momenti. Šibka in močna stacionarnost sovpadata za Gaussov proces (funkcijo porazdelitve verjetnosti je mogoče izpeljati samo iz srednjih vrednosti in kovarianc <span id="id6">[<a class="reference internal" href="../bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">Newland, 2012</a>]</span>).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -496,9 +691,9 @@ R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 \end{split}
 \end{split}\]</div>
 </div>
-</div>
-<div class="section" id="ergodicnost">
-<h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ergodicnost">
+<h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Permalink to this headline">#</a></h2>
 <p>Namesto, da srednjo vrednost določamo čez ansambel dogodkov, lahko srednjo vrednost določimo na podlagi časovnega povprečja:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -546,9 +741,9 @@ C_{xy}(\tau, k) &amp;= C_{xy}(\tau). \\
 \end{split}
 \end{split}\]</div>
 <p>V zgornjih izrazih je predpostavljeno, da <span class="math notranslate nohighlight">\(x(t)\)</span> predstavlja periodične podatke s periodo <span class="math notranslate nohighlight">\(T\)</span>. S <span class="math notranslate nohighlight">\(S_{xx}(f)\)</span> smo označili spektralno gostoto moči (ang. <em>power spectral density</em>) in smo se v tej vrstici naslonili na Parsevalov teorem (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-parseval"><span class="std std-ref">Parsevalov teorem in močnostni spekter</span></a>). V naslednjem poglavju si bomo spektralno gostoto moči pogledali bolj podrobno. Opomba: če obravnavamo normalno porazdeljeni proces z ničelno srednjo vrednostjo, je varianca edini manjkajoči parameter, ki tako porazdelitev enolično določi.</p>
-</div>
-<div class="section" id="spektralna-gostota-moci-psd">
-<h2>Spektralna gostota moči (PSD)<a class="headerlink" href="#spektralna-gostota-moci-psd" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="spektralna-gostota-moci-psd">
+<h2>Spektralna gostota moči (PSD)<a class="headerlink" href="#spektralna-gostota-moci-psd" title="Permalink to this headline">#</a></h2>
 <p>Spektralna gostota moči opisuje frekvenčno gostoto moči naključnega procesa in dopolnjuje funkcijo gostote verjetnosti (<span class="math notranslate nohighlight">\(p(x)\)</span>) pri definiciji določenega naključnega procesa; ista gostota verjetnosti ima lahko v frekvenčni domeni zelo različne gostote spektralne moči (PSD). PSD ponavadi pridobimo s Fourierjevo transformacijo, običajno z uporabo algoritma FFT.</p>
 <p>Definicija PSD temelji na avto-korelacijski funkciji <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, ki implicitno vsebuje frekvenčno vsebino <span class="math notranslate nohighlight">\(x(t)\)</span>, hkrati pa izpolnjuje Dirichletov pogoj (vsaj v primeru procesov z ničelno srednjo vrednostjo):</p>
 <div class="math notranslate nohighlight">
@@ -600,8 +795,8 @@ S_{xx}(f),&amp; f=0\\
 \end{cases}
 \end{split}\]</div>
 <p>Podobno velja za <span class="math notranslate nohighlight">\(G_{xy}\)</span>, za dvostranski križno-spektralno gostoto velja <span class="math notranslate nohighlight">\(S_{xy}=S_{yx}^*\)</span>.</p>
-<div class="section" id="zgled-1">
-<h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Permalink to this headline">¶</a></h3>
+<section id="zgled-1">
+<h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Permalink to this headline">#</a></h3>
 <p>Poglejmo si najprej izračun avto-spektralne gostote s pomočjo Fourierove transformacije. Na koncu zgleda preverimo Parsevalov teorema v diskretni obliki:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -674,9 +869,9 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="zgled-2">
-<h3>Zgled 2<a class="headerlink" href="#zgled-2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="zgled-2">
+<h3>Zgled 2<a class="headerlink" href="#zgled-2" title="Permalink to this headline">#</a></h3>
 <p>Poglejmo si sedaj zgled in najprej izračunajmo varianco s pomočjo definicije normalne porazdelitve z ničelno srednjo vrednostjo <span class="math notranslate nohighlight">\(\mu=0\)</span> in standardno deviacijo <span class="math notranslate nohighlight">\(\sigma=3\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -741,7 +936,7 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(19817.72593930211+0j)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.012110027353888
 </pre></div>
 </div>
 </div>
@@ -771,10 +966,10 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="spektralni-momenti">
-<h2>Spektralni momenti<a class="headerlink" href="#spektralni-momenti" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="spektralni-momenti">
+<h2>Spektralni momenti<a class="headerlink" href="#spektralni-momenti" title="Permalink to this headline">#</a></h2>
 <p>Zaradi definicije PSD sledi, da je površina pod krivuljo enaka pričakovani kvadratni vrednosti <span class="math notranslate nohighlight">\(E[x^2]\)</span> procesa (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-parseval"><span class="std std-ref">Parsevalov teorem in močnostni spekter</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -796,8 +991,8 @@ m_i = \int_{-\infty}^{+\infty} \omega^i \, S_{xx}(\omega) \textrm{d} \omega=\int
 \[
 m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 \]</div>
-<div class="section" id="zgled">
-<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">¶</a></h3>
+<section id="zgled">
+<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">#</a></h3>
 <p>Poglejmo si ponovno zgled; najprej definirajmo harmonski odziv z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>. Varianca pomika je pričakovana: <span class="math notranslate nohighlight">\((A/\sqrt{2})^2=0.5\,A\)</span>, varianca hitrosti:  hitrosti pa <span class="math notranslate nohighlight">\(((2\pi\,f_0\,A)/\sqrt{2})^2=2\pi^2\,f_0^2\,A\)</span> in varianca pospeška <span class="math notranslate nohighlight">\((((2\pi\,f_0)^2\,A)/\sqrt{2})^2=2^3(\pi\,f_0)^4\,A\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -921,9 +1116,9 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -947,9 +1142,11 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -965,26 +1162,28 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Janko Slavič<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Janko Slavič<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

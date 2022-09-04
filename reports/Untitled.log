@@ -1,29 +1,82 @@
 Traceback (most recent call last):
-  File "c:\python39\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
     executenb(
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 1112, in execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "c:\python39\lib\site-packages\nbclient\util.py", line 74, in wrapped
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "c:\python39\lib\site-packages\nbclient\util.py", line 53, in just_run
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "c:\python39\lib\asyncio\base_events.py", line 642, in run_until_complete
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
     return future.result()
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 553, in async_execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 857, in async_execute_cell
-    self._check_raise_for_error(cell, exec_reply)
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 760, in _check_raise_for_error
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-np.testing.assert_allclose(,x_d_v)
+import numpy as np
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng(0)
+fs = 250
+N = 5000
+dt = 1./fs
+time = np.arange(N)*dt
+
+SNR_f = 20 # 20dB pomeni, da je razmerje med varianco signala in šuma 10
+SNR_x = 20
+
+σ_u = 1
+σ_m = σ_u/10**(SNR_f/20) # na podlagi definirije 20*np.log10(σ_u/σ_m)
+
+u = rng.normal(size=N, scale=σ_u)
+m = rng.normal(size=N, scale=σ_m)
+
+f = u + m # pomerjeno vzbujanje v času
+
+scale = 1.0 / (fs*N)
+U = np.fft.rfft(u) # dejansko vzbujanje sistema
+F = np.fft.rfft(f) # pomerjeno vzbujanje sistema
+freq = np.fft.rfftfreq(N, d=dt)
+
+G_uu = 2*scale*np.abs(U.conj()*U)
+G_ff = 2*scale*np.abs(F.conj()*F)
+
+def alpha(freq, m, k, c):
+    """
+    Frekvenčna prenosna funkcija linearnega oscilatorja.
+    """
+    omega = 2*np.pi*freq
+    return 1 / (-omega**2*m + 1j*omega*c + k)
+
+H = alpha(freq, m=1,k=1e5,c=10)
+V = H*U                      #odziv brez šuma
+v = np.fft.irfft(V)        # dejanski odziv v času
+σ_n = np.std(v)/10**(SNR_x/20) # na podlagi definirije 20*np.log10(σ_v/σ_n)
+n = rng.normal(size=N, scale=σ_n)
+
+x = v + n            # pomerjen odziv sistema
+X = np.fft.rfft(x) # pomerjeno vzbujanje sistema
+
+G_fx = 2*scale*F.conj()*X
+G_xx = 2*scale*np.abs(X.conj()*X)
+G_xf = G_fx.conj()
+
+H1 = G_fx/G_ff
+H2 = G_xx/G_xf
+γ2 = np.abs(H1/H2)
 ------------------
 
-[1;36m  File [1;32m"C:\Users\janko\AppData\Local\Temp/ipykernel_120656/3270737407.py"[1;36m, line [1;32m1[0m
-[1;33m    np.testing.assert_allclose(,x_d_v)[0m
-[1;37m                               ^[0m
-[1;31mSyntaxError[0m[1;31m:[0m invalid syntax
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [1;32mIn [1][0m, in [0;36m<cell line: 1>[1;34m()[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[0;32m      4[0m rng [38;5;241m=[39m np[38;5;241m.[39mrandom[38;5;241m.[39mdefault_rng([38;5;241m0[39m)
 
-SyntaxError: invalid syntax (Temp/ipykernel_120656/3270737407.py, line 1)
+[1;31mModuleNotFoundError[0m: No module named 'numpy'
+ModuleNotFoundError: No module named 'numpy'
 

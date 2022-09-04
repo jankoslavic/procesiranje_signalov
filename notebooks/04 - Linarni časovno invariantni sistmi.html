@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Linearni časovno invariantni sistemi z eno prostostno stopnjo &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +20,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Enakomerno časovno vzorčenje in frekvenčno prekrivanje" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html" />
@@ -62,7 +63,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +86,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,14 +107,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Predgovor
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Predgovor
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01%20-%20Uvod.html">
    Uvod v procesiranje signalov
@@ -142,107 +159,209 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/04 - Linarni časovno invariantni sistmi.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/jankoslavic/procesiranje_signalov"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/04 - Linarni časovno invariantni sistmi.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/04 - Linarni časovno invariantni sistmi.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/04 - Linarni časovno invariantni sistmi.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jankoslavic/procesiranje_signalov"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/04 - Linarni časovno invariantni sistmi.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/04 - Linarni časovno invariantni sistmi.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prosti-odziv-homogena-resitev">
    Prosti odziv (homogena rešitev)
@@ -321,17 +440,111 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Linearni časovno invariantni sistemi z eno prostostno stopnjo</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prosti-odziv-homogena-resitev">
+   Prosti odziv (homogena rešitev)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#impulzna-odzivna-funkcija">
+     Impulzna odzivna funkcija
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#harmonsko-vzbujanje">
+   Harmonsko vzbujanje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prehodni-odziv-in-odziv-v-stacionarnem-stanju">
+   Prehodni odziv in odziv v stacionarnem stanju.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frekvecna-prenosna-funkcija">
+   Frekvečna prenosna funkcija
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#razlicne-oblike-frf">
+     Različne oblike FRF
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lastnosti-linearnega-casovno-invariantnega-sistema">
+   Lastnosti linearnega časovno invariantnega sistema
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#odziv-na-periodicno-vzbujanje">
+   Odziv na periodično vzbujanje
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zapis-vzbujanja-s-fourierovimi-vrstami">
+     Zapis vzbujanja s Fourierovimi vrstami
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zapis-odziva-s-pomocjo-fourierovih-vrst">
+     Zapis odziva s pomočjo Fourierovih vrst
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje">
+   Posplošitev periodičnega vzbujanja na poljubno vzbujanje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vzbujanje-z-enotskim-impulzom">
+   Vzbujanje z enotskim impulzom
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje">
+   Posplošitev enotskega vzbujanja na poljubno vzbujanje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#povezava-med-frekvencno-in-impulzno-prenosno-funkcijo">
+   Povezava med frekvenčno in impulzno prenosno funkcijo
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="linearni-casovno-invariantni-sistemi-z-eno-prostostno-stopnjo">
-<span id="sec-lti"></span><h1>Linearni časovno invariantni sistemi z eno prostostno stopnjo<a class="headerlink" href="#linearni-casovno-invariantni-sistemi-z-eno-prostostno-stopnjo" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="linearni-casovno-invariantni-sistemi-z-eno-prostostno-stopnjo">
+<span id="sec-lti"></span><h1>Linearni časovno invariantni sistemi z eno prostostno stopnjo<a class="headerlink" href="#linearni-casovno-invariantni-sistemi-z-eno-prostostno-stopnjo" title="Permalink to this headline">#</a></h1>
 <p>Sistema z eno prostostno stopnjo (ang. single degree of freedom system - SDOF, slika spodaj) lahko opišemo z nehomogeno diferencialno enačbo drugega reda:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -344,8 +557,8 @@ m\,\ddot{x}(t)+c\,\dot{x}(t)+k\,x(t)=f(t),
 x(t) = x_{h}(t) + x_{p}(t),
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(x_{p}\)</span> partikularna in <span class="math notranslate nohighlight">\(x_{h}\)</span> homogena rešitev.</p>
-<div class="section" id="prosti-odziv-homogena-resitev">
-<h2>Prosti odziv (homogena rešitev)<a class="headerlink" href="#prosti-odziv-homogena-resitev" title="Permalink to this headline">¶</a></h2>
+<section id="prosti-odziv-homogena-resitev">
+<h2>Prosti odziv (homogena rešitev)<a class="headerlink" href="#prosti-odziv-homogena-resitev" title="Permalink to this headline">#</a></h2>
 <p>Če vzbujevalne sile ni <span class="math notranslate nohighlight">\(f(t)=0\)</span>, je homogena rešitev pridobljena iz:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -437,8 +650,8 @@ c_{c} = 2\,\sqrt{k\,m},
 	\end{aligned}
 \end{split}\]</div>
 <p>še posebej pomembne in vodijo v rešitev impulznega odziva.</p>
-<div class="section" id="impulzna-odzivna-funkcija">
-<span id="sec-impulzna-odzivna-funkcija-d-x-0"></span><h3>Impulzna odzivna funkcija<a class="headerlink" href="#impulzna-odzivna-funkcija" title="Permalink to this headline">¶</a></h3>
+<section id="impulzna-odzivna-funkcija">
+<span id="sec-impulzna-odzivna-funkcija-d-x-0"></span><h3>Impulzna odzivna funkcija<a class="headerlink" href="#impulzna-odzivna-funkcija" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Impulzna odzivna funkcija:</p>
@@ -471,13 +684,22 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04 - Linarni časovno invariantni sistmi_11_0.png" src="../_images/04 - Linarni časovno invariantni sistmi_11_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, \omega_0, \omega_d, d_x_0, \delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
+</pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="harmonsko-vzbujanje">
-<h2>Harmonsko vzbujanje<a class="headerlink" href="#harmonsko-vzbujanje" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="harmonsko-vzbujanje">
+<h2>Harmonsko vzbujanje<a class="headerlink" href="#harmonsko-vzbujanje" title="Permalink to this headline">#</a></h2>
 <p>Nadaljujemo z rešitvijo gibalne enačbe za primer harmonskega vzbujanja:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -550,14 +772,14 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 	x_{p}(t)=\frac{1}{-\omega^2\,m+ \mathrm{i}\,\omega\,c+k}\,F%
 	\,e^{ \mathrm{i}\,\omega\,t}.
 \]</div>
-</div>
-<div class="section" id="prehodni-odziv-in-odziv-v-stacionarnem-stanju">
-<h2>Prehodni odziv in odziv v stacionarnem stanju.<a class="headerlink" href="#prehodni-odziv-in-odziv-v-stacionarnem-stanju" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="prehodni-odziv-in-odziv-v-stacionarnem-stanju">
+<h2>Prehodni odziv in odziv v stacionarnem stanju.<a class="headerlink" href="#prehodni-odziv-in-odziv-v-stacionarnem-stanju" title="Permalink to this headline">#</a></h2>
 <p>Najprej smo določili homogeno rešitev <span class="math notranslate nohighlight">\(x_{h}(t)\)</span>, katera predstavlja prehodni odziv na neko začetno motnjo. Partikularna rešitev <span class="math notranslate nohighlight">\(x_{p}(t)\)</span> predstavlja rešitev na stacionarno harmonsko motnjo. Rešitev v splošnem definira vsota obeh (slika spodaj).</p>
 <p><img alt="sdof_homo_part_trans_steady" src="../_images/sdof_homo_part_trans_steady.svg" /></p>
-</div>
-<div class="section" id="frekvecna-prenosna-funkcija">
-<span id="sec-frf"></span><h2>Frekvečna prenosna funkcija<a class="headerlink" href="#frekvecna-prenosna-funkcija" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="frekvecna-prenosna-funkcija">
+<span id="sec-frf"></span><h2>Frekvečna prenosna funkcija<a class="headerlink" href="#frekvecna-prenosna-funkcija" title="Permalink to this headline">#</a></h2>
 <p>Najprej se bomo osredotočili zgolj na partikularno rešitev (vendar več ne bomo uporabljali podpisa <span class="math notranslate nohighlight">\(p\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -584,7 +806,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 		H_0(\omega)&amp;=\frac{X(\omega)}{X_0}
 	\end{split}
 \]</div>
-<p>in se v nekaterih knjigah (npr.: <span id="id1">Géradin and Rixen [<a class="reference internal" href="../bibliography.html#id174">2015</a>]</span>) imenovana <strong>brezdimenzijska frekvenčna prenosna funkcija</strong> (ang. nondimensional frequency response function). V izrazu zgoraj je statični poves <span class="math notranslate nohighlight">\(X_0\)</span> zaradi statične sile <span class="math notranslate nohighlight">\(F\)</span> definiran kot:</p>
+<p>in se v nekaterih knjigah (npr.: <span id="id1">Géradin and Rixen [<a class="reference internal" href="../bibliography.html#id174" title="Michel Géradin and Daniel J. Rixen. Mechanical Vibrations: Theory and Application to Structural Dynamics. John Wiley &amp; Sons, 3$^\text rd$ edition, 2015. ISBN 9782225841682.">2015</a>]</span>) imenovana <strong>brezdimenzijska frekvenčna prenosna funkcija</strong> (ang. nondimensional frequency response function). V izrazu zgoraj je statični poves <span class="math notranslate nohighlight">\(X_0\)</span> zaradi statične sile <span class="math notranslate nohighlight">\(F\)</span> definiran kot:</p>
 <div class="math notranslate nohighlight">
 \[
 	X_0=\frac{F}{k}.
@@ -611,8 +833,8 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 \[
 x(t)=\alpha(\omega=\omega_f)\,F\,e^{ \mathrm{i}\,\omega_f\,t}.
 \]</div>
-<div class="section" id="razlicne-oblike-frf">
-<h3>Različne oblike FRF<a class="headerlink" href="#razlicne-oblike-frf" title="Permalink to this headline">¶</a></h3>
+<section id="razlicne-oblike-frf">
+<h3>Različne oblike FRF<a class="headerlink" href="#razlicne-oblike-frf" title="Permalink to this headline">#</a></h3>
 <p>Dimenzijski FRF je smiseln, saj je statični odklon <span class="math notranslate nohighlight">\(X_0\)</span> težko izmeriti in se pogosto merita vzbujevalna sila in odzivni pospešek. Namesto pospeška pogosto merimo še hitrost in premik). Posledično obstajajo različne oblike frekvenčne prenosne funkcije:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -662,10 +884,10 @@ x(t)=\alpha(\omega=\omega_f)\,F\,e^{ \mathrm{i}\,\omega_f\,t}.
 <p class="admonition-title">Note</p>
 <p>Inverzna vrednost pospešenosti je <strong>dinamična masa</strong> (<span class="math notranslate nohighlight">\(F/\ddot{X}\)</span>), inverzna vrednost pomičnosti je <strong>mehanska impedanca</strong> (<span class="math notranslate nohighlight">\( F/\dot{X}\)</span>) in inverzna vrednost podajnosti je <strong>dinamična togost</strong> (<span class="math notranslate nohighlight">\(F/X\)</span>).</p>
 </div>
-</div>
-</div>
-<div class="section" id="lastnosti-linearnega-casovno-invariantnega-sistema">
-<span id="sec-lti-lastnosti"></span><h2>Lastnosti linearnega časovno invariantnega sistema<a class="headerlink" href="#lastnosti-linearnega-casovno-invariantnega-sistema" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="lastnosti-linearnega-casovno-invariantnega-sistema">
+<span id="sec-lti-lastnosti"></span><h2>Lastnosti linearnega časovno invariantnega sistema<a class="headerlink" href="#lastnosti-linearnega-casovno-invariantnega-sistema" title="Permalink to this headline">#</a></h2>
 <p>Diferencialna enačba za sistem z eno prostostno stopnjo lahko razmemo kot sistem, ki poveže vzbujanje (input) z odzivom  (output):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -691,11 +913,11 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 \[
   f(t-t_0)   \to   {\textrm{Časovno invarianten sistem}}  \to    x(t-t_0) 
 \]</div>
-</div>
-<div class="section" id="odziv-na-periodicno-vzbujanje">
-<h2>Odziv na periodično vzbujanje<a class="headerlink" href="#odziv-na-periodicno-vzbujanje" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="zapis-vzbujanja-s-fourierovimi-vrstami">
-<h3>Zapis vzbujanja s Fourierovimi vrstami<a class="headerlink" href="#zapis-vzbujanja-s-fourierovimi-vrstami" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="odziv-na-periodicno-vzbujanje">
+<h2>Odziv na periodično vzbujanje<a class="headerlink" href="#odziv-na-periodicno-vzbujanje" title="Permalink to this headline">#</a></h2>
+<section id="zapis-vzbujanja-s-fourierovimi-vrstami">
+<h3>Zapis vzbujanja s Fourierovimi vrstami<a class="headerlink" href="#zapis-vzbujanja-s-fourierovimi-vrstami" title="Permalink to this headline">#</a></h3>
 <p>Glede <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-exp"><span class="std std-ref">Fourierove vrste v eksponentni (kompleksni) obliki</span></a> lahko periodično vzbujanje <span class="math notranslate nohighlight">\(f(t)\)</span> zapišemo kot:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -716,9 +938,9 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 <p class="admonition-title">Note</p>
 <p>Ker velja princip superpozicije, lahko vzbujanje razstavimo na poljubno komponent; tukaj vzbujanje razstavimo na posamezne člene Fourierove vrste; Fourierov koeficient <span class="math notranslate nohighlight">\(c_n\)</span> tako definira eno harmonsko komponento.</p>
 </div>
-</div>
-<div class="section" id="zapis-odziva-s-pomocjo-fourierovih-vrst">
-<h3>Zapis odziva s pomočjo Fourierovih vrst<a class="headerlink" href="#zapis-odziva-s-pomocjo-fourierovih-vrst" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="zapis-odziva-s-pomocjo-fourierovih-vrst">
+<h3>Zapis odziva s pomočjo Fourierovih vrst<a class="headerlink" href="#zapis-odziva-s-pomocjo-fourierovih-vrst" title="Permalink to this headline">#</a></h3>
 <p>Tukaj nadaljujemo izračunom rešitve za vsako harmonsko komponento vzbujanja posebej (glejte <a class="reference internal" href="#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>)</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -739,10 +961,10 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 \[
 	x(t) = \sum_{n=-\infty}^{+\infty} x_n(t).
 \]</div>
-</div>
-</div>
-<div class="section" id="posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje">
-<h2>Posplošitev periodičnega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje">
+<h2>Posplošitev periodičnega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje" title="Permalink to this headline">#</a></h2>
 <p>Fourierova transformacija predstavlja posplošitev Fourierovih vrst tudi na neperiodične podatke. Izpeljave, ki smo jih s pomočjo Fourierovih vrst naredili za periodično vzbujanje, lahko tako posplošimo.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -762,9 +984,9 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 	x(t)=\mathcal{F}^{-1}\{X(\omega)\}.
 \]</div>
 </div>
-</div>
-<div class="section" id="vzbujanje-z-enotskim-impulzom">
-<h2>Vzbujanje z enotskim impulzom<a class="headerlink" href="#vzbujanje-z-enotskim-impulzom" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="vzbujanje-z-enotskim-impulzom">
+<h2>Vzbujanje z enotskim impulzom<a class="headerlink" href="#vzbujanje-z-enotskim-impulzom" title="Permalink to this headline">#</a></h2>
 <p>Obravnavajmo sedaj vzbujanje enomasnega sistema z enostkim impulzom <span class="math notranslate nohighlight">\(f_1(t)=\delta(t-\tau)\)</span>, kjer je <span class="math notranslate nohighlight">\(\delta(t)\)</span> Diracova delta funkcija (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-cas"><span class="std std-ref">Diracova delta funkcija</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -782,9 +1004,9 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> <strong>impulzna prenosna funkcija</strong>.</p>
 <p>Odziv na enotski impult <strong>vzročnega sistema</strong> (tudi <strong>kavzalni sistem</strong>) je odvisen samo od preteklega (in trenutnega) vzbujanja, ne pa od prihodnjega. Vsi sistemi v tej knjigi veljajo za vzročne.</p>
-</div>
-<div class="section" id="posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje">
-<h2>Posplošitev enotskega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje">
+<h2>Posplošitev enotskega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje" title="Permalink to this headline">#</a></h2>
 <p>Splošno vzbujevalno silo (slika spodaj) lahko vidimo kot superpozicijo enotskih impulzov pomnoženih z določeno konstanto.</p>
 <p><img alt="general_forcing" src="../_images/general_forcing.svg" /></p>
 <p>Vsak neskončno kratek impulz bi povzročil odziv glede na impulzno prenosno funkcijo <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> pomnožen z amplitudo impulza <span class="math notranslate nohighlight">\(f(\tau)\,\Delta\tau\)</span>. Za linearne sisteme take odizve po principu superpozicioniran seštejemo:</p>
@@ -862,9 +1084,9 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 	\int_{-\infty}^{+\infty}\,f(\tau)\,h(t-\tau)\,\textrm{d}  \tau.
 \]</div>
 </div>
-</div>
-<div class="section" id="povezava-med-frekvencno-in-impulzno-prenosno-funkcijo">
-<h2>Povezava med frekvenčno in impulzno prenosno funkcijo<a class="headerlink" href="#povezava-med-frekvencno-in-impulzno-prenosno-funkcijo" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="povezava-med-frekvencno-in-impulzno-prenosno-funkcijo">
+<h2>Povezava med frekvenčno in impulzno prenosno funkcijo<a class="headerlink" href="#povezava-med-frekvencno-in-impulzno-prenosno-funkcijo" title="Permalink to this headline">#</a></h2>
 <p>V prejšnjih poglavjih sta bili predstavljeni frekvenčna prenosna funkcija <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in impulzna prenosna funkcija <span class="math notranslate nohighlight">\(h(t)\)</span>; prva je definirana v frekvenčni, druga v časovni domeni. V tem poglavju bomo dokazali, da <span class="math notranslate nohighlight">\(h(t)\)</span> in <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> tvorita par Fourierove transformacije.</p>
 <p>Fourierjeva transformacija enotskega impulza <span class="math notranslate nohighlight">\(f_1(t)=\delta(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -897,8 +1119,8 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 \]</div>
 </div>
 <p>Opomba: Fourierov par označuje označuje dve spremenljivki, ena v časovni, druga v frekvenčni domeni, ki sta povezani prek Fourierove transformacije.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -922,9 +1144,11 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="03%20-%20Fourierova%20integralska%20transformacija.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -940,26 +1164,28 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Janko Slavič<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Janko Slavič<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

@@ -1,0 +1,78 @@
+Traceback (most recent call last):
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import sympy as sym
+import matplotlib.pyplot as plt
+import numpy as np
+
+# navodilo: spreminaj parameter `a`
+
+t, f = sym.symbols('t, f', real=True)
+n, Δt = sym.symbols('n, Δt')
+a = sym.symbols('a', real=True, positive=True)
+x = sym.exp(-a*t**2)
+X = sym.fourier_transform(x, t, f)
+Xsum = sym.Sum(X.subs(f, f-n/Δt), (n, -10, 10))
+
+podatki = {a: 30, Δt: .2}
+# pripravimo vektorizirane funkcije za numpy
+f_x = sym.lambdify(t, x.subs(podatki), 'numpy')
+f_X_abs = sym.lambdify(f, sym.Abs(X.subs(podatki)), 'numpy')
+f_Xsum_abs = sym.lambdify(f, sym.Abs(Xsum.subs(podatki)), 'numpy')
+
+# zaloga vrednosti v času in frekvenci (t_g so 'gosti' podatki za prikaz zvezne funkcije)
+N = int(2/podatki[Δt]) # približno število -N, da imamo časovni trak cca [-2,2]
+t_g = np.arange(-10*N,10*N+1)*podatki[Δt]/10
+n = np.arange(-N,N+1)
+t_i = n*podatki[Δt]
+K = 2 # koliko sosednijih preslikav X(f) prikažemo
+fr = np.linspace(-K/podatki[Δt],K/podatki[Δt], num=500)
+
+plt.title('Časovna domena')
+plt.plot(t_g, f_x(t_g), 'C0', label='$x(t)$, zvezno', linewidth=4)
+plt.plot(t_i, f_x(t_i), color='C1', marker='o', ls='', label=f'$x(t_i)$, vzorčenje: $\\Delta t=${podatki[Δt]:3.2f}')
+plt.xlabel('$t$ [s]')
+plt.ylabel('$x(t)$')
+plt.legend()
+plt.show()
+
+plt.title('Frekvenčna domena')
+plt.plot(fr, f_X_abs(fr), 'C0', label='$|X(f)|$, zvezno', linewidth=4)
+for i in range(-K,K):
+    plt.plot(fr, f_X_abs(fr+i/podatki[Δt]), 'C0', ls=':')
+    plt.vlines(i/podatki[Δt], -0.1, np.max(f_X_abs(fr)), 'k', ls=':', alpha=0.2)
+plt.plot(fr, f_X_abs(fr+i/podatki[Δt]), 'C0', ls=':', label='$|X(f+i/\Delta t)|$')
+plt.vlines((i+1)/podatki[Δt], -0.1, np.max(f_X_abs(fr)), 'k', ls=':', alpha=0.2, label='$f=i/\Delta t$')
+plt.plot(fr, f_Xsum_abs(fr), color='C1', label=f'$|\sum_n\,X(f-n/\Delta t)|$, $\\Delta t=${podatki[Δt]:3.2f}')
+plt.xlabel('$f$ [Hz]')
+plt.ylabel('$|X(f)|$')
+plt.legend(loc=(1.01,0))
+plt.show()
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [1;32mIn [1][0m, in [0;36m<cell line: 1>[1;34m()[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01msympy[39;00m [38;5;28;01mas[39;00m [38;5;21;01msym[39;00m
+[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[0;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+
+[1;31mModuleNotFoundError[0m: No module named 'sympy'
+ModuleNotFoundError: No module named 'sympy'
+

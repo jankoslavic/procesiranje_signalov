@@ -1,67 +1,44 @@
 Traceback (most recent call last):
-  File "c:\python39\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
     executenb(
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 1112, in execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "c:\python39\lib\site-packages\nbclient\util.py", line 74, in wrapped
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "c:\python39\lib\site-packages\nbclient\util.py", line 53, in just_run
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "c:\python39\lib\asyncio\base_events.py", line 642, in run_until_complete
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
     return future.result()
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 553, in async_execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 857, in async_execute_cell
-    self._check_raise_for_error(cell, exec_reply)
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 760, in _check_raise_for_error
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 import sympy as sym
-t, f, τ = sym.symbols('t, f, τ', real=True)
-i = sym.I
-π = sym.pi
+t, f = sym.symbols('t, f', real=True)
+δ = sym.symbols('\delta', real=True, positive=True)
+podatki = {δ: 0.1}
+x = sym.exp(-δ*sym.Abs(t))
+X = sym.fourier_transform(x, t, f)
 
-x_1 = sym.exp(-t**2)
-x_2 = x_1*x_1
-X_1 = sym.fourier_transform(x_1, t, f)
-X_2 = sym.fourier_transform(x_2, t, f) #produkt v času
-
-X_3 = sym.integrate(X_1.subs(f, f_1)*X_1.subs(f, f-f_1), (f_1, -sym.oo, +sym.oo)) # konvolucija v frekvenci
-x_3 = sym.inverse_fourier_transform(X_3, f, t)
-
-p1 = sym.plot(x_1, (t, -2, +2), line_color='C0', 
-              label=f'$x_1(t)={sym.latex(x_1)}$', show=False,
-              title='Časovna domena', ylabel='$x(t)$', xlabel='$t$')
-p2 = sym.plot(x_2, (t, -2, +2), line_color='C1', 
-              label=f'$x_2(t)=x_1(t)\,x_1(t)$', show=False)
-p3 = sym.plot(x_3, (t, -1., +1.), line_color='C2', 
-              label='$x_3(t)=\\mathcal{F}^{-1}(\,X_1(f)*X_1(f)\,)$', show=False)
-p1.extend(p2)
-p1.extend(p3)
-p1.legend = True
-p1.show()
-
-p1 = sym.plot(sym.Abs(X_2), (f, -2, +2), line_color='C0',
-              label=f'$|X_2(f)|$', show=False, 
-              title='Frekvenčna domena - amplituda', ylabel='$|X(f)|$', xlabel='$f$')
-p2 = sym.plot(sym.Abs(X_3), (f, -.5, +.5), line_color='C1',
-              label=f'$|X_3(f)|$', show=False)
+sym.plot(x.subs(podatki), (t,-50,50), xlabel='$t [s]$', ylabel='$x(t)$', title='Časovna domena')
+p1 = sym.plot(sym.re(X.subs(podatki)), (f,-.1,.1), xlabel='$f [Hz]$', label='Re$(X(f))$', ylabel='', title='Frekvenčna domena', show=False)
+p2 = sym.plot(sym.im(X.subs(podatki)), (f,-.1,.1), line_color='C1', label='Im$(X(f))$', show=False)
 p1.extend(p2)
 p1.legend = True
 p1.show()
-
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mNameError[0m                                 Traceback (most recent call last)
-[1;32m~\AppData\Local\Temp/ipykernel_170968/424411083.py[0m in [0;36m<module>[1;34m[0m
-[0;32m      9[0m [0mX_2[0m [1;33m=[0m [0msym[0m[1;33m.[0m[0mfourier_transform[0m[1;33m([0m[0mx_2[0m[1;33m,[0m [0mt[0m[1;33m,[0m [0mf[0m[1;33m)[0m [1;31m#produkt v času[0m[1;33m[0m[1;33m[0m[0m
-[0;32m     10[0m [1;33m[0m[0m
-[1;32m---> 11[1;33m [0mX_3[0m [1;33m=[0m [0msym[0m[1;33m.[0m[0mintegrate[0m[1;33m([0m[0mX_1[0m[1;33m.[0m[0msubs[0m[1;33m([0m[0mf[0m[1;33m,[0m [0mf_1[0m[1;33m)[0m[1;33m*[0m[0mX_1[0m[1;33m.[0m[0msubs[0m[1;33m([0m[0mf[0m[1;33m,[0m [0mf[0m[1;33m-[0m[0mf_1[0m[1;33m)[0m[1;33m,[0m [1;33m([0m[0mf_1[0m[1;33m,[0m [1;33m-[0m[0msym[0m[1;33m.[0m[0moo[0m[1;33m,[0m [1;33m+[0m[0msym[0m[1;33m.[0m[0moo[0m[1;33m)[0m[1;33m)[0m [1;31m# konvolucija v frekvenci[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m     12[0m [0mx_3[0m [1;33m=[0m [0msym[0m[1;33m.[0m[0minverse_fourier_transform[0m[1;33m([0m[0mX_3[0m[1;33m,[0m [0mf[0m[1;33m,[0m [0mt[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0;32m     13[0m [1;33m[0m[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [1;32mIn [1][0m, in [0;36m<cell line: 1>[1;34m()[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01msympy[39;00m [38;5;28;01mas[39;00m [38;5;21;01msym[39;00m
+[0;32m      2[0m t, f [38;5;241m=[39m sym[38;5;241m.[39msymbols([38;5;124m'[39m[38;5;124mt, f[39m[38;5;124m'[39m, real[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m      3[0m δ [38;5;241m=[39m sym[38;5;241m.[39msymbols([38;5;124m'[39m[38;5;124m\[39m[38;5;124mdelta[39m[38;5;124m'[39m, real[38;5;241m=[39m[38;5;28;01mTrue[39;00m, positive[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
 
-[1;31mNameError[0m: name 'f_1' is not defined
-NameError: name 'f_1' is not defined
+[1;31mModuleNotFoundError[0m: No module named 'sympy'
+ModuleNotFoundError: No module named 'sympy'
 

@@ -1,57 +1,48 @@
 Traceback (most recent call last):
-  File "c:\python39\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
     executenb(
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 1112, in execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1204, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "c:\python39\lib\site-packages\nbclient\util.py", line 74, in wrapped
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\util.py", line 84, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "c:\python39\lib\site-packages\nbclient\util.py", line 53, in just_run
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\util.py", line 62, in just_run
     return loop.run_until_complete(coro)
-  File "c:\python39\lib\asyncio\base_events.py", line 642, in run_until_complete
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
     return future.result()
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 553, in async_execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 857, in async_execute_cell
-    self._check_raise_for_error(cell, exec_reply)
-  File "c:\python39\lib\site-packages\nbclient\client.py", line 760, in _check_raise_for_error
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 import sympy as sym
-t, ω_0, ω_d, d_x_0, δ, A, B, τ = sym.symbols('t, \omega_0, \omega_d, d_x_0, \delta, A, B, \\tau', real=True)
-π = sym.pi
-podatki = {ω_0: 1, d_x_0: 1, δ: 0.1, A: .5, B: 10}
+t, ω_0, ω_d, d_x_0, δ= sym.symbols('t, \omega_0, \omega_d, d_x_0, \delta', real=True)
+podatki = {ω_0: 1, d_x_0: 1, δ: 0.1}
 
 ω_d = ω_0 * sym.sqrt(1-δ**2)
+
 ovojnica = d_x_0/ω_d * sym.exp(-δ*ω_0*t)
-h = ovojnica * sym.sin(ω_d*t)*sym.Heaviside(t)
 
-f = A*t*(sym.Heaviside(t)-sym.Heaviside(t-B))
+x = ovojnica * sym.sin(ω_d*t)
 
-fh = (f.subs(t, τ)*h.subs(t, t-τ)).subs(podatki)
-fh = sym.integrate(fh, (τ, 0, t))
-
-p1 = sym.plot(h.subs(podatki), (t,-5,50), line_color='C0', xlabel='$t$ [s]', ylabel='', title='Časovna domena',
-             label='$h(t)$', show=False)
-p2 = sym.plot(f.subs(podatki), (t,-5,50), line_color='C1', 
-             label='$f(t)$', show=False)
-p3 = sym.plot(X, (t,-5,50), line_color='C2', 
-             label='$f(t)*h(t)$', show=False)
+p1 = sym.plot(ovojnica.subs(podatki), (t,0,50), line_color='C0', xlabel='$t$ [s]', ylabel='$x_h(t)$', title='Časovna domena',
+             label='Ovojnica', show=False)
+p2 = sym.plot(x.subs(podatki), (t,0,50), line_color='C1', 
+             label='$x_h(t)$', show=False)
 p1.extend(p2)
-p1.extend(p3)
 p1.legend = True
 p1.show()
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mNameError[0m                                 Traceback (most recent call last)
-[1;32m~\AppData\Local\Temp/ipykernel_80872/4189941778.py[0m in [0;36m<module>[1;34m[0m
-[0;32m     17[0m p2 = sym.plot(f.subs(podatki), (t,-5,50), line_color='C1', 
-[0;32m     18[0m              label='$f(t)$', show=False)
-[1;32m---> 19[1;33m p3 = sym.plot(X, (t,-5,50), line_color='C2', 
-[0m[0;32m     20[0m              label='$f(t)*h(t)$', show=False)
-[0;32m     21[0m [0mp1[0m[1;33m.[0m[0mextend[0m[1;33m([0m[0mp2[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [1;32mIn [1][0m, in [0;36m<cell line: 1>[1;34m()[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01msympy[39;00m [38;5;28;01mas[39;00m [38;5;21;01msym[39;00m
+[0;32m      2[0m t, ω_0, ω_d, d_x_0, δ[38;5;241m=[39m sym[38;5;241m.[39msymbols([38;5;124m'[39m[38;5;124mt, [39m[38;5;124m\[39m[38;5;124momega_0, [39m[38;5;124m\[39m[38;5;124momega_d, d_x_0, [39m[38;5;124m\[39m[38;5;124mdelta[39m[38;5;124m'[39m, real[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m      3[0m podatki [38;5;241m=[39m {ω_0: [38;5;241m1[39m, d_x_0: [38;5;241m1[39m, δ: [38;5;241m0.1[39m}
 
-[1;31mNameError[0m: name 'X' is not defined
-NameError: name 'X' is not defined
+[1;31mModuleNotFoundError[0m: No module named 'sympy'
+ModuleNotFoundError: No module named 'sympy'
 
