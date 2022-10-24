@@ -9,3 +9,4 @@ pyppeteer
 folium
 myst_nb
 pyuff
+pyexsi
