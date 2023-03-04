@@ -714,16 +714,8 @@ S_{fx} = H(f)\,S_{ff}(f).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
-</pre></div>
-</div>
+<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_9_0.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_9_0.png" />
+<img alt="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_9_1.png" src="../_images/08 - Odziv linearnih sistemov na naključno vzbujanje_9_1.png" />
 </div>
 </div>
 </section>
@@ -808,7 +800,7 @@ S_{fx} = H(f)\,S_{ff}(f).
 <p>Če je koherenca 0, to pomeni, da vzbujanje in odziv nista povezana, če je koherenca 1, pa to pomeni, da sta vzbujanje in odziv linearno odvisna. Odstopanje od 1 se izmeri tudi takrat, ko imamo v meritvi šum, obravnavamo nelinearen sistem ali pa je odziv posledica (tudi) drugih vzbujanj in ne samo <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
 </section>
 <section id="cenilke-frekvencne-prenosne-funkcije">
-<h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Permalink to this headline">#</a></h2>
+<span id="sec-cenilke-frf"></span><h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Permalink to this headline">#</a></h2>
 <p>Različne oblike frekvenčne prenosne funkcije (FRF) smo teoretično spoznali v poglavju: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>. Tukaj si bomo pogledali kako FRF ocenimo na podlagi izmerjenih podatkov, pri tem pa se bomo omejili na sisteme z enim (sočasnim) vzbujanjem in enim (sočasnim) odzivom (to so tako imenovani SISO sistemi: ang. <em>single input, single otput</em>).</p>
 <p>Linearni, časovno invariantni SISO sistem je mogoče predstaviti z blokovnim diagramom na sliki spodaj. Kjer je <span class="math notranslate nohighlight">\(f(t)\)</span> vzbujevalna sila, <span class="math notranslate nohighlight">\(h(t)\)</span> je funkcija impulznega odziva in <span class="math notranslate nohighlight">\(x(t)\)</span> je odziv; <span class="math notranslate nohighlight">\(F(\omega)\)</span>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in <span class="math notranslate nohighlight">\(X(\omega)\)</span> so njihovi pari v frekvenčni domeni.</p>
 <p><img alt="random_ensemble" src="../_images/FRF_nonoise.svg" /></p>
