@@ -924,13 +924,15 @@ c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 </section>
 <section id="identifikacija-harmonskih-funkcij-ki-sestavljajo-periodicno-funkcijo">
 <h2>Identifikacija harmonskih funkcij, ki sestavljajo periodično funkcijo<a class="headerlink" href="#identifikacija-harmonskih-funkcij-ki-sestavljajo-periodicno-funkcijo" title="Permalink to this headline">#</a></h2>
-<p>Sedaj se lahko vrnemo na izvorno nalogo Fourierovih vrst: <em>popis poljubne periodične funkcije s superpozicijo različnih harmonskih funkcij</em>. Vprašanje torej je: ali v periodični funkciji:</p>
+<p>Sedaj se lahko vrnemo na izvorno nalogo Fourierovih vrst: <strong>popis poljubne periodične funkcije s superpozicijo različnih harmonskih funkcij</strong>.</p>
+<p>Odgovoriti moramo na vprašanje: ali v periodični funkciji:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
 c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 \]</div>
-<p>lahko identificiramo harmonsko funkcijo s frekvenco <span class="math notranslate nohighlight">\(m\)</span> kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(c_m\,e^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>? Izkaže se, da je to relativno enostavno, če poskušamo izračunati integral periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> pomnožen z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, ki ima negativno frekvenco <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
+<p>lahko identificiramo harmonsko funkcijo s frekvenco <span class="math notranslate nohighlight">\(m\)</span> kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(c_m\,e^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>?</p>
+<p>Izkaže se, da je to relativno enostavno, če poskušamo izračunati integral periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> pomnožen z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, ki ima negativno frekvenco <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 \underbrace{\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{A_m}=
@@ -963,12 +965,12 @@ c_n\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \[
 B_m = c_m\,T_p
 \]</div>
-<p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznan Fourierov koeficient <span class="math notranslate nohighlight">\(c_m\)</span> definirana kot (gre za kompleksno število z amplitudo in fazo):</p>
+<p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznani Fourierov koeficient <span class="math notranslate nohighlight">\(c_m\)</span> definirana kot (gre za kompleksno število z amplitudo in fazo):</p>
 <div class="math notranslate nohighlight">
 \[
 c_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t
 \]</div>
-<p>Izpeljali smo torej, da je posamezno harmonsko komponento relativno enostavno določiti; težava v praksi je, da dani podatki <span class="math notranslate nohighlight">\(x(t)\)</span> nujno ne izpolnjujejo vseh predpostavk, ki smo jih zgoraj naredili (npr. da je harmonik celi večkratnik osnovne frekvence). Kljub temu, pa Fourierove vrste uporabljamo in nam dajejo odlične rezultate.</p>
+<p>Izpeljali smo torej, da je posamezno harmonsko komponento relativno enostavno določiti; v praksi se pojavi težava, da dani podatki <span class="math notranslate nohighlight">\(x(t)\)</span> ne izpolnjujejo vseh predpostavk,predvsem ne tiste, da je harmonik celi večkratnik osnovne frekvence; s temi težavami se bomo soočili v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-okna"><span class="std std-ref">Uporaba oken</span></a>.</p>
 </section>
 <section id="posplositev">
 <h2>Posplošitev<a class="headerlink" href="#posplositev" title="Permalink to this headline">#</a></h2>
