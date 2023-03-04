@@ -623,21 +623,21 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fourierove-vrste">
 <span id="sec-fourierove-vrste"></span><h1>Fourierove vrste<a class="headerlink" href="#fourierove-vrste" title="Permalink to this headline">#</a></h1>
-<p>Cilj Fourierovih vrst je, da bi poljubne (periodične) podatke opisali z vsoto harmonskih funkcij različnih osnovnih period. Ta cilj je v tem trenutku definiran relativno površno; vse detajle bomo pogledali v tem poglavju. Pot nas bo vodila preko sledečih korakov:</p>
+<p>Cilj Fourierovih vrst je, da bi poljubne (periodične) podatke opisali z vsoto harmonskih funkcij različnih osnovnih period. Ta cilj je v tem trenutku definiran relativno površno, saj bomo več detajlov dodali postopoma, po sledečih korakih:</p>
 <ol class="simple">
-<li><p>zapis periodične funkcije, kot vsote harmonskih funkcij</p></li>
-<li><p>identifikacija harmonskih funkcij iz točke 1.</p></li>
-<li><p>posplošitev</p></li>
+<li><p>korak: zapis periodične funkcije, kot vsote harmonskih funkcij,</p></li>
+<li><p>korak: identifikacija harmonskih funkcij iz točke 1,</p></li>
+<li><p>korak: posplošitev.</p></li>
 </ol>
-<p>To poglavje je napisano na podlagi večjega števila virov in lastnega raziskovanja. Med knjižnjimi viri bralcu priporočam <span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>, med video vsebinami pa <a class="reference external" href="https://www.youtube.com/watch?v=r6sGWTCMz2k">Grant Sanderson: But what is a Fourier series? From heat flow to drawing with circles</a>.</p>
+<p>Kot morebitne dodatne vire, lahko tukaj priporočamo <span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span> in <a class="reference external" href="https://www.youtube.com/watch?v=r6sGWTCMz2k">Grant Sanderson: But what is a Fourier series? From heat flow to drawing with circles</a>.</p>
 <section id="zapis-periodicne-funkcije-kot-vsote-harmonskih-funkcij">
 <h2>Zapis periodične funkcije, kot vsote harmonskih funkcij<a class="headerlink" href="#zapis-periodicne-funkcije-kot-vsote-harmonskih-funkcij" title="Permalink to this headline">#</a></h2>
-<p>Preden gremo v podrobnosti Fourierovih vrst, si pogljemo definicijo splošne harmonske funkcije:</p>
+<p>Preden gremo v podrobnosti Fourierovih vrst, si poglejmo definicijo splošne harmonske funkcije:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = A\,\sin(\omega\,t+\varphi),
 \]</div>
-<p>kjer je <span class="math notranslate nohighlight">\(A\)</span> amplituda, <span class="math notranslate nohighlight">\(\omega\)</span> krožna frekvenca (enota: rad/s) in <span class="math notranslate nohighlight">\(\varphi\)</span> fazni kot (enota rad) glede na izhodišče časa. Pri tem je <span class="math notranslate nohighlight">\(\omega=2\,\pi\,f\)</span> in je <span class="math notranslate nohighlight">\(f\)</span> (sekundna) frekvenca (enota: 1/s=Hz). Pozitivna faza pomakne harmonsko funkcijo proti levi, negativna faza pa proti desni. Perioda <span class="math notranslate nohighlight">\(T\)</span>, ko se harmonska funkcija ponovi je definirana z krožno frekvenco: <span class="math notranslate nohighlight">\(T=2\,\pi/\omega\)</span>.</p>
+<p>kjer je <span class="math notranslate nohighlight">\(A\)</span> amplituda, <span class="math notranslate nohighlight">\(\omega\)</span> krožna frekvenca (enota: rad/s) in <span class="math notranslate nohighlight">\(\varphi\)</span> fazni kot (enota rad) glede na izhodišče časa. Pri tem je <span class="math notranslate nohighlight">\(\omega=2\,\pi\,f\)</span> in je <span class="math notranslate nohighlight">\(f\)</span> (sekundna) frekvenca (enota: 1/s=Hz). Pozitivna faza pomakne harmonsko funkcijo proti levi, negativna faza pa proti desni. Perioda <span class="math notranslate nohighlight">\(T\)</span> je definirana s krožno frekvenco: <span class="math notranslate nohighlight">\(T=2\,\pi/\omega\)</span>.</p>
 <p>Primer harmonske funkcije z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>, krožno frekvenco <span class="math notranslate nohighlight">\(\omega=1\,\)</span>rad/s in pozitivno fazo <span class="math notranslate nohighlight">\(\varphi=1\,\)</span>rad je prikazan spodaj.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -694,7 +694,7 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 <img alt="../_images/02 - Fourierove vrste_3_0.png" src="../_images/02 - Fourierove vrste_3_0.png" />
 </div>
 </div>
-<p>Potem, ko smo podrobneje spoznali eno harmonsko funkcijo, nadaljujemo s vsoto harmonskih funkcij, pri tem se bomo omejili na kompleksno periodične podatke (glejte <a class="reference internal" href="01%20-%20Uvod.html#sec-klasifikacija-pod"><span class="std std-ref">Klasifikacija podatkov</span></a>), kjer je razmerje med frekvencami posameznih harmonikov racionalno število. Frekvence harmonskih funkcij bomo dodatno omejili: če je osnovna krožna frekvenca <span class="math notranslate nohighlight">\(\omega_p=2\,\pi/T_p\)</span> definirana z osnovno periodo <span class="math notranslate nohighlight">\(T_p\)</span>, potem bomo za vse ostale harmonike zahtevali, da imajo krožno frekvenco, ki je večkratnik osnovne krožne frekvence.</p>
+<p>Nadaljujmo sedaj z vsoto harmonskih funkcij, pri tem se bomo omejili na kompleksno periodične podatke (glejte <a class="reference internal" href="01%20-%20Uvod.html#sec-klasifikacija-pod"><span class="std std-ref">Klasifikacija podatkov</span></a>), kjer je razmerje med frekvencami posameznih harmonikov racionalno število. Frekvence harmonskih funkcij bomo dodatno omejili: če je osnovna krožna frekvenca <span class="math notranslate nohighlight">\(\omega_p=2\,\pi/T_p\)</span> definirana z osnovno periodo <span class="math notranslate nohighlight">\(T_p\)</span>, potem bomo za vse ostale harmonike zahtevali, da imajo krožno frekvenco, ki je večkratnik osnovne krožne frekvence.</p>
 <p>Opisu ustreza vsota harmonskih funkcij:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -706,7 +706,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 \right],
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(a_0\)</span> konstanta, <span class="math notranslate nohighlight">\(a_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te cosinusne komponente in <span class="math notranslate nohighlight">\(b_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te sinusne komponente.</p>
-<p>Spodaj si poglejmo primer harmonske funkcije, ki ustreza zgornjim omejitvam.</p>
+<p>Spodaj si poglejmo primer harmonske funkcije, ki ustreza omejitvam.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -761,7 +761,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 <img alt="../_images/02 - Fourierove vrste_5_0.png" src="../_images/02 - Fourierove vrste_5_0.png" />
 </div>
 </div>
-<p>Periodična funkcija kakor smo si jo pogledali zgoraj je ključnega pomena za razumevanje Fourierovih vrst in pozneje Fourierove transformacije (glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">Fourierova integralska transformacija</span></a>). V nadaljevanju bomo periodično funkcijo najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
+<p>Periodična funkcija, kakor smo si jo pogledali zgoraj, je ključnega pomena za razumevanje Fourierovih vrst (in pozneje Fourierove transformacije, glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">Fourierova integralska transformacija</span></a>). V nadaljevanju bomo periodično funkcijo najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
 <p>Zapis v kompleksno obliko začnemo s pomočjo Eulerjeve formule:</p>
 <div class="math notranslate nohighlight">
 \[

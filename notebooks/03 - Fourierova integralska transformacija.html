@@ -676,16 +676,8 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
-</pre></div>
-</div>
+<img alt="../_images/03 - Fourierova integralska transformacija_7_0.png" src="../_images/03 - Fourierova integralska transformacija_7_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_7_1.png" src="../_images/03 - Fourierova integralska transformacija_7_1.png" />
 </div>
 </div>
 <p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič (pri Fourierovih vrstah bi bili kosinusni členi različni od nič, sinusni pa enaki nič). To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelni bi bila imaginarna komponentna (slika spodaj).</p>
@@ -793,7 +785,7 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \frac{i A \mathcal{F}_{t}\left[e^{- 2 i \pi p t}\right]\left(f\right)}{2} - \frac{i A \mathcal{F}_{t}\left[e^{2 i \pi p t}\right]\left(f\right)}{2}\]</div>
+\[\displaystyle \frac{i A \left(\mathcal{F}_{t}\left[e^{- 2 i \pi p t}\right]\left(f\right) - \mathcal{F}_{t}\left[e^{2 i \pi p t}\right]\left(f\right)\right)}{2}\]</div>
 </div>
 </div>
 <p>Glede na lastnosti Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>) vemo <span class="math notranslate nohighlight">\(\mathcal{F}_{t}\left[e^{-2 \textrm{i}\,\pi\,p\,t}\right]\left(f\right)=\delta(p+f)\)</span> in torej sledi:</p>
