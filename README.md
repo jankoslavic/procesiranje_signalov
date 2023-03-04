@@ -1,2 +1,2 @@
-# procesiranje_signalov
-Procesiranje signalov, Mag študij na Fakulteti za strojništvo UL
+# J. Slavič: Procesiranje signalov, 2023
+Ta knjiga je nastala na podlagi raziskovalno-razvojnega dela Laboratorija za dinamiko strojev in konstrukcij. Procesiranje signalov je elementarni del več deset člankov objavljenih v vodilnih revijah področja (npr.: Mechanical Systems and Signal Processing, Elsevier) kakor tudi bistveni vsebinski del naprav za končno kontrolo, ki so implementirana v slovenski in tuji industriji. Procesiranje signalov predstavlja tudi pomeben del monografije na temo vibracijskega utrujanja (glejte: Slavič et al. [2020]), ki kot prva povezuje spektralne metode identifikacije poškodovanosti s teorijo strukturne dinamike.
