@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Osnove naključnih procesov &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
+    <title>7. Osnove naključnih procesov &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Odziv linearnih sistemov na naključno vzbujanje" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" />
-    <link rel="prev" title="Diskretna Fourierova transformacija" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" />
+    <link rel="next" title="8. Odziv linearnih sistemov na naključno vzbujanje" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" />
+    <link rel="prev" title="6. Diskretna Fourierova transformacija" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,42 +118,42 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01%20-%20Uvod.html">
-   Uvod v procesiranje signalov
+   1. Uvod v procesiranje signalov
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02%20-%20Fourierove%20vrste.html">
-   Fourierove vrste
+   2. Fourierove vrste
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">
-   Fourierova integralska transformacija
+   3. Fourierova integralska transformacija
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html">
-   Linearni časovno invariantni sistemi z eno prostostno stopnjo
+   4. Linearni časovno invariantni sistemi z eno prostostno stopnjo
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">
-   Enakomerno časovno vzorčenje in frekvenčno prekrivanje
+   5. Kvantizacija podatkov
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">
-   Diskretna Fourierova transformacija
+   6. Diskretna Fourierova transformacija
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Osnove naključnih procesov
+   7. Osnove naključnih procesov
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html">
-   Odziv linearnih sistemov na naključno vzbujanje
+   8. Odziv linearnih sistemov na naključno vzbujanje
   </a>
  </li>
 </ul>
@@ -420,7 +420,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Osnove naključnih procesov</h1>
+                <h1>7. Osnove naključnih procesov</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -490,7 +490,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="osnove-nakljucnih-procesov">
-<span id="sec-random"></span><h1>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this headline">#</a></h1>
+<span id="sec-random"></span><h1>7. Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this headline">#</a></h1>
 <p>Dinamične obremenitve pogosto niso deterministične; primeri naključnih obremenitve so: obremenitve zaradi morskih valov, hrapavost ceste in vibracije zaradi pogonskega motorja. Take obremenitve je treba obravnavati kot <strong>naključne procese</strong>. V tem poglavju si bomo pogledali kako to naredimo in kako jih potem uspešno uporabimo pri obravnavi dinamskih sistemov.</p>
 <p>Naključnih podatkov v nasprotju z determinističnimi podatki ni mogoče natančno predvideti, določene značilnosti pa lahko razberemo z analizo njihovih segmentov; če na primer pomerimo hrapavost segmenta površine, lahko z določeno verjetnostjo sklepamo o značilnostih hrapavosti drugih segmentov. Pri opisu naključnih procesov si pogosto pomagamo s predpostavko porazdelitve procesa (npr. normalno porazdeljen proces).</p>
 <p>Medtem ko bi lahko naključni proces analizirali v časovni domeni, obstajajo pomanjkljivosti za uporabo takega pristopa. Za ustrezno vrednotenje procesa je treba v časovni domeni opraviti dovolj veliko število vzorčnih meritev (ali opazovanj), ki jih nato analiziramo kot skupino (ansambel, ang. <em>ensemble</em>). Kakor bomo videli pozneje, je strukturno dinamiko in naključne procese v frekvenčni domeni bistveno elegantneje analizirati.</p>
@@ -1142,13 +1142,13 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Diskretna Fourierova transformacija</p>
+            <p class="prev-next-title">6. Diskretna Fourierova transformacija</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Odziv linearnih sistemov na naključno vzbujanje</p>
+        <p class="prev-next-title">8. Odziv linearnih sistemov na naključno vzbujanje</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Fourierova integralska transformacija &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
+    <title>3. Fourierova integralska transformacija &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linearni časovno invariantni sistemi z eno prostostno stopnjo" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" />
-    <link rel="prev" title="Fourierove vrste" href="02%20-%20Fourierove%20vrste.html" />
+    <link rel="next" title="4. Linearni časovno invariantni sistemi z eno prostostno stopnjo" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" />
+    <link rel="prev" title="2. Fourierove vrste" href="02%20-%20Fourierove%20vrste.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,42 +118,42 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01%20-%20Uvod.html">
-   Uvod v procesiranje signalov
+   1. Uvod v procesiranje signalov
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02%20-%20Fourierove%20vrste.html">
-   Fourierove vrste
+   2. Fourierove vrste
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Fourierova integralska transformacija
+   3. Fourierova integralska transformacija
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html">
-   Linearni časovno invariantni sistemi z eno prostostno stopnjo
+   4. Linearni časovno invariantni sistemi z eno prostostno stopnjo
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">
-   Enakomerno časovno vzorčenje in frekvenčno prekrivanje
+   5. Kvantizacija podatkov
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">
-   Diskretna Fourierova transformacija
+   6. Diskretna Fourierova transformacija
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">
-   Osnove naključnih procesov
+   7. Osnove naključnih procesov
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html">
-   Odziv linearnih sistemov na naključno vzbujanje
+   8. Odziv linearnih sistemov na naključno vzbujanje
   </a>
  </li>
 </ul>
@@ -465,7 +465,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Fourierova integralska transformacija</h1>
+                <h1>3. Fourierova integralska transformacija</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -580,13 +580,13 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fourierova-integralska-transformacija">
-<span id="sec-fourierova-int-transf"></span><h1>Fourierova integralska transformacija<a class="headerlink" href="#fourierova-integralska-transformacija" title="Permalink to this headline">#</a></h1>
-<p>Izračun Fourierove vrste temelji na periodi <span class="math notranslate nohighlight">\(T_p\)</span>; integral za izračun koeficientov lahko definiramo od <span class="math notranslate nohighlight">\(-T_p/2\)</span> do <span class="math notranslate nohighlight">\(+T_p/2\)</span>:</p>
+<span id="sec-fourierova-int-transf"></span><h1>3. Fourierova integralska transformacija<a class="headerlink" href="#fourierova-integralska-transformacija" title="Permalink to this headline">#</a></h1>
+<p>Izračun Fourierove vrste (<a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fourierove-vrste"><span class="std std-ref">2. Fourierove vrste</span></a>) temelji na periodi <span class="math notranslate nohighlight">\(T_p\)</span>; integral za izračun koeficientov lahko definiramo od <span class="math notranslate nohighlight">\(-T_p/2\)</span> do <span class="math notranslate nohighlight">\(+T_p/2\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 c_n=\frac{1}{T_p}\,\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{p}\,n\,t}\,\textrm{d} t,
 \]</div>
-<p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, osnovna krožna frekvenca gre proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemu težavam pri deljenju z <span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(c_n\)</span> pomnožimo s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
+<p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, osnovna krožna frekvenca gre proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemu težavam pri deljenju z <span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(c_n\)</span> pomnožimo zgornji izraz s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{T_p\rightarrow \infty} c_n\,T_p=\underbrace{\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{n}\,t}\,\textrm{d} t}_{X(\omega_n)}.
@@ -641,7 +641,7 @@ x(t)=\int_{-\infty}^{+\infty} X(f)\,e^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
 \[
 \mathcal{F}\{\delta(t)\} = \int_{-\infty}^{+\infty} \delta(t)\,e^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t=e^{-\,\textrm{i}\,\omega\,0}=1,
 \]</div>
-<p>Na podlagi zgornje izpejave zaključimo, da Dirakova delta funkcija, ki je v času neskončno kratka v frekvenčni domeni zasede celotni spekter (vse frekvence). Veljalo bi tudi obratno, če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu bomo se pozneje vračali.</p>
+<p>Na podlagi zgornje izpejave zaključimo, da je Dirakova delta funkcija v času neskončno kratka, v frekvenčni domeni pa neskončno široka (zasede celotni spekter oz vse frekvence). Veljalo bi tudi obratno, če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu bomo se pozneje vračali.</p>
 </section>
 <section id="simetricna-eksponentno-padajoca-funkcija">
 <h3>Simetrična eksponentno padajoča funkcija<a class="headerlink" href="#simetricna-eksponentno-padajoca-funkcija" title="Permalink to this headline">#</a></h3>
@@ -655,7 +655,7 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 \[
 \mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty} e^{-\delta\,|t|}\,e^{-\,\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{2\,\delta}{\delta^{2} + 4 \pi^{2}\,f^{2}}
 \]</div>
-<p>Opazimo, da je pri frekvenci 0 Hz ampituda <span class="math notranslate nohighlight">\(|X(0)|=2/\delta\)</span>, in pade na polovico začetne amplitude pri frekvenci: <span class="math notranslate nohighlight">\(f_{1/2}=\delta/(2\pi)\)</span>. Parameter <span class="math notranslate nohighlight">\(\delta\)</span> definiran časovni raztros; večja, ko je vrednost <span class="math notranslate nohighlight">\(\delta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni (glede na <span class="math notranslate nohighlight">\(f_{1/2}\)</span>). Podobno kakor pri delta funkciji, torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
+<p>Opazimo, da je pri frekvenci 0 Hz ampituda <span class="math notranslate nohighlight">\(|X(0)|=2/\delta\)</span>, in pade na polovico začetne amplitude pri frekvenci: <span class="math notranslate nohighlight">\(f_{1/2}=\delta/(2\pi)\)</span>. Parameter <span class="math notranslate nohighlight">\(\delta\)</span> definira časovni raztros; večja, ko je vrednost <span class="math notranslate nohighlight">\(\delta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni. Podobno kakor pri delta funkciji, torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
 <p>Poglejmo si sedaj zgled v času in frekvenci:</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -705,7 +705,7 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 <img alt="../_images/03 - Fourierova integralska transformacija_9_1.png" src="../_images/03 - Fourierova integralska transformacija_9_1.png" />
 </div>
 </div>
-<p>Sicer pa tukaj velja poudariti, da realni podatki <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje koračno funkcijo). Tukaj velja poudariti, da so časovni podatki lahko v splošnem tudi komplekne oblike in takrat v frekvenčni domeni praviloma ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
+<p>Sicer pa velja poudariti, da realni podatki <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje koračno funkcijo). Časovni podatki so v splošnem lahko komplekne oblike in takrat v frekvenčni domeni praviloma ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -854,18 +854,18 @@ a&amp;;\qquad |t|&lt;b\\
 0&amp;;\qquad \textrm{sicer,}
 \end{cases}
 \end{split}\]</div>
-<p>kar v primeru Fourierove transformacije vodi v::</p>
+<p>kar v primeru Fourierove transformacije vodi v:</p>
 <div class="math notranslate nohighlight">
 \[
 X(f)=\int_{-\infty}^{+\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=
 \int_{-b}^{+b} a\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{a \sin\left(2 \pi\,b\,f \right)}{\pi\,f},
 \]</div>
-<p>kar preoblikujemo v</p>
+<p>in lahko preoblikujemo v:</p>
 <div class="math notranslate nohighlight">
 \[
-X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f },
+X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 \]</div>
-<p>saj sedaj jasno vidimo: ko <span class="math notranslate nohighlight">\(f\)</span> limitira proti 0, <span class="math notranslate nohighlight">\(X(f)\)</span> limitira k <span class="math notranslate nohighlight">\(2\,a\,b\)</span>; sicer pa v frekvenčni domeni oscilira s frekvenco <span class="math notranslate nohighlight">\(1/b\)</span>. Nekatere karakteristike vidimo iz slike spodaj: ponovno opazimo, da bolj, ko so podatki široki v času, bolj so ozki v frekvenci.</p>
+<p>Zgprnji izraz jasno kaže: ko <span class="math notranslate nohighlight">\(f\)</span> limitira proti 0, <span class="math notranslate nohighlight">\(X(f)\)</span> limitira k <span class="math notranslate nohighlight">\(2\,a\,b\)</span>; sicer pa v frekvenčni domeni oscilira s frekvenco <span class="math notranslate nohighlight">\(1/b\)</span>. Nekatere karakteristike vidimo iz slike spodaj: ponovno opazimo, da bolj, ko so podatki široki v času, bolj so ozki v frekvenci.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1934,13 +1934,13 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Fourierove vrste</p>
+            <p class="prev-next-title">2. Fourierove vrste</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linearni časovno invariantni sistemi z eno prostostno stopnjo</p>
+        <p class="prev-next-title">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
