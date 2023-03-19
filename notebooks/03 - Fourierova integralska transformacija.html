@@ -388,8 +388,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#duseni-odziv-signal">
-     Dušeni odziv signal
+    <a class="reference internal nav-link" href="#duseni-odziv">
+     Dušeni odziv
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -501,8 +501,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#duseni-odziv-signal">
-     Dušeni odziv signal
+    <a class="reference internal nav-link" href="#duseni-odziv">
+     Dušeni odziv
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -645,7 +645,7 @@ x(t)=\int_{-\infty}^{+\infty} X(f)\,e^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
 </section>
 <section id="simetricna-eksponentno-padajoca-funkcija">
 <h3>Simetrična eksponentno padajoča funkcija<a class="headerlink" href="#simetricna-eksponentno-padajoca-funkcija" title="Permalink to this headline">#</a></h3>
-<p>Poglejmo si sedaj še <strong>simetrično eksponentno padajočo funkcijo</strong> <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
+<p>Poglejmo si sedaj še <strong>simetrično, eksponentno padajočo, funkcijo</strong> <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
@@ -858,14 +858,14 @@ a&amp;;\qquad |t|&lt;b\\
 <div class="math notranslate nohighlight">
 \[
 X(f)=\int_{-\infty}^{+\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=
-\int_{-b}^{+b} a\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{a \sin\left(2 \pi\,b\,f \right)}{\pi\,f},
+\int_{-b}^{+b} a\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{a \sin\left(2 \pi\,b\,f \right)}{\pi\,f}
 \]</div>
 <p>in lahko preoblikujemo v:</p>
 <div class="math notranslate nohighlight">
 \[
 X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 \]</div>
-<p>Zgprnji izraz jasno kaže: ko <span class="math notranslate nohighlight">\(f\)</span> limitira proti 0, <span class="math notranslate nohighlight">\(X(f)\)</span> limitira k <span class="math notranslate nohighlight">\(2\,a\,b\)</span>; sicer pa v frekvenčni domeni oscilira s frekvenco <span class="math notranslate nohighlight">\(1/b\)</span>. Nekatere karakteristike vidimo iz slike spodaj: ponovno opazimo, da bolj, ko so podatki široki v času, bolj so ozki v frekvenci.</p>
+<p>Zgornji izraz jasno kaže: ko <span class="math notranslate nohighlight">\(f\)</span> limitira proti 0, <span class="math notranslate nohighlight">\(X(f)\)</span> limitira k <span class="math notranslate nohighlight">\(2\,a\,b\)</span>; sicer pa v frekvenčni domeni oscilira s frekvenco <span class="math notranslate nohighlight">\(1/b\)</span>. Nekatere karakteristike vidimo iz slike spodaj: ponovno opazimo, da bolj, ko so podatki široki v času, bolj so ozki v frekvenci.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -902,8 +902,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 </div>
 </div>
 </section>
-<section id="duseni-odziv-signal">
-<h3>Dušeni odziv signal<a class="headerlink" href="#duseni-odziv-signal" title="Permalink to this headline">#</a></h3>
+<section id="duseni-odziv">
+<h3>Dušeni odziv<a class="headerlink" href="#duseni-odziv" title="Permalink to this headline">#</a></h3>
 <p>Tukaj si bomo najprej pogledali simetrični dušeni odziv:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1286,7 +1286,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </div>
 <p>Opazimo, da člen <span class="math notranslate nohighlight">\(e^{-\textrm{i}\,2\pi\,f\,t_0}\)</span> lahko izpostavimo iz integrala.</p>
-<p>Časovno skaliranje postane pomembno kadar obravnavamo zakasnjene meritve (npr. da eno meritev merimo z zakasnitvijo glede na ostale): glejte primer spodaj.</p>
+<p>Časovno skaliranje postane pomembno, kadar obravnavamo zakasnjene meritve (npr. da eno meritev merimo z zakasnitvijo glede na ostale): glejte primer spodaj.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1433,12 +1433,12 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <h3>Odvajanje<a class="headerlink" href="#odvajanje" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Fourierova transformacija funkcije odvajane v času je z neodvajanj v relaciji:</p>
+<p>Če je <span class="math notranslate nohighlight">\(\dot x(t)\)</span> časovni odvod <span class="math notranslate nohighlight">\(x(t)\)</span>, je njuna relacija v frekvenčni domeni:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}\{\dot x(t)\} = \textrm{i}\,2\pi\,f\,X(f)
 \]</div>
-<p>kjer velja, da gre <span class="math notranslate nohighlight">\(x(0)\rightarrow 0\)</span>, ko gre <span class="math notranslate nohighlight">\(t\rightarrow \pm\infty\)</span>.</p>
+<p>kjer velja predpostavka, da gre <span class="math notranslate nohighlight">\(x(t)\rightarrow 0\)</span>, ko gre <span class="math notranslate nohighlight">\(t\rightarrow \pm\infty\)</span>.</p>
 </div>
 <p>Še izpeljava:</p>
 <div class="cell docutils container">
@@ -1483,8 +1483,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle x{\left(t \right)} e^{- 2 i \pi f t}\]</div>
 </div>
 </div>
-<p>izračunati ob mejah <span class="math notranslate nohighlight">\(+\infty\)</span> in <span class="math notranslate nohighlight">\(-\infty\)</span>; glede na definiricjo zgoraj, v obeh primerih velja <span class="math notranslate nohighlight">\(x(t=\pm \infty)=0\)</span>.</p>
-<p>Preostane torej samo še drugi del integriranja po delih (in s tem smo dokazali zgodaj zapisano):</p>
+<p>izračunati ob mejah <span class="math notranslate nohighlight">\(+\infty\)</span> in <span class="math notranslate nohighlight">\(-\infty\)</span>; glede na definicijo zgoraj, v obeh primerih (zaradi predhodne predpostavke) velja <span class="math notranslate nohighlight">\(x(t=\pm \infty)=0\)</span>.</p>
+<p>Preostane torej samo še drugi del integriranja po delih:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">du</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
@@ -1496,12 +1496,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle - 2 i \pi f \int\limits_{-\infty}^{\infty} x{\left(t \right)} e^{- 2 i \pi f t}\, dt\]</div>
 </div>
 </div>
+<p>in s tem smo dokazal zaključili.</p>
 </section>
 <section id="integriranje">
 <h3>Integriranje<a class="headerlink" href="#integriranje" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Fourierova transformacija funkcije integriranje v času je z osnovno v relaciji:</p>
+<p>Če je <span class="math notranslate nohighlight">\(\int_{-\infty}^t x(\tau)\,\textrm{d}\tau\)</span> integral funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, je njuna relacija v frekvenčni domeni:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}\big{\{}\int_{-\infty}^t x(\tau)\,\textrm{d}\tau\big{\}} = \frac{X(f)}{\textrm{i}\,2\pi\,f}.
@@ -1514,8 +1515,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \]</div>
 <p>pri čemer naredimo zamenjavo funkcije: <span class="math notranslate nohighlight">\(u(t)=\dot x(t)\)</span> in <span class="math notranslate nohighlight">\(\int_{-\infty}^t u(t)\,\textrm{d}\tau=x(t)\)</span>:</p>
 <p>Odvajanje in integriranje v frekvenčni domeni sta zelo pomembni lastnosti Fourierove transformacije, saj nam omogočata enostaven prehod med odvajanimi in integriranimi podatki.</p>
-<p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacijo, saj temelji na razliki števil, ki se razlikujeta/jo malo (razlika pa se nato še deli z majhnim korakom). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljeno.</p>
-<p>Nadalje velja poudariti, da je časovno integriranje nestabilna numerična operacija, saj se napake na narejene na posameznem koraku seštevajo in s časom rastejo. Integracija v frekenčni domeni, taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0Hz, nedoločen rezultat (deljenje z 0).</p>
+<p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacijo, saj temelji na razliki števil, ki se razlikujeta/jo malo (razlika pa se nato deli z majhnim številom, kar dodatno povečuje negotovost). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljena.</p>
+<p>Nadalje velja poudariti, da je časovno integriranje nestabilna numerična operacija, saj se napaka posameznega koraka sešteva in zato s časom raste. Integracija v frekenčni domeni, taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0Hz, nedoločen rezultat (deljenje z 0).</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1588,11 +1589,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_60_0.png" src="../_images/03 - Fourierova integralska transformacija_60_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_60_1.png" src="../_images/03 - Fourierova integralska transformacija_60_1.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_60_2.png" src="../_images/03 - Fourierova integralska transformacija_60_2.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_60_3.png" src="../_images/03 - Fourierova integralska transformacija_60_3.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_60_4.png" src="../_images/03 - Fourierova integralska transformacija_60_4.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_61_0.png" src="../_images/03 - Fourierova integralska transformacija_61_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_61_1.png" src="../_images/03 - Fourierova integralska transformacija_61_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_61_2.png" src="../_images/03 - Fourierova integralska transformacija_61_2.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_61_3.png" src="../_images/03 - Fourierova integralska transformacija_61_3.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_61_4.png" src="../_images/03 - Fourierova integralska transformacija_61_4.png" />
 </div>
 </div>
 </section>
@@ -1691,8 +1692,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_66_0.png" src="../_images/03 - Fourierova integralska transformacija_66_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_66_1.png" src="../_images/03 - Fourierova integralska transformacija_66_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_67_0.png" src="../_images/03 - Fourierova integralska transformacija_67_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_67_1.png" src="../_images/03 - Fourierova integralska transformacija_67_1.png" />
 </div>
 </div>
 </section>
@@ -1757,8 +1758,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_69_0.png" src="../_images/03 - Fourierova integralska transformacija_69_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_69_1.png" src="../_images/03 - Fourierova integralska transformacija_69_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_70_0.png" src="../_images/03 - Fourierova integralska transformacija_70_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_70_1.png" src="../_images/03 - Fourierova integralska transformacija_70_1.png" />
 </div>
 </div>
 </section>
@@ -1784,7 +1785,7 @@ w(t)=
 \[
 X_T(t)=\mathcal{F}\{x(t)\,w(t)\}= X(f)*W(f)=\int_{-\infty}^{+\infty} X(g)\,W(f-g)\,\textrm{d}g
 \]</div>
-<p>Sporočilo torej je: <span class="math notranslate nohighlight">\(X(f)\)</span> predstavlja frekvenčno transformiranko funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, ki jo lahko gledamo samo v nekem časovno omejenem oknu <span class="math notranslate nohighlight">\(w(t)\)</span>, le-to pa povzroči, da je Fourierova transformacija popačena. Pravokotni impulz <span class="math notranslate nohighlight">\(w(t)\)</span> smo si že pogledali zgoraj (<a href="#id1"><span class="problematic" id="id2">:sec:`pravokotni_impulz`</span></a>) in ugotovili, da je frekvenčna transformiranka definirana kot:</p>
+<p>Sporočilo torej je: <span class="math notranslate nohighlight">\(X(f)\)</span> predstavlja frekvenčno transformiranko funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, ki jo lahko gledamo samo v nekem časovno omejenem oknu <span class="math notranslate nohighlight">\(w(t)\)</span>, le-to pa povzroči, da je Fourierova transformacija popačena. Pravokotni impulz <span class="math notranslate nohighlight">\(w(t)\)</span> smo si že pogledali zgoraj (<a class="reference internal" href="#sec-pravokotni-impulz"><span class="std std-ref">Pravokotni impulz</span></a>) in ugotovili, da je frekvenčna transformiranka definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
 W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
@@ -1846,8 +1847,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_72_0.png" src="../_images/03 - Fourierova integralska transformacija_72_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_72_1.png" src="../_images/03 - Fourierova integralska transformacija_72_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_73_0.png" src="../_images/03 - Fourierova integralska transformacija_73_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_73_1.png" src="../_images/03 - Fourierova integralska transformacija_73_1.png" />
 </div>
 </div>
 <p>Za sinusuido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusuido si tako lahko ogledamo, če konvuliramo njuni frekvenčni trasformiranki (primer spodaj).</p>
@@ -1896,8 +1897,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_74_0.png" src="../_images/03 - Fourierova integralska transformacija_74_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_74_1.png" src="../_images/03 - Fourierova integralska transformacija_74_1.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_75_0.png" src="../_images/03 - Fourierova integralska transformacija_75_0.png" />
+<img alt="../_images/03 - Fourierova integralska transformacija_75_1.png" src="../_images/03 - Fourierova integralska transformacija_75_1.png" />
 </div>
 </div>
 </section>
