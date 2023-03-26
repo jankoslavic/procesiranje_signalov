@@ -602,18 +602,18 @@ x_{h}(t)=X_{h}\,e^{\lambda \,t},
 \[
 \omega_0 = \sqrt{\frac{k}{m}}.
 \]</div>
-<p>Tukaj je pomembno omeniti, da pri linearnih sistemih prednapetje ne spremeni lastne frekvence.</p>
-<p>Nadalje, če je kritično dušenje opredeljeno kot:</p>
+<p>Tukaj je pomembno spomniti (glejte osnovne predmete na temo dinamike in mehanskih nihanj), da pri linearnih sistemih prednapetje ne spremeni lastne frekvence.</p>
+<p>Nadalje, definiramo lahko kritično dušenje kot:</p>
 <div class="math notranslate nohighlight">
 \[
-c_{c} = 2\,\sqrt{k\,m},
+c_{c} = 2\,\sqrt{k\,m}
 \]</div>
-<p>potem je dušenje mogoče definirati s pomočjo razmernika dušenja:</p>
+<p>in potem je dušenje mogoče definirati s pomočjo razmernika (kritičnega) dušenja:</p>
 <div class="math notranslate nohighlight">
 \[
 \delta = \frac{c}{c_{c}}.
 \]</div>
-<p>Z nezadušeno lastno frekvenco <span class="math notranslate nohighlight">\(\omega_0\)</span> in razmernika dušenja <span class="math notranslate nohighlight">\(\delta\)</span> lahko homogeno diferencialno enačbo prepišemo v standardno obliko:</p>
+<p>S pomočjo nedušene lastne frekvence <span class="math notranslate nohighlight">\(\omega_0\)</span> in razmernika dušenja <span class="math notranslate nohighlight">\(\delta\)</span> lahko homogeno diferencialno enačbo prepišemo v standardno obliko:</p>
 <div class="math notranslate nohighlight">
 \[
 \ddot{x}_{h}(t)+2\,\delta\,\omega_0\,\dot{x}_{h}(t)+\omega_0^2\,x_{h}(t) =0.
@@ -641,15 +641,14 @@ c_{c} = 2\,\sqrt{k\,m},
 \end{split}
 \end{split}\]</div>
 <p>kjer sta konstanti <span class="math notranslate nohighlight">\(X_{h,1}\)</span> in <span class="math notranslate nohighlight">\(X_{h,2}\)</span> odvisni od začetnih pogojev.</p>
-<p>Kasneje bo jasno, da so začetni pogoji, pri katerih sistem začne iz ravnotežja s hitrostjo različno od nič:</p>
+<p>Pri impulznem odzivu bomo gradili na začetnih pogojih, ko sistem izpustimo ravnotežja s hitrostjo različno od nič:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
 		x(0)&amp;=0\to&amp; X_{h,1}+X_{h,2}&amp;=0\\
-		\dot x(0)&amp;=\dot x_0\to&amp; X_{h,1}\,\lambda_1+X_{h,2}\,\lambda_2&amp;=\dot x_0
+		\dot x(0)&amp;=\dot x_0\to&amp; X_{h,1}\,\lambda_1+X_{h,2}\,\lambda_2&amp;=\dot x_0.
 	\end{aligned}
 \end{split}\]</div>
-<p>še posebej pomembne in vodijo v rešitev impulznega odziva.</p>
 <section id="impulzna-odzivna-funkcija">
 <span id="sec-impulzna-odzivna-funkcija-d-x-0"></span><h3>Impulzna odzivna funkcija<a class="headerlink" href="#impulzna-odzivna-funkcija" title="Permalink to this headline">#</a></h3>
 <div class="admonition note">
@@ -776,7 +775,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 \[
 	\frac{X}{F}=\frac{1}{-\omega^2\,m+ \mathrm{i}\,\omega\,c+k}.
 \]</div>
-<p>Kot zgornji izraz predstavlja frekvenčni odziv, se imenuje <strong>frekvenčna prenosna funkcija</strong> (ang. Frequency Response Function, tudi FRF, glejte TBA za opis načina kako se FRF dobi iz homogene rešitve}:</p>
+<p>Kot zgornji izraz predstavlja frekvenčni odziv, se imenuje <strong>frekvenčna prenosna funkcija</strong> (ang. Frequency Response Function, tudi FRF, glejte <a class="reference internal" href="#sec-povezava-impulz-frf"><span class="std std-ref">Povezava med frekvenčno in impulzno prenosno funkcijo</span></a> za opis načina kako se FRF dobi iz homogene rešitve}:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Frekvenčna prenosna funkcija:</p>
@@ -785,7 +784,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 	\alpha(\omega)=\frac{1}{-\omega^2\,m+ \mathrm{i}\,\omega\,c+k}.
 \]</div>
 </div>
-<p>Z uporabo nedušene laste krožne frekvence <span class="math notranslate nohighlight">\(\omega_0^2=k/m\)</span>, razmernika dušenja <span class="math notranslate nohighlight">\(c=\delta\,2\,\sqrt{k\,m}\)</span> in relativne frekvence <span class="math notranslate nohighlight">\(r=\frac{\omega}{\omega_0}\)</span>, dobimo frekvenčni odziv v standardni obliki:</p>
+<p>Z uporabo nedušene laste krožne frekvence <span class="math notranslate nohighlight">\(\omega_0^2=k/m\)</span>, razmernika dušenja <span class="math notranslate nohighlight">\(\delta=c/(2\,\sqrt{k\,m})\)</span> in relativne frekvence <span class="math notranslate nohighlight">\(r=\frac{\omega}{\omega_0}\)</span>, dobimo frekvenčni odziv v standardni obliki:</p>
 <div class="math notranslate nohighlight">
 \[
 	\alpha(\omega)=\frac{1}{k}\cdot\frac{1}{1-r^2+2\, \mathrm{i}\,\delta\,r}.
@@ -797,7 +796,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 		H_0(\omega)&amp;=\frac{X(\omega)}{X_0}
 	\end{split}
 \]</div>
-<p>in se v nekaterih knjigah (npr.: <span id="id1">Géradin and Rixen [<a class="reference internal" href="../bibliography.html#id174" title="Michel Géradin and Daniel J. Rixen. Mechanical Vibrations: Theory and Application to Structural Dynamics. John Wiley &amp; Sons, 3$^\text rd$ edition, 2015. ISBN 9782225841682.">2015</a>]</span>) imenovana <strong>brezdimenzijska frekvenčna prenosna funkcija</strong> (ang. nondimensional frequency response function). V izrazu zgoraj je statični poves <span class="math notranslate nohighlight">\(X_0\)</span> zaradi statične sile <span class="math notranslate nohighlight">\(F\)</span> definiran kot:</p>
+<p>in je v nekaterih knjigah (npr.: <span id="id1">Géradin and Rixen [<a class="reference internal" href="../bibliography.html#id174" title="Michel Géradin and Daniel J. Rixen. Mechanical Vibrations: Theory and Application to Structural Dynamics. John Wiley &amp; Sons, 3$^\text rd$ edition, 2015. ISBN 9782225841682.">2015</a>]</span>) imenovana <strong>brezdimenzijska frekvenčna prenosna funkcija</strong> (ang. nondimensional frequency response function). V izrazu zgoraj je statični poves <span class="math notranslate nohighlight">\(X_0\)</span> zaradi statične sile <span class="math notranslate nohighlight">\(F\)</span> definiran kot:</p>
 <div class="math notranslate nohighlight">
 \[
 	X_0=\frac{F}{k}.
@@ -819,14 +818,14 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,e^{-\delta\,\omega_0\,t}\,\sin(\omega_{d}\
 \[
 	\alpha(\omega)=\frac{H_0(\omega)}{k}.
 \]</div>
-<p>S FRF je mogoče odziv stacionarnega stanja pri harmonskem vzbujanju s <span class="math notranslate nohighlight">\(\omega_f\)</span> opisati z:</p>
+<p>S pomočjo frekvenčne prenosne funkcije je mogoče odziv stacionarnega stanja pri harmonskem vzbujanju s <span class="math notranslate nohighlight">\(\omega_f\)</span> opisati kot:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\alpha(\omega=\omega_f)\,F\,e^{ \mathrm{i}\,\omega_f\,t}.
 \]</div>
 <section id="razlicne-oblike-frf">
 <h3>Različne oblike FRF<a class="headerlink" href="#razlicne-oblike-frf" title="Permalink to this headline">#</a></h3>
-<p>Dimenzijski FRF je smiseln, saj je statični odklon <span class="math notranslate nohighlight">\(X_0\)</span> težko izmeriti in se pogosto merita vzbujevalna sila in odzivni pospešek. Namesto pospeška pogosto merimo še hitrost in premik). Posledično obstajajo različne oblike frekvenčne prenosne funkcije:</p>
+<p>Dimenzijski FRF je smiseln, saj je statični odklon <span class="math notranslate nohighlight">\(X_0\)</span> težko izmeriti in se pogosto merita vzbujevalna sila in odzivni pospešek. Namesto pospeška pogosto merimo še hitrost in pomik. Posledično obstajajo različne oblike frekvenčne prenosne funkcije:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <div class="math notranslate nohighlight">
@@ -879,7 +878,7 @@ x(t)=\alpha(\omega=\omega_f)\,F\,e^{ \mathrm{i}\,\omega_f\,t}.
 </section>
 <section id="lastnosti-linearnega-casovno-invariantnega-sistema">
 <span id="sec-lti-lastnosti"></span><h2>Lastnosti linearnega časovno invariantnega sistema<a class="headerlink" href="#lastnosti-linearnega-casovno-invariantnega-sistema" title="Permalink to this headline">#</a></h2>
-<p>Diferencialna enačba za sistem z eno prostostno stopnjo lahko razmemo kot sistem, ki poveže vzbujanje (input) z odzivom  (output):</p>
+<p>Diferencialna enačba za sistem z eno prostostno stopnjo poveže vzbujanje (input) z odzivom  (output):</p>
 <div class="math notranslate nohighlight">
 \[
 	\underbrace{f(t)}_{\textrm{Vzbujanje}}\to {\textrm{Sistem}}\to \underbrace{x(t)}_{\textrm{Odziv}}.
@@ -978,7 +977,7 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 </section>
 <section id="vzbujanje-z-enotskim-impulzom">
 <h2>Vzbujanje z enotskim impulzom<a class="headerlink" href="#vzbujanje-z-enotskim-impulzom" title="Permalink to this headline">#</a></h2>
-<p>Obravnavajmo sedaj vzbujanje enomasnega sistema z enostkim impulzom <span class="math notranslate nohighlight">\(f_1(t)=\delta(t-\tau)\)</span>, kjer je <span class="math notranslate nohighlight">\(\delta(t)\)</span> Diracova delta funkcija (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-cas"><span class="std std-ref">Diracova delta funkcija</span></a>):</p>
+<p>Obravnavajmo sedaj vzbujanje enomasnega sistema z enotskim impulzom <span class="math notranslate nohighlight">\(f_1(t)=\delta(t-\tau)\)</span>, kjer je <span class="math notranslate nohighlight">\(\delta(t)\)</span> Diracova delta funkcija (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-cas"><span class="std std-ref">Diracova delta funkcija</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
 	\Delta I_1=\lim_{\Delta \tau\to 0}\int_{\tau}^{\tau+\Delta \tau}f_1(t)\,\textrm{d}t =1.
@@ -1000,7 +999,7 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 <h2>Posplošitev enotskega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje" title="Permalink to this headline">#</a></h2>
 <p>Splošno vzbujevalno silo (slika spodaj) lahko vidimo kot superpozicijo enotskih impulzov pomnoženih z določeno konstanto.</p>
 <p><img alt="general_forcing" src="../_images/general_forcing.svg" /></p>
-<p>Vsak neskončno kratek impulz bi povzročil odziv glede na impulzno prenosno funkcijo <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> pomnožen z amplitudo impulza <span class="math notranslate nohighlight">\(f(\tau)\,\Delta\tau\)</span>. Za linearne sisteme take odizve po principu superpozicioniran seštejemo:</p>
+<p>Vsak neskončno kratek impulz bi povzročil odziv glede na impulzno prenosno funkcijo <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> pomnožen z amplitudo impulza <span class="math notranslate nohighlight">\(f(\tau)\,\Delta\tau\)</span>. Za linearne sisteme take odzive po principu superpozicioniran seštejemo:</p>
 <div class="math notranslate nohighlight">
 \[
 	x(t) = \sum_{\tau}f(\tau)\,h(t-\tau)\,\Delta \tau,\quad \textrm{za: } t&gt;\tau,
@@ -1010,7 +1009,7 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 \[
 	x(t) = \int_0^t\,f(\tau)\,h(t-\tau)\,\textrm{d} \tau,\quad \textrm{za: } t&gt;\tau.
 \]</div>
-<p>Kjer zgornji izraz imenujemo <strong>konvolucijski integral</strong> ali konvolucija (kdaj tudi <strong>Duhamelov integral</strong>.</p>
+<p>Kjer zgornji izraz imenujemo <strong>konvolucijski integral</strong> ali konvolucija (kdaj tudi <strong>Duhamelov integral</strong>).</p>
 <p>Ker je impulzna prenosna funkcija <span class="math notranslate nohighlight">\(h(t-\tau)=0\)</span> za <span class="math notranslate nohighlight">\(t&lt;\tau\)</span>, se lahko spodnja meja integrala razširi v <span class="math notranslate nohighlight">\(-\infty\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1077,7 +1076,7 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 </div>
 </section>
 <section id="povezava-med-frekvencno-in-impulzno-prenosno-funkcijo">
-<h2>Povezava med frekvenčno in impulzno prenosno funkcijo<a class="headerlink" href="#povezava-med-frekvencno-in-impulzno-prenosno-funkcijo" title="Permalink to this headline">#</a></h2>
+<span id="sec-povezava-impulz-frf"></span><h2>Povezava med frekvenčno in impulzno prenosno funkcijo<a class="headerlink" href="#povezava-med-frekvencno-in-impulzno-prenosno-funkcijo" title="Permalink to this headline">#</a></h2>
 <p>V prejšnjih poglavjih sta bili predstavljeni frekvenčna prenosna funkcija <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in impulzna prenosna funkcija <span class="math notranslate nohighlight">\(h(t)\)</span>; prva je definirana v frekvenčni, druga v časovni domeni. V tem poglavju bomo dokazali, da <span class="math notranslate nohighlight">\(h(t)\)</span> in <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> tvorita par Fourierove transformacije.</p>
 <p>Fourierjeva transformacija enotskega impulza <span class="math notranslate nohighlight">\(f_1(t)=\delta(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1109,7 +1108,7 @@ a\,f(t)  \to  {\textrm{Linearen sistem}} \to   a\,x(t)
 	\alpha(\omega)=\mathcal{F}\{h(t)\}.
 \]</div>
 </div>
-<p>Opomba: Fourierov par označuje označuje dve spremenljivki, ena v časovni, druga v frekvenčni domeni, ki sta povezani prek Fourierove transformacije.</p>
+<p>Opomba: Fourierov par označuje dve spremenljivki, ena v časovni, druga v frekvenčni domeni, ki sta povezani prek Fourierove transformacije.</p>
 </section>
 </section>
 
