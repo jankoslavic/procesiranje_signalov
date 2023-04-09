@@ -496,7 +496,7 @@ e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\p
 </div>
 <section id="hitra-fourierova-transformacija">
 <h2>Hitra Fourierova transformacija<a class="headerlink" href="#hitra-fourierova-transformacija" title="Permalink to this headline">#</a></h2>
-<p>Hitra Fourierova transformacija (ang. <em>Fast Fourier Transform</em> - FFT) je ime numeričnega algoritma za diskretno Fourierovo transformacijo. DFT ima numerični obseg proporcionalen z <span class="math notranslate nohighlight">\(N^2\)</span>, kar zapišemo kot: (<span class="math notranslate nohighlight">\(\mathcal{O}(N^2)\)</span>). Kot avtorja hitre Fourierove transformacije štejeta James Cooley in John Tukey, ki sta algoritem objavila v letu 1965 (glejte: <a class="reference external" href="https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf">vir</a>), pozneje pa se je izkazalo, da je podoben algoritem že bistveno prej, v neobjavljenem delu iz leta 1805, odkril Carl Friedrich Gauss. Algoritem je, glede na DFT, numerično bistveno hitrejši: <span class="math notranslate nohighlight">\(\mathcal{O}(N\log(N))\)</span>; ker numerični obseg več ne narašča kvadratično s številom elementov, je to bistveno povečalo uporabnost DFT. Nekateri algoritem FFT smatrajo kot enega najbolj pomembnih algoritmov, saj je imel in še ima zelo pomemben družbeno-ekonomski vpliv. Kot zanimivost lahko tukaj povemo, da algoritem ni bil patentiran (glejte: <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">vir</a>). Zaradi simetrije v podatkih, je hitrost izračuna najvišja, če je število vzorcev enako <span class="math notranslate nohighlight">\(2^n\)</span>, kjer <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>.</p>
+<p>Hitra Fourierova transformacija (ang. <em>Fast Fourier Transform</em> - FFT) je ime numeričnega algoritma za diskretno Fourierovo transformacijo. DFT ima numerični obseg proporcionalen z <span class="math notranslate nohighlight">\(N^2\)</span>, kar zapišemo kot: (<span class="math notranslate nohighlight">\(\mathcal{O}(N^2)\)</span>). Kot avtorja hitre Fourierove transformacije štejeta James Cooley in John Tukey, ki sta algoritem objavila v letu 1965 (glejte: <a class="reference external" href="https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf">vir</a>), pozneje pa se je izkazalo, da je podoben algoritem že bistveno prej, v neobjavljenem delu iz leta 1805, odkril Carl Friedrich Gauss. Algoritem je, glede na DFT, numerično bistveno hitrejši: <span class="math notranslate nohighlight">\(\mathcal{O}(N\log(N))\)</span>; ker numerični obseg s številom elementov <span class="math notranslate nohighlight">\(N\)</span> ne narašča kvadratično, je to bistveno povečalo uporabnost DFT. Nekateri algoritem FFT smatrajo kot enega najbolj pomembnih algoritmov, saj je imel (in še ima) zelo pomemben družbeno-ekonomski vpliv. Kot zanimivost lahko tukaj povemo, da algoritem ni bil patentiran (glejte: <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">vir</a>). Zaradi simetrije v podatkih, je hitrost izračuna najvišja, če je število vzorcev enako <span class="math notranslate nohighlight">\(2^n\)</span>, kjer <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>.</p>
 <p>Diskretna Fourierova transformacija je v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dokumentirana <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.fft.html">tukaj</a> in si jo bomo najprej pogledali na spodnjem primeru sinusuide z amplitudo <code class="docutils literal notranslate"><span class="pre">A</span></code>, frekvenco <code class="docutils literal notranslate"><span class="pre">fr</span></code>, frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code> in dolžino vzorčenja <code class="docutils literal notranslate"><span class="pre">N</span></code>, ki bo enaka frekvenci vzorčenja (vzorčili bomo torej 1 sekundo). DFT bomo izvedli z metodo <code class="docutils literal notranslate"><span class="pre">numpy.fft.fft()</span></code> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html#numpy.fft.fft">dokumentacija</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -565,7 +565,7 @@ c_k &amp;= \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,k\,t/T_p}\,\m
 &amp;= \frac{X_k}{N}\\
 \end{split}
 \end{split}\]</div>
-<p>Poudarti je treba, da v splošnem <span class="math notranslate nohighlight">\(X_k/N\ne c_k\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_k\)</span> periodična vrsta.</p>
+<p>Poudariti je treba, da v splošnem <span class="math notranslate nohighlight">\(X_k/N\ne c_k\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_k\)</span> periodična vrsta.</p>
 <p>Pri primerjanju DFT in Fourierovih vrst se pogosto naredi napaka pri razumevanju periode (predvsem zadnje diskretne točke). Pri zgornjem primeru sinusoide časovna točka pri <code class="docutils literal notranslate"><span class="pre">t=1</span></code> eksplicitno ni vključena; implicitno pa je, saj smo zgoraj spoznali, da so vzorčeni podatki periodični in velja <span class="math notranslate nohighlight">\(x_n=x_{n+N}\)</span>. Poglejmo ta detajl pobližje; Fourierove vrste so definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -674,8 +674,8 @@ x_n;\quad &amp; 0\le n\le N-1\\
 \[
 \Delta f = \frac{1}{L\,\Delta t},
 \]</div>
-<p>pri tem pa je treba poudariti, da gre samo za frekvenčno interpolacijo, ki nam omogoča bolj podroben vpogled; novih informacij z dodajanjem ničel ne dodajamo. Podobno kakor pri DFT, lahko ničle dodajamo v frekvenčni domeni in nato z inverzno diskretno Fourierovo transformacijo pridobimo bolj goste oz interpolirane časovne podatke.</p>
-<p>Pri dodajanju ničel je potrebno paziti na normiranje podatkov (TBA).</p>
+<p>pri tem pa je treba poudariti, da gre samo za frekvenčno interpolacijo, ki nam omogoča bolj podroben vpogled; novih informacij z dodajanjem ničel ne dodajamo. Podobno kakor pri DFT, lahko ničle dodajamo v frekvenčni domeni in nato z inverzno diskretno Fourierovo transformacijo pridobimo bolj goste (interpolirane) časovne podatke.</p>
+<p>Pri dodajanju ničel je potrebno paziti na normiranje podatkov; dodane ničle namreč ne upoštevamo pri normiranju.</p>
 <p>Spodnji primer prikazuje uporabo dodajanja ničel; s pomočjo komentarjev v kodi raziščite delovanje.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -825,7 +825,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
 \[
 Y_k = \sum_{n=0}^{N-1} y_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
 \]</div>
-<p>Podobno kakor za funkcije, velja tudi za periodične časovne vrste, da je DFT konvolucije v časovni domeni produkt frekvenčnih transformirank v frekvenčni domeni.</p>
+<p>Podobno kakor za funkcije, velja tudi za periodične časovne vrste, da je DFT konvolucije v časovni domeni produkt frekvenčnih transformirank.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Konvolucija periodičnih podatkov (tudi krožna konvolucija, ang. <em>circular convolution</em>):</p>
@@ -835,7 +835,7 @@ Y_k = \sum_{n=0}^{N-1} y_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
 \]</div>
 <p>Da se poudari, da gre za krožno konvolucijo, se kdaj uporabi tudi znak <span class="math notranslate nohighlight">\(\circledast\)</span>: <span class="math notranslate nohighlight">\(x_n\circledast y_n\)</span>.</p>
 </div>
-<p>Poudarjanje periodičnosti <span class="math notranslate nohighlight">\(x_n\)</span> n <span class="math notranslate nohighlight">\(y_n\)</span> je nujno sicer (krožna) konvolucija ni mogoča; to bo jasno iz sledeče izpeljave:</p>
+<p>Poudarjanje periodičnosti <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span> je nujno sicer (krožna) konvolucija ni mogoča; to bo jasno iz sledeče izpeljave:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -850,7 +850,7 @@ Y_k = \sum_{n=0}^{N-1} y_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
 \[
 \sum_n^{N-1}y_{n-r}\,e^{-\textrm{i}\,2\,\pi\,(n-r)\,k/N}=\sum_n^{N-1}y_{n}\,e^{-\textrm{i}\,2\,\pi\,n\,k/N}=Y_k
 \]</div>
-<p>Če vrsti <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span> ne bi bili periodični, konvolucija končnih vrst ne bi bila tako enostavna.</p>
+<p>Če vrsti <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span> ne bi bili periodični, <strong>konvolucija končnih vrst ne bi bila tako enostavna.</strong></p>
 </section>
 </section>
 
