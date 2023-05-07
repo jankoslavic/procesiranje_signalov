@@ -371,6 +371,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#normalna-porazdelitev-gaussov-proces">
    Normalna porazdelitev (Gaussov proces)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#centralni-limitni-teorem">
+     Centralni limitni teorem
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#momenti-funkcije-gostote-verjetnosti">
@@ -439,6 +446,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#normalna-porazdelitev-gaussov-proces">
    Normalna porazdelitev (Gaussov proces)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#centralni-limitni-teorem">
+     Centralni limitni teorem
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#momenti-funkcije-gostote-verjetnosti">
@@ -491,10 +505,16 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="osnove-nakljucnih-procesov">
 <span id="sec-random"></span><h1>7. Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this headline">#</a></h1>
-<p>Dinamične obremenitve pogosto niso deterministične; primeri naključnih obremenitve so: obremenitve zaradi morskih valov, hrapavost ceste in vibracije zaradi pogonskega motorja. Take obremenitve je treba obravnavati kot <strong>naključne procese</strong>. V tem poglavju si bomo pogledali kako to naredimo in kako jih potem uspešno uporabimo pri obravnavi dinamskih sistemov.</p>
-<p>Naključnih podatkov v nasprotju z determinističnimi podatki ni mogoče natančno predvideti, določene značilnosti pa lahko razberemo z analizo njihovih segmentov; če na primer pomerimo hrapavost segmenta površine, lahko z določeno verjetnostjo sklepamo o značilnostih hrapavosti drugih segmentov. Pri opisu naključnih procesov si pogosto pomagamo s predpostavko porazdelitve procesa (npr. normalno porazdeljen proces).</p>
-<p>Medtem ko bi lahko naključni proces analizirali v časovni domeni, obstajajo pomanjkljivosti za uporabo takega pristopa. Za ustrezno vrednotenje procesa je treba v časovni domeni opraviti dovolj veliko število vzorčnih meritev (ali opazovanj), ki jih nato analiziramo kot skupino (ansambel, ang. <em>ensemble</em>). Kakor bomo videli pozneje, je strukturno dinamiko in naključne procese v frekvenčni domeni bistveno elegantneje analizirati.</p>
-<p>Referenčna besedila, ki poglobljeno obravnavajo to temo, ki jih priporočajo bralcu, so <span id="id1">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>]</span>, <span id="id2">Newland [<a class="reference internal" href="../bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">2012</a>]</span> ter <span id="id3">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>. Nekatere vsebine so povzete po <span id="id4">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>.</p>
+<p>Dinamične obremenitve pogosto niso deterministične, ampak imajo lahko v celoti ali delno naključne lastnosti. Primer naključnih obremenitev predstavljajo obremenitve zaradi morskih valov ali hrapavosti ceste. Take obremenitve je treba obravnavati kot <strong>naključne procese</strong>. V tem poglavju si bomo pogledali, kako naključno obremenitve obravnavamo ter jih potem uspešno uporabimo pri dinamskih sistemih.</p>
+<p>Naključni podatki se razlikujejo od determinističnih podatkov, saj jih ni mogoče natančno predvideti. Vendar pa lahko s pomočjo analize segmentov naključnih podatkov razberemo določene značilnosti. Na primer, če merimo hrapavost površine enega segmenta, lahko na podlagi tega s določeno verjetnostjo sklepamo o hrapavosti drugih segmentov. Pri opisu naključnih procesov se pogosto uporablja predpostavka o porazdelitvi procesa, kot je na primer normalna porazdelitev.</p>
+<p>Čeprav je mogoče naključni proces analizirati v časovni domeni, obstajajo določene pomanjkljivosti pri uporabi takšnega pristopa. Za ustrezno oceno procesa je potrebno zbrati dovolj veliko število vzorčnih meritev (ali opazovanj) v časovni domeni, ki jih nato analiziramo kot skupino (ansambel ali <em>ensemble</em>). Kot bomo videli kasneje, pa je analiza strukturne dinamike in naključnih procesov v frekvenčni domeni bistveno bolj elegantna.</p>
+<p>Priporočamo vam, da si ogledate nekatera referenčna besedila, ki se poglobljeno ukvarjajo z naključnimi procesi:</p>
+<ul class="simple">
+<li><p><span id="id1">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>]</span>,</p></li>
+<li><p><span id="id2">Newland [<a class="reference internal" href="../bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">2012</a>]</span> in</p></li>
+<li><p><span id="id3">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>.</p></li>
+</ul>
+<p>Nekatere vsebine v tem besedilu so povzete po knjigi <span id="id4">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>.</p>
 <section id="kaj-je-nakljucni-proces">
 <h2>Kaj je naključni proces?<a class="headerlink" href="#kaj-je-nakljucni-proces" title="Permalink to this headline">#</a></h2>
 <p>Naključni proces je definiran s kombinacijo <strong>funkcije gostote verjetnosti</strong> (ang. <em>Probability Density Function</em> - PDF) in <strong>spektralno gostoto moči</strong> (ang. <em>Power Spectral Density</em> - PSD).</p>
@@ -503,12 +523,13 @@ title="Print to PDF"
 </section>
 <section id="normalna-porazdelitev-gaussov-proces">
 <h2>Normalna porazdelitev (Gaussov proces)<a class="headerlink" href="#normalna-porazdelitev-gaussov-proces" title="Permalink to this headline">#</a></h2>
-<p>Gaussova porazdelitev je pogosto opažena pri različnih fizikalnih pojavih, njeno razširjenost pa pojasnjuje centralni limitni teorem (glejte <span id="id5">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>]</span>. Na splošno je Gaussov proces tisti, pri katerem verjetnost kombinacije naključnih spremenljivk ob določenih časih <span class="math notranslate nohighlight">\(\left\{x(t_i)\right\}\)</span> sledi večdimenzionalni Gaussovi porazdelitvi. Če pogledamo samo en trenutek v času <span class="math notranslate nohighlight">\(t\)</span>, verjetnost amplitude <span class="math notranslate nohighlight">\(x\)</span> ureja normalna funkcija gostote verjetnosti (PDF) <span class="math notranslate nohighlight">\(p(x)\)</span>:</p>
+<p>Gaussova porazdelitev je pogosto opažena pri različnih fizikalnih pojavih, njeno razširjenost pa pojasnjuje centralni limitni teorem (<a class="reference internal" href="#sec-centralni-limitni-teorem"><span class="std std-ref">Centralni limitni teorem</span></a>).</p>
+<p>Funkcija gostote verjetnosti (PDF) <span class="math notranslate nohighlight">\(p(x)\)</span> za naključni proces <span class="math notranslate nohighlight">\(\left\{x(t_i)\right\}\)</span>  definira ob času <span class="math notranslate nohighlight">\(t\)</span> verjetnost amplitude <span class="math notranslate nohighlight">\(x\)</span>; za Gaussov proces je PDF definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
-p(x) = \frac{1}{\sigma \, \sqrt{2 \, \pi}} \, \mathrm{e}^{-\frac{(x-\mu)^2}{2 \,\sigma^2}}
+p(x) = \frac{1}{\sigma \, \sqrt{2 \, \pi}} \, \mathrm{e}^{-\frac{(x-\mu)^2}{2 \,\sigma^2}},
 \]</div>
-<p>Tukaj je <span class="math notranslate nohighlight">\(\mu\)</span> povprečna vrednost, <span class="math notranslate nohighlight">\(\sigma\)</span> je standardni odklon (deviacija) oziroma <span class="math notranslate nohighlight">\(\sigma^2\)</span> varianca.
+<p>kjer je <span class="math notranslate nohighlight">\(\mu\)</span> povprečna vrednost, <span class="math notranslate nohighlight">\(\sigma\)</span> je standardni odklon (deviacija) oziroma <span class="math notranslate nohighlight">\(\sigma^2\)</span> varianca.
 Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in varianca <span class="math notranslate nohighlight">\(\sigma^2\)</span> določata obliko PDF in se pogosto imenujeta prvi moment in drugi centralni moment; izračunamo ju s pomočjo funkcije gostote verjetnosti:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -599,6 +620,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">podatki</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="n">podatki</span><span class="p">[</span><span class="n">σ</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="c1">#x = rng.uniform(low=-1, high=1, size=5000) # Enakomerna porazdelitev</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Naključni dogodek&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vrednost $x$&#39;</span><span class="p">)</span>
@@ -618,6 +640,120 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 <img alt="../_images/07 - Naključni procesi_14_1.png" src="../_images/07 - Naključni procesi_14_1.png" />
 </div>
 </div>
+<section id="centralni-limitni-teorem">
+<span id="sec-centralni-limitni-teorem"></span><h3>Centralni limitni teorem<a class="headerlink" href="#centralni-limitni-teorem" title="Permalink to this headline">#</a></h3>
+<p>Centralni limitni teorem trdi, da ko so neodvisne naključne spremenljivke seštevane med seboj, njihova vsota sledi normalni porazdelitvi (ne glede na porazdelitev prvotnih spremenljivk), pod pogojem, da je velikost vzorca dovolj velika.</p>
+<p>Spodnja koda demonstrira centralni limitni teorem (ang. <em>Central Limit Theorem - CLT</em>) z uporabo enakomerno porazdeljenih naključnih spremenljivk. Koda ustvari <code class="docutils literal notranslate"><span class="pre">N=10</span></code> vzorcev, vsak vzorec z <code class="docutils literal notranslate"><span class="pre">k=5000</span></code> naključnimi vrednostmi, ki sledijo enakomerni porazdelitvi med 0 in 1. Nato izračuna vsoto prvih <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">10</span></code>) in prikaže njihove verjetnostne porazdelitve s histogrami. Za vsak histogram je izračunana tudi teoretična normalna porazdelitev z uporabo povprečja in standardne deviacije vsote <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev. Izkaže se, da vsota enakomerno porazdeljenih vzorcev konvergira v normalno porazdelitev.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Centralni limitni teorem</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># število naključnih vzorcev</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5000</span> <span class="c1"># število naključnih vrednosti v vzorcu</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+
+<span class="c1"># Seštevanje za n=1, 2, 5 in 10</span>
+<span class="n">S1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># n=1</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># n=2</span>
+<span class="n">S5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">5</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># n=5</span>
+<span class="n">S10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># n=10</span>
+
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># Teoretična gostota verjetnosti</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Seštevek enakomerno porazdeljenih naključnih spremenljivk - verjetnostna porazdelitev&#39;</span><span class="p">)</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># število stolpcev za histogram</span>
+
+<span class="c1"># Slika za n=1</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$n=1$&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">S1</span><span class="p">),</span> <span class="n">μ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">S1</span><span class="p">)}</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">x_S1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">σ</span><span class="p">]</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span> <span class="mi">3</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">σ</span><span class="p">]</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_S1</span><span class="p">,</span> <span class="n">pdf</span><span class="p">(</span><span class="n">x_S1</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Normalna gostota verjetnosti&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$p(x)$&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+<span class="c1"># Graf za n=2</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">S2</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$n=2$&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">S2</span><span class="p">),</span> <span class="n">μ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">S2</span><span class="p">)}</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">x_S2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">σ</span><span class="p">]</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span> <span class="mi">3</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">σ</span><span class="p">]</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_S2</span><span class="p">,</span> <span class="n">pdf</span><span class="p">(</span><span class="n">x_S2</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Normalna gostota verjetnosti&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$p(x)$&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+<span class="c1"># Graf za n=5</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">S5</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$n=5$&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">S5</span><span class="p">),</span> <span class="n">μ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">S5</span><span class="p">)}</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">x_S5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">σ</span><span class="p">]</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span><span class="mi">3</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">σ</span><span class="p">]</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_S5</span><span class="p">,</span> <span class="n">pdf</span><span class="p">(</span><span class="n">x_S5</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Normalna gostota verjetnosti&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$p(x)$&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">S10</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$n=10$&#39;</span><span class="p">);</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">S10</span><span class="p">),</span> <span class="n">μ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">S10</span><span class="p">)}</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="n">x_S10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">σ</span><span class="p">]</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span><span class="mi">3</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">σ</span><span class="p">]</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">μ</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_S10</span><span class="p">,</span> <span class="n">pdf</span><span class="p">(</span><span class="n">x_S10</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Normalna gostota verjetnosti&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$p(x)$&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07 - Naključni procesi_16_0.png" src="../_images/07 - Naključni procesi_16_0.png" />
+</div>
+</div>
+<p>Centralni limitni teorem tudi pravi, da se porazdelitev vzorca povprečij vsake naključne spremenljivke približuje normalni porazdelitvi, ko velikost vzorca narašča, tudi če je prvotna populacija porazdeljena drugače kot normalno. To drži, če so vzorci neodvisni in enako porazdeljeni ter je velikost vzorca dovolj velika.</p>
+<p>Poglejmo si zgoraj zapisano na primeru merjenja časa med prihodoma dveh študentov v učilnico. Takšen čas je praviloma eksponentno porazdeljen. Najprej kreiramo zelo veliko <code class="docutils literal notranslate"><span class="pre">število_študentov=100000</span></code>, histogram  Opazimo, da je večina študentov pride z časovno razliko manj kot 20 s. Naslednja slika prikazuje povprečja vzorcev, kjer smo meritve razdelili v vzorce velikosti: <code class="docutils literal notranslate"><span class="pre">velikost_vzorca=100</span></code>. Opazimo, da so povprečja normalno porazdeljena.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">upad</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">število_študentov</span> <span class="o">=</span> <span class="mi">100000</span>
+
+<span class="n">prihod_študentov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">upad</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">število_študentov</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">prihod_študentov</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prihod študentov&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Čas med prihodom dveh študentov [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Porazdelitev časa med prihodi študentov (Eksponentna porazdelitev)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">upad</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Population Mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">velikost_vzorca</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">povprečja_vzorcev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prihod_študentov</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">velikost_vzorca</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">povprečja_vzorcev</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Povprečje vzorca&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Povprečen čas med prihodi [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Porazdelited srednjega časa med prihodi študentov (Normalna porazdelitev)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">upad</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Povprečna vrednost&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/07 - Naključni procesi_18_0.png" src="../_images/07 - Naključni procesi_18_0.png" />
+<img alt="../_images/07 - Naključni procesi_18_1.png" src="../_images/07 - Naključni procesi_18_1.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="momenti-funkcije-gostote-verjetnosti">
 <span id="sec-momenti-funkcije-gostote-verjetnosti"></span><h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Permalink to this headline">#</a></h2>
@@ -629,7 +765,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 \mu_y(t) &amp;= E[y(t)].\\
 \end{split}
 \end{split}\]</div>
-<p>Povprečje se lahko spreminja s časom <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Opomba: zgornji zapis pomeni, da se povprečje lahko spreminja s časom <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Zgornji izraz posplošimo tako, da definiramo <strong><span class="math notranslate nohighlight">\(n\)</span>-ti moment funkcije gostote verjetnosti</strong>:</p>
@@ -668,7 +804,7 @@ C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Za naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> pravimo, da sta <strong>šibko stacionarna</strong>, ko so srednje vrednosti in kovariančne funkcije časovno neodvisne. Procesi se štejejo za <strong>močno stacionarne</strong>, ko so časovno neodvisni tudi statistični momenti višjega reda in križni momenti. Šibka in močna stacionarnost sovpadata za Gaussov proces (funkcijo porazdelitve verjetnosti je mogoče izpeljati samo iz srednjih vrednosti in kovarianc <span id="id6">[<a class="reference internal" href="../bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">Newland, 2012</a>]</span>).</p>
+<p>Za naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> pravimo, da sta <strong>šibko stacionarna</strong>, ko so srednje vrednosti in kovariančne funkcije časovno neodvisne. Procesi se štejejo za <strong>močno stacionarne</strong>, ko so časovno neodvisni tudi statistični momenti višjega reda in križni momenti. Šibka in močna stacionarnost sovpadata za Gaussov proces (funkcijo porazdelitve verjetnosti je mogoče izpeljati samo iz srednjih vrednosti in kovarianc <span id="id5">[<a class="reference internal" href="../bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">Newland, 2012</a>]</span>).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -839,9 +975,9 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07 - Naključni procesi_32_0.png" src="../_images/07 - Naključni procesi_32_0.png" />
-<img alt="../_images/07 - Naključni procesi_32_1.png" src="../_images/07 - Naključni procesi_32_1.png" />
-<img alt="../_images/07 - Naključni procesi_32_2.png" src="../_images/07 - Naključni procesi_32_2.png" />
+<img alt="../_images/07 - Naključni procesi_36_0.png" src="../_images/07 - Naključni procesi_36_0.png" />
+<img alt="../_images/07 - Naključni procesi_36_1.png" src="../_images/07 - Naključni procesi_36_1.png" />
+<img alt="../_images/07 - Naključni procesi_36_2.png" src="../_images/07 - Naključni procesi_36_2.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral času:  0.9904720416233659 , integral PSD (Sxx):  0.9908307702229942 , integral PSD (Gxx):  0.9908872878523933
 </pre></div>
 </div>
@@ -1011,7 +1147,7 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5000000000000002
 </pre></div>
 </div>
-<img alt="../_images/07 - Naključni procesi_49_1.png" src="../_images/07 - Naključni procesi_49_1.png" />
+<img alt="../_images/07 - Naključni procesi_53_1.png" src="../_images/07 - Naključni procesi_53_1.png" />
 </div>
 </div>
 <p>Definirajmo funkcijo spektralnih momentov:</p>

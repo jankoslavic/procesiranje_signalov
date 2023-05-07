@@ -20,63 +20,48 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 import numpy as np
 import matplotlib.pyplot as plt
 
-rng = np.random.default_rng(0)
-fs = 250
-N = 5000
-dt = 1./fs
-time = np.arange(N)*dt
+# Exponential distribution example
+population_rate = 0.5
+population_size = 100000
 
-SNR_f = 20 # 20dB pomeni, da je razmerje med varianco signala in šuma 10
-SNR_x = 20
+plt.hist(population, bins=30, density=True, alpha=0.5, label='Population')
+plt.xlabel('Time Between Arrivals')
+plt.ylabel('Frequency')
+plt.title('Distribution of Population (Exponential Distribution)')
+plt.axvline(x=1/population_rate, color='r', label='Population Mean')
+plt.legend()
+plt.show()
 
-σ_u = 1
-σ_m = σ_u/10**(SNR_f/20) # na podlagi definirije 20*np.log10(σ_u/σ_m)
+population = np.random.exponential(scale=1/population_rate, size=population_size)
 
-u = rng.normal(size=N, scale=σ_u)
-m = rng.normal(size=N, scale=σ_m)
+sample_size = 100
+num_samples = 1000
 
-f = u + m # pomerjeno vzbujanje v času
+sample_means = []
+for i in range(num_samples):
+    sample = np.random.choice(population, sample_size)
+    sample_mean = np.mean(sample)
+    sample_means.append(sample_mean)
 
-scale = 1.0 / (fs*N)
-U = np.fft.rfft(u) # dejansko vzbujanje sistema
-F = np.fft.rfft(f) # pomerjeno vzbujanje sistema
-freq = np.fft.rfftfreq(N, d=dt)
+plt.hist(sample_means, bins=30, density=True, alpha=0.5, label='Sample Means')
+plt.xlabel('Time Between Arrivals')
+plt.ylabel('Frequency')
+plt.title('Distribution of Sample Means (Exponential Distribution)')
+plt.axvline(x=1/population_rate, color='r', label='Population Mean')
+plt.legend()
+plt.show()
 
-G_uu = 2*scale*np.abs(U.conj()*U)
-G_ff = 2*scale*np.abs(F.conj()*F)
-
-def alpha(freq, m, k, c):
-    """
-    Frekvenčna prenosna funkcija linearnega oscilatorja.
-    """
-    omega = 2*np.pi*freq
-    return 1 / (-omega**2*m + 1j*omega*c + k)
-
-H = alpha(freq, m=1,k=1e5,c=10)
-V = H*U                      #odziv brez šuma
-v = np.fft.irfft(V)        # dejanski odziv v času
-σ_n = np.std(v)/10**(SNR_x/20) # na podlagi definirije 20*np.log10(σ_v/σ_n)
-n = rng.normal(size=N, scale=σ_n)
-
-x = v + n            # pomerjen odziv sistema
-X = np.fft.rfft(x) # pomerjeno vzbujanje sistema
-
-G_fx = 2*scale*F.conj()*X
-G_xx = 2*scale*np.abs(X.conj()*X)
-G_xf = G_fx.conj()
-
-H1 = G_fx/G_ff
-H2 = G_xx/G_xf
-γ2 = np.abs(H1/H2)
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Input [1;32mIn [1][0m, in [0;36m<cell line: 1>[1;34m()[0m
-[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[0;32m      4[0m rng [38;5;241m=[39m np[38;5;241m.[39mrandom[38;5;241m.[39mdefault_rng([38;5;241m0[39m)
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Input [1;32mIn [1][0m, in [0;36m<cell line: 8>[1;34m()[0m
+[0;32m      5[0m population_rate [38;5;241m=[39m [38;5;241m0.5[39m
+[0;32m      6[0m population_size [38;5;241m=[39m [38;5;241m100000[39m
+[1;32m----> 8[0m plt[38;5;241m.[39mhist([43mpopulation[49m, bins[38;5;241m=[39m[38;5;241m30[39m, density[38;5;241m=[39m[38;5;28;01mTrue[39;00m, alpha[38;5;241m=[39m[38;5;241m0.5[39m, label[38;5;241m=[39m[38;5;124m'[39m[38;5;124mPopulation[39m[38;5;124m'[39m)
+[0;32m      9[0m plt[38;5;241m.[39mxlabel([38;5;124m'[39m[38;5;124mTime Between Arrivals[39m[38;5;124m'[39m)
+[0;32m     10[0m plt[38;5;241m.[39mylabel([38;5;124m'[39m[38;5;124mFrequency[39m[38;5;124m'[39m)
 
-[1;31mModuleNotFoundError[0m: No module named 'numpy'
-ModuleNotFoundError: No module named 'numpy'
+[1;31mNameError[0m: name 'population' is not defined
+NameError: name 'population' is not defined
 
