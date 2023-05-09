@@ -646,8 +646,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 <p>Spodnja koda demonstrira centralni limitni teorem (ang. <em>Central Limit Theorem - CLT</em>) z uporabo enakomerno porazdeljenih naključnih spremenljivk. Koda ustvari <code class="docutils literal notranslate"><span class="pre">N=10</span></code> vzorcev, vsak vzorec z <code class="docutils literal notranslate"><span class="pre">k=5000</span></code> naključnimi vrednostmi, ki sledijo enakomerni porazdelitvi med 0 in 1. Nato izračuna vsoto prvih <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">10</span></code>) in prikaže njihove verjetnostne porazdelitve s histogrami. Za vsak histogram je izračunana tudi teoretična normalna porazdelitev z uporabo povprečja in standardne deviacije vsote <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev. Izkaže se, da vsota enakomerno porazdeljenih vzorcev konvergira v normalno porazdelitev.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Centralni limitni teorem</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -821,7 +820,8 @@ R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 </section>
 <section id="ergodicnost">
 <h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Permalink to this headline">#</a></h2>
-<p>Namesto, da srednjo vrednost določamo čez ansambel dogodkov, lahko srednjo vrednost določimo na podlagi časovnega povprečja:</p>
+<p>V ergodičnem procesu se statistične lastnosti (npr. povprečje ali varianca), lahko namesto čez ansambel opazovanj (<span class="math notranslate nohighlight">\(k\)</span>) določimo na podlagi časovnega razvoja (<span class="math notranslate nohighlight">\(t\)</span>) enega samega opazovanja.</p>
+<p>Zgoraj (<code class="docutils literal notranslate"><span class="pre">ref</span></code>{sec:momenti_funkcije_gostote_verjetnosti}) smo srednjo vrednost določili čez ansambel dogodkov. Ob predpostavki ergodičnosti pa jo lahko določimo na podlagi časovnega povprečja:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
