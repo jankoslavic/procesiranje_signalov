@@ -927,16 +927,16 @@ S_{xx}(f),&amp; f=0\\
 <p>Poglejmo si najprej izračun avto-spektralne gostote s pomočjo Fourierove transformacije. Na koncu zgleda preverimo Parsevalov teorema v diskretni obliki:</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_i x_i^2 = \frac{1}{N}\sum_i X_i^2.
-\]</div>
+\sigma_x^2 = \frac{1}{T} \int x^2(t)\,\textrm{d} t = \int S_{xx}(f)\,\textrm{d} f. \]</div>
 <p>Pri zgledu bodite previdni kako se obravnava <span class="math notranslate nohighlight">\(S_{xx}\)</span> in <span class="math notranslate nohighlight">\(G_{xx}\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">welch</span> 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5_000</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>
 <span class="n">fs</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">fs</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
@@ -954,23 +954,29 @@ S_{xx}(f),&amp; f=0\\
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
 <span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
-<span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span><span class="p">)</span> <span class="c1"># skaliranje na gostoto</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">N</span> <span class="o">/</span> <span class="n">fs</span> <span class="c1"># skaliranje na gostoto</span>
 <span class="n">Sxx</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X</span> <span class="o">*</span> <span class="n">scale</span>
 
 <span class="n">X_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
 <span class="n">freq_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span>
 <span class="n">Gxx</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">X_r</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X_r</span> <span class="o">*</span> <span class="n">scale</span>
 
+<span class="c1"># alternativen izračun prek Scipy (tako se dejansko dela pozneje:))</span>
+<span class="n">freq2</span><span class="p">,</span> <span class="n">Gxx2</span> <span class="o">=</span> <span class="n">welch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avto-spektralna gostota moči&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Sxx</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Sxx</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$S_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Gxx2</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$G_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1e-8</span><span class="p">,</span><span class="mf">1e0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$S_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integral času: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span><span class="p">,</span> 
-      <span class="s1">&#39;, integral PSD (Sxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Sxx</span><span class="p">)</span><span class="o">*</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span><span class="p">),</span> 
-      <span class="s1">&#39;, integral PSD (Gxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Gxx</span><span class="p">)</span><span class="o">*</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integral času: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">),</span> 
+      <span class="s1">&#39;, integral PSD (Sxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">Sxx</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">)),</span> 
+      <span class="s1">&#39;, integral PSD (Gxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">Gxx</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">)),</span>
+      <span class="s1">&#39;, integral PSD (Gxx) Welch: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">Gxx2</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -978,7 +984,7 @@ S_{xx}(f),&amp; f=0\\
 <img alt="../_images/07 - Naključni procesi_36_0.png" src="../_images/07 - Naključni procesi_36_0.png" />
 <img alt="../_images/07 - Naključni procesi_36_1.png" src="../_images/07 - Naključni procesi_36_1.png" />
 <img alt="../_images/07 - Naključni procesi_36_2.png" src="../_images/07 - Naključni procesi_36_2.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral času:  0.9904720416233659 , integral PSD (Sxx):  0.9908307702229942 , integral PSD (Gxx):  0.9908872878523933
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral času:  0.9904720416233659 , integral PSD (Sxx):  0.9906062124167658 , integral PSD (Gxx):  0.990830770222994 , integral PSD (Gxx) Welch:  0.9907922407740425
 </pre></div>
 </div>
 </div>
@@ -1063,7 +1069,7 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(19817.72593930211+0j)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(495443148482.55273+0j)
 </pre></div>
 </div>
 </div>
