@@ -644,7 +644,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 <span id="sec-centralni-limitni-teorem"></span><h3>Centralni limitni teorem<a class="headerlink" href="#centralni-limitni-teorem" title="Permalink to this headline">#</a></h3>
 <p>Centralni limitni teorem trdi, da ko so neodvisne naključne spremenljivke seštevane med seboj, njihova vsota sledi normalni porazdelitvi (ne glede na porazdelitev prvotnih spremenljivk), pod pogojem, da je velikost vzorca dovolj velika.</p>
 <p>Spodnja koda demonstrira centralni limitni teorem (ang. <em>Central Limit Theorem - CLT</em>) z uporabo enakomerno porazdeljenih naključnih spremenljivk. Koda ustvari <code class="docutils literal notranslate"><span class="pre">N=10</span></code> vzorcev, vsak vzorec z <code class="docutils literal notranslate"><span class="pre">k=5000</span></code> naključnimi vrednostmi, ki sledijo enakomerni porazdelitvi med 0 in 1. Nato izračuna vsoto prvih <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">10</span></code>) in prikaže njihove verjetnostne porazdelitve s histogrami. Za vsak histogram je izračunana tudi teoretična normalna porazdelitev z uporabo povprečja in standardne deviacije vsote <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev. Izkaže se, da vsota enakomerno porazdeljenih vzorcev konvergira v normalno porazdelitev.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -705,7 +705,8 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_S10</span><span class="p">,</span> <span class="n">pdf</span><span class="p">(</span><span class="n">x_S10</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Normalna gostota verjetnosti&#39;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$p(x)$&#39;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">);</span> 
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -715,7 +716,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 <p>Centralni limitni teorem tudi pravi, da se porazdelitev vzorca povprečij vsake naključne spremenljivke približuje normalni porazdelitvi, ko velikost vzorca narašča, tudi če je prvotna populacija porazdeljena drugače kot normalno. To drži, če so vzorci neodvisni in enako porazdeljeni ter je velikost vzorca dovolj velika.</p>
 <p>Poglejmo si zgoraj zapisano na primeru merjenja časa med prihodoma dveh študentov v učilnico. Takšen čas je praviloma eksponentno porazdeljen. Najprej kreiramo zelo veliko <code class="docutils literal notranslate"><span class="pre">število_študentov=100000</span></code>, histogram  Opazimo, da je večina študentov pride z časovno razliko manj kot 20 s. Naslednja slika prikazuje povprečja vzorcev, kjer smo meritve razdelili v vzorce velikosti: <code class="docutils literal notranslate"><span class="pre">velikost_vzorca=100</span></code>. Opazimo, da so povprečja normalno porazdeljena.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1127,7 +1128,7 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 <section id="zgled">
 <h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">#</a></h3>
 <p>Poglejmo si ponovno zgled; najprej definirajmo harmonski odziv z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>. Varianca pomika je pričakovana: <span class="math notranslate nohighlight">\((A/\sqrt{2})^2=0.5\,A\)</span>, varianca hitrosti:  hitrosti pa <span class="math notranslate nohighlight">\(((2\pi\,f_0\,A)/\sqrt{2})^2=2\pi^2\,f_0^2\,A\)</span> in varianca pospeška <span class="math notranslate nohighlight">\((((2\pi\,f_0)^2\,A)/\sqrt{2})^2=2^3(\pi\,f_0)^4\,A\)</span>.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
