@@ -888,6 +888,17 @@ S_{xy}(f) &amp;= \mathcal{F}\{R_{xy}(\tau)\}.
 \end{split}
 \end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(S_{xx}(f)\)</span> in <span class="math notranslate nohighlight">\(S_{yy}(f)\)</span> (PSD, imenovana tudi auto-spektralna gostota) sta sodi funkciji s pozitivnimi realnimi vrednostmi. Križna-spektralna gostota (tudi CSD, cross-spectral density) <span class="math notranslate nohighlight">\(S_{xy}(f)\)</span> ima v splošnem kompleksne vrednosti.</p>
+<p>Poglejmo si najprej auto-spektralno gostoto:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+S_{xx}(f) &amp;= \int_{-\infty}^{+\infty} R_{xx}(\tau)\,e^{-\mathrm{i}\,2\pi\,f\,\tau}\mathrm{d}\tau\\
+&amp;= \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x(t)\,x(t+\tau)(\tau)\,e^{-\mathrm{i}\,2\pi\,f\,\tau}\mathrm{d}t\,\mathrm{d}\tau;\qquad{(zamenjamo: )}t_1=t+\tau\\ 
+&amp;= \int_{-\infty}^{+\infty}  x(t)\,\,e^{\mathrm{i}\,2\pi\,f\,t}\mathrm{d}t\,\int_{-\infty}^{+\infty} x(t_1)\,e^{-\mathrm{i}\,2\pi\,f\,t_1}\,\mathrm{d}t_1\\
+&amp;=X^*(f)\,X(f)
+\end{split}
+\end{split}\]</div>
+<p>Na podoben način bi lahko izpeljali križno-spektralno gostoto <span class="math notranslate nohighlight">\(S_{xy}\)</span>.</p>
 <p>V primeru realnih meritev je časovna zgodovina končne dolžine in Diricletov pogoj je izpolnjen; iz Fourierove transformacije <span class="math notranslate nohighlight">\(k\)</span>-te časovne zgodovine:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -896,7 +907,7 @@ X_k(f, T) = \int_0^T x_k(t) \,e^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d
 Y_k(f, T) = \int_0^T y_k(t) \,e^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d} t \\
 \end{split}
 \end{split}\]</div>
-<p>lahko z množenje Fourierovih transformirank  določimo križno-spektralno gostoto:</p>
+<p>lahko z množenje Fourierovih transformirank  določimo križno-spektralno gostoto (ker imamo končno dolgi signal, moramo, da dobimo gostoto, normirati na <span class="math notranslate nohighlight">\(T\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 S_{xy}(f, T, k) = \frac{1}{T}\, X_k^*(f, T) \, Y_k(f, T)
@@ -982,9 +993,9 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07 - Naključni procesi_36_0.png" src="../_images/07 - Naključni procesi_36_0.png" />
-<img alt="../_images/07 - Naključni procesi_36_1.png" src="../_images/07 - Naključni procesi_36_1.png" />
-<img alt="../_images/07 - Naključni procesi_36_2.png" src="../_images/07 - Naključni procesi_36_2.png" />
+<img alt="../_images/07 - Naključni procesi_37_0.png" src="../_images/07 - Naključni procesi_37_0.png" />
+<img alt="../_images/07 - Naključni procesi_37_1.png" src="../_images/07 - Naključni procesi_37_1.png" />
+<img alt="../_images/07 - Naključni procesi_37_2.png" src="../_images/07 - Naključni procesi_37_2.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral času:  0.9904720416233659 , integral PSD (Sxx):  0.9906062124167658 , integral PSD (Gxx):  0.990830770222994 , integral PSD (Gxx) Welch:  0.9907922407740425
 </pre></div>
 </div>
@@ -1154,7 +1165,7 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5000000000000002
 </pre></div>
 </div>
-<img alt="../_images/07 - Naključni procesi_53_1.png" src="../_images/07 - Naključni procesi_53_1.png" />
+<img alt="../_images/07 - Naključni procesi_54_1.png" src="../_images/07 - Naključni procesi_54_1.png" />
 </div>
 </div>
 <p>Definirajmo funkcijo spektralnih momentov:</p>
