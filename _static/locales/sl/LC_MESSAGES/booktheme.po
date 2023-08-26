@@ -11,12 +11,6 @@ msgstr ""
 msgid "suggest edit"
 msgstr "predlagajte urejanje"
 
-msgid "Show code cell source"
-msgstr "Prikaži kodo"
-
-msgid "Hide code cell source"
-msgstr "Skrij kodo"
-
 msgid "Last updated on"
 msgstr "Nazadnje posodobljeno dne"
 
