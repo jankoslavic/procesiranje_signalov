@@ -444,8 +444,8 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="diskretna-fourierova-transformacija">
 <span id="sec-dft"></span><h1>6. Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Permalink to this headline">#</a></h1>
 <p>Predhodno smo spoznali Fourierovo transformacijo za vzorčene podatke (glejte: <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html#sec-enakomerno-casovno-vzorcenje"><span class="std std-ref">Enakomerno časovno vzorčenje</span></a>), kjer je vzorčenje s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="note admonition">
+<p class="admonition-title">Opomba</p>
 <p><strong>Diskretna Fourierova transformacija</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -477,8 +477,8 @@ N; \quad n=r\\
 \[
 \sum_{k=0}^{N-1}X_k\,e^{\mathrm{i}\,2\pi\,k\,r/N} = x_r\,N,
 \]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="note admonition">
+<p class="admonition-title">Opomba</p>
 <p><strong>Inverzna diskretna Fourierova transformacija</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -490,8 +490,8 @@ x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k\,e^{\mathrm{i}\,2\pi\,k\,n/N}.
 \[
 e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\pi\,k\,n/N}\,\underbrace{e^{\mathrm{i}\,2\pi\,k\,N/N}}_{=\cos(2\pi\,k)=1}.
 \]</div>
-<div class="admonition note" id="dft-periodicno">
-<p class="admonition-title">Note</p>
+<div class="note admonition" id="dft-periodicno">
+<p class="admonition-title">Opomba</p>
 <p>Ugotovimo, da je <span class="math notranslate nohighlight">\(x_n\)</span> periodična vrsta <span class="math notranslate nohighlight">\(x_n=x_{n+N}\)</span>. Res smo začeli z vzorčenimi podatki v času <span class="math notranslate nohighlight">\(x_n\)</span>, ki niso periodični; rezultat z inverzno DFT pa je periodičen.</p>
 </div>
 <section id="hitra-fourierova-transformacija">
@@ -660,8 +660,8 @@ x_n;\quad &amp; 0\le n\le N-1\\
 \end{cases}
 \end{split}\]</div>
 <p>sledi:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="note admonition">
+<p class="admonition-title">Opomba</p>
 <p><strong>Diskretna Fourierova transformacija z dodajanjem ničel</strong> (ang. <em>zero-padding</em>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -723,8 +723,8 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </section>
 <section id="simetrija-dft-za-realne-podatke">
 <h2>Simetrija DFT za realne podatke<a class="headerlink" href="#simetrija-dft-za-realne-podatke" title="Permalink to this headline">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="note admonition">
+<p class="admonition-title">Opomba</p>
 <p>Za realne podatke v frekvenčni domeni velja:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -825,8 +825,8 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
 Y_k = \sum_{n=0}^{N-1} y_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
 \]</div>
 <p>Podobno kakor za funkcije, velja tudi za periodične časovne vrste, da je DFT konvolucije v časovni domeni produkt frekvenčnih transformirank.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="note admonition">
+<p class="admonition-title">Opomba</p>
 <p>Konvolucija periodičnih podatkov (tudi krožna konvolucija, ang. <em>circular convolution</em>):</p>
 <div class="math notranslate nohighlight">
 \[
