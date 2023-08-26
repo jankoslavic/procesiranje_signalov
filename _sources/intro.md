@@ -1,11 +1,14 @@
 # Predgovor
 
-Ta knjiga je nastala na podlagi raziskovalno-razvojnega dela *Laboratorija za dinamiko strojev in konstrukcij*. *Procesiranje signalov* je ne samo ključno pri številnih znanstvenih člankih, ki smo jih objavili v vodilnih znanstvenih revijah področja (npr.: [Mechanical Systems and Signal Processing](https://www.sciencedirect.com/journal/mechanical-systems-and-signal-processing)), ampak je tudi ključno tudi pri številnih industrijskih napravah za končno kontrolo kvalitete izdelkov. Procesiranje signalov predstavlja tudi pomemben del monografije na temo vibracijskega utrujanja (glejte: {cite:t}`slavic2020VF`), ki kot prva povezuje spektralne metode identifikacije vibracijske poškodovanosti s teorijo strukturne dinamike.
+Ta izvršljiva knjiga je nastala na podlagi raziskovalno-razvojnega dela *Laboratorija za dinamiko strojev in konstrukcij*. *Procesiranje signalov* je ne samo ključno pri številnih znanstvenih člankih, ki smo jih objavili v vodilnih znanstvenih revijah področja (npr.: [Mechanical Systems and Signal Processing](https://www.sciencedirect.com/journal/mechanical-systems-and-signal-processing)), ampak je ključno tudi pri številnih industrijskih projektih (npr. pri kontroli kvalitete izdelkov). Procesiranje signalov predstavlja tudi pomemben del monografije na temo vibracijskega utrujanja (glejte: {cite:t}`slavic2020VF`), ki kot prva povezuje spektralne metode identifikacije vibracijske poškodovanosti s teorijo strukturne dinamike.
 
-Knjigo na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili avtorjem referenčnih monografij, ki so postavili temelje teorije naključnih procesov:  {cite:t}`rice1944`, {cite:t}`bendat_2011`,  {cite:t}`newland_1993`. Ta knjiga bo osredotočena na procesiranje signalov za uporabo v inženirski praksi na področju analize vibracij in zvota ter bo v določeni meri sledila viru {cite:t}`shin2008`. Knjiga se naslanja tudi na vir {cite:t}`slavic2020VF`. 
+Knjigo na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili avtorjem referenčnih monografij, ki so postavili temelje teorije naključnih procesov:  {cite:t}`rice1944`, {cite:t}`bendat_2011`,  {cite:t}`newland_1993`. Ta knjiga bo osredotočena na procesiranje signalov za uporabo v inženirski praksi na področju analize vibracij in zvoka ter bo v določeni meri sledila viru {cite:t}`shin2008`. Knjiga se naslanja tudi na vir {cite:t}`slavic2020VF`. 
 
 Mogoče se v tem trenutku zdi, da naključni procesi z inženirskimi izzivi nimajo veliko skupnega, ampak proti koncu te knjige bomo ugotovili, da obravnava praktično katerega-koli realnega sistema zahteva razumevanje teorije naključnih procesov, najmanj zaradi negotovosti pri merjenju.
 
-:::{note}
+Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bralec/uporabnik lahko prilagaja, smo se zaradi omejitev uporabljene tehnologije pri pisanju morali odreči nekaterim uveljavljenim standardom tehničnih besedil. Slike tako niso podnaslovljene, sklici na enačbe/slike so navedeni relativno (npr. "spodaj", pri čemer bi bilo pravilno številčenje), pri strojno izpeljanih izrazih ni nujno oblika dosledna (npr. znak za imaginarno število $\textrm{i}$ ni pokončno, kot je pravilno). Bralce tukaj prosim za razumevanje.
+
+:::{admonition} Opomba
+:class: warning
 Tako bomo označevali posebne opombe!
 :::
