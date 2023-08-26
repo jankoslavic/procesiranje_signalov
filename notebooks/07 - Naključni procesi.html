@@ -767,7 +767,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 \end{split}
 \end{split}\]</div>
 <p>Opomba: zgornji zapis pomeni, da se povprečje lahko spreminja s časom <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<div class="note admonition">
+<div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Zgornji izraz posplošimo tako, da definiramo <strong><span class="math notranslate nohighlight">\(n\)</span>-ti moment funkcije gostote verjetnosti</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -795,7 +795,7 @@ C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{
 \end{split}\]</div>
 <p>Varianci <span class="math notranslate nohighlight">\(\sigma_x^2(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma_y^2(t)\)</span> sta tako definirani in <span class="math notranslate nohighlight">\(C_{xy}(t)\)</span> je kovarianca med <span class="math notranslate nohighlight">\(\left \{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> ob času <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>Če bi analizirali proces z dvodimenzionalno normalno porazdelitvijo, bi bile lastnosti <span class="math notranslate nohighlight">\(\sigma_x^2(t)\)</span>, <span class="math notranslate nohighlight">\(\sigma_y^2(t)\)</span> in <span class="math notranslate nohighlight">\(C_{xy}(t)\)</span> dovolj za  popis verjetnosti v določenih časovnih točkah <span class="math notranslate nohighlight">\(t\)</span>.</p>
-<div class="note admonition">
+<div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Zgornji izraz posplošimo tako, da definiramo <strong><span class="math notranslate nohighlight">\(n\)</span>-ti centralni moment funkcije gostote verjetnosti</strong>:</p>
 <div class="math notranslate nohighlight">
@@ -803,11 +803,11 @@ C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{
 \sigma^n(t)= E[(x(t)-\mu_x)^n] = \int_{-\infty}^{+\infty} (x-\mu_x)^n\, p(x)\, \textrm{d} x
 \]</div>
 </div>
-<div class="note admonition">
+<div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Za naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> pravimo, da sta <strong>šibko stacionarna</strong>, ko so srednje vrednosti in kovariančne funkcije časovno neodvisne. Procesi se štejejo za <strong>močno stacionarne</strong>, ko so časovno neodvisni tudi statistični momenti višjega reda in križni momenti. Šibka in močna stacionarnost sovpadata za Gaussov proces (funkcijo porazdelitve verjetnosti je mogoče izpeljati samo iz srednjih vrednosti in kovarianc <span id="id5">[<a class="reference internal" href="../bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">Newland, 2012</a>]</span>).</p>
 </div>
-<div class="note admonition">
+<div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p><strong>Auto-korelacijska</strong> <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in <strong>križno-korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> se uporabljajo za stacionarne naključne procese in je enaka kovariančnim funkcijam v primeru procesa z ničelno srednjo vrednostjo:</p>
 <div class="math notranslate nohighlight">
@@ -844,7 +844,7 @@ C_{xy}(\tau, k) &amp;= \lim_{T \to \infty} \frac{1}{T} \int_{0}^{T} \left[x_k(t)
 &amp;= R_{xy}(\tau, k) - \mu_x(k) \, \mu_y(k). \\
 \end{split}
 \end{split}\]</div>
-<div class="note admonition">
+<div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Proces rečemo, da je <strong>šibko ergodičen</strong> (ang. <em>weakly ergodic</em>), če so časovna povprečja enaka povprečjem ansambla dogodkov, neodvisno od izbranega <span class="math notranslate nohighlight">\(k\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -913,7 +913,7 @@ Y_k(f, T) = \int_0^T y_k(t) \,e^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d
 \[
 S_{xy}(f, T, k) = \frac{1}{T}\, X_k^*(f, T) \, Y_k(f, T)
 \]</div>
-<div class="note admonition">
+<div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p><strong>Avto (PSD)</strong> in <strong>križna (CSD)</strong> spektralna gostota je torej za primer ergodičnega procesa definirana kot (brez indeksa <span class="math notranslate nohighlight">\(k\)</span>):</p>
 <div class="math notranslate nohighlight">
