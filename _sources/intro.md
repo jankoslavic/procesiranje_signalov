@@ -8,7 +8,6 @@ Mogoče se v tem trenutku zdi, da naključni procesi z inženirskimi izzivi nima
 
 Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bralec/uporabnik lahko prilagaja, smo se zaradi omejitev uporabljene tehnologije pri pisanju morali odreči nekaterim uveljavljenim standardom tehničnih besedil. Slike tako niso podnaslovljene, sklici na enačbe/slike so navedeni relativno (npr. "spodaj", pri čemer bi bilo pravilno številčenje), pri strojno izpeljanih izrazih ni nujno oblika dosledna (npr. znak za imaginarno število $\textrm{i}$ ni pokončno, kot je pravilno). Bralce tukaj prosim za razumevanje.
 
-:::{admonition} Opomba
-:class: note
+:::{note}
 Tako bomo označevali posebne opombe!
 :::
