@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html lang="sl">
+
+<html lang="sl" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>3. Fourierova integralska transformacija &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,13 +47,13 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,61 +63,93 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/03 - Fourierova integralska transformacija';</script>
     <link rel="index" title="Abecedni seznam" href="../genindex.html" />
     <link rel="search" title="Išči" href="../search.html" />
     <link rel="next" title="4. Linearni časovno invariantni sistemi z eno prostostno stopnjo" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" />
     <link rel="prev" title="2. Fourierove vrste" href="02%20-%20Fourierove%20vrste.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="sl">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sl"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -117,469 +159,241 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01%20-%20Uvod.html">
-   1. Uvod v procesiranje signalov
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02%20-%20Fourierove%20vrste.html">
-   2. Fourierove vrste
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   3. Fourierova integralska transformacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html">
-   4. Linearni časovno invariantni sistemi z eno prostostno stopnjo
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">
-   5. Kvantizacija podatkov
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">
-   6. Diskretna Fourierova transformacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">
-   7. Osnove naključnih procesov
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html">
-   8. Odziv linearnih sistemov na naključno vzbujanje
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod.html">1. Uvod v procesiranje signalov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02%20-%20Fourierove%20vrste.html">2. Fourierove vrste</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Fourierova integralska transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">5. Kvantizacija podatkov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html">8. Odziv linearnih sistemov na naključno vzbujanje</a></li>
+
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/jankoslavic/procesiranje_signalov/master?urlpath=tree/notebooks/notebooks/03 - Fourierova integralska transformacija.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/procesiranje_signalov" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Izvorno skladišče"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/03 - Fourierova integralska transformacija.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Odprite številko"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Prenesite to stran">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/03 - Fourierova integralska transformacija.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Prenesite izvorno datoteko"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Natisni v PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Celozaslonski način"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/jankoslavic/procesiranje_signalov"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/jankoslavic/procesiranje_signalov/issues/new?title=Issue%20on%20page%20%2Fnotebooks/03 - Fourierova integralska transformacija.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/notebooks/03 - Fourierova integralska transformacija.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nekateri-primeri-fourierove-transformacije">
-   Nekateri primeri Fourierove transformacije
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diracova-delta-funkcija">
-     Diracova delta funkcija
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simetricna-eksponentno-padajoca-funkcija">
-     Simetrična eksponentno padajoča funkcija
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sinusna-funkcija">
-     Sinusna funkcija
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pravokotni-impulz">
-     Pravokotni impulz
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#duseni-odziv">
-     Dušeni odziv
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gaussov-impulz">
-     Gaussov impulz
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lastnosti-fourierove-transformacije">
-   Lastnosti Fourierove transformacije
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linearnost-ang-linearity">
-     Linearnost (ang. linearity)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#casovno-skaliranje-ang-time-scaling">
-     Časovno skaliranje (ang. time scaling)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#casovni-obrat-ang-time-reversal">
-     Časovni obrat (ang. time reversal)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#casovni-premik-ang-time-shifting">
-     Časovni premik (ang. time shifting)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">
-     Amplitudna modulacija (ang. modulation, tudi frequency-shifting)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#odvajanje">
-     Odvajanje
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integriranje">
-     Integriranje
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#konvolucija-funkcij">
-     Konvolucija funkcij
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#produkt-funkcij">
-     Produkt funkcij
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uporaba-oken">
-   Uporaba oken
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>3. Fourierova integralska transformacija</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nekateri-primeri-fourierove-transformacije">
-   Nekateri primeri Fourierove transformacije
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#diracova-delta-funkcija">
-     Diracova delta funkcija
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simetricna-eksponentno-padajoca-funkcija">
-     Simetrična eksponentno padajoča funkcija
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sinusna-funkcija">
-     Sinusna funkcija
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pravokotni-impulz">
-     Pravokotni impulz
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#duseni-odziv">
-     Dušeni odziv
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gaussov-impulz">
-     Gaussov impulz
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lastnosti-fourierove-transformacije">
-   Lastnosti Fourierove transformacije
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#linearnost-ang-linearity">
-     Linearnost (ang. linearity)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#casovno-skaliranje-ang-time-scaling">
-     Časovno skaliranje (ang. time scaling)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#casovni-obrat-ang-time-reversal">
-     Časovni obrat (ang. time reversal)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#casovni-premik-ang-time-shifting">
-     Časovni premik (ang. time shifting)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">
-     Amplitudna modulacija (ang. modulation, tudi frequency-shifting)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#odvajanje">
-     Odvajanje
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integriranje">
-     Integriranje
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#konvolucija-funkcij">
-     Konvolucija funkcij
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#produkt-funkcij">
-     Produkt funkcij
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uporaba-oken">
-   Uporaba oken
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>3. Fourierova integralska transformacija</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Vsebina </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekateri-primeri-fourierove-transformacije">Nekateri primeri Fourierove transformacije</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diracova-delta-funkcija">Diracova delta funkcija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetricna-eksponentno-padajoca-funkcija">Simetrična eksponentno padajoča funkcija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sinusna-funkcija">Sinusna funkcija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pravokotni-impulz">Pravokotni impulz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#duseni-odziv">Dušeni odziv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussov-impulz">Gaussov impulz</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lastnosti-fourierove-transformacije">Lastnosti Fourierove transformacije</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearnost-ang-linearity">Linearnost (ang. linearity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje-ang-time-scaling">Časovno skaliranje (ang. time scaling)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-obrat-ang-time-reversal">Časovni obrat (ang. time reversal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-premik-ang-time-shifting">Časovni premik (ang. time shifting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">Amplitudna modulacija (ang. modulation, tudi frequency-shifting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvajanje">Odvajanje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integriranje">Integriranje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konvolucija-funkcij">Konvolucija funkcij</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#produkt-funkcij">Produkt funkcij</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-oken">Uporaba oken</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="fourierova-integralska-transformacija">
 <span id="sec-fourierova-int-transf"></span><h1>3. Fourierova integralska transformacija<a class="headerlink" href="#fourierova-integralska-transformacija" title="Povezava na naslov">#</a></h1>
 <p>Če so Fourierove vrste omejene na periodične podatke, je pri Fourierovi integralski transformaciji cilj posplošitev na neperiodične podatke. V ideji to dosežemo tako, da periodo <span class="math notranslate nohighlight">\(T_p\)</span> razširimo v neskončnost. V nadaljevanju si bomo pogledali detajle.</p>
@@ -660,6 +474,11 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 <p>Opazimo, da je pri frekvenci 0 Hz ampituda <span class="math notranslate nohighlight">\(|X(0)|=2/\delta\)</span>, in pade na polovico začetne amplitude pri frekvenci: <span class="math notranslate nohighlight">\(f_{1/2}=\delta/(2\pi)\)</span>. Parameter <span class="math notranslate nohighlight">\(\delta\)</span> definira časovni raztros; večja, ko je vrednost <span class="math notranslate nohighlight">\(\delta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni. Podobno kakor pri delta funkciji, torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
 <p>Poglejmo si sedaj zgled v času in frekvenci:</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -677,13 +496,19 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_7_0.png" src="../_images/03 - Fourierova integralska transformacija_7_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_7_1.png" src="../_images/03 - Fourierova integralska transformacija_7_1.png" />
+<img alt="../_images/7b9954ffb2da7fccb2f11b83950a6aa42823f75f32d68e74e41a21fb0b47a796.png" src="../_images/7b9954ffb2da7fccb2f11b83950a6aa42823f75f32d68e74e41a21fb0b47a796.png" />
+<img alt="../_images/6d8fd1858b454b0910d8f041bd6f329c4976e379812bec4916eb7cfe13a2dd74.png" src="../_images/6d8fd1858b454b0910d8f041bd6f329c4976e379812bec4916eb7cfe13a2dd74.png" />
 </div>
 </div>
 <p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič (pri Fourierovih vrstah bi bili kosinusni členi različni od nič, sinusni pa enaki nič). To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelni bi bila imaginarna komponentna (slika spodaj).</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -702,13 +527,19 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_9_0.png" src="../_images/03 - Fourierova integralska transformacija_9_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_9_1.png" src="../_images/03 - Fourierova integralska transformacija_9_1.png" />
+<img alt="../_images/3516ccc3bf7d3230681ca18e2de004fccb57ad9cc5d500be35c7267e493df46a.png" src="../_images/3516ccc3bf7d3230681ca18e2de004fccb57ad9cc5d500be35c7267e493df46a.png" />
+<img alt="../_images/79c5f59c86b72970572ef3654d74df4e1df2e9fbeb051fd8890deecfdc229b0d.png" src="../_images/79c5f59c86b72970572ef3654d74df4e1df2e9fbeb051fd8890deecfdc229b0d.png" />
 </div>
 </div>
 <p>Sicer pa velja poudariti, da realni podatki <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje koračno funkcijo). Časovni podatki so v splošnem lahko komplekne oblike in takrat v frekvenčni domeni praviloma ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, d&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -749,10 +580,11 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_11_0.png" src="../_images/03 - Fourierova integralska transformacija_11_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_11_1.png" src="../_images/03 - Fourierova integralska transformacija_11_1.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_11_2.png" src="../_images/03 - Fourierova integralska transformacija_11_2.png" />
+<img alt="../_images/157ffe48acc91cba576ae2db628e81b84ef764dbd4a54a26fcd1ac15a36ea76c.png" src="../_images/157ffe48acc91cba576ae2db628e81b84ef764dbd4a54a26fcd1ac15a36ea76c.png" />
+<img alt="../_images/1bd9c3d856913542dac9102891026ca1eaeb78f1545b42be8c7353788b3d794d.png" src="../_images/1bd9c3d856913542dac9102891026ca1eaeb78f1545b42be8c7353788b3d794d.png" />
+<img alt="../_images/c67db402e04f75057d08b3055b804862175cc75582945921fd8ceabaa7c0ea0b.png" src="../_images/c67db402e04f75057d08b3055b804862175cc75582945921fd8ceabaa7c0ea0b.png" />
 </div>
 </div>
 </section>
@@ -798,6 +630,11 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 \]</div>
 <p>kar prikažemo na sliki spodaj.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -840,8 +677,9 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_15_0.png" src="../_images/03 - Fourierova integralska transformacija_15_0.png" />
+<img alt="../_images/2032c5c497976369cc8e9446bc205cde82ee5931a479b6bce72bdedea99c0970.png" src="../_images/2032c5c497976369cc8e9446bc205cde82ee5931a479b6bce72bdedea99c0970.png" />
 </div>
 </div>
 </section>
@@ -869,6 +707,11 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 \]</div>
 <p>Zgornji izraz jasno kaže: ko <span class="math notranslate nohighlight">\(f\)</span> limitira proti 0, <span class="math notranslate nohighlight">\(X(f)\)</span> limitira k <span class="math notranslate nohighlight">\(2\,a\,b\)</span>; sicer pa v frekvenčni domeni oscilira s frekvenco <span class="math notranslate nohighlight">\(1/b\)</span>. Nekatere karakteristike vidimo iz slike spodaj: ponovno opazimo, da bolj, ko so podatki široki v času, bolj so ozki v frekvenci.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, b, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -898,9 +741,10 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_17_0.png" src="../_images/03 - Fourierova integralska transformacija_17_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_17_1.png" src="../_images/03 - Fourierova integralska transformacija_17_1.png" />
+<img alt="../_images/9d5c46655113abb166f8e1bbb8c36189e2e7ada564a896b7f985c8dbe6e89e06.png" src="../_images/9d5c46655113abb166f8e1bbb8c36189e2e7ada564a896b7f985c8dbe6e89e06.png" />
+<img alt="../_images/525a3b05f92ce71e9952019a224ab2bd7ecc90328a7a97b35d2ab825eba9b874.png" src="../_images/525a3b05f92ce71e9952019a224ab2bd7ecc90328a7a97b35d2ab825eba9b874.png" />
 </div>
 </div>
 </section>
@@ -945,6 +789,11 @@ e^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0\\
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -982,10 +831,11 @@ e^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0\\
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_20_0.png" src="../_images/03 - Fourierova integralska transformacija_20_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_20_1.png" src="../_images/03 - Fourierova integralska transformacija_20_1.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_20_2.png" src="../_images/03 - Fourierova integralska transformacija_20_2.png" />
+<img alt="../_images/1d85f364cfc0eb157f90ba0de7f7cc7b93b24da0766d7322c9b2f2bc0ed8c5d4.png" src="../_images/1d85f364cfc0eb157f90ba0de7f7cc7b93b24da0766d7322c9b2f2bc0ed8c5d4.png" />
+<img alt="../_images/4859aec20fa0a74b63103852ccb2386472a05192cacd2b26284afbe6f4f26763.png" src="../_images/4859aec20fa0a74b63103852ccb2386472a05192cacd2b26284afbe6f4f26763.png" />
+<img alt="../_images/51795eed3625fc4eec49bcb826080a5fa8e57153bd7296d3e9e86f91803a2d31.png" src="../_images/51795eed3625fc4eec49bcb826080a5fa8e57153bd7296d3e9e86f91803a2d31.png" />
 </div>
 </div>
 </section>
@@ -1020,6 +870,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 <p>Rezultat nato še prikažemo (ker je Gaussova funkcija soda, je faza v frekvenčni domeni enaka 0):</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1043,9 +898,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_24_0.png" src="../_images/03 - Fourierova integralska transformacija_24_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_24_1.png" src="../_images/03 - Fourierova integralska transformacija_24_1.png" />
+<img alt="../_images/8ec316d1b0233a073cf5ef9ee798fad75ac977fde3367b3e48f4a4a5653d3da7.png" src="../_images/8ec316d1b0233a073cf5ef9ee798fad75ac977fde3367b3e48f4a4a5653d3da7.png" />
+<img alt="../_images/c4f17cdaacc52de3f9cb904a5be1d9e647f50bb3558d1f354e0501af4ad5949b.png" src="../_images/c4f17cdaacc52de3f9cb904a5be1d9e647f50bb3558d1f354e0501af4ad5949b.png" />
 </div>
 </div>
 </section>
@@ -1097,6 +953,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 <p>Spodaj si poglejmo konkreten primer.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, a, b&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1128,9 +989,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_31_0.png" src="../_images/03 - Fourierova integralska transformacija_31_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_31_1.png" src="../_images/03 - Fourierova integralska transformacija_31_1.png" />
+<img alt="../_images/ef2a6c5c0dcd1dc474f31fa401b6a2dbf656aaf10b3b8f3561ffe3ba5994193a.png" src="../_images/ef2a6c5c0dcd1dc474f31fa401b6a2dbf656aaf10b3b8f3561ffe3ba5994193a.png" />
+<img alt="../_images/0c13746b58cd9ec8d4d31e2aeabe8ad00f4a70ee7a607570b88d44a2af06e028.png" src="../_images/0c13746b58cd9ec8d4d31e2aeabe8ad00f4a70ee7a607570b88d44a2af06e028.png" />
 </div>
 </div>
 </section>
@@ -1166,6 +1028,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 <p>Časovno skaliranje postane pomembno na primer, ko spremljamo isto dogajanje z dvema različnima urama.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1197,9 +1064,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_35_0.png" src="../_images/03 - Fourierova integralska transformacija_35_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_35_1.png" src="../_images/03 - Fourierova integralska transformacija_35_1.png" />
+<img alt="../_images/06d7eb635c649e75e3bce0552792173e8e33bc816e9603f9766b9a6efdbb11c8.png" src="../_images/06d7eb635c649e75e3bce0552792173e8e33bc816e9603f9766b9a6efdbb11c8.png" />
+<img alt="../_images/a4abdc972ee403fe2027e42732ef81b77a981d0a53a1964a276074287ee1f629.png" src="../_images/a4abdc972ee403fe2027e42732ef81b77a981d0a53a1964a276074287ee1f629.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1290,6 +1158,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <p>Opazimo, da člen <span class="math notranslate nohighlight">\(e^{-\textrm{i}\,2\pi\,f\,t_0}\)</span> lahko izpostavimo iz integrala.</p>
 <p>Časovno skaliranje postane pomembno, kadar obravnavamo zakasnjene meritve (npr. da eno meritev merimo z zakasnitvijo glede na ostale): glejte primer spodaj.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">t_0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, t_0, f, a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1339,11 +1212,12 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_44_0.png" src="../_images/03 - Fourierova integralska transformacija_44_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_44_1.png" src="../_images/03 - Fourierova integralska transformacija_44_1.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_44_2.png" src="../_images/03 - Fourierova integralska transformacija_44_2.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_44_3.png" src="../_images/03 - Fourierova integralska transformacija_44_3.png" />
+<img alt="../_images/8d0e853ca0b1f18dbea49c98a7f515d1d6419985642629f78e6dda59ba95182b.png" src="../_images/8d0e853ca0b1f18dbea49c98a7f515d1d6419985642629f78e6dda59ba95182b.png" />
+<img alt="../_images/cce9df9eb029476fe71ab17836cbffd940de23eb8492ddffeeff27913a812da7.png" src="../_images/cce9df9eb029476fe71ab17836cbffd940de23eb8492ddffeeff27913a812da7.png" />
+<img alt="../_images/de594fea96fb660299f005a2c7e713a6a30e02fec34d516286ae203f3411c008.png" src="../_images/de594fea96fb660299f005a2c7e713a6a30e02fec34d516286ae203f3411c008.png" />
+<img alt="../_images/4091274c41733ca6a8200398ea09e74767f6a634414c69677f78e772d653f4fd.png" src="../_images/4091274c41733ca6a8200398ea09e74767f6a634414c69677f78e772d653f4fd.png" />
 </div>
 </div>
 </section>
@@ -1384,6 +1258,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 <p>Amplitudna modulacija je v praksi relativno pogosta. Opazimo jo na primer, ko merimo nihanje plošče z laserjem in se nam podlaga laserja trese; v spodnjih slikah je pomik merjene strukture označen z <span class="math notranslate nohighlight">\(x(t)\)</span>, podlaga laserja pa niha z <span class="math notranslate nohighlight">\(\cos(2\pi\,f_0\,t)\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1423,9 +1302,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_48_0.png" src="../_images/03 - Fourierova integralska transformacija_48_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_48_1.png" src="../_images/03 - Fourierova integralska transformacija_48_1.png" />
+<img alt="../_images/6a94dbfd33a4047f808138ca389a8dfe9b3d59c0844b246a1f33758a9d31aef9.png" src="../_images/6a94dbfd33a4047f808138ca389a8dfe9b3d59c0844b246a1f33758a9d31aef9.png" />
+<img alt="../_images/60aa72b0eccd0d90dc91cbe64dde712ddaab47f0f76454ec25818e29da2e3e28.png" src="../_images/60aa72b0eccd0d90dc91cbe64dde712ddaab47f0f76454ec25818e29da2e3e28.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1520,6 +1400,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacijo, saj temelji na razliki števil, ki se razlikujeta/jo malo (razlika pa se nato deli z majhnim številom, kar dodatno povečuje negotovost). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljena.</p>
 <p>Nadalje velja poudariti, da je časovno integriranje nestabilna numerična operacija, saj se napaka posameznega koraka sešteva in zato s časom raste. Integracija v frekenčni domeni, taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0Hz, nedoločen rezultat (deljenje z 0).</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1590,12 +1475,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_61_0.png" src="../_images/03 - Fourierova integralska transformacija_61_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_61_1.png" src="../_images/03 - Fourierova integralska transformacija_61_1.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_61_2.png" src="../_images/03 - Fourierova integralska transformacija_61_2.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_61_3.png" src="../_images/03 - Fourierova integralska transformacija_61_3.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_61_4.png" src="../_images/03 - Fourierova integralska transformacija_61_4.png" />
+<img alt="../_images/5cd760db26b9b9591f5c66a83531991bef4724230ba98e7a0df1964812f2c4c8.png" src="../_images/5cd760db26b9b9591f5c66a83531991bef4724230ba98e7a0df1964812f2c4c8.png" />
+<img alt="../_images/c0b67acb1946ee8ae95ea7f9a3a168b3d912ef742b7a54b144d0719d98aebdec.png" src="../_images/c0b67acb1946ee8ae95ea7f9a3a168b3d912ef742b7a54b144d0719d98aebdec.png" />
+<img alt="../_images/d838e80a31f47e4ee9a55df7a793c3473927bd7203902dda76f098fd9fd1daca.png" src="../_images/d838e80a31f47e4ee9a55df7a793c3473927bd7203902dda76f098fd9fd1daca.png" />
+<img alt="../_images/aac12520c1c36ff32b9e7c12216fd9420b402469c04274616a25ea10c35f782f.png" src="../_images/aac12520c1c36ff32b9e7c12216fd9420b402469c04274616a25ea10c35f782f.png" />
+<img alt="../_images/de1286a5974ae5b2ddc9fc5d4b6c616348d6525b30da5cc1231f71db69abeecd.png" src="../_images/de1286a5974ae5b2ddc9fc5d4b6c616348d6525b30da5cc1231f71db69abeecd.png" />
 </div>
 </div>
 </section>
@@ -1652,6 +1538,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <p>Zgoraj je očitno, da lahko integral po <span class="math notranslate nohighlight">\(\tau\)</span> in <span class="math notranslate nohighlight">\(v\)</span> ločimo, kjer vsak integal predstavlja Fourierovo transformiranko <span class="math notranslate nohighlight">\(X(t)\)</span> in <span class="math notranslate nohighlight">\(Y(f)\)</span>.</p>
 <p>Fourierova transformacija konvolucije je mogoče najbolj uporabna lastnost Fourierove transformacije, saj množenje v frekvenčni domeni bistveno pohitri izračun konvolucije dveh funkcij. Lastnost bomo s pridom uporabljali pri diskretni Fourierovi transformaciji, preprost primer spodaj pa pokaže ekvivalentnost rezultata v času napram tistemu v frekvenci.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, τ&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1693,9 +1584,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_67_0.png" src="../_images/03 - Fourierova integralska transformacija_67_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_67_1.png" src="../_images/03 - Fourierova integralska transformacija_67_1.png" />
+<img alt="../_images/889413372cc328c5301eca3d4b8d0d62f8f0e3b3f584faf13b358a4b3e652228.png" src="../_images/889413372cc328c5301eca3d4b8d0d62f8f0e3b3f584faf13b358a4b3e652228.png" />
+<img alt="../_images/1852d2c2b017a5327e0e8a0e65b3afa0f19d9359d5abb0d12f25b92cf649b286.png" src="../_images/1852d2c2b017a5327e0e8a0e65b3afa0f19d9359d5abb0d12f25b92cf649b286.png" />
 </div>
 </div>
 </section>
@@ -1722,6 +1614,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \]</div>
 <p>Spodaj si poglejmo še konkreten zgled.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, f_1&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1759,9 +1656,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_70_0.png" src="../_images/03 - Fourierova integralska transformacija_70_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_70_1.png" src="../_images/03 - Fourierova integralska transformacija_70_1.png" />
+<img alt="../_images/5550dc76303041261300712c48009a3ed9e5f0a96d85630c08515d1e65e7dee5.png" src="../_images/5550dc76303041261300712c48009a3ed9e5f0a96d85630c08515d1e65e7dee5.png" />
+<img alt="../_images/0dcc5f403aa6cbfd671d26131b1fa3c5769d374e4908f94f9259e9868fdad274.png" src="../_images/0dcc5f403aa6cbfd671d26131b1fa3c5769d374e4908f94f9259e9868fdad274.png" />
 </div>
 </div>
 </section>
@@ -1794,6 +1692,11 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 \]</div>
 <p>kjer smo uporabili zapis, ki razkrije limito, ko gre <span class="math notranslate nohighlight">\(T\to 0\)</span>, gre: <span class="math notranslate nohighlight">\(W(0)=T\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1848,13 +1751,19 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_73_0.png" src="../_images/03 - Fourierova integralska transformacija_73_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_73_1.png" src="../_images/03 - Fourierova integralska transformacija_73_1.png" />
+<img alt="../_images/810acf85f7993ecca7c62b9bcc737c2b31a6b27737deb9f4e44f15397b3c2815.png" src="../_images/810acf85f7993ecca7c62b9bcc737c2b31a6b27737deb9f4e44f15397b3c2815.png" />
+<img alt="../_images/7902492d17d4caa28d69192122f5f4386d7bcc957170c2c51840cdecce88dba8.png" src="../_images/7902492d17d4caa28d69192122f5f4386d7bcc957170c2c51840cdecce88dba8.png" />
 </div>
 </div>
 <p>Za sinusuido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusuido si tako lahko ogledamo, če konvuliramo njuni frekvenčni trasformiranki (primer spodaj).</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, τ, fr, T&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1898,9 +1807,10 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/03 - Fourierova integralska transformacija_75_0.png" src="../_images/03 - Fourierova integralska transformacija_75_0.png" />
-<img alt="../_images/03 - Fourierova integralska transformacija_75_1.png" src="../_images/03 - Fourierova integralska transformacija_75_1.png" />
+<img alt="../_images/b79d3fd69aec10153440aa515bb877aed54a6f420268d8856c9787551dcba8c5.png" src="../_images/b79d3fd69aec10153440aa515bb877aed54a6f420268d8856c9787551dcba8c5.png" />
+<img alt="../_images/ca748827871acd9c3bca83569c1d00654e3f8986e83f85a20aab44b7a1bd44ea.png" src="../_images/ca748827871acd9c3bca83569c1d00654e3f8986e83f85a20aab44b7a1bd44ea.png" />
 </div>
 </div>
 </section>
@@ -1918,7 +1828,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -1926,50 +1836,126 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02%20-%20Fourierove%20vrste.html" title="nazaj page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">nazaj</p>
-            <p class="prev-next-title">2. Fourierove vrste</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02%20-%20Fourierove%20vrste.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">nazaj</p>
+        <p class="prev-next-title">2. Fourierove vrste</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" title="naprej page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">naprej</p>
         <p class="prev-next-title">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Janko Slavič<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Vsebina
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekateri-primeri-fourierove-transformacije">Nekateri primeri Fourierove transformacije</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diracova-delta-funkcija">Diracova delta funkcija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetricna-eksponentno-padajoca-funkcija">Simetrična eksponentno padajoča funkcija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sinusna-funkcija">Sinusna funkcija</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pravokotni-impulz">Pravokotni impulz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#duseni-odziv">Dušeni odziv</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussov-impulz">Gaussov impulz</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lastnosti-fourierove-transformacije">Lastnosti Fourierove transformacije</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearnost-ang-linearity">Linearnost (ang. linearity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje-ang-time-scaling">Časovno skaliranje (ang. time scaling)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-obrat-ang-time-reversal">Časovni obrat (ang. time reversal)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-premik-ang-time-shifting">Časovni premik (ang. time shifting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">Amplitudna modulacija (ang. modulation, tudi frequency-shifting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvajanje">Odvajanje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integriranje">Integriranje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konvolucija-funkcij">Konvolucija funkcij</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#produkt-funkcij">Produkt funkcij</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-oken">Uporaba oken</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Avtor Janko Slavič
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
