@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="sl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -42,6 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,12 +53,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Abecedni seznam" href="../genindex.html" />
+    <link rel="search" title="Išči" href="../search.html" />
     <link rel="next" title="8. Odziv linearnih sistemov na naključno vzbujanje" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" />
     <link rel="prev" title="6. Diskretna Fourierova transformacija" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="sl">
     
 
     <!-- Google Analytics -->
@@ -504,7 +505,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="osnove-nakljucnih-procesov">
-<span id="sec-random"></span><h1>7. Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this headline">#</a></h1>
+<span id="sec-random"></span><h1>7. Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Povezava na naslov">#</a></h1>
 <p>Dinamične obremenitve pogosto niso deterministične, ampak imajo lahko v celoti ali delno naključne lastnosti. Primer naključnih obremenitev predstavljajo obremenitve zaradi morskih valov ali hrapavosti ceste. Take obremenitve je treba obravnavati kot <strong>naključne procese</strong>. V tem poglavju si bomo pogledali, kako naključno obremenitve obravnavamo ter jih potem uspešno uporabimo pri dinamskih sistemih.</p>
 <p>Naključni podatki se razlikujejo od determinističnih podatkov, saj jih ni mogoče natančno predvideti. Vendar pa lahko s pomočjo analize segmentov naključnih podatkov razberemo določene značilnosti. Na primer, če merimo hrapavost površine enega segmenta, lahko na podlagi tega s določeno verjetnostjo sklepamo o hrapavosti drugih segmentov. Pri opisu naključnih procesov se pogosto uporablja predpostavka o porazdelitvi procesa, kot je na primer normalna porazdelitev.</p>
 <p>Čeprav je mogoče naključni proces analizirati v časovni domeni, obstajajo določene pomanjkljivosti pri uporabi takšnega pristopa. Za ustrezno oceno procesa je potrebno zbrati dovolj veliko število vzorčnih meritev (ali opazovanj) v časovni domeni, ki jih nato analiziramo kot skupino (ansambel ali <em>ensemble</em>). Kot bomo videli kasneje, pa je analiza strukturne dinamike in naključnih procesov v frekvenčni domeni bistveno bolj elegantna.</p>
@@ -516,13 +517,13 @@ title="Print to PDF"
 </ul>
 <p>Nekatere vsebine v tem besedilu so povzete po knjigi <span id="id4">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>.</p>
 <section id="kaj-je-nakljucni-proces">
-<h2>Kaj je naključni proces?<a class="headerlink" href="#kaj-je-nakljucni-proces" title="Permalink to this headline">#</a></h2>
+<h2>Kaj je naključni proces?<a class="headerlink" href="#kaj-je-nakljucni-proces" title="Povezava na naslov">#</a></h2>
 <p>Naključni proces je definiran s kombinacijo <strong>funkcije gostote verjetnosti</strong> (ang. <em>Probability Density Function</em> - PDF) in <strong>spektralno gostoto moči</strong> (ang. <em>Power Spectral Density</em> - PSD).</p>
 <p>Slika spodaj prikazuje ansambel <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> vzorčnih funkcij (opazovanj) <span class="math notranslate nohighlight">\(x_k(t)\)</span>, pri čemer je vsako opazovanje <span class="math notranslate nohighlight">\(k\)</span> sestavljeno iz naključne spremenljivke v času <span class="math notranslate nohighlight">\(t_i\)</span>: <span class="math notranslate nohighlight">\(x_k(t_i)\)</span>. Kot bo obravnavano kasneje, predpostavki o stacionarnosti in ergodičnosti bistveno poenostavijo analizo naključnih podatkov (več pozneje).</p>
 <p><img alt="random_ensemble" src="../_images/random_ensemble.svg" /></p>
 </section>
 <section id="normalna-porazdelitev-gaussov-proces">
-<h2>Normalna porazdelitev (Gaussov proces)<a class="headerlink" href="#normalna-porazdelitev-gaussov-proces" title="Permalink to this headline">#</a></h2>
+<h2>Normalna porazdelitev (Gaussov proces)<a class="headerlink" href="#normalna-porazdelitev-gaussov-proces" title="Povezava na naslov">#</a></h2>
 <p>Gaussova porazdelitev je pogosto opažena pri različnih fizikalnih pojavih, njeno razširjenost pa pojasnjuje centralni limitni teorem (<a class="reference internal" href="#sec-centralni-limitni-teorem"><span class="std std-ref">Centralni limitni teorem</span></a>).</p>
 <p>Funkcija gostote verjetnosti (PDF) <span class="math notranslate nohighlight">\(p(x)\)</span> za naključni proces <span class="math notranslate nohighlight">\(\left\{x(t_i)\right\}\)</span>  definira ob času <span class="math notranslate nohighlight">\(t\)</span> verjetnost amplitude <span class="math notranslate nohighlight">\(x\)</span>; za Gaussov proces je PDF definirana kot:</p>
 <div class="math notranslate nohighlight">
@@ -641,7 +642,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </div>
 <section id="centralni-limitni-teorem">
-<span id="sec-centralni-limitni-teorem"></span><h3>Centralni limitni teorem<a class="headerlink" href="#centralni-limitni-teorem" title="Permalink to this headline">#</a></h3>
+<span id="sec-centralni-limitni-teorem"></span><h3>Centralni limitni teorem<a class="headerlink" href="#centralni-limitni-teorem" title="Povezava na naslov">#</a></h3>
 <p>Centralni limitni teorem trdi, da ko so neodvisne naključne spremenljivke seštevane med seboj, njihova vsota sledi normalni porazdelitvi (ne glede na porazdelitev prvotnih spremenljivk), pod pogojem, da je velikost vzorca dovolj velika.</p>
 <p>Spodnja koda demonstrira centralni limitni teorem (ang. <em>Central Limit Theorem - CLT</em>) z uporabo enakomerno porazdeljenih naključnih spremenljivk. Koda ustvari <code class="docutils literal notranslate"><span class="pre">N=10</span></code> vzorcev, vsak vzorec z <code class="docutils literal notranslate"><span class="pre">k=5000</span></code> naključnimi vrednostmi, ki sledijo enakomerni porazdelitvi med 0 in 1. Nato izračuna vsoto prvih <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">10</span></code>) in prikaže njihove verjetnostne porazdelitve s histogrami. Za vsak histogram je izračunana tudi teoretična normalna porazdelitev z uporabo povprečja in standardne deviacije vsote <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev. Izkaže se, da vsota enakomerno porazdeljenih vzorcev konvergira v normalno porazdelitev.</p>
 <div class="cell tag_hide-input docutils container">
@@ -756,7 +757,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </section>
 </section>
 <section id="momenti-funkcije-gostote-verjetnosti">
-<span id="sec-momenti-funkcije-gostote-verjetnosti"></span><h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Permalink to this headline">#</a></h2>
+<span id="sec-momenti-funkcije-gostote-verjetnosti"></span><h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Povezava na naslov">#</a></h2>
 <p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeks <span class="math notranslate nohighlight">\(k\)</span>) označimo kot (<span class="math notranslate nohighlight">\(E[]\)</span> označuje <em>pričakovano vrednost</em>/posplošeno povprečje, ang. <em>expected value</em>, glejte tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Expected_value">povezavo</a>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -820,7 +821,7 @@ R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 </div>
 </section>
 <section id="ergodicnost">
-<h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Permalink to this headline">#</a></h2>
+<h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Povezava na naslov">#</a></h2>
 <p>V ergodičnem procesu se statistične lastnosti (npr. povprečje ali varianca), lahko namesto čez ansambel opazovanj (<span class="math notranslate nohighlight">\(k\)</span>) določimo na podlagi časovnega razvoja (<span class="math notranslate nohighlight">\(t\)</span>) enega samega opazovanja.</p>
 <p>Zgoraj (<code class="docutils literal notranslate"><span class="pre">ref</span></code>{sec:momenti_funkcije_gostote_verjetnosti}) smo srednjo vrednost določili čez ansambel dogodkov. Ob predpostavki ergodičnosti pa jo lahko določimo na podlagi časovnega povprečja:</p>
 <div class="math notranslate nohighlight">
@@ -871,7 +872,7 @@ C_{xy}(\tau, k) &amp;= C_{xy}(\tau). \\
 <p>V zgornjih izrazih je predpostavljeno, da <span class="math notranslate nohighlight">\(x(t)\)</span> predstavlja periodične podatke s periodo <span class="math notranslate nohighlight">\(T\)</span>. S <span class="math notranslate nohighlight">\(S_{xx}(f)\)</span> smo označili spektralno gostoto moči (ang. <em>power spectral density</em>) in smo se v tej vrstici naslonili na Parsevalov teorem (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-parseval"><span class="std std-ref">Parsevalov teorem in močnostni spekter</span></a>). V naslednjem poglavju si bomo spektralno gostoto moči pogledali bolj podrobno. Opomba: če obravnavamo normalno porazdeljeni proces z ničelno srednjo vrednostjo, je varianca edini manjkajoči parameter, ki tako porazdelitev enolično določi.</p>
 </section>
 <section id="spektralna-gostota-moci-psd">
-<span id="sec-psd"></span><h2>Spektralna gostota moči (PSD)<a class="headerlink" href="#spektralna-gostota-moci-psd" title="Permalink to this headline">#</a></h2>
+<span id="sec-psd"></span><h2>Spektralna gostota moči (PSD)<a class="headerlink" href="#spektralna-gostota-moci-psd" title="Povezava na naslov">#</a></h2>
 <p>Spektralna gostota moči opisuje frekvenčno gostoto moči naključnega procesa in dopolnjuje funkcijo gostote verjetnosti (<span class="math notranslate nohighlight">\(p(x)\)</span>) pri definiciji določenega naključnega procesa; ista gostota verjetnosti ima lahko v frekvenčni domeni zelo različne gostote spektralne moči (PSD). PSD ponavadi pridobimo s Fourierjevo transformacijo, običajno z uporabo algoritma FFT.</p>
 <p>Definicija PSD temelji na avto-korelacijski funkciji <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, ki implicitno vsebuje frekvenčno vsebino <span class="math notranslate nohighlight">\(x(t)\)</span>, hkrati pa izpolnjuje Dirichletov pogoj (vsaj v primeru procesov z ničelno srednjo vrednostjo):</p>
 <div class="math notranslate nohighlight">
@@ -935,7 +936,7 @@ S_{xx}(f),&amp; f=0\\
 \end{split}\]</div>
 <p>Podobno velja za <span class="math notranslate nohighlight">\(G_{xy}\)</span>, za dvostranski križno-spektralno gostoto velja <span class="math notranslate nohighlight">\(S_{xy}=S_{yx}^*\)</span>.</p>
 <section id="zgled-1">
-<h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Permalink to this headline">#</a></h3>
+<h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Povezava na naslov">#</a></h3>
 <p>Poglejmo si najprej izračun avto-spektralne gostote s pomočjo Fourierove transformacije. Na koncu zgleda preverimo Parsevalov teorema v diskretni obliki:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1016,7 +1017,7 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </section>
 <section id="zgled-2">
-<h3>Zgled 2<a class="headerlink" href="#zgled-2" title="Permalink to this headline">#</a></h3>
+<h3>Zgled 2<a class="headerlink" href="#zgled-2" title="Povezava na naslov">#</a></h3>
 <p>Poglejmo si sedaj zgled in najprej izračunajmo varianco s pomočjo definicije normalne porazdelitve z ničelno srednjo vrednostjo <span class="math notranslate nohighlight">\(\mu=0\)</span> in standardno deviacijo <span class="math notranslate nohighlight">\(\sigma=3\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1114,7 +1115,7 @@ S_{xx}(f),&amp; f=0\\
 </section>
 </section>
 <section id="spektralni-momenti">
-<h2>Spektralni momenti<a class="headerlink" href="#spektralni-momenti" title="Permalink to this headline">#</a></h2>
+<h2>Spektralni momenti<a class="headerlink" href="#spektralni-momenti" title="Povezava na naslov">#</a></h2>
 <p>Zaradi definicije PSD sledi, da je površina pod krivuljo enaka pričakovani kvadratni vrednosti <span class="math notranslate nohighlight">\(E[x^2]\)</span> procesa (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-parseval"><span class="std std-ref">Parsevalov teorem in močnostni spekter</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1137,7 +1138,7 @@ m_i = \int_{-\infty}^{+\infty} \omega^i \, S_{xx}(\omega) \textrm{d} \omega=\int
 m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 \]</div>
 <section id="zgled">
-<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this headline">#</a></h3>
+<h3>Zgled<a class="headerlink" href="#zgled" title="Povezava na naslov">#</a></h3>
 <p>Poglejmo si ponovno zgled; najprej definirajmo harmonski odziv z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>. Varianca pomika je pričakovana: <span class="math notranslate nohighlight">\((A/\sqrt{2})^2=0.5\,A\)</span>, varianca hitrosti:  hitrosti pa <span class="math notranslate nohighlight">\(((2\pi\,f_0\,A)/\sqrt{2})^2=2\pi^2\,f_0^2\,A\)</span> in varianca pospeška <span class="math notranslate nohighlight">\((((2\pi\,f_0)^2\,A)/\sqrt{2})^2=2^3(\pi\,f_0)^4\,A\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1292,16 +1293,16 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" title="nazaj page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-subtitle">nazaj</p>
             <p class="prev-next-title">6. Diskretna Fourierova transformacija</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" title="next page">
+    <a class='right-next' id="next-link" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html" title="naprej page">
     <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">naprej</p>
         <p class="prev-next-title">8. Odziv linearnih sistemov na naključno vzbujanje</p>
     </div>
     <i class="fas fa-angle-right"></i>

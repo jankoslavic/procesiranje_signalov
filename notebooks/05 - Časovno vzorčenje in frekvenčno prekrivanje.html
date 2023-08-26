@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="sl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -42,6 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,12 +53,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Abecedni seznam" href="../genindex.html" />
+    <link rel="search" title="Išči" href="../search.html" />
     <link rel="next" title="6. Diskretna Fourierova transformacija" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" />
     <link rel="prev" title="4. Linearni časovno invariantni sistemi z eno prostostno stopnjo" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="sl">
     
 
     <!-- Google Analytics -->
@@ -456,9 +457,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="kvantizacija-podatkov">
-<h1>5. Kvantizacija podatkov<a class="headerlink" href="#kvantizacija-podatkov" title="Permalink to this headline">#</a></h1>
+<h1>5. Kvantizacija podatkov<a class="headerlink" href="#kvantizacija-podatkov" title="Povezava na naslov">#</a></h1>
 <section id="enakomerno-casovno-vzorcenje">
-<span id="sec-enakomerno-casovno-vzorcenje"></span><h2>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Permalink to this headline">#</a></h2>
+<span id="sec-enakomerno-casovno-vzorcenje"></span><h2>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Povezava na naslov">#</a></h2>
 <p>Doslej smo obravnavali zvezne podatke <span class="math notranslate nohighlight">\(x(t)\)</span>, pri eksperimentalnem delu pa se skoraj vedno srečamo z diskretnimi vrednostmi, ki so tipično zajete z enakomernim časovnim vzorčenje <span class="math notranslate nohighlight">\(x(n\,\Delta t)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> <strong>čas (perioda) vzorčenja</strong> (<span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> je <strong>frekvenca vzorčenja</strong>).</p>
 <p>Pri razumevanju vzorčenih podatkov si pomagamo z <em>idealnim enakomerno vzorčenimi podatki</em> <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki so produkt zveznih podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> in vlaka impulzov <span class="math notranslate nohighlight">\(i(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -526,7 +527,7 @@ x(p\,\Delta t) = \Delta t\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,e^{\textr
 </div>
 </section>
 <section id="frekvencno-prekrivanje">
-<h2>Frekvenčno prekrivanje<a class="headerlink" href="#frekvencno-prekrivanje" title="Permalink to this headline">#</a></h2>
+<h2>Frekvenčno prekrivanje<a class="headerlink" href="#frekvencno-prekrivanje" title="Povezava na naslov">#</a></h2>
 <p>Frekvenčno prekrivanje ali tudi frekvenčno zrcaljenje (ang. <em>aliasing</em>) je pojav, pri katerem pride do napačne identifikacije frekvence v signalu, razlog pa je neprimernega vzorčenje časovnega signala. Poglejmo detajle: vlak impulzov <span class="math notranslate nohighlight">\(i(t)\)</span> lahko vidimo kot periodične podatke s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> ter jih popišemo s Fourierovo vrsto:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -571,7 +572,7 @@ X_s(f) =\mathcal{F}(i(t)\,x(t)) &amp;= I(f)*X(f)\\
 \end{split}\]</div>
 <p>Kako interpretiramo zgornjo izpeljavo? Če imamo časovno vzorčene podakte <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki vodi v frekvenčni domeni do <span class="math notranslate nohighlight">\(X_s(f)\)</span>, imamo pri določeni frekvenci <span class="math notranslate nohighlight">\(f\)</span> vsebnost vsote zveznih podatkov <span class="math notranslate nohighlight">\(X(f)\)</span> pri frekvencah <span class="math notranslate nohighlight">\(f-n/\Delta t\)</span>, kjer gre celo število <span class="math notranslate nohighlight">\(n\)</span> od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. V praksi to pomeni, da se nam vsebnost dejanskega (zveznega) signala iz frekvenčnega področja izven področja <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span> zrcali in prekriva v frekvenčno področje od <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span>; glejte zgled spodaj.</p>
 <section id="zgled-gaussov-impulz">
-<h3>Zgled: Gaussov impulz<a class="headerlink" href="#zgled-gaussov-impulz" title="Permalink to this headline">#</a></h3>
+<h3>Zgled: Gaussov impulz<a class="headerlink" href="#zgled-gaussov-impulz" title="Povezava na naslov">#</a></h3>
 <p>Časovno vzorčenje in frekvenčno prekrivanje si bomo tukaj pogledali na primeru Gaussovega impulza/okna (glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-gaussov-impulz"><span class="std std-ref">Gaussov impulz</span></a>), ki je v časovni in frekvenčni domeni definirano kot:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -665,7 +666,7 @@ x(t) = e^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a};\qqua
 </section>
 </section>
 <section id="preprecevanje-frekvencnega-prekrivanja">
-<h2>Preprečevanje frekvenčnega prekrivanja<a class="headerlink" href="#preprecevanje-frekvencnega-prekrivanja" title="Permalink to this headline">#</a></h2>
+<h2>Preprečevanje frekvenčnega prekrivanja<a class="headerlink" href="#preprecevanje-frekvencnega-prekrivanja" title="Povezava na naslov">#</a></h2>
 <p>Če je <span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> frekvenca vzorčenja, potem se frekvenčnemu prekrivanju lahko izognemo tako, da uporabimo <strong>nizko-pasovni</strong> (ang. <em>low-pass</em>) filter na frekvenci:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -674,7 +675,7 @@ f_{np}&lt;\frac{f_s}{2}.
 <p>Pri tem je pomembno, da se uporabi analogni filter <em>preden</em> se izvede časovno vzorčenje. Frekvenci <span class="math notranslate nohighlight">\(f_{np}\)</span> rečemo tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquistova frekvenca</a>.</p>
 </section>
 <section id="kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne">
-<h2>Kvantizacija podatkov: pretvorba zveznih podatkov v diskretne<a class="headerlink" href="#kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne" title="Permalink to this headline">#</a></h2>
+<h2>Kvantizacija podatkov: pretvorba zveznih podatkov v diskretne<a class="headerlink" href="#kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne" title="Povezava na naslov">#</a></h2>
 <p>Za obdelavo v računalnikih, moramo merjene zvezne podatke pretvorit v diskretne numerične vrednosti zajete z določeno frekvenco vzorčenja. Zajemne kartice danes omogočajo relativno hitro zajemanje (vsaj 100 kHz) pri relativno veliki dinamični globini (vsaj 24 bit). Tukaj si bomo bolj podrobno pogledali dinamično globino, ki predstavlja število diskretnih nivojev na kateri zajemna kartica razpozna analogne podatke.</p>
 <p>Zapis števil v računalniku je končne natančnosti, tipično današnji računalniki uporabljajo 64 bitno natančnost zapisa kar je bistveno več kakor pa je natančnost zajemnih merilnih kartic.</p>
 <p>Poglejmo si primer spodnje sinusoide. Če uporabimo 24 bitno kartico in tipično območje merjenja [-10, 10], je razlika med dvema nivojema kvantizacije približno 1e-6, ker je za večino meritev povsem dovolj. Razmerje med najmanjšo in največjo vrednostjo, ki jo lahko na določeni zajemin kartici merimo, imenujemo <strong>dinamični razpon</strong> ali tudi <strong>dinamična globina</strong>.</p>
@@ -729,7 +730,7 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </section>
 <section id="razmerje-med-signalom-in-sumom">
-<h2>Razmerje med signalom in šumom<a class="headerlink" href="#razmerje-med-signalom-in-sumom" title="Permalink to this headline">#</a></h2>
+<h2>Razmerje med signalom in šumom<a class="headerlink" href="#razmerje-med-signalom-in-sumom" title="Povezava na naslov">#</a></h2>
 <p>Razliko med kvantizirano in dejansko vrednostjo lahko obravnavamo kot naključni šum <span class="math notranslate nohighlight">\(e\)</span> z enakomerno porazdelitvijo znotraj koraka kvantizacije. Standardna deviacija takega šuma je definirana kot (<span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>, str: 133):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -816,16 +817,16 @@ f_{np}&lt;\frac{f_s}{2}.
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html" title="nazaj page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-subtitle">nazaj</p>
             <p class="prev-next-title">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" title="next page">
+    <a class='right-next' id="next-link" href="06%20-%20Diskretna%20Fourierova%20transformacija.html" title="naprej page">
     <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">naprej</p>
         <p class="prev-next-title">6. Diskretna Fourierova transformacija</p>
     </div>
     <i class="fas fa-angle-right"></i>

@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="sl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -42,6 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,11 +53,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Abecedni seznam" href="genindex.html" />
+    <link rel="search" title="Išči" href="search.html" />
     <link rel="next" title="1. Uvod v procesiranje signalov" href="notebooks/01%20-%20Uvod.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="sl">
     
 
     <!-- Google Analytics -->
@@ -335,11 +336,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="predgovor">
-<h1>Predgovor<a class="headerlink" href="#predgovor" title="Permalink to this headline">#</a></h1>
+<h1>Predgovor<a class="headerlink" href="#predgovor" title="Povezava na naslov">#</a></h1>
 <p>Ta izvršljiva knjiga je nastala na podlagi raziskovalno-razvojnega dela <em>Laboratorija za dinamiko strojev in konstrukcij</em>. <em>Procesiranje signalov</em> je ne samo ključno pri številnih znanstvenih člankih, ki smo jih objavili v vodilnih znanstvenih revijah področja (npr.: <a class="reference external" href="https://www.sciencedirect.com/journal/mechanical-systems-and-signal-processing">Mechanical Systems and Signal Processing</a>), ampak je ključno tudi pri številnih industrijskih projektih (npr. pri kontroli kvalitete izdelkov). Procesiranje signalov predstavlja tudi pomemben del monografije na temo vibracijskega utrujanja (glejte: <span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>), ki kot prva povezuje spektralne metode identifikacije vibracijske poškodovanosti s teorijo strukturne dinamike.</p>
 <p>Knjigo na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili avtorjem referenčnih monografij, ki so postavili temelje teorije naključnih procesov:  <span id="id2">Rice [<a class="reference internal" href="bibliography.html#id66" title="Stephen O. Rice. Mathematical analysis of random noise. The Bell System Technical Journal, 24(1):46–156, 1945.">1945</a>]</span>, <span id="id3">Bendat and Piersol [<a class="reference internal" href="bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>]</span>,  <span id="id4">Newland [<a class="reference internal" href="bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">2012</a>]</span>. Ta knjiga bo osredotočena na procesiranje signalov za uporabo v inženirski praksi na področju analize vibracij in zvoka ter bo v določeni meri sledila viru <span id="id5">Shin and Hammond [<a class="reference internal" href="bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>. Knjiga se naslanja tudi na vir <span id="id6">Slavič <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>.</p>
 <p>Mogoče se v tem trenutku zdi, da naključni procesi z inženirskimi izzivi nimajo veliko skupnega, ampak proti koncu te knjige bomo ugotovili, da obravnava praktično katerega-koli realnega sistema zahteva razumevanje teorije naključnih procesov, najmanj zaradi negotovosti pri merjenju.</p>
-<p>Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bralec/uporabnik lahko prilagaja, smo se zaradi omejitev uporabljene tehnologije pri pisanju morali odreči nekaterim uveljavljenim standardom tehničnih besedil. Slike tako niso podnaslovljene, sklici na enačbe/slike so navedeni relativno (npr. “spodaj”, pri čemer bi bilo pravilno številčenje), pri strojno izpeljanih izrazih ni nujno oblika dosledna (npr. znak za imaginarno število <span class="math notranslate nohighlight">\(\textrm{i}\)</span> ni pokončno, kot je pravilno). Bralce tukaj prosim za razumevanje.</p>
+<p>Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bralec/uporabnik lahko prilagaja, smo se zaradi omejitev uporabljene tehnologije pri pisanju morali odreči nekaterim uveljavljenim standardom tehničnih besedil. Slike tako niso podnaslovljene, sklici na enačbe/slike so navedeni relativno (npr. „spodaj“, pri čemer bi bilo pravilno številčenje), pri strojno izpeljanih izrazih ni nujno oblika dosledna (npr. znak za imaginarno število <span class="math notranslate nohighlight">\(\textrm{i}\)</span> ni pokončno, kot je pravilno). Bralce tukaj prosim za razumevanje.</p>
 <div class="note admonition">
 <p class="admonition-title">Opomba</p>
 <p>Tako bomo označevali posebne opombe!</p>
@@ -375,9 +376,9 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="notebooks/01%20-%20Uvod.html" title="next page">
+    <a class='right-next' id="next-link" href="notebooks/01%20-%20Uvod.html" title="naprej page">
     <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">naprej</p>
         <p class="prev-next-title">1. Uvod v procesiranje signalov</p>
     </div>
     <i class="fas fa-angle-right"></i>

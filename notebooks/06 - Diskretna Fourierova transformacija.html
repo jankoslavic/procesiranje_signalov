@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="sl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -42,6 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,12 +53,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="Abecedni seznam" href="../genindex.html" />
+    <link rel="search" title="Išči" href="../search.html" />
     <link rel="next" title="7. Osnove naključnih procesov" href="07%20-%20Naklju%C4%8Dni%20procesi.html" />
     <link rel="prev" title="5. Kvantizacija podatkov" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="sl">
     
 
     <!-- Google Analytics -->
@@ -442,7 +443,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="diskretna-fourierova-transformacija">
-<span id="sec-dft"></span><h1>6. Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Permalink to this headline">#</a></h1>
+<span id="sec-dft"></span><h1>6. Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Povezava na naslov">#</a></h1>
 <p>Predhodno smo spoznali Fourierovo transformacijo za vzorčene podatke (glejte: <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html#sec-enakomerno-casovno-vzorcenje"><span class="std std-ref">Enakomerno časovno vzorčenje</span></a>), kjer je vzorčenje s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
 <div class="note admonition">
 <p class="admonition-title">Opomba</p>
@@ -495,7 +496,7 @@ e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\p
 <p>Ugotovimo, da je <span class="math notranslate nohighlight">\(x_n\)</span> periodična vrsta <span class="math notranslate nohighlight">\(x_n=x_{n+N}\)</span>. Res smo začeli z vzorčenimi podatki v času <span class="math notranslate nohighlight">\(x_n\)</span>, ki niso periodični; rezultat z inverzno DFT pa je periodičen.</p>
 </div>
 <section id="hitra-fourierova-transformacija">
-<h2>Hitra Fourierova transformacija<a class="headerlink" href="#hitra-fourierova-transformacija" title="Permalink to this headline">#</a></h2>
+<h2>Hitra Fourierova transformacija<a class="headerlink" href="#hitra-fourierova-transformacija" title="Povezava na naslov">#</a></h2>
 <p>Hitra Fourierova transformacija (ang. <em>Fast Fourier Transform</em> - FFT) je ime numeričnega algoritma za diskretno Fourierovo transformacijo. DFT ima numerični obseg proporcionalen z <span class="math notranslate nohighlight">\(N^2\)</span>, kar zapišemo kot: (<span class="math notranslate nohighlight">\(\mathcal{O}(N^2)\)</span>). Kot avtorja hitre Fourierove transformacije štejeta James Cooley in John Tukey, ki sta algoritem objavila v letu 1965 (glejte: <a class="reference external" href="https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf">vir</a>), pozneje pa se je izkazalo, da je podoben algoritem že bistveno prej, v neobjavljenem delu iz leta 1805, odkril Carl Friedrich Gauss. Algoritem je, glede na DFT, numerično bistveno hitrejši: <span class="math notranslate nohighlight">\(\mathcal{O}(N\log(N))\)</span>; ker numerični obseg s številom elementov <span class="math notranslate nohighlight">\(N\)</span> ne narašča kvadratično, je to bistveno povečalo uporabnost DFT. Nekateri algoritem FFT smatrajo kot enega najbolj pomembnih algoritmov, saj je imel (in še ima) zelo pomemben družbeno-ekonomski vpliv. Kot zanimivost lahko tukaj povemo, da algoritem ni bil patentiran (glejte: <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">vir</a>). Zaradi simetrije v podatkih, je hitrost izračuna najvišja, če je število vzorcev enako <span class="math notranslate nohighlight">\(2^n\)</span>, kjer <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>.</p>
 <p>Diskretna Fourierova transformacija je v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dokumentirana <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.fft.html">tukaj</a> in si jo bomo najprej pogledali na spodnjem primeru sinusuide z amplitudo <code class="docutils literal notranslate"><span class="pre">A</span></code>, frekvenco <code class="docutils literal notranslate"><span class="pre">fr</span></code>, frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code> in dolžino vzorčenja <code class="docutils literal notranslate"><span class="pre">N</span></code>, ki bo enaka frekvenci vzorčenja (vzorčili bomo torej 1 sekundo). DFT bomo izvedli z metodo <code class="docutils literal notranslate"><span class="pre">numpy.fft.fft()</span></code> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html#numpy.fft.fft">dokumentacija</a>)</p>
 <div class="cell docutils container">
@@ -554,7 +555,7 @@ e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\p
 </div>
 </section>
 <section id="fourierove-vrste-in-diskretna-fourierova-transformacija">
-<h2>Fourierove vrste in diskretna Fourierova transformacija<a class="headerlink" href="#fourierove-vrste-in-diskretna-fourierova-transformacija" title="Permalink to this headline">#</a></h2>
+<h2>Fourierove vrste in diskretna Fourierova transformacija<a class="headerlink" href="#fourierove-vrste-in-diskretna-fourierova-transformacija" title="Povezava na naslov">#</a></h2>
 <p>Diskretna Fourierova transformacija je s Fourierovimi vrstami zelo povezana. Povezavo lahko hitro razkrijemo, če predpostavimo diskretno časovno vrsto <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span> in <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>, sledi:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -644,7 +645,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 <p>Če v kodi zgoraj spremenimo <code class="docutils literal notranslate"><span class="pre">fs</span></code> ali število točk tako, da je zadnja točka eksplicitno vključena, rezultat ne bo enak tistemu iz Fourierovih vrst!</p>
 </section>
 <section id="frekvencna-locljivost-in-dodajanje-nicel">
-<h2>Frekvenčna ločljivost in dodajanje ničel<a class="headerlink" href="#frekvencna-locljivost-in-dodajanje-nicel" title="Permalink to this headline">#</a></h2>
+<h2>Frekvenčna ločljivost in dodajanje ničel<a class="headerlink" href="#frekvencna-locljivost-in-dodajanje-nicel" title="Povezava na naslov">#</a></h2>
 <p>Frekvenčna ločljivost DFT je definirana z dolžino diskretne časovne vrste <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span>; dolžina take vrste je torej <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>, zato sledi, da je frekvenčna ločljivost:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -722,7 +723,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </div>
 </section>
 <section id="simetrija-dft-za-realne-podatke">
-<h2>Simetrija DFT za realne podatke<a class="headerlink" href="#simetrija-dft-za-realne-podatke" title="Permalink to this headline">#</a></h2>
+<h2>Simetrija DFT za realne podatke<a class="headerlink" href="#simetrija-dft-za-realne-podatke" title="Povezava na naslov">#</a></h2>
 <div class="note admonition">
 <p class="admonition-title">Opomba</p>
 <p>Za realne podatke v frekvenčni domeni velja:</p>
@@ -814,7 +815,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </div>
 </section>
 <section id="konvolucija-periodicnih-podatkov">
-<span id="sec-krozna-konvolucija"></span><h2>Konvolucija periodičnih podatkov<a class="headerlink" href="#konvolucija-periodicnih-podatkov" title="Permalink to this headline">#</a></h2>
+<span id="sec-krozna-konvolucija"></span><h2>Konvolucija periodičnih podatkov<a class="headerlink" href="#konvolucija-periodicnih-podatkov" title="Povezava na naslov">#</a></h2>
 <p>Konvolucijo funkcij v primeru Fourierove integralske transformacije smo obravnavali v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-konvolucija-funkcij"><span class="std std-ref">Konvolucija funkcij</span></a>, tukaj si bomo pogledali posebnosti pri obravnavi dveh periodičnih vrst (glejte: <span class="xref std std-ref">DFT_periodicno</span> ) enake dolžine: <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -880,16 +881,16 @@ Y_k = \sum_{n=0}^{N-1} y_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html" title="nazaj page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-subtitle">nazaj</p>
             <p class="prev-next-title">5. Kvantizacija podatkov</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="07%20-%20Naklju%C4%8Dni%20procesi.html" title="next page">
+    <a class='right-next' id="next-link" href="07%20-%20Naklju%C4%8Dni%20procesi.html" title="naprej page">
     <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-subtitle">naprej</p>
         <p class="prev-next-title">7. Osnove naključnih procesov</p>
     </div>
     <i class="fas fa-angle-right"></i>

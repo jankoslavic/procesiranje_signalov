@@ -17,51 +17,72 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import numpy as np
-import matplotlib.pyplot as plt
+from scipy import signal
 
-# Exponential distribution example
-population_rate = 0.5
-population_size = 100000
+odsekov = 10
+N_ = N//odsekov
+win = signal.windows.hann(N_)              # okno
+scale = 1.0 / (fs*(win*win).sum())
 
-plt.hist(population, bins=30, density=True, alpha=0.5, label='Population')
-plt.xlabel('Time Between Arrivals')
-plt.ylabel('Frequency')
-plt.title('Distribution of Population (Exponential Distribution)')
-plt.axvline(x=1/population_rate, color='r', label='Population Mean')
-plt.legend()
+G_fx = np.zeros(N_//2+1, dtype=complex) #brisanje
+G_ff = np.zeros(N_//2+1, dtype=complex)
+G_xf = np.zeros(N_//2+1, dtype=complex)
+G_xx = np.zeros(N_//2+1, dtype=complex)
+
+
+for i in range(odsekov):
+    f_ = f[i*N_:(i+1)*N_]
+    x_ = x[i*N_:(i+1)*N_]
+    f_w = win*f_          # okno
+    x_w = win*x_
+    F = np.fft.rfft(f_w)  #fft
+    X = np.fft.rfft(x_w)
+    G_fx += scale*2*np.conj(F) * X / odsekov #povprečiti je potrebno cenilke avto in križnega spektra
+    G_ff += scale*2*np.conj(F) * F / odsekov 
+    G_xf += scale*2*np.conj(X) * F / odsekov 
+    G_xx += scale*2*np.conj(X) * X / odsekov
+
+freq = np.fft.rfftfreq(N_, d=dt)
+H = alpha(freq, m=1, k=1e5, c=10)
+
+H1 = G_fx/G_ff
+H2 = G_xx/G_xf
+γ2 = np.abs(H1/H2)
+
+sel = freq>=0
+#sel = np.logical_and(freq>40, freq<60)    # za ogled dogajanja v lastni frekvenci
+fig, ax = plt.subplots()
+ax.set_title('Avtospektralna gostota moči - amplituda')
+ax.semilogy(freq[sel], np.abs(H[sel]), label='$|H(f)|$')
+ax.semilogy(freq[sel], np.abs(H1[sel]), label='$|\\hat H_1(f)|$', alpha=0.5)
+ax.semilogy(freq[sel], np.abs(H2[sel]), label='$|\\hat H_2(f)|$', alpha=0.5)
+ax.legend(loc=2)
+ax2 = ax.twinx() 
+ax2.plot(freq[sel], γ2[sel], 'C4', label='$\\gamma^2(f)$')
+ax2.set_xlabel('f [Hz]')
+ax2.set_ylabel('$\\gamma^2$')
+ax2.set_ylim(0,1.1)
+ax2.legend(loc=1)
 plt.show()
 
-population = np.random.exponential(scale=1/population_rate, size=population_size)
-
-sample_size = 100
-num_samples = 1000
-
-sample_means = []
-for i in range(num_samples):
-    sample = np.random.choice(population, sample_size)
-    sample_mean = np.mean(sample)
-    sample_means.append(sample_mean)
-
-plt.hist(sample_means, bins=30, density=True, alpha=0.5, label='Sample Means')
-plt.xlabel('Time Between Arrivals')
-plt.ylabel('Frequency')
-plt.title('Distribution of Sample Means (Exponential Distribution)')
-plt.axvline(x=1/population_rate, color='r', label='Population Mean')
-plt.legend()
+fig, ax = plt.subplots()
+ax.set_title('Avtospektralna gostota moči - faza')
+ax.plot(freq[sel], np.angle(H[sel]), label='$\\angle H(f)$')
+ax.plot(freq[sel], np.angle(H1[sel]), label='$\\angle\\hat H_1(f)$', alpha=0.5)
+ax.plot(freq[sel], np.angle(H2[sel]), label='$\\angle\\hat H_2(f)$', alpha=0.5)
+ax.legend()
 plt.show()
-
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mNameError[0m                                 Traceback (most recent call last)
-Input [1;32mIn [2][0m, in [0;36m<cell line: 8>[1;34m()[0m
-[0;32m      5[0m population_rate [38;5;241m=[39m [38;5;241m0.5[39m
-[0;32m      6[0m population_size [38;5;241m=[39m [38;5;241m100000[39m
-[1;32m----> 8[0m plt[38;5;241m.[39mhist([43mpopulation[49m, bins[38;5;241m=[39m[38;5;241m30[39m, density[38;5;241m=[39m[38;5;28;01mTrue[39;00m, alpha[38;5;241m=[39m[38;5;241m0.5[39m, label[38;5;241m=[39m[38;5;124m'[39m[38;5;124mPopulation[39m[38;5;124m'[39m)
-[0;32m      9[0m plt[38;5;241m.[39mxlabel([38;5;124m'[39m[38;5;124mTime Between Arrivals[39m[38;5;124m'[39m)
-[0;32m     10[0m plt[38;5;241m.[39mylabel([38;5;124m'[39m[38;5;124mFrequency[39m[38;5;124m'[39m)
+Input [1;32mIn [1][0m, in [0;36m<cell line: 4>[1;34m()[0m
+[0;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m [38;5;28;01mimport[39;00m signal
+[0;32m      3[0m odsekov [38;5;241m=[39m [38;5;241m10[39m
+[1;32m----> 4[0m N_ [38;5;241m=[39m [43mN[49m[38;5;241m/[39m[38;5;241m/[39modsekov
+[0;32m      5[0m win [38;5;241m=[39m signal[38;5;241m.[39mwindows[38;5;241m.[39mhann(N_)              [38;5;66;03m# okno[39;00m
+[0;32m      6[0m scale [38;5;241m=[39m [38;5;241m1.0[39m [38;5;241m/[39m (fs[38;5;241m*[39m(win[38;5;241m*[39mwin)[38;5;241m.[39msum())
 
-[1;31mNameError[0m: name 'population' is not defined
-NameError: name 'population' is not defined
+[1;31mNameError[0m: name 'N' is not defined
+NameError: name 'N' is not defined
 
