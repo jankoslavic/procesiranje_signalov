@@ -385,24 +385,24 @@ document.write(`
 <p><strong>Diskretna Fourierova transformacija</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
+X_k = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
 \]</div>
 <p>kjer velja <span class="math notranslate nohighlight">\(x_n = x(n\,\Delta t)\)</span> in <span class="math notranslate nohighlight">\(X_k=X(k/(N\,\Delta t))\)</span>. Ker je DFT periodična z <span class="math notranslate nohighlight">\(1/\Delta t\)</span> (<span class="math notranslate nohighlight">\(X_k=X_{k+N}\)</span>), je treba izračunati samo <span class="math notranslate nohighlight">\(N\)</span> členov, torej <span class="math notranslate nohighlight">\(k=[0,1,\dots\,N-1]\)</span>.</p>
 </div>
 <p>Da velja <span class="math notranslate nohighlight">\(X_k=X_{k+N}\)</span>, dokažemo z:</p>
 <div class="math notranslate nohighlight">
 \[
-e^{-\mathrm{i}\,2\pi\,k\,n/N}=e^{-\mathrm{i}\,2\pi\,n\,(k+N)/N}=e^{-\mathrm{i}\,2\pi\,n\,k/N}\,\underbrace{e^{-\mathrm{i}\,2\pi\,n\,N/N}}_{=\cos(-2\pi\,n)=1}
+\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N}=\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,(k+N)/N}=\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,k/N}\,\underbrace{\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,N/N}}_{=\cos(-2\pi\,n)=1}
 \]</div>
-<p>Inverzno DFT izpeljemo tako, da zgornjo enačbo pomnožimo z <span class="math notranslate nohighlight">\(e^{\mathrm{i}\,2\pi\,k\,r/N}\)</span> in nato seštejemo po <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<p>Inverzno DFT izpeljemo tako, da zgornjo enačbo pomnožimo z <span class="math notranslate nohighlight">\(\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N}\)</span> in nato seštejemo po <span class="math notranslate nohighlight">\(k\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{k=0}^{N-1}X_k\,e^{\mathrm{i}\,2\pi\,k\,r/N} = \sum_{k=0}^{N-1}\sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}\,e^{\mathrm{i}\,2\pi\,k\,r/N},
+\sum_{k=0}^{N-1}X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N} = \sum_{k=0}^{N-1}\sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N}\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N},
 \]</div>
-<p>Kjer na desni strani zamenjamo vrstni red vsote in ugotovimo:</p>
+<p>nato na desni strani zamenjamo vrstni red vsote in ugotovimo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\sum_{k=0}^{N-1} e^{-\mathrm{i}\,2\pi\,k\,(n-r)/N}=
+\sum_{k=0}^{N-1} \mathrm{e}^{-\mathrm{i}\,2\pi\,k\,(n-r)/N}=
 \begin{cases}
 N; \quad n=r\\
 0; \quad\textrm{sicer.}
@@ -411,20 +411,20 @@ N; \quad n=r\\
 <p>Sledi:</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{k=0}^{N-1}X_k\,e^{\mathrm{i}\,2\pi\,k\,r/N} = x_r\,N,
+\sum_{k=0}^{N-1}X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N} = x_r\,N,
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p><strong>Inverzna diskretna Fourierova transformacija</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k\,e^{\mathrm{i}\,2\pi\,k\,n/N}.
+x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,n/N},
 \]</div>
 </div>
-<p>Ker velja:</p>
+<p>ker velja:</p>
 <div class="math notranslate nohighlight">
 \[
-e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\pi\,k\,n/N}\,\underbrace{e^{\mathrm{i}\,2\pi\,k\,N/N}}_{=\cos(2\pi\,k)=1}.
+\mathrm{e}^{\mathrm{i}\,2\pi\,k\,n/N}=\mathrm{e}^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=\mathrm{e}^{\mathrm{i}\,2\pi\,k\,n/N}\,\underbrace{\mathrm{e}^{\mathrm{i}\,2\pi\,k\,N/N}}_{=\cos(2\pi\,k)=1}.
 \]</div>
 <div class="admonition note" id="dft-periodicno">
 <p class="admonition-title">Opomba</p>
@@ -432,7 +432,7 @@ e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\p
 </div>
 <section id="hitra-fourierova-transformacija">
 <h2>Hitra Fourierova transformacija<a class="headerlink" href="#hitra-fourierova-transformacija" title="Povezava na naslov">#</a></h2>
-<p>Hitra Fourierova transformacija (ang. <em>Fast Fourier Transform</em> - FFT) je ime numeričnega algoritma za diskretno Fourierovo transformacijo. DFT ima numerični obseg proporcionalen z <span class="math notranslate nohighlight">\(N^2\)</span>, kar zapišemo kot: (<span class="math notranslate nohighlight">\(\mathcal{O}(N^2)\)</span>). Kot avtorja hitre Fourierove transformacije štejeta James Cooley in John Tukey, ki sta algoritem objavila v letu 1965 (glejte: <a class="reference external" href="https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf">vir</a>), pozneje pa se je izkazalo, da je podoben algoritem že bistveno prej, v neobjavljenem delu iz leta 1805, odkril Carl Friedrich Gauss. Algoritem je, glede na DFT, numerično bistveno hitrejši: <span class="math notranslate nohighlight">\(\mathcal{O}(N\log(N))\)</span>; ker numerični obseg s številom elementov <span class="math notranslate nohighlight">\(N\)</span> ne narašča kvadratično, je to bistveno povečalo uporabnost DFT. Nekateri algoritem FFT smatrajo kot enega najbolj pomembnih algoritmov, saj je imel (in še ima) zelo pomemben družbeno-ekonomski vpliv. Kot zanimivost lahko tukaj povemo, da algoritem ni bil patentiran (glejte: <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">vir</a>). Zaradi simetrije v podatkih, je hitrost izračuna najvišja, če je število vzorcev enako <span class="math notranslate nohighlight">\(2^n\)</span>, kjer <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>.</p>
+<p>Hitra Fourierova transformacija (ang. <em>Fast Fourier Transform</em> - FFT) je ime numeričnega algoritma za diskretno Fourierovo transformacijo. DFT ima numerični obseg proporcionalen z <span class="math notranslate nohighlight">\(N^2\)</span>, kar zapišemo kot: (<span class="math notranslate nohighlight">\(\mathcal{O}(N^2)\)</span>). Kot avtorja hitre Fourierove transformacije štejeta James Cooley in John Tukey, ki sta algoritem objavila v letu 1965 (glejte: <a class="reference external" href="https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf">vir</a>), pozneje pa se je izkazalo, da je podoben algoritem že bistveno prej, v neobjavljenem delu iz leta 1805, odkril Carl Friedrich Gauss. Algoritem je, glede na DFT, numerično bistveno hitrejši: <span class="math notranslate nohighlight">\(\mathcal{O}(N\log(N))\)</span>; ker numerični obseg s številom elementov <span class="math notranslate nohighlight">\(N\)</span> ne narašča kvadratično, je to bistveno povečalo uporabnost DFT. Nekateri algoritem FFT smatrajo kot enega najbolj pomembnih algoritmov, saj je imel (in še ima) zelo pomemben družbeno-ekonomski vpliv. Kot zanimivost lahko tukaj povemo, da algoritem ni bil patentiran (glejte: <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">vir</a>). Zaradi simetrije v podatkih je hitrost izračuna najvišja, če je število vzorcev enako <span class="math notranslate nohighlight">\(2^n\)</span>, kjer <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>.</p>
 <p>Diskretna Fourierova transformacija je v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dokumentirana <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.fft.html">tukaj</a> in si jo bomo najprej pogledali na spodnjem primeru sinusuide z amplitudo <code class="docutils literal notranslate"><span class="pre">A</span></code>, frekvenco <code class="docutils literal notranslate"><span class="pre">fr</span></code>, frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code> in dolžino vzorčenja <code class="docutils literal notranslate"><span class="pre">N</span></code>, ki bo enaka frekvenci vzorčenja (vzorčili bomo torej 1 sekundo). DFT bomo izvedli z metodo <code class="docutils literal notranslate"><span class="pre">numpy.fft.fft()</span></code> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html#numpy.fft.fft">dokumentacija</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -501,17 +501,17 @@ e^{\mathrm{i}\,2\pi\,k\,n/N}=e^{\mathrm{i}\,2\pi\,k\,(n+N)/N}=e^{\mathrm{i}\,2\p
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-c_k &amp;= \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,k\,t/T_p}\,\mathrm{d}t\\
-&amp;= \frac{1}{N\,\Delta t}\,\sum_{n=0}^{N-1} x(n\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,k\,\Delta t\,n/(N\,\Delta t)}\,\Delta t\\
-&amp;= \frac{1}{N}\,\underbrace{\sum_{n=0}^{N-1} x(n\,\Delta t)\,e^{-\mathrm{i}\,2\pi\,k\,n/N}}_{X_k}\\
+c_k &amp;= \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,t/T_p}\,\mathrm{d}t\\
+&amp;= \frac{1}{N\,\Delta t}\,\sum_{n=0}^{N-1} x(n\,\Delta t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,\Delta t\,n/(N\,\Delta t)}\,\Delta t\\
+&amp;= \frac{1}{N}\,\underbrace{\sum_{n=0}^{N-1} x(n\,\Delta t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N}}_{X_k}\\
 &amp;= \frac{X_k}{N}\\
 \end{split}
 \end{split}\]</div>
 <p>Poudariti je treba, da v splošnem <span class="math notranslate nohighlight">\(X_k/N\ne c_k\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_k\)</span> periodična vrsta.</p>
-<p>Pri primerjanju DFT in Fourierovih vrst se pogosto naredi napaka pri razumevanju periode (predvsem zadnje diskretne točke). Pri zgornjem primeru sinusoide časovna točka pri <code class="docutils literal notranslate"><span class="pre">t=1</span></code> eksplicitno ni vključena; implicitno pa je, saj smo zgoraj spoznali, da so vzorčeni podatki periodični in velja <span class="math notranslate nohighlight">\(x_n=x_{n+N}\)</span>. Poglejmo ta detajl pobližje; Fourierove vrste so definirana kot:</p>
+<p>Pri primerjanju DFT in Fourierovih vrst se pogosto naredi napaka pri razumevanju periode (predvsem zadnje diskretne točke). Pri zgornjem primeru sinusoide časovna točka pri <code class="docutils literal notranslate"><span class="pre">t=1</span></code> eksplicitno ni vključena; implicitno pa je, saj smo zgoraj spoznali, da so vzorčeni podatki periodični in velja <span class="math notranslate nohighlight">\(x_n=x_{n+N}\)</span>. Poglejmo ta detajl pobližje; Členi Fourierove vrste so definirani kot:</p>
 <div class="math notranslate nohighlight">
 \[
-c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
+c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
 \]</div>
 <p>Izračunamo Fourierov koeficient za frekvenco <code class="docutils literal notranslate"><span class="pre">fr</span></code>:</p>
 <div class="cell docutils container">
@@ -592,7 +592,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 \[
 \Delta f= \frac{1}{N\,\Delta t}.
 \]</div>
-<p>Z daljšo časovno vrsto, bi lahko imeli tudi boljšo frekvenčno ločljivost. Kadar dodatnih točk diskretne vrste ne moremo pridobiti, lahko frekvenčno ločljivost povečamo z dodajanjem ničel:</p>
+<p>Z daljšo časovno vrsto bi lahko imeli tudi boljšo frekvenčno ločljivost. Kadar dodatnih točk diskretne vrste ne moremo pridobiti, lahko frekvenčno ločljivost povečamo z dodajanjem ničel:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \tilde{x}_n=
@@ -607,8 +607,8 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <p><strong>Diskretna Fourierova transformacija z dodajanjem ničel</strong> (ang. <em>zero-padding</em>):</p>
 <div class="math notranslate nohighlight">
 \[
-\tilde{X}_k = \sum_{n=0}^{L-1} \tilde{x}_n\,e^{-\mathrm{i}\,2\pi\,k\,n/L}
-= \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/L}.
+\tilde{X}_k = \sum_{n=0}^{L-1} \tilde{x}_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/L}
+= \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/L}.
 \]</div>
 </div>
 <p>Na takšen pridobimo frekvenčno ločjivost:</p>
@@ -772,11 +772,11 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <p>Konvolucijo funkcij v primeru Fourierove integralske transformacije smo obravnavali v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-konvolucija-funkcij"><span class="std std-ref">Konvolucija funkcij</span></a>, tukaj si bomo pogledali posebnosti pri obravnavi dveh periodičnih vrst (glejte: <span class="xref std std-ref">DFT_periodicno</span> ) enake dolžine: <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
+X_k = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-Y_k = \sum_{n=0}^{N-1} y_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
+Y_k = \sum_{n=0}^{N-1} y_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
 \]</div>
 <p>Podobno kakor za funkcije, velja tudi za periodične časovne vrste, da je DFT konvolucije v časovni domeni produkt frekvenčnih transformirank.</p>
 <div class="admonition note">
@@ -788,20 +788,20 @@ Y_k = \sum_{n=0}^{N-1} y_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N},
 \]</div>
 <p>Da se poudari, da gre za krožno konvolucijo, se kdaj uporabi tudi znak <span class="math notranslate nohighlight">\(\circledast\)</span>: <span class="math notranslate nohighlight">\(x_n\circledast y_n\)</span>.</p>
 </div>
-<p>Poudarjanje periodičnosti <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span> je nujno sicer (krožna) konvolucija ni mogoča; to bo jasno iz sledeče izpeljave:</p>
+<p>Poudarjanje periodičnosti <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span> je nujno, sicer (krožna) konvolucija ni mogoča; to bo jasno iz sledeče izpeljave:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
 \textrm{DFT}\big\{x_n\circledast y_n\big\}&amp;=\textrm{DFT}\big\{\sum_r^{N-1}x_r\,y_{n-r}\big\}\\
-&amp;=\sum_n^{N-1}\sum_r^{N-1}x_r\,y_{n-r}\,e^{-\textrm{i}\,2\,\pi\,n\,k/N}\\
-&amp;=\underbrace{\sum_r^{N-1}x_r\,\,e^{-\textrm{i}\,2\,\pi\,r\,k/N}}_{X_k}\,\underbrace{\sum_n^{N-1}y_{n-r}\,e^{-\textrm{i}\,2\,\pi\,(n-r)\,k/N}}_{Y_k}\\
+&amp;=\sum_n^{N-1}\sum_r^{N-1}x_r\,y_{n-r}\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,n\,k/N}\\
+&amp;=\underbrace{\sum_r^{N-1}x_r\,\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,r\,k/N}}_{X_k}\,\underbrace{\sum_n^{N-1}y_{n-r}\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,(n-r)\,k/N}}_{Y_k}\\
 &amp;=X_k\,Y_k
 \end{split}
 \end{split}\]</div>
-<p>Pri zgornji izpeljavi je treba poudariti, da vsota po <span class="math notranslate nohighlight">\(r\)</span> v predzadnji vrstici vključuje tudi vsoto po <span class="math notranslate nohighlight">\(n\)</span>, ker pa je vsota po <span class="math notranslate nohighlight">\(n\)</span> zaradi periodičnosti neodvisna od <span class="math notranslate nohighlight">\(r\)</span>, se lahko vsoti po <span class="math notranslate nohighlight">\(r\)</span> in <span class="math notranslate nohighlight">\(n\)</span> izvedeta neodvisno. Zaradi periodičnosti <span class="math notranslate nohighlight">\(y_n\)</span>, za vsak <span class="math notranslate nohighlight">\(r\)</span> torej velja:</p>
+<p>Pri zgornji izpeljavi je treba poudariti, da vsota po <span class="math notranslate nohighlight">\(r\)</span> v predzadnji vrstici vključuje tudi vsoto po <span class="math notranslate nohighlight">\(n\)</span>, ker pa je vsota po <span class="math notranslate nohighlight">\(n\)</span> zaradi periodičnosti neodvisna od <span class="math notranslate nohighlight">\(r\)</span>, se lahko vsoti po <span class="math notranslate nohighlight">\(r\)</span> in <span class="math notranslate nohighlight">\(n\)</span> izvedeta neodvisno. Zaradi periodičnosti <span class="math notranslate nohighlight">\(y_n\)</span> za vsak <span class="math notranslate nohighlight">\(r\)</span> torej velja:</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_n^{N-1}y_{n-r}\,e^{-\textrm{i}\,2\,\pi\,(n-r)\,k/N}=\sum_n^{N-1}y_{n}\,e^{-\textrm{i}\,2\,\pi\,n\,k/N}=Y_k
+\sum_n^{N-1}y_{n-r}\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,(n-r)\,k/N}=\sum_n^{N-1}y_{n}\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,n\,k/N}=Y_k
 \]</div>
 <p>Če vrsti <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span> ne bi bili periodični, <strong>konvolucija končnih vrst ne bi bila tako enostavna.</strong></p>
 </section>

@@ -461,14 +461,14 @@ R_{xx}(\tau)
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-S_{xx} &amp;= \int_{-\infty}^{+\infty}R_{xx}(\tau)\,e^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
+S_{xx} &amp;= \int_{-\infty}^{+\infty}R_{xx}(\tau)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
 &amp;=
-\underbrace{\int_{0}^{+\infty}\,h(\tau_1)\,e^{+\textrm{i}\,2\pi\,f\,\tau_1}\,\textrm{d}  \tau_1}_{H^*(f)}\,
-\underbrace{\int_{0}^{+\infty}\,h(\tau_2)\,e^{-\textrm{i}\,2\pi\,f\,\tau_2}\,\textrm{d}  \tau_2}_{H(f)}\,
-\underbrace{\int_{-\infty}^{+\infty}R_{ff}(u)\,e^{-\textrm{i}\,2\pi\,f\,u}\,\textrm{d}  u}_{S_{ff}(f)}.
+\underbrace{\int_{0}^{+\infty}\,h(\tau_1)\,\mathrm{e}^{+\textrm{i}\,2\pi\,f\,\tau_1}\,\textrm{d}  \tau_1}_{H^*(f)}\,
+\underbrace{\int_{0}^{+\infty}\,h(\tau_2)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau_2}\,\textrm{d}  \tau_2}_{H(f)}\,
+\underbrace{\int_{-\infty}^{+\infty}R_{ff}(u)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,u}\,\textrm{d}  u}_{S_{ff}(f)}.
 \end{split}
 \end{split}\]</div>
-<p>Opomba: v zgornjem izrazu smo uporabili zamenjavo: <span class="math notranslate nohighlight">\(u=\tau+\tau_1-\tau_2\)</span> in posledično <span class="math notranslate nohighlight">\(e^{-\textrm{i}\,2\pi\,f\,\tau}=e^{-\textrm{i}\,2\pi\,f\,(u-\tau_1+\tau_2)}\)</span> ter nato ločili integracijske spremenljivke.</p>
+<p>Opomba: v zgornjem izrazu smo uporabili zamenjavo: <span class="math notranslate nohighlight">\(u=\tau+\tau_1-\tau_2\)</span> in posledično <span class="math notranslate nohighlight">\(\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau}=\mathrm{e}^{-\textrm{i}\,2\pi\,f\,(u-\tau_1+\tau_2)}\)</span> ter nato ločili integracijske spremenljivke.</p>
 <p>Končni rezultat je:</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
@@ -496,13 +496,13 @@ R_{fx}(\tau)&amp;=E\big[f(t)\,x(t+\tau)\big]\\
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-S_{fx} &amp;= \int_{-\infty}^{+\infty}R_{fx}(\tau)\,e^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
+S_{fx} &amp;= \int_{-\infty}^{+\infty}R_{fx}(\tau)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
 &amp;=
-\underbrace{\int_{0}^{+\infty}\,h(\tau_1)\,e^{-\textrm{i}\,2\pi\,f\,\tau_1}\,\textrm{d}  \tau_1}_{H(f)}\,
-\underbrace{\int_{-\infty}^{+\infty}R_{ff}(u)\,e^{-\textrm{i}\,2\pi\,f\,u}\,\textrm{d}  u}_{S_{ff}(f)}.
+\underbrace{\int_{0}^{+\infty}\,h(\tau_1)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau_1}\,\textrm{d}  \tau_1}_{H(f)}\,
+\underbrace{\int_{-\infty}^{+\infty}R_{ff}(u)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,u}\,\textrm{d}  u}_{S_{ff}(f)}.
 \end{split}
 \end{split}\]</div>
-<p>Opomba: v zgornjem izrazu smo uporabili zamenjavo: <span class="math notranslate nohighlight">\(u=\tau-\tau_1\)</span> in posledično <span class="math notranslate nohighlight">\(e^{-\textrm{i}\,2\pi\,f\,\tau}=e^{-\textrm{i}\,2\pi\,f\,(u+\tau_1)}\)</span> ter nato ločili integracijske spremenljivke.
+<p>Opomba: v zgornjem izrazu smo uporabili zamenjavo: <span class="math notranslate nohighlight">\(u=\tau-\tau_1\)</span> in posledično <span class="math notranslate nohighlight">\(\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau}=\mathrm{e}^{-\textrm{i}\,2\pi\,f\,(u+\tau_1)}\)</span> ter nato ločili integracijske spremenljivke.
 Končni rezultat je:</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>

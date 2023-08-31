@@ -400,32 +400,32 @@ document.write(`
 <p>Izračun Fourierove vrste (<a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fourierove-vrste"><span class="std std-ref">2. Fourierove vrste</span></a>) temelji na periodi <span class="math notranslate nohighlight">\(T_p\)</span>; integral za izračun koeficientov lahko definiramo od <span class="math notranslate nohighlight">\(-T_p/2\)</span> do <span class="math notranslate nohighlight">\(+T_p/2\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-c_n=\frac{1}{T_p}\,\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{p}\,n\,t}\,\textrm{d} t,
+c_n=\frac{1}{T_p}\,\int_{-T_p/2}^{+T_p/2}x(t)\,\mathrm{e}^{-\textrm{i}\,\omega_{p}\,n\,t}\,\textrm{d} t,
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, osnovna krožna frekvenca gre proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemu težavam pri deljenju z <span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(c_n\)</span> pomnožimo zgornji izraz s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
 <div class="math notranslate nohighlight">
 \[
-\lim_{T_p\rightarrow \infty} c_n\,T_p=\underbrace{\int_{-T_p/2}^{+T_p/2}x(t)\,e^{-\textrm{i}\,\omega_{n}\,t}\,\textrm{d} t}_{X(\omega_n)}.
+\lim_{T_p\rightarrow \infty} c_n\,T_p=\underbrace{\int_{-T_p/2}^{+T_p/2}x(t)\,\mathrm{e}^{-\textrm{i}\,\omega_{n}\,t}\,\textrm{d} t}_{X(\omega_n)}.
 \]</div>
 <p>Ob predpostavki, da limita obstaja, zapišemo <strong>Fourierovo transformacijo</strong> (tudi <strong>Fourierov integral</strong>):</p>
 <div class="math notranslate nohighlight">
 \[
-X(\omega)= \mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty}x(t)\,e^{-\textrm{i}\,\omega\,t}\,\textrm{d} t,
+X(\omega)= \mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty}x(t)\,\mathrm{e}^{-\textrm{i}\,\omega\,t}\,\textrm{d} t,
 \]</div>
 <p>kjer smo namesto <span class="math notranslate nohighlight">\(\omega_{n}\)</span> zapisali <span class="math notranslate nohighlight">\(\omega\)</span>, saj je sedaj frekvenca zvezno definirana. <span class="math notranslate nohighlight">\(X(\omega)\)</span> predstavlja amplitudno frekvenčno gostoto, saj je <span class="math notranslate nohighlight">\(c_n\,T_p=c_n/\Delta f\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta f\)</span> frekvenčna pasovna širina (ang. <em>bandwidth</em>). S <span class="math notranslate nohighlight">\(\mathcal{F}\{\}\)</span> označimo Fourierovo transformacijo.</p>
 <p>Poglejmo si sedaj še <strong>rekonstruirano zvezno funkcijo</strong>, kadar <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\lim_{T_p\rightarrow\infty}\sum_{n=-\infty}^{+\infty}
-X(\omega_n)\underbrace{\frac{1}{T_p}}_{\Delta f}\,e^{\mathrm{i}\,\overbrace{2\pi\,n/T_p}^{\omega_n}\,t}
+X(\omega_n)\underbrace{\frac{1}{T_p}}_{\Delta f}\,\mathrm{e}^{\mathrm{i}\,\overbrace{2\pi\,n/T_p}^{\omega_n}\,t}
 =\lim_{T_p\rightarrow\infty}\sum_{n=-\infty}^{+\infty}
-X(\omega_n)\,e^{\mathrm{i}\,\omega_n\,t}\Delta f,
+X(\omega_n)\,\mathrm{e}^{\mathrm{i}\,\omega_n\,t}\Delta f,
 \]</div>
 <p>v limitni obliki, je izraz zvezen in ga imenujemo <strong>inverzna Fourierova transformacija</strong>, ter označimo z <span class="math notranslate nohighlight">\(\mathcal{F}^{-1}\{\}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\mathcal{F}^{-1}\{X(\omega)\}=\frac{1}{2\pi}\int_{-\infty}^{+\infty}
-X(\omega)\,e^{\mathrm{i}\,\omega\,t}\textrm{d}\omega.
+X(\omega)\,\mathrm{e}^{\mathrm{i}\,\omega\,t}\textrm{d}\omega.
 \]</div>
 <p>V izrazu zgoraj smo uporabili <span class="math notranslate nohighlight">\(\textrm{d}f=\textrm{d}\omega/(2\pi)\)</span>.</p>
 <div class="admonition note">
@@ -433,9 +433,9 @@ X(\omega)\,e^{\mathrm{i}\,\omega\,t}\textrm{d}\omega.
 <p>Če tukaj še enkrat ponovimo Fourierovo transformacijo in njeno inverzno obliko zapisano v <strong>krožni frekvenci</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-X(\omega)=\int_{-\infty}^{+\infty} x(t)\,e^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t,
+X(\omega)=\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t,
 \qquad
-x(t)=\frac{1}{2\,\pi}\int_{-\infty}^{+\infty} X(\omega)\,e^{\,\textrm{i}\,\omega\,t}\,\textrm{d} \omega.
+x(t)=\frac{1}{2\,\pi}\int_{-\infty}^{+\infty} X(\omega)\,\mathrm{e}^{\,\textrm{i}\,\omega\,t}\,\textrm{d} \omega.
 \]</div>
 </div>
 <div class="admonition note">
@@ -443,9 +443,9 @@ x(t)=\frac{1}{2\,\pi}\int_{-\infty}^{+\infty} X(\omega)\,e^{\,\textrm{i}\,\omega
 <p>V numeričnih metodah pa je frekvenca bolj pogosto definirana v <strong>sekundni frekvenci</strong>, takrat je Fourierova transformacija in njena inverzna oblika definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
-X(f)=\int_{-\infty}^{+\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,
+X(f)=\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,
 \qquad
-x(t)=\int_{-\infty}^{+\infty} X(f)\,e^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
+x(t)=\int_{-\infty}^{+\infty} X(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
 \]</div>
 </div>
 <section id="nekateri-primeri-fourierove-transformacije">
@@ -455,23 +455,23 @@ x(t)=\int_{-\infty}^{+\infty} X(f)\,e^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
 <p>Najprej si poglejmo Fourierovo transformacijo <strong>Diracove delta funkcije</strong> <span class="math notranslate nohighlight">\(\delta(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\{\delta(t)\} = \int_{-\infty}^{+\infty} \delta(t)\,e^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t=e^{-\,\textrm{i}\,\omega\,0}=1,
+\mathcal{F}\{\delta(t)\} = \int_{-\infty}^{+\infty} \delta(t)\,\mathrm{e}^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t=\mathrm{e}^{-\,\textrm{i}\,\omega\,0}=1,
 \]</div>
-<p>Na podlagi zgornje izpejave zaključimo, da je Dirakova delta funkcija v času neskončno kratka, v frekvenčni domeni pa neskončno široka (zasede celotni spekter oz vse frekvence). Veljalo bi tudi obratno, če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu bomo se pozneje vračali.</p>
+<p>Na podlagi zgornje izpejave zaključimo, da je Diracova delta funkcija v času neskončno kratka, v frekvenčni domeni pa neskončno široka (zasede celotni spekter oz vse frekvence). Veljalo bi tudi obratno, če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu se bomo pozneje vračali.</p>
 </section>
 <section id="simetricna-eksponentno-padajoca-funkcija">
 <h3>Simetrična eksponentno padajoča funkcija<a class="headerlink" href="#simetricna-eksponentno-padajoca-funkcija" title="Povezava na naslov">#</a></h3>
 <p>Poglejmo si sedaj še <strong>simetrično, eksponentno padajočo, funkcijo</strong> <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
+x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 \]</div>
 <p>Fourierova transformacija:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty} e^{-\delta\,|t|}\,e^{-\,\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{2\,\delta}{\delta^{2} + 4 \pi^{2}\,f^{2}}
+\mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty} \mathrm{e}^{-\eta\,|t|}\,\mathrm{e}^{-\,\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{2\,\eta}{\eta^{2} + 4 \pi^{2}\,f^{2}}
 \]</div>
-<p>Opazimo, da je pri frekvenci 0 Hz ampituda <span class="math notranslate nohighlight">\(|X(0)|=2/\delta\)</span>, in pade na polovico začetne amplitude pri frekvenci: <span class="math notranslate nohighlight">\(f_{1/2}=\delta/(2\pi)\)</span>. Parameter <span class="math notranslate nohighlight">\(\delta\)</span> definira časovni raztros; večja, ko je vrednost <span class="math notranslate nohighlight">\(\delta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni. Podobno kakor pri delta funkciji, torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
+<p>Opazimo, da je pri frekvenci 0 Hz ampituda <span class="math notranslate nohighlight">\(|X(0)|=2/\eta\)</span>, in pade na polovico začetne amplitude pri frekvenci: <span class="math notranslate nohighlight">\(f_{1/2}=\eta/(2\pi)\)</span>. Parameter <span class="math notranslate nohighlight">\(\eta\)</span> definira časovni raztros; večja, ko je vrednost <span class="math notranslate nohighlight">\(\eta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni. Podobno kakor pri delta funkciji, torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
 <p>Poglejmo si sedaj zgled v času in frekvenci:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -482,9 +482,9 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 
 <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t [s]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
@@ -498,11 +498,11 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7b9954ffb2da7fccb2f11b83950a6aa42823f75f32d68e74e41a21fb0b47a796.png" src="../_images/7b9954ffb2da7fccb2f11b83950a6aa42823f75f32d68e74e41a21fb0b47a796.png" />
-<img alt="../_images/6d8fd1858b454b0910d8f041bd6f329c4976e379812bec4916eb7cfe13a2dd74.png" src="../_images/6d8fd1858b454b0910d8f041bd6f329c4976e379812bec4916eb7cfe13a2dd74.png" />
+<img alt="../_images/c52619e9b3c7a262d0ceaf93c9e42327e6058ca999ae4ced07ade18050c02144.png" src="../_images/c52619e9b3c7a262d0ceaf93c9e42327e6058ca999ae4ced07ade18050c02144.png" />
+<img alt="../_images/d18046a90a210d35862a31eff5939bd00b66c955fc91ef46cc0374e526733b0d.png" src="../_images/d18046a90a210d35862a31eff5939bd00b66c955fc91ef46cc0374e526733b0d.png" />
 </div>
 </div>
-<p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič (pri Fourierovih vrstah bi bili kosinusni členi različni od nič, sinusni pa enaki nič). To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelni bi bila imaginarna komponentna (slika spodaj).</p>
+<p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič (pri Fourierovih vrstah bi bili kosinusni členi različni od nič, sinusni pa enaki nič). To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelna bi bila imaginarna komponentna (slika spodaj).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -512,9 +512,9 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 
 <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t [s]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
@@ -529,8 +529,8 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3516ccc3bf7d3230681ca18e2de004fccb57ad9cc5d500be35c7267e493df46a.png" src="../_images/3516ccc3bf7d3230681ca18e2de004fccb57ad9cc5d500be35c7267e493df46a.png" />
-<img alt="../_images/79c5f59c86b72970572ef3654d74df4e1df2e9fbeb051fd8890deecfdc229b0d.png" src="../_images/79c5f59c86b72970572ef3654d74df4e1df2e9fbeb051fd8890deecfdc229b0d.png" />
+<img alt="../_images/88093027c45347c46dcdb0bdc41abbdb014200825952a5e586010a12282da352.png" src="../_images/88093027c45347c46dcdb0bdc41abbdb014200825952a5e586010a12282da352.png" />
+<img alt="../_images/b82ebc6c31cd9c8e8f62097c3a894e034615afa27651f7e95b6d0d6dde337488.png" src="../_images/b82ebc6c31cd9c8e8f62097c3a894e034615afa27651f7e95b6d0d6dde337488.png" />
 </div>
 </div>
 <p>Sicer pa velja poudariti, da realni podatki <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje koračno funkcijo). Časovni podatki so v splošnem lahko komplekne oblike in takrat v frekvenčni domeni praviloma ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
@@ -543,12 +543,12 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, d&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
-<span class="n">x3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">δ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">))</span>  <span class="c1"># kompleksna časovna vrsta; to bo hitro</span>
-<span class="c1"># x = x + sym.I*sym.sign(t)*sym.exp(-δ*sym.Abs(t)) # kompleksna časovna vrsta; to bo trajalo</span>
+<span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">))</span>  <span class="c1"># kompleksna časovna vrsta; to bo hitro</span>
+<span class="c1"># x = x + sym.I*sym.sign(t)*sym.exp(-η*sym.Abs(t)) # kompleksna časovna vrsta; to bo trajalo</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 <span class="n">X2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 <span class="n">X3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
@@ -582,9 +582,9 @@ x(t)=e^{-\delta\,|t|},\qquad\textrm{kjer je:}\qquad\delta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/157ffe48acc91cba576ae2db628e81b84ef764dbd4a54a26fcd1ac15a36ea76c.png" src="../_images/157ffe48acc91cba576ae2db628e81b84ef764dbd4a54a26fcd1ac15a36ea76c.png" />
-<img alt="../_images/1bd9c3d856913542dac9102891026ca1eaeb78f1545b42be8c7353788b3d794d.png" src="../_images/1bd9c3d856913542dac9102891026ca1eaeb78f1545b42be8c7353788b3d794d.png" />
-<img alt="../_images/c67db402e04f75057d08b3055b804862175cc75582945921fd8ceabaa7c0ea0b.png" src="../_images/c67db402e04f75057d08b3055b804862175cc75582945921fd8ceabaa7c0ea0b.png" />
+<img alt="../_images/803e861a421083eb4cf9e3332c41ece3d198e11d4651e8550debcd8e9e43aa36.png" src="../_images/803e861a421083eb4cf9e3332c41ece3d198e11d4651e8550debcd8e9e43aa36.png" />
+<img alt="../_images/f28ef3b13142f770fe8c5eb1128d995fa1a43a51281ddd99cd688c146904e9e1.png" src="../_images/f28ef3b13142f770fe8c5eb1128d995fa1a43a51281ddd99cd688c146904e9e1.png" />
+<img alt="../_images/8652fc01142ad8c8768df248bf17eb817c279e11793c740f541eb3c716065f75.png" src="../_images/8652fc01142ad8c8768df248bf17eb817c279e11793c740f541eb3c716065f75.png" />
 </div>
 </div>
 </section>
@@ -599,7 +599,7 @@ x(t) = A\,\sin(2\pi\,p\,t),
 <div class="math notranslate nohighlight">
 \[
 x(t) = \frac{A}{2\,\textrm{i}}\,
-\left(e^{\textrm{i}\,2\pi\,p\,t}-e^{-\textrm{i}\,2\pi\,p\,t}
+\left(\mathrm{e}^{\textrm{i}\,2\pi\,p\,t}-\mathrm{e}^{-\textrm{i}\,2\pi\,p\,t}
 \right)
 \]</div>
 <p>in potem nadaljujemo z izračunom Fourierove transformacije:</p>
@@ -622,7 +622,7 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 \[\displaystyle \frac{i A \left(\mathcal{F}_{t}\left[e^{- 2 i \pi p t}\right]\left(f\right) - \mathcal{F}_{t}\left[e^{2 i \pi p t}\right]\left(f\right)\right)}{2}\]</div>
 </div>
 </div>
-<p>Glede na lastnosti Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>) vemo <span class="math notranslate nohighlight">\(\mathcal{F}_{t}\left[e^{-2 \textrm{i}\,\pi\,p\,t}\right]\left(f\right)=\delta(p+f)\)</span> in torej sledi:</p>
+<p>V zgornji strojni izpeljavi <span class="math notranslate nohighlight">\(\mathcal{F}_{t}[\cdot]\)</span> predstavlja Fourierovo transformacijo.  Glede na lastnosti Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>) vemo <span class="math notranslate nohighlight">\(\mathcal{F}_{t}\left[\mathrm{e}^{-2 \textrm{i}\,\pi\,p\,t}\right]\left(f\right)=\delta(p+f)\)</span> in torej sledi:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}_{t}\left( A\,\sin(2\pi\,p\,t)\right)=
@@ -697,8 +697,8 @@ a&amp;;\qquad |t|&lt;b\\
 <p>kar v primeru Fourierove transformacije vodi v:</p>
 <div class="math notranslate nohighlight">
 \[
-X(f)=\int_{-\infty}^{+\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=
-\int_{-b}^{+b} a\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{a \sin\left(2 \pi\,b\,f \right)}{\pi\,f}
+X(f)=\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=
+\int_{-b}^{+b} a\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{a \sin\left(2 \pi\,b\,f \right)}{\pi\,f}
 \]</div>
 <p>in lahko preoblikujemo v:</p>
 <div class="math notranslate nohighlight">
@@ -743,8 +743,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9d5c46655113abb166f8e1bbb8c36189e2e7ada564a896b7f985c8dbe6e89e06.png" src="../_images/9d5c46655113abb166f8e1bbb8c36189e2e7ada564a896b7f985c8dbe6e89e06.png" />
-<img alt="../_images/525a3b05f92ce71e9952019a224ab2bd7ecc90328a7a97b35d2ab825eba9b874.png" src="../_images/525a3b05f92ce71e9952019a224ab2bd7ecc90328a7a97b35d2ab825eba9b874.png" />
+<img alt="../_images/d0ea1d63d36866f7814167ebbfcae55afccd234046d709d3157a4ec453448ad1.png" src="../_images/d0ea1d63d36866f7814167ebbfcae55afccd234046d709d3157a4ec453448ad1.png" />
+<img alt="../_images/00f66e317898ce1daba98bf9d101ceb03625fb06a789507a205e3617b3ef1187.png" src="../_images/00f66e317898ce1daba98bf9d101ceb03625fb06a789507a205e3617b3ef1187.png" />
 </div>
 </div>
 </section>
@@ -753,14 +753,14 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 <p>Tukaj si bomo najprej pogledali simetrični dušeni odziv:</p>
 <div class="math notranslate nohighlight">
 \[
-x_1(t) = e^{-\delta\,|t|}\,\cos(2\pi\,f_0\,t)
+x_1(t) = \mathrm{e}^{-\delta\,|t|}\,\cos(2\pi\,f_0\,t)
 \]</div>
 <p>in nato še enostranski dušeni odziv:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 x_2(t) = 
 \begin{cases}
-e^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0\\
+\mathrm{e}^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0\\
 0&amp;;\qquad \textrm{sicer.}
 \end{cases}
 \end{split}\]</div>
@@ -833,9 +833,9 @@ e^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1d85f364cfc0eb157f90ba0de7f7cc7b93b24da0766d7322c9b2f2bc0ed8c5d4.png" src="../_images/1d85f364cfc0eb157f90ba0de7f7cc7b93b24da0766d7322c9b2f2bc0ed8c5d4.png" />
-<img alt="../_images/4859aec20fa0a74b63103852ccb2386472a05192cacd2b26284afbe6f4f26763.png" src="../_images/4859aec20fa0a74b63103852ccb2386472a05192cacd2b26284afbe6f4f26763.png" />
-<img alt="../_images/51795eed3625fc4eec49bcb826080a5fa8e57153bd7296d3e9e86f91803a2d31.png" src="../_images/51795eed3625fc4eec49bcb826080a5fa8e57153bd7296d3e9e86f91803a2d31.png" />
+<img alt="../_images/d95c291c6aa1dd3d649b955a1c4b265cceccc9bd56750759dff8208ba470719e.png" src="../_images/d95c291c6aa1dd3d649b955a1c4b265cceccc9bd56750759dff8208ba470719e.png" />
+<img alt="../_images/2b68d85674e661349b11d4dca3057d1077a0e8d9d7f1090f3f21b8c5c6c1743b.png" src="../_images/2b68d85674e661349b11d4dca3057d1077a0e8d9d7f1090f3f21b8c5c6c1743b.png" />
+<img alt="../_images/6b05290522d4ac986a773fc98966ba93e26d494197be0bfdcc2e5632764f9e01.png" src="../_images/6b05290522d4ac986a773fc98966ba93e26d494197be0bfdcc2e5632764f9e01.png" />
 </div>
 </div>
 </section>
@@ -844,12 +844,12 @@ e^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0\\
 <p>Gaussovo okno ima zelo pomembno mesto pri različnih teoretičnih izpeljavah (npr.: porazdelitev verjetnosti, okna, valčna transformacija) in zato si bomo tukaj pogledali njegovo obliko v frekvenčni domeni. Najprej definirajmo :</p>
 <div class="math notranslate nohighlight">
 \[
-x(t) = e^{-a\,t^2};\qquad a&gt;0.
+x(t) = \mathrm{e}^{-a\,t^2};\qquad a&gt;0.
 \]</div>
 <p>Fourierovo transformacijo izpeljemo (spodaj) in rezultira v:</p>
 <div class="math notranslate nohighlight">
 \[
-X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
+X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -900,8 +900,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8ec316d1b0233a073cf5ef9ee798fad75ac977fde3367b3e48f4a4a5653d3da7.png" src="../_images/8ec316d1b0233a073cf5ef9ee798fad75ac977fde3367b3e48f4a4a5653d3da7.png" />
-<img alt="../_images/c4f17cdaacc52de3f9cb904a5be1d9e647f50bb3558d1f354e0501af4ad5949b.png" src="../_images/c4f17cdaacc52de3f9cb904a5be1d9e647f50bb3558d1f354e0501af4ad5949b.png" />
+<img alt="../_images/e147b6937e3cc8740336d0f5572322eed91584ac5ff8392a72d6df2210b59edb.png" src="../_images/e147b6937e3cc8740336d0f5572322eed91584ac5ff8392a72d6df2210b59edb.png" />
+<img alt="../_images/c2d3f5a366bf1988947f9eaabd1a7269307bd9d8625f5b17450e76c55740b738.png" src="../_images/c2d3f5a366bf1988947f9eaabd1a7269307bd9d8625f5b17450e76c55740b738.png" />
 </div>
 </div>
 </section>
@@ -912,7 +912,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <h3>Linearnost (ang. linearity)<a class="headerlink" href="#linearnost-ang-linearity" title="Povezava na naslov">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Fourierova transformacija je linarna, kar pomeni:</p>
+<p>Fourierova transformacija je linearna, kar pomeni:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}\{a\,x(t)+b\,y(t)\} = a\,X(f) + b\,Y(f).
@@ -991,8 +991,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ef2a6c5c0dcd1dc474f31fa401b6a2dbf656aaf10b3b8f3561ffe3ba5994193a.png" src="../_images/ef2a6c5c0dcd1dc474f31fa401b6a2dbf656aaf10b3b8f3561ffe3ba5994193a.png" />
-<img alt="../_images/0c13746b58cd9ec8d4d31e2aeabe8ad00f4a70ee7a607570b88d44a2af06e028.png" src="../_images/0c13746b58cd9ec8d4d31e2aeabe8ad00f4a70ee7a607570b88d44a2af06e028.png" />
+<img alt="../_images/74d7989b8ce09a2e29a0b5205d395507e2a06d94a35512334d6ceb281a1cb229.png" src="../_images/74d7989b8ce09a2e29a0b5205d395507e2a06d94a35512334d6ceb281a1cb229.png" />
+<img alt="../_images/e6a538f67b1cb4c31f8d29cbb9509ce6e8289d9936078c6d3501c1198f5609ef.png" src="../_images/e6a538f67b1cb4c31f8d29cbb9509ce6e8289d9936078c6d3501c1198f5609ef.png" />
 </div>
 </div>
 </section>
@@ -1066,8 +1066,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/06d7eb635c649e75e3bce0552792173e8e33bc816e9603f9766b9a6efdbb11c8.png" src="../_images/06d7eb635c649e75e3bce0552792173e8e33bc816e9603f9766b9a6efdbb11c8.png" />
-<img alt="../_images/a4abdc972ee403fe2027e42732ef81b77a981d0a53a1964a276074287ee1f629.png" src="../_images/a4abdc972ee403fe2027e42732ef81b77a981d0a53a1964a276074287ee1f629.png" />
+<img alt="../_images/a942ea415bf3e5c1bdc4f6ee16745bb299558b237de017ececb4ed1d1278ddab.png" src="../_images/a942ea415bf3e5c1bdc4f6ee16745bb299558b237de017ececb4ed1d1278ddab.png" />
+<img alt="../_images/8feaf49279600a3ba82afa33fd57535b6adc82e771e52eb63f6f358163ef3b5c.png" src="../_images/8feaf49279600a3ba82afa33fd57535b6adc82e771e52eb63f6f358163ef3b5c.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1132,7 +1132,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <p>Časovni premik je definiran z <span class="math notranslate nohighlight">\(t_0\)</span> in ima na Fourierovo transformacijo vpliv</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\{x(t-t_0)\} = e^{-\textrm{i}\,2\pi\,f\,t_0}\,X(f).
+\mathcal{F}\{x(t-t_0)\} = \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t_0}\,X(f).
 \]</div>
 </div>
 <p>Še izpeljava:</p>
@@ -1155,7 +1155,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle \int\limits_{-\infty}^{\infty} x{\left(t - t_{0} \right)} e^{- 2 i \pi f t}\, dt = \int\limits_{-\infty}^{\infty} x{\left(\tau \right)} e^{- 2 i \pi f \left(t_{0} + \tau\right)}\, d\tau\]</div>
 </div>
 </div>
-<p>Opazimo, da člen <span class="math notranslate nohighlight">\(e^{-\textrm{i}\,2\pi\,f\,t_0}\)</span> lahko izpostavimo iz integrala.</p>
+<p>Opazimo, da člen <span class="math notranslate nohighlight">\(\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t_0}\)</span> lahko izpostavimo iz integrala.</p>
 <p>Časovno skaliranje postane pomembno, kadar obravnavamo zakasnjene meritve (npr. da eno meritev merimo z zakasnitvijo glede na ostale): glejte primer spodaj.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1207,17 +1207,17 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_3</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">],</span>
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza - korekcija: $\mathcal</span><span class="si">{F}</span><span class="s1">\{x(t-t_0)\} / e^{-i\,2\pi\,f\,t_0}$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza - korekcija: $\mathcal</span><span class="si">{F}</span><span class="s1">\{x(t-t_0)\} / \mathrm</span><span class="si">{e}</span><span class="s1">^{-i\,2\pi\,f\,t_0}$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8d0e853ca0b1f18dbea49c98a7f515d1d6419985642629f78e6dda59ba95182b.png" src="../_images/8d0e853ca0b1f18dbea49c98a7f515d1d6419985642629f78e6dda59ba95182b.png" />
-<img alt="../_images/cce9df9eb029476fe71ab17836cbffd940de23eb8492ddffeeff27913a812da7.png" src="../_images/cce9df9eb029476fe71ab17836cbffd940de23eb8492ddffeeff27913a812da7.png" />
-<img alt="../_images/de594fea96fb660299f005a2c7e713a6a30e02fec34d516286ae203f3411c008.png" src="../_images/de594fea96fb660299f005a2c7e713a6a30e02fec34d516286ae203f3411c008.png" />
-<img alt="../_images/4091274c41733ca6a8200398ea09e74767f6a634414c69677f78e772d653f4fd.png" src="../_images/4091274c41733ca6a8200398ea09e74767f6a634414c69677f78e772d653f4fd.png" />
+<img alt="../_images/74f0995d3454006feef277e520bcf7bc65db3f0ea6bd09868320aa143f88f495.png" src="../_images/74f0995d3454006feef277e520bcf7bc65db3f0ea6bd09868320aa143f88f495.png" />
+<img alt="../_images/3e24338a0bfc6b1d185c65677b0898652706626f342ab236f29ae47b357ff829.png" src="../_images/3e24338a0bfc6b1d185c65677b0898652706626f342ab236f29ae47b357ff829.png" />
+<img alt="../_images/308bbbfad5fe4a818e496c25c4b1336e61f2a09091b86c234481620f47ebd822.png" src="../_images/308bbbfad5fe4a818e496c25c4b1336e61f2a09091b86c234481620f47ebd822.png" />
+<img alt="../_images/16790860c47b5e04a4737caa1adef4d8fa7b91c11842e975e2a7c05e070d7911.png" src="../_images/16790860c47b5e04a4737caa1adef4d8fa7b91c11842e975e2a7c05e070d7911.png" />
 </div>
 </div>
 </section>
@@ -1225,12 +1225,12 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <h3>Amplitudna modulacija (ang. modulation, tudi frequency-shifting)<a class="headerlink" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting" title="Povezava na naslov">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Amplitudna modulacija je definirana z <span class="math notranslate nohighlight">\(e^{\textrm{i}\,2\pi\,f_0\,t}\)</span> in ima na Fourierovo transformacijo vpliv:</p>
+<p>Amplitudna modulacija je definirana z <span class="math notranslate nohighlight">\(\mathrm{e}^{\textrm{i}\,2\pi\,f_0\,t}\)</span> in ima na Fourierovo transformacijo vpliv:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\{x(t)\,e^{\textrm{i}\,2\pi\,f_0\,t}\} = X(f-f_0).
+\mathcal{F}\{x(t)\,\mathrm{e}^{\textrm{i}\,2\pi\,f_0\,t}\} = X(f-f_0).
 \]</div>
-<p>Amplitudno modulacijo srečamo tudi v obliki pomnoženi s cosinusno funkcijo:</p>
+<p>Amplitudno modulacijo srečamo tudi v obliki, pomnoženi s cosinusno funkcijo:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}\{x(t)\,\cos(2\pi\,f_0\,t)\} = \frac{1}{2}\big(X(f-f_0)+X(f+f_0)\big).
@@ -1304,8 +1304,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6a94dbfd33a4047f808138ca389a8dfe9b3d59c0844b246a1f33758a9d31aef9.png" src="../_images/6a94dbfd33a4047f808138ca389a8dfe9b3d59c0844b246a1f33758a9d31aef9.png" />
-<img alt="../_images/60aa72b0eccd0d90dc91cbe64dde712ddaab47f0f76454ec25818e29da2e3e28.png" src="../_images/60aa72b0eccd0d90dc91cbe64dde712ddaab47f0f76454ec25818e29da2e3e28.png" />
+<img alt="../_images/1adc5e270bdf71440dc4cde061e80d70985aa3d0274e3ff1625a552c4d98e221.png" src="../_images/1adc5e270bdf71440dc4cde061e80d70985aa3d0274e3ff1625a552c4d98e221.png" />
+<img alt="../_images/95f5a1dec5faa489755c6d8334e43a332bc7c8ee2ab066fe8a5ce76ad8804895.png" src="../_images/95f5a1dec5faa489755c6d8334e43a332bc7c8ee2ab066fe8a5ce76ad8804895.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1341,7 +1341,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle \int\limits_{-\infty}^{\infty} e^{- 2 i \pi f t} \frac{d}{d t} x{\left(t \right)}\, dt\]</div>
 </div>
 </div>
-<p>Uporabiti moramo integriranje po delih <span class="math notranslate nohighlight">\(u = e^{-\textrm{i}\,2\pi\,f\,t}\)</span>, <span class="math notranslate nohighlight">\(\textrm{d}v= \dot x(t)\,\textrm{d}t\)</span>; pripravimo <span class="math notranslate nohighlight">\(\textrm{d}u\)</span> in <span class="math notranslate nohighlight">\(v\)</span>:</p>
+<p>Uporabiti moramo integriranje po delih <span class="math notranslate nohighlight">\(u = \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\)</span>, <span class="math notranslate nohighlight">\(\textrm{d}v= \dot x(t)\,\textrm{d}t\)</span>; pripravimo <span class="math notranslate nohighlight">\(\textrm{d}u\)</span> in <span class="math notranslate nohighlight">\(v\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
@@ -1378,7 +1378,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle - 2 i \pi f \int\limits_{-\infty}^{\infty} x{\left(t \right)} e^{- 2 i \pi f t}\, dt\]</div>
 </div>
 </div>
-<p>in s tem smo dokazal zaključili.</p>
+<p>in s tem smo dokaz zaključili.</p>
 </section>
 <section id="integriranje">
 <h3>Integriranje<a class="headerlink" href="#integriranje" title="Povezava na naslov">#</a></h3>
@@ -1397,8 +1397,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 \]</div>
 <p>pri čemer naredimo zamenjavo funkcije: <span class="math notranslate nohighlight">\(u(t)=\dot x(t)\)</span> in <span class="math notranslate nohighlight">\(\int_{-\infty}^t u(t)\,\textrm{d}\tau=x(t)\)</span>:</p>
 <p>Odvajanje in integriranje v frekvenčni domeni sta zelo pomembni lastnosti Fourierove transformacije, saj nam omogočata enostaven prehod med odvajanimi in integriranimi podatki.</p>
-<p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacijo, saj temelji na razliki števil, ki se razlikujeta/jo malo (razlika pa se nato deli z majhnim številom, kar dodatno povečuje negotovost). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljena.</p>
-<p>Nadalje velja poudariti, da je časovno integriranje nestabilna numerična operacija, saj se napaka posameznega koraka sešteva in zato s časom raste. Integracija v frekenčni domeni, taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0Hz, nedoločen rezultat (deljenje z 0).</p>
+<p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacijo, saj temelji na razliki števil, ki se razlikujeta/jo malo (razlika pa se nato deli z majhnim številom, kar dodatno povečuje negotovost). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljeno.</p>
+<p>Nadalje velja poudariti, da je časovno integriranje nestabilna numerična operacija, saj se napaka posameznega koraka sešteva in zato s časom raste. Integracija v frekvenčni domeni taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0Hz nedoločen rezultat (deljenje z 0).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1477,10 +1477,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5cd760db26b9b9591f5c66a83531991bef4724230ba98e7a0df1964812f2c4c8.png" src="../_images/5cd760db26b9b9591f5c66a83531991bef4724230ba98e7a0df1964812f2c4c8.png" />
-<img alt="../_images/c0b67acb1946ee8ae95ea7f9a3a168b3d912ef742b7a54b144d0719d98aebdec.png" src="../_images/c0b67acb1946ee8ae95ea7f9a3a168b3d912ef742b7a54b144d0719d98aebdec.png" />
-<img alt="../_images/d838e80a31f47e4ee9a55df7a793c3473927bd7203902dda76f098fd9fd1daca.png" src="../_images/d838e80a31f47e4ee9a55df7a793c3473927bd7203902dda76f098fd9fd1daca.png" />
-<img alt="../_images/aac12520c1c36ff32b9e7c12216fd9420b402469c04274616a25ea10c35f782f.png" src="../_images/aac12520c1c36ff32b9e7c12216fd9420b402469c04274616a25ea10c35f782f.png" />
+<img alt="../_images/a37451abd8adb0cf166c5380849a4e60d78038a3155754b6656c3e8e0c62d380.png" src="../_images/a37451abd8adb0cf166c5380849a4e60d78038a3155754b6656c3e8e0c62d380.png" />
+<img alt="../_images/180723d70bd22d5ab18c403d9e296b026205965814e39a1882ea0a87fad80077.png" src="../_images/180723d70bd22d5ab18c403d9e296b026205965814e39a1882ea0a87fad80077.png" />
+<img alt="../_images/96ade1931864b3aeb6cc720f9390b21b2b074a08fd0ab6e585cb796441f1ffb7.png" src="../_images/96ade1931864b3aeb6cc720f9390b21b2b074a08fd0ab6e585cb796441f1ffb7.png" />
+<img alt="../_images/0322a8bcca853eff17513f7f0e3d1f8963f1fcdfdd2307cb14f88beeee249199.png" src="../_images/0322a8bcca853eff17513f7f0e3d1f8963f1fcdfdd2307cb14f88beeee249199.png" />
 <img alt="../_images/de1286a5974ae5b2ddc9fc5d4b6c616348d6525b30da5cc1231f71db69abeecd.png" src="../_images/de1286a5974ae5b2ddc9fc5d4b6c616348d6525b30da5cc1231f71db69abeecd.png" />
 </div>
 </div>
@@ -1489,7 +1489,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <span id="sec-konvolucija-funkcij"></span><h3>Konvolucija funkcij<a class="headerlink" href="#konvolucija-funkcij" title="Povezava na naslov">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Fourierova transformacija konvolucije dveh funkcij, je enak produktu Fourierovih transformirank:</p>
+<p>Fourierova transformacija konvolucije dveh funkcij je enaka produktu Fourierovih transformirank:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}\big{\{}x(t)*y(t)\big{\}} = X(f)\,Y(f).
@@ -1498,7 +1498,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <p>Znak <span class="math notranslate nohighlight">\(*\)</span> označuje konvolucijo:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{-\infty}^{+\infty}\big(x(t)*y(t)\big)\,e^{-\textrm{i}2\pi\,f\,t}\textrm{d}t=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau\,\,e^{-\textrm{i}2\pi\,f\,t}\,\textrm{d}t
+\int_{-\infty}^{+\infty}\big(x(t)*y(t)\big)\,\mathrm{e}^{-\textrm{i}2\pi\,f\,t}\textrm{d}t=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau\,\,\mathrm{e}^{-\textrm{i}2\pi\,f\,t}\,\textrm{d}t
 \]</div>
 <p>Zgornjo povezavo izpeljemo:</p>
 <div class="cell docutils container">
@@ -1586,8 +1586,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/889413372cc328c5301eca3d4b8d0d62f8f0e3b3f584faf13b358a4b3e652228.png" src="../_images/889413372cc328c5301eca3d4b8d0d62f8f0e3b3f584faf13b358a4b3e652228.png" />
-<img alt="../_images/1852d2c2b017a5327e0e8a0e65b3afa0f19d9359d5abb0d12f25b92cf649b286.png" src="../_images/1852d2c2b017a5327e0e8a0e65b3afa0f19d9359d5abb0d12f25b92cf649b286.png" />
+<img alt="../_images/3c4780d7e30e6d5daf31b198a0b8be64c097816e9b579269e50fa1e8b6fdbe3a.png" src="../_images/3c4780d7e30e6d5daf31b198a0b8be64c097816e9b579269e50fa1e8b6fdbe3a.png" />
+<img alt="../_images/6b3c092a34e08efd2af56310fe87bfea61e2f8b6661ddf078d4fda2f1af78f26.png" src="../_images/6b3c092a34e08efd2af56310fe87bfea61e2f8b6661ddf078d4fda2f1af78f26.png" />
 </div>
 </div>
 </section>
@@ -1595,7 +1595,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <h3>Produkt funkcij<a class="headerlink" href="#produkt-funkcij" title="Povezava na naslov">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Fourierova transformacija produkta dveh funkcij, v frekvenčni domeni predstavlja konvolucijo Fourierovih transformirank:</p>
+<p>Fourierova transformacija produkta dveh funkcij v frekvenčni domeni predstavlja konvolucijo Fourierovih transformirank:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}\big{\{}x(t)\,y(t)\big{\}} = X(f)*Y(f).
@@ -1604,10 +1604,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 <p>Zgornjo povezavo izpeljemo:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{-\infty}^{+\infty} \underbrace{x(t)}_{\int_{-\infty}^{+\infty} X(f_1)\,e^{\mathrm{i}\,2\pi\,t\,f_1}\, \mathrm{d}f_1}\, \overbrace{y(t)}^{\int_{-\infty}^{+\infty} Y(f_2)\,e^{\mathrm{i}\,2\pi\,t\,f_2}\, \mathrm{d}f_2}\,e^{-\mathrm{i}\,2\pi\,f\,t}\, \mathrm{d}t=
-\int_{-\infty}^{+\infty} X(f_1)\,\int_{-\infty}^{+\infty} Y(f_2)\, \int_{-\infty}^{+\infty} e^{-\mathrm{i}\,2\pi\,(f-f_1-f_2)\,t}\, \mathrm{d}t\,\mathrm{d}f_2\,\mathrm{d}f_1
+\int_{-\infty}^{+\infty} \underbrace{x(t)}_{\int_{-\infty}^{+\infty} X(f_1)\,\mathrm{e}^{\mathrm{i}\,2\pi\,t\,f_1}\, \mathrm{d}f_1}\, \overbrace{y(t)}^{\int_{-\infty}^{+\infty} Y(f_2)\,\mathrm{e}^{\mathrm{i}\,2\pi\,t\,f_2}\, \mathrm{d}f_2}\,\mathrm{e}^{-\mathrm{i}\,2\pi\,f\,t}\, \mathrm{d}t=
+\int_{-\infty}^{+\infty} X(f_1)\,\int_{-\infty}^{+\infty} Y(f_2)\, \int_{-\infty}^{+\infty} \mathrm{e}^{-\mathrm{i}\,2\pi\,(f-f_1-f_2)\,t}\, \mathrm{d}t\,\mathrm{d}f_2\,\mathrm{d}f_1
 \]</div>
-<p>Sedaj upoštevamo <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}e^{\pm\textrm{i}\,2\,\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>) in dokažemo zgornjo izpeljavo:</p>
+<p>Sedaj upoštevamo <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,2\,\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>) in dokažemo zgornjo izpeljavo:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_{-\infty}^{+\infty} X(f_1)\,\underbrace{\int_{-\infty}^{+\infty} Y(f_2)\, \delta(f-f_1-f_2)\,\mathrm{d}f_2}_{Y(f-f_1)}\,\mathrm{d}f_1=\int_{-\infty}^{+\infty} X(f_1)\,Y(f-f_1)\,\mathrm{d}f_1= X(f)*Y(f)
@@ -1658,15 +1658,15 @@ X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5550dc76303041261300712c48009a3ed9e5f0a96d85630c08515d1e65e7dee5.png" src="../_images/5550dc76303041261300712c48009a3ed9e5f0a96d85630c08515d1e65e7dee5.png" />
-<img alt="../_images/0dcc5f403aa6cbfd671d26131b1fa3c5769d374e4908f94f9259e9868fdad274.png" src="../_images/0dcc5f403aa6cbfd671d26131b1fa3c5769d374e4908f94f9259e9868fdad274.png" />
+<img alt="../_images/fd3fea0aec45563a23401aed9d109de556f022fe11a433319e67515714ac4a3a.png" src="../_images/fd3fea0aec45563a23401aed9d109de556f022fe11a433319e67515714ac4a3a.png" />
+<img alt="../_images/9a32f485850ef70fe326ddd989e54cf26950c5e6549487501b726e972015f9e9.png" src="../_images/9a32f485850ef70fe326ddd989e54cf26950c5e6549487501b726e972015f9e9.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="uporaba-oken">
 <span id="sec-okna"></span><h2>Uporaba oken<a class="headerlink" href="#uporaba-oken" title="Povezava na naslov">#</a></h2>
-<p>Predpostavimo, da želimo izračunati Fourierovo tranformacijo determinističnega signala <span class="math notranslate nohighlight">\(x(t)\)</span>, ki je načeloma definiran od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>, vendar pa ga gledamo samo na območju od <span class="math notranslate nohighlight">\(-T/2\)</span> do <span class="math notranslate nohighlight">\(+T/2\)</span>. Rezultirajoč podatki tako so:</p>
+<p>Predpostavimo, da želimo izračunati Fourierovo tranformacijo determinističnega signala <span class="math notranslate nohighlight">\(x(t)\)</span>, ki je načeloma definiran od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>, vendar pa ga gledamo samo na območju od <span class="math notranslate nohighlight">\(-T/2\)</span> do <span class="math notranslate nohighlight">\(+T/2\)</span>. Rezultirajoči podatki so tako:</p>
 <div class="math notranslate nohighlight">
 \[
 x_T(t)=x(t)\,w(t),
@@ -1757,7 +1757,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 <img alt="../_images/7902492d17d4caa28d69192122f5f4386d7bcc957170c2c51840cdecce88dba8.png" src="../_images/7902492d17d4caa28d69192122f5f4386d7bcc957170c2c51840cdecce88dba8.png" />
 </div>
 </div>
-<p>Za sinusuido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusuido si tako lahko ogledamo, če konvuliramo njuni frekvenčni trasformiranki (primer spodaj).</p>
+<p>Za sinusuido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusuido, si tako lahko ogledamo, če konvuliramo njuni frekvenčni trasformiranki (primer spodaj).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1809,8 +1809,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b79d3fd69aec10153440aa515bb877aed54a6f420268d8856c9787551dcba8c5.png" src="../_images/b79d3fd69aec10153440aa515bb877aed54a6f420268d8856c9787551dcba8c5.png" />
-<img alt="../_images/ca748827871acd9c3bca83569c1d00654e3f8986e83f85a20aab44b7a1bd44ea.png" src="../_images/ca748827871acd9c3bca83569c1d00654e3f8986e83f85a20aab44b7a1bd44ea.png" />
+<img alt="../_images/8a00a0568cd5f2a625cb3aec06aa1b5823829b9a72b9796818f26e5e74033106.png" src="../_images/8a00a0568cd5f2a625cb3aec06aa1b5823829b9a72b9796818f26e5e74033106.png" />
+<img alt="../_images/56f916e3f10db261a2098aea47647cbd26bd7d0181bd52f8cdbac7d226ec390a.png" src="../_images/56f916e3f10db261a2098aea47647cbd26bd7d0181bd52f8cdbac7d226ec390a.png" />
 </div>
 </div>
 </section>

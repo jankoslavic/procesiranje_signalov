@@ -384,8 +384,8 @@ document.write(`
 <h1>5. Kvantizacija podatkov<a class="headerlink" href="#kvantizacija-podatkov" title="Povezava na naslov">#</a></h1>
 <section id="enakomerno-casovno-vzorcenje">
 <span id="sec-enakomerno-casovno-vzorcenje"></span><h2>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Povezava na naslov">#</a></h2>
-<p>Doslej smo obravnavali zvezne podatke <span class="math notranslate nohighlight">\(x(t)\)</span>, pri eksperimentalnem delu pa se skoraj vedno srečamo z diskretnimi vrednostmi, ki so tipično zajete z enakomernim časovnim vzorčenje <span class="math notranslate nohighlight">\(x(n\,\Delta t)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> <strong>čas (perioda) vzorčenja</strong> (<span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> je <strong>frekvenca vzorčenja</strong>).</p>
-<p>Pri razumevanju vzorčenih podatkov si pomagamo z <em>idealnim enakomerno vzorčenimi podatki</em> <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki so produkt zveznih podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> in vlaka impulzov <span class="math notranslate nohighlight">\(i(t)\)</span>:</p>
+<p>Doslej smo obravnavali zvezne podatke <span class="math notranslate nohighlight">\(x(t)\)</span>, pri eksperimentalnem delu pa se skoraj vedno srečamo z diskretnimi vrednostmi, ki so tipično zajete z enakomernim časovnim vzorčenjem <span class="math notranslate nohighlight">\(x(n\,\Delta t)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> <strong>čas (perioda) vzorčenja</strong> (<span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> je <strong>frekvenca vzorčenja</strong>).</p>
+<p>Pri razumevanju vzorčenih podatkov si pomagamo z <em>enakomerno vzorčenimi podatki</em> <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki so produkt zveznih podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> in vlaka impulzov <span class="math notranslate nohighlight">\(i(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 x_s(t)=x(t)\,i(t),
@@ -399,30 +399,30 @@ i(t)= \sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t)
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-X_s(f)&amp;=\int_{-\infty}^{+\infty} x(t)\,\sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,\\
-&amp;=\sum_{n=-\infty}^{+\infty}\,\int_{-\infty}^{+\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\delta(t-n\,\Delta t)\,\textrm{d} t,\\
-&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}.
+X_s(f)&amp;=\int_{-\infty}^{+\infty} x(t)\,\sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\delta(t-n\,\Delta t)\,\textrm{d} t,\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}.
 \end{split}
 \end{split}\]</div>
-<p>Kjer smo v prehodu v zadnjo vrstico uporabili sejalno lastnost Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>).</p>
+<p>Pri prehodu v zadnjo vrstico uporabimo sejalno lastnost Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>).</p>
 <p>Ključna posledica zgornje izpeljave je: <strong>za vzorčene podatke se integral preoblikuje v vsoto po vzorčenih vrednostih</strong> (pomnoženih s harmonsko modulacijo).</p>
 <p>Fourierova transformacija enakomerno vzorčene vrste <span class="math notranslate nohighlight">\(X_s(f)\)</span> se ponavlja (je periodična) s frekvenco <span class="math notranslate nohighlight">\(1/\Delta t\)</span>, to dokažemo tako:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-X_s(f+r/\Delta t)&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,(f+r/\Delta t)\,n\,\Delta t},\\
-&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,\underbrace{e^{-\textrm{i}\,2\pi\,r\,n}}_{=1},\\
-&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t},\\
+X_s(f+r/\Delta t)&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,(f+r/\Delta t)\,n\,\Delta t},\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,\underbrace{\mathrm{e}^{-\textrm{i}\,2\pi\,r\,n}}_{=1},\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t},\\
 &amp;=X_s(f),
 \end{split}
 \end{split}\]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(r\)</span> poljubno celo število. Sklenemo torej:</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p><strong>Fourierova transformacija</strong> podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> vzorčenih s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> je definirana kot vsota:</p>
+<p><strong>Fourierova transformacija</strong> podatkov <span class="math notranslate nohighlight">\(x(t)\)</span>, vzorčenih s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span>, je definirana kot vsota:</p>
 <div class="math notranslate nohighlight">
 \[
-X_s(f)=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}
+X_s(f)=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}
 \]</div>
 <p>in je v frekvenčni domeni periodična s frekvenco <span class="math notranslate nohighlight">\(1/\Delta t\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -430,57 +430,57 @@ X_s(f)=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\
 X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 \]</div>
 </div>
-<p>Poskusimo sedaj izpeljati inverzno Fourierovo transformacijo; najprej izraz v frekvenčni domeni pomnožimo z <span class="math notranslate nohighlight">\(e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\)</span> (pri tem je <span class="math notranslate nohighlight">\(p\,\Delta t\)</span> čas pri katerem nas zanima vrednost v času <span class="math notranslate nohighlight">\(x(p\,\Delta t)\)</span>) in integriramo po frekvenci <span class="math notranslate nohighlight">\(f\)</span>:</p>
+<p>Poskusimo sedaj izpeljati inverzno Fourierovo transformacijo; najprej izraz v frekvenčni domeni pomnožimo z <span class="math notranslate nohighlight">\(\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\)</span> (pri tem je <span class="math notranslate nohighlight">\(p\,\Delta t\)</span> čas, pri katerem nas zanima vrednost v času <span class="math notranslate nohighlight">\(x(p\,\Delta t)\)</span>) in integriramo po frekvenci <span class="math notranslate nohighlight">\(f\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f=\int_{-1/2\Delta t}^{+1/2\Delta t}\,\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f,
+\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f=\int_{-1/2\Delta t}^{+1/2\Delta t}\,\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f,
 \]</div>
 <p>kjer smo integrirali samo po eni periodi v frekvenci (po več ne bi bilo smiselno, saj je <span class="math notranslate nohighlight">\(X_s(f)\)</span> periodična funkcija).</p>
 <p>Zgornji izraz preoblikujemo v:</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,\underbrace{e^{-\textrm{i}\,2\pi\,f\,(n-p)\,\Delta t}}_{=1,\textrm{ ko je } n=p\quad\textrm{sicer je integral izraza: }0}\,\textrm{d}f=x(p\,\Delta t)\,\frac{1}{\Delta t}.
+\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,\underbrace{\mathrm{e}^{-\textrm{i}\,2\pi\,f\,(n-p)\,\Delta t}}_{=1,\textrm{ ko je } n=p\quad\textrm{sicer je integral izraza: }0}\,\textrm{d}f=x(p\,\Delta t)\,\frac{1}{\Delta t}.
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Izpeljali smo torej <strong>inverzno Fourierovo transformacijo</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-x(p\,\Delta t) = \Delta t\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,e^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f
+x(p\,\Delta t) = \Delta t\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f
 \]</div>
 </div>
 </section>
 <section id="frekvencno-prekrivanje">
 <h2>Frekvenčno prekrivanje<a class="headerlink" href="#frekvencno-prekrivanje" title="Povezava na naslov">#</a></h2>
-<p>Frekvenčno prekrivanje ali tudi frekvenčno zrcaljenje (ang. <em>aliasing</em>) je pojav, pri katerem pride do napačne identifikacije frekvence v signalu, razlog pa je neprimernega vzorčenje časovnega signala. Poglejmo detajle: vlak impulzov <span class="math notranslate nohighlight">\(i(t)\)</span> lahko vidimo kot periodične podatke s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> ter jih popišemo s Fourierovo vrsto:</p>
+<p>Frekvenčno prekrivanje ali tudi frekvenčno zrcaljenje (ang. <em>aliasing</em>) je pojav, pri katerem pride do napačne identifikacije frekvence v signalu, razlog pa je neprimerno vzorčenje časovnega signala. Poglejmo detajle: vlak impulzov <span class="math notranslate nohighlight">\(i(t)\)</span> lahko vidimo kot periodične podatke s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> ter jih popišemo s Fourierovo vrsto:</p>
 <div class="math notranslate nohighlight">
 \[
-i(t)= \sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t) = \sum_{n=-\infty}^{+\infty}c_n\,e^{\textrm{i}\,2\pi\,n\,t/\Delta t},
+i(t)= \sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t) = \sum_{n=-\infty}^{+\infty}c_n\,\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t},
 \]</div>
 <p>kjer je:</p>
 <div class="math notranslate nohighlight">
 \[
-c_n=\frac{1}{\Delta t}\,\int_{-\Delta t/2}^{+\Delta t/2}i(t)\,e^{-\textrm{i}\,2\pi\,n\,t/\Delta t}\,\textrm{d}t=\frac{1}{\Delta t}.
+c_n=\frac{1}{\Delta t}\,\int_{-\Delta t/2}^{+\Delta t/2}i(t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,n\,t/\Delta t}\,\textrm{d}t=\frac{1}{\Delta t}.
 \]</div>
 <p>Sledi:</p>
 <div class="math notranslate nohighlight">
 \[
-i(t)= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}e^{\textrm{i}\,2\pi\,n\,t/\Delta t}.
+i(t)= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t}.
 \]</div>
-<p>Fourierova transformacija <span class="math notranslate nohighlight">\(i(t)\)</span> definiranega s pomočjo Forierovih vrst:</p>
+<p>Fourierova transformacija <span class="math notranslate nohighlight">\(i(t)\)</span>, definiranega s pomočjo Forierovih vrst:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-I(f)&amp;= \int_{-\infty}^{+\infty}\Big(\frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}e^{\textrm{i}\,2\pi\,n\,t/\Delta t}\Big)\, e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t,\\
+I(f)&amp;= \int_{-\infty}^{+\infty}\Big(\frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t}\Big)\, \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t,\\
 &amp;= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\int_{-\infty}^{+\infty}
-e^{\textrm{i}\,2\pi\,n\,t/\Delta t}\, e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t,\\
+\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t}\, \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t,\\
 &amp;= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\int_{-\infty}^{+\infty}
-e^{-\textrm{i}\,2\pi\,(f-n/\Delta t)\,t}\,\textrm{d}t,\\
+\mathrm{e}^{-\textrm{i}\,2\pi\,(f-n/\Delta t)\,t}\,\textrm{d}t,\\
 &amp;= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}
 \delta\Big(f-\frac{n}{\Delta t}\Big).\\
 \end{split}
 \end{split}\]</div>
-<p>Zgoraj smo uporabli lastnost Diracove delta funkcije <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}e^{\pm\textrm{i}\,2\,\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>). Fourierova tranformacija <span class="math notranslate nohighlight">\(i(t)\)</span> je torej v frekvenčni domeni periodično ponavljajoča s frekvenčno periodo <span class="math notranslate nohighlight">\(1/\Delta t\)</span>.</p>
+<p>Zgoraj smo uporabli lastnost Diracove delta funkcije <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,2\,\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>). Fourierova tranformacija <span class="math notranslate nohighlight">\(i(t)\)</span> je torej v frekvenčni domeni periodično ponavljajoča s frekvenčno periodo <span class="math notranslate nohighlight">\(1/\Delta t\)</span>.</p>
 <p>Poglejmo si sedaj povezavo <span class="math notranslate nohighlight">\(X(f)\)</span> in <span class="math notranslate nohighlight">\(X_s(f)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -494,13 +494,13 @@ X_s(f) =\mathcal{F}(i(t)\,x(t)) &amp;= I(f)*X(f)\\
 &amp;=\frac{1}{\Delta t}\,\sum_{n=-\infty}^{+\infty}\,X\Big(f-\frac{n}{\Delta t}\Big)\\
 \end{split}
 \end{split}\]</div>
-<p>Kako interpretiramo zgornjo izpeljavo? Če imamo časovno vzorčene podakte <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki vodi v frekvenčni domeni do <span class="math notranslate nohighlight">\(X_s(f)\)</span>, imamo pri določeni frekvenci <span class="math notranslate nohighlight">\(f\)</span> vsebnost vsote zveznih podatkov <span class="math notranslate nohighlight">\(X(f)\)</span> pri frekvencah <span class="math notranslate nohighlight">\(f-n/\Delta t\)</span>, kjer gre celo število <span class="math notranslate nohighlight">\(n\)</span> od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. V praksi to pomeni, da se nam vsebnost dejanskega (zveznega) signala iz frekvenčnega področja izven področja <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span> zrcali in prekriva v frekvenčno področje od <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span>; glejte zgled spodaj.</p>
+<p>Kako interpretiramo zgornjo izpeljavo? Če imamo časovno vzorčene podakte <span class="math notranslate nohighlight">\(x_s(t)\)</span>, kar vodi v frekvenčni domeni do <span class="math notranslate nohighlight">\(X_s(f)\)</span>, imamo pri določeni frekvenci <span class="math notranslate nohighlight">\(f\)</span> vsebnost vsote zveznih podatkov <span class="math notranslate nohighlight">\(X(f)\)</span> pri frekvencah <span class="math notranslate nohighlight">\(f-n/\Delta t\)</span>, kjer gre celo število <span class="math notranslate nohighlight">\(n\)</span> od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. V praksi to pomeni, da se nam vsebnost dejanskega (zveznega) signala iz frekvenčnega področja izven področja <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span> zrcali in prekriva v frekvenčno področje od <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span>; glejte zgled spodaj.</p>
 <section id="zgled-gaussov-impulz">
 <h3>Zgled: Gaussov impulz<a class="headerlink" href="#zgled-gaussov-impulz" title="Povezava na naslov">#</a></h3>
 <p>Časovno vzorčenje in frekvenčno prekrivanje si bomo tukaj pogledali na primeru Gaussovega impulza/okna (glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-gaussov-impulz"><span class="std std-ref">Gaussov impulz</span></a>), ki je v časovni in frekvenčni domeni definirano kot:</p>
 <div class="math notranslate nohighlight">
 \[
-x(t) = e^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a};\qquad a&gt;0 
+x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a};\qquad a&gt;0 
 \]</div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -565,7 +565,7 @@ x(t) = e^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a};\qqua
 <img alt="../_images/bc2642982f0ae5b31fbcc31553622a69ab1eae30f545f1a8fdb33dd01eb69753.png" src="../_images/bc2642982f0ae5b31fbcc31553622a69ab1eae30f545f1a8fdb33dd01eb69753.png" />
 </div>
 </div>
-<p>Še en frekvenčnega prekrivanja predstavlja spodnji primer, kjer obravnavamo harmonske podatke. Ko je frekvenca vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>, glede na frekvenco harmonskih podatov <code class="docutils literal notranslate"><span class="pre">f</span></code>, prenizka (<span class="math notranslate nohighlight">\(f&gt;fs/2\)</span>), se dejanska frekvenca zrcali v frekvenčno področje do <code class="docutils literal notranslate"><span class="pre">fs/2</span></code>. V spodnji kodi frekvenco sinusnega signala <code class="docutils literal notranslate"><span class="pre">f</span></code> poskusite počasi dvigovati proti (in nad) frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>.</p>
+<p>Še en primer frekvenčnega prekrivanja predstavlja spodnji zgled, kjer obravnavamo harmonske podatke. Ko je frekvenca vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>, glede na frekvenco harmonskih podatov <code class="docutils literal notranslate"><span class="pre">f</span></code>, prenizka (<span class="math notranslate nohighlight">\(f&gt;fs/2\)</span>), se dejanska frekvenca zrcali v frekvenčno področje do <code class="docutils literal notranslate"><span class="pre">fs/2</span></code>. V spodnji kodi frekvenco sinusnega signala <code class="docutils literal notranslate"><span class="pre">f</span></code> poskusite počasi dvigovati proti (in nad) frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -608,13 +608,13 @@ x(t) = e^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, e^{-\pi^{2}\,f^{2}/a};\qqua
 \[
 f_{np}&lt;\frac{f_s}{2}.
 \]</div>
-<p>Pri tem je pomembno, da se uporabi analogni filter <em>preden</em> se izvede časovno vzorčenje. Frekvenci <span class="math notranslate nohighlight">\(f_{np}\)</span> rečemo tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquistova frekvenca</a>.</p>
+<p>Pri tem je pomembno, da se uporabi analogni filter, <em>preden</em> se izvede časovno vzorčenje. Frekvenci <span class="math notranslate nohighlight">\(f_{np}\)</span> rečemo tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquistova frekvenca</a>.</p>
 </section>
 <section id="kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne">
 <h2>Kvantizacija podatkov: pretvorba zveznih podatkov v diskretne<a class="headerlink" href="#kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne" title="Povezava na naslov">#</a></h2>
-<p>Za obdelavo v računalnikih, moramo merjene zvezne podatke pretvorit v diskretne numerične vrednosti zajete z določeno frekvenco vzorčenja. Zajemne kartice danes omogočajo relativno hitro zajemanje (vsaj 100 kHz) pri relativno veliki dinamični globini (vsaj 24 bit). Tukaj si bomo bolj podrobno pogledali dinamično globino, ki predstavlja število diskretnih nivojev na kateri zajemna kartica razpozna analogne podatke.</p>
-<p>Zapis števil v računalniku je končne natančnosti, tipično današnji računalniki uporabljajo 64 bitno natančnost zapisa kar je bistveno več kakor pa je natančnost zajemnih merilnih kartic.</p>
-<p>Poglejmo si primer spodnje sinusoide. Če uporabimo 24 bitno kartico in tipično območje merjenja [-10, 10], je razlika med dvema nivojema kvantizacije približno 1e-6, ker je za večino meritev povsem dovolj. Razmerje med najmanjšo in največjo vrednostjo, ki jo lahko na določeni zajemin kartici merimo, imenujemo <strong>dinamični razpon</strong> ali tudi <strong>dinamična globina</strong>.</p>
+<p>Za obdelavo v računalnikih moramo merjene zvezne podatke pretvoriti v diskretne numerične vrednosti, zajete z določeno frekvenco vzorčenja. Zajemne kartice danes omogočajo relativno hitro zajemanje (vsaj 100 kHz) pri relativno veliki dinamični globini (vsaj 24 bit). Tukaj si bomo bolj podrobno pogledali dinamično globino, ki predstavlja število diskretnih nivojev, na kateri zajemna kartica razpozna analogne podatke.</p>
+<p>Zapis števil v računalniku je končne natančnosti, tipično današnji računalniki uporabljajo 64 bitno natančnost zapisa, kar je bistveno več kakor pa je natančnost zajemnih merilnih kartic.</p>
+<p>Poglejmo si naslednji zgled, kjer obravnavamo sinusoido. Če uporabimo 24 bitno kartico in tipično območje merjenja [-10, 10], je razlika med dvema nivojema kvantizacije približno 1e-6, ker je za večino meritev povsem dovolj. Razmerje med najmanjšo in največjo vrednostjo, ki jo lahko na določeni zajemin kartici merimo, imenujemo <strong>dinamični razpon</strong> ali tudi <strong>dinamična globina</strong>.</p>
 <p>V kolikor pa uporabljamo sistem z nižjim dinamičnim razponom, pa je treba biti na območje merjenja v povezavi z dinamičnim razponom zelo pozoren in morebiti ojačati merjene podatke. Takšen primer je sinusoida spodaj, ki jo kvantiziramo na dveh območjih ([-1, 1] in [-5, 5]) s 4 bitno natančnostjo (16 nivojev)</p>
 <p>Pri merjenju je treba paziti tudi na <strong>porezane podatke</strong> (ang. <em>clipping</em>), ko je območje merjenja premajhno (primer spodaj: [-0.5, 0.5]).</p>
 <p>Opomba: koda za spodnjo sliko vključuje tudi primer, ko nam šum lahko pomaga, da izmerimo veličine, ki so manjše od nivoja kvantizacije.</p>
@@ -699,7 +699,7 @@ f_{np}&lt;\frac{f_s}{2}.
 \textrm{SNR}=10\log_{10}\Big(\frac{(A/4)^2}{\big(\frac{A/2^b}{\sqrt{12}}\big)^2}\Big)=
 10\log_{10}\big(3/4\cdot 2^{2b}\big)\approx -1.25+6\,b\,\textrm{dB},
 \]</div>
-<p>V primeru 12 bitne kvantizacije je <span class="math notranslate nohighlight">\(b=11\)</span> in imamo na voljo približno 66 dB dinamičnega razpona, v primeru 24 bitne kvantizacije pa bi bil teoretični razpon približno 137 dB. V praksi imamo opravka še z drugimi viri šuma, ki vodijo v to, da so vrednosti SNR bistveno nižje. Spodaj je prikazan idealiziran primer šuma in podatkov, ki niso obremenjeni s šumom.</p>
+<p>V primeru 12 bitne kvantizacije je <span class="math notranslate nohighlight">\(b=11\)</span> in imamo na voljo približno 65 dB dinamičnega razpona, v primeru 24 bitne kvantizacije pa bi bil teoretični razpon približno 137 dB. V praksi imamo opravka še z drugimi viri šuma, ki vodijo v to, da so vrednosti SNR bistveno nižje. Spodaj je prikazan idealizirani primer šuma in podatkov, ki niso obremenjeni s šumom.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -732,7 +732,7 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/de90f7b1344c988ba10e24f0fa33b807b5bcbd292bea5df3f034efcd55862684.png" src="../_images/de90f7b1344c988ba10e24f0fa33b807b5bcbd292bea5df3f034efcd55862684.png" />
+<img alt="../_images/765882a04caa40375d21f1d0a7291e2f7b647c0aadfaed6340df8a0069a9f374.png" src="../_images/765882a04caa40375d21f1d0a7291e2f7b647c0aadfaed6340df8a0069a9f374.png" />
 </div>
 </div>
 </section>

@@ -448,7 +448,7 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">ϕ</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Harmonski podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">varphi$&#39;</span><span class="p">,</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">varphi/</span><span class="se">\\</span><span class="s1">omega$&#39;</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
             <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
             <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
@@ -465,7 +465,7 @@ x(t) = A\,\sin(\omega\,t+\varphi),
                             <span class="n">connectionstyle</span><span class="o">=</span><span class="s1">&#39;arc3,rad=0&#39;</span><span class="p">,</span>
                             <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
             <span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$T=</span><span class="se">\\</span><span class="s1">frac{2\,\pi}{</span><span class="se">\\</span><span class="s1">omega}$&#39;</span><span class="p">,</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$T=2\,\pi/</span><span class="se">\\</span><span class="s1">omega$&#39;</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
             <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span> 
             <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">-</span><span class="n">ϕ</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
@@ -479,7 +479,7 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/87c12ed083ea57663faf3045a90820a70a064bfc9cc70a73af10f38a83b670b8.png" src="../_images/87c12ed083ea57663faf3045a90820a70a064bfc9cc70a73af10f38a83b670b8.png" />
+<img alt="../_images/e5ef19abb40f2c0fe2de2c9310a71c763756946c2fdbda67d25d26758ccc6597.png" src="../_images/e5ef19abb40f2c0fe2de2c9310a71c763756946c2fdbda67d25d26758ccc6597.png" />
 </div>
 </div>
 <p>Nadaljujmo sedaj z vsoto harmonskih funkcij, pri tem se bomo omejili na kompleksno periodične podatke (glejte <a class="reference internal" href="01%20-%20Uvod.html#sec-klasifikacija-pod"><span class="std std-ref">Klasifikacija podatkov</span></a>), kjer je razmerje med frekvencami posameznih harmonikov racionalno število. Frekvence harmonskih funkcij bomo dodatno omejili: če je osnovna krožna frekvenca <span class="math notranslate nohighlight">\(\omega_p=2\,\pi/T_p\)</span> definirana z osnovno periodo <span class="math notranslate nohighlight">\(T_p\)</span>, potem bomo za vse ostale harmonike zahtevali, da imajo krožno frekvenco, ki je večkratnik osnovne krožne frekvence.</p>
@@ -494,7 +494,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 \right],
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(a_0\)</span> konstanta, <span class="math notranslate nohighlight">\(a_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te cosinusne komponente in <span class="math notranslate nohighlight">\(b_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te sinusne komponente.</p>
-<p>Spodaj si poglejmo primer harmonske funkcije, ki ustreza omejitvam.</p>
+<p>Spodaj si poglejmo primer harmonske funkcije, ki ustreza omejitvam kompleksno periodične funkcije.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -529,7 +529,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Periodični podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">frac</span><span class="si">{a_0}{2}</span><span class="s1">$&#39;</span><span class="p">,</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$a_0/2$&#39;</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
             <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span>
             <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mf">.15</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
@@ -552,22 +552,22 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3de11d14797a26f4065c3adab5f9cd3e9070a8686cb239aa4960a38f99af2709.png" src="../_images/3de11d14797a26f4065c3adab5f9cd3e9070a8686cb239aa4960a38f99af2709.png" />
+<img alt="../_images/1f28ca792c1aa52ea500560f602c35134da65fea3dc16721bb8fec747d327e18.png" src="../_images/1f28ca792c1aa52ea500560f602c35134da65fea3dc16721bb8fec747d327e18.png" />
 </div>
 </div>
 <p>Periodična funkcija, kakor smo si jo pogledali zgoraj, je ključnega pomena za razumevanje Fourierovih vrst (in pozneje Fourierove transformacije, glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">3. Fourierova integralska transformacija</span></a>). V nadaljevanju bomo periodično funkcijo najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
 <p>Zapis v kompleksno obliko začnemo s pomočjo Eulerjeve formule:</p>
 <div class="math notranslate nohighlight">
 \[
-e^{\mathrm{i}\,\alpha} = \cos\alpha + \mathrm{i}\,\sin\alpha,
+\mathrm{e}^{\pm \mathrm{i}\,\alpha} = \cos\alpha \pm  \mathrm{i}\,\sin\alpha,
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(\mathrm{i}=\sqrt{-1}\)</span>.</p>
 <p>Če uporabimo <span class="math notranslate nohighlight">\(\alpha=2\,\pi\,n\,t/T_p\)</span>, lahko zapišemo:</p>
 <div class="math notranslate nohighlight">
 \[
-\cos\alpha=\frac{1}{2}e^{\mathrm{i}\,\alpha}+\frac{1}{2}e^{-\mathrm{i}\,\alpha}
+\cos\alpha=\frac{1}{2}\mathrm{e}^{\mathrm{i}\,\alpha}+\frac{1}{2}\mathrm{e}^{-\mathrm{i}\,\alpha}
 \qquad
-\sin\alpha=-\frac{1}{2}\,\mathrm{i}\,e^{\mathrm{i}\,\alpha}+\frac{1}{2}\,\mathrm{i}\,e^{-\mathrm{i}\,\alpha}
+\sin\alpha=-\frac{1}{2}\,\mathrm{i}\,\mathrm{e}^{\mathrm{i}\,\alpha}+\frac{1}{2}\,\mathrm{i}\,\mathrm{e}^{-\mathrm{i}\,\alpha}
 \]</div>
 <p>ter funkcijo:</p>
 <div class="math notranslate nohighlight">
@@ -577,7 +577,7 @@ x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
 a_n\cos\big(\frac{2\,\pi\,n\,t}{T_p} \big)
 +
 b_n\sin\big(\frac{2\,\pi\,n\,t}{T_p} \big)
-\right],
+\right]
 \]</div>
 <p>preoblikujemo v:</p>
 <div class="math notranslate nohighlight">
@@ -585,10 +585,10 @@ b_n\sin\big(\frac{2\,\pi\,n\,t}{T_p} \big)
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
 \left[
 a_n\big( 
-\frac{1}{2}e^{\mathrm{i}\,\alpha}+\frac{1}{2}e^{-\mathrm{i}\,\alpha}
+\frac{1}{2}\mathrm{e}^{\mathrm{i}\,\alpha}+\frac{1}{2}\mathrm{e}^{-\mathrm{i}\,\alpha}
 \big)+
 b_n\big( 
--\frac{1}{2}\,\mathrm{i}\,e^{\mathrm{i}\,\alpha}+\frac{1}{2}\,\mathrm{i}\,e^{-\mathrm{i}\,\alpha}
+-\frac{1}{2}\,\mathrm{i}\,\mathrm{e}^{\mathrm{i}\,\alpha}+\frac{1}{2}\,\mathrm{i}\,\mathrm{e}^{-\mathrm{i}\,\alpha}
 \big)
 \right].
 \]</div>
@@ -599,20 +599,20 @@ x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
 \left[
 \big( 
 \frac{1}{2}a_n-\frac{1}{2}\mathrm{i}b_n
-\big)\,e^{\mathrm{i}\,2\,\pi\,n\,t/T_p}
+\big)\,\mathrm{e}^{\mathrm{i}\,2\,\pi\,n\,t/T_p}
 \right]
 +\sum_{n=1}^{\infty}
 \left[
 \big( 
 \frac{1}{2}a_n+\frac{1}{2}\mathrm{i}b_n
-\big)\,e^{-\mathrm{i}\,2\,\pi\,n\,t/T_p}
+\big)\,\mathrm{e}^{-\mathrm{i}\,2\,\pi\,n\,t/T_p}
 \right].
 \]</div>
 <p>Zgornji izraz poenostavimo v:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
-c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
+c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},
 \]</div>
 <p>kjer velja:</p>
 <div class="math notranslate nohighlight">
@@ -627,7 +627,7 @@ c_n =
 <p>Ugotovimo, da velja <span class="math notranslate nohighlight">\(c_n=c_{-n}^{*}\)</span>, kjer smo z <span class="math notranslate nohighlight">\({}^*\)</span> označili kompleksno konjugirano vrednost.</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Zapis kompleksno periodične funkcije z realnimi koeficienti:</p>
+<p>Zapis kompleksno periodične funkcije s Fourierovo vrsto z realnimi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
@@ -640,11 +640,11 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 </div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Zapis kompleksno periodične funkcije s kompleksnimi koeficienti:</p>
+<p>Zapis kompleksno periodične funkcije s Fourierovo vrsto s kompleksnimi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
-c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
+c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},
 \]</div>
 </div>
 <p>Oba zapisa zgoraj seveda vodita v isti rezultat (glejte primer spodaj).</p>
@@ -729,32 +729,32 @@ c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
-c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
+c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 \]</div>
-<p>lahko identificiramo harmonsko funkcijo s frekvenco <span class="math notranslate nohighlight">\(m\)</span> kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(c_m\,e^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>?</p>
-<p>Izkaže se, da je to relativno enostavno, če poskušamo izračunati integral periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> pomnožen z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, ki ima negativno frekvenco <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
+<p>lahko identificiramo harmonsko funkcijo s frekvenco <span class="math notranslate nohighlight">\(m\)</span> kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(c_m\,\mathrm{e}^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>?</p>
+<p>Izkaže se, da je to relativno enostavno, če poskušamo izračunati integral periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, pomnoženega z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(\mathrm{e}^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, ki ima negativno frekvenco <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
-\underbrace{\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{A_m}=
+\underbrace{\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{A_m}=
 \underbrace{\int_0^{T_p} \sum_{n=-\infty}^{\infty}
-c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p} \,\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{B_m}
+c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p} \,\,\mathrm{e}^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{B_m}
 \]</div>
 <p>Ker <span class="math notranslate nohighlight">\(x(t)\)</span> predstavlja znano periodično funkcijo (oz. podatke), lahko integral <span class="math notranslate nohighlight">\(A_m\)</span> izračunamo. <span class="math notranslate nohighlight">\(B_m\)</span> pa lahko poenostavimo v:</p>
 <div class="math notranslate nohighlight">
 \[
 B_m=\int_0^{T_p} \sum_{n=-\infty}^{\infty}
-c_n\,e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
+c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \]</div>
 <p>Zamenjajmo sedaj vrstni red seštevanja in integriranja, ter izpostavimo konstanto <span class="math notranslate nohighlight">\(c_n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 B_m= \sum_{n=-\infty}^{\infty}
-c_n\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
+c_n\,\int_0^{T_p}\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \]</div>
 <p>Ker integriramo harmonsko funkcijo s frekvenco, ki je celi večkratnik osnovne frekvence <span class="math notranslate nohighlight">\(1/T_p\)</span>, je rezultat vedno 0, razen takrat, ko je <span class="math notranslate nohighlight">\(n=m\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t=
+\int_0^{T_p}\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t=
 \begin{cases}
     0,&amp; \text{če } n\ne m\\
     T_p,&amp; \text{če } n= m\\
@@ -765,12 +765,12 @@ c_n\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \[
 B_m = c_m\,T_p
 \]</div>
-<p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznani Fourierov koeficient <span class="math notranslate nohighlight">\(c_m\)</span> definirana kot (gre za kompleksno število z amplitudo in fazo):</p>
+<p>Ker velja <span class="math notranslate nohighlight">\(A_m=B_m\)</span> sledi, da je neznani Fourierov koeficient <span class="math notranslate nohighlight">\(c_m\)</span> definiran kot (gre za kompleksno število z amplitudo in fazo):</p>
 <div class="math notranslate nohighlight">
 \[
-c_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t
+c_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t
 \]</div>
-<p>Izpeljali smo torej, da je posamezno harmonsko komponento relativno enostavno določiti; v praksi se pojavi težava, da dani podatki <span class="math notranslate nohighlight">\(x(t)\)</span> ne izpolnjujejo vseh predpostavk,predvsem ne tiste, da je harmonik celi večkratnik osnovne frekvence; s temi težavami se bomo soočili v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-okna"><span class="std std-ref">Uporaba oken</span></a>.</p>
+<p>Izpeljali smo torej, da je posamezno harmonsko komponento relativno enostavno določiti; v praksi se pojavi težava, da dani podatki <span class="math notranslate nohighlight">\(x(t)\)</span> ne izpolnjujejo vseh predpostavk, predvsem ne tiste, da je harmonik celi večkratnik osnovne frekvence; s temi težavami se bomo soočili v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-okna"><span class="std std-ref">Uporaba oken</span></a>.</p>
 </section>
 <section id="posplositev">
 <h2>Posplošitev<a class="headerlink" href="#posplositev" title="Povezava na naslov">#</a></h2>
@@ -782,12 +782,12 @@ c_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,
 <p>Fourierovi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
-c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
+c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
 \]</div>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-N}^{N}
-c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
+c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 \]</div>
 </div>
 </section>
@@ -824,12 +824,12 @@ x(t)=\frac{A_0}{2}+\sum_{n=1}^{N}
 A_n\,\cos(2\pi\,n\,t/T_p-\varphi_n)
 \]</div>
 </div>
-<p>Kjer moramo amplitudo <span class="math notranslate nohighlight">\(A_n\)</span> in fazo <span class="math notranslate nohighlight">\(\varphi_n\)</span> določit s pomočjo eksponentne ali sinusno-cosinusne oblike in ob pomoči prehodov med posameznimi oblikami zapisov:</p>
+<p>Kjer moramo amplitudo <span class="math notranslate nohighlight">\(A_n\)</span> in fazo <span class="math notranslate nohighlight">\(\varphi_n\)</span> določiti s pomočjo eksponentne ali sinusno-cosinusne oblike in ob pomoči prehodov med posameznimi oblikami zapisov:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-c_0&amp;=A_0&amp;=a_0\\
-c_n&amp;=\frac{A_n}{2}\,e^{-\mathrm{i}\varphi_n}&amp;=\frac{1}{2}(a_n-\mathrm{i}b_n)\\
+c_0&amp;=A_0=a_0\\
+c_n&amp;=\frac{A_n}{2}\,\mathrm{e}^{-\mathrm{i}\varphi_n}&amp;=\frac{1}{2}(a_n-\mathrm{i}b_n)\\
 c_n&amp;=c_{-n}^*&amp;\\
 \end{split}
 \end{split}\]</div>
@@ -842,19 +842,25 @@ c_n&amp;=c_{-n}^*&amp;\\
 <h3>Odvodi in integrali Fourierovih vrst<a class="headerlink" href="#odvodi-in-integrali-fourierovih-vrst" title="Povezava na naslov">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Za periodično funkcijo, ki jo na področju zveznosti lahko popišemo s Fourierovimi vrstami govorimo, da izpolnjujejo <strong>Dirichletovim pogoj</strong>.</p>
+<p>Fourierove vrste <span class="math notranslate nohighlight">\(x(t)\)</span> konvergirajo k dani periodiči funkciji <span class="math notranslate nohighlight">\(f(t)\)</span>, če so izpolnjeni trije <strong>Dirichletovi pogoji</strong>:</p>
+<ul class="simple">
+<li><p>funkcija je absolutno integrabilna: <span class="math notranslate nohighlight">\(\int_0^{T_p}|f(x)|\mathrm{d}t\)</span>,</p></li>
+<li><p>funkcija ima na območju <span class="math notranslate nohighlight">\([0, T_p]\)</span> končno število ekstremov,</p></li>
+<li><p>funkcija ima na območju <span class="math notranslate nohighlight">\([0, T_p]\)</span> končno število nezveznosti.</p></li>
+</ul>
 </div>
-<p>Če Dirichletov pogoj izpolnjuje tudi odvod <span class="math notranslate nohighlight">\(\dot x(t)\)</span>, potem je mogoče odvod izračunati neposredno iz Fourierovih vrst za <span class="math notranslate nohighlight">\(x(t)\)</span> pri čemer je treba odvajati posamezne člene.</p>
+<p>Če funkcija izpolnjuje Dirichletove pogoje, Fourierova vrsta konvergira k funkciji na vseh točkah območja, vključno s točkami nezveznosti. To je zelo pomemben rezultat v Fourierovi analizi, saj nam omogoča, da vsako periodično funkcijo predstavimo kot vsoto sinusnih in kosinusnih členov.</p>
+<p>Če Dirichletov pogoj izpolnjuje tudi odvod <span class="math notranslate nohighlight">\(\dot f(t)\)</span>, potem je mogoče odvod izračunati neposredno iz Fourierovih vrst za <span class="math notranslate nohighlight">\(x(t)\)</span>, pri čemer je treba odvajati posamezne člene.</p>
 <div class="math notranslate nohighlight">
 \[
 \dot{x}(t)=\sum_{n=-N}^{N}
-\frac{\mathrm{i}\,2\pi\,n}{T_p}\,c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
+\frac{\mathrm{i}\,2\pi\,n}{T_p}\,c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 \]</div>
 <p>Analogno velja za integracijo:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-N}^{N}
-\frac{T_p}{\mathrm{i}\,2\pi\,n}\,\dot{c}_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad \dot{c}_n=\dot{c}_{-n}^*,
+\frac{T_p}{\mathrm{i}\,2\pi\,n}\,\dot{c}_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad \dot{c}_n=\dot{c}_{-n}^*,
 \]</div>
 <p>kjer so <span class="math notranslate nohighlight">\(\dot{c}_n\)</span> konstante Fourierove vrste za <span class="math notranslate nohighlight">\(\dot{x}(t)\)</span>. Za primer, glejte zglede v nadaljevanju.</p>
 </section>
@@ -977,7 +983,7 @@ x(-t)=-x(t),
 <img alt="../_images/3e10ac40c3267176e6ddd313e30f0d2e41c79434b7e0479493fa62dee382a3c6.png" src="../_images/3e10ac40c3267176e6ddd313e30f0d2e41c79434b7e0479493fa62dee382a3c6.png" />
 </div>
 </div>
-<p>V primeru zgoraj je peridočna funkcija generirana na podlagi vektorja Fourierovih koeficientov:</p>
+<p>V primeru zgoraj je peridična funkcija generirana na podlagi vektorja Fourierovih koeficientov:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
@@ -1003,7 +1009,7 @@ x(-t)=-x(t),
 <p>Opazimo, da je vektor kompleksno konjugiran okoli središčnega elementa. Poljubni element lahko zgolj na podlagi časovne vrste <span class="math notranslate nohighlight">\(x(t)\)</span> določimo tako, da sledimo definiciji:</p>
 <div class="math notranslate nohighlight">
 \[
-c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
+c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
 \]</div>
 <p>kar je v numerični implementaciji (za <code class="docutils literal notranslate"><span class="pre">n=1</span></code>):</p>
 <div class="cell docutils container">
@@ -1130,7 +1136,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,e^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm
 </section>
 <section id="periodicna-funkcija">
 <h3>Periodična funkcija<a class="headerlink" href="#periodicna-funkcija" title="Povezava na naslov">#</a></h3>
-<p>Tukaj si bomo pogledali periodično funkcijo, ki pa ni kompleksno harmonska. Primer takšne funkcije je naraščajoča žaga prikazana na spodnji sliki.</p>
+<p>Tukaj si bomo pogledali periodično funkcijo, ki pa ni kompleksno harmonska. Primer takšne funkcije je naraščajoča žaga, prikazana na spodnji sliki.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1233,7 +1239,7 @@ Osredotočimo se na del podatkov, ki se ponavlja:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-N}^{N}
-c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
+c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 \]</div>
 <p>Konkretna numerična koda je prikazana spodaj (pri tem smo uporabili novo numerično polje <code class="docutils literal notranslate"><span class="pre">x_r</span></code>, da ga ločimo od podatkov v obliki <code class="docutils literal notranslate"><span class="pre">x</span></code>):</p>
 <div class="cell docutils container">
@@ -1275,7 +1281,7 @@ c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </section>
 <section id="analiticna-obravnava-periodicne-funkcije">
 <h3>Analitična obravnava periodične funkcije<a class="headerlink" href="#analiticna-obravnava-periodicne-funkcije" title="Povezava na naslov">#</a></h3>
-<p>Zgoraj smo Fourierovo vrsto izračunali na diskrenih podatkih in smo zato omejeni koliko harmonskih komponent lahko izračunamo (<code class="docutils literal notranslate"><span class="pre">N&lt;len(t)/2</span></code>; zakaj je <span class="math notranslate nohighlight">\(N\)</span> vezan na dolžino časovne vrste, bomo spoznali pozneje). Tukaj si bomo pogledali obravnavo zveznih sistemov in s pomočjo strojnega izpeljevanja določili Fourierovo vrsto. Kot primer periodične funkcija si bomo izbrali naraščajočo žago, ki bo proporcionalna s časom <code class="docutils literal notranslate"><span class="pre">t</span></code>, perioda bo <code class="docutils literal notranslate"><span class="pre">Tp</span></code>:</p>
+<p>Zgoraj smo Fourierovo vrsto izračunali na diskrenih podatkih in smo zato omejeni, koliko harmonskih komponent lahko izračunamo (<code class="docutils literal notranslate"><span class="pre">N&lt;len(t)/2</span></code>; zakaj je <span class="math notranslate nohighlight">\(N\)</span> vezan na dolžino časovne vrste, bomo spoznali pozneje). Tukaj si bomo pogledali obravnavo zveznih sistemov in s pomočjo strojnega izpeljevanja določili Fourierovo vrsto. Kot primer periodične funkcija si bomo izbrali naraščajočo žago, ki bo proporcionalna s časom <code class="docutils literal notranslate"><span class="pre">t</span></code>, perioda bo <code class="docutils literal notranslate"><span class="pre">Tp</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1347,13 +1353,15 @@ c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2b2dd927f6e847dcfe86ab76067d386ab32e4637c6f02d56ad0c92286886aed1.png" src="../_images/2b2dd927f6e847dcfe86ab76067d386ab32e4637c6f02d56ad0c92286886aed1.png" />
+<img alt="../_images/7c09bb95092cd84b06e43ea82e60fb7284c0542cdcea6a95c302c317654cf5b3.png" src="../_images/7c09bb95092cd84b06e43ea82e60fb7284c0542cdcea6a95c302c317654cf5b3.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="diracova-delta-funkcija">
 <span id="sec-dirac-cas"></span><h2>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Povezava na naslov">#</a></h2>
+<p>Diracova delta funkcija je prikazana na sliki spodaj: ima vrednost nič na celotnem definicijskem področju, razen pri vrednosti <span class="math notranslate nohighlight">\(t=0\)</span>, ko gre proti neskončnosti; integral Diracove delta funkcije je enak 1.</p>
+<p><img alt="dirac-delta" src="../_images/dirac_delta.svg" /></p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Diracova delta funkcija je definirana z:</p>
@@ -1404,7 +1412,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/49bd807b7b66efafdea3966fb8d5cd959d0ee3bf1fff06be0a4dbda0b4d932bd.png" src="../_images/49bd807b7b66efafdea3966fb8d5cd959d0ee3bf1fff06be0a4dbda0b4d932bd.png" />
+<img alt="../_images/0bb216d6a01c782cd09376e326d7abb50372ab9fc23971d26ebe7a5a1ba74ed8.png" src="../_images/0bb216d6a01c782cd09376e326d7abb50372ab9fc23971d26ebe7a5a1ba74ed8.png" />
 </div>
 </div>
 <p>Do enotskega impulza pridemo z uteženim seštevanjem dveh enotskih korakov:</p>
@@ -1412,7 +1420,7 @@ u(t)=
 \[
 \delta_{\varepsilon}=\frac{1}{\varepsilon}\Big(u\big(t+\frac{\varepsilon}{2}\big)-u\big(t-\frac{\varepsilon}{2}\big)\Big)
 \]</div>
-<p>Poglejmo si kako koračno funkcijo pretvorimo v enotski impulz:</p>
+<p>Poglejmo si, kako koračno funkcijo pretvorimo v enotski impulz:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1442,7 +1450,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/25f9f54e2c937c7987c7a19931a058dcf06f9d3338ffc043a41c31af09b47d69.png" src="../_images/25f9f54e2c937c7987c7a19931a058dcf06f9d3338ffc043a41c31af09b47d69.png" />
+<img alt="../_images/bd74898bd29ad79ede7b366d0701d85e0e0da4bae966a28d53ace5b91df8a361.png" src="../_images/bd74898bd29ad79ede7b366d0701d85e0e0da4bae966a28d53ace5b91df8a361.png" />
 </div>
 </div>
 <p>in nato integriramo (rezultat je pričakovano enak 1; spremenite <span class="math notranslate nohighlight">\(\varepsilon\)</span> v <code class="docutils literal notranslate"><span class="pre">podatki</span></code> zgoraj!):</p>
@@ -1468,7 +1476,7 @@ u(t)=
 <ol class="arabic simple">
 <li><p>je soda: <span class="math notranslate nohighlight">\(\delta(t)=\delta(-t)\)</span></p></li>
 <li><p><em>sejalna lastnost</em>, to pomeni, da integral navadne funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> in premaknjene Diracove funkcije <span class="math notranslate nohighlight">\(\delta(t-a)\)</span> vrne vrednost funkcije <span class="math notranslate nohighlight">\(x(a)\)</span>:<span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}x(t)\,\delta(t-a)\,\textrm{d}t= x(a)\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}e^{\pm\textrm{i}\,2\,\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> ali tudi: <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}e^{\pm\textrm{i}\,a\,t}\,\textrm{d}t= 2\,\pi\,\delta(a)\)</span>, za dokaz glejte <span id="id2">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>], Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span> (str. 40).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,2\,\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> ali tudi: <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,a\,t}\,\textrm{d}t= 2\,\pi\,\delta(a)\)</span>, za dokaz glejte <span id="id2">Bendat and Piersol [<a class="reference internal" href="../bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>], Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span> (str. 40).</p></li>
 <li><p><span class="math notranslate nohighlight">\(\delta(a\,t)=\delta(t)/|a|\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}f(t)\,\delta^{(n)}(t-a)\,\textrm{d}t= (-1)^n\,f^{(n)}(a)\)</span>, kjer <span class="math notranslate nohighlight">\(n\)</span> označuje odvod.</p></li>
 </ol>
@@ -1503,7 +1511,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f1354780865d3c801d01ea4d90dfbe13d0b84f92f3232ea4f017c7a51f03e3a5.png" src="../_images/f1354780865d3c801d01ea4d90dfbe13d0b84f92f3232ea4f017c7a51f03e3a5.png" />
+<img alt="../_images/3890b28182a7985bca0756f34f15e5a1a81d05949ba603def7f8a2f8b6b63a08.png" src="../_images/3890b28182a7985bca0756f34f15e5a1a81d05949ba603def7f8a2f8b6b63a08.png" />
 </div>
 </div>
 <p>Vrsta padajoče žagaste funkcije je definirana kot:</p>
@@ -1538,9 +1546,9 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 <p>ker pa lahko odvajamo tudi vrsto, velja tudi:</p>
 <div class="math notranslate nohighlight">
 \[
-\dot x(t) = \frac{2}{T_p}\sum_{n=1}^{\infty}\cos\Big(\frac{2\pi\,n\,t}{T_p}\Big)
+\dot x(t) = \frac{2}{T_p}\sum_{n=1}^{\infty}\cos\Big(\frac{2\pi\,n\,t}{T_p}\Big).
 \]</div>
-<p>enačenje obeh izrazov vodi v izraz:</p>
+<p>S pomočjo zadnjih dveh enačb, lahko izpeljomo izraz za vlak impulzov:</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Periodični <em>vlak impulzov</em> (ang. <em>train of impulses</em>) ima v obliki Fourierovih vrst konstantne koeficiente (<span class="math notranslate nohighlight">\(2/T_p\)</span>):</p>
@@ -1575,7 +1583,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c287b60b3b0f083d16c0284d53daabbf9c6eac26b9b91414484765383e6bfe67.png" src="../_images/c287b60b3b0f083d16c0284d53daabbf9c6eac26b9b91414484765383e6bfe67.png" />
+<img alt="../_images/8f63d6d2c550b3113ce0195e6faa3fe513831fd5391ccb197fa3e0b75645ed8c.png" src="../_images/8f63d6d2c550b3113ce0195e6faa3fe513831fd5391ccb197fa3e0b75645ed8c.png" />
 </div>
 </div>
 </section>
@@ -1706,27 +1714,27 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 <span id="sec-parseval"></span><h2>Parsevalov teorem in močnostni spekter<a class="headerlink" href="#parsevalov-teorem-in-mocnostni-spekter" title="Povezava na naslov">#</a></h2>
 <section id="parsevalov-teorem">
 <h3>Parsevalov teorem<a class="headerlink" href="#parsevalov-teorem" title="Povezava na naslov">#</a></h3>
-<p>Če je <span class="math notranslate nohighlight">\(x(t)\)</span> napetost merjena čez upor upornosti <span class="math notranslate nohighlight">\(1\Omega\)</span>, potem je trenutna moč enaka <span class="math notranslate nohighlight">\(P(t)=R\,x^2(t)\)</span>, povprečna moč periodičnega signala znotraj ene periode pa je:</p>
+<p>Če je <span class="math notranslate nohighlight">\(x(t)\)</span> napetost, merjena čez upor upornosti <span class="math notranslate nohighlight">\(1\Omega\)</span>, potem je trenutna moč enaka <span class="math notranslate nohighlight">\(P(t)=R\,x^2(t)\)</span>, povprečna moč periodičnega signala znotraj ene periode pa je:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t
 \]</div>
-<p>ker velja <span class="math notranslate nohighlight">\(x(t)=\sum_{n=-\infty}^{\infty}c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p}\)</span> in <span class="math notranslate nohighlight">\(x^2(t)=x(t)\,x^*(t)\)</span> je povprečna moč definirana tudi kot:</p>
+<p>ker velja <span class="math notranslate nohighlight">\(x(t)=\sum_{n=-\infty}^{\infty}c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p}\)</span> in <span class="math notranslate nohighlight">\(x^2(t)=x(t)\,x^*(t)\)</span>, je povprečna moč definirana tudi kot:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
-\frac{1}{T_p}\int_0^{T_p}\sum_{n=-\infty}^{\infty}c_n\,e^{\mathrm{i}\,2\pi\,n\,t/T_p}\,\sum_{m=-\infty}^{\infty}c_m^*\,e^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\textrm{d}t
+\frac{1}{T_p}\int_0^{T_p}\sum_{n=-\infty}^{\infty}c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p}\,\sum_{m=-\infty}^{\infty}c_m^*\,\mathrm{e}^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\textrm{d}t
 \]</div>
 <p>kar poenostavimo v:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
-\frac{1}{T_p}\sum_{n=-\infty}^{\infty}\,\sum_{m=-\infty}^{\infty}c_n\,c_m^*\,\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t
+\frac{1}{T_p}\sum_{n=-\infty}^{\infty}\,\sum_{m=-\infty}^{\infty}c_n\,c_m^*\,\int_0^{T_p}\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t
 \]</div>
 <p>Integral harmonske funkcije na zaključeni periodi je vedno nič razen, ko je frekvenca 0. Ko je frekvenca enaka 0, je podintegralska funkcija enaka 1 in integral <span class="math notranslate nohighlight">\(T_p\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\int_0^{T_p}e^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t=
+\int_0^{T_p}\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t=
 \begin{cases}
 T_p,&amp;\textrm{če}\quad m=n,\\
 0,&amp;\textrm{sicer.}\\

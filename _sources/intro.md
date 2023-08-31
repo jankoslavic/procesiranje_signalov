@@ -6,7 +6,7 @@ Knjigo na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili 
 
 Mogoče se v tem trenutku zdi, da naključni procesi z inženirskimi izzivi nimajo veliko skupnega, ampak proti koncu te knjige bomo ugotovili, da obravnava praktično katerega-koli realnega sistema zahteva razumevanje teorije naključnih procesov, najmanj zaradi negotovosti pri merjenju.
 
-Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bralec/uporabnik lahko prilagaja, smo se zaradi omejitev uporabljene tehnologije pri pisanju morali odreči nekaterim uveljavljenim standardom tehničnih besedil. Slike tako niso podnaslovljene, sklici na enačbe/slike so navedeni relativno (npr. "spodaj", pri čemer bi bilo pravilno številčenje), pri strojno izpeljanih izrazih ni nujno oblika dosledna (npr. znak za imaginarno število $\textrm{i}$ ni pokončno, kot je pravilno). Bralce tukaj prosim za razumevanje.
+Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bralec/uporabnik lahko prilagaja, smo se zaradi omejitev uporabljene tehnologije pri pisanju morali odreči nekaterim uveljavljenim standardom tehničnih besedil. Slike tako niso podnaslovljene, sklici na enačbe/slike so navedeni relativno (npr. "spodaj", pri čemer bi bilo pravilno številčenje), pri strojno izpeljanih izrazih ni nujno oblika dosledna (npr. znak za imaginarno število $\textrm{i}$ ni pokončen, kot je pravilno).
 
 :::{note}
 Tako bomo označevali posebne opombe!

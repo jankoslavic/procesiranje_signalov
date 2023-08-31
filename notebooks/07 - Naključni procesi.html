@@ -459,7 +459,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a6d732b36a8ef531061bef71ae522ce69fe28ebf3329d6712b5445b77def0370.png" src="../_images/a6d732b36a8ef531061bef71ae522ce69fe28ebf3329d6712b5445b77def0370.png" />
+<img alt="../_images/b344393930b34232e3ec70e290a6fc5678782c18d0c1645fdbd9480c27476b10.png" src="../_images/b344393930b34232e3ec70e290a6fc5678782c18d0c1645fdbd9480c27476b10.png" />
 </div>
 </div>
 <p>S spodnjim izračunom lahko preverimo, da sta prvi moment in drugi centralni moment za Gaussovo/normalno porazdelitev dejansko <span class="math notranslate nohighlight">\(\mu\)</span>  in <span class="math notranslate nohighlight">\(\sigma^2\)</span>:</p>
@@ -658,8 +658,8 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3799191e2c4538d36253b72902dfc75fc20af2a7426efe950e9e0fda2f4a5f59.png" src="../_images/3799191e2c4538d36253b72902dfc75fc20af2a7426efe950e9e0fda2f4a5f59.png" />
-<img alt="../_images/8e7e9951c1b30102836932f7d6f9eea98862f029caa9d501edbf72f99b8d0321.png" src="../_images/8e7e9951c1b30102836932f7d6f9eea98862f029caa9d501edbf72f99b8d0321.png" />
+<img alt="../_images/ad26f4d07caec0504212da2f0fcfdcb653a9266dac26a71b7a562ce6ba74ea57.png" src="../_images/ad26f4d07caec0504212da2f0fcfdcb653a9266dac26a71b7a562ce6ba74ea57.png" />
+<img alt="../_images/9f9c082eb50873bbc32e30dfd95875abaa2473a720f979076cc4e7ae28f14ef3.png" src="../_images/9f9c082eb50873bbc32e30dfd95875abaa2473a720f979076cc4e7ae28f14ef3.png" />
 </div>
 </div>
 </section>
@@ -801,9 +801,9 @@ S_{xy}(f) &amp;= \mathcal{F}\{R_{xy}(\tau)\}.
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-S_{xx}(f) &amp;= \int_{-\infty}^{+\infty} R_{xx}(\tau)\,e^{-\mathrm{i}\,2\pi\,f\,\tau}\mathrm{d}\tau\\
-&amp;= \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x(t)\,x(t+\tau)(\tau)\,e^{-\mathrm{i}\,2\pi\,f\,\tau}\mathrm{d}t\,\mathrm{d}\tau;\qquad{(zamenjamo: )}t_1=t+\tau\\ 
-&amp;= \int_{-\infty}^{+\infty}  x(t)\,\,e^{\mathrm{i}\,2\pi\,f\,t}\mathrm{d}t\,\int_{-\infty}^{+\infty} x(t_1)\,e^{-\mathrm{i}\,2\pi\,f\,t_1}\,\mathrm{d}t_1\\
+S_{xx}(f) &amp;= \int_{-\infty}^{+\infty} R_{xx}(\tau)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,f\,\tau}\mathrm{d}\tau\\
+&amp;= \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x(t)\,x(t+\tau)(\tau)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,f\,\tau}\mathrm{d}t\,\mathrm{d}\tau;\qquad{(zamenjamo: )}t_1=t+\tau\\ 
+&amp;= \int_{-\infty}^{+\infty}  x(t)\,\,\mathrm{e}^{\mathrm{i}\,2\pi\,f\,t}\mathrm{d}t\,\int_{-\infty}^{+\infty} x(t_1)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,f\,t_1}\,\mathrm{d}t_1\\
 &amp;=X^*(f)\,X(f)
 \end{split}
 \end{split}\]</div>
@@ -812,8 +812,8 @@ S_{xx}(f) &amp;= \int_{-\infty}^{+\infty} R_{xx}(\tau)\,e^{-\mathrm{i}\,2\pi\,f\
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-X_k(f, T) = \int_0^T x_k(t) \,e^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d} t, \\
-Y_k(f, T) = \int_0^T y_k(t) \,e^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d} t \\
+X_k(f, T) = \int_0^T x_k(t) \,\mathrm{e}^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d} t, \\
+Y_k(f, T) = \int_0^T y_k(t) \,\mathrm{e}^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d} t \\
 \end{split}
 \end{split}\]</div>
 <p>lahko z množenje Fourierovih transformirank  določimo križno-spektralno gostoto (ker imamo končno dolgi signal, moramo, da dobimo gostoto, normirati na <span class="math notranslate nohighlight">\(T\)</span>):</p>
