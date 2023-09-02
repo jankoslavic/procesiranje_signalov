@@ -1,4 +1,7 @@
-# Predgovor
+# Procesiranje signalov, 2023, 
+prof. dr. Janko Slavič
+
+## Predgovor
 
 Ta izvršljiva knjiga je nastala na podlagi raziskovalno-razvojnega dela *Laboratorija za dinamiko strojev in konstrukcij*. *Procesiranje signalov* je ne samo ključno pri številnih znanstvenih člankih, ki smo jih objavili v vodilnih znanstvenih revijah področja (npr.: [Mechanical Systems and Signal Processing](https://www.sciencedirect.com/journal/mechanical-systems-and-signal-processing)), ampak je ključno tudi pri številnih industrijskih projektih (npr. pri kontroli kvalitete izdelkov). Procesiranje signalov predstavlja tudi pomemben del monografije na temo vibracijskega utrujanja (glejte: {cite:t}`slavic2020VF`), ki kot prva povezuje spektralne metode identifikacije vibracijske poškodovanosti s teorijo strukturne dinamike.
 
@@ -7,6 +10,10 @@ Knjigo na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili 
 Mogoče se v tem trenutku zdi, da naključni procesi z inženirskimi izzivi nimajo veliko skupnega, ampak proti koncu te knjige bomo ugotovili, da obravnava praktično katerega-koli realnega sistema zahteva razumevanje teorije naključnih procesov, najmanj zaradi negotovosti pri merjenju.
 
 Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bralec/uporabnik lahko prilagaja, smo se zaradi omejitev uporabljene tehnologije pri pisanju morali odreči nekaterim uveljavljenim standardom tehničnih besedil. Slike tako niso podnaslovljene, sklici na enačbe/slike so navedeni relativno (npr. "spodaj", pri čemer bi bilo pravilno številčenje), pri strojno izpeljanih izrazih ni nujno oblika dosledna (npr. znak za imaginarno število $\textrm{i}$ ni pokončen, kot je pravilno).
+
+## Zahvala
+
+Za strokovno recenzijo knjige se najlepše zahvaljujem prof. dr. Mihi Boltežarju.
 
 :::{note}
 Tako bomo označevali posebne opombe!

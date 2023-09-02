@@ -154,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Predgovor
+                    Procesiranje signalov, 2023,
                 </a>
             </li>
         </ul>
@@ -459,7 +459,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b344393930b34232e3ec70e290a6fc5678782c18d0c1645fdbd9480c27476b10.png" src="../_images/b344393930b34232e3ec70e290a6fc5678782c18d0c1645fdbd9480c27476b10.png" />
+<img alt="../_images/52c812134ec5b49c1407277dbe11cf666cfa74ac0b764fa1340c09ac6203a6c4.png" src="../_images/52c812134ec5b49c1407277dbe11cf666cfa74ac0b764fa1340c09ac6203a6c4.png" />
 </div>
 </div>
 <p>S spodnjim izračunom lahko preverimo, da sta prvi moment in drugi centralni moment za Gaussovo/normalno porazdelitev dejansko <span class="math notranslate nohighlight">\(\mu\)</span>  in <span class="math notranslate nohighlight">\(\sigma^2\)</span>:</p>
@@ -618,7 +618,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </div>
 <p>Centralni limitni teorem tudi pravi, da se porazdelitev vzorca povprečij vsake naključne spremenljivke približuje normalni porazdelitvi, ko velikost vzorca narašča, tudi če je prvotna populacija porazdeljena drugače kot normalno. To drži, če so vzorci neodvisni in enako porazdeljeni ter je velikost vzorca dovolj velika.</p>
-<p>Poglejmo si zgoraj zapisano na primeru merjenja časa med prihodoma dveh študentov v učilnico. Takšen čas je praviloma eksponentno porazdeljen. Najprej kreiramo zelo veliko <code class="docutils literal notranslate"><span class="pre">število_študentov=100000</span></code>, histogram  Opazimo, da je večina študentov pride z časovno razliko manj kot 20 s. Naslednja slika prikazuje povprečja vzorcev, kjer smo meritve razdelili v vzorce velikosti: <code class="docutils literal notranslate"><span class="pre">velikost_vzorca=100</span></code>. Opazimo, da so povprečja normalno porazdeljena.</p>
+<p>Poglejmo si sedaj še zgled z drugačno porazdelitvijo: spremljali bomo čas med prihodoma dveh študentov v učilnico, kateri je eksponentno porazdeljen. V kodi spodaj kreiramo zelo velik vzorec: <code class="docutils literal notranslate"><span class="pre">število_študentov=100000</span></code> in opazimo, da večina študentov pride s časovno razliko manj kot 20 s. Naslednja slika prikazuje povprečja vzorcev, kjer smo začetne podatke razdelili v vzorce velikosti: <code class="docutils literal notranslate"><span class="pre">velikost_vzorca=100</span></code>. Opazimo, da so povprečja normalno porazdeljena.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -658,15 +658,15 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ad26f4d07caec0504212da2f0fcfdcb653a9266dac26a71b7a562ce6ba74ea57.png" src="../_images/ad26f4d07caec0504212da2f0fcfdcb653a9266dac26a71b7a562ce6ba74ea57.png" />
-<img alt="../_images/9f9c082eb50873bbc32e30dfd95875abaa2473a720f979076cc4e7ae28f14ef3.png" src="../_images/9f9c082eb50873bbc32e30dfd95875abaa2473a720f979076cc4e7ae28f14ef3.png" />
+<img alt="../_images/a927966947770571e30e163f23843520ac5f4ee2652f81073392f94f9beb2594.png" src="../_images/a927966947770571e30e163f23843520ac5f4ee2652f81073392f94f9beb2594.png" />
+<img alt="../_images/9f9cca4623c8b56c52781ba40c4e0b3c17bd011e4e7ad629f8f8ac947ed6f780.png" src="../_images/9f9cca4623c8b56c52781ba40c4e0b3c17bd011e4e7ad629f8f8ac947ed6f780.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="momenti-funkcije-gostote-verjetnosti">
 <span id="sec-momenti-funkcije-gostote-verjetnosti"></span><h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Povezava na naslov">#</a></h2>
-<p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeks <span class="math notranslate nohighlight">\(k\)</span>) označimo kot (<span class="math notranslate nohighlight">\(E[]\)</span> označuje <em>pričakovano vrednost</em>/posplošeno povprečje, ang. <em>expected value</em>, glejte tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Expected_value">povezavo</a>):</p>
+<p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeks <span class="math notranslate nohighlight">\(k\)</span>) označimo kot <span class="math notranslate nohighlight">\(E[]\)</span> (<span class="math notranslate nohighlight">\(E[]\)</span> označuje <em>pričakovano vrednost</em>/posplošeno povprečje, ang. <em>expected value</em>, glejte tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Expected_value">povezavo</a>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -683,22 +683,22 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 \mu_{x}^n(t)= E[x^n(t)] = \int_{-\infty}^{+\infty} x^n\, p(x)\, \textrm{d} x
 \]</div>
 </div>
-<p><em>Kovariančne funkcije</em> so za dva procesa definirane <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t) \right\}\)</span> kot:</p>
+<p><em>Kovariančne funkcije</em> so za dva procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t) \right\}\)</span> definirane kot:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-C_{xx}(t, t+\tau) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [x(t+\tau) - \mu_x(t+ \tau)]\big{]}, \\
-C_{yy}(t, t+\tau) &amp;= E \big{[}[y(t) - \mu_y(t)] \, [y(t+\tau) - \mu_y(t+ \tau)]\big{]}, \\
-C_{xy}(t, t+\tau) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t+\tau) - \mu_y(t+ \tau)]\big{]} \\
+C_{xx}(t, t+\tau) &amp;= E \big{[}(x(t) - \mu_x(t)) \, (x(t+\tau) - \mu_x(t+ \tau))\big{]}, \\
+C_{yy}(t, t+\tau) &amp;= E \big{[}(y(t) - \mu_y(t)) \, (y(t+\tau) - \mu_y(t+ \tau))\big{]}, \\
+C_{xy}(t, t+\tau) &amp;= E \big{[}(x(t) - \mu_x(t)) \, (y(t+\tau) - \mu_y(t+ \tau))\big{]} \\
 \end{split}
 \end{split}\]</div>
 <p>Poseben primer, vreden pozornosti, je pri <span class="math notranslate nohighlight">\(\tau = 0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-C_{xx}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)]^2\big{]}= \sigma_x^2(t), \\
-C_{yy}(t, t) &amp;= E \big{[}[y(t) - \mu_y(t)]^2\big{]}= \sigma_y^2(t), \\
-C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{xy}(t)\\
+C_{xx}(t, t) &amp;= E \big{[}(x(t) - \mu_x(t))^2\big{]}= \sigma_x^2(t), \\
+C_{yy}(t, t) &amp;= E \big{[}(y(t) - \mu_y(t))^2\big{]}= \sigma_y^2(t), \\
+C_{xy}(t, t) &amp;= E \big{[}(x(t) - \mu_x(t)) \, (y(t) - \mu_y(t))\big{]} = C_{xy}(t)\\
 \end{split}
 \end{split}\]</div>
 <p>Varianci <span class="math notranslate nohighlight">\(\sigma_x^2(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma_y^2(t)\)</span> sta tako definirani in <span class="math notranslate nohighlight">\(C_{xy}(t)\)</span> je kovarianca med <span class="math notranslate nohighlight">\(\left \{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span> ob času <span class="math notranslate nohighlight">\(t\)</span>.</p>
@@ -717,7 +717,7 @@ C_{xy}(t, t) &amp;= E \big{[}[x(t) - \mu_x(t)] \, [y(t) - \mu_y(t)]\big{]} = C_{
 </div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p><strong>Auto-korelacijska</strong> <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in <strong>križno-korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> se uporabljajo za stacionarne naključne procese in je enaka kovariančnim funkcijam v primeru procesa z ničelno srednjo vrednostjo:</p>
+<p><strong>Auto-korelacijska</strong> <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> in <strong>križno-korelacijska</strong> <span class="math notranslate nohighlight">\(R_{xy}(\tau)\)</span> funkciji se uporabljata za stacionarne naključne procese in sta enaki kovariančnim funkcijam v primeru procesa z ničelno srednjo vrednostjo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -730,7 +730,7 @@ R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 </section>
 <section id="ergodicnost">
 <h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Povezava na naslov">#</a></h2>
-<p>V ergodičnem procesu se statistične lastnosti (npr. povprečje ali varianca), lahko namesto čez ansambel opazovanj (<span class="math notranslate nohighlight">\(k\)</span>) določimo na podlagi časovnega razvoja (<span class="math notranslate nohighlight">\(t\)</span>) enega samega opazovanja.</p>
+<p>V ergodičnem procesu lahko statistične lastnosti (npr. povprečje ali varianca) namesto čez ansambel opazovanj (<span class="math notranslate nohighlight">\(k\)</span>) določimo na podlagi časovnega razvoja (<span class="math notranslate nohighlight">\(t\)</span>) enega samega opazovanja.</p>
 <p>Zgoraj (<code class="docutils literal notranslate"><span class="pre">ref</span></code>{sec:momenti_funkcije_gostote_verjetnosti}) smo srednjo vrednost določili čez ansambel dogodkov. Ob predpostavki ergodičnosti pa jo lahko določimo na podlagi časovnega povprečja:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -739,7 +739,7 @@ R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 \mu_y(k) &amp;= \lim_{T \to \infty} \frac{1}{T} \int_{0}^{T} y_k(t)\, \textrm{d}  t.\\
 \end{split}
 \end{split}\]</div>
-<p>Preprosto povedano: če bi hkrati vrglo igralno kocko za <em>Človek ne jezi</em> se 1000 ljudi, bi dobili zelo podoben rezultat kakor pa, če bi ena oseba vrgla kocko 1000 krat. Pri tem moramo predpostaviti, da zaporedni dogodki v času (ko meče ena oseba) niso med seboj povezani. V zgornji enačbi tako opazujemo <span class="math notranslate nohighlight">\(k\)</span>-ti proces v času.</p>
+<p>Preprosto povedano: če bi hkrati vrglo igralno kocko za <em>Človek ne jezi</em> se 1000 ljudi, bi dobili zelo podoben rezultat, kakor pa če bi ena oseba vrgla kocko 1000 krat. Pri tem moramo predpostaviti, da zaporedni dogodki v času (ko meče ena oseba) niso med seboj povezani. V zgornji enačbi tako opazujemo <span class="math notranslate nohighlight">\(k\)</span>-ti proces v času.</p>
 <p>Podobno lahko trdimo za kovariančno funkcijo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -754,7 +754,7 @@ C_{xy}(\tau, k) &amp;= \lim_{T \to \infty} \frac{1}{T} \int_{0}^{T} \left[x_k(t)
 \end{split}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Proces rečemo, da je <strong>šibko ergodičen</strong> (ang. <em>weakly ergodic</em>), če so časovna povprečja enaka povprečjem ansambla dogodkov, neodvisno od izbranega <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<p>Za proces rečemo, da je <strong>šibko ergodičen</strong> (ang. <em>weakly ergodic</em>), če so časovna povprečja enaka povprečjem ansambla dogodkov, neodvisno od izbranega <span class="math notranslate nohighlight">\(k\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -808,7 +808,7 @@ S_{xx}(f) &amp;= \int_{-\infty}^{+\infty} R_{xx}(\tau)\,\mathrm{e}^{-\mathrm{i}\
 \end{split}
 \end{split}\]</div>
 <p>Na podoben način bi lahko izpeljali križno-spektralno gostoto <span class="math notranslate nohighlight">\(S_{xy}\)</span>.</p>
-<p>V primeru realnih meritev je časovna zgodovina končne dolžine in Diricletov pogoj je izpolnjen; iz Fourierove transformacije <span class="math notranslate nohighlight">\(k\)</span>-te časovne zgodovine:</p>
+<p>V primeru realnih meritev je časovna zgodovina končne dolžine in je izpolnjen Diricletov pogoj; iz Fourierove transformacije <span class="math notranslate nohighlight">\(k\)</span>-te časovne zgodovine:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -816,14 +816,14 @@ X_k(f, T) = \int_0^T x_k(t) \,\mathrm{e}^{- \textrm{i} \, 2 \, \pi \, f \, t} \,
 Y_k(f, T) = \int_0^T y_k(t) \,\mathrm{e}^{- \textrm{i} \, 2 \, \pi \, f \, t} \,\textrm{d} t \\
 \end{split}
 \end{split}\]</div>
-<p>lahko z množenje Fourierovih transformirank  določimo križno-spektralno gostoto (ker imamo končno dolgi signal, moramo, da dobimo gostoto, normirati na <span class="math notranslate nohighlight">\(T\)</span>):</p>
+<p>lahko z množenjem Fourierovih transformirank  določimo križno-spektralno gostoto (ker imamo končno dolgi signal, moramo, da dobimo gostoto, normirati na <span class="math notranslate nohighlight">\(T\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 S_{xy}(f, T, k) = \frac{1}{T}\, X_k^*(f, T) \, Y_k(f, T)
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p><strong>Avto (PSD)</strong> in <strong>križna (CSD)</strong> spektralna gostota je torej za primer ergodičnega procesa definirana kot (brez indeksa <span class="math notranslate nohighlight">\(k\)</span>):</p>
+<p><strong>Avto (PSD)</strong> in <strong>križna (CSD)</strong> spektralna gostota sta torej za primer ergodičnega procesa definirani kot (brez indeksa <span class="math notranslate nohighlight">\(k\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}\label{eq:Sxx_Syy_ergodic}
@@ -845,11 +845,11 @@ S_{xx}(f),&amp; f=0\\
 <p>Podobno velja za <span class="math notranslate nohighlight">\(G_{xy}\)</span>, za dvostranski križno-spektralno gostoto velja <span class="math notranslate nohighlight">\(S_{xy}=S_{yx}^*\)</span>.</p>
 <section id="zgled-1">
 <h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Povezava na naslov">#</a></h3>
-<p>Poglejmo si najprej izračun avto-spektralne gostote s pomočjo Fourierove transformacije. Na koncu zgleda preverimo Parsevalov teorema v diskretni obliki:</p>
+<p>Poglejmo si najprej izračun avto-spektralne gostote s pomočjo Fourierove transformacije. Na koncu zgleda preverimo Parsevalov teorem v diskretni obliki:</p>
 <div class="math notranslate nohighlight">
 \[
 \sigma_x^2 = \frac{1}{T} \int x^2(t)\,\textrm{d} t = \int S_{xx}(f)\,\textrm{d} f. \]</div>
-<p>Pri zgledu bodite previdni kako se obravnava <span class="math notranslate nohighlight">\(S_{xx}\)</span> in <span class="math notranslate nohighlight">\(G_{xx}\)</span>.</p>
+<p>Pri zgledu bodite previdni, kako se obravnava <span class="math notranslate nohighlight">\(S_{xx}\)</span> in <span class="math notranslate nohighlight">\(G_{xx}\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -983,7 +983,7 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </div>
 </div>
-<p>Ker gre za numerične podatke smo pridobii vrednost, ki je bolj ali manj blizu pričakovani vrednosti <span class="math notranslate nohighlight">\(\sigma^2=9\)</span> (poskusite spremeniti <code class="docutils literal notranslate"><span class="pre">N</span></code>). Nadaljujemo z izračunom variance v frekvenčni domeni:</p>
+<p>Ker gre za numerične podatke, smo pridobili vrednost, ki je bolj ali manj blizu pričakovani vrednosti <span class="math notranslate nohighlight">\(\sigma^2=9\)</span> (poskusite spremeniti <code class="docutils literal notranslate"><span class="pre">N</span></code>). Nadaljujemo z izračunom variance v frekvenčni domeni:</p>
 <div class="math notranslate nohighlight">
 \[
 \sigma_x^2 = \int_{-\infty}^{+\infty} S_{xx}(f)\,\textrm{d} f
@@ -1046,7 +1046,7 @@ m_2 = E \left[\dot{x}^2(t)\right] = \int_{-\infty}^{+\infty} \omega^2 \, S_{xx}(
 m_i = \int_{-\infty}^{+\infty} \omega^i \, S_{xx}(\omega) \textrm{d} \omega=\int_{0}^{+\infty} \omega ^i \, G_{xx}(\omega) \,\textrm{d} \omega
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(G_{xx}\)</span> enostranski PSD.</p>
-<p>Treba je poudariti, da če je PSD podan v Hz (<span class="math notranslate nohighlight">\(G_{xx}(f)\)</span>) je treba pozabiti na pravilno uporabo ročice <span class="math notranslate nohighlight">\((2\pi\,f)^i\)</span>:</p>
+<p>Treba je poudariti, da če je PSD podan v Hz (<span class="math notranslate nohighlight">\(G_{xx}(f)\)</span>) je treba paziti na pravilno uporabo ročice <span class="math notranslate nohighlight">\((2\pi\,f)^i\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
@@ -1101,7 +1101,7 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 </div>
 </div>
 </div>
-<p>Spektralni moment <span class="math notranslate nohighlight">\(m_0\)</span> (pomik): preverimo ali res dobimo pričakovano vrednost (<span class="math notranslate nohighlight">\(0.5\,A=0.5\)</span>) tudi v frekvenčni domeni:</p>
+<p>Spektralni moment <span class="math notranslate nohighlight">\(m_0\)</span> (pomik): preverimo, ali res dobimo pričakovano vrednost (<span class="math notranslate nohighlight">\(0.5\,A=0.5\)</span>) tudi v frekvenčni domeni:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spektralni_moment</span><span class="p">(</span><span class="n">X_r</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
