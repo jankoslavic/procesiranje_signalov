@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>5. Kvantizacija podatkov &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -78,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -323,10 +334,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -334,7 +345,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -381,9 +392,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="kvantizacija-podatkov">
-<h1>5. Kvantizacija podatkov<a class="headerlink" href="#kvantizacija-podatkov" title="Povezava na naslov">#</a></h1>
+<h1>5. Kvantizacija podatkov<a class="headerlink" href="#kvantizacija-podatkov" title="Permalink to this heading">#</a></h1>
 <section id="enakomerno-casovno-vzorcenje">
-<span id="sec-enakomerno-casovno-vzorcenje"></span><h2>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Povezava na naslov">#</a></h2>
+<span id="sec-enakomerno-casovno-vzorcenje"></span><h2>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Permalink to this heading">#</a></h2>
 <p>Doslej smo obravnavali zvezne podatke <span class="math notranslate nohighlight">\(x(t)\)</span>, pri eksperimentalnem delu pa se skoraj vedno srečamo z diskretnimi vrednostmi, ki so tipično zajete z enakomernim časovnim vzorčenjem <span class="math notranslate nohighlight">\(x(n\,\Delta t)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> <strong>čas (perioda) vzorčenja</strong> (<span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> je <strong>frekvenca vzorčenja</strong>).</p>
 <p>Pri razumevanju vzorčenih podatkov si pomagamo z <em>enakomerno vzorčenimi podatki</em> <span class="math notranslate nohighlight">\(x_s(t)\)</span>, ki so produkt zveznih podatkov <span class="math notranslate nohighlight">\(x(t)\)</span> in vlaka impulzov <span class="math notranslate nohighlight">\(i(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -451,7 +462,7 @@ x(p\,\Delta t) = \Delta t\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,\mathrm{e
 </div>
 </section>
 <section id="frekvencno-prekrivanje">
-<h2>Frekvenčno prekrivanje<a class="headerlink" href="#frekvencno-prekrivanje" title="Povezava na naslov">#</a></h2>
+<h2>Frekvenčno prekrivanje<a class="headerlink" href="#frekvencno-prekrivanje" title="Permalink to this heading">#</a></h2>
 <p>Frekvenčno prekrivanje ali tudi frekvenčno zrcaljenje (ang. <em>aliasing</em>) je pojav, pri katerem pride do napačne identifikacije frekvence v signalu, razlog pa je neprimerno vzorčenje časovnega signala. Poglejmo detajle: vlak impulzov <span class="math notranslate nohighlight">\(i(t)\)</span> lahko vidimo kot periodične podatke s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> ter jih popišemo s Fourierovo vrsto:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -496,7 +507,7 @@ X_s(f) =\mathcal{F}(i(t)\,x(t)) &amp;= I(f)*X(f)\\
 \end{split}\]</div>
 <p>Kako interpretiramo zgornjo izpeljavo? Če imamo časovno vzorčene podakte <span class="math notranslate nohighlight">\(x_s(t)\)</span>, kar vodi v frekvenčni domeni do <span class="math notranslate nohighlight">\(X_s(f)\)</span>, imamo pri določeni frekvenci <span class="math notranslate nohighlight">\(f\)</span> vsebnost vsote zveznih podatkov <span class="math notranslate nohighlight">\(X(f)\)</span> pri frekvencah <span class="math notranslate nohighlight">\(f-n/\Delta t\)</span>, kjer gre celo število <span class="math notranslate nohighlight">\(n\)</span> od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. V praksi to pomeni, da se nam vsebnost dejanskega (zveznega) signala iz frekvenčnega področja izven področja <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span> zrcali in prekriva v frekvenčno področje od <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span>; glejte zgled spodaj.</p>
 <section id="zgled-gaussov-impulz">
-<h3>Zgled: Gaussov impulz<a class="headerlink" href="#zgled-gaussov-impulz" title="Povezava na naslov">#</a></h3>
+<h3>Zgled: Gaussov impulz<a class="headerlink" href="#zgled-gaussov-impulz" title="Permalink to this heading">#</a></h3>
 <p>Časovno vzorčenje in frekvenčno prekrivanje si bomo tukaj pogledali na primeru Gaussovega impulza/okna (glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-gaussov-impulz"><span class="std std-ref">Gaussov impulz</span></a>), ki je v časovni in frekvenčni domeni definirano kot:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -561,8 +572,8 @@ x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ea9c501fbc0cfd69d8a9e96ff9f78f3b3c5fa7f4bd0de08b6aae9d5cbba38a82.png" src="../_images/ea9c501fbc0cfd69d8a9e96ff9f78f3b3c5fa7f4bd0de08b6aae9d5cbba38a82.png" />
-<img alt="../_images/bc2642982f0ae5b31fbcc31553622a69ab1eae30f545f1a8fdb33dd01eb69753.png" src="../_images/bc2642982f0ae5b31fbcc31553622a69ab1eae30f545f1a8fdb33dd01eb69753.png" />
+<img alt="../_images/9b777edeca9eb485c4f43da7f19499ddcd5d29bd66a4bee1bc86f6731c8e6748.png" src="../_images/9b777edeca9eb485c4f43da7f19499ddcd5d29bd66a4bee1bc86f6731c8e6748.png" />
+<img alt="../_images/2efb82a0f21cb131e1ea1ba8e78d320cb4aac18fc442a13e700b45fdf143e3c8.png" src="../_images/2efb82a0f21cb131e1ea1ba8e78d320cb4aac18fc442a13e700b45fdf143e3c8.png" />
 </div>
 </div>
 <p>Še en primer frekvenčnega prekrivanja predstavlja spodnji zgled, kjer obravnavamo harmonske podatke. Ko je frekvenca vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>, glede na frekvenco harmonskih podatov <code class="docutils literal notranslate"><span class="pre">f</span></code>, prenizka (<span class="math notranslate nohighlight">\(f&gt;fs/2\)</span>), se dejanska frekvenca zrcali v frekvenčno področje do <code class="docutils literal notranslate"><span class="pre">fs/2</span></code>. V spodnji kodi frekvenco sinusnega signala <code class="docutils literal notranslate"><span class="pre">f</span></code> poskusite počasi dvigovati proti (in nad) frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>.</p>
@@ -596,13 +607,13 @@ x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/eb541ef6fc00557ce564538ae82a230ed05c2f37a8a63d72ec26c04edaf4d80d.png" src="../_images/eb541ef6fc00557ce564538ae82a230ed05c2f37a8a63d72ec26c04edaf4d80d.png" />
+<img alt="../_images/fa221f2f12e012d7ed18264e05d0a8abcc12aa6bf05d16042f5d5a3e9c519cd5.png" src="../_images/fa221f2f12e012d7ed18264e05d0a8abcc12aa6bf05d16042f5d5a3e9c519cd5.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="preprecevanje-frekvencnega-prekrivanja">
-<h2>Preprečevanje frekvenčnega prekrivanja<a class="headerlink" href="#preprecevanje-frekvencnega-prekrivanja" title="Povezava na naslov">#</a></h2>
+<h2>Preprečevanje frekvenčnega prekrivanja<a class="headerlink" href="#preprecevanje-frekvencnega-prekrivanja" title="Permalink to this heading">#</a></h2>
 <p>Če je <span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> frekvenca vzorčenja, potem se frekvenčnemu prekrivanju lahko izognemo tako, da uporabimo <strong>nizko-pasovni</strong> (ang. <em>low-pass</em>) filter na frekvenci:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -611,7 +622,7 @@ f_{np}&lt;\frac{f_s}{2}.
 <p>Pri tem je pomembno, da se uporabi analogni filter, <em>preden</em> se izvede časovno vzorčenje. Frekvenci <span class="math notranslate nohighlight">\(f_{np}\)</span> rečemo tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquistova frekvenca</a>.</p>
 </section>
 <section id="kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne">
-<h2>Kvantizacija podatkov: pretvorba zveznih podatkov v diskretne<a class="headerlink" href="#kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne" title="Povezava na naslov">#</a></h2>
+<h2>Kvantizacija podatkov: pretvorba zveznih podatkov v diskretne<a class="headerlink" href="#kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne" title="Permalink to this heading">#</a></h2>
 <p>Za obdelavo v računalnikih moramo merjene zvezne podatke pretvoriti v diskretne numerične vrednosti, zajete z določeno frekvenco vzorčenja. Zajemne kartice danes omogočajo relativno hitro zajemanje (vsaj 100 kHz) pri relativno veliki dinamični globini (vsaj 24 bit). Tukaj si bomo bolj podrobno pogledali dinamično globino, ki predstavlja število diskretnih nivojev, na kateri zajemna kartica razpozna analogne podatke.</p>
 <p>Zapis števil v računalniku je končne natančnosti, tipično današnji računalniki uporabljajo 64 bitno natančnost zapisa, kar je bistveno več kakor pa je natančnost zajemnih merilnih kartic.</p>
 <p>Poglejmo si naslednji zgled, kjer obravnavamo sinusoido. Če uporabimo 24 bitno kartico in tipično območje merjenja [-10, 10], je razlika med dvema nivojema kvantizacije približno 1e-6, ker je za večino meritev povsem dovolj. Razmerje med najmanjšo in največjo vrednostjo, ki jo lahko na določeni zajemin kartici merimo, imenujemo <strong>dinamični razpon</strong> ali tudi <strong>dinamična globina</strong>.</p>
@@ -667,12 +678,12 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/72f8b2d76326cf86324221729f5a58276409317ae08ffa84621a176c97983f86.png" src="../_images/72f8b2d76326cf86324221729f5a58276409317ae08ffa84621a176c97983f86.png" />
+<img alt="../_images/b9256cc2e7758ed50f8d6620bf657107d0df59ba47cdb84cecc47f0f2154ea3e.png" src="../_images/b9256cc2e7758ed50f8d6620bf657107d0df59ba47cdb84cecc47f0f2154ea3e.png" />
 </div>
 </div>
 </section>
 <section id="razmerje-med-signalom-in-sumom">
-<h2>Razmerje med signalom in šumom<a class="headerlink" href="#razmerje-med-signalom-in-sumom" title="Povezava na naslov">#</a></h2>
+<h2>Razmerje med signalom in šumom<a class="headerlink" href="#razmerje-med-signalom-in-sumom" title="Permalink to this heading">#</a></h2>
 <p>Razliko med kvantizirano in dejansko vrednostjo lahko obravnavamo kot naključni šum <span class="math notranslate nohighlight">\(e\)</span> z enakomerno porazdelitvijo znotraj koraka kvantizacije. Standardna deviacija takega šuma je definirana kot (<span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>, str: 133):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -732,7 +743,7 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/765882a04caa40375d21f1d0a7291e2f7b647c0aadfaed6340df8a0069a9f374.png" src="../_images/765882a04caa40375d21f1d0a7291e2f7b647c0aadfaed6340df8a0069a9f374.png" />
+<img alt="../_images/14c1b289f8d09930819c48084e4ccfe9d982798a1f8f399127b6e2a8ab380c03.png" src="../_images/14c1b289f8d09930819c48084e4ccfe9d982798a1f8f399127b6e2a8ab380c03.png" />
 </div>
 </div>
 </section>
@@ -763,11 +774,10 @@ f_{np}&lt;\frac{f_s}{2}.
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html"
@@ -787,10 +797,7 @@ f_{np}&lt;\frac{f_s}{2}.
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -860,8 +867,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

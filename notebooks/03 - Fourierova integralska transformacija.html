@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>3. Fourierova integralska transformacija &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -78,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -323,10 +334,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -334,7 +345,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -395,7 +406,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fourierova-integralska-transformacija">
-<span id="sec-fourierova-int-transf"></span><h1>3. Fourierova integralska transformacija<a class="headerlink" href="#fourierova-integralska-transformacija" title="Povezava na naslov">#</a></h1>
+<span id="sec-fourierova-int-transf"></span><h1>3. Fourierova integralska transformacija<a class="headerlink" href="#fourierova-integralska-transformacija" title="Permalink to this heading">#</a></h1>
 <p>Če so Fourierove vrste omejene na periodične podatke, je pri Fourierovi integralski transformaciji cilj posplošitev na neperiodične podatke. V ideji to dosežemo tako, da periodo <span class="math notranslate nohighlight">\(T_p\)</span> razširimo v neskončnost. V nadaljevanju si bomo pogledali detajle.</p>
 <p>Izračun Fourierove vrste (<a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fourierove-vrste"><span class="std std-ref">2. Fourierove vrste</span></a>) temelji na periodi <span class="math notranslate nohighlight">\(T_p\)</span>; integral za izračun koeficientov lahko definiramo od <span class="math notranslate nohighlight">\(-T_p/2\)</span> do <span class="math notranslate nohighlight">\(+T_p/2\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -449,9 +460,9 @@ x(t)=\int_{-\infty}^{+\infty} X(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,t}\,\textrm
 \]</div>
 </div>
 <section id="nekateri-primeri-fourierove-transformacije">
-<h2>Nekateri primeri Fourierove transformacije<a class="headerlink" href="#nekateri-primeri-fourierove-transformacije" title="Povezava na naslov">#</a></h2>
+<h2>Nekateri primeri Fourierove transformacije<a class="headerlink" href="#nekateri-primeri-fourierove-transformacije" title="Permalink to this heading">#</a></h2>
 <section id="diracova-delta-funkcija">
-<span id="sec-ft-dirac"></span><h3>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Povezava na naslov">#</a></h3>
+<span id="sec-ft-dirac"></span><h3>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Permalink to this heading">#</a></h3>
 <p>Najprej si poglejmo Fourierovo transformacijo <strong>Diracove delta funkcije</strong> <span class="math notranslate nohighlight">\(\delta(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -460,7 +471,7 @@ x(t)=\int_{-\infty}^{+\infty} X(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,t}\,\textrm
 <p>Na podlagi zgornje izpejave zaključimo, da je Diracova delta funkcija v času neskončno kratka, v frekvenčni domeni pa neskončno široka (zasede celotni spekter oz vse frekvence). Veljalo bi tudi obratno, če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu se bomo pozneje vračali.</p>
 </section>
 <section id="simetricna-eksponentno-padajoca-funkcija">
-<h3>Simetrična eksponentno padajoča funkcija<a class="headerlink" href="#simetricna-eksponentno-padajoca-funkcija" title="Povezava na naslov">#</a></h3>
+<h3>Simetrična eksponentno padajoča funkcija<a class="headerlink" href="#simetricna-eksponentno-padajoca-funkcija" title="Permalink to this heading">#</a></h3>
 <p>Poglejmo si sedaj še <strong>simetrično, eksponentno padajočo, funkcijo</strong> <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -498,8 +509,8 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c52619e9b3c7a262d0ceaf93c9e42327e6058ca999ae4ced07ade18050c02144.png" src="../_images/c52619e9b3c7a262d0ceaf93c9e42327e6058ca999ae4ced07ade18050c02144.png" />
-<img alt="../_images/d18046a90a210d35862a31eff5939bd00b66c955fc91ef46cc0374e526733b0d.png" src="../_images/d18046a90a210d35862a31eff5939bd00b66c955fc91ef46cc0374e526733b0d.png" />
+<img alt="../_images/cd1d810f4632d7d967b303a657d9c856a0f8629903664db6f2816f941842139b.png" src="../_images/cd1d810f4632d7d967b303a657d9c856a0f8629903664db6f2816f941842139b.png" />
+<img alt="../_images/134088fdbfcd20fd19f577f23fb39ec9c9952f08f2ae13dc8cbb32e90aca52e8.png" src="../_images/134088fdbfcd20fd19f577f23fb39ec9c9952f08f2ae13dc8cbb32e90aca52e8.png" />
 </div>
 </div>
 <p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič (pri Fourierovih vrstah bi bili kosinusni členi različni od nič, sinusni pa enaki nič). To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelna bi bila imaginarna komponentna (slika spodaj).</p>
@@ -529,8 +540,8 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/88093027c45347c46dcdb0bdc41abbdb014200825952a5e586010a12282da352.png" src="../_images/88093027c45347c46dcdb0bdc41abbdb014200825952a5e586010a12282da352.png" />
-<img alt="../_images/b82ebc6c31cd9c8e8f62097c3a894e034615afa27651f7e95b6d0d6dde337488.png" src="../_images/b82ebc6c31cd9c8e8f62097c3a894e034615afa27651f7e95b6d0d6dde337488.png" />
+<img alt="../_images/86edc86de9d74ce18c7a1d3989f18603b9ce97fc8780e6ea6ad0578b40521924.png" src="../_images/86edc86de9d74ce18c7a1d3989f18603b9ce97fc8780e6ea6ad0578b40521924.png" />
+<img alt="../_images/0673c8d0b1db9a3b0b1cf444515999099d758e74aa1bd58384e46ff6d4a9ad7e.png" src="../_images/0673c8d0b1db9a3b0b1cf444515999099d758e74aa1bd58384e46ff6d4a9ad7e.png" />
 </div>
 </div>
 <p>Sicer pa velja poudariti, da realni podatki <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje koračno funkcijo). Časovni podatki so v splošnem lahko komplekne oblike in takrat v frekvenčni domeni praviloma ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
@@ -582,14 +593,14 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/803e861a421083eb4cf9e3332c41ece3d198e11d4651e8550debcd8e9e43aa36.png" src="../_images/803e861a421083eb4cf9e3332c41ece3d198e11d4651e8550debcd8e9e43aa36.png" />
-<img alt="../_images/f28ef3b13142f770fe8c5eb1128d995fa1a43a51281ddd99cd688c146904e9e1.png" src="../_images/f28ef3b13142f770fe8c5eb1128d995fa1a43a51281ddd99cd688c146904e9e1.png" />
-<img alt="../_images/8652fc01142ad8c8768df248bf17eb817c279e11793c740f541eb3c716065f75.png" src="../_images/8652fc01142ad8c8768df248bf17eb817c279e11793c740f541eb3c716065f75.png" />
+<img alt="../_images/c786082d2bca93ca8501179fbed36edb384b54511d9a6a9bff02bfe23597333a.png" src="../_images/c786082d2bca93ca8501179fbed36edb384b54511d9a6a9bff02bfe23597333a.png" />
+<img alt="../_images/bc9a32ce7a82889c0b3fd784a690733046a10531422ed31d6e0835a6e8a34115.png" src="../_images/bc9a32ce7a82889c0b3fd784a690733046a10531422ed31d6e0835a6e8a34115.png" />
+<img alt="../_images/582fba7d42606ff081c0e8f51479fa95a6180d0ed9b635f69536bdb578c64c11.png" src="../_images/582fba7d42606ff081c0e8f51479fa95a6180d0ed9b635f69536bdb578c64c11.png" />
 </div>
 </div>
 </section>
 <section id="sinusna-funkcija">
-<h3>Sinusna funkcija<a class="headerlink" href="#sinusna-funkcija" title="Povezava na naslov">#</a></h3>
+<h3>Sinusna funkcija<a class="headerlink" href="#sinusna-funkcija" title="Permalink to this heading">#</a></h3>
 <p>Predpostavimo sinusno funkcijo:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -679,12 +690,12 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2032c5c497976369cc8e9446bc205cde82ee5931a479b6bce72bdedea99c0970.png" src="../_images/2032c5c497976369cc8e9446bc205cde82ee5931a479b6bce72bdedea99c0970.png" />
+<img alt="../_images/42f503e7bbb5dc2910923eb6c059853942e9fa5c4f221101710de20e70a6b785.png" src="../_images/42f503e7bbb5dc2910923eb6c059853942e9fa5c4f221101710de20e70a6b785.png" />
 </div>
 </div>
 </section>
 <section id="pravokotni-impulz">
-<span id="sec-pravokotni-impulz"></span><h3>Pravokotni impulz<a class="headerlink" href="#pravokotni-impulz" title="Povezava na naslov">#</a></h3>
+<span id="sec-pravokotni-impulz"></span><h3>Pravokotni impulz<a class="headerlink" href="#pravokotni-impulz" title="Permalink to this heading">#</a></h3>
 <p>Predpostavimo pravokotno funkcijo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -743,13 +754,13 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d0ea1d63d36866f7814167ebbfcae55afccd234046d709d3157a4ec453448ad1.png" src="../_images/d0ea1d63d36866f7814167ebbfcae55afccd234046d709d3157a4ec453448ad1.png" />
-<img alt="../_images/00f66e317898ce1daba98bf9d101ceb03625fb06a789507a205e3617b3ef1187.png" src="../_images/00f66e317898ce1daba98bf9d101ceb03625fb06a789507a205e3617b3ef1187.png" />
+<img alt="../_images/598961ebbcb79c984c398c5b28da5046a822f0076e40dee7c1d1ae34be3ecc6a.png" src="../_images/598961ebbcb79c984c398c5b28da5046a822f0076e40dee7c1d1ae34be3ecc6a.png" />
+<img alt="../_images/82655f8ebcd7fd743e2f8290e221cd3093b8875cd1174d0fba7a1a616c6181ce.png" src="../_images/82655f8ebcd7fd743e2f8290e221cd3093b8875cd1174d0fba7a1a616c6181ce.png" />
 </div>
 </div>
 </section>
 <section id="duseni-odziv">
-<h3>Dušeni odziv<a class="headerlink" href="#duseni-odziv" title="Povezava na naslov">#</a></h3>
+<h3>Dušeni odziv<a class="headerlink" href="#duseni-odziv" title="Permalink to this heading">#</a></h3>
 <p>Tukaj si bomo najprej pogledali simetrični dušeni odziv:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -833,14 +844,14 @@ x_2(t) =
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d95c291c6aa1dd3d649b955a1c4b265cceccc9bd56750759dff8208ba470719e.png" src="../_images/d95c291c6aa1dd3d649b955a1c4b265cceccc9bd56750759dff8208ba470719e.png" />
-<img alt="../_images/2b68d85674e661349b11d4dca3057d1077a0e8d9d7f1090f3f21b8c5c6c1743b.png" src="../_images/2b68d85674e661349b11d4dca3057d1077a0e8d9d7f1090f3f21b8c5c6c1743b.png" />
-<img alt="../_images/6b05290522d4ac986a773fc98966ba93e26d494197be0bfdcc2e5632764f9e01.png" src="../_images/6b05290522d4ac986a773fc98966ba93e26d494197be0bfdcc2e5632764f9e01.png" />
+<img alt="../_images/c8a2bd2c227a331d1564d466df9d26e8a47499aba8522f944b9d36aa83318393.png" src="../_images/c8a2bd2c227a331d1564d466df9d26e8a47499aba8522f944b9d36aa83318393.png" />
+<img alt="../_images/6e754bf356f6e85b6ca7b0c7c1297921764c39d1600dbb57e049b2a638aaef63.png" src="../_images/6e754bf356f6e85b6ca7b0c7c1297921764c39d1600dbb57e049b2a638aaef63.png" />
+<img alt="../_images/d143de8b20032bda1954f114adb1969ea5d1432292356dfcdc1644639be5f7a5.png" src="../_images/d143de8b20032bda1954f114adb1969ea5d1432292356dfcdc1644639be5f7a5.png" />
 </div>
 </div>
 </section>
 <section id="gaussov-impulz">
-<span id="sec-gaussov-impulz"></span><h3>Gaussov impulz<a class="headerlink" href="#gaussov-impulz" title="Povezava na naslov">#</a></h3>
+<span id="sec-gaussov-impulz"></span><h3>Gaussov impulz<a class="headerlink" href="#gaussov-impulz" title="Permalink to this heading">#</a></h3>
 <p>Gaussovo okno ima zelo pomembno mesto pri različnih teoretičnih izpeljavah (npr.: porazdelitev verjetnosti, okna, valčna transformacija) in zato si bomo tukaj pogledali njegovo obliko v frekvenčni domeni. Najprej definirajmo :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -900,16 +911,16 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e147b6937e3cc8740336d0f5572322eed91584ac5ff8392a72d6df2210b59edb.png" src="../_images/e147b6937e3cc8740336d0f5572322eed91584ac5ff8392a72d6df2210b59edb.png" />
-<img alt="../_images/c2d3f5a366bf1988947f9eaabd1a7269307bd9d8625f5b17450e76c55740b738.png" src="../_images/c2d3f5a366bf1988947f9eaabd1a7269307bd9d8625f5b17450e76c55740b738.png" />
+<img alt="../_images/4514a55126975fe40b8186e99b28e19dfd57d0848d71d7ba711850d9de90ccfc.png" src="../_images/4514a55126975fe40b8186e99b28e19dfd57d0848d71d7ba711850d9de90ccfc.png" />
+<img alt="../_images/3590f0be52086ae613d9eaab8f9d58739dc98e1169280bae8343a93d285e569b.png" src="../_images/3590f0be52086ae613d9eaab8f9d58739dc98e1169280bae8343a93d285e569b.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="lastnosti-fourierove-transformacije">
-<h2>Lastnosti Fourierove transformacije<a class="headerlink" href="#lastnosti-fourierove-transformacije" title="Povezava na naslov">#</a></h2>
+<h2>Lastnosti Fourierove transformacije<a class="headerlink" href="#lastnosti-fourierove-transformacije" title="Permalink to this heading">#</a></h2>
 <section id="linearnost-ang-linearity">
-<h3>Linearnost (ang. linearity)<a class="headerlink" href="#linearnost-ang-linearity" title="Povezava na naslov">#</a></h3>
+<h3>Linearnost (ang. linearity)<a class="headerlink" href="#linearnost-ang-linearity" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Fourierova transformacija je linearna, kar pomeni:</p>
@@ -948,7 +959,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \int\limits_{-\infty}^{\infty} a x{\left(t \right)} e^{- 2 i \pi f t}\, dt + \int\limits_{-\infty}^{\infty} b y{\left(t \right)} e^{- 2 i \pi f t}\, dt\]</div>
+\[\displaystyle \int\limits_{-\infty}^{\infty} \left(a x{\left(t \right)} e^{- 2 i \pi f t} + b y{\left(t \right)} e^{- 2 i \pi f t}\right)\, dt\]</div>
 </div>
 </div>
 <p>Spodaj si poglejmo konkreten primer.</p>
@@ -991,13 +1002,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/74d7989b8ce09a2e29a0b5205d395507e2a06d94a35512334d6ceb281a1cb229.png" src="../_images/74d7989b8ce09a2e29a0b5205d395507e2a06d94a35512334d6ceb281a1cb229.png" />
-<img alt="../_images/e6a538f67b1cb4c31f8d29cbb9509ce6e8289d9936078c6d3501c1198f5609ef.png" src="../_images/e6a538f67b1cb4c31f8d29cbb9509ce6e8289d9936078c6d3501c1198f5609ef.png" />
+<img alt="../_images/3c2f3b6f0385543e7243d013e155fdc691694fc1e6f3be5dfefef6245d8c4d9b.png" src="../_images/3c2f3b6f0385543e7243d013e155fdc691694fc1e6f3be5dfefef6245d8c4d9b.png" />
+<img alt="../_images/a9bc94c20f1674b4481c9a3620583a22a1a43c455e111cfb304b288282367fd9.png" src="../_images/a9bc94c20f1674b4481c9a3620583a22a1a43c455e111cfb304b288282367fd9.png" />
 </div>
 </div>
 </section>
 <section id="casovno-skaliranje-ang-time-scaling">
-<h3>Časovno skaliranje (ang. time scaling)<a class="headerlink" href="#casovno-skaliranje-ang-time-scaling" title="Povezava na naslov">#</a></h3>
+<h3>Časovno skaliranje (ang. time scaling)<a class="headerlink" href="#casovno-skaliranje-ang-time-scaling" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Časovno skaliranje je definirano kot <span class="math notranslate nohighlight">\(a\,t\)</span> in ima na Fourierovo transformacijo vpliv:</p>
@@ -1066,8 +1077,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a942ea415bf3e5c1bdc4f6ee16745bb299558b237de017ececb4ed1d1278ddab.png" src="../_images/a942ea415bf3e5c1bdc4f6ee16745bb299558b237de017ececb4ed1d1278ddab.png" />
-<img alt="../_images/8feaf49279600a3ba82afa33fd57535b6adc82e771e52eb63f6f358163ef3b5c.png" src="../_images/8feaf49279600a3ba82afa33fd57535b6adc82e771e52eb63f6f358163ef3b5c.png" />
+<img alt="../_images/85fd40cb3f8ac726996e9daf841cb0cf7072080d734a3c9e78eb908e7c56249a.png" src="../_images/85fd40cb3f8ac726996e9daf841cb0cf7072080d734a3c9e78eb908e7c56249a.png" />
+<img alt="../_images/0ca7d1bdae788e04faf2d9af81a726562674a641a1a5ed012fe20b71e47b7cbd.png" src="../_images/0ca7d1bdae788e04faf2d9af81a726562674a641a1a5ed012fe20b71e47b7cbd.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1095,7 +1106,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </section>
 <section id="casovni-obrat-ang-time-reversal">
-<h3>Časovni obrat (ang. time reversal)<a class="headerlink" href="#casovni-obrat-ang-time-reversal" title="Povezava na naslov">#</a></h3>
+<h3>Časovni obrat (ang. time reversal)<a class="headerlink" href="#casovni-obrat-ang-time-reversal" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Časovni obrat ima na Fourierovo transformacijo vpliv:</p>
@@ -1126,7 +1137,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </section>
 <section id="casovni-premik-ang-time-shifting">
-<h3>Časovni premik (ang. time shifting)<a class="headerlink" href="#casovni-premik-ang-time-shifting" title="Povezava na naslov">#</a></h3>
+<h3>Časovni premik (ang. time shifting)<a class="headerlink" href="#casovni-premik-ang-time-shifting" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Časovni premik je definiran z <span class="math notranslate nohighlight">\(t_0\)</span> in ima na Fourierovo transformacijo vpliv</p>
@@ -1214,15 +1225,15 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/74f0995d3454006feef277e520bcf7bc65db3f0ea6bd09868320aa143f88f495.png" src="../_images/74f0995d3454006feef277e520bcf7bc65db3f0ea6bd09868320aa143f88f495.png" />
-<img alt="../_images/3e24338a0bfc6b1d185c65677b0898652706626f342ab236f29ae47b357ff829.png" src="../_images/3e24338a0bfc6b1d185c65677b0898652706626f342ab236f29ae47b357ff829.png" />
-<img alt="../_images/308bbbfad5fe4a818e496c25c4b1336e61f2a09091b86c234481620f47ebd822.png" src="../_images/308bbbfad5fe4a818e496c25c4b1336e61f2a09091b86c234481620f47ebd822.png" />
-<img alt="../_images/16790860c47b5e04a4737caa1adef4d8fa7b91c11842e975e2a7c05e070d7911.png" src="../_images/16790860c47b5e04a4737caa1adef4d8fa7b91c11842e975e2a7c05e070d7911.png" />
+<img alt="../_images/419a8d1f906576b1c6e1cae16233bb4b85633d5da63d07c1d7237a6c38702103.png" src="../_images/419a8d1f906576b1c6e1cae16233bb4b85633d5da63d07c1d7237a6c38702103.png" />
+<img alt="../_images/7274094788a81b737292907fbe14a4f797b9c545c9ba0f12cdf8901da89db48f.png" src="../_images/7274094788a81b737292907fbe14a4f797b9c545c9ba0f12cdf8901da89db48f.png" />
+<img alt="../_images/6ddd5b9f6b9da2a5f79e9dd4d62b0fcfb6038c280e25cb6804006d4892f36542.png" src="../_images/6ddd5b9f6b9da2a5f79e9dd4d62b0fcfb6038c280e25cb6804006d4892f36542.png" />
+<img alt="../_images/a2c1b8dd2943c78b74a8cff2c165b80457a900f88419efb3d88ddd85f45485b4.png" src="../_images/a2c1b8dd2943c78b74a8cff2c165b80457a900f88419efb3d88ddd85f45485b4.png" />
 </div>
 </div>
 </section>
 <section id="amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">
-<h3>Amplitudna modulacija (ang. modulation, tudi frequency-shifting)<a class="headerlink" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting" title="Povezava na naslov">#</a></h3>
+<h3>Amplitudna modulacija (ang. modulation, tudi frequency-shifting)<a class="headerlink" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Amplitudna modulacija je definirana z <span class="math notranslate nohighlight">\(\mathrm{e}^{\textrm{i}\,2\pi\,f_0\,t}\)</span> in ima na Fourierovo transformacijo vpliv:</p>
@@ -1304,15 +1315,15 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1adc5e270bdf71440dc4cde061e80d70985aa3d0274e3ff1625a552c4d98e221.png" src="../_images/1adc5e270bdf71440dc4cde061e80d70985aa3d0274e3ff1625a552c4d98e221.png" />
-<img alt="../_images/95f5a1dec5faa489755c6d8334e43a332bc7c8ee2ab066fe8a5ce76ad8804895.png" src="../_images/95f5a1dec5faa489755c6d8334e43a332bc7c8ee2ab066fe8a5ce76ad8804895.png" />
+<img alt="../_images/4e044eda1869c070f65bf0b78f651d5301b13d6f98e3bc99d2158616302b7c44.png" src="../_images/4e044eda1869c070f65bf0b78f651d5301b13d6f98e3bc99d2158616302b7c44.png" />
+<img alt="../_images/5b62fef4254bce32ca1801e8d7dce48f6bba9bbc5d3fcae0841d36c795bb1022.png" src="../_images/5b62fef4254bce32ca1801e8d7dce48f6bba9bbc5d3fcae0841d36c795bb1022.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Amfm3-en-de.gif"></p>
 </section>
 <section id="odvajanje">
-<h3>Odvajanje<a class="headerlink" href="#odvajanje" title="Povezava na naslov">#</a></h3>
+<h3>Odvajanje<a class="headerlink" href="#odvajanje" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Če je <span class="math notranslate nohighlight">\(\dot x(t)\)</span> časovni odvod <span class="math notranslate nohighlight">\(x(t)\)</span>, je njuna relacija v frekvenčni domeni:</p>
@@ -1381,7 +1392,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <p>in s tem smo dokaz zaključili.</p>
 </section>
 <section id="integriranje">
-<h3>Integriranje<a class="headerlink" href="#integriranje" title="Povezava na naslov">#</a></h3>
+<h3>Integriranje<a class="headerlink" href="#integriranje" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Če je <span class="math notranslate nohighlight">\(\int_{-\infty}^t x(\tau)\,\textrm{d}\tau\)</span> integral funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, je njuna relacija v frekvenčni domeni:</p>
@@ -1477,16 +1488,16 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a37451abd8adb0cf166c5380849a4e60d78038a3155754b6656c3e8e0c62d380.png" src="../_images/a37451abd8adb0cf166c5380849a4e60d78038a3155754b6656c3e8e0c62d380.png" />
-<img alt="../_images/180723d70bd22d5ab18c403d9e296b026205965814e39a1882ea0a87fad80077.png" src="../_images/180723d70bd22d5ab18c403d9e296b026205965814e39a1882ea0a87fad80077.png" />
-<img alt="../_images/96ade1931864b3aeb6cc720f9390b21b2b074a08fd0ab6e585cb796441f1ffb7.png" src="../_images/96ade1931864b3aeb6cc720f9390b21b2b074a08fd0ab6e585cb796441f1ffb7.png" />
-<img alt="../_images/0322a8bcca853eff17513f7f0e3d1f8963f1fcdfdd2307cb14f88beeee249199.png" src="../_images/0322a8bcca853eff17513f7f0e3d1f8963f1fcdfdd2307cb14f88beeee249199.png" />
-<img alt="../_images/de1286a5974ae5b2ddc9fc5d4b6c616348d6525b30da5cc1231f71db69abeecd.png" src="../_images/de1286a5974ae5b2ddc9fc5d4b6c616348d6525b30da5cc1231f71db69abeecd.png" />
+<img alt="../_images/4d190b6be79f517a29a3539dcc4014b93d82c7084aa138aa8a14666244bd850b.png" src="../_images/4d190b6be79f517a29a3539dcc4014b93d82c7084aa138aa8a14666244bd850b.png" />
+<img alt="../_images/a035bedfe52d298f287978ef658a14841b018b830aa67a7d695c791fdfb4c033.png" src="../_images/a035bedfe52d298f287978ef658a14841b018b830aa67a7d695c791fdfb4c033.png" />
+<img alt="../_images/a0fe736f8bdedb1cbb9d0afeb9d8a1666321da46df25162eb9a334acc783c3bd.png" src="../_images/a0fe736f8bdedb1cbb9d0afeb9d8a1666321da46df25162eb9a334acc783c3bd.png" />
+<img alt="../_images/6187d329dd0a5f2ea7d446805f862eb848cf9992e6631649eeb45961d8a11239.png" src="../_images/6187d329dd0a5f2ea7d446805f862eb848cf9992e6631649eeb45961d8a11239.png" />
+<img alt="../_images/97803d7ef60cc8673afc14b7c16812b9a31f85cc758eb6cae295984e4c273231.png" src="../_images/97803d7ef60cc8673afc14b7c16812b9a31f85cc758eb6cae295984e4c273231.png" />
 </div>
 </div>
 </section>
 <section id="konvolucija-funkcij">
-<span id="sec-konvolucija-funkcij"></span><h3>Konvolucija funkcij<a class="headerlink" href="#konvolucija-funkcij" title="Povezava na naslov">#</a></h3>
+<span id="sec-konvolucija-funkcij"></span><h3>Konvolucija funkcij<a class="headerlink" href="#konvolucija-funkcij" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Fourierova transformacija konvolucije dveh funkcij je enaka produktu Fourierovih transformirank:</p>
@@ -1586,13 +1597,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3c4780d7e30e6d5daf31b198a0b8be64c097816e9b579269e50fa1e8b6fdbe3a.png" src="../_images/3c4780d7e30e6d5daf31b198a0b8be64c097816e9b579269e50fa1e8b6fdbe3a.png" />
-<img alt="../_images/6b3c092a34e08efd2af56310fe87bfea61e2f8b6661ddf078d4fda2f1af78f26.png" src="../_images/6b3c092a34e08efd2af56310fe87bfea61e2f8b6661ddf078d4fda2f1af78f26.png" />
+<img alt="../_images/bea419a943831ae29dd45d00fbe488f3c826d0c8ff2f3a7e4fa2d2b26b05e023.png" src="../_images/bea419a943831ae29dd45d00fbe488f3c826d0c8ff2f3a7e4fa2d2b26b05e023.png" />
+<img alt="../_images/3194458eb23ad07efc8532390b16f126d183080c35b318979f87dce8403a5e89.png" src="../_images/3194458eb23ad07efc8532390b16f126d183080c35b318979f87dce8403a5e89.png" />
 </div>
 </div>
 </section>
 <section id="produkt-funkcij">
-<h3>Produkt funkcij<a class="headerlink" href="#produkt-funkcij" title="Povezava na naslov">#</a></h3>
+<h3>Produkt funkcij<a class="headerlink" href="#produkt-funkcij" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Fourierova transformacija produkta dveh funkcij v frekvenčni domeni predstavlja konvolucijo Fourierovih transformirank:</p>
@@ -1658,14 +1669,14 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/fd3fea0aec45563a23401aed9d109de556f022fe11a433319e67515714ac4a3a.png" src="../_images/fd3fea0aec45563a23401aed9d109de556f022fe11a433319e67515714ac4a3a.png" />
-<img alt="../_images/9a32f485850ef70fe326ddd989e54cf26950c5e6549487501b726e972015f9e9.png" src="../_images/9a32f485850ef70fe326ddd989e54cf26950c5e6549487501b726e972015f9e9.png" />
+<img alt="../_images/4b9a7e05bc7a54057449e7d58edd6fb274b89081a2a066886443b3690ba3c2fe.png" src="../_images/4b9a7e05bc7a54057449e7d58edd6fb274b89081a2a066886443b3690ba3c2fe.png" />
+<img alt="../_images/5acf7dbbf0dfe99b0da92f5a23d217ab5f2e81c09e80d57a8c5f3b810c2942b7.png" src="../_images/5acf7dbbf0dfe99b0da92f5a23d217ab5f2e81c09e80d57a8c5f3b810c2942b7.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="uporaba-oken">
-<span id="sec-okna"></span><h2>Uporaba oken<a class="headerlink" href="#uporaba-oken" title="Povezava na naslov">#</a></h2>
+<span id="sec-okna"></span><h2>Uporaba oken<a class="headerlink" href="#uporaba-oken" title="Permalink to this heading">#</a></h2>
 <p>Predpostavimo, da želimo izračunati Fourierovo tranformacijo determinističnega signala <span class="math notranslate nohighlight">\(x(t)\)</span>, ki je načeloma definiran od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>, vendar pa ga gledamo samo na območju od <span class="math notranslate nohighlight">\(-T/2\)</span> do <span class="math notranslate nohighlight">\(+T/2\)</span>. Rezultirajoči podatki so tako:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1753,8 +1764,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/810acf85f7993ecca7c62b9bcc737c2b31a6b27737deb9f4e44f15397b3c2815.png" src="../_images/810acf85f7993ecca7c62b9bcc737c2b31a6b27737deb9f4e44f15397b3c2815.png" />
-<img alt="../_images/7902492d17d4caa28d69192122f5f4386d7bcc957170c2c51840cdecce88dba8.png" src="../_images/7902492d17d4caa28d69192122f5f4386d7bcc957170c2c51840cdecce88dba8.png" />
+<img alt="../_images/2801fda557f5dc7b6775051dc82f594f51f09abcbbd9d34a8420222fed14dc51.png" src="../_images/2801fda557f5dc7b6775051dc82f594f51f09abcbbd9d34a8420222fed14dc51.png" />
+<img alt="../_images/fdb04b9368c35fb45d8d497da8beb0c080206fee9610ecccdd07a101f0dcd3a0.png" src="../_images/fdb04b9368c35fb45d8d497da8beb0c080206fee9610ecccdd07a101f0dcd3a0.png" />
 </div>
 </div>
 <p>Za sinusuido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusuido, si tako lahko ogledamo, če konvuliramo njuni frekvenčni trasformiranki (primer spodaj).</p>
@@ -1809,8 +1820,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8a00a0568cd5f2a625cb3aec06aa1b5823829b9a72b9796818f26e5e74033106.png" src="../_images/8a00a0568cd5f2a625cb3aec06aa1b5823829b9a72b9796818f26e5e74033106.png" />
-<img alt="../_images/56f916e3f10db261a2098aea47647cbd26bd7d0181bd52f8cdbac7d226ec390a.png" src="../_images/56f916e3f10db261a2098aea47647cbd26bd7d0181bd52f8cdbac7d226ec390a.png" />
+<img alt="../_images/7b2ea735d230763058ad1c7e6e4c5914e448b6af6ec3a53dc9ca3ba7025ac282.png" src="../_images/7b2ea735d230763058ad1c7e6e4c5914e448b6af6ec3a53dc9ca3ba7025ac282.png" />
+<img alt="../_images/8336170bc62d89cc7b59922f8ccde408459a2f2dd2039bd305933bf63f4ca747.png" src="../_images/8336170bc62d89cc7b59922f8ccde408459a2f2dd2039bd305933bf63f4ca747.png" />
 </div>
 </div>
 </section>
@@ -1841,11 +1852,10 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="02%20-%20Fourierove%20vrste.html"
@@ -1865,10 +1875,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1952,8 +1959,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

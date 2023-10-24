@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Procesiranje signalov, 2023 &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,12 +38,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -322,10 +333,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -333,7 +344,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -375,17 +386,17 @@ document.write(`
                   
   <p><em>Učbenik za magistrski študij na Fakulteti za strojništvo Univerze v Ljubljani.</em></p>
 <section class="tex2jax_ignore mathjax_ignore" id="procesiranje-signalov-2023">
-<h1>Procesiranje signalov, 2023<a class="headerlink" href="#procesiranje-signalov-2023" title="Povezava na naslov">#</a></h1>
+<h1>Procesiranje signalov, 2023<a class="headerlink" href="#procesiranje-signalov-2023" title="Permalink to this heading">#</a></h1>
 <p>prof. dr. Janko Slavič</p>
 <section id="predgovor">
-<h2>Predgovor<a class="headerlink" href="#predgovor" title="Povezava na naslov">#</a></h2>
+<h2>Predgovor<a class="headerlink" href="#predgovor" title="Permalink to this heading">#</a></h2>
 <p>Ta izvršljiv učbenik je nastal na podlagi raziskovalno-razvojnega dela <em>Laboratorija za dinamiko strojev in konstrukcij</em>. <em>Procesiranje signalov</em> je ne samo ključno pri številnih znanstvenih člankih, ki smo jih objavili v vodilnih znanstvenih revijah področja (npr.: <a class="reference external" href="https://www.sciencedirect.com/journal/mechanical-systems-and-signal-processing">Mechanical Systems and Signal Processing</a>), ampak je ključno tudi pri številnih industrijskih projektih (npr. pri kontroli kvalitete izdelkov). Procesiranje signalov predstavlja tudi pomemben del monografije na temo vibracijskega utrujanja (glejte: <span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>), ki kot prva povezuje spektralne metode identifikacije vibracijske poškodovanosti s teorijo strukturne dinamike.</p>
 <p>Učbenika na temo procesiranja signalov ni mogoče napisati, ne da bi se zahvalili avtorjem referenčnih monografij, ki so postavili temelje teorije naključnih procesov:  <span id="id2">Rice [<a class="reference internal" href="bibliography.html#id66" title="Stephen O. Rice. Mathematical analysis of random noise. The Bell System Technical Journal, 24(1):46–156, 1945.">1945</a>]</span>, <span id="id3">Bendat and Piersol [<a class="reference internal" href="bibliography.html#id151" title="Julius S. Bendat and Allan G. Piersol. Random Data: Analysis and Measurement Procedures. John Wiley &amp; Sons, 4$^\text th$ edition, 2011.">2011</a>]</span>,  <span id="id4">Newland [<a class="reference internal" href="bibliography.html#id88" title="David E. Newland. An Introduction to Random Vibrations, Spectral &amp; Wavelet Analysis. Courier Corporation, 3$^\text rd$ edition, 2012.">2012</a>]</span>. Ta knjiga bo osredotočena na procesiranje signalov za uporabo v inženirski praksi na področju analize vibracij in zvoka ter bo v določeni meri sledila viru <span id="id5">Shin and Hammond [<a class="reference internal" href="bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>. Knjiga se naslanja tudi na vir <span id="id6">Slavič <em>et al.</em> [<a class="reference internal" href="bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>.</p>
 <p>Mogoče se v tem trenutku zdi, da naključni procesi z inženirskimi izzivi nimajo veliko skupnega, ampak proti koncu te knjige bomo ugotovili, da obravnava praktično katerega-koli realnega sistema zahteva razumevanje teorije naključnih procesov, najmanj zaradi negotovosti pri merjenju.</p>
 <p>Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bralec/uporabnik lahko prilagaja, smo se zaradi omejitev uporabljene tehnologije pri pisanju morali odreči nekaterim uveljavljenim standardom tehničnih besedil. Slike tako niso podnaslovljene, sklici na enačbe/slike so navedeni relativno (npr. „spodaj“, pri čemer bi bilo pravilno številčenje), pri strojno izpeljanih izrazih ni nujno oblika dosledna (npr. znak za imaginarno število <span class="math notranslate nohighlight">\(\textrm{i}\)</span> ni pokončen, kot je pravilno).</p>
 </section>
 <section id="zahvala">
-<h2>Zahvala<a class="headerlink" href="#zahvala" title="Povezava na naslov">#</a></h2>
+<h2>Zahvala<a class="headerlink" href="#zahvala" title="Permalink to this heading">#</a></h2>
 <p>Za strokovno recenzijo knjige se najlepše zahvaljujem prof. dr. Mihi Boltežarju.</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
@@ -421,11 +432,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
        href="notebooks/01%20-%20Uvod.html"
@@ -436,10 +446,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -503,8 +510,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
