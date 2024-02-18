@@ -1,5 +1,5 @@
 *Učbenik za magistrski študij na Fakulteti za strojništvo Univerze v Ljubljani.*
-# Procesiranje signalov, 2023
+# Procesiranje signalov
 prof. dr. Janko Slavič
 
 
