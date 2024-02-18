@@ -398,11 +398,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="uvod-v-procesiranje-signalov">
 <span id="sec-intro"></span><h1>1. Uvod v procesiranje signalov<a class="headerlink" href="#uvod-v-procesiranje-signalov" title="Permalink to this heading">#</a></h1>
-<p>V uvodnem poglavju bomo poskušali v grobem očrtati motivacijo za to knjigo in tudi vsebino, ki jo lahko pričakujete v sledečih poglavjih.</p>
+<p>Uvodno poglavje predstavi motivacijo za knjigo, definira nekatere termine in predstavi strukturo knjige.</p>
 <section id="kaj-je-procesiranje-signalov">
 <span id="sec-kaj-je-ps"></span><h2>Kaj je procesiranje signalov?<a class="headerlink" href="#kaj-je-procesiranje-signalov" title="Permalink to this heading">#</a></h2>
-<p>Termin <strong>procesiranje signalov</strong> uporabljamo za označitev različnih metod obdelave izmerjenih podatkov z namenom, da razkrijemo informacije, skrite v takih meritvah. S procesiranjem signalom želimo identificirati/karakterizirati različne fizikalne procese, kot primer takih procesov lahko vidimo klasične inženirske izzive (npr.: napake na ležajih, dinamske lastnosti struktur), pa tudi izzive v biologiji (npr.: sekvenciranje genoma), astronomiji (npr.: merjenje črne luknje), družboslovju (npr.: širjenje corona virusa) in podobno.</p>
-<p>Kot primer si lahko pogledamo meritve na novem/poškodovanem ležaju (<span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id4" title="Janko Slavič, Aleksandar Brković, and Miha Boltežar. Typical bearing-fault rating using force measurements: application to real data. Journal of Vibration and Control, 17(14):2164–2174, 2011.">2011</a>]</span>). Slika spodaj prikazuje meritev sile na dobrem in dveh poškodovanih ležajih. V meritvah vidimo določene razlike, ampak ali lahko iz meritev identificiramo <strong>tip</strong> poškodbe? Nadalje ali lahko iz meritev identificiramo <strong>velikost</strong> poškodbe? Na ta in podobna vprašanja bomo poskušali odgovoriti tekom te knjige.</p>
+<p>Termin <strong>procesiranje signalov</strong> uporabljamo za označitev različnih metod obdelave izmerjenih podatkov z namenom, da razkrijemo informacije obravnavanega sistema. Potencialno bi lahko govorili tudi o <strong>obdelavi podatkov</strong>, vendar je takšen termin po eni strani preširok, po drugi strani pa preozek. Preširok bi bi zato, ker se s procesiranjem signalov želimo omejiti na identifikacijo/karakterizacijo različnih inženirskih sistemov in ne splošne obdelave poljubnih podatkov. Termin obdelava podatkov pa je preozek, saj so podatki vedno diskretni, procesiranje pa se lahko začne že na signalih, ki so lahko zvezni ali diskretni.</p>
+<p>Kot primer procesiranja signalov lahko izpostavimo identifikacijo <em>napak na ležajih</em> ali identifikacijo <em>dinamskih lastnosti struktur</em> (npr. dušenje, togost), v obeh primerih moramo merjene signale pravilno obdelati že preden jih časovno vzorčimo in nato kvantiziramo ((poglavje <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html#sec-kvantizacija-podatkov"><span class="std std-ref">5. Kvantizacija podatkov</span></a>)). Slika spodaj prikazuje meritev sile na dobrem in dveh poškodovanih ležajih (<span id="id1">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id4" title="Janko Slavič, Aleksandar Brković, and Miha Boltežar. Typical bearing-fault rating using force measurements: application to real data. Journal of Vibration and Control, 17(14):2164–2174, 2011.">2011</a>]</span>). V meritvah vidimo določene razlike, ampak ali lahko iz meritev identificiramo <strong>tip</strong> poškodbe? Nadalje ali lahko iz meritev identificiramo <strong>velikost</strong> poškodbe? Na ta in podobna vprašanja bomo poskušali odgovoriti tekom te knjige.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -433,10 +433,10 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/baeefb52674f233c27f99d6469a4f8142eb15a83104d0c91e06dad3e781afee4.png" src="../_images/baeefb52674f233c27f99d6469a4f8142eb15a83104d0c91e06dad3e781afee4.png" />
+<img alt="../_images/6d1c54f10d674ee7b4636bbce34103d8450740efba8b6ecda024417afd05e0c2.png" src="../_images/6d1c54f10d674ee7b4636bbce34103d8450740efba8b6ecda024417afd05e0c2.png" />
 </div>
 </div>
-<p>Kot naslednji primer, je spodaj prikazana slika <strong>frekvenčne prenosne funkcije</strong> (<em>ang.</em> FRF, Frequency Response Function), ki za <strong>linearni, časovno invariantni sistem</strong> (glejte poglavje <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-lti"><span class="std std-ref">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</span></a>) v frekvenčni domeni povezuje vzbujanje sistema z njegovim odzivom (primer je vzet iz paketa <a class="reference external" href="https://github.com/ladisk/pyuff">pyUFF</a>). Zadnji stavek vsebuje veliko terminov, ki jih v nadaljevanju razdelali in spoznali. Pravilna identifikacija frekvenčne prenosne funkcije je zelo pomembna za karakterizacijo dinamskih sistemov in kako jo pravilno identificiramo, bomo v celoti razumeli šele proti koncu te knjige.</p>
+<p>Kot naslednji primer, je spodaj prikazana <strong>frekvenčne prenosne funkcije</strong> (<em>ang.</em> FRF, Frequency Response Function), ki za <strong>linearni, časovno invariantni sistem</strong> (poglavje <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-lti"><span class="std std-ref">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</span></a>) v frekvenčni domeni povezuje vzbujanje sistema z njegovim odzivom (primer je vzet iz paketa <a class="reference external" href="https://github.com/ladisk/pyuff">pyUFF</a>). Pravilna identifikacija frekvenčne prenosne funkcije je ključna za pravilno karakterizacijo dinamskih sistemov in zato tudi eden od ključnih učnih ciljev te knjige.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -478,6 +478,16 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Poglavja v knjigi so:</p>
+<ul class="simple">
+<li><p>Fourierove vrste (<a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fourierove-vrste"><span class="std std-ref">2. Fourierove vrste</span></a>),</p></li>
+<li><p>Fourierova integralska transformacija (<a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">3. Fourierova integralska transformacija</span></a>),</p></li>
+<li><p>Linearni časovno invariantni sistemi z eno prostostno stopnjo (<a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-lti"><span class="std std-ref">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</span></a>),</p></li>
+<li><p>Kvantizacija podatkov (<a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html#sec-kvantizacija-podatkov"><span class="std std-ref">5. Kvantizacija podatkov</span></a>),</p></li>
+<li><p>Diskretna Fourierova transformacija (<a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html#sec-dft"><span class="std std-ref">6. Diskretna Fourierova transformacija</span></a>),</p></li>
+<li><p>Osnove naključnih procesov (<a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html#sec-random"><span class="std std-ref">7. Osnove naključnih procesov</span></a>),</p></li>
+<li><p>Odziv linearnih sistemov na naključno vzbujanje (<a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html#sec-lti-random"><span class="std std-ref">8. Odziv linearnih sistemov na naključno vzbujanje</span></a>)</p></li>
+</ul>
 </section>
 <section id="kaj-je-sistem">
 <span id="sec-kaj-je-sistem"></span><h2>Kaj je sistem?<a class="headerlink" href="#kaj-je-sistem" title="Permalink to this heading">#</a></h2>
