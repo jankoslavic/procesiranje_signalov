@@ -5,7 +5,7 @@
    viewBox="0 0 19.916742 19.876942"
    version="1.1"
    id="svg5"
-   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    sodipodi:docname="dirac_delta.svg"
    inkscape:export-filename="C:\_j\Work Janko\Pedagosko delo\_predavanja\Procesiranje signalov\signal_processing\notebooks\images\sistem-in-out.png"
    inkscape:export-xdpi="300.42712"
@@ -28,7 +28,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2.8070215"
-     inkscape:cx="57.712419"
+     inkscape:cx="57.890543"
      inkscape:cy="63.056161"
      inkscape:window-width="1280"
      inkscape:window-height="650"
@@ -185,7 +185,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:Symbol;-inkscape-font-specification:'Symbol, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">d</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:1.25;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="25.206636"
        y="39.587719"
        id="text4024"><tspan
@@ -195,7 +195,7 @@
          y="39.587719">t</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:1.25;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="22.476456"
        y="22.698711"
        id="text4024-0"><tspan

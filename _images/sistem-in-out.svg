@@ -5,7 +5,7 @@
    viewBox="0 0 50 18.262453"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1-alpha (17bc918, 2021-03-28)"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    sodipodi:docname="sistem-in-out.svg"
    inkscape:export-filename="C:\_j\Work Janko\Pedagosko delo\_predavanja\Procesiranje signalov\signal_processing\notebooks\images\sistem-in-out.png"
    inkscape:export-xdpi="300.42712"
@@ -28,18 +28,20 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2.8070215"
-     inkscape:cx="101.17486"
+     inkscape:cx="101.35298"
      inkscape:cy="74.456145"
-     inkscape:window-width="1920"
-     inkscape:window-height="974"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-width="1280"
+     inkscape:window-height="650"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
      id="defs2">
     <marker
@@ -94,35 +96,35 @@
        id="path1079-0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:pccmti10;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;-inkscape-font-specification:'pccmti10, Normal';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       style="font-style:italic;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:'Times New Roman';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;-inkscape-font-specification:'Times New Roman, Italic';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
        x="12.02475"
        y="25.545193"
        id="text4024"><tspan
          sodipodi:role="line"
          id="tspan4022"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055993px;font-family:pccmti10;-inkscape-font-specification:'pccmti10, Normal';stroke-width:0.264583;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055993px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';stroke-width:0.264583;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          x="12.02475"
          y="25.545193">x(t)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:italic;font-weight:normal;font-size:3.88055993px;line-height:1.25;font-family:'Times New Roman';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;-inkscape-font-specification:'Times New Roman, Italic';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
        x="49.061657"
        y="25.545193"
        id="text4024-8"><tspan
          sodipodi:role="line"
          id="tspan4022-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:pccmti10;-inkscape-font-specification:pccmti10;stroke-width:0.264583"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055993px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';stroke-width:0.264583;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          x="49.061657"
          y="25.545193">y(t)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:italic;font-weight:normal;font-size:3.88055993px;line-height:1.25;font-family:'Times New Roman';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;-inkscape-font-specification:'Times New Roman, Italic';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
        x="27.980955"
        y="28.588049"
        id="text4024-1"><tspan
          sodipodi:role="line"
          id="tspan4022-6"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88056px;font-family:pccmr10;-inkscape-font-specification:pccmr10;stroke-width:0.264583"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88055993px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Italic';stroke-width:0.264583;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
          x="27.980955"
          y="28.588049">Sistem</tspan></text>
   </g>
