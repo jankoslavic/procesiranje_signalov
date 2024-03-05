@@ -417,7 +417,7 @@ document.write(`
 \[
 c_n=\frac{1}{T_p}\,\int_{-T_p/2}^{+T_p/2}x(t)\,\mathrm{e}^{-\textrm{i}\,\omega_{p}\,n\,t}\,\textrm{d} t,
 \]</div>
-<p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, osnovna krožna frekvenca gre proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemu težavam pri deljenju z <span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(c_n\)</span> pomnožimo zgornji izraz s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
+<p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, osnovna krožna frekvenca gre proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemu težavam pri deljenju z <span class="math notranslate nohighlight">\(\infty\)</span>, pomnožimo zgornji izraz s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{T_p\rightarrow \infty} c_n\,T_p=\underbrace{\int_{-T_p/2}^{+T_p/2}x(t)\,\mathrm{e}^{-\textrm{i}\,\omega_{n}\,t}\,\textrm{d} t}_{X(\omega_n)}.
@@ -472,7 +472,7 @@ x(t)=\int_{-\infty}^{+\infty} X(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,t}\,\textrm
 \[
 \mathcal{F}\{\delta(t)\} = \int_{-\infty}^{+\infty} \delta(t)\,\mathrm{e}^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t=\mathrm{e}^{-\,\textrm{i}\,\omega\,0}=1,
 \]</div>
-<p>Na podlagi zgornje izpejave zaključimo, da je Diracova delta funkcija v času neskončno kratka, v frekvenčni domeni pa neskončno široka (zasede celotni spekter oz vse frekvence). Veljalo bi tudi obratno, če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu se bomo pozneje vračali.</p>
+<p>Na podlagi zgornje izpejave zaključimo, da je Diracova delta funkcija v času neskončno kratka, v frekvenčni domeni pa neskončno široka (zasede celotni spekter oz. vse frekvence). Veljalo bi tudi obratno, če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu se bomo pozneje vračali.</p>
 </section>
 <section id="simetricna-eksponentno-padajoca-funkcija">
 <h3>Simetrična eksponentno padajoča funkcija<a class="headerlink" href="#simetricna-eksponentno-padajoca-funkcija" title="Permalink to this heading">#</a></h3>
@@ -513,11 +513,11 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e2919127847e2821635f72bfa64ae0c3d065ae2d773932c926ad6433974d5eef.png" src="../_images/e2919127847e2821635f72bfa64ae0c3d065ae2d773932c926ad6433974d5eef.png" />
-<img alt="../_images/c4da68e7492c9b4f3a5a883572f3cf6fc631434338c969be7b489de3b1e3c57e.png" src="../_images/c4da68e7492c9b4f3a5a883572f3cf6fc631434338c969be7b489de3b1e3c57e.png" />
+<img alt="../_images/5708ab1e47fdc29a6058b22def511ac7dcc1a7f4ecdbbef55d800eb25a1b34f4.png" src="../_images/5708ab1e47fdc29a6058b22def511ac7dcc1a7f4ecdbbef55d800eb25a1b34f4.png" />
+<img alt="../_images/7e4edff5fad97975f61a80f6c279c7cb664282729ce6486644c0d5ba7c1e5517.png" src="../_images/7e4edff5fad97975f61a80f6c279c7cb664282729ce6486644c0d5ba7c1e5517.png" />
 </div>
 </div>
-<p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič (pri Fourierovih vrstah bi bili kosinusni členi različni od nič, sinusni pa enaki nič). To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelna bi bila imaginarna komponentna (slika spodaj).</p>
+<p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič. To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelna bi bila imaginarna komponentna (slika spodaj). Podobno smo sicer ugotovili že pri Fourierovih vrstah sodih in lihih funkcij (za več glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-lih-sod"><span class="std std-ref">Fourierove vrste lihih in sodih funkcij</span></a>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -544,11 +544,11 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8cb61f339717b23251c723f1cebe79e8014b0ee1e0bc6e375d0c993372c300e0.png" src="../_images/8cb61f339717b23251c723f1cebe79e8014b0ee1e0bc6e375d0c993372c300e0.png" />
-<img alt="../_images/b3fa17feb1c11b66870de9bcf2356d9d4681ef775b6484d7515e17fdadee763f.png" src="../_images/b3fa17feb1c11b66870de9bcf2356d9d4681ef775b6484d7515e17fdadee763f.png" />
+<img alt="../_images/41bfb531dcbe3cf2f4117db6cd11abf824e1047c4801d9b8794fd71a17494e1e.png" src="../_images/41bfb531dcbe3cf2f4117db6cd11abf824e1047c4801d9b8794fd71a17494e1e.png" />
+<img alt="../_images/6731205ff485634ea68e928587e87d46517b3eff7cc690615a0d53d4c7df6407.png" src="../_images/6731205ff485634ea68e928587e87d46517b3eff7cc690615a0d53d4c7df6407.png" />
 </div>
 </div>
-<p>Sicer pa velja poudariti, da realni podatki <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje koračno funkcijo). Časovni podatki so v splošnem lahko komplekne oblike in takrat v frekvenčni domeni praviloma ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
+<p>Sicer pa velja poudariti, da v splošnem realni signali <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje enotsko funkcijo stopnice). Časovni signali so v splošnem lahko kompleksne oblike in takrat v frekvenčni domeni v splošnem ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -560,9 +560,11 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, d&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
+<span class="c1"># x = sym.sign(t-d)*sym.exp(-η*sym.Abs(t-d)) # časovni zamik, liha funkcija, povprečje nič</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
-<span class="n">x3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">))</span>  <span class="c1"># kompleksna časovna vrsta; to bo hitro</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="p">))</span>  <span class="c1"># kompleksna časovna vrsta; to bo hitro</span>
+<span class="c1"># x3 = sym.I*sym.sign(t-2*d)*sym.exp(-η*sym.Abs(t-2*d))  # kompleksna časovna vrsta; to bo hitro, liha funkcija, povprečje nič</span>
 <span class="c1"># x = x + sym.I*sym.sign(t)*sym.exp(-η*sym.Abs(t)) # kompleksna časovna vrsta; to bo trajalo</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 <span class="n">X2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
@@ -578,10 +580,10 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f [Hz]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> 
          <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X3</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.05</span><span class="p">,</span><span class="mf">.05</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.05</span><span class="p">,</span><span class="mf">.05</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X3</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.075</span><span class="p">,</span><span class="mf">.075</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span>
@@ -597,9 +599,9 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9fb0595a2cc8672e1c0847f79649ddb93973f3f94aad31dc693792a2ee6c46a5.png" src="../_images/9fb0595a2cc8672e1c0847f79649ddb93973f3f94aad31dc693792a2ee6c46a5.png" />
-<img alt="../_images/d30fc397a31d22e2d390b293ebd84baa367968a33cefeee40dc5b99664917102.png" src="../_images/d30fc397a31d22e2d390b293ebd84baa367968a33cefeee40dc5b99664917102.png" />
-<img alt="../_images/3ce900c0d600e1daab33c84fcb49297583bec7cbf40031016018f6b8436ee9af.png" src="../_images/3ce900c0d600e1daab33c84fcb49297583bec7cbf40031016018f6b8436ee9af.png" />
+<img alt="../_images/ef76c991b87992e7beffa61662a782a35286d3c4bad6ba21bebcf40e837a8e93.png" src="../_images/ef76c991b87992e7beffa61662a782a35286d3c4bad6ba21bebcf40e837a8e93.png" />
+<img alt="../_images/205fa1056060eae69b41a50ca0ea140de9a5ef176273a79542246f590b92a42d.png" src="../_images/205fa1056060eae69b41a50ca0ea140de9a5ef176273a79542246f590b92a42d.png" />
+<img alt="../_images/29f3fb4f2c6ae246c8c11520b161cfb81993d72bd3701ed8016481faffe3a2e9.png" src="../_images/29f3fb4f2c6ae246c8c11520b161cfb81993d72bd3701ed8016481faffe3a2e9.png" />
 </div>
 </div>
 </section>
@@ -758,8 +760,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b36d5844e67ea50fcdd06d9892b5e1135b4f36242f302991ee5176c77371b037.png" src="../_images/b36d5844e67ea50fcdd06d9892b5e1135b4f36242f302991ee5176c77371b037.png" />
-<img alt="../_images/58b773785dfaa6353c5ca31ced5b3f31bb83355b11c76596885a1f1dd0af298a.png" src="../_images/58b773785dfaa6353c5ca31ced5b3f31bb83355b11c76596885a1f1dd0af298a.png" />
+<img alt="../_images/12d59d050e19524a36b7ddd0450d6d654cc742f7362691c51cd22138466840c2.png" src="../_images/12d59d050e19524a36b7ddd0450d6d654cc742f7362691c51cd22138466840c2.png" />
+<img alt="../_images/249e47e537e92dc7ffc4899bfa2b1621e96df8708acc9f940a10ac8c7055a4b6.png" src="../_images/249e47e537e92dc7ffc4899bfa2b1621e96df8708acc9f940a10ac8c7055a4b6.png" />
 </div>
 </div>
 </section>
@@ -848,9 +850,9 @@ x_2(t) =
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/494dbe4a5fcbb52330269aade6b7cb8ca96c4d012988bc692d28fffcd982ab69.png" src="../_images/494dbe4a5fcbb52330269aade6b7cb8ca96c4d012988bc692d28fffcd982ab69.png" />
-<img alt="../_images/6a612d684f860b9aa2e572c5d80709cd241abc02dedd1586c3b010d677e3b3a5.png" src="../_images/6a612d684f860b9aa2e572c5d80709cd241abc02dedd1586c3b010d677e3b3a5.png" />
-<img alt="../_images/93c36fb2dd1e1447e83f34804e52a669b83b28b607e2589e1fb498dd1640ea09.png" src="../_images/93c36fb2dd1e1447e83f34804e52a669b83b28b607e2589e1fb498dd1640ea09.png" />
+<img alt="../_images/25758c2b652c69d4e60bb45758c210d11d951efa48bec76faf843e1cdb769af9.png" src="../_images/25758c2b652c69d4e60bb45758c210d11d951efa48bec76faf843e1cdb769af9.png" />
+<img alt="../_images/6beb542bfe7acdf57ee27201c7cbd770281e330fca07c7187f4f9af39b4371ce.png" src="../_images/6beb542bfe7acdf57ee27201c7cbd770281e330fca07c7187f4f9af39b4371ce.png" />
+<img alt="../_images/67b74615428800d8fa75c5eb331d6c72be6a282ee66c0a1abba7cbdb70d4a0c7.png" src="../_images/67b74615428800d8fa75c5eb331d6c72be6a282ee66c0a1abba7cbdb70d4a0c7.png" />
 </div>
 </div>
 </section>
@@ -915,8 +917,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2f4d4a7a68c348789570096d7d429d791498909fe04a41aef60dfdb7a3761b81.png" src="../_images/2f4d4a7a68c348789570096d7d429d791498909fe04a41aef60dfdb7a3761b81.png" />
-<img alt="../_images/af39372e43229d2590d6ac1b4c987eedea7deeec88c2527fe3b2ff8fc07022d4.png" src="../_images/af39372e43229d2590d6ac1b4c987eedea7deeec88c2527fe3b2ff8fc07022d4.png" />
+<img alt="../_images/c1eaf4c6ad4e44159b53ad117ca5949c8725bd6c8209249c80bcf50d065826f0.png" src="../_images/c1eaf4c6ad4e44159b53ad117ca5949c8725bd6c8209249c80bcf50d065826f0.png" />
+<img alt="../_images/36cb6d8134fb9067ebc1369aef779b4bdd84610fbae6159c6336eaaa88dbe8b1.png" src="../_images/36cb6d8134fb9067ebc1369aef779b4bdd84610fbae6159c6336eaaa88dbe8b1.png" />
 </div>
 </div>
 </section>
@@ -1006,8 +1008,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e86f9e4c0847d8348f8871bf39d0b8b9903726b568df822f70686f5a80c7b9b2.png" src="../_images/e86f9e4c0847d8348f8871bf39d0b8b9903726b568df822f70686f5a80c7b9b2.png" />
-<img alt="../_images/263e1f0de4bd116e869d6ad4747ac8bdafb5379e690b5f0f4c576ee827822a81.png" src="../_images/263e1f0de4bd116e869d6ad4747ac8bdafb5379e690b5f0f4c576ee827822a81.png" />
+<img alt="../_images/c6d2a2251870c594ceb44d95fc20bf68e92cabc093f4ded63284224cae1f1e32.png" src="../_images/c6d2a2251870c594ceb44d95fc20bf68e92cabc093f4ded63284224cae1f1e32.png" />
+<img alt="../_images/428e681b8e0d6addaf85479e10d0bd1bfe149e1a616bad7de7134c7d6aa8fea5.png" src="../_images/428e681b8e0d6addaf85479e10d0bd1bfe149e1a616bad7de7134c7d6aa8fea5.png" />
 </div>
 </div>
 </section>
@@ -1081,8 +1083,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/bb8dbb3f6f4f62062c26006d37875031725bc205792f1cbd360c989f62e788a6.png" src="../_images/bb8dbb3f6f4f62062c26006d37875031725bc205792f1cbd360c989f62e788a6.png" />
-<img alt="../_images/3cbb04f4c65a706f182b72641e3cd9b159152ef84d62e844b3cbdf3fc339e1ab.png" src="../_images/3cbb04f4c65a706f182b72641e3cd9b159152ef84d62e844b3cbdf3fc339e1ab.png" />
+<img alt="../_images/da231216b6e46407060b9e484f413f43e0d9582ec2c9395562330309f80b8c19.png" src="../_images/da231216b6e46407060b9e484f413f43e0d9582ec2c9395562330309f80b8c19.png" />
+<img alt="../_images/a186f70f02dff0b2eb9a50d6dbc48d859febd40dfa2a4ce39879cca864a1fa92.png" src="../_images/a186f70f02dff0b2eb9a50d6dbc48d859febd40dfa2a4ce39879cca864a1fa92.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1229,9 +1231,9 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2a854758b0184a7ef3ba9ff76199852bf3553e9bde0035e5def9f8356502a54b.png" src="../_images/2a854758b0184a7ef3ba9ff76199852bf3553e9bde0035e5def9f8356502a54b.png" />
-<img alt="../_images/fa04153f9f27c20fa6986fef726cd9d4d2ff6bdec95b712e2ec95f87eb4f8fc0.png" src="../_images/fa04153f9f27c20fa6986fef726cd9d4d2ff6bdec95b712e2ec95f87eb4f8fc0.png" />
-<img alt="../_images/ffe0b545a859c263d67c4044a1898700e8f1e5cf0012a3e6596807c7135b2ac9.png" src="../_images/ffe0b545a859c263d67c4044a1898700e8f1e5cf0012a3e6596807c7135b2ac9.png" />
+<img alt="../_images/a63b7b660ff336af4ec39bc78b1a1ca3e04e7f44803c354cdcce43d776a0ef94.png" src="../_images/a63b7b660ff336af4ec39bc78b1a1ca3e04e7f44803c354cdcce43d776a0ef94.png" />
+<img alt="../_images/b9f694986c98f6f7b3fd381620a712d3c0b8f56e922c7cc2dac41021469e8121.png" src="../_images/b9f694986c98f6f7b3fd381620a712d3c0b8f56e922c7cc2dac41021469e8121.png" />
+<img alt="../_images/5590eeda21bdf5f645b4632acc4cbe2923d79373f481253272b8a2f2dc785817.png" src="../_images/5590eeda21bdf5f645b4632acc4cbe2923d79373f481253272b8a2f2dc785817.png" />
 <img alt="../_images/9057aa1f8ba3781e36b494d5e7da2972d8aef6d4449e1aeace0e6474834ff1fb.png" src="../_images/9057aa1f8ba3781e36b494d5e7da2972d8aef6d4449e1aeace0e6474834ff1fb.png" />
 </div>
 </div>
@@ -1319,8 +1321,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/840fd4260192617ac92fab7678130affe1468307da607e73e323e8b3f24a022d.png" src="../_images/840fd4260192617ac92fab7678130affe1468307da607e73e323e8b3f24a022d.png" />
-<img alt="../_images/0a4dd72b5691febdcd08f0666623238d8a0f9bcf6b5b47fba6438f1efbe4f214.png" src="../_images/0a4dd72b5691febdcd08f0666623238d8a0f9bcf6b5b47fba6438f1efbe4f214.png" />
+<img alt="../_images/12d79e62e27f0eb4c1da1acbfea0df7a13b73f7be35ac5c92c71ff2c26b0a4f2.png" src="../_images/12d79e62e27f0eb4c1da1acbfea0df7a13b73f7be35ac5c92c71ff2c26b0a4f2.png" />
+<img alt="../_images/ea0890c870fd841356b9cdf66aaa1c156b0ac70acf19759d2e71198956daf201.png" src="../_images/ea0890c870fd841356b9cdf66aaa1c156b0ac70acf19759d2e71198956daf201.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1492,10 +1494,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/50fb5d068d4b980b38d80bbffd281c6e1e6359e4b2afb1082a56ba01ac86d9ec.png" src="../_images/50fb5d068d4b980b38d80bbffd281c6e1e6359e4b2afb1082a56ba01ac86d9ec.png" />
-<img alt="../_images/35d85268c96b1a09e56c1a21d896e738cc7e96ef3025594ae40e8a3aaa597490.png" src="../_images/35d85268c96b1a09e56c1a21d896e738cc7e96ef3025594ae40e8a3aaa597490.png" />
-<img alt="../_images/e2f8e6f334e21e07f4e131186a1391c76d36f850567f376be40e543f6b7fe740.png" src="../_images/e2f8e6f334e21e07f4e131186a1391c76d36f850567f376be40e543f6b7fe740.png" />
-<img alt="../_images/d8fbe1466b98f7aa651b66ebb689ad617652b5cae79d4ce2c579416ed11d8a59.png" src="../_images/d8fbe1466b98f7aa651b66ebb689ad617652b5cae79d4ce2c579416ed11d8a59.png" />
+<img alt="../_images/8be637590353340f39e182e0aaba02e69f967c8f61adce499abcb49cda964c55.png" src="../_images/8be637590353340f39e182e0aaba02e69f967c8f61adce499abcb49cda964c55.png" />
+<img alt="../_images/b77758ab9f092a05a414837ae00edc818ec5982de3352e12ce5c4aa9504428bc.png" src="../_images/b77758ab9f092a05a414837ae00edc818ec5982de3352e12ce5c4aa9504428bc.png" />
+<img alt="../_images/b914e7a1301fccd06c2cd6446e2d9641957efe371316a1fd35ae1c9bad41a216.png" src="../_images/b914e7a1301fccd06c2cd6446e2d9641957efe371316a1fd35ae1c9bad41a216.png" />
+<img alt="../_images/44b3d23a91cb664c79249b836ad675831b502c0daf059168c1a003ee30e9ad39.png" src="../_images/44b3d23a91cb664c79249b836ad675831b502c0daf059168c1a003ee30e9ad39.png" />
 <img alt="../_images/e54e0ddd6cf3561cd81ee8c070f8d965a923ee6bee4460b4c0b6ea8c792f9e58.png" src="../_images/e54e0ddd6cf3561cd81ee8c070f8d965a923ee6bee4460b4c0b6ea8c792f9e58.png" />
 </div>
 </div>
@@ -1601,8 +1603,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/edfd4c456aa2d4bd0440cea2421c7838e16e0b2772a375d48426541459079d3d.png" src="../_images/edfd4c456aa2d4bd0440cea2421c7838e16e0b2772a375d48426541459079d3d.png" />
-<img alt="../_images/c1b124c3d8ba0bac4c1698a64118cec2f9000cd0ff599bc8e7a25d93b139e8f5.png" src="../_images/c1b124c3d8ba0bac4c1698a64118cec2f9000cd0ff599bc8e7a25d93b139e8f5.png" />
+<img alt="../_images/5ded67475d8083f18bf97e5b23006993c3288f84ac1a3b21d7ea99594e2448f5.png" src="../_images/5ded67475d8083f18bf97e5b23006993c3288f84ac1a3b21d7ea99594e2448f5.png" />
+<img alt="../_images/8bdc6a4b8f51a402dd4415c9f5121f8c9d8c00397d1035884b797fa1d938d3dd.png" src="../_images/8bdc6a4b8f51a402dd4415c9f5121f8c9d8c00397d1035884b797fa1d938d3dd.png" />
 </div>
 </div>
 </section>
@@ -1673,8 +1675,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ce56d19e6cf3ebb05d6492414e701a7b8bba53f7b1bffaaa21d49ea3e5b9fc33.png" src="../_images/ce56d19e6cf3ebb05d6492414e701a7b8bba53f7b1bffaaa21d49ea3e5b9fc33.png" />
-<img alt="../_images/610e0cdb49fa920382cfca31174e8b3a2b8955b4d228bac2403ab49c7aa7638a.png" src="../_images/610e0cdb49fa920382cfca31174e8b3a2b8955b4d228bac2403ab49c7aa7638a.png" />
+<img alt="../_images/227582a2fd6b2c521894469074218c9aba347f8cc69fa834be2f5a0eac494a1e.png" src="../_images/227582a2fd6b2c521894469074218c9aba347f8cc69fa834be2f5a0eac494a1e.png" />
+<img alt="../_images/ff45b7764a18e580e2694321f3fc3244edf4e822408616b2f99f664a02cb8fe5.png" src="../_images/ff45b7764a18e580e2694321f3fc3244edf4e822408616b2f99f664a02cb8fe5.png" />
 </div>
 </div>
 </section>
@@ -1824,8 +1826,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6fee022f4d70bfed2abb22dab860eb7bc3e4010e5c99de446dd2ac3e755ad472.png" src="../_images/6fee022f4d70bfed2abb22dab860eb7bc3e4010e5c99de446dd2ac3e755ad472.png" />
-<img alt="../_images/97fa49332d53548456476d7bd4b9641b6cc383cb5b95066fb19b78f047f800a9.png" src="../_images/97fa49332d53548456476d7bd4b9641b6cc383cb5b95066fb19b78f047f800a9.png" />
+<img alt="../_images/b293853edc591ca4b243eafd4c6406115311622e18a69c0e3cfdc376ed058fa8.png" src="../_images/b293853edc591ca4b243eafd4c6406115311622e18a69c0e3cfdc376ed058fa8.png" />
+<img alt="../_images/8af16ed992a26d1afc61516ccec1229168f069e708b3b4b367b6aeb219dfa713.png" src="../_images/8af16ed992a26d1afc61516ccec1229168f069e708b3b4b367b6aeb219dfa713.png" />
 </div>
 </div>
 </section>

@@ -383,7 +383,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momenti-funkcije-gostote-verjetnosti">Momenti funkcije gostote verjetnosti</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergodicnost">Ergodičnost</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spektralna-gostota-moci-psd">Spektralna gostota moči (PSD)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gostota-mocnostnega-spektra-ang-power-spectral-density-psd">Gostota močnostnega spektra (ang. Power Spectral Density, PSD)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled-1">Zgled 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled-2">Zgled 2</a></li>
 </ul>
@@ -474,7 +474,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6119ad3203df8f2e7c560a538601f16c302cc95923d3e876207109b0885bba73.png" src="../_images/6119ad3203df8f2e7c560a538601f16c302cc95923d3e876207109b0885bba73.png" />
+<img alt="../_images/73085f8a85445dc8a5d5ca1dab0a44678ddd1956bb182e4172566424865cfa46.png" src="../_images/73085f8a85445dc8a5d5ca1dab0a44678ddd1956bb182e4172566424865cfa46.png" />
 </div>
 </div>
 <p>S spodnjim izračunom lahko preverimo, da sta prvi moment in drugi centralni moment za Gaussovo/normalno porazdelitev dejansko <span class="math notranslate nohighlight">\(\mu\)</span>  in <span class="math notranslate nohighlight">\(\sigma^2\)</span>:</p>
@@ -673,8 +673,8 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7282c52247f21d5d3e0fe67cf4f29130389829a7832b29944abd48d9c0bc5b8f.png" src="../_images/7282c52247f21d5d3e0fe67cf4f29130389829a7832b29944abd48d9c0bc5b8f.png" />
-<img alt="../_images/94e5090ec2f91a721b20450d814b89bc8ffc878f71e982369831443a2f1f48e6.png" src="../_images/94e5090ec2f91a721b20450d814b89bc8ffc878f71e982369831443a2f1f48e6.png" />
+<img alt="../_images/bb19f16f6747445989285b4267067fe59707a319f5741d83734433d782773c27.png" src="../_images/bb19f16f6747445989285b4267067fe59707a319f5741d83734433d782773c27.png" />
+<img alt="../_images/79fa0d94cece505494780c5ec1453110b04f690ebee9e015ba2061917c9349d7.png" src="../_images/79fa0d94cece505494780c5ec1453110b04f690ebee9e015ba2061917c9349d7.png" />
 </div>
 </div>
 </section>
@@ -794,9 +794,9 @@ C_{xy}(\tau, k) &amp;= C_{xy}(\tau). \\
 \end{split}\]</div>
 <p>V zgornjih izrazih je predpostavljeno, da <span class="math notranslate nohighlight">\(x(t)\)</span> predstavlja periodične podatke s periodo <span class="math notranslate nohighlight">\(T\)</span>. S <span class="math notranslate nohighlight">\(S_{xx}(f)\)</span> smo označili spektralno gostoto moči (ang. <em>power spectral density</em>) in smo se v tej vrstici naslonili na Parsevalov teorem (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-parseval"><span class="std std-ref">Parsevalov teorem in močnostni spekter</span></a>). V naslednjem poglavju si bomo spektralno gostoto moči pogledali bolj podrobno. Opomba: če obravnavamo normalno porazdeljeni proces z ničelno srednjo vrednostjo, je varianca edini manjkajoči parameter, ki tako porazdelitev enolično določi.</p>
 </section>
-<section id="spektralna-gostota-moci-psd">
-<span id="sec-psd"></span><h2>Spektralna gostota moči (PSD)<a class="headerlink" href="#spektralna-gostota-moci-psd" title="Permalink to this heading">#</a></h2>
-<p>Spektralna gostota moči opisuje frekvenčno gostoto moči naključnega procesa in dopolnjuje funkcijo gostote verjetnosti (<span class="math notranslate nohighlight">\(p(x)\)</span>) pri definiciji določenega naključnega procesa; ista gostota verjetnosti ima lahko v frekvenčni domeni zelo različne gostote spektralne moči (PSD). PSD ponavadi pridobimo s Fourierjevo transformacijo, običajno z uporabo algoritma FFT.</p>
+<section id="gostota-mocnostnega-spektra-ang-power-spectral-density-psd">
+<span id="sec-psd"></span><h2>Gostota močnostnega spektra (ang. Power Spectral Density, PSD)<a class="headerlink" href="#gostota-mocnostnega-spektra-ang-power-spectral-density-psd" title="Permalink to this heading">#</a></h2>
+<p>Gostota močnostnega spektra opisuje frekvenčno gostoto moči naključnega procesa in dopolnjuje funkcijo gostote verjetnosti (<span class="math notranslate nohighlight">\(p(x)\)</span>) pri definiciji določenega naključnega procesa; ista gostota verjetnosti ima lahko v frekvenčni domeni zelo različne gostote močnostnega spektra (PSD). PSD ponavadi pridobimo s Fourierjevo transformacijo, običajno z uporabo algoritma FFT.</p>
 <p>Definicija PSD temelji na avto-korelacijski funkciji <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, ki implicitno vsebuje frekvenčno vsebino <span class="math notranslate nohighlight">\(x(t)\)</span>, hkrati pa izpolnjuje Dirichletov pogoj (vsaj v primeru procesov z ničelno srednjo vrednostjo):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -838,7 +838,7 @@ S_{xy}(f, T, k) = \frac{1}{T}\, X_k^*(f, T) \, Y_k(f, T)
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p><strong>Avto (PSD)</strong> in <strong>križna (CSD)</strong> spektralna gostota sta torej za primer ergodičnega procesa definirani kot (brez indeksa <span class="math notranslate nohighlight">\(k\)</span>):</p>
+<p><strong>Avto (PSD)</strong> in <strong>križna (CSD)</strong> spektralna gostota močnostnega spektra sta torej za primer ergodičnega procesa definirani kot (brez indeksa <span class="math notranslate nohighlight">\(k\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}\label{eq:Sxx_Syy_ergodic}
@@ -905,7 +905,7 @@ S_{xx}(f),&amp; f=0\\
 <span class="c1"># alternativen izračun prek Scipy (tako se dejansko dela pozneje:))</span>
 <span class="n">freq2</span><span class="p">,</span> <span class="n">Gxx2</span> <span class="o">=</span> <span class="n">welch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avto-spektralna gostota moči&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Avto-spektralna gostota&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Sxx</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$S_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Gxx2</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$G_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1e-8</span><span class="p">,</span><span class="mf">1e0</span><span class="p">)</span>
@@ -925,7 +925,7 @@ S_{xx}(f),&amp; f=0\\
 <div class="cell_output docutils container">
 <img alt="../_images/2f04e3cbbad65af08e50b9a4737274d95cb4c49fedbd68829c22c7792e2b06e6.png" src="../_images/2f04e3cbbad65af08e50b9a4737274d95cb4c49fedbd68829c22c7792e2b06e6.png" />
 <img alt="../_images/a8ef492493cfa86fd697b3292b51bfe303d2b4d66937df41819712036bc961e6.png" src="../_images/a8ef492493cfa86fd697b3292b51bfe303d2b4d66937df41819712036bc961e6.png" />
-<img alt="../_images/eb24149c049f2948920b3e45a452f49bb022830e61ae74e74db8d00693cb26f2.png" src="../_images/eb24149c049f2948920b3e45a452f49bb022830e61ae74e74db8d00693cb26f2.png" />
+<img alt="../_images/46b50d363dc552f671f8dba456f8bc9df3072e9c0bdefd2baba22290b2dec809.png" src="../_images/46b50d363dc552f671f8dba456f8bc9df3072e9c0bdefd2baba22290b2dec809.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral času:  0.9904720416233659 , integral PSD (Sxx):  0.9906062124167658 , integral PSD (Gxx):  0.990830770222994 , integral PSD (Gxx) Welch:  0.9907922407740426
 </pre></div>
 </div>
@@ -1271,7 +1271,7 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#momenti-funkcije-gostote-verjetnosti">Momenti funkcije gostote verjetnosti</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ergodicnost">Ergodičnost</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spektralna-gostota-moci-psd">Spektralna gostota moči (PSD)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gostota-mocnostnega-spektra-ang-power-spectral-density-psd">Gostota močnostnega spektra (ang. Power Spectral Density, PSD)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled-1">Zgled 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled-2">Zgled 2</a></li>
 </ul>

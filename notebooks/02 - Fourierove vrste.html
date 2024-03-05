@@ -376,8 +376,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zapis-periodicne-funkcije-kot-vsote-harmonskih-funkcij">Zapis periodične funkcije, kot vsote harmonskih funkcij</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikacija-harmonskih-funkcij-ki-sestavljajo-periodicno-funkcijo">Identifikacija harmonskih funkcij, ki sestavljajo periodično funkcijo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zapis-periodicnega-signala-kot-vsote-harmonskih-signalov">Zapis periodičnega signala, kot vsote harmonskih signalov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikacija-harmonskih-signalov-ki-sestavljajo-periodicni-signal">Identifikacija harmonskih signalov, ki sestavljajo periodični signal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posplositev">Posplošitev</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fourierove-vrste-v-eksponentni-kompleksni-obliki">Fourierove vrste v eksponentni (kompleksni) obliki</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fourierove-vrste-v-sinus-cosinusni-obliki">Fourierove vrste v sinus-cosinusni obliki</a></li>
@@ -390,10 +390,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekateri-zgledi">Nekateri zgledi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompleksno-periodicna-funkcija">Kompleksno periodična funkcija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-integral-kompleksno-periodicne-funkcije">Odvod / Integral kompleksno periodične funkcije</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodicna-funkcija">Periodična funkcija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analiticna-obravnava-periodicne-funkcije">Analitična obravnava periodične funkcije</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompleksno-periodicen-signal">Kompleksno periodičen signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-integral-kompleksno-periodicnega-signala">Odvod / Integral kompleksno periodičnega signala</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodicen-signal">Periodičen signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analiticna-obravnava-periodicnih-signalov">Analitična obravnava periodičnih signalov</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diracova-delta-funkcija">Diracova delta funkcija</a><ul class="nav section-nav flex-column">
@@ -420,22 +420,22 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fourierove-vrste">
 <span id="sec-fourierove-vrste"></span><h1>2. Fourierove vrste<a class="headerlink" href="#fourierove-vrste" title="Permalink to this heading">#</a></h1>
-<p>Cilj Fourierovih vrst je, da bi poljubne (periodične) podatke opisali z vsoto harmonskih funkcij različnih osnovnih period. Ta cilj je v tem trenutku definiran relativno površno, saj bomo več detajlov dodali postopoma, po sledečih korakih:</p>
+<p>Cilj Fourierovih vrst je, da bi poljuben (periodičen) signal opisali z vsoto harmonskih signalov različnih osnovnih period. V tem poglavju se bomo omejili na matematično definirane signale in sicer v sledečih korakih:</p>
 <ol class="arabic simple">
-<li><p>korak: zapis periodične funkcije, kot vsote harmonskih funkcij,</p></li>
-<li><p>korak: identifikacija harmonskih funkcij iz točke 1,</p></li>
+<li><p>korak: zapis periodičnega signala, kot vsote harmonskih signalov,</p></li>
+<li><p>korak: identifikacija harmonskih signalov iz točke 1,</p></li>
 <li><p>korak: posplošitev.</p></li>
 </ol>
 <p>Kot morebitne dodatne vire, lahko tukaj priporočamo <span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span> in <a class="reference external" href="https://www.youtube.com/watch?v=r6sGWTCMz2k">Grant Sanderson: But what is a Fourier series? From heat flow to drawing with circles</a>.</p>
-<section id="zapis-periodicne-funkcije-kot-vsote-harmonskih-funkcij">
-<h2>Zapis periodične funkcije, kot vsote harmonskih funkcij<a class="headerlink" href="#zapis-periodicne-funkcije-kot-vsote-harmonskih-funkcij" title="Permalink to this heading">#</a></h2>
-<p>Preden gremo v podrobnosti Fourierovih vrst, si poglejmo definicijo splošne harmonske funkcije:</p>
+<section id="zapis-periodicnega-signala-kot-vsote-harmonskih-signalov">
+<h2>Zapis periodičnega signala, kot vsote harmonskih signalov<a class="headerlink" href="#zapis-periodicnega-signala-kot-vsote-harmonskih-signalov" title="Permalink to this heading">#</a></h2>
+<p>Preden gremo v podrobnosti Fourierovih vrst, si poglejmo definicijo splošnega harmonskega signala:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = A\,\sin(\omega\,t+\varphi),
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(A\)</span> amplituda, <span class="math notranslate nohighlight">\(\omega\)</span> krožna frekvenca (enota: rad/s) in <span class="math notranslate nohighlight">\(\varphi\)</span> fazni kot (enota rad) glede na izhodišče časa. Pri tem je <span class="math notranslate nohighlight">\(\omega=2\,\pi\,f\)</span> in je <span class="math notranslate nohighlight">\(f\)</span> (sekundna) frekvenca (enota: 1/s=Hz). Pozitivna faza pomakne harmonsko funkcijo proti levi, negativna faza pa proti desni. Perioda <span class="math notranslate nohighlight">\(T\)</span> je definirana s krožno frekvenco: <span class="math notranslate nohighlight">\(T=2\,\pi/\omega\)</span>.</p>
-<p>Primer harmonske funkcije z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>, krožno frekvenco <span class="math notranslate nohighlight">\(\omega=1\,\)</span>rad/s in pozitivno fazo <span class="math notranslate nohighlight">\(\varphi=1\,\)</span>rad je prikazan spodaj.</p>
+<p>Primer harmonskega signala z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>, krožno frekvenco <span class="math notranslate nohighlight">\(\omega=1\,\)</span>rad/s in pozitivno fazo <span class="math notranslate nohighlight">\(\varphi=1\,\)</span>rad je prikazan spodaj.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -454,14 +454,14 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 <span class="n">ϕ</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Harmonska funkcija: $x(t) = A\,\sin(</span><span class="se">\\</span><span class="s1">omega\,t+</span><span class="se">\\</span><span class="s1">varphi); </span><span class="se">\\</span><span class="s1">omega=</span><span class="si">{</span><span class="n">ω</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">varphi=</span><span class="si">{</span><span class="n">ϕ</span><span class="si">}</span><span class="s1">$ &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Harmonski signal: $x(t) = A\,\sin(</span><span class="se">\\</span><span class="s1">omega\,t+</span><span class="se">\\</span><span class="s1">varphi); </span><span class="se">\\</span><span class="s1">omega=</span><span class="si">{</span><span class="n">ω</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">varphi=</span><span class="si">{</span><span class="n">ϕ</span><span class="si">}</span><span class="s1">$ &#39;</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">ϕ</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Harmonski podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">ϕ</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Harmonski signal&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="p">(</span><span class="n">ω</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">varphi/</span><span class="se">\\</span><span class="s1">omega$&#39;</span><span class="p">,</span>
             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">ϕ</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
@@ -494,11 +494,11 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2ab3dba07b3804a65b2e4b7fe6fa4ffd8e26186b21e1b19f9dab6d3099fe3d09.png" src="../_images/2ab3dba07b3804a65b2e4b7fe6fa4ffd8e26186b21e1b19f9dab6d3099fe3d09.png" />
+<img alt="../_images/71dbf65a507371946ce2dc20bafbb2ed43a036ec2d562928a220b3a3ba4b45b4.png" src="../_images/71dbf65a507371946ce2dc20bafbb2ed43a036ec2d562928a220b3a3ba4b45b4.png" />
 </div>
 </div>
-<p>Nadaljujmo sedaj z vsoto harmonskih funkcij, pri tem se bomo omejili na kompleksno periodične podatke (glejte <a class="reference internal" href="01%20-%20Uvod.html#sec-klasifikacija-pod"><span class="std std-ref">Klasifikacija signalov</span></a>), kjer je razmerje med frekvencami posameznih harmonikov racionalno število. Frekvence harmonskih funkcij bomo dodatno omejili: če je osnovna krožna frekvenca <span class="math notranslate nohighlight">\(\omega_p=2\,\pi/T_p\)</span> definirana z osnovno periodo <span class="math notranslate nohighlight">\(T_p\)</span>, potem bomo za vse ostale harmonike zahtevali, da imajo krožno frekvenco, ki je večkratnik osnovne krožne frekvence.</p>
-<p>Opisu ustreza vsota harmonskih funkcij:</p>
+<p>Nadaljujmo sedaj z vsoto harmonskih signalov, pri tem se bomo omejili na kompleksno periodične signale (glejte <a class="reference internal" href="01%20-%20Uvod.html#sec-klasifikacija-pod"><span class="std std-ref">Klasifikacija signalov</span></a>), kjer je razmerje med frekvencami posameznih harmonikov racionalno število. Frekvence harmonskih signalov bomo dodatno omejili: če je osnovna krožna frekvenca <span class="math notranslate nohighlight">\(\omega_p=2\,\pi/T_p\)</span> definirana z osnovno periodo <span class="math notranslate nohighlight">\(T_p\)</span>, potem bomo za vse ostale harmonike zahtevali, da imajo krožno frekvenco, ki je večkratnik osnovne krožne frekvence.</p>
+<p>Opisu ustreza vsota harmonskih signalov:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
@@ -509,7 +509,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 \right],
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(a_0\)</span> konstanta, <span class="math notranslate nohighlight">\(a_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te cosinusne komponente in <span class="math notranslate nohighlight">\(b_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te sinusne komponente.</p>
-<p>Spodaj si poglejmo primer harmonske funkcije, ki ustreza omejitvam kompleksno periodične funkcije.</p>
+<p>Spodaj si poglejmo primer harmonskega signala, ki ustreza omejitvam kompleksno periodičnega signala.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -534,14 +534,14 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
     <span class="n">x</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">Tp</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kompleksno periodična funkcija&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kompleksno periodičen signal&#39;</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Periodični podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span> 
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">([</span><span class="n">Tp</span><span class="p">],</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">a0</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;$a_0/2$&#39;</span><span class="p">,</span>
@@ -567,10 +567,10 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ebb06ac28d6720825cd058c821dd6e1559881c267ab79e521ba89be0fa2c5714.png" src="../_images/ebb06ac28d6720825cd058c821dd6e1559881c267ab79e521ba89be0fa2c5714.png" />
+<img alt="../_images/b7dd0c974dde723f6d47357d072ee5c4081e1d3c704f35a85dd704da770885e7.png" src="../_images/b7dd0c974dde723f6d47357d072ee5c4081e1d3c704f35a85dd704da770885e7.png" />
 </div>
 </div>
-<p>Periodična funkcija, kakor smo si jo pogledali zgoraj, je ključnega pomena za razumevanje Fourierovih vrst (in pozneje Fourierove transformacije, glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">3. Fourierova integralska transformacija</span></a>). V nadaljevanju bomo periodično funkcijo najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
+<p>Periodičen signal, kakor smo si jo pogledali zgoraj, je ključnega pomena za razumevanje Fourierovih vrst (in pozneje Fourierove transformacije, glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">3. Fourierova integralska transformacija</span></a>). V nadaljevanju bomo periodičen signal najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
 <p>Zapis v kompleksno obliko začnemo s pomočjo Eulerjeve formule:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -642,7 +642,7 @@ c_n =
 <p>Ugotovimo, da velja <span class="math notranslate nohighlight">\(c_n=c_{-n}^{*}\)</span>, kjer smo z <span class="math notranslate nohighlight">\({}^*\)</span> označili kompleksno konjugirano vrednost.</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Zapis kompleksno periodične funkcije s Fourierovo vrsto z realnimi koeficienti:</p>
+<p>Zapis kompleksno periodičnega signala s Fourierovo vrsto z realnimi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
@@ -655,7 +655,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 </div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Zapis kompleksno periodične funkcije s Fourierovo vrsto s kompleksnimi koeficienti:</p>
+<p>Zapis kompleksno periodičnega signala s Fourierovo vrsto s kompleksnimi koeficienti:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
@@ -698,7 +698,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># teoretično pričakujemo samo realno rezultat (imaginarni del mora biti na nivoju numerične napake)</span>
     
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kompleksno periodična funkcija&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kompleksno periodičen signal&#39;</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
@@ -733,28 +733,28 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e7fdb4525a19d30422e18f8f7a199e2446d96d61b7b9706150c44762b0ede671.png" src="../_images/e7fdb4525a19d30422e18f8f7a199e2446d96d61b7b9706150c44762b0ede671.png" />
+<img alt="../_images/61a3260d92cb2139523f9227bab2c91a345a59b836128c7073a9da7da1d6057b.png" src="../_images/61a3260d92cb2139523f9227bab2c91a345a59b836128c7073a9da7da1d6057b.png" />
 </div>
 </div>
 </section>
-<section id="identifikacija-harmonskih-funkcij-ki-sestavljajo-periodicno-funkcijo">
-<h2>Identifikacija harmonskih funkcij, ki sestavljajo periodično funkcijo<a class="headerlink" href="#identifikacija-harmonskih-funkcij-ki-sestavljajo-periodicno-funkcijo" title="Permalink to this heading">#</a></h2>
-<p>Sedaj se lahko vrnemo na izvorno nalogo Fourierovih vrst: <strong>popis poljubne periodične funkcije s superpozicijo različnih harmonskih funkcij</strong>.</p>
-<p>Odgovoriti moramo na vprašanje: ali v periodični funkciji:</p>
+<section id="identifikacija-harmonskih-signalov-ki-sestavljajo-periodicni-signal">
+<h2>Identifikacija harmonskih signalov, ki sestavljajo periodični signal<a class="headerlink" href="#identifikacija-harmonskih-signalov-ki-sestavljajo-periodicni-signal" title="Permalink to this heading">#</a></h2>
+<p>Sedaj se lahko vrnemo na izvorno nalogo Fourierovih vrst: <strong>popis poljubnega periodičnega signala s superpozicijo različnih harmonskih signalov</strong>.</p>
+<p>Odgovoriti moramo na vprašanje: ali v periodičnem signalu:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-\infty}^{\infty}
 c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 \]</div>
-<p>lahko identificiramo harmonsko funkcijo s frekvenco <span class="math notranslate nohighlight">\(m\)</span> kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(c_m\,\mathrm{e}^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>?</p>
-<p>Izkaže se, da je to relativno enostavno, če poskušamo izračunati integral periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, pomnoženega z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(\mathrm{e}^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, ki ima negativno frekvenco <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
+<p>lahko identificiramo harmonski sitnal s frekvenco <span class="math notranslate nohighlight">\(m\)</span>-kratnika osnovne frekvence, torej  <span class="math notranslate nohighlight">\(c_m\,\mathrm{e}^{\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>?</p>
+<p>Izkaže se, da je to relativno enostavno; pokaz začnemo z integralom periodične funkcije <span class="math notranslate nohighlight">\(x(t)\)</span> pomnožene z enotsko harmonsko funkcijo  <span class="math notranslate nohighlight">\(\mathrm{e}^{-\mathrm{i}\,2\pi\,m\,t/T_p}\)</span>, ki ima negativno frekvenco <span class="math notranslate nohighlight">\(-m/T_p\)</span> (namesto <span class="math notranslate nohighlight">\(\textrm{i}\)</span>, imamo v eksponentu <span class="math notranslate nohighlight">\(\textrm{-i}\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 \underbrace{\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{A_m}=
 \underbrace{\int_0^{T_p} \sum_{n=-\infty}^{\infty}
 c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p} \,\,\mathrm{e}^{-\mathrm{i}\,2\pi\,m\,t/T_p}\,\mathrm{d}t}_{B_m}
 \]</div>
-<p>Ker <span class="math notranslate nohighlight">\(x(t)\)</span> predstavlja znano periodično funkcijo (oz. podatke), lahko integral <span class="math notranslate nohighlight">\(A_m\)</span> izračunamo. <span class="math notranslate nohighlight">\(B_m\)</span> pa lahko poenostavimo v:</p>
+<p>Ker <span class="math notranslate nohighlight">\(x(t)\)</span> predstavlja znani periodični signal, lahko integral <span class="math notranslate nohighlight">\(A_m\)</span> izračunamo. <span class="math notranslate nohighlight">\(B_m\)</span> pa lahko poenostavimo v:</p>
 <div class="math notranslate nohighlight">
 \[
 B_m=\int_0^{T_p} \sum_{n=-\infty}^{\infty}
@@ -766,7 +766,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 B_m= \sum_{n=-\infty}^{\infty}
 c_n\,\int_0^{T_p}\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t
 \]</div>
-<p>Ker integriramo harmonsko funkcijo s frekvenco, ki je celi večkratnik osnovne frekvence <span class="math notranslate nohighlight">\(1/T_p\)</span>, je rezultat vedno 0, razen takrat, ko je <span class="math notranslate nohighlight">\(n=m\)</span>:</p>
+<p>Ker integriramo harmonski signal s frekvenco, ki je celi večkratnik osnovne frekvence <span class="math notranslate nohighlight">\(1/T_p\)</span>, je rezultat vedno 0, razen takrat, ko je <span class="math notranslate nohighlight">\(n=m\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \int_0^{T_p}\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p} \,\mathrm{d}t=
@@ -857,14 +857,14 @@ c_n&amp;=c_{-n}^*&amp;\\
 <h3>Odvodi in integrali Fourierovih vrst<a class="headerlink" href="#odvodi-in-integrali-fourierovih-vrst" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Fourierove vrste <span class="math notranslate nohighlight">\(x(t)\)</span> konvergirajo k dani periodiči funkciji <span class="math notranslate nohighlight">\(f(t)\)</span>, če so izpolnjeni trije <strong>Dirichletovi pogoji</strong>:</p>
+<p>Fourierove vrste <span class="math notranslate nohighlight">\(x(t)\)</span> konvergirajo k danemu periodičnemu signalu <span class="math notranslate nohighlight">\(f(t)\)</span>, če so izpolnjeni trije <strong>Dirichletovi pogoji</strong>:</p>
 <ul class="simple">
-<li><p>funkcija je absolutno integrabilna: <span class="math notranslate nohighlight">\(\int_0^{T_p}|f(x)|\mathrm{d}t\)</span>,</p></li>
-<li><p>funkcija ima na območju <span class="math notranslate nohighlight">\([0, T_p]\)</span> končno število ekstremov,</p></li>
-<li><p>funkcija ima na območju <span class="math notranslate nohighlight">\([0, T_p]\)</span> končno število nezveznosti.</p></li>
+<li><p>signal je absolutno integrabilen: <span class="math notranslate nohighlight">\(\int_0^{T_p}|f(x)|\mathrm{d}t\)</span>,</p></li>
+<li><p>signal ima na območju <span class="math notranslate nohighlight">\([0, T_p]\)</span> končno število ekstremov,</p></li>
+<li><p>signal ima na območju <span class="math notranslate nohighlight">\([0, T_p]\)</span> končno število nezveznosti.</p></li>
 </ul>
 </div>
-<p>Če funkcija izpolnjuje Dirichletove pogoje, Fourierova vrsta konvergira k funkciji na vseh točkah območja, vključno s točkami nezveznosti. To je zelo pomemben rezultat v Fourierovi analizi, saj nam omogoča, da vsako periodično funkcijo predstavimo kot vsoto sinusnih in kosinusnih členov.</p>
+<p>Če signal izpolnjuje Dirichletove pogoje, Fourierova vrsta konvergira k signalu na vseh točkah območja, vključno s točkami nezveznosti. To je zelo pomemben rezultat v Fourierovi analizi, saj nam omogoča, da vsak periodičen signal predstavimo kot vsoto sinusnih in kosinusnih členov.</p>
 <p>Če Dirichletov pogoj izpolnjuje tudi odvod <span class="math notranslate nohighlight">\(\dot f(t)\)</span>, potem je mogoče odvod izračunati neposredno iz Fourierovih vrst za <span class="math notranslate nohighlight">\(x(t)\)</span>, pri čemer je treba odvajati posamezne člene.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -880,7 +880,7 @@ x(t)=\sum_{n=-N}^{N}
 <p>kjer so <span class="math notranslate nohighlight">\(\dot{c}_n\)</span> konstante Fourierove vrste za <span class="math notranslate nohighlight">\(\dot{x}(t)\)</span>. Za primer, glejte zglede v nadaljevanju.</p>
 </section>
 <section id="fourierove-vrste-lihih-in-sodih-funkcij">
-<h3>Fourierove vrste lihih in sodih funkcij<a class="headerlink" href="#fourierove-vrste-lihih-in-sodih-funkcij" title="Permalink to this heading">#</a></h3>
+<span id="sec-fv-lih-sod"></span><h3>Fourierove vrste lihih in sodih funkcij<a class="headerlink" href="#fourierove-vrste-lihih-in-sodih-funkcij" title="Permalink to this heading">#</a></h3>
 <p>Funkcija <span class="math notranslate nohighlight">\(x(t)\)</span> je <strong>soda</strong>, če velja:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -942,9 +942,9 @@ x(-t)=-x(t),
 </section>
 <section id="nekateri-zgledi">
 <h2>Nekateri zgledi<a class="headerlink" href="#nekateri-zgledi" title="Permalink to this heading">#</a></h2>
-<section id="kompleksno-periodicna-funkcija">
-<h3>Kompleksno periodična funkcija<a class="headerlink" href="#kompleksno-periodicna-funkcija" title="Permalink to this heading">#</a></h3>
-<p>Najprej si bomo pogledali kompleksno periodično funkcijo, ki smo jo spoznali in definirali že zgoraj. Funkcija je definirana z <span class="math notranslate nohighlight">\(N=10\)</span> harmonskimi komponentami <span class="math notranslate nohighlight">\(c_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nas uporaba zgoraj definiranih enačb vodi v točno identifikacijo le-teh.</p>
+<section id="kompleksno-periodicen-signal">
+<h3>Kompleksno periodičen signal<a class="headerlink" href="#kompleksno-periodicen-signal" title="Permalink to this heading">#</a></h3>
+<p>Najprej si bomo pogledali kompleksno periodičen signal, ki smo ga spoznali in definirali že zgoraj. Signal je definirana z <span class="math notranslate nohighlight">\(N=10\)</span> harmonskimi komponentami <span class="math notranslate nohighlight">\(c_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nas uporaba zgoraj definiranih enačb vodi v točno identifikacijo le-teh.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -977,7 +977,7 @@ x(-t)=-x(t),
     
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kompleksno periodična funkcija&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Kompleksno periodičen signal&#39;</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$t</span><span class="se">\\</span><span class="s1">quad $[s]&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)\quad$[-]&#39;</span><span class="p">)</span>
@@ -995,10 +995,10 @@ x(-t)=-x(t),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c42e5a5e9112aeb437407742c45dc1aa3b47825d66ef69dd88fb0808e5af30f3.png" src="../_images/c42e5a5e9112aeb437407742c45dc1aa3b47825d66ef69dd88fb0808e5af30f3.png" />
+<img alt="../_images/3be2bbeb6233fc5fda194f5ed96e02d6d44fe086087573008ec4bb98663b065c.png" src="../_images/3be2bbeb6233fc5fda194f5ed96e02d6d44fe086087573008ec4bb98663b065c.png" />
 </div>
 </div>
-<p>V primeru zgoraj je peridična funkcija generirana na podlagi vektorja Fourierovih koeficientov:</p>
+<p>V primeru zgoraj je peridičen signal generirana na podlagi vektorja Fourierovih koeficientov:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span>
@@ -1041,7 +1041,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </div>
 </div>
-<p>Pri tem smo izbrali (<code class="docutils literal notranslate"><span class="pre">sel</span></code>) samo eno periodo v časovni vrsti. Tukaj velja poudariti, da moramo integrirati po celotni periodi. Rezultat je <strong>točen</strong> do nivoja natančnosti zapisa v računalnik.</p>
+<p>Pri tem smo izbrali (<code class="docutils literal notranslate"><span class="pre">sel</span></code>) samo eno periodo v časovni vrsti. Tukaj velja poudariti, da moramo integrirati po celotni periodi. Če je napaka numerične integracije dovolj majhna (kar je primer zgoraj), je rezultat <strong>točen</strong> do nivoja natančnosti zapisa v računalnik.</p>
 <p>Vredno je opozoriti, da moramo biti zelo natančni pri implementaciji izpeljanih izrazov. Hitro lahko dobimo <em>zelo dober</em> rezultat; vendar dokler ni <em>točen</em> do nivoja natančnosti zapisa v računalnik, do takrat je nekje v implementaciji napaka.</p>
 <p>Napako bi lahko naredili, če bi naša diskretizacija bila takšna, da ne bi ključevala točke pri 0s in točke pri <span class="math notranslate nohighlight">\(T_p\)</span>. Tako napako lahko preiskusite tako, greste par vrstic navzgor v definicijo slike in vrstico:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1052,8 +1052,8 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </pre></div>
 </div>
 </section>
-<section id="odvod-integral-kompleksno-periodicne-funkcije">
-<h3>Odvod / Integral kompleksno periodične funkcije<a class="headerlink" href="#odvod-integral-kompleksno-periodicne-funkcije" title="Permalink to this heading">#</a></h3>
+<section id="odvod-integral-kompleksno-periodicnega-signala">
+<h3>Odvod / Integral kompleksno periodičnega signala<a class="headerlink" href="#odvod-integral-kompleksno-periodicnega-signala" title="Permalink to this heading">#</a></h3>
 <p>Nadaljujemo z zgledom in poglejmo odvod po času. V kodi spodaj pokažemo, da je Fourierova vrsta odvoda po času res enaka Fourierovi vrsti, kjer smo vsakega od členov Fourierove vrste osnovnih podatkov preprosto odvajali.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1149,9 +1149,9 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </div>
 </section>
-<section id="periodicna-funkcija">
-<h3>Periodična funkcija<a class="headerlink" href="#periodicna-funkcija" title="Permalink to this heading">#</a></h3>
-<p>Tukaj si bomo pogledali periodično funkcijo, ki pa ni kompleksno harmonska. Primer takšne funkcije je naraščajoča žaga, prikazana na spodnji sliki.</p>
+<section id="periodicen-signal">
+<h3>Periodičen signal<a class="headerlink" href="#periodicen-signal" title="Permalink to this heading">#</a></h3>
+<p>Tukaj si bomo pogledali periodičen signal, ki pa s končnim številom harmonskih komponent ni kompleksno periodičen. Primer takšne funkcije je naraščajoča žaga, prikazana na spodnji sliki.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1186,7 +1186,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 <img alt="../_images/d81dc98231a3ecfef056a3ddba62d8c1c0e63f91db193f93769e23b3766c3547.png" src="../_images/d81dc98231a3ecfef056a3ddba62d8c1c0e63f91db193f93769e23b3766c3547.png" />
 </div>
 </div>
-<p>Kljub temu, da funkcija ni kompleksno periodična, teorija Fourierovih vrst pa je bila izpeljana ob tej predpostavki, poskusimo identificirati harmonske komponente. Najprej to naredimo na diskretni časovni vrsti.
+<p>Kljub temu, da signal ni kompleksno periodičen, teorija Fourierovih vrst pa je bila izpeljana ob tej predpostavki, poskusimo identificirati harmonske komponente. Najprej to naredimo na diskretni časovni vrsti.
 Osredotočimo se na del podatkov, ki se ponavlja:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1210,7 +1210,7 @@ Osredotočimo se na del podatkov, ki se ponavlja:</p>
 <span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Periodični podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Periodičen signal&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1219,7 +1219,7 @@ Osredotočimo se na del podatkov, ki se ponavlja:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5ef92a26fa62b6a78c24f7ed9583ef286fc9acd598b6774a735113fc9bd25f52.png" src="../_images/5ef92a26fa62b6a78c24f7ed9583ef286fc9acd598b6774a735113fc9bd25f52.png" />
+<img alt="../_images/87128b96de3185942097f00c951a301380f3bd33f8fdb5e52708d8ef55b0e240.png" src="../_images/87128b96de3185942097f00c951a301380f3bd33f8fdb5e52708d8ef55b0e240.png" />
 </div>
 </div>
 <p>In identificiramo Fourierove koeficiente:</p>
@@ -1250,7 +1250,7 @@ Osredotočimo se na del podatkov, ki se ponavlja:</p>
 </div>
 </div>
 </div>
-<p>Na podlagi identificiranih Fourierovih koeficientov ne dobimo rezultata, ki je enak podanim podatkom, pač pa nove podatke, ki so kompleksno periodični:</p>
+<p>Na podlagi identificiranih Fourierovih koeficientov ne dobimo rezultata, ki je enak podanim podatkom (naraščajoča žaga), pač pa novi signal, ki je kompleksno periodičen:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\sum_{n=-N}^{N}
@@ -1280,7 +1280,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 <span class="n">ax1</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Izvorni periodični podatki&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_r</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Kompleksno periodična funkcija&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_r</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Kompleksno periodični signal&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.6</span><span class="p">)</span> 
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1289,14 +1289,14 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/50741ffcc07953d9b514a05b02eb145237ba04b0828f0688c884e7b7402a12ed.png" src="../_images/50741ffcc07953d9b514a05b02eb145237ba04b0828f0688c884e7b7402a12ed.png" />
+<img alt="../_images/84955243e44e343e13c6ae6486c2610540db49b10041d8d998f3e0ef6fb2d634.png" src="../_images/84955243e44e343e13c6ae6486c2610540db49b10041d8d998f3e0ef6fb2d634.png" />
 </div>
 </div>
-<p>Opazimo, da identificirana kompleksno harmonska funkcija relativno dobro opiše izvorne periodične podatke. Če bi število harmonskih (<span class="math notranslate nohighlight">\(N\)</span>) komponent povečali, bi se identificirana funkcija izvornim podatkom bolje prilegala, vendar pa bi na mestu nezveznosti še vedno imeli odstopanje. Odstopanje na mestu nezveznosti je znano pod terminom <strong>Gibbsov</strong> fenomen. Resnici na ljubo je večina inženirskih aplikacij zveznih in zato ponavadi Gibbsov fenomen v praksi nima večjega pomena.</p>
+<p>Opazimo, da identificiran kompleksno harmonski signal relativno dobro opiše izvorni periodični signal. Če bi število harmonskih (<span class="math notranslate nohighlight">\(N\)</span>) komponent povečali, bi se identificirana funkcija izvornim podatkom bolje prilegala, vendar pa bi na mestu nezveznosti še vedno imeli odstopanje. Odstopanje na mestu nezveznosti je znano pod terminom <strong>Gibbsov</strong> fenomen. Resnici na ljubo je večina inženirskih aplikacij zveznih in zato ponavadi Gibbsov fenomen v praksi nima večjega pomena.</p>
 </section>
-<section id="analiticna-obravnava-periodicne-funkcije">
-<h3>Analitična obravnava periodične funkcije<a class="headerlink" href="#analiticna-obravnava-periodicne-funkcije" title="Permalink to this heading">#</a></h3>
-<p>Zgoraj smo Fourierovo vrsto izračunali na diskrenih podatkih in smo zato omejeni, koliko harmonskih komponent lahko izračunamo (<code class="docutils literal notranslate"><span class="pre">N&lt;len(t)/2</span></code>; zakaj je <span class="math notranslate nohighlight">\(N\)</span> vezan na dolžino časovne vrste, bomo spoznali pozneje). Tukaj si bomo pogledali obravnavo zveznih sistemov in s pomočjo strojnega izpeljevanja določili Fourierovo vrsto. Kot primer periodične funkcija si bomo izbrali naraščajočo žago, ki bo proporcionalna s časom <code class="docutils literal notranslate"><span class="pre">t</span></code>, perioda bo <code class="docutils literal notranslate"><span class="pre">Tp</span></code>:</p>
+<section id="analiticna-obravnava-periodicnih-signalov">
+<h3>Analitična obravnava periodičnih signalov<a class="headerlink" href="#analiticna-obravnava-periodicnih-signalov" title="Permalink to this heading">#</a></h3>
+<p>Zgoraj smo Fourierovo vrsto izračunali na diskrenih podatkih in smo zato omejeni, koliko harmonskih komponent lahko izračunamo (<code class="docutils literal notranslate"><span class="pre">N&lt;len(t)/2</span></code>; zakaj je <span class="math notranslate nohighlight">\(N\)</span> vezan na dolžino časovne vrste, bomo spoznali pozneje). Tukaj si bomo pogledali obravnavo zveznih sistemov in s pomočjo strojnega izpeljevanja določili Fourierovo vrsto. Kot primer periodičnega signala si bomo izbrali naraščajočo žago, ki bo proporcionalna s časom <code class="docutils literal notranslate"><span class="pre">t</span></code>, perioda bo <code class="docutils literal notranslate"><span class="pre">Tp</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
@@ -1368,7 +1368,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/0bbc4475a1cb01108c94899cad8ea66a7a649c168488dd4b810f6c1cb471049a.png" src="../_images/0bbc4475a1cb01108c94899cad8ea66a7a649c168488dd4b810f6c1cb471049a.png" />
+<img alt="../_images/a608a031989bae0c386e17b013bdc9b4f5cdee222278be929ba94fe1241a2a1f.png" src="../_images/a608a031989bae0c386e17b013bdc9b4f5cdee222278be929ba94fe1241a2a1f.png" />
 </div>
 </div>
 </section>
@@ -1395,7 +1395,8 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 0&amp; \textrm{sicer}.
 \end{cases}.
 \end{split}\]</div>
-<p>Pri definiranju enotskega impulza si lahko pomagamo tudi z <strong>koračno funkcijo</strong> (<strong>Heaviside funkcija</strong>), ki je definirana kot:</p>
+<p>Pri definiranju enotskega impulza si lahko pomagamo tudi z dvema enotskima funkcijama stopnice.
+<strong>Enotska funkcija stopnice</strong> (ang. unit-step function ali tudi <strong>Heaviside funkcija</strong>) je definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 u(t)=
@@ -1404,7 +1405,7 @@ u(t)=
 0&amp; \textrm{sicer}.
 \end{cases}.
 \end{split}\]</div>
-<p>Dve koračni funkciji ste definirani spodaj:</p>
+<p>Enotski impulz tako definiramo s pomočjo dveh funkcij enotskega koraka:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1416,9 +1417,9 @@ u(t)=
 <span class="n">t</span><span class="p">,</span> <span class="n">ε</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;t, \varepsilon&#39;</span><span class="p">)</span>
 <span class="n">unit_step</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">ε</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unit_step</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">ε</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">line_style</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> 
-              <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Koračna funkcija $u(t+</span><span class="se">\\</span><span class="s1">varepsilon/2)$&#39;</span><span class="p">)</span> 
+              <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$u(t+</span><span class="se">\\</span><span class="s1">varepsilon/2)$&#39;</span><span class="p">)</span> 
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">-</span><span class="n">unit_step</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">ε</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-              <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Koračna funkcija $-u(t-</span><span class="se">\\</span><span class="s1">varepsilon/2)$&#39;</span><span class="p">)</span> 
+              <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$-u(t-</span><span class="se">\\</span><span class="s1">varepsilon/2)$&#39;</span><span class="p">)</span> 
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1427,10 +1428,10 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/52bc9fdcf23ae031817c369454018252ff8a7b2f0a2230e4398036a77926771d.png" src="../_images/52bc9fdcf23ae031817c369454018252ff8a7b2f0a2230e4398036a77926771d.png" />
+<img alt="../_images/7de3bfde89f9307eed95f18a4e0248c5dc61c55975daf54f9dc9d3372a8d2cec.png" src="../_images/7de3bfde89f9307eed95f18a4e0248c5dc61c55975daf54f9dc9d3372a8d2cec.png" />
 </div>
 </div>
-<p>Do enotskega impulza pridemo z uteženim seštevanjem dveh enotskih korakov:</p>
+<p>Do enotskega impulza pridemo z uteženim seštevanjem:</p>
 <div class="math notranslate nohighlight">
 \[
 \delta_{\varepsilon}=\frac{1}{\varepsilon}\Big(u\big(t+\frac{\varepsilon}{2}\big)-u\big(t-\frac{\varepsilon}{2}\big)\Big)
@@ -1465,7 +1466,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a39cf0253cf064824303c7155d71a937dece8fae4b6463620d0a6a3fb9099315.png" src="../_images/a39cf0253cf064824303c7155d71a937dece8fae4b6463620d0a6a3fb9099315.png" />
+<img alt="../_images/82a7d82a1dc1ead89eda233c71561071cffc244e299afb23cd9eeeb9511d40ef.png" src="../_images/82a7d82a1dc1ead89eda233c71561071cffc244e299afb23cd9eeeb9511d40ef.png" />
 </div>
 </div>
 <p>in nato integriramo (rezultat je pričakovano enak 1; spremenite <span class="math notranslate nohighlight">\(\varepsilon\)</span> v <code class="docutils literal notranslate"><span class="pre">podatki</span></code> zgoraj!):</p>
@@ -1499,7 +1500,7 @@ u(t)=
 </section>
 <section id="padajoca-zaga-in-njen-odvod">
 <h3>Padajoča žaga in njen odvod<a class="headerlink" href="#padajoca-zaga-in-njen-odvod" title="Permalink to this heading">#</a></h3>
-<p>Predpostavimo periodično padajočo žagasto funkcijo, kot je prikazana spodaj:</p>
+<p>Predpostavimo periodični signal oblike padajoče žage, kot je prikazana spodaj:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1526,10 +1527,10 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2f2184979017b31c7dad5070e0db0b7d10070d7fb0f34be3a97a066bace24a32.png" src="../_images/2f2184979017b31c7dad5070e0db0b7d10070d7fb0f34be3a97a066bace24a32.png" />
+<img alt="../_images/93efd786db947b4ed4b562ac962033c490a94a0b35ad6c1c36e1504445644a93.png" src="../_images/93efd786db947b4ed4b562ac962033c490a94a0b35ad6c1c36e1504445644a93.png" />
 </div>
 </div>
-<p>Vrsta padajoče žagaste funkcije je definirana kot:</p>
+<p>Fourierova vrsta padajočega žagastega signala je definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\pi\,n\,t}{T_p}\Big)
@@ -1598,7 +1599,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8b3f49dcf43003d50948539b4b93b546b2729360564c0156261f52b4768ce4fe.png" src="../_images/8b3f49dcf43003d50948539b4b93b546b2729360564c0156261f52b4768ce4fe.png" />
+<img alt="../_images/26cadea8b17c545f74a8bb2e2b4336ef503b8268420967011f5ca31743191bf1.png" src="../_images/26cadea8b17c545f74a8bb2e2b4336ef503b8268420967011f5ca31743191bf1.png" />
 </div>
 </div>
 </section>
@@ -1746,7 +1747,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 \frac{1}{T_p}\int_0^{T_p}x^2(t)\,\textrm{d}t=
 \frac{1}{T_p}\sum_{n=-\infty}^{\infty}\,\sum_{m=-\infty}^{\infty}c_n\,c_m^*\,\int_0^{T_p}\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t
 \]</div>
-<p>Integral harmonske funkcije na zaključeni periodi je vedno nič razen, ko je frekvenca 0. Ko je frekvenca enaka 0, je podintegralska funkcija enaka 1 in integral <span class="math notranslate nohighlight">\(T_p\)</span>:</p>
+<p>Integral harmonskega signala na zaključeni periodi je vedno nič razen, ko je frekvenca 0. Ko je frekvenca enaka 0, je podintegralska funkcija enaka 1 in integral <span class="math notranslate nohighlight">\(T_p\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \int_0^{T_p}\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t=
@@ -1926,8 +1927,8 @@ T_p,&amp;\textrm{če}\quad m=n,\\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zapis-periodicne-funkcije-kot-vsote-harmonskih-funkcij">Zapis periodične funkcije, kot vsote harmonskih funkcij</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikacija-harmonskih-funkcij-ki-sestavljajo-periodicno-funkcijo">Identifikacija harmonskih funkcij, ki sestavljajo periodično funkcijo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zapis-periodicnega-signala-kot-vsote-harmonskih-signalov">Zapis periodičnega signala, kot vsote harmonskih signalov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikacija-harmonskih-signalov-ki-sestavljajo-periodicni-signal">Identifikacija harmonskih signalov, ki sestavljajo periodični signal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#posplositev">Posplošitev</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fourierove-vrste-v-eksponentni-kompleksni-obliki">Fourierove vrste v eksponentni (kompleksni) obliki</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fourierove-vrste-v-sinus-cosinusni-obliki">Fourierove vrste v sinus-cosinusni obliki</a></li>
@@ -1940,10 +1941,10 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekateri-zgledi">Nekateri zgledi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompleksno-periodicna-funkcija">Kompleksno periodična funkcija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-integral-kompleksno-periodicne-funkcije">Odvod / Integral kompleksno periodične funkcije</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodicna-funkcija">Periodična funkcija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analiticna-obravnava-periodicne-funkcije">Analitična obravnava periodične funkcije</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kompleksno-periodicen-signal">Kompleksno periodičen signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvod-integral-kompleksno-periodicnega-signala">Odvod / Integral kompleksno periodičnega signala</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#periodicen-signal">Periodičen signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analiticna-obravnava-periodicnih-signalov">Analitična obravnava periodičnih signalov</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diracova-delta-funkcija">Diracova delta funkcija</a><ul class="nav section-nav flex-column">
