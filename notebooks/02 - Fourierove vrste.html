@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="sl" data-content_root="" >
+<html lang="sl" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2. Fourierove vrste &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=82705e9b"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/02 - Fourierove vrste';</script>
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -416,10 +424,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fourierove-vrste">
-<span id="sec-fourierove-vrste"></span><h1>2. Fourierove vrste<a class="headerlink" href="#fourierove-vrste" title="Permalink to this heading">#</a></h1>
+<span id="sec-fourierove-vrste"></span><h1>2. Fourierove vrste<a class="headerlink" href="#fourierove-vrste" title="Link to this heading">#</a></h1>
 <p>Cilj Fourierovih vrst je, da bi poljuben (periodičen) signal opisali z vsoto harmonskih signalov različnih osnovnih period. V tem poglavju se bomo omejili na matematično definirane signale in sicer v sledečih korakih:</p>
 <ol class="arabic simple">
 <li><p>korak: zapis periodičnega signala, kot vsote harmonskih signalov,</p></li>
@@ -428,7 +436,7 @@ document.write(`
 </ol>
 <p>Kot morebitne dodatne vire, lahko tukaj priporočamo <span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span> in <a class="reference external" href="https://www.youtube.com/watch?v=r6sGWTCMz2k">Grant Sanderson: But what is a Fourier series? From heat flow to drawing with circles</a>.</p>
 <section id="zapis-periodicnega-signala-kot-vsote-harmonskih-signalov">
-<h2>Zapis periodičnega signala, kot vsote harmonskih signalov<a class="headerlink" href="#zapis-periodicnega-signala-kot-vsote-harmonskih-signalov" title="Permalink to this heading">#</a></h2>
+<h2>Zapis periodičnega signala, kot vsote harmonskih signalov<a class="headerlink" href="#zapis-periodicnega-signala-kot-vsote-harmonskih-signalov" title="Link to this heading">#</a></h2>
 <p>Preden gremo v podrobnosti Fourierovih vrst, si poglejmo definicijo splošnega harmonskega signala:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -494,7 +502,7 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/71dbf65a507371946ce2dc20bafbb2ed43a036ec2d562928a220b3a3ba4b45b4.png" src="../_images/71dbf65a507371946ce2dc20bafbb2ed43a036ec2d562928a220b3a3ba4b45b4.png" />
+<img alt="../_images/3f73e41eaa9a930b6244b9fe73f5cf505f49fca4f996b6d1d9e6e63c88c406ec.png" src="../_images/3f73e41eaa9a930b6244b9fe73f5cf505f49fca4f996b6d1d9e6e63c88c406ec.png" />
 </div>
 </div>
 <p>Nadaljujmo sedaj z vsoto harmonskih signalov, pri tem se bomo omejili na kompleksno periodične signale (glejte <a class="reference internal" href="01%20-%20Uvod.html#sec-klasifikacija-pod"><span class="std std-ref">Klasifikacija signalov</span></a>), kjer je razmerje med frekvencami posameznih harmonikov racionalno število. Frekvence harmonskih signalov bomo dodatno omejili: če je osnovna krožna frekvenca <span class="math notranslate nohighlight">\(\omega_p=2\,\pi/T_p\)</span> definirana z osnovno periodo <span class="math notranslate nohighlight">\(T_p\)</span>, potem bomo za vse ostale harmonike zahtevali, da imajo krožno frekvenco, ki je večkratnik osnovne krožne frekvence.</p>
@@ -567,7 +575,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b7dd0c974dde723f6d47357d072ee5c4081e1d3c704f35a85dd704da770885e7.png" src="../_images/b7dd0c974dde723f6d47357d072ee5c4081e1d3c704f35a85dd704da770885e7.png" />
+<img alt="../_images/8b55312b6dd43ff9faecb2b9fc8a71b0400b6b2d86f7d7b6c7bc69b9bea6aba0.png" src="../_images/8b55312b6dd43ff9faecb2b9fc8a71b0400b6b2d86f7d7b6c7bc69b9bea6aba0.png" />
 </div>
 </div>
 <p>Periodičen signal, kakor smo si jo pogledali zgoraj, je ključnega pomena za razumevanje Fourierovih vrst (in pozneje Fourierove transformacije, glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">3. Fourierova integralska transformacija</span></a>). V nadaljevanju bomo periodičen signal najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
@@ -733,12 +741,12 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/61a3260d92cb2139523f9227bab2c91a345a59b836128c7073a9da7da1d6057b.png" src="../_images/61a3260d92cb2139523f9227bab2c91a345a59b836128c7073a9da7da1d6057b.png" />
+<img alt="../_images/b1328ef7b1cf96f3140f3afcbb13fd002453e2dca66594f2362f570227712080.png" src="../_images/b1328ef7b1cf96f3140f3afcbb13fd002453e2dca66594f2362f570227712080.png" />
 </div>
 </div>
 </section>
 <section id="identifikacija-harmonskih-signalov-ki-sestavljajo-periodicni-signal">
-<h2>Identifikacija harmonskih signalov, ki sestavljajo periodični signal<a class="headerlink" href="#identifikacija-harmonskih-signalov-ki-sestavljajo-periodicni-signal" title="Permalink to this heading">#</a></h2>
+<h2>Identifikacija harmonskih signalov, ki sestavljajo periodični signal<a class="headerlink" href="#identifikacija-harmonskih-signalov-ki-sestavljajo-periodicni-signal" title="Link to this heading">#</a></h2>
 <p>Sedaj se lahko vrnemo na izvorno nalogo Fourierovih vrst: <strong>popis poljubnega periodičnega signala s superpozicijo različnih harmonskih signalov</strong>.</p>
 <p>Odgovoriti moramo na vprašanje: ali v periodičnem signalu:</p>
 <div class="math notranslate nohighlight">
@@ -788,10 +796,10 @@ c_m = \frac{A_m}{T_p} = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i
 <p>Izpeljali smo torej, da je posamezno harmonsko komponento relativno enostavno določiti; v praksi se pojavi težava, da dani podatki <span class="math notranslate nohighlight">\(x(t)\)</span> ne izpolnjujejo vseh predpostavk, predvsem ne tiste, da je harmonik celi večkratnik osnovne frekvence; s temi težavami se bomo soočili v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-okna"><span class="std std-ref">Uporaba oken</span></a>.</p>
 </section>
 <section id="posplositev">
-<h2>Posplošitev<a class="headerlink" href="#posplositev" title="Permalink to this heading">#</a></h2>
+<h2>Posplošitev<a class="headerlink" href="#posplositev" title="Link to this heading">#</a></h2>
 <p>Fourierove vrste najpogosteje najdemo definirane v treh oblikah (<span class="math notranslate nohighlight">\(T_p\)</span> predstavlja osnovno period in <span class="math notranslate nohighlight">\(N\)</span> število harmonskih komponent, ki jih upoštevamo/identificiramo):</p>
 <section id="fourierove-vrste-v-eksponentni-kompleksni-obliki">
-<span id="sec-fv-exp"></span><h3>Fourierove vrste v eksponentni (kompleksni) obliki<a class="headerlink" href="#fourierove-vrste-v-eksponentni-kompleksni-obliki" title="Permalink to this heading">#</a></h3>
+<span id="sec-fv-exp"></span><h3>Fourierove vrste v eksponentni (kompleksni) obliki<a class="headerlink" href="#fourierove-vrste-v-eksponentni-kompleksni-obliki" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Fourierovi koeficienti:</p>
@@ -807,7 +815,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*
 </div>
 </section>
 <section id="fourierove-vrste-v-sinus-cosinusni-obliki">
-<span id="sec-fv-sin-cos"></span><h3>Fourierove vrste v sinus-cosinusni obliki<a class="headerlink" href="#fourierove-vrste-v-sinus-cosinusni-obliki" title="Permalink to this heading">#</a></h3>
+<span id="sec-fv-sin-cos"></span><h3>Fourierove vrste v sinus-cosinusni obliki<a class="headerlink" href="#fourierove-vrste-v-sinus-cosinusni-obliki" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Fourierovi koeficienti:</p>
@@ -829,7 +837,7 @@ b_n\,\sin(2\pi\,n\,t/T_p)
 </div>
 </section>
 <section id="fourierove-vrste-v-amplitudno-fazni-obliki">
-<h3>Fourierove vrste v amplitudno-fazni obliki<a class="headerlink" href="#fourierove-vrste-v-amplitudno-fazni-obliki" title="Permalink to this heading">#</a></h3>
+<h3>Fourierove vrste v amplitudno-fazni obliki<a class="headerlink" href="#fourierove-vrste-v-amplitudno-fazni-obliki" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Rekonstruirana zvezna funkcija:</p>
@@ -852,9 +860,9 @@ c_n&amp;=c_{-n}^*&amp;\\
 </section>
 </section>
 <section id="nekatere-lastnosti-fourierovih-vrst">
-<h2>Nekatere lastnosti Fourierovih vrst<a class="headerlink" href="#nekatere-lastnosti-fourierovih-vrst" title="Permalink to this heading">#</a></h2>
+<h2>Nekatere lastnosti Fourierovih vrst<a class="headerlink" href="#nekatere-lastnosti-fourierovih-vrst" title="Link to this heading">#</a></h2>
 <section id="odvodi-in-integrali-fourierovih-vrst">
-<h3>Odvodi in integrali Fourierovih vrst<a class="headerlink" href="#odvodi-in-integrali-fourierovih-vrst" title="Permalink to this heading">#</a></h3>
+<h3>Odvodi in integrali Fourierovih vrst<a class="headerlink" href="#odvodi-in-integrali-fourierovih-vrst" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Fourierove vrste <span class="math notranslate nohighlight">\(x(t)\)</span> konvergirajo k danemu periodičnemu signalu <span class="math notranslate nohighlight">\(f(t)\)</span>, če so izpolnjeni trije <strong>Dirichletovi pogoji</strong>:</p>
@@ -880,7 +888,7 @@ x(t)=\sum_{n=-N}^{N}
 <p>kjer so <span class="math notranslate nohighlight">\(\dot{c}_n\)</span> konstante Fourierove vrste za <span class="math notranslate nohighlight">\(\dot{x}(t)\)</span>. Za primer, glejte zglede v nadaljevanju.</p>
 </section>
 <section id="fourierove-vrste-lihih-in-sodih-funkcij">
-<span id="sec-fv-lih-sod"></span><h3>Fourierove vrste lihih in sodih funkcij<a class="headerlink" href="#fourierove-vrste-lihih-in-sodih-funkcij" title="Permalink to this heading">#</a></h3>
+<span id="sec-fv-lih-sod"></span><h3>Fourierove vrste lihih in sodih funkcij<a class="headerlink" href="#fourierove-vrste-lihih-in-sodih-funkcij" title="Link to this heading">#</a></h3>
 <p>Funkcija <span class="math notranslate nohighlight">\(x(t)\)</span> je <strong>soda</strong>, če velja:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -941,9 +949,9 @@ x(-t)=-x(t),
 </section>
 </section>
 <section id="nekateri-zgledi">
-<h2>Nekateri zgledi<a class="headerlink" href="#nekateri-zgledi" title="Permalink to this heading">#</a></h2>
+<h2>Nekateri zgledi<a class="headerlink" href="#nekateri-zgledi" title="Link to this heading">#</a></h2>
 <section id="kompleksno-periodicen-signal">
-<h3>Kompleksno periodičen signal<a class="headerlink" href="#kompleksno-periodicen-signal" title="Permalink to this heading">#</a></h3>
+<h3>Kompleksno periodičen signal<a class="headerlink" href="#kompleksno-periodicen-signal" title="Link to this heading">#</a></h3>
 <p>Najprej si bomo pogledali kompleksno periodičen signal, ki smo ga spoznali in definirali že zgoraj. Signal je definirana z <span class="math notranslate nohighlight">\(N=10\)</span> harmonskimi komponentami <span class="math notranslate nohighlight">\(c_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nas uporaba zgoraj definiranih enačb vodi v točno identifikacijo le-teh.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -995,7 +1003,7 @@ x(-t)=-x(t),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3be2bbeb6233fc5fda194f5ed96e02d6d44fe086087573008ec4bb98663b065c.png" src="../_images/3be2bbeb6233fc5fda194f5ed96e02d6d44fe086087573008ec4bb98663b065c.png" />
+<img alt="../_images/3ffafac3ea46599ef641fea287a4d7fb626297e29e31de306627acc16ac8a2b2.png" src="../_images/3ffafac3ea46599ef641fea287a4d7fb626297e29e31de306627acc16ac8a2b2.png" />
 </div>
 </div>
 <p>V primeru zgoraj je peridičen signal generirana na podlagi vektorja Fourierovih koeficientov:</p>
@@ -1053,7 +1061,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </section>
 <section id="odvod-integral-kompleksno-periodicnega-signala">
-<h3>Odvod / Integral kompleksno periodičnega signala<a class="headerlink" href="#odvod-integral-kompleksno-periodicnega-signala" title="Permalink to this heading">#</a></h3>
+<h3>Odvod / Integral kompleksno periodičnega signala<a class="headerlink" href="#odvod-integral-kompleksno-periodicnega-signala" title="Link to this heading">#</a></h3>
 <p>Nadaljujemo z zgledom in poglejmo odvod po času. V kodi spodaj pokažemo, da je Fourierova vrsta odvoda po času res enaka Fourierovi vrsti, kjer smo vsakega od členov Fourierove vrste osnovnih podatkov preprosto odvajali.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1104,7 +1112,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b85f7c78f61a9a1b147b717cb0d080a55a20d353276a6f9b89d33617ebd0283e.png" src="../_images/b85f7c78f61a9a1b147b717cb0d080a55a20d353276a6f9b89d33617ebd0283e.png" />
+<img alt="../_images/e8239eea42eeca42fe79650a504bd2df0437dd645d42b0075908d4388ab11166.png" src="../_images/e8239eea42eeca42fe79650a504bd2df0437dd645d42b0075908d4388ab11166.png" />
 </div>
 </div>
 <p>Zgornji primer lahko nadaljujemo in izvorni pomik <span class="math notranslate nohighlight">\(x(t)\)</span> identificiramo iz Fourierovih vrst za hitrost <span class="math notranslate nohighlight">\(\dot x(t)\)</span>, glejte kodo in sliko spodaj. Pri integriranju imamo težavo v primeru Fourierovega koeficienta s frekvenco 0 (statična komponenta); v kodi spodaj to frekvenco enostavno preskočimo, saj je ne moremo določiti. Podobno težavo bi imeli v času; če integriramo nedoločeni integral, potem pri integriranju rabimo začetno vrednost. Na sliki spodaj se zato med obema pristopoma pokaže odstopanje v velikosti statične komponente.</p>
@@ -1145,12 +1153,12 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/45bbb773559d25ca47480a33a26dca441917d9e2f13c1d3403205895c4055495.png" src="../_images/45bbb773559d25ca47480a33a26dca441917d9e2f13c1d3403205895c4055495.png" />
+<img alt="../_images/f806b28d79c0c2cb14c05088e2fd152fd3e0db88a5cabc4047104e99aa594cf6.png" src="../_images/f806b28d79c0c2cb14c05088e2fd152fd3e0db88a5cabc4047104e99aa594cf6.png" />
 </div>
 </div>
 </section>
 <section id="periodicen-signal">
-<h3>Periodičen signal<a class="headerlink" href="#periodicen-signal" title="Permalink to this heading">#</a></h3>
+<h3>Periodičen signal<a class="headerlink" href="#periodicen-signal" title="Link to this heading">#</a></h3>
 <p>Tukaj si bomo pogledali periodičen signal, ki pa s končnim številom harmonskih komponent ni kompleksno periodičen. Primer takšne funkcije je naraščajoča žaga, prikazana na spodnji sliki.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1183,7 +1191,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d81dc98231a3ecfef056a3ddba62d8c1c0e63f91db193f93769e23b3766c3547.png" src="../_images/d81dc98231a3ecfef056a3ddba62d8c1c0e63f91db193f93769e23b3766c3547.png" />
+<img alt="../_images/3fdce5583b43087701109954161c2f8bdd42abb143242044cd4f8696226bd275.png" src="../_images/3fdce5583b43087701109954161c2f8bdd42abb143242044cd4f8696226bd275.png" />
 </div>
 </div>
 <p>Kljub temu, da signal ni kompleksno periodičen, teorija Fourierovih vrst pa je bila izpeljana ob tej predpostavki, poskusimo identificirati harmonske komponente. Najprej to naredimo na diskretni časovni vrsti.
@@ -1219,7 +1227,7 @@ Osredotočimo se na del podatkov, ki se ponavlja:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/87128b96de3185942097f00c951a301380f3bd33f8fdb5e52708d8ef55b0e240.png" src="../_images/87128b96de3185942097f00c951a301380f3bd33f8fdb5e52708d8ef55b0e240.png" />
+<img alt="../_images/fb0268b6aabf407da676c831b32c0bcb7dc0658a08d9d7d8a6fd5f3808825c5d.png" src="../_images/fb0268b6aabf407da676c831b32c0bcb7dc0658a08d9d7d8a6fd5f3808825c5d.png" />
 </div>
 </div>
 <p>In identificiramo Fourierove koeficiente:</p>
@@ -1289,13 +1297,13 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/84955243e44e343e13c6ae6486c2610540db49b10041d8d998f3e0ef6fb2d634.png" src="../_images/84955243e44e343e13c6ae6486c2610540db49b10041d8d998f3e0ef6fb2d634.png" />
+<img alt="../_images/8ac7d239e294088ce9632bb10c288d5ade62087d9c9e1221ecf66043e7e234af.png" src="../_images/8ac7d239e294088ce9632bb10c288d5ade62087d9c9e1221ecf66043e7e234af.png" />
 </div>
 </div>
 <p>Opazimo, da identificiran kompleksno harmonski signal relativno dobro opiše izvorni periodični signal. Če bi število harmonskih (<span class="math notranslate nohighlight">\(N\)</span>) komponent povečali, bi se identificirana funkcija izvornim podatkom bolje prilegala, vendar pa bi na mestu nezveznosti še vedno imeli odstopanje. Odstopanje na mestu nezveznosti je znano pod terminom <strong>Gibbsov</strong> fenomen. Resnici na ljubo je večina inženirskih aplikacij zveznih in zato ponavadi Gibbsov fenomen v praksi nima večjega pomena.</p>
 </section>
 <section id="analiticna-obravnava-periodicnih-signalov">
-<h3>Analitična obravnava periodičnih signalov<a class="headerlink" href="#analiticna-obravnava-periodicnih-signalov" title="Permalink to this heading">#</a></h3>
+<h3>Analitična obravnava periodičnih signalov<a class="headerlink" href="#analiticna-obravnava-periodicnih-signalov" title="Link to this heading">#</a></h3>
 <p>Zgoraj smo Fourierovo vrsto izračunali na diskrenih podatkih in smo zato omejeni, koliko harmonskih komponent lahko izračunamo (<code class="docutils literal notranslate"><span class="pre">N&lt;len(t)/2</span></code>; zakaj je <span class="math notranslate nohighlight">\(N\)</span> vezan na dolžino časovne vrste, bomo spoznali pozneje). Tukaj si bomo pogledali obravnavo zveznih sistemov in s pomočjo strojnega izpeljevanja določili Fourierovo vrsto. Kot primer periodičnega signala si bomo izbrali naraščajočo žago, ki bo proporcionalna s časom <code class="docutils literal notranslate"><span class="pre">t</span></code>, perioda bo <code class="docutils literal notranslate"><span class="pre">Tp</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1368,13 +1376,13 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a608a031989bae0c386e17b013bdc9b4f5cdee222278be929ba94fe1241a2a1f.png" src="../_images/a608a031989bae0c386e17b013bdc9b4f5cdee222278be929ba94fe1241a2a1f.png" />
+<img alt="../_images/3c3c7aef14dcd172243a7e8ae1e3e7bbae3645bf0a11a9286db620831bdf1b80.png" src="../_images/3c3c7aef14dcd172243a7e8ae1e3e7bbae3645bf0a11a9286db620831bdf1b80.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="diracova-delta-funkcija">
-<span id="sec-dirac-cas"></span><h2>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Permalink to this heading">#</a></h2>
+<span id="sec-dirac-cas"></span><h2>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Link to this heading">#</a></h2>
 <p>Diracova delta funkcija je prikazana na sliki spodaj: ima vrednost nič na celotnem definicijskem področju, razen pri vrednosti <span class="math notranslate nohighlight">\(t=0\)</span>, ko gre proti neskončnosti; integral Diracove delta funkcije je enak 1.</p>
 <p><img alt="dirac-delta" src="../_images/dirac_delta.svg" /></p>
 <div class="admonition note">
@@ -1428,7 +1436,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7de3bfde89f9307eed95f18a4e0248c5dc61c55975daf54f9dc9d3372a8d2cec.png" src="../_images/7de3bfde89f9307eed95f18a4e0248c5dc61c55975daf54f9dc9d3372a8d2cec.png" />
+<img alt="../_images/fea3fab8ab5ff3a4a5578047187526eb860d004d185200985f19705b947602d3.png" src="../_images/fea3fab8ab5ff3a4a5578047187526eb860d004d185200985f19705b947602d3.png" />
 </div>
 </div>
 <p>Do enotskega impulza pridemo z uteženim seštevanjem:</p>
@@ -1466,7 +1474,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/82a7d82a1dc1ead89eda233c71561071cffc244e299afb23cd9eeeb9511d40ef.png" src="../_images/82a7d82a1dc1ead89eda233c71561071cffc244e299afb23cd9eeeb9511d40ef.png" />
+<img alt="../_images/e8a5fb644620238efca57feed473c43cf9c78f6d22b8cbd1fc4606235ec449b2.png" src="../_images/e8a5fb644620238efca57feed473c43cf9c78f6d22b8cbd1fc4606235ec449b2.png" />
 </div>
 </div>
 <p>in nato integriramo (rezultat je pričakovano enak 1; spremenite <span class="math notranslate nohighlight">\(\varepsilon\)</span> v <code class="docutils literal notranslate"><span class="pre">podatki</span></code> zgoraj!):</p>
@@ -1486,7 +1494,7 @@ u(t)=
 \delta(t)=\lim_{\varepsilon\rightarrow 0}\delta_{\varepsilon}(t)=\frac{\textrm{d}}{\textrm{d}t}u(t).
 \]</div>
 <section id="lastnosti-diracove-delta-funkcije">
-<span id="sec-dirac-lastnosti"></span><h3>Lastnosti Diracove delta funkcije<a class="headerlink" href="#lastnosti-diracove-delta-funkcije" title="Permalink to this heading">#</a></h3>
+<span id="sec-dirac-lastnosti"></span><h3>Lastnosti Diracove delta funkcije<a class="headerlink" href="#lastnosti-diracove-delta-funkcije" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <ol class="arabic simple">
@@ -1499,7 +1507,7 @@ u(t)=
 </div>
 </section>
 <section id="padajoca-zaga-in-njen-odvod">
-<h3>Padajoča žaga in njen odvod<a class="headerlink" href="#padajoca-zaga-in-njen-odvod" title="Permalink to this heading">#</a></h3>
+<h3>Padajoča žaga in njen odvod<a class="headerlink" href="#padajoca-zaga-in-njen-odvod" title="Link to this heading">#</a></h3>
 <p>Predpostavimo periodični signal oblike padajoče žage, kot je prikazana spodaj:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1527,7 +1535,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/93efd786db947b4ed4b562ac962033c490a94a0b35ad6c1c36e1504445644a93.png" src="../_images/93efd786db947b4ed4b562ac962033c490a94a0b35ad6c1c36e1504445644a93.png" />
+<img alt="../_images/cbbb0fdce825b8ff2a1a01995d70e843698814d4934190854d8e45d7aafd6d97.png" src="../_images/cbbb0fdce825b8ff2a1a01995d70e843698814d4934190854d8e45d7aafd6d97.png" />
 </div>
 </div>
 <p>Fourierova vrsta padajočega žagastega signala je definirana kot:</p>
@@ -1564,7 +1572,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 \[
 \dot x(t) = \frac{2}{T_p}\sum_{n=1}^{\infty}\cos\Big(\frac{2\pi\,n\,t}{T_p}\Big).
 \]</div>
-<p>S pomočjo zadnjih dveh enačb, lahko izpeljomo izraz za vlak impulzov:</p>
+<p>S pomočjo zadnjih dveh enačb, lahko izpeljemo izraz za vlak impulzov:</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Periodični <em>vlak impulzov</em> (ang. <em>train of impulses</em>) ima v obliki Fourierovih vrst konstantne koeficiente (<span class="math notranslate nohighlight">\(2/T_p\)</span>):</p>
@@ -1599,13 +1607,13 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/26cadea8b17c545f74a8bb2e2b4336ef503b8268420967011f5ca31743191bf1.png" src="../_images/26cadea8b17c545f74a8bb2e2b4336ef503b8268420967011f5ca31743191bf1.png" />
+<img alt="../_images/9a451f98717dd52263d73b41cb91e72d576348cf3b89f702fd2943e2bdf95c05.png" src="../_images/9a451f98717dd52263d73b41cb91e72d576348cf3b89f702fd2943e2bdf95c05.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="amplitudni-in-fazni-spekter">
-<h2>Amplitudni in fazni spekter<a class="headerlink" href="#amplitudni-in-fazni-spekter" title="Permalink to this heading">#</a></h2>
+<h2>Amplitudni in fazni spekter<a class="headerlink" href="#amplitudni-in-fazni-spekter" title="Link to this heading">#</a></h2>
 <p>Fourierovi koeficienti <span class="math notranslate nohighlight">\(c_n\)</span>, ki jih obravnavamo pri Fourierovih vrstah, predstavljajo amplitudno in fazno informacijo o določeni harmonski komponenti. Poglejmo si primer periodičnega pravokotnega vala: slika spodaj.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1662,7 +1670,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5513a46d848bf97e554392c5058116ebcfe0bb2752ccfd005808698218c2e21b.png" src="../_images/5513a46d848bf97e554392c5058116ebcfe0bb2752ccfd005808698218c2e21b.png" />
+<img alt="../_images/2670e5794a1d7782afc81f6a6c2a419421753cfca4b2757049a7dc76dbc5662a.png" src="../_images/2670e5794a1d7782afc81f6a6c2a419421753cfca4b2757049a7dc76dbc5662a.png" />
 </div>
 </div>
 <p>Pri pripravi podatkov zgoraj smo izračunali Fourierove koeficiente <span class="math notranslate nohighlight">\(c\)</span>:</p>
@@ -1722,14 +1730,14 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e11326c8494622c19ffd44452b77fe52fc61a18fe31de7beda9e049e8e40c18a.png" src="../_images/e11326c8494622c19ffd44452b77fe52fc61a18fe31de7beda9e049e8e40c18a.png" />
+<img alt="../_images/9745ff55c0d6a200c293fb645229b447a94fbf3cc569dd302b0d768dcfb77f32.png" src="../_images/9745ff55c0d6a200c293fb645229b447a94fbf3cc569dd302b0d768dcfb77f32.png" />
 </div>
 </div>
 </section>
 <section id="parsevalov-teorem-in-mocnostni-spekter">
-<span id="sec-parseval"></span><h2>Parsevalov teorem in močnostni spekter<a class="headerlink" href="#parsevalov-teorem-in-mocnostni-spekter" title="Permalink to this heading">#</a></h2>
+<span id="sec-parseval"></span><h2>Parsevalov teorem in močnostni spekter<a class="headerlink" href="#parsevalov-teorem-in-mocnostni-spekter" title="Link to this heading">#</a></h2>
 <section id="parsevalov-teorem">
-<h3>Parsevalov teorem<a class="headerlink" href="#parsevalov-teorem" title="Permalink to this heading">#</a></h3>
+<h3>Parsevalov teorem<a class="headerlink" href="#parsevalov-teorem" title="Link to this heading">#</a></h3>
 <p>Če je <span class="math notranslate nohighlight">\(x(t)\)</span> napetost, merjena čez upor upornosti <span class="math notranslate nohighlight">\(1\Omega\)</span>, potem je trenutna moč enaka <span class="math notranslate nohighlight">\(P(t)=R\,x^2(t)\)</span>, povprečna moč periodičnega signala znotraj ene periode pa je:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1818,7 +1826,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 <p>Po pričakovanjih dobimo enako vrednost (do nivoja numerične napake)!</p>
 </section>
 <section id="mocnostni-spekter">
-<h3>Močnostni spekter<a class="headerlink" href="#mocnostni-spekter" title="Permalink to this heading">#</a></h3>
+<h3>Močnostni spekter<a class="headerlink" href="#mocnostni-spekter" title="Link to this heading">#</a></h3>
 <p>Parsevalov teorem povprečno moč definira kot vsoto kvadratov Fourierovih koeficientov oz. frekvenčnih komponent. Prikaz kvadratov posameznih frekvenčnih komponent imenujemo močnostni spekter. Pri tem je treba poudariti, da močnostni spekter izgubi informacijo o fazi in je vedno definiran z realnimi vrednostmi.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1857,7 +1865,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5f98bf783611fb04194509f8f6e824f5516348488274c0fabd409035a2010875.png" src="../_images/5f98bf783611fb04194509f8f6e824f5516348488274c0fabd409035a2010875.png" />
+<img alt="../_images/8d260b0a1ba51b5ee742741b227db48a8a9d9997d2556cbd19c4c4c0b38d4653.png" src="../_images/8d260b0a1ba51b5ee742741b227db48a8a9d9997d2556cbd19c4c4c0b38d4653.png" />
 </div>
 </div>
 </section>
@@ -1921,6 +1929,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Vsebina
@@ -1982,7 +1991,7 @@ Avtor Janko Slavič
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2006,8 +2015,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

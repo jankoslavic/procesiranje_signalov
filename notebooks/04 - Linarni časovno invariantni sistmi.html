@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="sl" data-content_root="" >
+<html lang="sl" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>4. Linearni časovno invariantni sistemi z eno prostostno stopnjo &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=82705e9b"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/04 - Linarni časovno invariantni sistmi';</script>
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -405,10 +413,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="linearni-casovno-invariantni-sistemi-z-eno-prostostno-stopnjo">
-<span id="sec-lti"></span><h1>4. Linearni časovno invariantni sistemi z eno prostostno stopnjo<a class="headerlink" href="#linearni-casovno-invariantni-sistemi-z-eno-prostostno-stopnjo" title="Permalink to this heading">#</a></h1>
+<span id="sec-lti"></span><h1>4. Linearni časovno invariantni sistemi z eno prostostno stopnjo<a class="headerlink" href="#linearni-casovno-invariantni-sistemi-z-eno-prostostno-stopnjo" title="Link to this heading">#</a></h1>
 <p>Sistema z eno prostostno stopnjo (ang. single degree of freedom system - SDOF, slika spodaj) lahko opišemo z nehomogeno navadno diferencialno enačbo drugega reda:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -422,7 +430,7 @@ x(t) = x_{h}(t) + x_{p}(t),
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(x_{h}\)</span> homogena rešitev in <span class="math notranslate nohighlight">\(x_{p}\)</span> partikularna rešitev.</p>
 <section id="prosti-odziv-homogena-resitev">
-<h2>Prosti odziv (homogena rešitev)<a class="headerlink" href="#prosti-odziv-homogena-resitev" title="Permalink to this heading">#</a></h2>
+<h2>Prosti odziv (homogena rešitev)<a class="headerlink" href="#prosti-odziv-homogena-resitev" title="Link to this heading">#</a></h2>
 <p>Če vzbujevalne sile ni, <span class="math notranslate nohighlight">\(f(t)=0\)</span>, je homogena rešitev pridobljena iz:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -516,7 +524,7 @@ c_{c} = 2\,\sqrt{k\,m}
 \end{split}\]</div>
 <p>Rešitev začetnih pogojev predstavlja t.i. impulzno odzivno funkcijo.</p>
 <section id="impulzna-prenosna-funkcija">
-<span id="sec-impulzna-prenosna-funkcija-d-x-0"></span><h3>Impulzna prenosna funkcija<a class="headerlink" href="#impulzna-prenosna-funkcija" title="Permalink to this heading">#</a></h3>
+<span id="sec-impulzna-prenosna-funkcija-d-x-0"></span><h3>Impulzna prenosna funkcija<a class="headerlink" href="#impulzna-prenosna-funkcija" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Impulzna prenosna funkcija:</p>
@@ -555,13 +563,13 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/30386aac59f5edc33fed5490640cc15cb4103454c8011ff613b7a2cb36526f09.png" src="../_images/30386aac59f5edc33fed5490640cc15cb4103454c8011ff613b7a2cb36526f09.png" />
+<img alt="../_images/1cba4fc80db1ea171fbb10069f827039c8b7cf782bf2919bd48271a502c82817.png" src="../_images/1cba4fc80db1ea171fbb10069f827039c8b7cf782bf2919bd48271a502c82817.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="harmonsko-vzbujanje">
-<h2>Harmonsko vzbujanje<a class="headerlink" href="#harmonsko-vzbujanje" title="Permalink to this heading">#</a></h2>
+<h2>Harmonsko vzbujanje<a class="headerlink" href="#harmonsko-vzbujanje" title="Link to this heading">#</a></h2>
 <p>Nadaljujemo z rešitvijo gibalne enačbe za primer harmonskega vzbujanja:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -636,8 +644,8 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/cb1a16cd1c22f8f79e13fb70fa7c026356e8ee381356920e5914eb5bd37c0ff9.png" src="../_images/cb1a16cd1c22f8f79e13fb70fa7c026356e8ee381356920e5914eb5bd37c0ff9.png" />
-<img alt="../_images/f25152f480b07d2ed6c999a84e189c4362c0e2e3c6b9d4c0d3b70a9d7ba6533d.png" src="../_images/f25152f480b07d2ed6c999a84e189c4362c0e2e3c6b9d4c0d3b70a9d7ba6533d.png" />
+<img alt="../_images/2877a1923839d8faa415ec128ee0456a09b85fb53ea9ac51b46673531cae33c2.png" src="../_images/2877a1923839d8faa415ec128ee0456a09b85fb53ea9ac51b46673531cae33c2.png" />
+<img alt="../_images/8e77825b043f50eab2bd8687208ea9697dafb0c08b1ca3527fdaebcddbe8eb34.png" src="../_images/8e77825b043f50eab2bd8687208ea9697dafb0c08b1ca3527fdaebcddbe8eb34.png" />
 </div>
 </div>
 <p>Partikularna rešitev je torej:</p>
@@ -648,12 +656,12 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 \]</div>
 </section>
 <section id="prehodni-odziv-in-odziv-v-ustaljenem-stanju">
-<h2>Prehodni odziv in odziv v ustaljenem stanju.<a class="headerlink" href="#prehodni-odziv-in-odziv-v-ustaljenem-stanju" title="Permalink to this heading">#</a></h2>
+<h2>Prehodni odziv in odziv v ustaljenem stanju.<a class="headerlink" href="#prehodni-odziv-in-odziv-v-ustaljenem-stanju" title="Link to this heading">#</a></h2>
 <p>Najprej smo določili homogeno rešitev <span class="math notranslate nohighlight">\(x_{h}(t)\)</span>, katera predstavlja prehodni odziv na neko začetno motnjo. Partikularna rešitev <span class="math notranslate nohighlight">\(x_{p}(t)\)</span> predstavlja rešitev na stacionarno harmonsko motnjo. Splošna rešitev je določena z vsoto obeh (slika spodaj).</p>
 <p><img alt="sdof_homo_part_trans_steady" src="../_images/sdof_homo_part_trans_steady.svg" /></p>
 </section>
 <section id="frekvecna-prenosna-funkcija">
-<span id="sec-frf"></span><h2>Frekvečna prenosna funkcija<a class="headerlink" href="#frekvecna-prenosna-funkcija" title="Permalink to this heading">#</a></h2>
+<span id="sec-frf"></span><h2>Frekvečna prenosna funkcija<a class="headerlink" href="#frekvecna-prenosna-funkcija" title="Link to this heading">#</a></h2>
 <p>Najprej se bomo osredotočili zgolj na partikularno rešitev (vendar ne bomo več uporabljali podpisa <span class="math notranslate nohighlight">\(p\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -708,7 +716,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 \]</div>
 <section id="razlicne-oblike-frf">
-<h3>Različne oblike FRF<a class="headerlink" href="#razlicne-oblike-frf" title="Permalink to this heading">#</a></h3>
+<h3>Različne oblike FRF<a class="headerlink" href="#razlicne-oblike-frf" title="Link to this heading">#</a></h3>
 <p>Dimenzijski FRF je smiseln, saj je statični odklon <span class="math notranslate nohighlight">\(X_0\)</span> težko izmeriti in se pogosto merita vzbujevalna sila in odzivni pospešek. Namesto pospeška pogosto merimo še hitrost in pomik. Posledično obstajajo različne oblike frekvenčne prenosne funkcije:</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
@@ -757,7 +765,7 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/06bf0ebd1e9f9735517f260916e18e8729300b665d66d254560b369a729033c2.png" src="../_images/06bf0ebd1e9f9735517f260916e18e8729300b665d66d254560b369a729033c2.png" />
+<img alt="../_images/b1e7f4cc42ed2e6f4bc39f6c8cd934aa1366a9a2ff99e65c4f41831874678967.png" src="../_images/b1e7f4cc42ed2e6f4bc39f6c8cd934aa1366a9a2ff99e65c4f41831874678967.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -767,7 +775,7 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 </section>
 </section>
 <section id="lastnosti-linearnega-casovno-invariantnega-sistema">
-<span id="sec-lti-lastnosti"></span><h2>Lastnosti linearnega časovno invariantnega sistema<a class="headerlink" href="#lastnosti-linearnega-casovno-invariantnega-sistema" title="Permalink to this heading">#</a></h2>
+<span id="sec-lti-lastnosti"></span><h2>Lastnosti linearnega časovno invariantnega sistema<a class="headerlink" href="#lastnosti-linearnega-casovno-invariantnega-sistema" title="Link to this heading">#</a></h2>
 <p>Diferencialna enačba za sistem z eno prostostno stopnjo poveže vzbujanje (input) z odzivom  (output):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -795,9 +803,9 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
 \]</div>
 </section>
 <section id="odziv-na-periodicno-vzbujanje">
-<h2>Odziv na periodično vzbujanje<a class="headerlink" href="#odziv-na-periodicno-vzbujanje" title="Permalink to this heading">#</a></h2>
+<h2>Odziv na periodično vzbujanje<a class="headerlink" href="#odziv-na-periodicno-vzbujanje" title="Link to this heading">#</a></h2>
 <section id="zapis-vzbujanja-s-fourierovimi-vrstami">
-<h3>Zapis vzbujanja s Fourierovimi vrstami<a class="headerlink" href="#zapis-vzbujanja-s-fourierovimi-vrstami" title="Permalink to this heading">#</a></h3>
+<h3>Zapis vzbujanja s Fourierovimi vrstami<a class="headerlink" href="#zapis-vzbujanja-s-fourierovimi-vrstami" title="Link to this heading">#</a></h3>
 <p>Glede <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-exp"><span class="std std-ref">Fourierove vrste v eksponentni (kompleksni) obliki</span></a> lahko periodično vzbujanje <span class="math notranslate nohighlight">\(f(t)\)</span> zapišemo kot:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -820,7 +828,7 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
 </div>
 </section>
 <section id="zapis-odziva-s-pomocjo-fourierovih-vrst">
-<h3>Zapis odziva s pomočjo Fourierovih vrst<a class="headerlink" href="#zapis-odziva-s-pomocjo-fourierovih-vrst" title="Permalink to this heading">#</a></h3>
+<h3>Zapis odziva s pomočjo Fourierovih vrst<a class="headerlink" href="#zapis-odziva-s-pomocjo-fourierovih-vrst" title="Link to this heading">#</a></h3>
 <p>Tukaj nadaljujemo izračunom rešitve za vsako harmonsko komponento vzbujanja posebej (glejte <a class="reference internal" href="#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>)</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -844,7 +852,7 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
 </section>
 </section>
 <section id="posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje">
-<h2>Posplošitev periodičnega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje" title="Permalink to this heading">#</a></h2>
+<h2>Posplošitev periodičnega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-periodicnega-vzbujanja-na-poljubno-vzbujanje" title="Link to this heading">#</a></h2>
 <p>Fourierova transformacija predstavlja posplošitev Fourierovih vrst tudi na neperiodične podatke. Izpeljave, ki smo jih s pomočjo Fourierovih vrst naredili za periodično vzbujanje, lahko tako posplošimo.</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
@@ -866,7 +874,7 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
 </div>
 </section>
 <section id="vzbujanje-z-enotskim-impulzom">
-<h2>Vzbujanje z enotskim impulzom<a class="headerlink" href="#vzbujanje-z-enotskim-impulzom" title="Permalink to this heading">#</a></h2>
+<h2>Vzbujanje z enotskim impulzom<a class="headerlink" href="#vzbujanje-z-enotskim-impulzom" title="Link to this heading">#</a></h2>
 <p>Obravnavajmo sedaj vzbujanje enomasnega sistema z enotskim impulzom <span class="math notranslate nohighlight">\(f_1(t)=\delta(t-\tau)\)</span>, kjer je <span class="math notranslate nohighlight">\(\delta(t)\)</span> Diracova delta funkcija (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-cas"><span class="std std-ref">Diracova delta funkcija</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -886,7 +894,7 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
 <p>Odziv na enotski impulz <strong>vzročnega sistema</strong> (tudi <strong>kavzalni sistem</strong>) je odvisen samo od preteklega (in trenutnega) vzbujanja, ne pa od prihodnjega. Vsi sistemi v tej knjigi veljajo za vzročne.</p>
 </section>
 <section id="posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje">
-<h2>Posplošitev enotskega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje" title="Permalink to this heading">#</a></h2>
+<h2>Posplošitev enotskega vzbujanja na poljubno vzbujanje<a class="headerlink" href="#posplositev-enotskega-vzbujanja-na-poljubno-vzbujanje" title="Link to this heading">#</a></h2>
 <p>Splošno vzbujevalno silo (slika spodaj) lahko vidimo kot superpozicijo enotskih impulzov, pomnoženih z določeno konstanto.</p>
 <p><img alt="general_forcing" src="../_images/general_forcing.svg" /></p>
 <p>Vsak neskončno kratek impulz bi povzročil odziv glede na impulzno prenosno funkcijo <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> pomnožen z amplitudo impulza <span class="math notranslate nohighlight">\(f(\tau)\,\Delta\tau\)</span>. Za linearne sisteme take odzive po principu superpozicioniran seštejemo:</p>
@@ -958,7 +966,7 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/be911261608af06f2eee3ba529da26e3c64c0703c23bdb203d58c40445a7d3d8.png" src="../_images/be911261608af06f2eee3ba529da26e3c64c0703c23bdb203d58c40445a7d3d8.png" />
+<img alt="../_images/6ccdae606604c8541e4c6e2c13fe607736b65c4f36c384a2eee73fa3ae79aac2.png" src="../_images/6ccdae606604c8541e4c6e2c13fe607736b65c4f36c384a2eee73fa3ae79aac2.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -972,7 +980,7 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
 </div>
 </section>
 <section id="povezava-med-frekvencno-in-impulzno-prenosno-funkcijo">
-<span id="sec-povezava-impulz-frf"></span><h2>Povezava med frekvenčno in impulzno prenosno funkcijo<a class="headerlink" href="#povezava-med-frekvencno-in-impulzno-prenosno-funkcijo" title="Permalink to this heading">#</a></h2>
+<span id="sec-povezava-impulz-frf"></span><h2>Povezava med frekvenčno in impulzno prenosno funkcijo<a class="headerlink" href="#povezava-med-frekvencno-in-impulzno-prenosno-funkcijo" title="Link to this heading">#</a></h2>
 <p>V prejšnjih poglavjih sta bili predstavljeni frekvenčna prenosna funkcija <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in impulzna prenosna funkcija <span class="math notranslate nohighlight">\(h(t)\)</span>; prva je definirana v frekvenčni, druga v časovni domeni. V tem poglavju bomo dokazali, da <span class="math notranslate nohighlight">\(h(t)\)</span> in <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> tvorita par Fourierove transformacije.</p>
 <p>Fourierjeva transformacija enotskega impulza <span class="math notranslate nohighlight">\(f_1(t)=\delta(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1065,6 +1073,7 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Vsebina
@@ -1115,7 +1124,7 @@ Avtor Janko Slavič
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1139,8 +1148,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

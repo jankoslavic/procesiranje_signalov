@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="sl" data-content_root="" >
+<html lang="sl" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>7. Osnove naključnih procesov &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=82705e9b"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/07 - Naključni procesi';</script>
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -401,10 +409,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="osnove-nakljucnih-procesov">
-<span id="sec-random"></span><h1>7. Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this heading">#</a></h1>
+<span id="sec-random"></span><h1>7. Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Link to this heading">#</a></h1>
 <p>Dinamične obremenitve pogosto niso deterministične, ampak imajo lahko v celoti ali delno naključne lastnosti. Primer naključnih obremenitev predstavljajo obremenitve zaradi morskih valov ali hrapavosti ceste. Take obremenitve je treba obravnavati kot <strong>naključne procese</strong>. V tem poglavju si bomo pogledali, kako naključno obremenitve obravnavamo ter jih potem uspešno uporabimo pri dinamskih sistemih.</p>
 <p>Naključni podatki se razlikujejo od determinističnih podatkov, saj jih ni mogoče natančno predvideti. Vendar pa lahko s pomočjo analize segmentov naključnih podatkov razberemo določene značilnosti. Na primer, če merimo hrapavost površine enega segmenta, lahko na podlagi tega s določeno verjetnostjo sklepamo o hrapavosti drugih segmentov. Pri opisu naključnih procesov se pogosto uporablja predpostavka o porazdelitvi procesa, kot je na primer normalna porazdelitev.</p>
 <p>Čeprav je mogoče naključni proces analizirati v časovni domeni, obstajajo določene pomanjkljivosti pri uporabi takšnega pristopa. Za ustrezno oceno procesa je potrebno zbrati dovolj veliko število vzorčnih meritev (ali opazovanj) v časovni domeni, ki jih nato analiziramo kot skupino (ansambel ali <em>ensemble</em>). Kot bomo videli kasneje, pa je analiza strukturne dinamike in naključnih procesov v frekvenčni domeni bistveno bolj elegantna.</p>
@@ -416,13 +424,13 @@ document.write(`
 </ul>
 <p>Nekatere vsebine v tem besedilu so povzete po knjigi <span id="id4">Slavič <em>et al.</em> [<a class="reference internal" href="../bibliography.html#id3" title="Janko Slavič, Miha Boltežar, Matjaž Mršnik, Martin Češnik, and Jaka Javh. Vibration Fatigue by Spectral Methods: From Structural Dynamics to Fatigue Damage–Theory and Experiments. Elsevier, 2020.">2020</a>]</span>.</p>
 <section id="kaj-je-nakljucni-proces">
-<h2>Kaj je naključni proces?<a class="headerlink" href="#kaj-je-nakljucni-proces" title="Permalink to this heading">#</a></h2>
+<h2>Kaj je naključni proces?<a class="headerlink" href="#kaj-je-nakljucni-proces" title="Link to this heading">#</a></h2>
 <p>Naključni proces je definiran s kombinacijo <strong>funkcije gostote verjetnosti</strong> (ang. <em>Probability Density Function</em> - PDF) in <strong>spektralno gostoto moči</strong> (ang. <em>Power Spectral Density</em> - PSD).</p>
 <p>Slika spodaj prikazuje ansambel <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> vzorčnih funkcij (opazovanj) <span class="math notranslate nohighlight">\(x_k(t)\)</span>, pri čemer je vsako opazovanje <span class="math notranslate nohighlight">\(k\)</span> sestavljeno iz naključne spremenljivke v času <span class="math notranslate nohighlight">\(t_i\)</span>: <span class="math notranslate nohighlight">\(x_k(t_i)\)</span>. Kot bo obravnavano kasneje, predpostavki o stacionarnosti in ergodičnosti bistveno poenostavijo analizo naključnih podatkov (več pozneje).</p>
 <p><img alt="random_ensemble" src="../_images/random_ensemble.svg" /></p>
 </section>
 <section id="normalna-porazdelitev-gaussov-proces">
-<h2>Normalna porazdelitev (Gaussov proces)<a class="headerlink" href="#normalna-porazdelitev-gaussov-proces" title="Permalink to this heading">#</a></h2>
+<h2>Normalna porazdelitev (Gaussov proces)<a class="headerlink" href="#normalna-porazdelitev-gaussov-proces" title="Link to this heading">#</a></h2>
 <p>Gaussova porazdelitev je pogosto opažena pri različnih fizikalnih pojavih, njeno razširjenost pa pojasnjuje centralni limitni teorem (<a class="reference internal" href="#sec-centralni-limitni-teorem"><span class="std std-ref">Centralni limitni teorem</span></a>).</p>
 <p>Funkcija gostote verjetnosti (PDF) <span class="math notranslate nohighlight">\(p(x)\)</span> za naključni proces <span class="math notranslate nohighlight">\(\left\{x(t_i)\right\}\)</span>  definira ob času <span class="math notranslate nohighlight">\(t\)</span> verjetnost amplitude <span class="math notranslate nohighlight">\(x\)</span>; za Gaussov proces je PDF definirana kot:</p>
 <div class="math notranslate nohighlight">
@@ -474,7 +482,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/73085f8a85445dc8a5d5ca1dab0a44678ddd1956bb182e4172566424865cfa46.png" src="../_images/73085f8a85445dc8a5d5ca1dab0a44678ddd1956bb182e4172566424865cfa46.png" />
+<img alt="../_images/339da1c298e5a8121bb62661d573edb8292d2adf9d390b9dc7970fb9b718a457.png" src="../_images/339da1c298e5a8121bb62661d573edb8292d2adf9d390b9dc7970fb9b718a457.png" />
 </div>
 </div>
 <p>S spodnjim izračunom lahko preverimo, da sta prvi moment in drugi centralni moment za Gaussovo/normalno porazdelitev dejansko <span class="math notranslate nohighlight">\(\mu\)</span>  in <span class="math notranslate nohighlight">\(\sigma^2\)</span>:</p>
@@ -548,12 +556,12 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/4df91a9e7a94fbd4475461a54e3dd2a72256ab99407529187dbd7be854bde6b8.png" src="../_images/4df91a9e7a94fbd4475461a54e3dd2a72256ab99407529187dbd7be854bde6b8.png" />
-<img alt="../_images/21a7c58c8f772e2f8c7ba254dd7ab8f52c3dfdd72b9e9a74ff31ba6ca7cf1d1a.png" src="../_images/21a7c58c8f772e2f8c7ba254dd7ab8f52c3dfdd72b9e9a74ff31ba6ca7cf1d1a.png" />
+<img alt="../_images/529345f676f81033aa418d079d608b564b8109c89bc891e0aeab40911822a691.png" src="../_images/529345f676f81033aa418d079d608b564b8109c89bc891e0aeab40911822a691.png" />
+<img alt="../_images/9f64fec50c5328c19a940dbfce7515fbb96706dc15c5d22280d1521ef78f5f34.png" src="../_images/9f64fec50c5328c19a940dbfce7515fbb96706dc15c5d22280d1521ef78f5f34.png" />
 </div>
 </div>
 <section id="centralni-limitni-teorem">
-<span id="sec-centralni-limitni-teorem"></span><h3>Centralni limitni teorem<a class="headerlink" href="#centralni-limitni-teorem" title="Permalink to this heading">#</a></h3>
+<span id="sec-centralni-limitni-teorem"></span><h3>Centralni limitni teorem<a class="headerlink" href="#centralni-limitni-teorem" title="Link to this heading">#</a></h3>
 <p>Centralni limitni teorem trdi, da ko so neodvisne naključne spremenljivke seštevane med seboj, njihova vsota sledi normalni porazdelitvi (ne glede na porazdelitev prvotnih spremenljivk), pod pogojem, da je velikost vzorca dovolj velika.</p>
 <p>Spodnja koda demonstrira centralni limitni teorem (ang. <em>Central Limit Theorem - CLT</em>) z uporabo enakomerno porazdeljenih naključnih spremenljivk. Koda ustvari <code class="docutils literal notranslate"><span class="pre">N=10</span></code> vzorcev, vsak vzorec z <code class="docutils literal notranslate"><span class="pre">k=5000</span></code> naključnimi vrednostmi, ki sledijo enakomerni porazdelitvi med 0 in 1. Nato izračuna vsoto prvih <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">10</span></code>) in prikaže njihove verjetnostne porazdelitve s histogrami. Za vsak histogram je izračunana tudi teoretična normalna porazdelitev z uporabo povprečja in standardne deviacije vsote <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorcev. Izkaže se, da vsota enakomerno porazdeljenih vzorcev konvergira v normalno porazdelitev.</p>
 <div class="cell tag_hide-input docutils container">
@@ -629,7 +637,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f4579117e882df4f0b3d3907cf4853a9c24f48e7e1152d22ec7a80c8faf842de.png" src="../_images/f4579117e882df4f0b3d3907cf4853a9c24f48e7e1152d22ec7a80c8faf842de.png" />
+<img alt="../_images/55d69226fd109bd967d76f26e00aa9418674ce4d719635e8078819ba04026dd9.png" src="../_images/55d69226fd109bd967d76f26e00aa9418674ce4d719635e8078819ba04026dd9.png" />
 </div>
 </div>
 <p>Centralni limitni teorem tudi pravi, da se porazdelitev vzorca povprečij vsake naključne spremenljivke približuje normalni porazdelitvi, ko velikost vzorca narašča, tudi če je prvotna populacija porazdeljena drugače kot normalno. To drži, če so vzorci neodvisni in enako porazdeljeni ter je velikost vzorca dovolj velika.</p>
@@ -673,14 +681,14 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/bb19f16f6747445989285b4267067fe59707a319f5741d83734433d782773c27.png" src="../_images/bb19f16f6747445989285b4267067fe59707a319f5741d83734433d782773c27.png" />
-<img alt="../_images/79fa0d94cece505494780c5ec1453110b04f690ebee9e015ba2061917c9349d7.png" src="../_images/79fa0d94cece505494780c5ec1453110b04f690ebee9e015ba2061917c9349d7.png" />
+<img alt="../_images/93e89b429061eafbe8131d814054d2dce5a2cfbaf2ec8822cb7a221331110df6.png" src="../_images/93e89b429061eafbe8131d814054d2dce5a2cfbaf2ec8822cb7a221331110df6.png" />
+<img alt="../_images/a78f9e9b6e0669681570967f15f799ce060236751402cbccd51943c1cb588ca7.png" src="../_images/a78f9e9b6e0669681570967f15f799ce060236751402cbccd51943c1cb588ca7.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="momenti-funkcije-gostote-verjetnosti">
-<span id="sec-momenti-funkcije-gostote-verjetnosti"></span><h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Permalink to this heading">#</a></h2>
+<span id="sec-momenti-funkcije-gostote-verjetnosti"></span><h2>Momenti funkcije gostote verjetnosti<a class="headerlink" href="#momenti-funkcije-gostote-verjetnosti" title="Link to this heading">#</a></h2>
 <p>V nadaljevanju si bomo pogledali orodja za popis lastnosti naključnih procesov. Predpostavimo, da imamo dva naključna procesa <span class="math notranslate nohighlight">\(\left\{x_k(t)\right\}\)</span> in <span class="math notranslate nohighlight">\(\left\{y_k(t)\right\}\)</span>, kjer je <span class="math notranslate nohighlight">\(k\)</span> indeks ponovitve procesa ob času <span class="math notranslate nohighlight">\(t\)</span>. Statistično povprečje celotnega ansambla ponovitev procesa (čez indeks <span class="math notranslate nohighlight">\(k\)</span>) označimo kot <span class="math notranslate nohighlight">\(E[]\)</span> (<span class="math notranslate nohighlight">\(E[]\)</span> označuje <em>pričakovano vrednost</em>/posplošeno povprečje, ang. <em>expected value</em>, glejte tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Expected_value">povezavo</a>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -744,7 +752,7 @@ R_{xy}(\tau) &amp;= E[ x_k(t) \, y_k(t+\tau)]. \\
 </div>
 </section>
 <section id="ergodicnost">
-<h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Permalink to this heading">#</a></h2>
+<h2>Ergodičnost<a class="headerlink" href="#ergodicnost" title="Link to this heading">#</a></h2>
 <p>V ergodičnem procesu lahko statistične lastnosti (npr. povprečje ali varianca) namesto čez ansambel opazovanj (<span class="math notranslate nohighlight">\(k\)</span>) določimo na podlagi časovnega razvoja (<span class="math notranslate nohighlight">\(t\)</span>) enega samega opazovanja.</p>
 <p>Zgoraj (<code class="docutils literal notranslate"><span class="pre">ref</span></code>{sec:momenti_funkcije_gostote_verjetnosti}) smo srednjo vrednost določili čez ansambel dogodkov. Ob predpostavki ergodičnosti pa jo lahko določimo na podlagi časovnega povprečja:</p>
 <div class="math notranslate nohighlight">
@@ -795,7 +803,7 @@ C_{xy}(\tau, k) &amp;= C_{xy}(\tau). \\
 <p>V zgornjih izrazih je predpostavljeno, da <span class="math notranslate nohighlight">\(x(t)\)</span> predstavlja periodične podatke s periodo <span class="math notranslate nohighlight">\(T\)</span>. S <span class="math notranslate nohighlight">\(S_{xx}(f)\)</span> smo označili spektralno gostoto moči (ang. <em>power spectral density</em>) in smo se v tej vrstici naslonili na Parsevalov teorem (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-parseval"><span class="std std-ref">Parsevalov teorem in močnostni spekter</span></a>). V naslednjem poglavju si bomo spektralno gostoto moči pogledali bolj podrobno. Opomba: če obravnavamo normalno porazdeljeni proces z ničelno srednjo vrednostjo, je varianca edini manjkajoči parameter, ki tako porazdelitev enolično določi.</p>
 </section>
 <section id="gostota-mocnostnega-spektra-ang-power-spectral-density-psd">
-<span id="sec-psd"></span><h2>Gostota močnostnega spektra (ang. Power Spectral Density, PSD)<a class="headerlink" href="#gostota-mocnostnega-spektra-ang-power-spectral-density-psd" title="Permalink to this heading">#</a></h2>
+<span id="sec-psd"></span><h2>Gostota močnostnega spektra (ang. Power Spectral Density, PSD)<a class="headerlink" href="#gostota-mocnostnega-spektra-ang-power-spectral-density-psd" title="Link to this heading">#</a></h2>
 <p>Gostota močnostnega spektra opisuje frekvenčno gostoto moči naključnega procesa in dopolnjuje funkcijo gostote verjetnosti (<span class="math notranslate nohighlight">\(p(x)\)</span>) pri definiciji določenega naključnega procesa; ista gostota verjetnosti ima lahko v frekvenčni domeni zelo različne gostote močnostnega spektra (PSD). PSD ponavadi pridobimo s Fourierjevo transformacijo, običajno z uporabo algoritma FFT.</p>
 <p>Definicija PSD temelji na avto-korelacijski funkciji <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, ki implicitno vsebuje frekvenčno vsebino <span class="math notranslate nohighlight">\(x(t)\)</span>, hkrati pa izpolnjuje Dirichletov pogoj (vsaj v primeru procesov z ničelno srednjo vrednostjo):</p>
 <div class="math notranslate nohighlight">
@@ -859,7 +867,7 @@ S_{xx}(f),&amp; f=0\\
 \end{split}\]</div>
 <p>Podobno velja za <span class="math notranslate nohighlight">\(G_{xy}\)</span>, za dvostranski križno-spektralno gostoto velja <span class="math notranslate nohighlight">\(S_{xy}=S_{yx}^*\)</span>.</p>
 <section id="zgled-1">
-<h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Permalink to this heading">#</a></h3>
+<h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Link to this heading">#</a></h3>
 <p>Poglejmo si najprej izračun avto-spektralne gostote s pomočjo Fourierove transformacije. Na koncu zgleda preverimo Parsevalov teorem v diskretni obliki:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -923,9 +931,9 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2f04e3cbbad65af08e50b9a4737274d95cb4c49fedbd68829c22c7792e2b06e6.png" src="../_images/2f04e3cbbad65af08e50b9a4737274d95cb4c49fedbd68829c22c7792e2b06e6.png" />
-<img alt="../_images/a8ef492493cfa86fd697b3292b51bfe303d2b4d66937df41819712036bc961e6.png" src="../_images/a8ef492493cfa86fd697b3292b51bfe303d2b4d66937df41819712036bc961e6.png" />
-<img alt="../_images/46b50d363dc552f671f8dba456f8bc9df3072e9c0bdefd2baba22290b2dec809.png" src="../_images/46b50d363dc552f671f8dba456f8bc9df3072e9c0bdefd2baba22290b2dec809.png" />
+<img alt="../_images/6ab1d539e7650cfe4e149ac2e900fa571c6744ff9290dae7b7288118fa149976.png" src="../_images/6ab1d539e7650cfe4e149ac2e900fa571c6744ff9290dae7b7288118fa149976.png" />
+<img alt="../_images/46f8d7c74c1bf3c3bc0e5c8dc22eca149f8b83683fe378ef435497324f30f64e.png" src="../_images/46f8d7c74c1bf3c3bc0e5c8dc22eca149f8b83683fe378ef435497324f30f64e.png" />
+<img alt="../_images/cedece4f68c51266d51e5045743d67fab5d86b877b641b1e43d57bdfbd5945eb.png" src="../_images/cedece4f68c51266d51e5045743d67fab5d86b877b641b1e43d57bdfbd5945eb.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral času:  0.9904720416233659 , integral PSD (Sxx):  0.9906062124167658 , integral PSD (Gxx):  0.990830770222994 , integral PSD (Gxx) Welch:  0.9907922407740426
 </pre></div>
 </div>
@@ -946,7 +954,7 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </section>
 <section id="zgled-2">
-<h3>Zgled 2<a class="headerlink" href="#zgled-2" title="Permalink to this heading">#</a></h3>
+<h3>Zgled 2<a class="headerlink" href="#zgled-2" title="Link to this heading">#</a></h3>
 <p>Poglejmo si sedaj zgled in najprej izračunajmo varianco s pomočjo definicije normalne porazdelitve z ničelno srednjo vrednostjo <span class="math notranslate nohighlight">\(\mu=0\)</span> in standardno deviacijo <span class="math notranslate nohighlight">\(\sigma=3\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1044,7 +1052,7 @@ S_{xx}(f),&amp; f=0\\
 </section>
 </section>
 <section id="spektralni-momenti">
-<h2>Spektralni momenti<a class="headerlink" href="#spektralni-momenti" title="Permalink to this heading">#</a></h2>
+<h2>Spektralni momenti<a class="headerlink" href="#spektralni-momenti" title="Link to this heading">#</a></h2>
 <p>Zaradi definicije PSD sledi, da je površina pod krivuljo enaka pričakovani kvadratni vrednosti <span class="math notranslate nohighlight">\(E[x^2]\)</span> procesa (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-parseval"><span class="std std-ref">Parsevalov teorem in močnostni spekter</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1067,7 +1075,7 @@ m_i = \int_{-\infty}^{+\infty} \omega^i \, S_{xx}(\omega) \textrm{d} \omega=\int
 m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 \]</div>
 <section id="zgled">
-<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this heading">#</a></h3>
+<h3>Zgled<a class="headerlink" href="#zgled" title="Link to this heading">#</a></h3>
 <p>Poglejmo si ponovno zgled; najprej definirajmo harmonski odziv z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>. Varianca pomika je pričakovana: <span class="math notranslate nohighlight">\((A/\sqrt{2})^2=0.5\,A\)</span>, varianca hitrosti:  hitrosti pa <span class="math notranslate nohighlight">\(((2\pi\,f_0\,A)/\sqrt{2})^2=2\pi^2\,f_0^2\,A\)</span> in varianca pospeška <span class="math notranslate nohighlight">\((((2\pi\,f_0)^2\,A)/\sqrt{2})^2=2^3(\pi\,f_0)^4\,A\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1101,7 +1109,7 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5000000000000002
 </pre></div>
 </div>
-<img alt="../_images/56dd5cd84ab0b5d0cc63398fabd23289c1be1dd7b701912fe5f04bc3435a13eb.png" src="../_images/56dd5cd84ab0b5d0cc63398fabd23289c1be1dd7b701912fe5f04bc3435a13eb.png" />
+<img alt="../_images/5c69fa33aae20d63044da22243b3c8e6b4aff4b7fa6325183108d546c7c55f02.png" src="../_images/5c69fa33aae20d63044da22243b3c8e6b4aff4b7fa6325183108d546c7c55f02.png" />
 </div>
 </div>
 <p>Definirajmo funkcijo spektralnih momentov:</p>
@@ -1258,6 +1266,7 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Vsebina
@@ -1304,7 +1313,7 @@ Avtor Janko Slavič
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1328,8 +1337,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

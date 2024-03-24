@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="sl" data-content_root="" >
+<html lang="sl" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>8. Odziv linearnih sistemov na naključno vzbujanje &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
   
@@ -19,50 +18,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/translations.js?v=82705e9b"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/08 - Odziv linearnih sistemov na naključno vzbujanje';</script>
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -161,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -406,10 +414,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="odziv-linearnih-sistemov-na-nakljucno-vzbujanje">
-<span id="sec-lti-random"></span><h1>8. Odziv linearnih sistemov na naključno vzbujanje<a class="headerlink" href="#odziv-linearnih-sistemov-na-nakljucno-vzbujanje" title="Permalink to this heading">#</a></h1>
+<span id="sec-lti-random"></span><h1>8. Odziv linearnih sistemov na naključno vzbujanje<a class="headerlink" href="#odziv-linearnih-sistemov-na-nakljucno-vzbujanje" title="Link to this heading">#</a></h1>
 <p>Vrnimo se k linearnemu sistemu z eno prostostno stopnjo (glejte lastnosti: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-lti-lastnosti"><span class="std std-ref">Lastnosti linearnega časovno invariantnega sistema</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -423,7 +431,7 @@ document.write(`
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(h(t)\)</span> impulzna prenosna funkcija, ki definira linearni sistem.</p>
 <section id="srednja-vrednost-odziva">
-<h2>Srednja vrednost odziva<a class="headerlink" href="#srednja-vrednost-odziva" title="Permalink to this heading">#</a></h2>
+<h2>Srednja vrednost odziva<a class="headerlink" href="#srednja-vrednost-odziva" title="Link to this heading">#</a></h2>
 <p>V nadaljevanju bomo predpostavili, da je vzbujanje <span class="math notranslate nohighlight">\(f(t)\)</span> naključno in izračunajmo najprej pričakovano srednjo vrednost odziva. Uporabiti moramo operator pričakovanja <span class="math notranslate nohighlight">\(E[]\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -451,7 +459,7 @@ document.write(`
 </div>
 </section>
 <section id="avtokorelacija">
-<h2>Avtokorelacija<a class="headerlink" href="#avtokorelacija" title="Permalink to this heading">#</a></h2>
+<h2>Avtokorelacija<a class="headerlink" href="#avtokorelacija" title="Link to this heading">#</a></h2>
 <p>Tukaj želimo odgovoriti na vprašanje kako je avtokorelacija vzbujanja <span class="math notranslate nohighlight">\(R_{ff}(\tau)\)</span> povezana z avtokorelacijo odziva <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, poglejmo detajle:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -496,7 +504,7 @@ S_{xx} = H^*(f)\,H(f)\,S_{ff}(f),
 </div>
 </section>
 <section id="krizna-korelacija">
-<h2>Križna korelacija<a class="headerlink" href="#krizna-korelacija" title="Permalink to this heading">#</a></h2>
+<h2>Križna korelacija<a class="headerlink" href="#krizna-korelacija" title="Link to this heading">#</a></h2>
 <p>Poglejmo si sedaj še križno korelacijo <span class="math notranslate nohighlight">\(R_{fx}(\tau)\)</span> vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span> in odziva <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -529,7 +537,7 @@ S_{fx} = H(f)\,S_{ff}(f).
 </div>
 <p>Za razliko od avto-spektralne gostoste križno-spektralna gostota ohranja fazno informacijo!</p>
 <section id="zgled">
-<h3>Zgled<a class="headerlink" href="#zgled" title="Permalink to this heading">#</a></h3>
+<h3>Zgled<a class="headerlink" href="#zgled" title="Link to this heading">#</a></h3>
 <p>S pomočjo zgleda spodaj si bomo pogledali avto- in križno- spektralno gostoto na naključno generiranih, normalno porazdeljenih, podatkih.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -589,15 +597,15 @@ S_{fx} = H(f)\,S_{ff}(f).
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2a77f5a2766c2528ce3872665a2fe6a422541bce76bc0f49c2d98a6bd197bc8d.png" src="../_images/2a77f5a2766c2528ce3872665a2fe6a422541bce76bc0f49c2d98a6bd197bc8d.png" />
-<img alt="../_images/0365b24f98b3131ef018d3ffbf557164d792853520d30197f55edd14a7c32c37.png" src="../_images/0365b24f98b3131ef018d3ffbf557164d792853520d30197f55edd14a7c32c37.png" />
+<img alt="../_images/0a920763b4f430360acaf6c0439365da074180b06c283d507d7fe07b8557c9fa.png" src="../_images/0a920763b4f430360acaf6c0439365da074180b06c283d507d7fe07b8557c9fa.png" />
+<img alt="../_images/0d925ae46ef2a7b19ffdfc3fe46f65fb7e87c1164102183372ae467dacf063f4.png" src="../_images/0d925ae46ef2a7b19ffdfc3fe46f65fb7e87c1164102183372ae467dacf063f4.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="zgled-2">
-<h1>Zgled 2<a class="headerlink" href="#zgled-2" title="Permalink to this heading">#</a></h1>
+<h1>Zgled 2<a class="headerlink" href="#zgled-2" title="Link to this heading">#</a></h1>
 <p>Poglejmo si še, kako spektralno gostoto povprečimo in s tem zmanjšamo frekvenčno natančnost in amplitudni raztros.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -652,12 +660,12 @@ S_{fx} = H(f)\,S_{ff}(f).
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8a6c2ea2595fd5a8d812e04aab15d44df0af973825e415dc463b30c4312f4b66.png" src="../_images/8a6c2ea2595fd5a8d812e04aab15d44df0af973825e415dc463b30c4312f4b66.png" />
-<img alt="../_images/b09154161f8a2b22ba1a42c3a97807668e08defbb44f2b91373135f775896887.png" src="../_images/b09154161f8a2b22ba1a42c3a97807668e08defbb44f2b91373135f775896887.png" />
+<img alt="../_images/a65c62b044bbd6fe5ebb33ce6f90be1b91cb9bac372a8d5dd90b2b0431fb167c.png" src="../_images/a65c62b044bbd6fe5ebb33ce6f90be1b91cb9bac372a8d5dd90b2b0431fb167c.png" />
+<img alt="../_images/fa352ebd169e80eb8ee4c449c9a797e19aee4d98b9003b2a54d33b773be4ee22.png" src="../_images/fa352ebd169e80eb8ee4c449c9a797e19aee4d98b9003b2a54d33b773be4ee22.png" />
 </div>
 </div>
 <section id="koherenca">
-<h2>Koherenca<a class="headerlink" href="#koherenca" title="Permalink to this heading">#</a></h2>
+<h2>Koherenca<a class="headerlink" href="#koherenca" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Koherenca je definirana kot:</p>
@@ -681,7 +689,7 @@ S_{fx} = H(f)\,S_{ff}(f).
 <p>Če je koherenca 0, to pomeni, da vzbujanje in odziv nista povezana, če je koherenca 1, pa to pomeni, da sta vzbujanje in odziv linearno odvisna. Odstopanje od 1 se izmeri tudi takrat, ko imamo v meritvi šum, obravnavamo nelinearen sistem ali pa je odziv posledica (tudi) drugih vzbujanj in ne samo <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
 </section>
 <section id="cenilke-frekvencne-prenosne-funkcije">
-<span id="sec-cenilke-frf"></span><h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Permalink to this heading">#</a></h2>
+<span id="sec-cenilke-frf"></span><h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Link to this heading">#</a></h2>
 <p>Različne oblike frekvenčne prenosne funkcije (FRF) smo teoretično spoznali v poglavju: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>. Tukaj si bomo pogledali kako FRF ocenimo na podlagi izmerjenih podatkov, pri tem pa se bomo omejili na sisteme z enim (sočasnim) vzbujanjem in enim (sočasnim) odzivom (to so tako imenovani SISO sistemi: ang. <em>single input, single otput</em>).</p>
 <p>Linearni, časovno invariantni SISO sistem je mogoče predstaviti z blokovnim diagramom na sliki spodaj, kjer je <span class="math notranslate nohighlight">\(f(t)\)</span> vzbujevalna sila, <span class="math notranslate nohighlight">\(h(t)\)</span> je impulzna prenosna funkcija in <span class="math notranslate nohighlight">\(x(t)\)</span> je odziv; <span class="math notranslate nohighlight">\(F(\omega)\)</span>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in <span class="math notranslate nohighlight">\(X(\omega)\)</span> so njihovi pari v frekvenčni domeni.</p>
 <p><img alt="random_ensemble" src="../_images/FRF_nonoise.svg" /></p>
@@ -717,7 +725,7 @@ S_{uv}(\omega)&amp;=\alpha(\omega)\,S_{uu}(\omega).
 \end{split}\]</div>
 <p>V nadaljevanju bomo poskušali iz meritev s šumom (<span class="math notranslate nohighlight">\(f(t)=u(t)+m(t)\)</span> in <span class="math notranslate nohighlight">\(x(t)=v(t)+n(t)\)</span>) oceniti dejansko frekvenčno prenosno funkcijo.</p>
 <section id="cenilka-hat-h-1">
-<h3>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_1\)</span><a class="headerlink" href="#cenilka-hat-h-1" title="Permalink to this heading">#</a></h3>
+<h3>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_1\)</span><a class="headerlink" href="#cenilka-hat-h-1" title="Link to this heading">#</a></h3>
 <p>Pri merjenju vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span> in odziva <span class="math notranslate nohighlight">\(x(t)\)</span> slednji običajno pokriva višji dinamični razpon (v meritvi imamo relativno velike vrednosti in tudi relativno majhne) in je zato bolj občutljiv na merilni šum. Zaradi tega predpostavimo, da vhodnega šuma ni (<span class="math notranslate nohighlight">\(m(t)=0\)</span>), posledično velja:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -767,7 +775,7 @@ S_{fx}(\omega) &amp;= S_{uv}(\omega).
 <p>Sledi, da cenilka <span class="math notranslate nohighlight">\(\hat{H}_1\)</span> zaradi šuma na vhodu podceni pravi FRF <span class="math notranslate nohighlight">\(\alpha=S_{uv}/S_{uu}\)</span>.</p>
 </section>
 <section id="cenilka-hat-h-2">
-<h3>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_2\)</span><a class="headerlink" href="#cenilka-hat-h-2" title="Permalink to this heading">#</a></h3>
+<h3>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_2\)</span><a class="headerlink" href="#cenilka-hat-h-2" title="Link to this heading">#</a></h3>
 <p>Tukaj raziskujemo oceno FRF, ko šuma meritve na strani vzbujanja ni mogoče zanemariti, vendar ta ni koreliran s sistemom. Nadalje predpostavimo, da je mogoče zanemariti šum na strani odziva (<span class="math notranslate nohighlight">\(n(t)=0\)</span>), posledično velja:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -824,7 +832,7 @@ S_{xx}&amp;=S_{vv}\\
 <p>V primeru šuma na odzivu cenilka <span class="math notranslate nohighlight">\(\hat{H}_2\)</span> torej preceni pravi FRF <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
 </section>
 <section id="zgled-1">
-<h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Permalink to this heading">#</a></h3>
+<h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Link to this heading">#</a></h3>
 <p>V zgledu spodaj si lahko pogledamo uporabo cenilk <span class="math notranslate nohighlight">\(H_1\)</span> in <span class="math notranslate nohighlight">\(H_2\)</span> za oceno frekvenčne prenosne funkcije.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -911,13 +919,13 @@ S_{xx}&amp;=S_{vv}\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f06811a185b665fc5f6a88719b2c4ee664d7a012fa328430c5a0694f6698744b.png" src="../_images/f06811a185b665fc5f6a88719b2c4ee664d7a012fa328430c5a0694f6698744b.png" />
-<img alt="../_images/7653bf0df103811715b447621559240607b908d906268454e973b9a9094a95df.png" src="../_images/7653bf0df103811715b447621559240607b908d906268454e973b9a9094a95df.png" />
+<img alt="../_images/17b3f77860c51e4d78cb3560240059b9002377e281adc6d8ca67d13de60469f0.png" src="../_images/17b3f77860c51e4d78cb3560240059b9002377e281adc6d8ca67d13de60469f0.png" />
+<img alt="../_images/07789769bc4a072453829f5733d763377c989a5111ac849c9cbef418d5dbc349.png" src="../_images/07789769bc4a072453829f5733d763377c989a5111ac849c9cbef418d5dbc349.png" />
 </div>
 </div>
 </section>
 <section id="id1">
-<h3>Zgled 2<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Zgled 2<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Nadaljujemo z zgledom in dodamo povprečenje po odsekih; s tem zmanjšamo frekvenčno natančnost in tudi raztros cenilke frekvenčne prenosne funkcije.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -986,8 +994,8 @@ S_{xx}&amp;=S_{vv}\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/cafbb306b57edada166edf9251dfefdff7045b6f72bf9761c6ff7f9ebcbd6fd2.png" src="../_images/cafbb306b57edada166edf9251dfefdff7045b6f72bf9761c6ff7f9ebcbd6fd2.png" />
-<img alt="../_images/328e9aaa102d387f2f0d95489d40a3ee2326149504db84f51d457d1f37063642.png" src="../_images/328e9aaa102d387f2f0d95489d40a3ee2326149504db84f51d457d1f37063642.png" />
+<img alt="../_images/1d6dd70af50262cd7d2794c515c833eb09f0a899627d9465e8de0912b768c9db.png" src="../_images/1d6dd70af50262cd7d2794c515c833eb09f0a899627d9465e8de0912b768c9db.png" />
+<img alt="../_images/8bea353c03d9ea82544b58775bd1fdfdaa62799fdc37620520638d2a214f8794.png" src="../_images/8bea353c03d9ea82544b58775bd1fdfdaa62799fdc37620520638d2a214f8794.png" />
 </div>
 </div>
 </section>
@@ -1051,6 +1059,7 @@ S_{xx}&amp;=S_{vv}\\
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Vsebina
@@ -1102,7 +1111,7 @@ Avtor Janko Slavič
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1126,8 +1135,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
