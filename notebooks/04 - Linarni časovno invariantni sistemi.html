@@ -564,22 +564,11 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
 &lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9592\1017281656.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-  t, ω_0, ω_d, d_x_0, δ= sym.symbols(&#39;t, \omega_0, \omega_d, d_x_0, \delta&#39;, real=True)
-C:\Users\janko\AppData\Local\Temp\ipykernel_9592\1017281656.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_11792\1017281656.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
   t, ω_0, ω_d, d_x_0, δ= sym.symbols(&#39;t, \omega_0, \omega_d, d_x_0, \delta&#39;, real=True)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, \omega_0, \omega_d, d_x_0, \delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
-</pre></div>
-</div>
+<img alt="../_images/ed7fb0627cdaf5cb90547791ad564fcb4af88cdba473e783d59a254b0478cc01.png" src="../_images/ed7fb0627cdaf5cb90547791ad564fcb4af88cdba473e783d59a254b0478cc01.png" />
 </div>
 </div>
 </section>
@@ -660,8 +649,22 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_9592\1017281656.py:2: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2c19f00986858de6e44f4934fd37830aa1dfa7eb05e4ec19d1d88249e5f7269c.png" src="../_images/2c19f00986858de6e44f4934fd37830aa1dfa7eb05e4ec19d1d88249e5f7269c.png" />
-<img alt="../_images/d4d4ae805767c7f834be8e6e97a257406a6bb389990fc4324f1696f0df418be9.png" src="../_images/d4d4ae805767c7f834be8e6e97a257406a6bb389990fc4324f1696f0df418be9.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_11792\4226531901.py:2: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+  r, δ, k= sym.symbols(&#39;r, \delta, k&#39;, real=True)
+C:\Users\janko\AppData\Local\Temp\ipykernel_11792\4226531901.py:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+  p1 = sym.plot(sym.Abs(α.subs(podatki)), (r,0,3), line_color=&#39;C0&#39;, xlabel=&#39;$r$ [\cdot]&#39;, ylabel=&#39;$|\\alpha(r)|$&#39;,
+C:\Users\janko\AppData\Local\Temp\ipykernel_11792\4226531901.py:18: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+  p1 = sym.plot(sym.arg(α.subs(podatki)), (r,0,3), line_color=&#39;C0&#39;, xlabel=&#39;$r$ [\cdot]&#39;, ylabel=&#39;$\\angle\\alpha(\\omega)$&#39;,
+</pre></div>
+</div>
+<img alt="../_images/2e3e51d9e13cb4ba5f898b9e1188bed57757221428399da9c9572ba241ac9ce4.png" src="../_images/2e3e51d9e13cb4ba5f898b9e1188bed57757221428399da9c9572ba241ac9ce4.png" />
+<img alt="../_images/40a066ae997dbe2694e6d9a7a2a71fda4ad2b5473c435b5759afe5b1d79d1c2d.png" src="../_images/40a066ae997dbe2694e6d9a7a2a71fda4ad2b5473c435b5759afe5b1d79d1c2d.png" />
 </div>
 </div>
 <p>Partikularna rešitev je torej:</p>
@@ -781,7 +784,17 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/249398282e013b7f5d6d1d7a308ceae12f535128fa792f798af6bb2adc5d0007.png" src="../_images/249398282e013b7f5d6d1d7a308ceae12f535128fa792f798af6bb2adc5d0007.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_11792\2387916434.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  ω, m, c, k= sym.symbols(&#39;\omega, m, c, k&#39;, real=True)
+C:\Users\janko\AppData\Local\Temp\ipykernel_11792\2387916434.py:8: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  p1 = sym.plot(sym.Abs(α.subs(podatki)), (ω,0.01,100), line_color=&#39;C0&#39;, xlabel=&#39;$\omega$ [rad/s]&#39;, ylabel=&#39;&#39;,
+</pre></div>
+</div>
+<img alt="../_images/cba9112832f0014f30575106b64c74f9f6983265fae14956ca4d69e492da293e.png" src="../_images/cba9112832f0014f30575106b64c74f9f6983265fae14956ca4d69e492da293e.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -982,7 +995,13 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a5e5f735d27d7a9bb80bdf25e4d4e27a1ccb25cc163f6c91d03c0619124aa25b.png" src="../_images/a5e5f735d27d7a9bb80bdf25e4d4e27a1ccb25cc163f6c91d03c0619124aa25b.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_11792\2698810050.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  t, ω_0, ω_d, d_x_0, δ, A, B, τ = sym.symbols(&#39;t, \omega_0, \omega_d, d_x_0, \delta, A, B, \\tau&#39;, real=True)
+</pre></div>
+</div>
+<img alt="../_images/d941f99042cff4852f295555b79b450b11bc8a46c5100189d08627d8e67787be.png" src="../_images/d941f99042cff4852f295555b79b450b11bc8a46c5100189d08627d8e67787be.png" />
 </div>
 </div>
 <div class="admonition note">
