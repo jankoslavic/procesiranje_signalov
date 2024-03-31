@@ -554,16 +554,8 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">t</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, fr, Tp, A&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
-</pre></div>
-</div>
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \frac{i}{2}\]</div>
 </div>
 </div>
 <p>Do istega rezultata pridemo prek DFT, vendar zadnja časovna točka eksplicitno ni vključena:</p>
@@ -694,8 +686,14 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b9d2b0935acbaba0211f0aadc3fdb48a4803909f77774a319e6e023207cf1c08.png" src="../_images/b9d2b0935acbaba0211f0aadc3fdb48a4803909f77774a319e6e023207cf1c08.png" />
-<img alt="../_images/816d10a3127db4c926a7a606765e9cf7233ac60dd617159ff2b9ef5c523120b7.png" src="../_images/816d10a3127db4c926a7a606765e9cf7233ac60dd617159ff2b9ef5c523120b7.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_13076\2095065885.py:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  plt.xlabel(f&#39;Frekvenca [Hz], $\Delta f=${1/(N*dt):3.2f}&#39;)
+</pre></div>
+</div>
+<img alt="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" src="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" />
+<img alt="../_images/a139030258987ddfdf9200080720c2490718451f14b04558028757ee61f17636.png" src="../_images/a139030258987ddfdf9200080720c2490718451f14b04558028757ee61f17636.png" />
 </div>
 </div>
 </section>
@@ -792,14 +790,20 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b9d2b0935acbaba0211f0aadc3fdb48a4803909f77774a319e6e023207cf1c08.png" src="../_images/b9d2b0935acbaba0211f0aadc3fdb48a4803909f77774a319e6e023207cf1c08.png" />
-<img alt="../_images/ee6af66f60b345ab72dc9cc7fdf35198ae42db34d849e22543ec7a9d2f334214.png" src="../_images/ee6af66f60b345ab72dc9cc7fdf35198ae42db34d849e22543ec7a9d2f334214.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_13076\703110275.py:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  plt.xlabel(f&#39;Frekvenca [Hz], $\Delta f=${1/(N*dt):3.2f}&#39;)
+</pre></div>
+</div>
+<img alt="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" src="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" />
+<img alt="../_images/70c3353eedd1a5fdb5198174b84ba6b55ae0ae0cbe643ba88972c2db866c8732.png" src="../_images/70c3353eedd1a5fdb5198174b84ba6b55ae0ae0cbe643ba88972c2db866c8732.png" />
 </div>
 </div>
 </section>
 <section id="konvolucija-periodicnih-podatkov">
 <span id="sec-krozna-konvolucija"></span><h2>Konvolucija periodičnih podatkov<a class="headerlink" href="#konvolucija-periodicnih-podatkov" title="Link to this heading">#</a></h2>
-<p>Konvolucijo funkcij v primeru Fourierove integralske transformacije smo obravnavali v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-konvolucija-funkcij"><span class="std std-ref">Konvolucija funkcij</span></a>, tukaj si bomo pogledali posebnosti pri obravnavi dveh periodičnih vrst (glejte: <span class="xref std std-ref">DFT_periodicno</span> ) enake dolžine: <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span>:</p>
+<p>Konvolucijo funkcij v primeru Fourierove integralske transformacije smo obravnavali v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-konvolucija-funkcij"><span class="std std-ref">Konvolucija funkcij</span></a>, tukaj si bomo pogledali posebnosti pri obravnavi dveh periodičnih vrst (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-identifikacija-harmonskih-signalov"><span class="std std-ref">Identifikacija harmonskih signalov, ki sestavljajo periodični signal</span></a> ) enake dolžine: <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 X_k = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
