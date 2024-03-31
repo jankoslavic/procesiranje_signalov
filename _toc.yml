@@ -7,10 +7,10 @@ chapters:
 # - file: markdown
 - file: notebooks/01 - Uvod
 - file: notebooks/02 - Fourierove vrste
-- file: notebooks/03 - Fourierova integralska transformacija.ipynb
-- file: notebooks/04 - Linarni časovno invariantni sistemi.ipynb
+- file: notebooks/03 - Fourierova integralska transformacija
+- file: notebooks/04 - Linarni časovno invariantni sistemi
 - file: notebooks/05 - Časovno vzorčenje in frekvenčno prekrivanje
-- file: notebooks/06 - Diskretna Fourierova transformacija.ipynb
+- file: notebooks/06 - Diskretna Fourierova transformacija
 - file: notebooks/07 - Naključni procesi
 - file: notebooks/08 - Odziv linearnih sistemov na naključno vzbujanje
 - file: bibliography
