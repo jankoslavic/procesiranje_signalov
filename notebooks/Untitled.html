@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
+    <title>&lt;no title&gt; &#8212; Procesiranje signalov s Pythonom</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -153,8 +153,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
   
   
 </a></div>
@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod.html">1. Uvod v procesiranje signalov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20Fourierove%20vrste.html">2. Fourierove vrste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">3. Fourierova integralska transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">5. Kvantizacija podatkov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
@@ -406,6 +407,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_4644\3211874924.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+  η = sym.symbols(&#39;\eta&#39;, real=True, positive=True)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -430,8 +439,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e68620aa6d46a25729c9fa45102697239f7e5841aac565281ef5dd8bf471cb05.png" src="../_images/e68620aa6d46a25729c9fa45102697239f7e5841aac565281ef5dd8bf471cb05.png" />
-<img alt="../_images/fc2775294ed2ee51941389898e1191be467b560b2baa4e7f9535e26ae98a06bb.png" src="../_images/fc2775294ed2ee51941389898e1191be467b560b2baa4e7f9535e26ae98a06bb.png" />
+<img alt="../_images/9504b45303aed05a8ffc21eb151eb4b1a9eb997d7470314b6e1c0aab20e25b2c.png" src="../_images/9504b45303aed05a8ffc21eb151eb4b1a9eb997d7470314b6e1c0aab20e25b2c.png" />
+<img alt="../_images/ce519f6a598c3e8b6e7d702b43702eb3617d86da9d626374a82c91a34daa745a.png" src="../_images/ce519f6a598c3e8b6e7d702b43702eb3617d86da9d626374a82c91a34daa745a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -454,8 +463,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b398dceeac7e07bc60d048f857eb2aa924081a84eae4f01c465188f46a6fafbc.png" src="../_images/b398dceeac7e07bc60d048f857eb2aa924081a84eae4f01c465188f46a6fafbc.png" />
-<img alt="../_images/c4676c0a9b81fa48c92707dc804d448027abc691a9e1ea7691580674cbcdcfee.png" src="../_images/c4676c0a9b81fa48c92707dc804d448027abc691a9e1ea7691580674cbcdcfee.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_4644\664348604.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+  η = sym.symbols(&#39;\eta&#39;, real=True, positive=True)
+</pre></div>
+</div>
+<img alt="../_images/78855599f9ffcfb4994f6b46ff94cc6a3fe578909e5449c1d84fbdf61c2ba5f2.png" src="../_images/78855599f9ffcfb4994f6b46ff94cc6a3fe578909e5449c1d84fbdf61c2ba5f2.png" />
+<img alt="../_images/462a44df8ceafc063c58e04c7a8a074e5b0580f1161f40b0643301325aecf74a.png" src="../_images/462a44df8ceafc063c58e04c7a8a074e5b0580f1161f40b0643301325aecf74a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -502,9 +517,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c94513b7ea274ff4cda4f953d2da2c896fce48386b70f346b7eeb4ced3b2f095.png" src="../_images/c94513b7ea274ff4cda4f953d2da2c896fce48386b70f346b7eeb4ced3b2f095.png" />
-<img alt="../_images/8bee2d801475bc9c7c458f1432754cb95409a21e1debe3b3686c556d58ebabde.png" src="../_images/8bee2d801475bc9c7c458f1432754cb95409a21e1debe3b3686c556d58ebabde.png" />
-<img alt="../_images/34e6ce06f6b6fa5d2a2c91bd93f67edee111d1d43f7dbed88b200cb305514146.png" src="../_images/34e6ce06f6b6fa5d2a2c91bd93f67edee111d1d43f7dbed88b200cb305514146.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_4644\2331919166.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+  η = sym.symbols(&#39;\eta&#39;, real=True, positive=True)
+</pre></div>
+</div>
+<img alt="../_images/26afb94ad686dcc4bad329476b7f1cb0ef76510969673bfffd8c84c8f12855d3.png" src="../_images/26afb94ad686dcc4bad329476b7f1cb0ef76510969673bfffd8c84c8f12855d3.png" />
+<img alt="../_images/85960368398c878758b36777741521cd9f83591b3c7b5e0734464dd10095a4af.png" src="../_images/85960368398c878758b36777741521cd9f83591b3c7b5e0734464dd10095a4af.png" />
+<img alt="../_images/fad11fc8741834edaebb810418cc20a7931d6ba841889ba1504e6a72fd9ad6bc.png" src="../_images/fad11fc8741834edaebb810418cc20a7931d6ba841889ba1504e6a72fd9ad6bc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -526,6 +547,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_4644\576789627.py:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+  δ = sym.symbols(&#39;\delta&#39;, real=True, positive=True)
+</pre></div>
+</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \frac{2 \delta \left(\delta^{2} + 4 \pi^{2} f^{2} + 4 \pi^{2} f_{0}^{2}\right)}{\delta^{4} + 8 \pi^{2} \delta^{2} f^{2} + 8 \pi^{2} \delta^{2} f_{0}^{2} + 16 \pi^{4} f^{4} - 32 \pi^{4} f^{2} f_{0}^{2} + 16 \pi^{4} f_{0}^{4}}\]</div>
 </div>
@@ -537,8 +564,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5a7f22746b87fa0f18af62a4e51de9adb28020d4a7bdbbf16d77144a6c652e71.png" src="../_images/5a7f22746b87fa0f18af62a4e51de9adb28020d4a7bdbbf16d77144a6c652e71.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x2649b264110&gt;
+<img alt="../_images/315f7dec9b27589d99729977e7d5c1cb98a179a9457eb62bcf7609421ccec946.png" src="../_images/315f7dec9b27589d99729977e7d5c1cb98a179a9457eb62bcf7609421ccec946.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x196730b1f70&gt;
 </pre></div>
 </div>
 </div>
@@ -596,8 +623,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e4066ea2faed125d29ab4c06c9490b518c285f7c57a5ee5137b648f0cc1a149b.png" src="../_images/e4066ea2faed125d29ab4c06c9490b518c285f7c57a5ee5137b648f0cc1a149b.png" />
-<img alt="../_images/cc9b318f416c178b1f05724abb2ed8d58adab86ef770e2acd404e38220b0d0af.png" src="../_images/cc9b318f416c178b1f05724abb2ed8d58adab86ef770e2acd404e38220b0d0af.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_4644\1256231345.py:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  label=f&#39;$a={a.subs(podatki)}$&#39;+&#39;, Max=$\sqrt{\pi/a}=$&#39;+f&#39;{sym.sqrt(sym.pi/a).evalf(subs=podatki):3.2f}&#39;, show=False,
+</pre></div>
+</div>
+<img alt="../_images/527efb413de2ee30221fa1ac84d412c84bf404586b176f7c0806c1c219639446.png" src="../_images/527efb413de2ee30221fa1ac84d412c84bf404586b176f7c0806c1c219639446.png" />
+<img alt="../_images/b057115d74695c5eb34c8e8d63c253904ab8a2a430c5919b0567f70039199399.png" src="../_images/b057115d74695c5eb34c8e8d63c253904ab8a2a430c5919b0567f70039199399.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -651,9 +684,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ca11067435f5844ed38ee0c41938b4a53bef2dc56849ae3d330196d784d8cc2d.png" src="../_images/ca11067435f5844ed38ee0c41938b4a53bef2dc56849ae3d330196d784d8cc2d.png" />
-<img alt="../_images/feb00e5a71021104a214028ede04a259adc791ee9e8153a0dd6cd3f1dd383dff.png" src="../_images/feb00e5a71021104a214028ede04a259adc791ee9e8153a0dd6cd3f1dd383dff.png" />
-<img alt="../_images/51d3c1f6299e0e0821358cc3b95382f20438b72dd5c7306a1743c3d7e3a351f9.png" src="../_images/51d3c1f6299e0e0821358cc3b95382f20438b72dd5c7306a1743c3d7e3a351f9.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_4644\222619657.py:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  title=&#39;Frekvenčna domena - faza - korekcija: $\mathcal{F}\{x(t-t_0)\} / \mathrm{e}^{-i\,2\pi\,f\,t_0}$&#39;, ylabel=&#39;$\\angle X(f)$&#39;, xlabel=&#39;$f$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/86d5e69e65345af1e6e22977ebdd3e5b917652f95dad3ebd8cab8fc0d98ead59.png" src="../_images/86d5e69e65345af1e6e22977ebdd3e5b917652f95dad3ebd8cab8fc0d98ead59.png" />
+<img alt="../_images/53df5eefc8bd01cfd9bd41d639ed1bf733db4101f51c88f4f4ff141f4a1c1c79.png" src="../_images/53df5eefc8bd01cfd9bd41d639ed1bf733db4101f51c88f4f4ff141f4a1c1c79.png" />
+<img alt="../_images/87228760427955ef7e9aeddccd65d2cdc1e693288c53132d07ab309173ce72f5.png" src="../_images/87228760427955ef7e9aeddccd65d2cdc1e693288c53132d07ab309173ce72f5.png" />
 <img alt="../_images/2fb71a12a1bd984ec0b4eff4821f8f2382e340545eac254ba2e54a08a2ca980e.png" src="../_images/2fb71a12a1bd984ec0b4eff4821f8f2382e340545eac254ba2e54a08a2ca980e.png" />
 </div>
 </div>

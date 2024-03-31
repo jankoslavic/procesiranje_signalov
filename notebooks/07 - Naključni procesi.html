@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7. Osnove naključnih procesov &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
+    <title>7. Osnove naključnih procesov &#8212; Procesiranje signalov s Pythonom</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -153,8 +153,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
   
   
 </a></div>
@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod.html">1. Uvod v procesiranje signalov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20Fourierove%20vrste.html">2. Fourierove vrste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">3. Fourierova integralska transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">5. Kvantizacija podatkov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Osnove naključnih procesov</a></li>
@@ -481,7 +482,13 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/339da1c298e5a8121bb62661d573edb8292d2adf9d390b9dc7970fb9b718a457.png" src="../_images/339da1c298e5a8121bb62661d573edb8292d2adf9d390b9dc7970fb9b718a457.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_3576\2741753396.py:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True)
+</pre></div>
+</div>
+<img alt="../_images/69a40109021f93ebf6198c6e6493b87f5f00b1e029c6ca25412b40dcb1146a44.png" src="../_images/69a40109021f93ebf6198c6e6493b87f5f00b1e029c6ca25412b40dcb1146a44.png" />
 </div>
 </div>
 <p>S spodnjim izračunom lahko preverimo, da sta prvi moment in drugi centralni moment za Gaussovo/normalno porazdelitev dejansko <span class="math notranslate nohighlight">\(\mu\)</span>  in <span class="math notranslate nohighlight">\(\sigma^2\)</span>:</p>
@@ -501,6 +508,12 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_3576\1271381052.py:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True, positive=True)
+</pre></div>
+</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \mu\]</div>
 </div>
@@ -555,6 +568,12 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_3576\1621454729.py:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True, positive=True)
+</pre></div>
+</div>
 <img alt="../_images/529345f676f81033aa418d079d608b564b8109c89bc891e0aeab40911822a691.png" src="../_images/529345f676f81033aa418d079d608b564b8109c89bc891e0aeab40911822a691.png" />
 <img alt="../_images/9f64fec50c5328c19a940dbfce7515fbb96706dc15c5d22280d1521ef78f5f34.png" src="../_images/9f64fec50c5328c19a940dbfce7515fbb96706dc15c5d22280d1521ef78f5f34.png" />
 </div>
@@ -636,6 +655,12 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:17: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:17: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_3576\2297140992.py:17: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True, positive=True)
+</pre></div>
+</div>
 <img alt="../_images/55d69226fd109bd967d76f26e00aa9418674ce4d719635e8078819ba04026dd9.png" src="../_images/55d69226fd109bd967d76f26e00aa9418674ce4d719635e8078819ba04026dd9.png" />
 </div>
 </div>
@@ -680,8 +705,8 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/93e89b429061eafbe8131d814054d2dce5a2cfbaf2ec8822cb7a221331110df6.png" src="../_images/93e89b429061eafbe8131d814054d2dce5a2cfbaf2ec8822cb7a221331110df6.png" />
-<img alt="../_images/a78f9e9b6e0669681570967f15f799ce060236751402cbccd51943c1cb588ca7.png" src="../_images/a78f9e9b6e0669681570967f15f799ce060236751402cbccd51943c1cb588ca7.png" />
+<img alt="../_images/e8fa48c24772b6d706107be91b831728a0e8ea339d4c7d6aee4ef801070235b3.png" src="../_images/e8fa48c24772b6d706107be91b831728a0e8ea339d4c7d6aee4ef801070235b3.png" />
+<img alt="../_images/6e5b242c835a6b52ee8b9fa1c7c27a693cbd9c4257eb4fb5b523a0f83e1f5ca6.png" src="../_images/6e5b242c835a6b52ee8b9fa1c7c27a693cbd9c4257eb4fb5b523a0f83e1f5ca6.png" />
 </div>
 </div>
 </section>
@@ -974,6 +999,12 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_3576\179142119.py:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True, positive=True)
+</pre></div>
+</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle 9.0\]</div>
 </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Fourierova integralska transformacija &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
+    <title>3. Fourierova integralska transformacija &#8212; Procesiranje signalov s Pythonom</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -153,8 +153,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
   
   
 </a></div>
@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod.html">1. Uvod v procesiranje signalov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20Fourierove%20vrste.html">2. Fourierove vrste</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Fourierova integralska transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">5. Kvantizacija podatkov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
@@ -522,12 +523,12 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\4102271043.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\4102271043.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
   η = sym.symbols(&#39;\eta&#39;, real=True, positive=True)
 </pre></div>
 </div>
-<img alt="../_images/90b193036afa1ee2bdb4801abcc8069c4cc2b02fe987d58b7be5ab243db00ca3.png" src="../_images/90b193036afa1ee2bdb4801abcc8069c4cc2b02fe987d58b7be5ab243db00ca3.png" />
-<img alt="../_images/84822ead39518843caf79411e6bc732de5c78ea12c74b8bc779baf24b0a86c75.png" src="../_images/84822ead39518843caf79411e6bc732de5c78ea12c74b8bc779baf24b0a86c75.png" />
+<img alt="../_images/3de0b8bdbef61ced816ff378db46e78ce179a0476f2ac1c243311cc0c0f4f916.png" src="../_images/3de0b8bdbef61ced816ff378db46e78ce179a0476f2ac1c243311cc0c0f4f916.png" />
+<img alt="../_images/860bb624f70bb02487776c68a0e667f4b9aa25e85610d3c1a70fddd0a462f81b.png" src="../_images/860bb624f70bb02487776c68a0e667f4b9aa25e85610d3c1a70fddd0a462f81b.png" />
 </div>
 </div>
 <p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič. To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelna bi bila imaginarna komponentna (slika spodaj). Podobno smo sicer ugotovili že pri Fourierovih vrstah sodih in lihih funkcij (za več glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-lih-sod"><span class="std std-ref">Fourierove vrste lihih in sodih funkcij</span></a>.</p>
@@ -559,12 +560,12 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\4102271043.py:3: SyntaxWarning
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\664348604.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\664348604.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
   η = sym.symbols(&#39;\eta&#39;, real=True, positive=True)
 </pre></div>
 </div>
-<img alt="../_images/0bb12edca39b1540b50e9dfb88b7cee7105df0b9e78230a88215903abded7fd0.png" src="../_images/0bb12edca39b1540b50e9dfb88b7cee7105df0b9e78230a88215903abded7fd0.png" />
-<img alt="../_images/bb4ab434897c10e8d101d454fdbfa97236d78fc7d8fc49b9e5e15050f254fc81.png" src="../_images/bb4ab434897c10e8d101d454fdbfa97236d78fc7d8fc49b9e5e15050f254fc81.png" />
+<img alt="../_images/ae0f3974f873bd9d00cee29aa69e57516a848134864a67b315f40781360cb6ff.png" src="../_images/ae0f3974f873bd9d00cee29aa69e57516a848134864a67b315f40781360cb6ff.png" />
+<img alt="../_images/db2f96f5c36a43779278f9c3e47ff7d464d2848be5303708ed515b63f769e8c1.png" src="../_images/db2f96f5c36a43779278f9c3e47ff7d464d2848be5303708ed515b63f769e8c1.png" />
 </div>
 </div>
 <p>Sicer pa velja poudariti, da v splošnem realni signali <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje enotsko funkcijo stopnice). Časovni signali so v splošnem lahko kompleksne oblike in takrat v frekvenčni domeni v splošnem ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
@@ -620,13 +621,13 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\664348604.py:3: SyntaxWarning:
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\2331919166.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2331919166.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
   η = sym.symbols(&#39;\eta&#39;, real=True, positive=True)
 </pre></div>
 </div>
-<img alt="../_images/a3b3f7506380fc3aeeeb827077b167969162f891883d71a3983e4aaa21a73f12.png" src="../_images/a3b3f7506380fc3aeeeb827077b167969162f891883d71a3983e4aaa21a73f12.png" />
-<img alt="../_images/f823e388c1aba54ce3b3282494dc8bb3626fc062d1f4cbfed9a319b59d01cd1c.png" src="../_images/f823e388c1aba54ce3b3282494dc8bb3626fc062d1f4cbfed9a319b59d01cd1c.png" />
-<img alt="../_images/a57b855224935a02ac7209c42e9c84c92e0eded55ae8dca66193d8bfe6e162fe.png" src="../_images/a57b855224935a02ac7209c42e9c84c92e0eded55ae8dca66193d8bfe6e162fe.png" />
+<img alt="../_images/a7fef1ceb1b1e4e46e7a606afe918d0a84f9f78f7f55b47bdf16fabb75813aaf.png" src="../_images/a7fef1ceb1b1e4e46e7a606afe918d0a84f9f78f7f55b47bdf16fabb75813aaf.png" />
+<img alt="../_images/dbe22918fb94fab7fc0d35c0395d42ee8cfd9eb4f25215ee5b1389abd6bf7ea1.png" src="../_images/dbe22918fb94fab7fc0d35c0395d42ee8cfd9eb4f25215ee5b1389abd6bf7ea1.png" />
+<img alt="../_images/eac10e430600b3ad70b79d913faeb28501d500986a82028b7d124404b9df19c7.png" src="../_images/eac10e430600b3ad70b79d913faeb28501d500986a82028b7d124404b9df19c7.png" />
 </div>
 </div>
 </section>
@@ -723,7 +724,7 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\820447440.py:8: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\820447440.py:8: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   plt.title(&#39;$|\\mathcal{F}_{t}\\left( A\,\sin(2\pi\,p\,t)\\right)|$&#39;)
 </pre></div>
 </div>
@@ -791,8 +792,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6f529a69f8c71d6ece601e0c2844074ca2cf6e99153de96f38e1450be0be4f2d.png" src="../_images/6f529a69f8c71d6ece601e0c2844074ca2cf6e99153de96f38e1450be0be4f2d.png" />
-<img alt="../_images/a5ecb7a246caabd7aa09b80e717daf68845eaffd41333a17f77f82594bf96544.png" src="../_images/a5ecb7a246caabd7aa09b80e717daf68845eaffd41333a17f77f82594bf96544.png" />
+<img alt="../_images/dc0a130eb50180369be3ea035f40bd89c2e29fd8f1cf99ddd5f4a38227590888.png" src="../_images/dc0a130eb50180369be3ea035f40bd89c2e29fd8f1cf99ddd5f4a38227590888.png" />
+<img alt="../_images/d994079683ad16286fa6ff1a045b3589d3fba0bc218d6bb3f5f659d119bee01f.png" src="../_images/d994079683ad16286fa6ff1a045b3589d3fba0bc218d6bb3f5f659d119bee01f.png" />
 </div>
 </div>
 </section>
@@ -834,7 +835,7 @@ x_2(t) =
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\3952021286.py:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3952021286.py:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
   δ = sym.symbols(&#39;\delta&#39;, real=True, positive=True)
 </pre></div>
 </div>
@@ -891,15 +892,15 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\3952021286.py:3: SyntaxWarning
 &lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\d&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
 &lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\39803864.py:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\39803864.py:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
   δ, f_0 = sym.symbols(&#39;\delta, f_0&#39;, real=True, positive=True)
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\39803864.py:16: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\39803864.py:16: SyntaxWarning: invalid escape sequence &#39;\d&#39;
   label=f&#39;Simetrični dušeni odziv: $f_0={f_0.subs(podatki)}, \delta={δ.subs(podatki):3.2f}$&#39;, show=False,
 </pre></div>
 </div>
-<img alt="../_images/4c885aa2c5e3e133183aa5fe06229561dc1be1f822eb23ea71f06320f233e6cf.png" src="../_images/4c885aa2c5e3e133183aa5fe06229561dc1be1f822eb23ea71f06320f233e6cf.png" />
-<img alt="../_images/5a3c389d4942a55f999979f52f9ea573e21f64b0c9562a789f55ec99f3c2a497.png" src="../_images/5a3c389d4942a55f999979f52f9ea573e21f64b0c9562a789f55ec99f3c2a497.png" />
-<img alt="../_images/1cbff56dcde5fea31bfe426dee59fe35bee05c1b3faf5bdc079579f1c014fde3.png" src="../_images/1cbff56dcde5fea31bfe426dee59fe35bee05c1b3faf5bdc079579f1c014fde3.png" />
+<img alt="../_images/809425144b92ab666aa24cb1073fc7506bc9185cad0cddc5e56e845fb3a42cfb.png" src="../_images/809425144b92ab666aa24cb1073fc7506bc9185cad0cddc5e56e845fb3a42cfb.png" />
+<img alt="../_images/5d9db6db9f5c32bd6c9d6c40f14a1a5099aef7b141e570dc23e3ab4d693fac11.png" src="../_images/5d9db6db9f5c32bd6c9d6c40f14a1a5099aef7b141e570dc23e3ab4d693fac11.png" />
+<img alt="../_images/4dcacbb03e57828f29f96749477115ecb86b6f23f9628eeb4fc3172e9510d642.png" src="../_images/4dcacbb03e57828f29f96749477115ecb86b6f23f9628eeb4fc3172e9510d642.png" />
 </div>
 </div>
 </section>
@@ -966,12 +967,12 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\1671338496.py:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\1671338496.py:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   label=f&#39;$a={a.subs(podatki)}$&#39;+&#39;, Max=$\sqrt{\pi/a}=$&#39;+f&#39;{sym.sqrt(sym.pi/a).evalf(subs=podatki):3.2f}&#39;, show=False,
 </pre></div>
 </div>
-<img alt="../_images/260d046fb2b7081436e212376ab908a5805f63a91d6a81965f8bbd5189a3a1b7.png" src="../_images/260d046fb2b7081436e212376ab908a5805f63a91d6a81965f8bbd5189a3a1b7.png" />
-<img alt="../_images/c2d16c02e9a1e7c852ad54a8f1d368190b547bc20a22f2a6270bd7a8644b61ad.png" src="../_images/c2d16c02e9a1e7c852ad54a8f1d368190b547bc20a22f2a6270bd7a8644b61ad.png" />
+<img alt="../_images/4d8f65e809587edd4759440debe8116c01bee8b874e699c2cf6369366f058ede.png" src="../_images/4d8f65e809587edd4759440debe8116c01bee8b874e699c2cf6369366f058ede.png" />
+<img alt="../_images/21c67e081b35a248932ecea37ac00fe66d5a7a638820e57f792a0acba4c3d9af.png" src="../_images/21c67e081b35a248932ecea37ac00fe66d5a7a638820e57f792a0acba4c3d9af.png" />
 </div>
 </div>
 </section>
@@ -1063,12 +1064,12 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\1671338496.py:16: SyntaxWarnin
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\2840248884.py:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2840248884.py:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=f&#39;$x_2(t)=a\,x_1(t)+b\,x_1(t), a={a.subs(podatki)}, b={b.subs(podatki)}$&#39;, show=False)
 </pre></div>
 </div>
-<img alt="../_images/4f800944979001748be84e9a088c71dd17ec9339e5b5954bfc639cdaee961b7f.png" src="../_images/4f800944979001748be84e9a088c71dd17ec9339e5b5954bfc639cdaee961b7f.png" />
-<img alt="../_images/97e4583c5fdd9e1062f20161de591bad3dad6e9e0475886a8ec0a0aebabd6035.png" src="../_images/97e4583c5fdd9e1062f20161de591bad3dad6e9e0475886a8ec0a0aebabd6035.png" />
+<img alt="../_images/d27972420f920b68d9d4cd4cbc8d28eec94af721b7edb3de04bb5f2900e8442b.png" src="../_images/d27972420f920b68d9d4cd4cbc8d28eec94af721b7edb3de04bb5f2900e8442b.png" />
+<img alt="../_images/b7e8cccdf76d7a499f75ee3d1c729e2df0a0b68f19211a72ed5553db4810ced9.png" src="../_images/b7e8cccdf76d7a499f75ee3d1c729e2df0a0b68f19211a72ed5553db4810ced9.png" />
 </div>
 </div>
 </section>
@@ -1146,14 +1147,14 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\2840248884.py:15: SyntaxWarnin
 &lt;&gt;:24: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:24: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\655066492.py:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\655066492.py:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=f&#39;$t=a\,t$, $a=${a.subs(podatki):3.2f}&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\655066492.py:24: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\655066492.py:24: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=f&#39;$t=a\,t$, $a=${a.subs(podatki):3.2f}&#39;, show=False)
 </pre></div>
 </div>
-<img alt="../_images/37ef8a3d403be5923de920d6b4ae8a1f8a87c59590c1e1de26a01670445b89ec.png" src="../_images/37ef8a3d403be5923de920d6b4ae8a1f8a87c59590c1e1de26a01670445b89ec.png" />
-<img alt="../_images/559f126c93d9a5eb7c55ebe7bbf65a666b7e68e908d81925521d0286810bad3c.png" src="../_images/559f126c93d9a5eb7c55ebe7bbf65a666b7e68e908d81925521d0286810bad3c.png" />
+<img alt="../_images/e36d1893735de23db12feb07247fca1fe7b3ff8344842e372973b73a89c2c12b.png" src="../_images/e36d1893735de23db12feb07247fca1fe7b3ff8344842e372973b73a89c2c12b.png" />
+<img alt="../_images/6e611afed7baffe02e3dd783e658c434691f94cbb3f49a7106d212d45eb289bf.png" src="../_images/6e611afed7baffe02e3dd783e658c434691f94cbb3f49a7106d212d45eb289bf.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1302,13 +1303,13 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\655066492.py:24: SyntaxWarning
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
 &lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\126194543.py:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\126194543.py:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
   title=&#39;Frekvenčna domena - faza - korekcija: $\mathcal{F}\{x(t-t_0)\} / \mathrm{e}^{-i\,2\pi\,f\,t_0}$&#39;, ylabel=&#39;$\\angle X(f)$&#39;, xlabel=&#39;$f$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/5707bb68948a8756628af19b35a4758b636894a540ce01de0f7d9161c53c4f05.png" src="../_images/5707bb68948a8756628af19b35a4758b636894a540ce01de0f7d9161c53c4f05.png" />
-<img alt="../_images/cdfc0a779ce938114c2845e6f001f63a490df75e11b716c913baa6ae6cfead88.png" src="../_images/cdfc0a779ce938114c2845e6f001f63a490df75e11b716c913baa6ae6cfead88.png" />
-<img alt="../_images/7b46b7d628e063e6bab44ef94cac6f5334ec227c5148f58030fde85859faa573.png" src="../_images/7b46b7d628e063e6bab44ef94cac6f5334ec227c5148f58030fde85859faa573.png" />
+<img alt="../_images/b5e7a5fe247cc80b1e7ce3c2e42aa1333f40d5b58d2a273dae25bc8f6e46f022.png" src="../_images/b5e7a5fe247cc80b1e7ce3c2e42aa1333f40d5b58d2a273dae25bc8f6e46f022.png" />
+<img alt="../_images/20cd4097d59ba9127a07120d37a307840abb310250c4bf47c002ff27660741ec.png" src="../_images/20cd4097d59ba9127a07120d37a307840abb310250c4bf47c002ff27660741ec.png" />
+<img alt="../_images/b3ff807f003f773d0cfa584c10cf1988cfdc55509e4b336a34891317954d4197.png" src="../_images/b3ff807f003f773d0cfa584c10cf1988cfdc55509e4b336a34891317954d4197.png" />
 <img alt="../_images/2fb71a12a1bd984ec0b4eff4821f8f2382e340545eac254ba2e54a08a2ca980e.png" src="../_images/2fb71a12a1bd984ec0b4eff4821f8f2382e340545eac254ba2e54a08a2ca980e.png" />
 </div>
 </div>
@@ -1402,16 +1403,16 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\126194543.py:44: SyntaxWarning
 &lt;&gt;:22: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\{&#39;
 &lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\{&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\3373369227.py:22: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3373369227.py:22: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=f&#39;$x(t)\,\cos(2\pi\,f_0\,t)$&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\3373369227.py:29: SyntaxWarning: invalid escape sequence &#39;\{&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3373369227.py:29: SyntaxWarning: invalid escape sequence &#39;\{&#39;
   label=&#39;$\\mathcal{F}\{x(t)\}$&#39;, show=False,
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\3373369227.py:32: SyntaxWarning: invalid escape sequence &#39;\{&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3373369227.py:32: SyntaxWarning: invalid escape sequence &#39;\{&#39;
   label=&#39;$\\mathcal{F}\{x(t)\,\cos(2\pi\,f_0\,t)\}$&#39;, show=False)
 </pre></div>
 </div>
-<img alt="../_images/32008fe94ecc0bc36233f62f832535535a276ca1bd79dfd2cada4d378abd715a.png" src="../_images/32008fe94ecc0bc36233f62f832535535a276ca1bd79dfd2cada4d378abd715a.png" />
-<img alt="../_images/3bbc9a18c27942c0b7b2a98c822773633e8cbf328d7c7126bdd79fc8cedd2945.png" src="../_images/3bbc9a18c27942c0b7b2a98c822773633e8cbf328d7c7126bdd79fc8cedd2945.png" />
+<img alt="../_images/48ff7a2af1c07a825acb7edc92d985509dceb3fc8cf3af4301edf21cff6cd956.png" src="../_images/48ff7a2af1c07a825acb7edc92d985509dceb3fc8cf3af4301edf21cff6cd956.png" />
+<img alt="../_images/80f234d7f4f48313dcae23de1eaf51c0f56ae1d4f89e6223c5067396f834eb3b.png" src="../_images/80f234d7f4f48313dcae23de1eaf51c0f56ae1d4f89e6223c5067396f834eb3b.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1587,16 +1588,16 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\3373369227.py:32: SyntaxWarnin
 &lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\i&#39;
 &lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\d&#39;
 &lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\i&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\2686389558.py:18: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2686389558.py:18: SyntaxWarning: invalid escape sequence &#39;\d&#39;
   label=f&#39;$x_2(t)=\dot x_1(t)={sym.latex(x_2)}$&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\2686389558.py:20: SyntaxWarning: invalid escape sequence &#39;\i&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2686389558.py:20: SyntaxWarning: invalid escape sequence &#39;\i&#39;
   label=f&#39;$x_3(t)=\int x_2(t)dt={sym.latex(x_3)}$&#39;, show=False)
 </pre></div>
 </div>
-<img alt="../_images/e3a9c8c82aacad64a8262e3d7a5c4fad815af1a02e3db50e181c2ad858da3630.png" src="../_images/e3a9c8c82aacad64a8262e3d7a5c4fad815af1a02e3db50e181c2ad858da3630.png" />
-<img alt="../_images/2c9015660b50c56bee2876c24ad1b2f3baad0c516d056bcb588039014f5dcfb1.png" src="../_images/2c9015660b50c56bee2876c24ad1b2f3baad0c516d056bcb588039014f5dcfb1.png" />
-<img alt="../_images/edf6140cc2c421a365e79a746dfbe98e1b120ce6a92cb8b740da4c756aa70a76.png" src="../_images/edf6140cc2c421a365e79a746dfbe98e1b120ce6a92cb8b740da4c756aa70a76.png" />
-<img alt="../_images/821803afae5fa58a88547b790042df6f2576b304ebf7dbdba02829b4f863d5b3.png" src="../_images/821803afae5fa58a88547b790042df6f2576b304ebf7dbdba02829b4f863d5b3.png" />
+<img alt="../_images/1cd616157ddcd0f3b42b00f6d03ef429395f2bd741b238e906a0dea6613796be.png" src="../_images/1cd616157ddcd0f3b42b00f6d03ef429395f2bd741b238e906a0dea6613796be.png" />
+<img alt="../_images/5386822b8508ac11eba37d5ba7f73f14ca3f00bb8dc633e5262cc04490da1fb6.png" src="../_images/5386822b8508ac11eba37d5ba7f73f14ca3f00bb8dc633e5262cc04490da1fb6.png" />
+<img alt="../_images/c727a3fd4d02eec714ac26971bacf202d7167253ebbb011abb1e658aff567419.png" src="../_images/c727a3fd4d02eec714ac26971bacf202d7167253ebbb011abb1e658aff567419.png" />
+<img alt="../_images/634a54e5c2aa1ab1013de75334b74e7b24333459bd02eb5fa4bdc2ef96616ef2.png" src="../_images/634a54e5c2aa1ab1013de75334b74e7b24333459bd02eb5fa4bdc2ef96616ef2.png" />
 <img alt="../_images/4713f60bf856a264ddf0caf5b5c04b3f1e738b1ac5b20ecbeefa8af1bdcb5bf6.png" src="../_images/4713f60bf856a264ddf0caf5b5c04b3f1e738b1ac5b20ecbeefa8af1bdcb5bf6.png" />
 </div>
 </div>
@@ -1706,14 +1707,14 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\2686389558.py:20: SyntaxWarnin
 &lt;&gt;:33: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:33: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\3322241215.py:21: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3322241215.py:21: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=&#39;$x_3(t)=\\mathcal{F}^{-1}(\,X_1(f)\,X_1(f)\,)$&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\3322241215.py:33: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3322241215.py:33: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=f&#39;$|X_1(f)\,X_1(f)|$&#39;, show=False)
 </pre></div>
 </div>
-<img alt="../_images/59a69e2d35cfa3f322a0e3e050b399958226c9ed36c47449eafd1892d3d118e2.png" src="../_images/59a69e2d35cfa3f322a0e3e050b399958226c9ed36c47449eafd1892d3d118e2.png" />
-<img alt="../_images/058ebf16d9aeb1d2554162d397129ebd788d628350dfee6df225cf720984a5e0.png" src="../_images/058ebf16d9aeb1d2554162d397129ebd788d628350dfee6df225cf720984a5e0.png" />
+<img alt="../_images/8dd90892da41d19e662decf21aead014ddb2bdc4c05a513ddd7a06620cdb0836.png" src="../_images/8dd90892da41d19e662decf21aead014ddb2bdc4c05a513ddd7a06620cdb0836.png" />
+<img alt="../_images/f982b5fea94bec1774168bfd11bcd445a2251372f5342b2c610e0c82b2573154.png" src="../_images/f982b5fea94bec1774168bfd11bcd445a2251372f5342b2c610e0c82b2573154.png" />
 </div>
 </div>
 </section>
@@ -1788,14 +1789,14 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_17100\3322241215.py:33: SyntaxWarnin
 &lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\1928939429.py:18: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\1928939429.py:18: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=f&#39;$x_2(t)=x_1(t)\,x_1(t)$&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\1928939429.py:20: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\1928939429.py:20: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=&#39;$x_3(t)=\\mathcal{F}^{-1}(\,X_1(f)*X_1(f)\,)$&#39;, show=False)
 </pre></div>
 </div>
-<img alt="../_images/0836761b1f6d5ba9e0854deec54fd737eee86bdbcbcf9f5010d5a0d5b950c1c0.png" src="../_images/0836761b1f6d5ba9e0854deec54fd737eee86bdbcbcf9f5010d5a0d5b950c1c0.png" />
-<img alt="../_images/c1f5e6b9daee4b4f76572af69b54711752f4a014b4336c760bce4c8c9355a8c2.png" src="../_images/c1f5e6b9daee4b4f76572af69b54711752f4a014b4336c760bce4c8c9355a8c2.png" />
+<img alt="../_images/d70edbdc11e4e05062be15d2408f89fea85c6fc256d17fc550314d8c55ed0df9.png" src="../_images/d70edbdc11e4e05062be15d2408f89fea85c6fc256d17fc550314d8c55ed0df9.png" />
+<img alt="../_images/c163fe3d7a7cc1968de20f33f1e5609aa139d20f1bb155880bc76a4e97455914.png" src="../_images/c163fe3d7a7cc1968de20f33f1e5609aa139d20f1bb155880bc76a4e97455914.png" />
 </div>
 </div>
 </section>
@@ -1949,14 +1950,14 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 &lt;&gt;:35: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:19: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:35: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\2329125482.py:19: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2329125482.py:19: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=f&#39;$x(t)=sin(2\,\pi\,fr\,t)$&#39;, show=False,
-C:\Users\janko\AppData\Local\Temp\ipykernel_17100\2329125482.py:35: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2329125482.py:35: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=f&#39;$X(f)\,W(f)$&#39;, show=False)
 </pre></div>
 </div>
-<img alt="../_images/175893309ec484de38b08feafdb52148ec3ab856842449df1746a3d64e19cd69.png" src="../_images/175893309ec484de38b08feafdb52148ec3ab856842449df1746a3d64e19cd69.png" />
-<img alt="../_images/a3b3f38b68a3558917b2f40218fb913e2d77e3bdf6f3d0ea044a4d741950ab66.png" src="../_images/a3b3f38b68a3558917b2f40218fb913e2d77e3bdf6f3d0ea044a4d741950ab66.png" />
+<img alt="../_images/ee4d59beac250a3c1706dc6b34c5c11e6aaf8b9f52e241786a123eb22ae17b75.png" src="../_images/ee4d59beac250a3c1706dc6b34c5c11e6aaf8b9f52e241786a123eb22ae17b75.png" />
+<img alt="../_images/a4a77cef382d5e30afdfa4b3825bea9678172ac343c1b67f20e7a71ebbf30afb.png" src="../_images/a4a77cef382d5e30afdfa4b3825bea9678172ac343c1b67f20e7a71ebbf30afb.png" />
 </div>
 </div>
 </section>

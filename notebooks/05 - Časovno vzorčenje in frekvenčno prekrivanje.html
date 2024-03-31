@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Kvantizacija podatkov &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
+    <title>5. Kvantizacija podatkov &#8212; Procesiranje signalov s Pythonom</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -153,8 +153,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
   
   
 </a></div>
@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod.html">1. Uvod v procesiranje signalov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20Fourierove%20vrste.html">2. Fourierove vrste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">3. Fourierova integralska transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. Kvantizacija podatkov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
@@ -587,26 +588,14 @@ x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{
 &lt;&gt;:42: SyntaxWarning: invalid escape sequence &#39;\D&#39;
 &lt;&gt;:41: SyntaxWarning: invalid escape sequence &#39;\D&#39;
 &lt;&gt;:42: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_2804\2977338319.py:41: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8392\2977338319.py:41: SyntaxWarning: invalid escape sequence &#39;\D&#39;
   plt.plot(fr, f_X_abs(fr+i/podatki[Δt]), &#39;C0&#39;, ls=&#39;:&#39;, label=&#39;$|X(f+i/\Delta t)|$&#39;)
-C:\Users\janko\AppData\Local\Temp\ipykernel_2804\2977338319.py:42: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-  plt.vlines((i+1)/podatki[Δt], -0.1, np.max(f_X_abs(fr)), &#39;k&#39;, ls=&#39;:&#39;, alpha=0.2, label=&#39;$f=i/\Delta t$&#39;)
-C:\Users\janko\AppData\Local\Temp\ipykernel_2804\2977338319.py:41: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-  plt.plot(fr, f_X_abs(fr+i/podatki[Δt]), &#39;C0&#39;, ls=&#39;:&#39;, label=&#39;$|X(f+i/\Delta t)|$&#39;)
-C:\Users\janko\AppData\Local\Temp\ipykernel_2804\2977338319.py:42: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_8392\2977338319.py:42: SyntaxWarning: invalid escape sequence &#39;\D&#39;
   plt.vlines((i+1)/podatki[Δt], -0.1, np.max(f_X_abs(fr)), &#39;k&#39;, ls=&#39;:&#39;, alpha=0.2, label=&#39;$f=i/\Delta t$&#39;)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
-</pre></div>
-</div>
+<img alt="../_images/e4ba8639d44a9aacf47bb432c04a48f7e723516d0e3f603391d589c992424b6e.png" src="../_images/e4ba8639d44a9aacf47bb432c04a48f7e723516d0e3f603391d589c992424b6e.png" />
+<img alt="../_images/ce0c1992f725738e8ecd71eef0df22c3a59e050ebfa796631a7e3a4f3e06cd56.png" src="../_images/ce0c1992f725738e8ecd71eef0df22c3a59e050ebfa796631a7e3a4f3e06cd56.png" />
 </div>
 </div>
 <p>Še en primer frekvenčnega prekrivanja predstavlja spodnji zgled, kjer obravnavamo harmonske podatke. Ko je frekvenca vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>, glede na frekvenco harmonskih podatov <code class="docutils literal notranslate"><span class="pre">f</span></code>, prenizka (<span class="math notranslate nohighlight">\(f&gt;fs/2\)</span>), se dejanska frekvenca zrcali v frekvenčno področje do <code class="docutils literal notranslate"><span class="pre">fs/2</span></code>. V spodnji kodi frekvenco sinusnega signala <code class="docutils literal notranslate"><span class="pre">f</span></code> poskusite počasi dvigovati proti (in nad) frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>.</p>
@@ -640,7 +629,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_2804\2977338319.py:42: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/eb541ef6fc00557ce564538ae82a230ed05c2f37a8a63d72ec26c04edaf4d80d.png" src="../_images/eb541ef6fc00557ce564538ae82a230ed05c2f37a8a63d72ec26c04edaf4d80d.png" />
+<img alt="../_images/af271a4ef61f994e4b6732c42e86111acee0a776924caceb26b1eca83a3c0fa1.png" src="../_images/af271a4ef61f994e4b6732c42e86111acee0a776924caceb26b1eca83a3c0fa1.png" />
 </div>
 </div>
 </section>
@@ -711,7 +700,7 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/72f8b2d76326cf86324221729f5a58276409317ae08ffa84621a176c97983f86.png" src="../_images/72f8b2d76326cf86324221729f5a58276409317ae08ffa84621a176c97983f86.png" />
+<img alt="../_images/05d8969e297668ba27c39f9dce3c580b9b0be301163f411b76f9ffc5ef0b36f9.png" src="../_images/05d8969e297668ba27c39f9dce3c580b9b0be301163f411b76f9ffc5ef0b36f9.png" />
 </div>
 </div>
 </section>
@@ -776,7 +765,7 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7b0e939f835e203a0bc41010b1c609435b55aaae0cf4daaad71e58dd2e4cbbf2.png" src="../_images/7b0e939f835e203a0bc41010b1c609435b55aaae0cf4daaad71e58dd2e4cbbf2.png" />
+<img alt="../_images/7245241d50b2ba51407b510b33d017b9dbf613021f233af038fda18f803ffb37.png" src="../_images/7245241d50b2ba51407b510b33d017b9dbf613021f233af038fda18f803ffb37.png" />
 </div>
 </div>
 </section>

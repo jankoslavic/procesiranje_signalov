@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Fourierove vrste &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
+    <title>2. Fourierove vrste &#8212; Procesiranje signalov s Pythonom</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -153,8 +153,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
   
   
 </a></div>
@@ -183,6 +183,7 @@
 <li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod.html">1. Uvod v procesiranje signalov</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Fourierove vrste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">3. Fourierova integralska transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">5. Kvantizacija podatkov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
@@ -507,11 +508,11 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 &lt;&gt;:12: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\q&#39;
 &lt;&gt;:38: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\907105315.py:12: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\907105315.py:12: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   plt.title(f&#39;Harmonski signal: $x(t) = A\,\sin(\\omega\,t+\\varphi); \\omega={ω}, \\varphi={ϕ}$ &#39;)
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\907105315.py:15: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\907105315.py:15: SyntaxWarning: invalid escape sequence &#39;\q&#39;
   ax1.set_ylabel(&#39;$x(t)\quad$[]&#39;, color=&#39;C0&#39;)
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\907105315.py:38: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\907105315.py:38: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   ax1.annotate(&#39;$T=2\,\pi/\\omega$&#39;,
 </pre></div>
 </div>
@@ -590,7 +591,7 @@ b_n\sin\left(\frac{2\,\pi\,n\,t}{T_p} \right)
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\q&#39;
 &lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\q&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\2075516274.py:21: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\2075516274.py:21: SyntaxWarning: invalid escape sequence &#39;\q&#39;
   ax1.set_ylabel(&#39;$x(t)\quad$[-]&#39;, color=&#39;C1&#39;)
 </pre></div>
 </div>
@@ -762,7 +763,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\q&#39;
 &lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\q&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\1349301713.py:32: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\1349301713.py:32: SyntaxWarning: invalid escape sequence &#39;\q&#39;
   ax1.set_ylabel(&#39;$x(t)\quad$[-]&#39;, color=&#39;C1&#39;)
 </pre></div>
 </div>
@@ -1030,7 +1031,7 @@ x(-t)=-x(t),
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\q&#39;
 &lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\q&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\2368589216.py:29: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\2368589216.py:29: SyntaxWarning: invalid escape sequence &#39;\q&#39;
   ax1.set_ylabel(&#39;$x(t)\quad$[-]&#39;)
 </pre></div>
 </div>
@@ -1147,9 +1148,9 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 &lt;&gt;:35: SyntaxWarning: invalid escape sequence &#39;\d&#39;
 &lt;&gt;:34: SyntaxWarning: invalid escape sequence &#39;\d&#39;
 &lt;&gt;:35: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\3006365270.py:34: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\3006365270.py:34: SyntaxWarning: invalid escape sequence &#39;\d&#39;
   ax1.plot(t, x_d_t, label=&#39;$\dot{x}(t)$ - izračunano v času&#39;, c=&#39;C0&#39;, lw=2, alpha=1)
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\3006365270.py:35: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\3006365270.py:35: SyntaxWarning: invalid escape sequence &#39;\d&#39;
   ax1.plot(t, x_d_v, label=&#39;$\dot{x}(t)$ - vrste&#39;, ls=&#39;:&#39;, c=&#39;C1&#39;, lw=2, alpha=1)
 </pre></div>
 </div>
@@ -1196,7 +1197,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_9672\3006365270.py:35: SyntaxWarning
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\d&#39;
 &lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\2699611797.py:21: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\2699611797.py:21: SyntaxWarning: invalid escape sequence &#39;\d&#39;
   ax1.plot(t, x_v, label=&#39;$x(t)$ - vrste iz koeficientov FV za hitrost $\dot{c}$&#39;, ls=&#39;:&#39;, c=&#39;C1&#39;, lw=2, alpha=1)
 </pre></div>
 </div>
@@ -1240,7 +1241,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_9672\2699611797.py:21: SyntaxWarning
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:12: SyntaxWarning: invalid escape sequence &#39;\q&#39;
 &lt;&gt;:12: SyntaxWarning: invalid escape sequence &#39;\q&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\3409099975.py:12: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\3409099975.py:12: SyntaxWarning: invalid escape sequence &#39;\q&#39;
   ax1.set_ylabel(&#39;$x(t)\quad$[-]&#39;, color=&#39;C1&#39;)
 </pre></div>
 </div>
@@ -1282,7 +1283,7 @@ Osredotočimo se na del podatkov, ki se ponavlja:</p>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:12: SyntaxWarning: invalid escape sequence &#39;\q&#39;
 &lt;&gt;:12: SyntaxWarning: invalid escape sequence &#39;\q&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\566886979.py:12: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\566886979.py:12: SyntaxWarning: invalid escape sequence &#39;\q&#39;
   ax1.set_ylabel(&#39;$x(t)\quad$[-]&#39;, color=&#39;C1&#39;)
 </pre></div>
 </div>
@@ -1358,7 +1359,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\q&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\q&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_9672\3505877453.py:3: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\3505877453.py:3: SyntaxWarning: invalid escape sequence &#39;\q&#39;
   ax1.set_ylabel(&#39;$x(t)\quad$[-]&#39;)
 </pre></div>
 </div>
@@ -1389,112 +1390,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_9672\3505877453.py:3: SyntaxWarning:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x_r</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\displayhook.py:268,</span> in <span class="ni">DisplayHook.__call__</span><span class="nt">(self, result)</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_displayhook</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_output_prompt</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">268</span> <span class="n">format_dict</span><span class="p">,</span> <span class="n">md_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_format_data</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_user_ns</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill_exec_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\displayhook.py:157,</span> in <span class="ni">DisplayHook.compute_format_data</span><span class="nt">(self, result)</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="k">def</span> <span class="nf">compute_format_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Compute format data of the object to be displayed.</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span><span class="sd">     The format data is a generalization of the :func:`repr` of an object.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">157</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">display_formatter</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\formatters.py:182,</span> in <span class="ni">DisplayFormatter.format</span><span class="nt">(self, obj, include, exclude)</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span> <span class="n">md</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">182</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">formatter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span> <span class="k">except</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="c1"># FIXME: log the exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="k">raise</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\decorator.py:232,</span> in <span class="ni">decorate.&lt;locals&gt;.fun</span><span class="nt">(*args, **kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">232</span> <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\formatters.py:226,</span> in <span class="ni">catch_format_error</span><span class="nt">(method, self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;show traceback on failed format call&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">226</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span> <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="c1"># don&#39;t warn on NotImplementedErrors</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_return</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\IPython\core\formatters.py:347,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">347</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span>     <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\interactive\printing.py:178,</span> in <span class="ni">_init_ipython_printing.&lt;locals&gt;._print_latex_png</span><span class="nt">(o)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">displaystyle </span><span class="si">%s</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="n">s</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">178</span>     <span class="k">return</span> <span class="n">_preview_wrapper</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">debug</span><span class="p">(</span><span class="s1">&#39;preview failed with:&#39;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>           <span class="s1">&#39; Falling back to matplotlib backend&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\interactive\printing.py:89,</span> in <span class="ni">_init_ipython_printing.&lt;locals&gt;._preview_wrapper</span><span class="nt">(o)</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="n">exprbuffer</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">89</span>     <span class="n">preview</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">viewer</span><span class="o">=</span><span class="s1">&#39;BytesIO&#39;</span><span class="p">,</span> <span class="n">euler</span><span class="o">=</span><span class="n">euler</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>             <span class="n">outputbuffer</span><span class="o">=</span><span class="n">exprbuffer</span><span class="p">,</span> <span class="n">extra_preamble</span><span class="o">=</span><span class="n">extra_preamble</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>             <span class="n">dvioptions</span><span class="o">=</span><span class="n">dvioptions</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">fontsize</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="c1"># IPython swallows exceptions</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">debug</span><span class="p">(</span><span class="s2">&quot;png printing:&quot;</span><span class="p">,</span> <span class="s2">&quot;_preview_wrapper exception raised:&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span>           <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\printing\preview.py:369,</span> in <span class="ni">preview</span><span class="nt">(expr, output, viewer, euler, packages, filename, outputbuffer, preamble, dvioptions, outputTexFile, extra_preamble, fontsize, **latex_settings)</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="n">cmd</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">commandend</span><span class="p">[</span><span class="n">cmd_variant</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">369</span>     <span class="n">_check_output_no_window</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">workdir</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">STDOUT</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">370</span> <span class="k">except</span> <span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span>         <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; exited abnormally with the following output:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>         <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cmd</span><span class="p">),</span> <span class="n">e</span><span class="o">.</span><span class="n">output</span><span class="p">))</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\sympy\printing\preview.py:25,</span> in <span class="ni">_check_output_no_window</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">creation_flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Default value</span>
-<span class="ne">---&gt; </span><span class="mi">25</span> <span class="k">return</span> <span class="n">check_output</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">creationflags</span><span class="o">=</span><span class="n">creation_flag</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:466,</span> in <span class="ni">check_output</span><span class="nt">(timeout, *popenargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="n">empty</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">empty</span>
-<span class="ne">--&gt; </span><span class="mi">466</span> <span class="k">return</span> <span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>            <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">stdout</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:550,</span> in <span class="ni">run</span><span class="nt">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">548</span> <span class="k">with</span> <span class="n">Popen</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">process</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">549</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">550</span>         <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">551</span>     <span class="k">except</span> <span class="n">TimeoutExpired</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">552</span>         <span class="n">process</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\subprocess.py:1196,</span> in <span class="ni">Popen.communicate</span><span class="nt">(self, input, timeout)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1194</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_stdin_write</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1195</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1196</span>     <span class="n">stdout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1197</span>     <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1198</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
+<img alt="../_images/6903bb8130c8e4a8a832c5b823d49a21ca841a3eedb30c353945202f95232fd5.png" src="../_images/6903bb8130c8e4a8a832c5b823d49a21ca841a3eedb30c353945202f95232fd5.png" />
 </div>
 </div>
 <p>Posamezni člen lahko izračunamo tudi sami:</p>
@@ -1546,7 +1442,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_9672\3505877453.py:3: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/42c4aa672f0dd238aa5b8a24f52175b3b1c609c67a01e943c85ab34b97d2a114.png" src="../_images/42c4aa672f0dd238aa5b8a24f52175b3b1c609c67a01e943c85ab34b97d2a114.png" />
+<img alt="../_images/05822789046562550419b2032eff7b7d8b6d7a0b9ac81e2419aeab6258cec0da.png" src="../_images/05822789046562550419b2032eff7b7d8b6d7a0b9ac81e2419aeab6258cec0da.png" />
 </div>
 </div>
 </section>
@@ -1606,7 +1502,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e439ebd530acfcfba1c99616b34d2569000ded55c6bd72a939434f615391a257.png" src="../_images/e439ebd530acfcfba1c99616b34d2569000ded55c6bd72a939434f615391a257.png" />
+<img alt="../_images/f26b9c7e08d0f398a060aac1ba6bd84287bbc538141904a9a284a96716ee9f95.png" src="../_images/f26b9c7e08d0f398a060aac1ba6bd84287bbc538141904a9a284a96716ee9f95.png" />
 </div>
 </div>
 <p>Do enotskega impulza pridemo z uteženim seštevanjem:</p>
@@ -1644,7 +1540,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/39d4070909bdb94756ea3fb3f6c6cdec16cc62820daa18202ac697b80ee03519.png" src="../_images/39d4070909bdb94756ea3fb3f6c6cdec16cc62820daa18202ac697b80ee03519.png" />
+<img alt="../_images/8075e64a3530f4046ad346f2ed69459f3935b8190e3e409ee3c59f1222d7f977.png" src="../_images/8075e64a3530f4046ad346f2ed69459f3935b8190e3e409ee3c59f1222d7f977.png" />
 </div>
 </div>
 <p>in nato integriramo (rezultat je pričakovano enak 1; spremenite <span class="math notranslate nohighlight">\(\varepsilon\)</span> v <code class="docutils literal notranslate"><span class="pre">podatki</span></code> zgoraj!):</p>
@@ -1705,7 +1601,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2c07d0959b6e92f242d9c60fdbd278c0740fa5cd0943e21fc0e7f03e225c49b5.png" src="../_images/2c07d0959b6e92f242d9c60fdbd278c0740fa5cd0943e21fc0e7f03e225c49b5.png" />
+<img alt="../_images/a756980e5cee2f08774e80780c721f2f9301019cd7c423b8de405606c7bc4b54.png" src="../_images/a756980e5cee2f08774e80780c721f2f9301019cd7c423b8de405606c7bc4b54.png" />
 </div>
 </div>
 <p>Fourierova vrsta padajočega žagastega signala je definirana kot:</p>
@@ -1777,7 +1673,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2c2555a1734a9cc6dd052b46573f90efd759622fc8f03ebc8df6d0d54bc77c77.png" src="../_images/2c2555a1734a9cc6dd052b46573f90efd759622fc8f03ebc8df6d0d54bc77c77.png" />
+<img alt="../_images/151ae886a927b7f4c067f8d43750f2876c33ab23e8885025eb3a69fbbe1ffd21.png" src="../_images/151ae886a927b7f4c067f8d43750f2876c33ab23e8885025eb3a69fbbe1ffd21.png" />
 </div>
 </div>
 </section>
@@ -1840,7 +1736,13 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/839b4e3a99125d63125012149f2ef9349f8ca957cc0474032a321d84fd366016.png" src="../_images/839b4e3a99125d63125012149f2ef9349f8ca957cc0474032a321d84fd366016.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:38: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+&lt;&gt;:38: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\3292127928.py:38: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+  ax1.set_ylabel(&#39;$x(t)\quad$[-]&#39;)
+</pre></div>
+</div>
+<img alt="../_images/2670e5794a1d7782afc81f6a6c2a419421753cfca4b2757049a7dc76dbc5662a.png" src="../_images/2670e5794a1d7782afc81f6a6c2a419421753cfca4b2757049a7dc76dbc5662a.png" />
 </div>
 </div>
 <p>Pri pripravi podatkov zgoraj smo izračunali Fourierove koeficiente <span class="math notranslate nohighlight">\(c\)</span>:</p>
@@ -1900,7 +1802,13 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\Big(\frac{2\p
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/0641fd68525bf847cb5df34ca656b196f4788255f17f2399c0afa8c977fd8e86.png" src="../_images/0641fd68525bf847cb5df34ca656b196f4788255f17f2399c0afa8c977fd8e86.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:17: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+&lt;&gt;:17: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_10880\1721661553.py:17: SyntaxWarning: invalid escape sequence &#39;\q&#39;
+  ax2.set_ylabel(&#39;$\\angle c_n \quad$[-]&#39;, color=&#39;C1&#39;)
+</pre></div>
+</div>
+<img alt="../_images/9745ff55c0d6a200c293fb645229b447a94fbf3cc569dd302b0d768dcfb77f32.png" src="../_images/9745ff55c0d6a200c293fb645229b447a94fbf3cc569dd302b0d768dcfb77f32.png" />
 </div>
 </div>
 </section>
@@ -2035,7 +1943,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/65684ea20df0898e7a3cb8e5ad59de05a514d85690f759848ff06d40145db489.png" src="../_images/65684ea20df0898e7a3cb8e5ad59de05a514d85690f759848ff06d40145db489.png" />
+<img alt="../_images/8d260b0a1ba51b5ee742741b227db48a8a9d9997d2556cbd19c4c4c0b38d4653.png" src="../_images/8d260b0a1ba51b5ee742741b227db48a8a9d9997d2556cbd19c4c4c0b38d4653.png" />
 </div>
 </div>
 </section>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Linearni časovno invariantni sistemi z eno prostostno stopnjo &#8212; Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!]</title>
+    <title>4. Linearni časovno invariantni sistemi z eno prostostno stopnjo &#8212; Procesiranje signalov s Pythonom</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -153,8 +153,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom [nelektorirana knjiga v delu!] - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
   
   
 </a></div>
@@ -179,10 +179,11 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod.html">1. Uvod v procesiranje signalov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20Fourierove%20vrste.html">2. Fourierove vrste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">3. Fourierova integralska transformacija</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">5. Kvantizacija podatkov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
@@ -564,11 +565,11 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
 &lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_11792\1017281656.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_14652\1017281656.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
   t, ω_0, ω_d, d_x_0, δ= sym.symbols(&#39;t, \omega_0, \omega_d, d_x_0, \delta&#39;, real=True)
 </pre></div>
 </div>
-<img alt="../_images/ed7fb0627cdaf5cb90547791ad564fcb4af88cdba473e783d59a254b0478cc01.png" src="../_images/ed7fb0627cdaf5cb90547791ad564fcb4af88cdba473e783d59a254b0478cc01.png" />
+<img alt="../_images/6952a52a8cdac841cfc766e8a3270e5ca0ad6b5f03a4a036e668bcc3299bd41e.png" src="../_images/6952a52a8cdac841cfc766e8a3270e5ca0ad6b5f03a4a036e668bcc3299bd41e.png" />
 </div>
 </div>
 </section>
@@ -655,16 +656,16 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_11792\1017281656.py:2: SyntaxWarning
 &lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\d&#39;
 &lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
 &lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_11792\4226531901.py:2: SyntaxWarning: invalid escape sequence &#39;\d&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_14652\4226531901.py:2: SyntaxWarning: invalid escape sequence &#39;\d&#39;
   r, δ, k= sym.symbols(&#39;r, \delta, k&#39;, real=True)
-C:\Users\janko\AppData\Local\Temp\ipykernel_11792\4226531901.py:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_14652\4226531901.py:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
   p1 = sym.plot(sym.Abs(α.subs(podatki)), (r,0,3), line_color=&#39;C0&#39;, xlabel=&#39;$r$ [\cdot]&#39;, ylabel=&#39;$|\\alpha(r)|$&#39;,
-C:\Users\janko\AppData\Local\Temp\ipykernel_11792\4226531901.py:18: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_14652\4226531901.py:18: SyntaxWarning: invalid escape sequence &#39;\c&#39;
   p1 = sym.plot(sym.arg(α.subs(podatki)), (r,0,3), line_color=&#39;C0&#39;, xlabel=&#39;$r$ [\cdot]&#39;, ylabel=&#39;$\\angle\\alpha(\\omega)$&#39;,
 </pre></div>
 </div>
-<img alt="../_images/2e3e51d9e13cb4ba5f898b9e1188bed57757221428399da9c9572ba241ac9ce4.png" src="../_images/2e3e51d9e13cb4ba5f898b9e1188bed57757221428399da9c9572ba241ac9ce4.png" />
-<img alt="../_images/40a066ae997dbe2694e6d9a7a2a71fda4ad2b5473c435b5759afe5b1d79d1c2d.png" src="../_images/40a066ae997dbe2694e6d9a7a2a71fda4ad2b5473c435b5759afe5b1d79d1c2d.png" />
+<img alt="../_images/12fa60126db787ed39266c2408078d2b2f656f75db993669d42ff23b4fea3176.png" src="../_images/12fa60126db787ed39266c2408078d2b2f656f75db993669d42ff23b4fea3176.png" />
+<img alt="../_images/2c6d3e4c91c4ee433dcf36d56a678cc0c71d3d75b51996610e117799e68a4010.png" src="../_images/2c6d3e4c91c4ee433dcf36d56a678cc0c71d3d75b51996610e117799e68a4010.png" />
 </div>
 </div>
 <p>Partikularna rešitev je torej:</p>
@@ -788,13 +789,13 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 &lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\o&#39;
 &lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
 &lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_11792\2387916434.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_14652\2387916434.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
   ω, m, c, k= sym.symbols(&#39;\omega, m, c, k&#39;, real=True)
-C:\Users\janko\AppData\Local\Temp\ipykernel_11792\2387916434.py:8: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_14652\2387916434.py:8: SyntaxWarning: invalid escape sequence &#39;\o&#39;
   p1 = sym.plot(sym.Abs(α.subs(podatki)), (ω,0.01,100), line_color=&#39;C0&#39;, xlabel=&#39;$\omega$ [rad/s]&#39;, ylabel=&#39;&#39;,
 </pre></div>
 </div>
-<img alt="../_images/cba9112832f0014f30575106b64c74f9f6983265fae14956ca4d69e492da293e.png" src="../_images/cba9112832f0014f30575106b64c74f9f6983265fae14956ca4d69e492da293e.png" />
+<img alt="../_images/1682bcc573f53fef023ecdb1f8ea59b62b00a57a6c7e01301271c1137a6a2553.png" src="../_images/1682bcc573f53fef023ecdb1f8ea59b62b00a57a6c7e01301271c1137a6a2553.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -997,11 +998,11 @@ a\,f(t)  \to  {\fbox{Linearen sistem}} \to   a\,x(t)
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
 &lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_11792\2698810050.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_14652\2698810050.py:2: SyntaxWarning: invalid escape sequence &#39;\o&#39;
   t, ω_0, ω_d, d_x_0, δ, A, B, τ = sym.symbols(&#39;t, \omega_0, \omega_d, d_x_0, \delta, A, B, \\tau&#39;, real=True)
 </pre></div>
 </div>
-<img alt="../_images/d941f99042cff4852f295555b79b450b11bc8a46c5100189d08627d8e67787be.png" src="../_images/d941f99042cff4852f295555b79b450b11bc8a46c5100189d08627d8e67787be.png" />
+<img alt="../_images/557a6b4d8f935ee3a932ee71d3b84abdf6891eee20245fa058fa12daf88eba90.png" src="../_images/557a6b4d8f935ee3a932ee71d3b84abdf6891eee20245fa058fa12daf88eba90.png" />
 </div>
 </div>
 <div class="admonition note">
