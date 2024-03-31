@@ -183,7 +183,6 @@
 <li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod.html">1. Uvod v procesiranje signalov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20Fourierove%20vrste.html">2. Fourierove vrste</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">3. Fourierova integralska transformacija</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html">4. Linearni časovno invariantni sistemi z eno prostostno stopnjo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">5. Kvantizacija podatkov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
@@ -418,7 +417,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="odziv-linearnih-sistemov-na-nakljucno-vzbujanje">
 <span id="sec-lti-random"></span><h1>8. Odziv linearnih sistemov na naključno vzbujanje<a class="headerlink" href="#odziv-linearnih-sistemov-na-nakljucno-vzbujanje" title="Link to this heading">#</a></h1>
-<p>Vrnimo se k linearnemu sistemu z eno prostostno stopnjo (glejte lastnosti: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-lti-lastnosti"><span class="std std-ref">Lastnosti linearnega časovno invariantnega sistema</span></a>):</p>
+<p>Vrnimo se k linearnemu sistemu z eno prostostno stopnjo (glejte lastnosti: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html#sec-lti-lastnosti"><span class="std std-ref">Lastnosti linearnega časovno invariantnega sistema</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
 	\underbrace{f(t)}_{\textrm{Vzbujanje}}\to {\fbox{Sistem}}\to \underbrace{x(t)}_{\textrm{Odziv}}.
@@ -690,7 +689,7 @@ S_{fx} = H(f)\,S_{ff}(f).
 </section>
 <section id="cenilke-frekvencne-prenosne-funkcije">
 <span id="sec-cenilke-frf"></span><h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Link to this heading">#</a></h2>
-<p>Različne oblike frekvenčne prenosne funkcije (FRF) smo teoretično spoznali v poglavju: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistmi.html#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>. Tukaj si bomo pogledali kako FRF ocenimo na podlagi izmerjenih podatkov, pri tem pa se bomo omejili na sisteme z enim (sočasnim) vzbujanjem in enim (sočasnim) odzivom (to so tako imenovani SISO sistemi: ang. <em>single input, single otput</em>).</p>
+<p>Različne oblike frekvenčne prenosne funkcije (FRF) smo teoretično spoznali v poglavju: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>. Tukaj si bomo pogledali kako FRF ocenimo na podlagi izmerjenih podatkov, pri tem pa se bomo omejili na sisteme z enim (sočasnim) vzbujanjem in enim (sočasnim) odzivom (to so tako imenovani SISO sistemi: ang. <em>single input, single otput</em>).</p>
 <p>Linearni, časovno invariantni SISO sistem je mogoče predstaviti z blokovnim diagramom na sliki spodaj, kjer je <span class="math notranslate nohighlight">\(f(t)\)</span> vzbujevalna sila, <span class="math notranslate nohighlight">\(h(t)\)</span> je impulzna prenosna funkcija in <span class="math notranslate nohighlight">\(x(t)\)</span> je odziv; <span class="math notranslate nohighlight">\(F(\omega)\)</span>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in <span class="math notranslate nohighlight">\(X(\omega)\)</span> so njihovi pari v frekvenčni domeni.</p>
 <p><img alt="random_ensemble" src="../_images/FRF_nonoise.svg" /></p>
 <p>FRF je za naključni proces definirana z <span class="math notranslate nohighlight">\(\alpha(\omega)=S_{fx}/S_{ff}\)</span>, kjer sta <span class="math notranslate nohighlight">\(S_{ff}\)</span> in <span class="math notranslate nohighlight">\(S_{fx}\)</span> avto- in križna-spektralna gostota moči.</p>

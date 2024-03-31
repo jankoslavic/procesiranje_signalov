@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 685, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import sympy as sym
+t, ω_0, ω_d, d_x_0, δ= sym.symbols('t, \omega_0, \omega_d, d_x_0, \delta', real=True)
+podatki = {ω_0: 1, d_x_0: 1, δ: 0.1}
+
+ω_d = ω_0 * sym.sqrt(1-δ**2)
+
+ovojnica = d_x_0/ω_d * sym.exp(-δ*ω_0*t)
+
+x = ovojnica * sym.sin(ω_d*t)
+
+p1 = sym.plot(ovojnica.subs(podatki), (t,0,50), line_color='C0', xlabel='$t$ [s]', ylabel='$x_h(t)$', title='Časovna domena',
+             label='Ovojnica', show=False)
+p2 = sym.plot(x.subs(podatki), (t,0,50), line_color='C1', 
+             label='$x_h(t)$', show=False)
+p1.extend(p2)
+p1.legend = True
+p1.show()
+------------------
+
+----- stderr -----
+<>:2: SyntaxWarning: invalid escape sequence '\o'
+<>:2: SyntaxWarning: invalid escape sequence '\o'
+C:\Users\janko\AppData\Local\Temp\ipykernel_9592\1017281656.py:2: SyntaxWarning: invalid escape sequence '\o'
+  t, ω_0, ω_d, d_x_0, δ= sym.symbols('t, \omega_0, \omega_d, d_x_0, \delta', real=True)
+C:\Users\janko\AppData\Local\Temp\ipykernel_9592\1017281656.py:2: SyntaxWarning: invalid escape sequence '\o'
+  t, ω_0, ω_d, d_x_0, δ= sym.symbols('t, \omega_0, \omega_d, d_x_0, \delta', real=True)
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[1], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01msympy[39;00m [38;5;28;01mas[39;00m [38;5;21;01msym[39;00m
+[0;32m      2[0m t, ω_0, ω_d, d_x_0, δ[38;5;241m=[39m sym[38;5;241m.[39msymbols([38;5;124m'[39m[38;5;124mt, [39m[38;5;124m\[39m[38;5;124momega_0, [39m[38;5;124m\[39m[38;5;124momega_d, d_x_0, [39m[38;5;124m\[39m[38;5;124mdelta[39m[38;5;124m'[39m, real[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m      3[0m podatki [38;5;241m=[39m {ω_0: [38;5;241m1[39m, d_x_0: [38;5;241m1[39m, δ: [38;5;241m0.1[39m}
+
+[1;31mModuleNotFoundError[0m: No module named 'sympy'
+
