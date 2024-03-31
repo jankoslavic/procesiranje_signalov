@@ -2,6 +2,7 @@ jupyterlab
 jupyter-book
 matplotlib
 numpy
+sympy
 scipy
 tornado
 pyzmq
