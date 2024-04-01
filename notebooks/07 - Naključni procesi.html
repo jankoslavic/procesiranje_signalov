@@ -456,7 +456,7 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">sigma, </span><span class="se">\\</span><span class="s1">mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
@@ -482,20 +482,14 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_3576\2741753396.py:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True)
-</pre></div>
-</div>
-<img alt="../_images/69a40109021f93ebf6198c6e6493b87f5f00b1e029c6ca25412b40dcb1146a44.png" src="../_images/69a40109021f93ebf6198c6e6493b87f5f00b1e029c6ca25412b40dcb1146a44.png" />
+<img alt="../_images/4edbdffec2179bf449a8eac74cdf97f93b41ad5e65a50b835c58051ec06078d6.png" src="../_images/4edbdffec2179bf449a8eac74cdf97f93b41ad5e65a50b835c58051ec06078d6.png" />
 </div>
 </div>
 <p>S spodnjim izračunom lahko preverimo, da sta prvi moment in drugi centralni moment za Gaussovo/normalno porazdelitev dejansko <span class="math notranslate nohighlight">\(\mu\)</span>  in <span class="math notranslate nohighlight">\(\sigma^2\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">sigma, </span><span class="se">\\</span><span class="s1">mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
@@ -508,12 +502,6 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_3576\2741753396.py:2: SyntaxWarning:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_3576\1271381052.py:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True, positive=True)
-</pre></div>
-</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \mu\]</div>
 </div>
@@ -541,7 +529,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_3576\1271381052.py:2: SyntaxWarning:
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">sigma, </span><span class="se">\\</span><span class="s1">mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
@@ -568,12 +556,6 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_3576\1271381052.py:2: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_3576\1621454729.py:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True, positive=True)
-</pre></div>
-</div>
 <img alt="../_images/529345f676f81033aa418d079d608b564b8109c89bc891e0aeab40911822a691.png" src="../_images/529345f676f81033aa418d079d608b564b8109c89bc891e0aeab40911822a691.png" />
 <img alt="../_images/9f64fec50c5328c19a940dbfce7515fbb96706dc15c5d22280d1521ef78f5f34.png" src="../_images/9f64fec50c5328c19a940dbfce7515fbb96706dc15c5d22280d1521ef78f5f34.png" />
 </div>
@@ -605,7 +587,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_3576\1621454729.py:5: SyntaxWarning:
 <span class="n">S5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">5</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># n=5</span>
 <span class="n">S10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># n=10</span>
 
-<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">sigma, </span><span class="se">\\</span><span class="s1">mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># Teoretična gostota verjetnosti</span>
 
@@ -655,12 +637,6 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_3576\1621454729.py:5: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:17: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-&lt;&gt;:17: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_3576\2297140992.py:17: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True, positive=True)
-</pre></div>
-</div>
 <img alt="../_images/55d69226fd109bd967d76f26e00aa9418674ce4d719635e8078819ba04026dd9.png" src="../_images/55d69226fd109bd967d76f26e00aa9418674ce4d719635e8078819ba04026dd9.png" />
 </div>
 </div>
@@ -705,8 +681,8 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_3576\2297140992.py:17: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e8fa48c24772b6d706107be91b831728a0e8ea339d4c7d6aee4ef801070235b3.png" src="../_images/e8fa48c24772b6d706107be91b831728a0e8ea339d4c7d6aee4ef801070235b3.png" />
-<img alt="../_images/6e5b242c835a6b52ee8b9fa1c7c27a693cbd9c4257eb4fb5b523a0f83e1f5ca6.png" src="../_images/6e5b242c835a6b52ee8b9fa1c7c27a693cbd9c4257eb4fb5b523a0f83e1f5ca6.png" />
+<img alt="../_images/d4a417cdf61f3d3029121512bed954cd6263f2c584e8c2863139a546d861edcc.png" src="../_images/d4a417cdf61f3d3029121512bed954cd6263f2c584e8c2863139a546d861edcc.png" />
+<img alt="../_images/247def14eb03abac82c9daca0cf817851567edaecfdd8a1912f8ead9f78f4586.png" src="../_images/247def14eb03abac82c9daca0cf817851567edaecfdd8a1912f8ead9f78f4586.png" />
 </div>
 </div>
 </section>
@@ -987,7 +963,7 @@ S_{xx}(f),&amp; f=0\\
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\sigma, \mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">sigma, </span><span class="se">\\</span><span class="s1">mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
@@ -999,12 +975,6 @@ S_{xx}(f),&amp; f=0\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_3576\179142119.py:2: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-  σ, μ, x, = sym.symbols(&#39;\sigma, \mu, x&#39;, real=True, positive=True)
-</pre></div>
-</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle 9.0\]</div>
 </div>

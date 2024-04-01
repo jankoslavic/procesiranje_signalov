@@ -505,7 +505,7 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
@@ -521,14 +521,8 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\4102271043.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-  η = sym.symbols(&#39;\eta&#39;, real=True, positive=True)
-</pre></div>
-</div>
-<img alt="../_images/3de0b8bdbef61ced816ff378db46e78ce179a0476f2ac1c243311cc0c0f4f916.png" src="../_images/3de0b8bdbef61ced816ff378db46e78ce179a0476f2ac1c243311cc0c0f4f916.png" />
-<img alt="../_images/860bb624f70bb02487776c68a0e667f4b9aa25e85610d3c1a70fddd0a462f81b.png" src="../_images/860bb624f70bb02487776c68a0e667f4b9aa25e85610d3c1a70fddd0a462f81b.png" />
+<img alt="../_images/22b42fef91457fc56f598becaab85ae157bf80bb729e5b68e7b1ffcd279d048c.png" src="../_images/22b42fef91457fc56f598becaab85ae157bf80bb729e5b68e7b1ffcd279d048c.png" />
+<img alt="../_images/ac5a6869dc3a7c07727a890cb4443dae1cf9d3f2f184ce6129fda3898ac6a720.png" src="../_images/ac5a6869dc3a7c07727a890cb4443dae1cf9d3f2f184ce6129fda3898ac6a720.png" />
 </div>
 </div>
 <p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič. To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelna bi bila imaginarna komponentna (slika spodaj). Podobno smo sicer ugotovili že pri Fourierovih vrstah sodih in lihih funkcij (za več glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-lih-sod"><span class="std std-ref">Fourierove vrste lihih in sodih funkcij</span></a>.</p>
@@ -541,7 +535,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\4102271043.py:3: SyntaxWarning:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
@@ -558,14 +552,8 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\4102271043.py:3: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\664348604.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-  η = sym.symbols(&#39;\eta&#39;, real=True, positive=True)
-</pre></div>
-</div>
-<img alt="../_images/ae0f3974f873bd9d00cee29aa69e57516a848134864a67b315f40781360cb6ff.png" src="../_images/ae0f3974f873bd9d00cee29aa69e57516a848134864a67b315f40781360cb6ff.png" />
-<img alt="../_images/db2f96f5c36a43779278f9c3e47ff7d464d2848be5303708ed515b63f769e8c1.png" src="../_images/db2f96f5c36a43779278f9c3e47ff7d464d2848be5303708ed515b63f769e8c1.png" />
+<img alt="../_images/e2af8407e2792016de53c3c83cdc4ca4755fca830ae17ffe5fd4d32e9604fb5d.png" src="../_images/e2af8407e2792016de53c3c83cdc4ca4755fca830ae17ffe5fd4d32e9604fb5d.png" />
+<img alt="../_images/aac279a56eeda811b6f6bee84fdae1fd00ffd587f9458137d91917e750aebee3.png" src="../_images/aac279a56eeda811b6f6bee84fdae1fd00ffd587f9458137d91917e750aebee3.png" />
 </div>
 </div>
 <p>Sicer pa velja poudariti, da v splošnem realni signali <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje enotsko funkcijo stopnice). Časovni signali so v splošnem lahko kompleksne oblike in takrat v frekvenčni domeni v splošnem ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
@@ -578,7 +566,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\664348604.py:3: SyntaxWarning: 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, d&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
 <span class="c1"># x = sym.sign(t-d)*sym.exp(-η*sym.Abs(t-d)) # časovni zamik, liha funkcija, povprečje nič</span>
@@ -619,15 +607,9 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\664348604.py:3: SyntaxWarning: 
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2331919166.py:3: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-  η = sym.symbols(&#39;\eta&#39;, real=True, positive=True)
-</pre></div>
-</div>
-<img alt="../_images/a7fef1ceb1b1e4e46e7a606afe918d0a84f9f78f7f55b47bdf16fabb75813aaf.png" src="../_images/a7fef1ceb1b1e4e46e7a606afe918d0a84f9f78f7f55b47bdf16fabb75813aaf.png" />
-<img alt="../_images/dbe22918fb94fab7fc0d35c0395d42ee8cfd9eb4f25215ee5b1389abd6bf7ea1.png" src="../_images/dbe22918fb94fab7fc0d35c0395d42ee8cfd9eb4f25215ee5b1389abd6bf7ea1.png" />
-<img alt="../_images/eac10e430600b3ad70b79d913faeb28501d500986a82028b7d124404b9df19c7.png" src="../_images/eac10e430600b3ad70b79d913faeb28501d500986a82028b7d124404b9df19c7.png" />
+<img alt="../_images/2f8e038def18e3c7ed05c7e25b9a287b3542c1defa21a572c974cf2c7c5a8a19.png" src="../_images/2f8e038def18e3c7ed05c7e25b9a287b3542c1defa21a572c974cf2c7c5a8a19.png" />
+<img alt="../_images/6edbafe578db8d21952f17a01278a9f024168d9d383d2789feb37cb4be4e798a.png" src="../_images/6edbafe578db8d21952f17a01278a9f024168d9d383d2789feb37cb4be4e798a.png" />
+<img alt="../_images/73c9267fb902ecf1b9b29d5d707750c8a98d30549a5b9eafda0e42fac7e2c853.png" src="../_images/73c9267fb902ecf1b9b29d5d707750c8a98d30549a5b9eafda0e42fac7e2c853.png" />
 </div>
 </div>
 </section>
@@ -724,7 +706,7 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\820447440.py:8: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_13528\820447440.py:8: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   plt.title(&#39;$|\\mathcal{F}_{t}\\left( A\,\sin(2\pi\,p\,t)\\right)|$&#39;)
 </pre></div>
 </div>
@@ -792,8 +774,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/dc0a130eb50180369be3ea035f40bd89c2e29fd8f1cf99ddd5f4a38227590888.png" src="../_images/dc0a130eb50180369be3ea035f40bd89c2e29fd8f1cf99ddd5f4a38227590888.png" />
-<img alt="../_images/d994079683ad16286fa6ff1a045b3589d3fba0bc218d6bb3f5f659d119bee01f.png" src="../_images/d994079683ad16286fa6ff1a045b3589d3fba0bc218d6bb3f5f659d119bee01f.png" />
+<img alt="../_images/32b51e108c358e7e6b12ff1a9866bcad1de7334815d95940a12b45e4c4ea95c9.png" src="../_images/32b51e108c358e7e6b12ff1a9866bcad1de7334815d95940a12b45e4c4ea95c9.png" />
+<img alt="../_images/e70f253fa2173123a51e9fdb338fb7f6fa72730cc93f570e1764f0f3665207e1.png" src="../_images/e70f253fa2173123a51e9fdb338fb7f6fa72730cc93f570e1764f0f3665207e1.png" />
 </div>
 </div>
 </section>
@@ -818,7 +800,7 @@ x_2(t) =
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">f_0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;f_0&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
@@ -833,12 +815,6 @@ x_2(t) =
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3952021286.py:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-  δ = sym.symbols(&#39;\delta&#39;, real=True, positive=True)
-</pre></div>
-</div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \frac{\delta + 2 i \pi f}{4 \pi^{2} f_{0}^{2} + \left(\delta + 2 i \pi f\right)^{2}}\]</div>
 </div>
@@ -852,7 +828,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3952021286.py:3: SyntaxWarning:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">δ</span><span class="p">,</span> <span class="n">f_0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;\delta, f_0&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">δ</span><span class="p">,</span> <span class="n">f_0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">delta, f_0&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 
@@ -865,7 +841,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3952021286.py:3: SyntaxWarning:
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">f_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span><span class="mf">0.8</span><span class="p">}</span>
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Simetrični dušeni odziv: $f_0=</span><span class="si">{</span><span class="n">f_0</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">, \delta=</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Simetrični dušeni odziv: $f_0=</span><span class="si">{</span><span class="n">f_0</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">, </span><span class="se">\\</span><span class="s1">delta=</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Enostranski dušeni odziv&#39;</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -888,19 +864,9 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3952021286.py:3: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\39803864.py:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-  δ, f_0 = sym.symbols(&#39;\delta, f_0&#39;, real=True, positive=True)
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\39803864.py:16: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-  label=f&#39;Simetrični dušeni odziv: $f_0={f_0.subs(podatki)}, \delta={δ.subs(podatki):3.2f}$&#39;, show=False,
-</pre></div>
-</div>
-<img alt="../_images/809425144b92ab666aa24cb1073fc7506bc9185cad0cddc5e56e845fb3a42cfb.png" src="../_images/809425144b92ab666aa24cb1073fc7506bc9185cad0cddc5e56e845fb3a42cfb.png" />
-<img alt="../_images/5d9db6db9f5c32bd6c9d6c40f14a1a5099aef7b141e570dc23e3ab4d693fac11.png" src="../_images/5d9db6db9f5c32bd6c9d6c40f14a1a5099aef7b141e570dc23e3ab4d693fac11.png" />
-<img alt="../_images/4dcacbb03e57828f29f96749477115ecb86b6f23f9628eeb4fc3172e9510d642.png" src="../_images/4dcacbb03e57828f29f96749477115ecb86b6f23f9628eeb4fc3172e9510d642.png" />
+<img alt="../_images/b844c4f968dd10f360a7cbc54f4fd666b423d7a98324310dbbe747dad01cb4a5.png" src="../_images/b844c4f968dd10f360a7cbc54f4fd666b423d7a98324310dbbe747dad01cb4a5.png" />
+<img alt="../_images/b6017a09b9b0200e638dcc4d463b0a87b09b6dbbea9a102e695b6ed030a69042.png" src="../_images/b6017a09b9b0200e638dcc4d463b0a87b09b6dbbea9a102e695b6ed030a69042.png" />
+<img alt="../_images/61fd9ffb436478e1c2aeee4fd6c2ec3583d24e3f2631cbbbabbf0679a004e615.png" src="../_images/61fd9ffb436478e1c2aeee4fd6c2ec3583d24e3f2631cbbbabbf0679a004e615.png" />
 </div>
 </div>
 </section>
@@ -956,7 +922,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$a=</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="o">+</span><span class="s1">&#39;, Max=$\sqrt{\pi/a}=$&#39;</span><span class="o">+</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$a=</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="o">+</span><span class="s1">&#39;, Max=$</span><span class="se">\\</span><span class="s1">sqrt{</span><span class="se">\\</span><span class="s1">pi/a}=$&#39;</span><span class="o">+</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -965,14 +931,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\1671338496.py:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-  label=f&#39;$a={a.subs(podatki)}$&#39;+&#39;, Max=$\sqrt{\pi/a}=$&#39;+f&#39;{sym.sqrt(sym.pi/a).evalf(subs=podatki):3.2f}&#39;, show=False,
-</pre></div>
-</div>
-<img alt="../_images/4d8f65e809587edd4759440debe8116c01bee8b874e699c2cf6369366f058ede.png" src="../_images/4d8f65e809587edd4759440debe8116c01bee8b874e699c2cf6369366f058ede.png" />
-<img alt="../_images/21c67e081b35a248932ecea37ac00fe66d5a7a638820e57f792a0acba4c3d9af.png" src="../_images/21c67e081b35a248932ecea37ac00fe66d5a7a638820e57f792a0acba4c3d9af.png" />
+<img alt="../_images/c5dc52d08b1241b144985506c6f52d974b898b8bd082fcdd7daa0ca33984baff.png" src="../_images/c5dc52d08b1241b144985506c6f52d974b898b8bd082fcdd7daa0ca33984baff.png" />
+<img alt="../_images/22a4fb4e59740a4ce3168159a3564e82011464392fbedd95634a5f493a5ef4ee.png" src="../_images/22a4fb4e59740a4ce3168159a3564e82011464392fbedd95634a5f493a5ef4ee.png" />
 </div>
 </div>
 </section>
@@ -1044,7 +1004,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\1671338496.py:16: SyntaxWarning
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_1(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_2(t)=a\,x_1(t)+b\,x_1(t), a=</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">, b=</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_2(t)=a</span><span class="se">\\</span><span class="s1">,x_1(t)+b</span><span class="se">\\</span><span class="s1">,x_1(t), a=</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">, b=</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1062,14 +1022,8 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\1671338496.py:16: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2840248884.py:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-  label=f&#39;$x_2(t)=a\,x_1(t)+b\,x_1(t), a={a.subs(podatki)}, b={b.subs(podatki)}$&#39;, show=False)
-</pre></div>
-</div>
-<img alt="../_images/d27972420f920b68d9d4cd4cbc8d28eec94af721b7edb3de04bb5f2900e8442b.png" src="../_images/d27972420f920b68d9d4cd4cbc8d28eec94af721b7edb3de04bb5f2900e8442b.png" />
-<img alt="../_images/b7e8cccdf76d7a499f75ee3d1c729e2df0a0b68f19211a72ed5553db4810ced9.png" src="../_images/b7e8cccdf76d7a499f75ee3d1c729e2df0a0b68f19211a72ed5553db4810ced9.png" />
+<img alt="../_images/7dedf5d6b807e2a8ae7fe41058ec0cab111c0f703cb4adf9e747ffd265fc0729.png" src="../_images/7dedf5d6b807e2a8ae7fe41058ec0cab111c0f703cb4adf9e747ffd265fc0729.png" />
+<img alt="../_images/8c3ef822cc07f40a1df55dc4abdec2e88b929972fa861da1b14a21998b2091f1.png" src="../_images/8c3ef822cc07f40a1df55dc4abdec2e88b929972fa861da1b14a21998b2091f1.png" />
 </div>
 </div>
 </section>
@@ -1125,7 +1079,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2840248884.py:15: SyntaxWarning
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=a\,t$, $a=$</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=a</span><span class="se">\\</span><span class="s1">,t$, $a=$</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1134,7 +1088,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2840248884.py:15: SyntaxWarning
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=a\,t$, $a=$</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=a</span><span class="se">\\</span><span class="s1">,t$, $a=$</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1143,18 +1097,8 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2840248884.py:15: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:24: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:24: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\655066492.py:15: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-  label=f&#39;$t=a\,t$, $a=${a.subs(podatki):3.2f}&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\655066492.py:24: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-  label=f&#39;$t=a\,t$, $a=${a.subs(podatki):3.2f}&#39;, show=False)
-</pre></div>
-</div>
-<img alt="../_images/e36d1893735de23db12feb07247fca1fe7b3ff8344842e372973b73a89c2c12b.png" src="../_images/e36d1893735de23db12feb07247fca1fe7b3ff8344842e372973b73a89c2c12b.png" />
-<img alt="../_images/6e611afed7baffe02e3dd783e658c434691f94cbb3f49a7106d212d45eb289bf.png" src="../_images/6e611afed7baffe02e3dd783e658c434691f94cbb3f49a7106d212d45eb289bf.png" />
+<img alt="../_images/4e46fa97e31d6d3c2d1d97c974f9edc517e39675115d4be54f112ed67c101d50.png" src="../_images/4e46fa97e31d6d3c2d1d97c974f9edc517e39675115d4be54f112ed67c101d50.png" />
+<img alt="../_images/b9486abf781464603efb59b393f330012143147adeb7f6823c17117dd26e7e1d.png" src="../_images/b9486abf781464603efb59b393f330012143147adeb7f6823c17117dd26e7e1d.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1294,22 +1238,16 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\655066492.py:24: SyntaxWarning:
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_3</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">],</span>
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza - korekcija: $\mathcal</span><span class="si">{F}</span><span class="s1">\{x(t-t_0)\} / \mathrm</span><span class="si">{e}</span><span class="s1">^{-i\,2\pi\,f\,t_0}$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza - korekcija: $</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="se">\\</span><span class="s1">{x(t-t_0)</span><span class="se">\\</span><span class="s1">} / </span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{e}</span><span class="s1">^{-i</span><span class="se">\\</span><span class="s1">,2</span><span class="se">\\</span><span class="s1">pi</span><span class="se">\\</span><span class="s1">,f</span><span class="se">\\</span><span class="s1">,t_0}$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\126194543.py:44: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  title=&#39;Frekvenčna domena - faza - korekcija: $\mathcal{F}\{x(t-t_0)\} / \mathrm{e}^{-i\,2\pi\,f\,t_0}$&#39;, ylabel=&#39;$\\angle X(f)$&#39;, xlabel=&#39;$f$&#39;)
-</pre></div>
-</div>
-<img alt="../_images/b5e7a5fe247cc80b1e7ce3c2e42aa1333f40d5b58d2a273dae25bc8f6e46f022.png" src="../_images/b5e7a5fe247cc80b1e7ce3c2e42aa1333f40d5b58d2a273dae25bc8f6e46f022.png" />
-<img alt="../_images/20cd4097d59ba9127a07120d37a307840abb310250c4bf47c002ff27660741ec.png" src="../_images/20cd4097d59ba9127a07120d37a307840abb310250c4bf47c002ff27660741ec.png" />
-<img alt="../_images/b3ff807f003f773d0cfa584c10cf1988cfdc55509e4b336a34891317954d4197.png" src="../_images/b3ff807f003f773d0cfa584c10cf1988cfdc55509e4b336a34891317954d4197.png" />
+<img alt="../_images/ddeb24227982ab19899657e356f88d19d8ee568bff7e11ed342cb2227af0c9f5.png" src="../_images/ddeb24227982ab19899657e356f88d19d8ee568bff7e11ed342cb2227af0c9f5.png" />
+<img alt="../_images/131c208b5172f2e5511778c21e2ff5570c3452e49585330a12eb51455a50b53f.png" src="../_images/131c208b5172f2e5511778c21e2ff5570c3452e49585330a12eb51455a50b53f.png" />
+<img alt="../_images/5752afdcd6cb394e4c14de9000c242e2caf0db9d1083cd84908592919d3ec660.png" src="../_images/5752afdcd6cb394e4c14de9000c242e2caf0db9d1083cd84908592919d3ec660.png" />
 <img alt="../_images/2fb71a12a1bd984ec0b4eff4821f8f2382e340545eac254ba2e54a08a2ca980e.png" src="../_images/2fb71a12a1bd984ec0b4eff4821f8f2382e340545eac254ba2e54a08a2ca980e.png" />
 </div>
 </div>
@@ -1378,17 +1316,17 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\126194543.py:44: SyntaxWarning:
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(t)\,\cos(2\pi\,f_0\,t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(t)</span><span class="se">\\</span><span class="s1">,</span><span class="se">\\</span><span class="s1">cos(2</span><span class="se">\\</span><span class="s1">pi</span><span class="se">\\</span><span class="s1">,f_0</span><span class="se">\\</span><span class="s1">,t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
-              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">\{x(t)\}$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="se">\\</span><span class="s1">{x(t)</span><span class="se">\\</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
-              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">\{x(t)\,\cos(2\pi\,f_0\,t)\}$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="se">\\</span><span class="s1">{x(t)</span><span class="se">\\</span><span class="s1">,</span><span class="se">\\</span><span class="s1">cos(2</span><span class="se">\\</span><span class="s1">pi</span><span class="se">\\</span><span class="s1">,f_0</span><span class="se">\\</span><span class="s1">,t)</span><span class="se">\\</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1397,22 +1335,8 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\126194543.py:44: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:22: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\{&#39;
-&lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\{&#39;
-&lt;&gt;:22: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\{&#39;
-&lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\{&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3373369227.py:22: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-  label=f&#39;$x(t)\,\cos(2\pi\,f_0\,t)$&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3373369227.py:29: SyntaxWarning: invalid escape sequence &#39;\{&#39;
-  label=&#39;$\\mathcal{F}\{x(t)\}$&#39;, show=False,
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3373369227.py:32: SyntaxWarning: invalid escape sequence &#39;\{&#39;
-  label=&#39;$\\mathcal{F}\{x(t)\,\cos(2\pi\,f_0\,t)\}$&#39;, show=False)
-</pre></div>
-</div>
-<img alt="../_images/48ff7a2af1c07a825acb7edc92d985509dceb3fc8cf3af4301edf21cff6cd956.png" src="../_images/48ff7a2af1c07a825acb7edc92d985509dceb3fc8cf3af4301edf21cff6cd956.png" />
-<img alt="../_images/80f234d7f4f48313dcae23de1eaf51c0f56ae1d4f89e6223c5067396f834eb3b.png" src="../_images/80f234d7f4f48313dcae23de1eaf51c0f56ae1d4f89e6223c5067396f834eb3b.png" />
+<img alt="../_images/a2992c4a7e10dc8c4136656f591628ece667bca29280c46e1c0a3fb17b00d1a6.png" src="../_images/a2992c4a7e10dc8c4136656f591628ece667bca29280c46e1c0a3fb17b00d1a6.png" />
+<img alt="../_images/5af129ffd76ea071612a922414ce103453ca83b7b841369d2a56192c59d720da.png" src="../_images/5af129ffd76ea071612a922414ce103453ca83b7b841369d2a56192c59d720da.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1530,9 +1454,9 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3373369227.py:32: SyntaxWarning
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_1(t)=</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x_1</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_2(t)=\dot x_1(t)=</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x_2</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_2(t)=</span><span class="se">\\</span><span class="s1">dot x_1(t)=</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x_2</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_3</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_3(t)=\int x_2(t)dt=</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x_3</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_3(t)=</span><span class="se">\\</span><span class="s1">int x_2(t)dt=</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x_3</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
@@ -1584,20 +1508,10 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3373369227.py:32: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\i&#39;
-&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\i&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2686389558.py:18: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-  label=f&#39;$x_2(t)=\dot x_1(t)={sym.latex(x_2)}$&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2686389558.py:20: SyntaxWarning: invalid escape sequence &#39;\i&#39;
-  label=f&#39;$x_3(t)=\int x_2(t)dt={sym.latex(x_3)}$&#39;, show=False)
-</pre></div>
-</div>
-<img alt="../_images/1cd616157ddcd0f3b42b00f6d03ef429395f2bd741b238e906a0dea6613796be.png" src="../_images/1cd616157ddcd0f3b42b00f6d03ef429395f2bd741b238e906a0dea6613796be.png" />
-<img alt="../_images/5386822b8508ac11eba37d5ba7f73f14ca3f00bb8dc633e5262cc04490da1fb6.png" src="../_images/5386822b8508ac11eba37d5ba7f73f14ca3f00bb8dc633e5262cc04490da1fb6.png" />
-<img alt="../_images/c727a3fd4d02eec714ac26971bacf202d7167253ebbb011abb1e658aff567419.png" src="../_images/c727a3fd4d02eec714ac26971bacf202d7167253ebbb011abb1e658aff567419.png" />
-<img alt="../_images/634a54e5c2aa1ab1013de75334b74e7b24333459bd02eb5fa4bdc2ef96616ef2.png" src="../_images/634a54e5c2aa1ab1013de75334b74e7b24333459bd02eb5fa4bdc2ef96616ef2.png" />
+<img alt="../_images/10189f78e876751595ad525b06d94c796770c375c9c7c7036c89b435c92a577a.png" src="../_images/10189f78e876751595ad525b06d94c796770c375c9c7c7036c89b435c92a577a.png" />
+<img alt="../_images/f319daea079ca30bd78870f71084e1e0cd378b8d0e1844da5e2f4479753bdd3e.png" src="../_images/f319daea079ca30bd78870f71084e1e0cd378b8d0e1844da5e2f4479753bdd3e.png" />
+<img alt="../_images/d67374e2b34d867479004d3889e6b4e5ab8a01db9213293567366bdd9daff385.png" src="../_images/d67374e2b34d867479004d3889e6b4e5ab8a01db9213293567366bdd9daff385.png" />
+<img alt="../_images/74160e2e435dfd0788bc0bcf3c446dd0e4e25bd3156a73b1cdada569dbb3c88e.png" src="../_images/74160e2e435dfd0788bc0bcf3c446dd0e4e25bd3156a73b1cdada569dbb3c88e.png" />
 <img alt="../_images/4713f60bf856a264ddf0caf5b5c04b3f1e738b1ac5b20ecbeefa8af1bdcb5bf6.png" src="../_images/4713f60bf856a264ddf0caf5b5c04b3f1e738b1ac5b20ecbeefa8af1bdcb5bf6.png" />
 </div>
 </div>
@@ -1681,7 +1595,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2686389558.py:20: SyntaxWarning
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x_2(t)=x_1(t)*x_1(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_3</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="o">+</span><span class="mf">1.</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x_3(t)=</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">^{-1}(\,X_1(f)\,X_1(f)\,)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x_3(t)=</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">^{-1}(</span><span class="se">\\</span><span class="s1">,X_1(f)</span><span class="se">\\</span><span class="s1">,X_1(f)</span><span class="se">\\</span><span class="s1">,)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
@@ -1693,7 +1607,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2686389558.py:20: SyntaxWarning
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_2(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="o">*</span><span class="n">X_1</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mf">.25</span><span class="p">,</span> <span class="o">+</span><span class="mf">.25</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span>
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_1(f)\,X_1(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_1(f)</span><span class="se">\\</span><span class="s1">,X_1(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
@@ -1703,18 +1617,8 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2686389558.py:20: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:33: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:33: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3322241215.py:21: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-  label=&#39;$x_3(t)=\\mathcal{F}^{-1}(\,X_1(f)\,X_1(f)\,)$&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3322241215.py:33: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-  label=f&#39;$|X_1(f)\,X_1(f)|$&#39;, show=False)
-</pre></div>
-</div>
-<img alt="../_images/8dd90892da41d19e662decf21aead014ddb2bdc4c05a513ddd7a06620cdb0836.png" src="../_images/8dd90892da41d19e662decf21aead014ddb2bdc4c05a513ddd7a06620cdb0836.png" />
-<img alt="../_images/f982b5fea94bec1774168bfd11bcd445a2251372f5342b2c610e0c82b2573154.png" src="../_images/f982b5fea94bec1774168bfd11bcd445a2251372f5342b2c610e0c82b2573154.png" />
+<img alt="../_images/875e85f7e447566b7bf34a5953ddd2c01edf9cd42431fa432275ac01ea89a3df.png" src="../_images/875e85f7e447566b7bf34a5953ddd2c01edf9cd42431fa432275ac01ea89a3df.png" />
+<img alt="../_images/7702de0eba179b0d35e54367cb80e854c84282da3753ac05f90d5abd5fc16556.png" src="../_images/7702de0eba179b0d35e54367cb80e854c84282da3753ac05f90d5abd5fc16556.png" />
 </div>
 </div>
 </section>
@@ -1789,14 +1693,14 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_8400\3322241215.py:33: SyntaxWarning
 &lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\,&#39;
 &lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\1928939429.py:18: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_13528\1928939429.py:18: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=f&#39;$x_2(t)=x_1(t)\,x_1(t)$&#39;, show=False)
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\1928939429.py:20: SyntaxWarning: invalid escape sequence &#39;\,&#39;
+C:\Users\janko\AppData\Local\Temp\ipykernel_13528\1928939429.py:20: SyntaxWarning: invalid escape sequence &#39;\,&#39;
   label=&#39;$x_3(t)=\\mathcal{F}^{-1}(\,X_1(f)*X_1(f)\,)$&#39;, show=False)
 </pre></div>
 </div>
-<img alt="../_images/d70edbdc11e4e05062be15d2408f89fea85c6fc256d17fc550314d8c55ed0df9.png" src="../_images/d70edbdc11e4e05062be15d2408f89fea85c6fc256d17fc550314d8c55ed0df9.png" />
-<img alt="../_images/c163fe3d7a7cc1968de20f33f1e5609aa139d20f1bb155880bc76a4e97455914.png" src="../_images/c163fe3d7a7cc1968de20f33f1e5609aa139d20f1bb155880bc76a4e97455914.png" />
+<img alt="../_images/889c460d19bb44f5f120755a475e04ce694965a4b07c9acddd76d0a57a6bc632.png" src="../_images/889c460d19bb44f5f120755a475e04ce694965a4b07c9acddd76d0a57a6bc632.png" />
+<img alt="../_images/5e92e52f5a6cb953ec134d6fd1df36d5fffee67a3e4748b60256053632d57d66.png" src="../_images/5e92e52f5a6cb953ec134d6fd1df36d5fffee67a3e4748b60256053632d57d66.png" />
 </div>
 </div>
 </section>
@@ -1920,7 +1824,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 <span class="n">XW</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">W</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="o">-</span><span class="n">τ</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span> <span class="c1"># konvolucija v frekvenci</span>
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(t)=sin(2\,\pi\,fr\,t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(t)=sin(2</span><span class="se">\\</span><span class="s1">,</span><span class="se">\\</span><span class="s1">pi</span><span class="se">\\</span><span class="s1">,fr</span><span class="se">\\</span><span class="s1">,t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$w(t)$, prakovotno okno T=</span><span class="si">{</span><span class="n">T</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1936,7 +1840,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">W</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$W(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">XW</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$X(f)\,W(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$X(f)</span><span class="se">\\</span><span class="s1">,W(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
@@ -1946,18 +1850,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:19: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:35: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:19: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-&lt;&gt;:35: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2329125482.py:19: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-  label=f&#39;$x(t)=sin(2\,\pi\,fr\,t)$&#39;, show=False,
-C:\Users\janko\AppData\Local\Temp\ipykernel_8400\2329125482.py:35: SyntaxWarning: invalid escape sequence &#39;\,&#39;
-  label=f&#39;$X(f)\,W(f)$&#39;, show=False)
-</pre></div>
-</div>
-<img alt="../_images/ee4d59beac250a3c1706dc6b34c5c11e6aaf8b9f52e241786a123eb22ae17b75.png" src="../_images/ee4d59beac250a3c1706dc6b34c5c11e6aaf8b9f52e241786a123eb22ae17b75.png" />
-<img alt="../_images/a4a77cef382d5e30afdfa4b3825bea9678172ac343c1b67f20e7a71ebbf30afb.png" src="../_images/a4a77cef382d5e30afdfa4b3825bea9678172ac343c1b67f20e7a71ebbf30afb.png" />
+<img alt="../_images/39c5f1990377e44b72f4c97d8d14880ca6eca743548bcd96e30330b56c086f32.png" src="../_images/39c5f1990377e44b72f4c97d8d14880ca6eca743548bcd96e30330b56c086f32.png" />
+<img alt="../_images/362eda6dda4e17a911fd765c166b317c8092a8d0f377cfc7c6e38906fd180cdb.png" src="../_images/362eda6dda4e17a911fd765c166b317c8092a8d0f377cfc7c6e38906fd180cdb.png" />
 </div>
 </div>
 </section>

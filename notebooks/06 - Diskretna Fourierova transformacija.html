@@ -678,7 +678,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena - amplitudni spekter&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_kx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_kx</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">x dodajanje ničel&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Brez dodajanja ničel&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frekvenca [Hz], $\Delta f=$</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frekvenca [Hz], $</span><span class="se">\\</span><span class="s1">Delta f=$</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -687,12 +687,6 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_14348\2095065885.py:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-  plt.xlabel(f&#39;Frekvenca [Hz], $\Delta f=${1/(N*dt):3.2f}&#39;)
-</pre></div>
-</div>
 <img alt="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" src="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" />
 <img alt="../_images/a139030258987ddfdf9200080720c2490718451f14b04558028757ee61f17636.png" src="../_images/a139030258987ddfdf9200080720c2490718451f14b04558028757ee61f17636.png" />
 </div>
@@ -782,7 +776,7 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_14348\2095065885.py:30: SyntaxWarnin
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena - amplitudni spekter&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_kx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_kx</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">x dodajanje ničel&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Brez dodajanja ničel&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frekvenca [Hz], $\Delta f=$</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frekvenca [Hz], $</span><span class="se">\\</span><span class="s1">Delta f=$</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -791,12 +785,6 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_14348\2095065885.py:30: SyntaxWarnin
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-C:\Users\janko\AppData\Local\Temp\ipykernel_14348\703110275.py:30: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-  plt.xlabel(f&#39;Frekvenca [Hz], $\Delta f=${1/(N*dt):3.2f}&#39;)
-</pre></div>
-</div>
 <img alt="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" src="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" />
 <img alt="../_images/70c3353eedd1a5fdb5198174b84ba6b55ae0ae0cbe643ba88972c2db866c8732.png" src="../_images/70c3353eedd1a5fdb5198174b84ba6b55ae0ae0cbe643ba88972c2db866c8732.png" />
 </div>
