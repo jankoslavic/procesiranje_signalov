@@ -386,8 +386,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. Odziv linearnih sistemov na naključno vzbujanje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#srednja-vrednost-odziva">Srednja vrednost odziva</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avtokorelacija">Avtokorelacija</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#krizna-korelacija">Križna korelacija</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avtokorelacijska-funkcija">Avtokorelacijska funkcija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#krizna-korelacijska-funkcija">Križna korelacijska funkcija</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
 </ul>
 </li>
@@ -458,9 +458,9 @@ document.write(`
 \]</div>
 </div>
 </section>
-<section id="avtokorelacija">
-<h2>Avtokorelacija<a class="headerlink" href="#avtokorelacija" title="Link to this heading">#</a></h2>
-<p>Tukaj želimo odgovoriti na vprašanje kako je avtokorelacija vzbujanja <span class="math notranslate nohighlight">\(R_{ff}(\tau)\)</span> povezana z avtokorelacijo odziva <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, poglejmo detajle:</p>
+<section id="avtokorelacijska-funkcija">
+<h2>Avtokorelacijska funkcija<a class="headerlink" href="#avtokorelacijska-funkcija" title="Link to this heading">#</a></h2>
+<p>Tukaj želimo odgovoriti na vprašanje kako je avtokorelacijska funkcija vzbujanja <span class="math notranslate nohighlight">\(R_{ff}(\tau)\)</span> povezana z avtokorelacijsko funkcijo odziva <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span>, poglejmo detajle:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -484,7 +484,7 @@ R_{xx}(\tau)
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-S_{xx} &amp;= \int_{-\infty}^{+\infty}R_{xx}(\tau)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
+S_{xx}(f) &amp;= \int_{-\infty}^{+\infty}R_{xx}(\tau)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
 &amp;=
 \underbrace{\int_{0}^{+\infty}\,h(\tau_1)\,\mathrm{e}^{+\textrm{i}\,2\pi\,f\,\tau_1}\,\textrm{d}  \tau_1}_{H^*(f)}\,
 \underbrace{\int_{0}^{+\infty}\,h(\tau_2)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau_2}\,\textrm{d}  \tau_2}_{H(f)}\,
@@ -498,14 +498,14 @@ S_{xx} &amp;= \int_{-\infty}^{+\infty}R_{xx}(\tau)\,\mathrm{e}^{-\textrm{i}\,2\p
 <p>Avto-spektralna gostota moči na odzivni strani je definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
-S_{xx} = H^*(f)\,H(f)\,S_{ff}(f),
+S_{xx}(f) = H^*(f)\,H(f)\,S_{ff}(f),
 \]</div>
 <p>kjer <span class="math notranslate nohighlight">\({}^*\)</span> označuje kompleksno konjugirano vrednost.</p>
 </div>
 </section>
-<section id="krizna-korelacija">
-<h2>Križna korelacija<a class="headerlink" href="#krizna-korelacija" title="Link to this heading">#</a></h2>
-<p>Poglejmo si sedaj še križno korelacijo <span class="math notranslate nohighlight">\(R_{fx}(\tau)\)</span> vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span> in odziva <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
+<section id="krizna-korelacijska-funkcija">
+<h2>Križna korelacijska funkcija<a class="headerlink" href="#krizna-korelacijska-funkcija" title="Link to this heading">#</a></h2>
+<p>Poglejmo si sedaj še križno korelacijsko funkcijo <span class="math notranslate nohighlight">\(R_{fx}(\tau)\)</span> vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span> in odziva <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
@@ -519,7 +519,7 @@ R_{fx}(\tau)&amp;=E\big[f(t)\,x(t+\tau)\big]\\
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-S_{fx} &amp;= \int_{-\infty}^{+\infty}R_{fx}(\tau)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
+S_{fx}(f) &amp;= \int_{-\infty}^{+\infty}R_{fx}(\tau)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau}\,\textrm{d}\tau\\
 &amp;=
 \underbrace{\int_{0}^{+\infty}\,h(\tau_1)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,\tau_1}\,\textrm{d}  \tau_1}_{H(f)}\,
 \underbrace{\int_{-\infty}^{+\infty}R_{ff}(u)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,u}\,\textrm{d}  u}_{S_{ff}(f)}.
@@ -532,10 +532,10 @@ Končni rezultat je:</p>
 <p>Križno-spektralna gostota moči je definirana kot:</p>
 <div class="math notranslate nohighlight">
 \[
-S_{fx} = H(f)\,S_{ff}(f).
+S_{fx}(f) = H(f)\,S_{ff}(f).
 \]</div>
 </div>
-<p>Za razliko od avto-spektralne gostoste križno-spektralna gostota ohranja fazno informacijo!</p>
+<p>Za razliko od avto-spektralne gostote križno-spektralna gostota ohranja fazno informacijo!</p>
 <section id="zgled">
 <h3>Zgled<a class="headerlink" href="#zgled" title="Link to this heading">#</a></h3>
 <p>S pomočjo zgleda spodaj si bomo pogledali avto- in križno- spektralno gostoto na naključno generiranih, normalno porazdeljenih, podatkih.</p>
@@ -690,10 +690,10 @@ S_{fx} = H(f)\,S_{ff}(f).
 </section>
 <section id="cenilke-frekvencne-prenosne-funkcije">
 <span id="sec-cenilke-frf"></span><h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Link to this heading">#</a></h2>
-<p>Različne oblike frekvenčne prenosne funkcije (FRF) smo teoretično spoznali v poglavju: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>. Tukaj si bomo pogledali kako FRF ocenimo na podlagi izmerjenih podatkov, pri tem pa se bomo omejili na sisteme z enim (sočasnim) vzbujanjem in enim (sočasnim) odzivom (to so tako imenovani SISO sistemi: ang. <em>single input, single otput</em>).</p>
+<p>Frekvenčna prenosna funkcija (FRF) karakterizira dinamski sistem; različne oblike frekvenčne prenosne funkcije smo sicer teoretično že spoznali v poglavju: <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>. Tukaj si bomo pogledali kako FRF ocenimo na podlagi izmerjenih podatkov, pri tem pa se bomo omejili na sisteme z enim (sočasnim) vzbujanjem in enim (sočasnim) odzivom (to so tako imenovani SISO sistemi: ang. <em>single input, single otput</em>).</p>
 <p>Linearni, časovno invariantni SISO sistem je mogoče predstaviti z blokovnim diagramom na sliki spodaj, kjer je <span class="math notranslate nohighlight">\(f(t)\)</span> vzbujevalna sila, <span class="math notranslate nohighlight">\(h(t)\)</span> je impulzna prenosna funkcija in <span class="math notranslate nohighlight">\(x(t)\)</span> je odziv; <span class="math notranslate nohighlight">\(F(\omega)\)</span>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in <span class="math notranslate nohighlight">\(X(\omega)\)</span> so njihovi pari v frekvenčni domeni.</p>
 <p><img alt="random_ensemble" src="../_images/FRF_nonoise.svg" /></p>
-<p>FRF je za naključni proces definirana z <span class="math notranslate nohighlight">\(\alpha(\omega)=S_{fx}/S_{ff}\)</span>, kjer sta <span class="math notranslate nohighlight">\(S_{ff}\)</span> in <span class="math notranslate nohighlight">\(S_{fx}\)</span> avto- in križna-spektralna gostota moči.</p>
+<p>FRF je za naključni proces definirana z <span class="math notranslate nohighlight">\(\alpha(\omega)=S_{fx}(\omega)/S_{ff}(\omega)\)</span>, kjer sta <span class="math notranslate nohighlight">\(S_{ff}(\omega)\)</span> in <span class="math notranslate nohighlight">\(S_{fx}(\omega)\)</span> avto- in križna-spektralna gostota moči.</p>
 <p>Slika spodaj prikazuje SISO sistem, kjer sta <span class="math notranslate nohighlight">\(u(t)\)</span> in <span class="math notranslate nohighlight">\(v(t)\)</span> resnični vhod (vzbujanje) in resnični izhod (odziv) sistema. <span class="math notranslate nohighlight">\(m(t)\)</span> predstavlja izmerjeni šum na vhodu <span class="math notranslate nohighlight">\(f(t)\)</span> in <span class="math notranslate nohighlight">\(n(t)\)</span> predstavlja izmerjeni šum na izhodu <span class="math notranslate nohighlight">\(x(t)\)</span>. Velike črke so ustrezne količine frekvenčne domene.</p>
 <p><img alt="random_ensemble" src="../_images/FRF_noise.svg" /></p>
 <p>Merilni šum je vedno prisoten in nam preprečuje, da bi izmerii dejanske vrednosti, ki vstopajo ali izstopajo v/iz sistema. Slika kaže, da v resnici ni mogoče izmeriti dejanskega vhoda v sistem <span class="math notranslate nohighlight">\(u(t)\)</span> in tudi ni mogoče izmeriti dejanskega izhoda sistema <span class="math notranslate nohighlight">\(v(t)\)</span>. Namesto tega merimo vhod s šumom:</p>
@@ -761,18 +761,18 @@ S_{fx}(\omega) &amp;= S_{uv}(\omega).
 <div class="math notranslate nohighlight">
 \[
 \begin{split}
-\hat{\gamma}_{fx}^2&amp;=\frac{|\hat{S}_{fx}|^2}{\hat{S}_{ff}\,\big(\underbrace{{S}_{vv}+S_{nn}}_{\hat{S}_{xx}}\big)},
+\hat{\gamma}_{fx}^2(\omega)&amp;=\frac{|\hat{S}_{fx}(\omega)|^2}{\hat{S}_{ff}(\omega)\,\big(\underbrace{{S}_{vv}(\omega)+S_{nn}(\omega)}_{\hat{S}_{xx}(\omega)}\big)},
 \end{split}
 \]</div>
 <p>kar kaže, da šum na izhodu <span class="math notranslate nohighlight">\(S_{nn}(\omega)\)</span> zmanjša koherenco in s tem kakovost ocenjenega FRF.</p>
-<p>Če vzbujevalnega šuma <span class="math notranslate nohighlight">\(m(t)\)</span> ni mogoče zanemariti, potem velja <span class="math notranslate nohighlight">\(S_{ff}=S_{uu}+S_{mm}\)</span> in:</p>
+<p>Če vzbujevalnega šuma <span class="math notranslate nohighlight">\(m(t)\)</span> ni mogoče zanemariti, potem velja <span class="math notranslate nohighlight">\(S_{ff}(\omega)=S_{uu}(\omega)+S_{mm}(\omega)\)</span> in:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{split}
 \hat{H}_1(\omega)&amp;=\frac{\hat{S}_{fx}(\omega)}{\hat{S}_{uu}(\omega)+\hat{S}_{mm}(\omega)}.
 \end{split}
 \]</div>
-<p>Sledi, da cenilka <span class="math notranslate nohighlight">\(\hat{H}_1\)</span> zaradi šuma na vhodu podceni pravi FRF <span class="math notranslate nohighlight">\(\alpha=S_{uv}/S_{uu}\)</span>.</p>
+<p>Sledi, da cenilka <span class="math notranslate nohighlight">\(\hat{H}_1\)</span> zaradi šuma na vhodu podceni pravi FRF <span class="math notranslate nohighlight">\(\alpha(\omega)=S_{uv}(\omega)/S_{uu}(\omega)\)</span>.</p>
 </section>
 <section id="cenilka-hat-h-2">
 <h3>Cenilka <span class="math notranslate nohighlight">\(\hat{H}_2\)</span><a class="headerlink" href="#cenilka-hat-h-2" title="Link to this heading">#</a></h3>
@@ -789,13 +789,13 @@ S_{fx}(\omega) &amp;= S_{uv}(\omega)
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-S_{xx}&amp;=S_{vv}\\
-&amp;=|\alpha(\omega)|^2\,S_{uu}\\
-&amp;=\alpha(\omega)\,\alpha(\omega)^*\,S_{uu}\\
-&amp;=\alpha(\omega)\,S_{xf},
+S_{xx}(\omega)&amp;=S_{vv}(\omega)\\
+&amp;=|\alpha(\omega)|^2\,S_{uu}(\omega)\\
+&amp;=\alpha(\omega)\,\alpha(\omega)^*\,S_{uu}(\omega)\\
+&amp;=\alpha(\omega)\,S_{xf}(\omega),
 \end{split}
 \end{split}\]</div>
-<p>kjer smo v zadnji vrstici uporabili <span class="math notranslate nohighlight">\(S_{xf}=S_{vu}=\alpha(\omega)^*\,S_{uu}\)</span>.</p>
+<p>kjer smo v zadnji vrstici uporabili <span class="math notranslate nohighlight">\(S_{xf}(\omega)=S_{vu}(\omega)=\alpha(\omega)^*\,S_{uu}(\omega)\)</span>.</p>
 <p>Posledično smo izpeljali cenilko za oceno FRF:</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
@@ -803,7 +803,7 @@ S_{xx}&amp;=S_{vv}\\
 <div class="math notranslate nohighlight">
 \[
 \begin{split}
-\hat{H}_2(\omega)&amp;=\hat{\alpha}_2(\omega)=\frac{\hat{S}_{xx}}{\hat{S}_{xf}}.
+\hat{H}_2(\omega)&amp;=\hat{\alpha}_2(\omega)=\frac{\hat{S}_{xx}(\omega)}{\hat{S}_{xf}(\omega)}.
 \end{split}
 \]</div>
 </div>
@@ -811,7 +811,7 @@ S_{xx}&amp;=S_{vv}\\
 <div class="math notranslate nohighlight">
 \[
 \begin{split}
-\hat{\gamma}_{fx}^2&amp;=\frac{|\hat{S}_{fx}|^2}{\big(\underbrace{{S}_{uu}+{S}_{mm}}_{\hat{S}_{ff}}\big)\,\hat{S}_{xx}},
+\hat{\gamma}_{fx}^2(\omega)&amp;=\frac{|\hat{S}_{fx}(\omega)|^2}{\big(\underbrace{{S}_{uu}(\omega)+{S}_{mm}(\omega)}_{\hat{S}_{ff}(\omega)}\big)\,\hat{S}_{xx}(\omega)},
 \end{split}
 \]</div>
 <p>kar kaže, da tudi šum na strani vzbujanja zmanjša koherenco in s tem kakovost ocenjenega FRF.</p>
@@ -819,17 +819,17 @@ S_{xx}&amp;=S_{vv}\\
 <div class="math notranslate nohighlight">
 \[
 \begin{split}
-\hat{\gamma}_{fx}^2&amp;=\frac{\hat{H}_1}{\hat{H}_2}.
+\hat{\gamma}_{fx}^2(\omega)&amp;=\frac{\hat{H}_1(\omega)}{\hat{H}_2(\omega)}.
 \end{split}
 \]</div>
-<p>Če šuma na strani odziva <span class="math notranslate nohighlight">\(n(t)\)</span> ni mogoče zanemariti, potem velja <span class="math notranslate nohighlight">\(S_{xx}=S_{vv}+S_{nn}\)</span> in:</p>
+<p>Če šuma na strani odziva <span class="math notranslate nohighlight">\(n(t)\)</span> ni mogoče zanemariti, potem velja <span class="math notranslate nohighlight">\(S_{xx}(\omega)=S_{vv}(\omega)+S_{nn}(\omega)\)</span> in:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{split}
-\hat{H}_2(\omega)&amp;=\frac{\hat{S}_{vv}+\hat{S}_{nn}}{\hat{S}_{xf}}.
+\hat{H}_2(\omega)&amp;=\frac{\hat{S}_{vv}(\omega)+\hat{S}_{nn}(\omega)}{\hat{S}_{xf}(\omega)}.
 \end{split}
 \]</div>
-<p>V primeru šuma na odzivu cenilka <span class="math notranslate nohighlight">\(\hat{H}_2\)</span> torej preceni pravi FRF <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p>V primeru šuma na odzivu cenilka <span class="math notranslate nohighlight">\(\hat{H}_2(\omega)\)</span> torej preceni pravi FRF <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span>.</p>
 </section>
 <section id="zgled-1">
 <h3>Zgled 1<a class="headerlink" href="#zgled-1" title="Link to this heading">#</a></h3>
@@ -1068,8 +1068,8 @@ S_{xx}&amp;=S_{vv}\\
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">8. Odziv linearnih sistemov na naključno vzbujanje</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#srednja-vrednost-odziva">Srednja vrednost odziva</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avtokorelacija">Avtokorelacija</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#krizna-korelacija">Križna korelacija</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avtokorelacijska-funkcija">Avtokorelacijska funkcija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#krizna-korelacijska-funkcija">Križna korelacijska funkcija</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zgled">Zgled</a></li>
 </ul>
 </li>
