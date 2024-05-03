@@ -1,0 +1,58 @@
+Traceback (most recent call last):
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 685, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import sympy as sym
+t, ω_0, ω_d, d_x_0, δ, A, B, τ = sym.symbols('t, \\omega_0, \\omega_d, d_x_0, \\delta, A, B, \\tau', real=True)
+π = sym.pi
+podatki = {ω_0: 2, d_x_0: 1, δ: 0.2, A: 0.5, B: 10., t0: 5}
+
+ω_d = ω_0 * sym.sqrt(1-δ**2)
+ovojnica = d_x_0/ω_d * sym.exp(-δ*ω_0*t)
+h = ovojnica * sym.sin(ω_d*t)*sym.Heaviside(t)
+
+f = A*(sym.Heaviside(t)-sym.Heaviside(t-B))
+
+fh = (f.subs(t, τ)*h.subs(t, t-τ)).subs(podatki)
+fh = sym.integrate(fh, (τ, 0, t))
+
+p1 = sym.plot(h.subs(podatki), (t,-5,20), line_color='C0', xlabel='$t$ [s]', ylabel='', title='Časovna domena',
+             label='$h(t)$', show=False)
+p2 = sym.plot(f.subs(podatki), (t,-5,20), line_color='C1', 
+             label=f'$f(t)$, $A$={A.subs(podatki):3.1f}, $B$={B.subs(podatki):3.1f}', show=False)
+p3 = sym.plot(fh, (t,-5,20), line_color='C2', 
+             label='$f(t)*h(t)$', show=False)
+p1.extend(p2)
+p1.extend(p3)
+p1.legend = True
+p1.show()
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[4], line 4[0m
+[0;32m      2[0m t, ω_0, ω_d, d_x_0, δ, A, B, τ [38;5;241m=[39m sym[38;5;241m.[39msymbols([38;5;124m'[39m[38;5;124mt, [39m[38;5;130;01m\\[39;00m[38;5;124momega_0, [39m[38;5;130;01m\\[39;00m[38;5;124momega_d, d_x_0, [39m[38;5;130;01m\\[39;00m[38;5;124mdelta, A, B, [39m[38;5;130;01m\\[39;00m[38;5;124mtau[39m[38;5;124m'[39m, real[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[0;32m      3[0m π [38;5;241m=[39m sym[38;5;241m.[39mpi
+[1;32m----> 4[0m podatki [38;5;241m=[39m {ω_0: [38;5;241m2[39m, d_x_0: [38;5;241m1[39m, δ: [38;5;241m0.2[39m, A: [38;5;241m0.5[39m, B: [38;5;241m10.[39m, [43mt0[49m: [38;5;241m5[39m}
+[0;32m      6[0m ω_d [38;5;241m=[39m ω_0 [38;5;241m*[39m sym[38;5;241m.[39msqrt([38;5;241m1[39m[38;5;241m-[39mδ[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m)
+[0;32m      7[0m ovojnica [38;5;241m=[39m d_x_0[38;5;241m/[39mω_d [38;5;241m*[39m sym[38;5;241m.[39mexp([38;5;241m-[39mδ[38;5;241m*[39mω_0[38;5;241m*[39mt)
+
+[1;31mNameError[0m: name 't0' is not defined
+
