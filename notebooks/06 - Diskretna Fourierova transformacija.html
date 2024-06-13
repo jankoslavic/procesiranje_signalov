@@ -188,7 +188,6 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html">8. Odziv linearnih sistemov na naključno vzbujanje</a></li>
-
 </ul>
 
     </div>
@@ -402,7 +401,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="diskretna-fourierova-transformacija">
 <span id="sec-dft"></span><h1>6. Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Link to this heading">#</a></h1>
-<p>Predhodno smo spoznali Fourierovo transformacijo za vzorčene podatke (glejte: <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html#sec-enakomerno-casovno-vzorcenje"><span class="std std-ref">Enakomerno časovno vzorčenje</span></a>), kjer je vzorčenje s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
+<p>Prej smo spoznali Fourierovo transformacijo za vzorčene podatke (glejte <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html#sec-enakomerno-casovno-vzorcenje"><span class="std std-ref">Enakomerno časovno vzorčenje</span></a>), kjer vzorčimo s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p><strong>Diskretna Fourierova transformacija</strong>:</p>
@@ -415,9 +414,9 @@ X_k = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
 <p>Da velja <span class="math notranslate nohighlight">\(X_k=X_{k+N}\)</span>, dokažemo z:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N}=\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,(k+N)/N}=\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,k/N}\,\underbrace{\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,N/N}}_{=\cos(-2\pi\,n)=1}
+\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N}=\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,(k+N)/N}=\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,k/N}\,\underbrace{\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,N/N}}_{=\cos(-2\pi\,n)=1}.
 \]</div>
-<p>Inverzno DFT izpeljemo tako, da zgornjo enačbo pomnožimo z <span class="math notranslate nohighlight">\(\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N}\)</span> in nato seštejemo po <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<p>Inverzno DFT izpeljemo, tako da zgornjo enačbo pomnožimo z <span class="math notranslate nohighlight">\(\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N}\)</span> in nato seštejemo po <span class="math notranslate nohighlight">\(k\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \sum_{k=0}^{N-1}X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N} = \sum_{k=0}^{N-1}\sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N}\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N},
@@ -427,14 +426,14 @@ X_k = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
 \[\begin{split}
 \sum_{k=0}^{N-1} \mathrm{e}^{-\mathrm{i}\,2\pi\,k\,(n-r)/N}=
 \begin{cases}
-N; \quad n=r\\
+N; \quad n=r,\\
 0; \quad\textrm{sicer.}
 \end{cases}
 \end{split}\]</div>
 <p>Sledi:</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{k=0}^{N-1}X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N} = x_r\,N,
+\sum_{k=0}^{N-1}X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,r/N} = x_r\,N.
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
@@ -455,8 +454,8 @@ x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,n/N},
 </div>
 <section id="hitra-fourierova-transformacija">
 <h2>Hitra Fourierova transformacija<a class="headerlink" href="#hitra-fourierova-transformacija" title="Link to this heading">#</a></h2>
-<p>Hitra Fourierova transformacija (ang. <em>Fast Fourier Transform</em> - FFT) je ime numeričnega algoritma za diskretno Fourierovo transformacijo. DFT ima numerični obseg proporcionalen z <span class="math notranslate nohighlight">\(N^2\)</span>, kar zapišemo kot: (<span class="math notranslate nohighlight">\(\mathcal{O}(N^2)\)</span>). Kot avtorja hitre Fourierove transformacije štejeta James Cooley in John Tukey, ki sta algoritem objavila v letu 1965 (glejte: <a class="reference external" href="https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf">vir</a>), pozneje pa se je izkazalo, da je podoben algoritem že bistveno prej, v neobjavljenem delu iz leta 1805, odkril Carl Friedrich Gauss. Algoritem je, glede na DFT, numerično bistveno hitrejši: <span class="math notranslate nohighlight">\(\mathcal{O}(N\log(N))\)</span>; ker numerični obseg s številom elementov <span class="math notranslate nohighlight">\(N\)</span> ne narašča kvadratično, je to bistveno povečalo uporabnost DFT. Nekateri algoritem FFT smatrajo kot enega najbolj pomembnih algoritmov, saj je imel (in še ima) zelo pomemben družbeno-ekonomski vpliv. Kot zanimivost lahko tukaj povemo, da algoritem ni bil patentiran (glejte: <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">vir</a>). Zaradi simetrije v podatkih je hitrost izračuna najvišja, če je število vzorcev enako <span class="math notranslate nohighlight">\(2^n\)</span>, kjer <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>.</p>
-<p>Diskretna Fourierova transformacija je v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dokumentirana <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.fft.html">tukaj</a> in si jo bomo najprej pogledali na spodnjem primeru sinusuide z amplitudo <code class="docutils literal notranslate"><span class="pre">A</span></code>, frekvenco <code class="docutils literal notranslate"><span class="pre">fr</span></code>, frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code> in dolžino vzorčenja <code class="docutils literal notranslate"><span class="pre">N</span></code>, ki bo enaka frekvenci vzorčenja (vzorčili bomo torej 1 sekundo). DFT bomo izvedli z metodo <code class="docutils literal notranslate"><span class="pre">numpy.fft.fft()</span></code> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html#numpy.fft.fft">dokumentacija</a>)</p>
+<p>Hitra Fourierova transformacija (ang. <em>Fast Fourier Transform</em> <span class="math notranslate nohighlight">\(-\)</span> FFT) je ime numeričnega algoritma za diskretno Fourierovo transformacijo. DFT ima numerični obseg proporcionalen z <span class="math notranslate nohighlight">\(N^2\)</span>, kar zapišemo kot <span class="math notranslate nohighlight">\(\mathcal{O}(N^2)\)</span>. Za avtorja hitre Fourierove transformacije veljata James Cooley in John Tukey, ki sta algoritem objavila leta 1965 (glejte <a class="reference external" href="https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf">vir</a>), pozneje pa se je izkazalo, da je podoben algoritem že bistveno prej, v neobjavljenem delu iz leta 1805, odkril Carl Friedrich Gauss. Algoritem je, glede na DFT, numerično bistveno hitrejši: <span class="math notranslate nohighlight">\(\mathcal{O}(N\log(N))\)</span>; ker numerični obseg s številom elementov <span class="math notranslate nohighlight">\(N\)</span> ne narašča kvadratično, je to bistveno povečalo uporabnost DFT. Nekateri algoritem FFT smatrajo kot enega najpomembnejših algoritmov, saj je imel (in še ima) zelo pomemben družbeno-ekonomski vpliv. Kot zanimivost lahko tukaj povemo, da algoritem ni bil patentiran (glejte <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">vir</a>). Zaradi simetrije v podatkih je hitrost izračuna najvišja, če je število vzorcev enako <span class="math notranslate nohighlight">\(2^n\)</span>, kjer <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span>.</p>
+<p>Diskretna Fourierova transformacija je v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dokumentirana <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.fft.html">tukaj</a> in si jo bomo najprej pogledali na spodnjem primeru sinusoide z amplitudo <code class="docutils literal notranslate"><span class="pre">A</span></code>, frekvenco <code class="docutils literal notranslate"><span class="pre">fr</span></code>, frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code> in dolžino vzorčenja <code class="docutils literal notranslate"><span class="pre">N</span></code>, ki bo enaka frekvenci vzorčenja (vzorčili bomo torej 1 sekundo). DFT bomo izvedli z metodo <code class="docutils literal notranslate"><span class="pre">numpy.fft.fft()</span></code> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html#numpy.fft.fft">dokumentacija</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -475,7 +474,7 @@ x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,n/N},
 </div>
 </div>
 </div>
-<p>Sinusuida ima samo eno frekvenčno komponento različno od nič:</p>
+<p>Sinusoida ima samo eno frekvenčno komponento različno od nič:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">freq</span><span class="o">==</span><span class="n">fr</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">freq</span><span class="o">==</span><span class="n">fr</span><span class="p">]))</span>
@@ -503,10 +502,10 @@ x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,n/N},
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena - amplitudni spekter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena $-$ amplitudni spekter&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frekvenca [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|X|$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -514,27 +513,27 @@ x_n = \frac{1}{N} \sum_{k=0}^{N-1} X_k\,\mathrm{e}^{\mathrm{i}\,2\pi\,k\,n/N},
 </details>
 <div class="cell_output docutils container">
 <img alt="../_images/cf6effb2703e2b10b08531266f2689e241c661abbdc06c6c9c2cc755d7424ce7.png" src="../_images/cf6effb2703e2b10b08531266f2689e241c661abbdc06c6c9c2cc755d7424ce7.png" />
-<img alt="../_images/d52ee664f05d5f51de80bea0b599a9044f91e752349f048767e6ddade015874d.png" src="../_images/d52ee664f05d5f51de80bea0b599a9044f91e752349f048767e6ddade015874d.png" />
+<img alt="../_images/ad7ace5e1471632cd86bd649b279e383058e39b1dfa51d9b5cbc841c02ecb007.png" src="../_images/ad7ace5e1471632cd86bd649b279e383058e39b1dfa51d9b5cbc841c02ecb007.png" />
 </div>
 </div>
 </section>
 <section id="fourierove-vrste-in-diskretna-fourierova-transformacija">
 <h2>Fourierove vrste in diskretna Fourierova transformacija<a class="headerlink" href="#fourierove-vrste-in-diskretna-fourierova-transformacija" title="Link to this heading">#</a></h2>
-<p>Diskretna Fourierova transformacija je s Fourierovimi vrstami zelo povezana. Povezavo lahko hitro razkrijemo, če predpostavimo diskretno časovno vrsto <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span> in <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>, sledi:</p>
+<p>Diskretna Fourierova transformacija je s Fourierovimi vrstami zelo povezana. Povezavo lahko hitro razkrijemo, če predpostavimo diskretno časovno vrsto <span class="math notranslate nohighlight">\(x_i=x(\Delta t\,i)\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta t\)</span> konstanten časovni korak, <span class="math notranslate nohighlight">\(i=0,1,\dots,N-1\)</span> in <span class="math notranslate nohighlight">\(T_p=N\,\Delta t\)</span>; sledi:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
 c_k &amp;= \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,t/T_p}\,\mathrm{d}t\\
 &amp;= \frac{1}{N\,\Delta t}\,\sum_{n=0}^{N-1} x(n\,\Delta t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,\Delta t\,n/(N\,\Delta t)}\,\Delta t\\
 &amp;= \frac{1}{N}\,\underbrace{\sum_{n=0}^{N-1} x(n\,\Delta t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N}}_{X_k}\\
-&amp;= \frac{X_k}{N}\\
+&amp;= \frac{X_k}{N}.\\
 \end{split}
 \end{split}\]</div>
-<p>Poudariti je treba, da v splošnem <span class="math notranslate nohighlight">\(X_k/N\ne c_k\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_k\)</span> periodična vrsta.</p>
-<p>Pri primerjanju DFT in Fourierovih vrst se pogosto naredi napaka pri razumevanju periode (predvsem zadnje diskretne točke). Pri zgornjem primeru sinusoide časovna točka pri <code class="docutils literal notranslate"><span class="pre">t=1</span></code> eksplicitno ni vključena; implicitno pa je, saj smo zgoraj spoznali, da so vzorčeni podatki periodični in velja <span class="math notranslate nohighlight">\(x_n=x_{n+N}\)</span>. Poglejmo ta detajl pobližje; Členi Fourierove vrste so definirani kot:</p>
+<p>Poudariti je treba, da v splošnem velja <span class="math notranslate nohighlight">\(X_k/N\ne c_k\)</span>, saj DFT temelji na končni vrsti in je zato <span class="math notranslate nohighlight">\(X_k\)</span> periodična vrsta.</p>
+<p>Pri primerjanju DFT in Fourierovih vrst pogosto pride do napake pri razumevanju periode (predvsem zadnje diskretne točke). V zgornjem primeru sinusoide časovna točka pri <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">1</span></code> eksplicitno ni vključena; implicitno pa je, saj smo zgoraj spoznali, da so vzorčeni podatki periodični in velja <span class="math notranslate nohighlight">\(x_n=x_{n+N}\)</span>. Poglejmo ta detajl pobliže; členi Fourierove vrste so definirani kot:</p>
 <div class="math notranslate nohighlight">
 \[
-c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t
+c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t.
 \]</div>
 <p>Izračunamo Fourierov koeficient za frekvenco <code class="docutils literal notranslate"><span class="pre">fr</span></code>:</p>
 <div class="cell docutils container">
@@ -568,7 +567,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 <span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
 <span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="c1"># spodnja fs rezultira v vključenost zadnje točke. Rezultat bo napačen!</span>
+<span class="c1"># Spodnja `fs` rezultira v vključenost zadnje točke. Rezultat bo napačen!</span>
 <span class="c1">#fs = 100/1.01010101010101</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
@@ -606,7 +605,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </div>
 </div>
-<p>Če v kodi zgoraj spremenimo <code class="docutils literal notranslate"><span class="pre">fs</span></code> ali število točk tako, da je zadnja točka eksplicitno vključena, rezultat ne bo enak tistemu iz Fourierovih vrst!</p>
+<p>Če v kodi zgoraj spremenimo <code class="docutils literal notranslate"><span class="pre">fs</span></code> ali število točk, tako da je zadnja točka eksplicitno vključena, rezultat ne bo enak tistemu iz Fourierovih vrst!</p>
 </section>
 <section id="frekvencna-locljivost-in-dodajanje-nicel">
 <h2>Frekvenčna ločljivost in dodajanje ničel<a class="headerlink" href="#frekvencna-locljivost-in-dodajanje-nicel" title="Link to this heading">#</a></h2>
@@ -620,27 +619,27 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 \[\begin{split}
 \tilde{x}_n=
 \begin{cases}
-x_n;\quad &amp; 0\le n\le N-1\\
-0;\quad &amp; N\le n\le L-1
+x_n;\quad &amp; 0\le n\le N-1,\\
+0;\quad &amp; N\le n\le L-1.
 \end{cases}
 \end{split}\]</div>
-<p>sledi:</p>
+<p>Sledi:</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p><strong>Diskretna Fourierova transformacija z dodajanjem ničel</strong> (ang. <em>zero-padding</em>):</p>
+<p><strong>diskretna Fourierova transformacija z dodajanjem ničel</strong> (ang. <em>zero-padding</em>):</p>
 <div class="math notranslate nohighlight">
 \[
 \tilde{X}_k = \sum_{n=0}^{L-1} \tilde{x}_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/L}
 = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/L}.
 \]</div>
 </div>
-<p>Na takšen pridobimo frekvenčno ločjivost:</p>
+<p>Na takšen način pridobimo frekvenčno ločjivost:</p>
 <div class="math notranslate nohighlight">
 \[
 \Delta f = \frac{1}{L\,\Delta t},
 \]</div>
-<p>pri tem pa je treba poudariti, da gre samo za frekvenčno interpolacijo, ki nam omogoča bolj podroben vpogled; novih informacij z dodajanjem ničel ne dodajamo. Podobno kakor pri DFT, lahko ničle dodajamo v frekvenčni domeni in nato z inverzno diskretno Fourierovo transformacijo pridobimo bolj goste (interpolirane) časovne podatke.</p>
-<p>Pri dodajanju ničel je potrebno paziti na normiranje podatkov; dodane ničle namreč ne upoštevamo pri normiranju.</p>
+<p>pri tem pa je treba poudariti, da gre samo za frekvenčno interpolacijo, ki nam omogoča podrobnejši vpogled; novih informacij z dodajanjem ničel ne dodajamo. Podobno kakor pri DFT, lahko ničle dodajamo v frekvenčni domeni in nato z inverzno diskretno Fourierovo transformacijo pridobimo bolj goste (interpolirane) časovne podatke.</p>
+<p>Pri dodajanju ničel je potrebno paziti na normiranje podatkov; dodanih ničel namreč ne upoštevamo pri normiranju.</p>
 <p>Spodnji primer prikazuje uporabo dodajanja ničel; s pomočjo komentarjev v kodi raziščite delovanje.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -656,7 +655,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># tukaj poskusite z 20 (sinusuida se zaključi; rezultat brez dodajanja niče je točen!)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># tukaj poskusite z 20 (sinusoida se zaključi; rezultat brez dodajanja ničel je točen!)</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># dodajanje ničel</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
@@ -675,11 +674,11 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena - amplitudni spekter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena $-$ amplitudni spekter&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_kx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_kx</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">x dodajanje ničel&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Brez dodajanja ničel&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frekvenca [Hz], $</span><span class="se">\\</span><span class="s1">Delta f=$</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|X|$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -688,7 +687,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </details>
 <div class="cell_output docutils container">
 <img alt="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" src="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" />
-<img alt="../_images/a139030258987ddfdf9200080720c2490718451f14b04558028757ee61f17636.png" src="../_images/a139030258987ddfdf9200080720c2490718451f14b04558028757ee61f17636.png" />
+<img alt="../_images/4874c758ca9801f4b1bfd089b819af945edd47ea9824f564e26eddbcad10db98.png" src="../_images/4874c758ca9801f4b1bfd089b819af945edd47ea9824f564e26eddbcad10db98.png" />
 </div>
 </div>
 </section>
@@ -700,14 +699,14 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-\textrm{Re}\big(X(k)\big)&amp;=\textrm{Re}\big(X(N-k)\big)\\
-\textrm{Im}\big(X(k)\big)&amp;=-\textrm{Im}\big(X(N-k)\big)\\
-|X(k)|&amp;=|X(N-k)|\\
-\angle X(k)&amp;=\angle X(N-k)
+\textrm{Re}\big(X(k)\big)&amp;=\textrm{Re}\big(X(N-k)\big),\\
+\textrm{Im}\big(X(k)\big)&amp;=-\textrm{Im}\big(X(N-k)\big),\\
+|X(k)|&amp;=|X(N-k)|,\\
+\angle X(k)&amp;=\angle X(N-k).
 \end{split}
 \end{split}\]</div>
 </div>
-<p>Ker je večina inženirskih podatkov v časovni domeni realnih, je smiselno, da se uporabi ustrezno prilagojena metoda hitre Fourierove transformacije; ta se v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dostopa prek klica <code class="docutils literal notranslate"><span class="pre">numpy.fft.rfft()</span></code>. Inverzna DFT je dosegljiva prek metod <code class="docutils literal notranslate"><span class="pre">numpy.fft.ifft</span></code> oz. <code class="docutils literal notranslate"><span class="pre">numpy.fft.irfft</span></code> v primer realnih podatkov v časovni domeni.</p>
+<p>Ker je večina inženirskih podatkov v časovni domeni realnih, je smiselno, da se uporabi ustrezno prilagojena metoda hitre Fourierove transformacije; ta je v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> dostopna prek klica <code class="docutils literal notranslate"><span class="pre">numpy.fft.rfft()</span></code>. Inverzna DFT je dosegljiva prek metod <code class="docutils literal notranslate"><span class="pre">numpy.fft.ifft</span></code> oz. <code class="docutils literal notranslate"><span class="pre">numpy.fft.irfft</span></code> v primeru realnih podatkov v časovni domeni.</p>
 <p>Navedene lastnosti preverimo na kodi v paketu <code class="docutils literal notranslate"><span class="pre">numpy</span></code> (opomba: k časovnim signalom dodamo šum, da ni faza zelo blizu 0):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -739,7 +738,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </div>
 </div>
 </div>
-<p>Še primer od zgoraj z <code class="docutils literal notranslate"><span class="pre">numpy.fft.rfft()</span></code>:</p>
+<p>Še zgornji primer z <code class="docutils literal notranslate"><span class="pre">numpy.fft.rfft()</span></code>:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -754,7 +753,7 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">fr</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> 
-<span class="n">N</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># tukaj poskusite z 20 (sinusuida se zaključi; rezultat brez dodajanja niče je točen!)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># tukaj poskusite z 20 (sinusoida se zaključi; rezultat brez dodajanja ničel je točen!)</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># dodajanje ničel</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
@@ -773,11 +772,11 @@ x_n;\quad &amp; 0\le n\le N-1\\
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena - amplitudni spekter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena $-$ amplitudni spekter&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_kx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_kx</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">x dodajanje ničel&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Brez dodajanja ničel&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Frekvenca [Hz], $</span><span class="se">\\</span><span class="s1">Delta f=$</span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|X|$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -786,20 +785,20 @@ x_n;\quad &amp; 0\le n\le N-1\\
 </details>
 <div class="cell_output docutils container">
 <img alt="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" src="../_images/78cdb5b54665d9c01ecbed88d815c74c2d8701934a30c24cd5b57e8f0f6e7ce0.png" />
-<img alt="../_images/70c3353eedd1a5fdb5198174b84ba6b55ae0ae0cbe643ba88972c2db866c8732.png" src="../_images/70c3353eedd1a5fdb5198174b84ba6b55ae0ae0cbe643ba88972c2db866c8732.png" />
+<img alt="../_images/a62ceca3ebd946a1e25f455976b25a7b7072bd956134f21124a6edadaed2a56f.png" src="../_images/a62ceca3ebd946a1e25f455976b25a7b7072bd956134f21124a6edadaed2a56f.png" />
 </div>
 </div>
 </section>
 <section id="konvolucija-periodicnih-podatkov">
 <span id="sec-krozna-konvolucija"></span><h2>Konvolucija periodičnih podatkov<a class="headerlink" href="#konvolucija-periodicnih-podatkov" title="Link to this heading">#</a></h2>
-<p>Konvolucijo funkcij v primeru Fourierove integralske transformacije smo obravnavali v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-konvolucija-funkcij"><span class="std std-ref">Konvolucija funkcij</span></a>, tukaj si bomo pogledali posebnosti pri obravnavi dveh periodičnih vrst (glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-identifikacija-harmonskih-signalov"><span class="std std-ref">Identifikacija harmonskih signalov, ki sestavljajo periodični signal</span></a> ) enake dolžine: <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span>:</p>
+<p>Konvolucijo funkcij v primeru Fourierove integralske transformacije smo obravnavali v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-konvolucija-funkcij"><span class="std std-ref">Konvolucija funkcij</span></a>, tukaj si bomo pogledali posebnosti pri obravnavi dveh periodičnih vrst (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-identifikacija-harmonskih-signalov"><span class="std std-ref">Identifikacija harmonskih signalov, ki sestavljajo periodični signal</span></a>) enake dolžine: <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 X_k = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-Y_k = \sum_{n=0}^{N-1} y_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
+Y_k = \sum_{n=0}^{N-1} y_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N}.
 \]</div>
 <p>Podobno kakor za funkcije, velja tudi za periodične časovne vrste, da je DFT konvolucije v časovni domeni produkt frekvenčnih transformirank.</p>
 <div class="admonition note">
@@ -807,7 +806,7 @@ Y_k = \sum_{n=0}^{N-1} y_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
 <p>Konvolucija periodičnih podatkov (tudi krožna konvolucija, ang. <em>circular convolution</em>):</p>
 <div class="math notranslate nohighlight">
 \[
-\textrm{DFT}\big\{x_n*y_n\big\}=X_k\,Y_k,
+\textrm{DFT}\big\{x_n*y_n\big\}=X_k\,Y_k.
 \]</div>
 <p>Da se poudari, da gre za krožno konvolucijo, se kdaj uporabi tudi znak <span class="math notranslate nohighlight">\(\circledast\)</span>: <span class="math notranslate nohighlight">\(x_n\circledast y_n\)</span>.</p>
 </div>
@@ -816,15 +815,15 @@ Y_k = \sum_{n=0}^{N-1} y_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
 \[\begin{split}
 \begin{split}
 \textrm{DFT}\big\{x_n\circledast y_n\big\}&amp;=\textrm{DFT}\big\{\sum_r^{N-1}x_r\,y_{n-r}\big\}\\
-&amp;=\sum_n^{N-1}\sum_r^{N-1}x_r\,y_{n-r}\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,n\,k/N}\\
-&amp;=\underbrace{\sum_r^{N-1}x_r\,\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,r\,k/N}}_{X_k}\,\underbrace{\sum_n^{N-1}y_{n-r}\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,(n-r)\,k/N}}_{Y_k}\\
-&amp;=X_k\,Y_k
+&amp;=\sum_n^{N-1}\sum_r^{N-1}x_r\,y_{n-r}\,\mathrm{e}^{-\textrm{i}\,2\pi\,n\,k/N}\\
+&amp;=\underbrace{\sum_r^{N-1}x_r\,\,\mathrm{e}^{-\textrm{i}\,2\pi\,r\,k/N}}_{X_k}\,\underbrace{\sum_n^{N-1}y_{n-r}\,\mathrm{e}^{-\textrm{i}\,2\pi\,(n-r)\,k/N}}_{Y_k}\\
+&amp;=X_k\,Y_k.
 \end{split}
 \end{split}\]</div>
 <p>Pri zgornji izpeljavi je treba poudariti, da vsota po <span class="math notranslate nohighlight">\(r\)</span> v predzadnji vrstici vključuje tudi vsoto po <span class="math notranslate nohighlight">\(n\)</span>, ker pa je vsota po <span class="math notranslate nohighlight">\(n\)</span> zaradi periodičnosti neodvisna od <span class="math notranslate nohighlight">\(r\)</span>, se lahko vsoti po <span class="math notranslate nohighlight">\(r\)</span> in <span class="math notranslate nohighlight">\(n\)</span> izvedeta neodvisno. Zaradi periodičnosti <span class="math notranslate nohighlight">\(y_n\)</span> za vsak <span class="math notranslate nohighlight">\(r\)</span> torej velja:</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_n^{N-1}y_{n-r}\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,(n-r)\,k/N}=\sum_n^{N-1}y_{n}\,\mathrm{e}^{-\textrm{i}\,2\,\pi\,n\,k/N}=Y_k
+\sum_n^{N-1}y_{n-r}\,\mathrm{e}^{-\textrm{i}\,2\pi\,(n-r)\,k/N}=\sum_n^{N-1}y_{n}\,\mathrm{e}^{-\textrm{i}\,2\pi\,n\,k/N}=Y_k.
 \]</div>
 <p>Če vrsti <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span> ne bi bili periodični, <strong>konvolucija končnih vrst ne bi bila tako enostavna.</strong></p>
 </section>

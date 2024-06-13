@@ -188,7 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html">8. Odziv linearnih sistemov na naključno vzbujanje</a></li>
-
 </ul>
 
     </div>
@@ -384,7 +383,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekateri-primeri-fourierove-transformacije">Nekateri primeri Fourierove transformacije</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-primerov-fourierove-transformacije">Nekaj primerov Fourierove transformacije</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diracova-delta-funkcija">Diracova delta funkcija</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetricna-eksponentno-padajoca-funkcija">Simetrična eksponentno padajoča funkcija</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sinusna-funkcija">Sinusna funkcija</a></li>
@@ -394,11 +393,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lastnosti-fourierove-transformacije">Lastnosti Fourierove transformacije</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearnost-ang-linearity">Linearnost (ang. linearity)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje-ang-time-scaling">Časovno skaliranje (ang. time scaling)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-obrat-ang-time-reversal">Časovni obrat (ang. time reversal)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-premik-ang-time-shifting">Časovni premik (ang. time shifting)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">Amplitudna modulacija (ang. modulation, tudi frequency-shifting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearnost-ang-linearity">Linearnost (ang. <em>linearity</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje-ang-time-scaling">Časovno skaliranje (ang. <em>time scaling</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-obrat-ang-time-reversal">Časovni obrat (ang. <em>time reversal</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-premik-ang-time-shifting">Časovni premik (ang. <em>time shifting</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">Amplitudna modulacija (ang. <em>modulation</em>, tudi <em>frequency-shifting</em>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvajanje">Odvajanje</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integriranje">Integriranje</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konvolucija-funkcij">Konvolucija funkcij</a></li>
@@ -419,32 +418,32 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fourierova-integralska-transformacija">
 <span id="sec-fourierova-int-transf"></span><h1>3. Fourierova integralska transformacija<a class="headerlink" href="#fourierova-integralska-transformacija" title="Link to this heading">#</a></h1>
-<p>Če so Fourierove vrste omejene na periodične podatke, je pri Fourierovi integralski transformaciji cilj posplošitev na neperiodične podatke. V ideji to dosežemo tako, da periodo <span class="math notranslate nohighlight">\(T_p\)</span> razširimo v neskončnost. V nadaljevanju si bomo pogledali detajle.</p>
+<p>Če so Fourierove vrste omejene na periodične podatke, je pri Fourierovi integralski transformaciji cilj posplošitev na neperiodične podatke. Ideja je, da to dosežemo tako, da periodo <span class="math notranslate nohighlight">\(T_p\)</span> razširimo v neskončnost. V nadaljevanju si bomo pogledali detajle.</p>
 <p>Izračun Fourierove vrste (<a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fourierove-vrste"><span class="std std-ref">2. Fourierove vrste</span></a>) temelji na periodi <span class="math notranslate nohighlight">\(T_p\)</span>; integral za izračun koeficientov lahko definiramo od <span class="math notranslate nohighlight">\(-T_p/2\)</span> do <span class="math notranslate nohighlight">\(+T_p/2\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 c_n=\frac{1}{T_p}\,\int_{-T_p/2}^{+T_p/2}x(t)\,\mathrm{e}^{-\textrm{i}\,\omega_{p}\,n\,t}\,\textrm{d} t,
 \]</div>
-<p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, osnovna krožna frekvenca gre proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemu težavam pri deljenju z <span class="math notranslate nohighlight">\(\infty\)</span>, pomnožimo zgornji izraz s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
+<p>kjer je <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> osnovna krožna frekvenca. Kadar <span class="math notranslate nohighlight">\(T_p\)</span> postane velik in gre proti neskončnosti <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>, gre osnovna krožna frekvenca proti nič:  <span class="math notranslate nohighlight">\(\omega_p\rightarrow 0\)</span>. Da se izognemo težavam pri deljenju z <span class="math notranslate nohighlight">\(\infty\)</span>, pomnožimo zgornji izraz s <span class="math notranslate nohighlight">\(T_p\)</span>, uporabimo <span class="math notranslate nohighlight">\(\omega_n=n\,\omega_p\)</span> in nadaljujemo:</p>
 <div class="math notranslate nohighlight">
 \[
 \lim_{T_p\rightarrow \infty} c_n\,T_p=\underbrace{\int_{-T_p/2}^{+T_p/2}x(t)\,\mathrm{e}^{-\textrm{i}\,\omega_{n}\,t}\,\textrm{d} t}_{X(\omega_n)}.
 \]</div>
-<p>Ob predpostavki, da limita obstaja, zapišemo <strong>Fourierovo transformacijo</strong> (tudi <strong>Fourierov integral</strong>):</p>
+<p>Ob predpostavki da limita obstaja, zapišemo <strong>Fourierovo transformacijo</strong> (tudi <strong>Fourierov integral</strong>):</p>
 <div class="math notranslate nohighlight">
 \[
 X(\omega)= \mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty}x(t)\,\mathrm{e}^{-\textrm{i}\,\omega\,t}\,\textrm{d} t,
 \]</div>
-<p>kjer smo namesto <span class="math notranslate nohighlight">\(\omega_{n}\)</span> zapisali <span class="math notranslate nohighlight">\(\omega\)</span>, saj je sedaj frekvenca zvezno definirana. <span class="math notranslate nohighlight">\(X(\omega)\)</span> predstavlja amplitudno frekvenčno gostoto, saj je <span class="math notranslate nohighlight">\(c_n\,T_p=c_n/\Delta f\)</span>, kjer je <span class="math notranslate nohighlight">\(\Delta f\)</span> frekvenčna pasovna širina (ang. <em>bandwidth</em>). S <span class="math notranslate nohighlight">\(\mathcal{F}\{\}\)</span> označimo Fourierovo transformacijo.</p>
-<p>Poglejmo si sedaj še <strong>rekonstruirano zvezno funkcijo</strong>, kadar <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>:</p>
+<p>kjer smo namesto <span class="math notranslate nohighlight">\(\omega_{n}\)</span> zapisali <span class="math notranslate nohighlight">\(\omega\)</span>, saj je sedaj frekvenca zvezno definirana. <span class="math notranslate nohighlight">\(X(\omega)\)</span> predstavlja amplitudno frekvenčno gostoto, saj je <span class="math notranslate nohighlight">\(c_n\,T_p=c_n/\Delta f\)</span>, pri čemer je <span class="math notranslate nohighlight">\(\Delta f\)</span> frekvenčna pasovna širina (ang. <em>bandwidth</em>). S <span class="math notranslate nohighlight">\(\mathcal{F}\{\}\)</span> označimo Fourierovo transformacijo.</p>
+<p>Poglejmo si sedaj še <strong>rekonstruirano zvezno funkcijo</strong>, kadar gre <span class="math notranslate nohighlight">\(T_p\rightarrow \infty\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\lim_{T_p\rightarrow\infty}\sum_{n=-\infty}^{+\infty}
 X(\omega_n)\underbrace{\frac{1}{T_p}}_{\Delta f}\,\mathrm{e}^{\mathrm{i}\,\overbrace{2\pi\,n/T_p}^{\omega_n}\,t}
 =\lim_{T_p\rightarrow\infty}\sum_{n=-\infty}^{+\infty}
-X(\omega_n)\,\mathrm{e}^{\mathrm{i}\,\omega_n\,t}\Delta f,
+X(\omega_n)\,\mathrm{e}^{\mathrm{i}\,\omega_n\,t}\Delta f.
 \]</div>
-<p>v limitni obliki, je izraz zvezen in ga imenujemo <strong>inverzna Fourierova transformacija</strong>, ter označimo z <span class="math notranslate nohighlight">\(\mathcal{F}^{-1}\{\}\)</span>:</p>
+<p>Navedeni izraz je zvezen in ga imenujemo <strong>inverzna Fourierova transformacija</strong>. Označimo ga s <span class="math notranslate nohighlight">\(\mathcal{F}^{-1}\{\}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\mathcal{F}^{-1}\{X(\omega)\}=\frac{1}{2\pi}\int_{-\infty}^{+\infty}
@@ -453,17 +452,17 @@ X(\omega)\,\mathrm{e}^{\mathrm{i}\,\omega\,t}\textrm{d}\omega.
 <p>V izrazu zgoraj smo uporabili <span class="math notranslate nohighlight">\(\textrm{d}f=\textrm{d}\omega/(2\pi)\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Če tukaj še enkrat ponovimo Fourierovo transformacijo in njeno inverzno obliko zapisano v <strong>krožni frekvenci</strong>:</p>
+<p>Tukaj še enkrat ponovimo Fourierovo transformacijo in njeno inverzno obliko, zapisano v <strong>krožni frekvenci</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
 X(\omega)=\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t,
 \qquad
-x(t)=\frac{1}{2\,\pi}\int_{-\infty}^{+\infty} X(\omega)\,\mathrm{e}^{\,\textrm{i}\,\omega\,t}\,\textrm{d} \omega.
+x(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty} X(\omega)\,\mathrm{e}^{\,\textrm{i}\,\omega\,t}\,\textrm{d} \omega.
 \]</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>V numeričnih metodah pa je frekvenca bolj pogosto definirana v <strong>sekundni frekvenci</strong>, takrat je Fourierova transformacija in njena inverzna oblika definirana kot:</p>
+<p>V numeričnih metodah pa je frekvenca pogosteje definirana v <strong>sekundni frekvenci</strong>, takrat sta Fourierova transformacija in njena inverzna oblika definirani kot:</p>
 <div class="math notranslate nohighlight">
 \[
 X(f)=\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,
@@ -471,30 +470,30 @@ X(f)=\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textr
 x(t)=\int_{-\infty}^{+\infty} X(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
 \]</div>
 </div>
-<section id="nekateri-primeri-fourierove-transformacije">
-<h2>Nekateri primeri Fourierove transformacije<a class="headerlink" href="#nekateri-primeri-fourierove-transformacije" title="Link to this heading">#</a></h2>
+<section id="nekaj-primerov-fourierove-transformacije">
+<h2>Nekaj primerov Fourierove transformacije<a class="headerlink" href="#nekaj-primerov-fourierove-transformacije" title="Link to this heading">#</a></h2>
 <section id="diracova-delta-funkcija">
 <span id="sec-ft-dirac"></span><h3>Diracova delta funkcija<a class="headerlink" href="#diracova-delta-funkcija" title="Link to this heading">#</a></h3>
 <p>Najprej si poglejmo Fourierovo transformacijo <strong>Diracove delta funkcije</strong> <span class="math notranslate nohighlight">\(\delta(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\{\delta(t)\} = \int_{-\infty}^{+\infty} \delta(t)\,\mathrm{e}^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t=\mathrm{e}^{-\,\textrm{i}\,\omega\,0}=1,
+\mathcal{F}\{\delta(t)\} = \int_{-\infty}^{+\infty} \delta(t)\,\mathrm{e}^{-\,\textrm{i}\,\omega\,t}\,\textrm{d} t=\mathrm{e}^{-\,\textrm{i}\,\omega\,0}=1.
 \]</div>
-<p>Na podlagi zgornje izpejave zaključimo, da je Diracova delta funkcija v času neskončno kratka, v frekvenčni domeni pa neskončno široka (zasede celotni spekter oz. vse frekvence). Veljalo bi tudi obratno, če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu se bomo pozneje vračali.</p>
+<p>Na podlagi zgornje izpeljave zaključimo, da je Diracova delta funkcija v času neskončno kratka, v frekvenčni domeni pa neskončno široka (zasede celotni spekter oz. vse frekvence). Veljalo bi tudi obratno: če bi delta funkcijo definirali v frekvenčni domeni, bi bila neskončno ozka, v času pa neskončno široka. K temu konceptu se bomo pozneje vračali.</p>
 </section>
 <section id="simetricna-eksponentno-padajoca-funkcija">
 <h3>Simetrična eksponentno padajoča funkcija<a class="headerlink" href="#simetricna-eksponentno-padajoca-funkcija" title="Link to this heading">#</a></h3>
-<p>Poglejmo si sedaj še <strong>simetrično, eksponentno padajočo, funkcijo</strong> <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
+<p>Poglejmo si sedaj še <strong>simetrično eksponentno padajočo funkcijo</strong> <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
+x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 \]</div>
 <p>Fourierova transformacija:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty} \mathrm{e}^{-\eta\,|t|}\,\mathrm{e}^{-\,\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{2\,\eta}{\eta^{2} + 4 \pi^{2}\,f^{2}}
+\mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty} \mathrm{e}^{-\eta\,|t|}\,\mathrm{e}^{-\,\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{2\,\eta}{\eta^{2} + 4 \pi^{2}\,f^{2}}.
 \]</div>
-<p>Opazimo, da je pri frekvenci 0 Hz ampituda <span class="math notranslate nohighlight">\(|X(0)|=2/\eta\)</span>, in pade na polovico začetne amplitude pri frekvenci: <span class="math notranslate nohighlight">\(f_{1/2}=\eta/(2\pi)\)</span>. Parameter <span class="math notranslate nohighlight">\(\eta\)</span> definira časovni raztros; večja, ko je vrednost <span class="math notranslate nohighlight">\(\eta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni. Podobno kakor pri delta funkciji, torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
+<p>Opazimo, da je pri frekvenci 0 Hz amplituda <span class="math notranslate nohighlight">\(|X(0)|=2/\eta\)</span> in pri frekvenci <span class="math notranslate nohighlight">\(f_{1/2}=\eta/(2\pi)\)</span> pade na polovico začetne amplitude. Parameter <span class="math notranslate nohighlight">\(\eta\)</span> definira časovni raztros; večja kot je vrednost <span class="math notranslate nohighlight">\(\eta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni. Podobno kot pri delta funkciji torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
 <p>Poglejmo si sedaj zgled v času in frekvenci:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -510,8 +509,8 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 
-<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t [s]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f [Hz]$&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Re$(X(f))$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$ [Hz]&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Re$(X(f))$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Im$(X(f))$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
@@ -521,11 +520,11 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ed1ef46695462c90016169872ebe148200908c51fc657ed17efa833318940ae8.png" src="../_images/ed1ef46695462c90016169872ebe148200908c51fc657ed17efa833318940ae8.png" />
-<img alt="../_images/bd58983c66f84f862270717f5b53ac9c19e191e048fee065f908027483cb75be.png" src="../_images/bd58983c66f84f862270717f5b53ac9c19e191e048fee065f908027483cb75be.png" />
+<img alt="../_images/bed83925f29e5cc499bee5930689149096b3330ac7dd36a216129249f95e1c06.png" src="../_images/bed83925f29e5cc499bee5930689149096b3330ac7dd36a216129249f95e1c06.png" />
+<img alt="../_images/d137ca54a6874639a3a65e8d17f8f7b5434a8c1f4d5eb643b8b7a60923899dd5.png" src="../_images/d137ca54a6874639a3a65e8d17f8f7b5434a8c1f4d5eb643b8b7a60923899dd5.png" />
 </div>
 </div>
-<p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič. To velja sicer za vse <strong>sode funkcije</strong>; obratno bi veljalo za <strong>lihe funkcije</strong>: ne ničelna bi bila imaginarna komponentna (slika spodaj). Podobno smo sicer ugotovili že pri Fourierovih vrstah sodih in lihih funkcij (za več glejte: <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-lih-sod"><span class="std std-ref">Fourierove vrste lihih in sodih funkcij</span></a>.</p>
+<p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič. To sicer velja za vse <strong>sode funkcije</strong>; za <strong>lihe funkcije</strong> bi veljalo obratno: neničelna bi bila imaginarna komponentna (slika spodaj). Podobno smo sicer ugotovili že pri Fourierovih vrstah sodih in lihih funkcij (za več glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-lih-sod"><span class="std std-ref">Fourierove vrste lihih in sodih funkcij</span></a>).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -540,8 +539,8 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">η</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 
-<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t [s]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f [Hz]$&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Re$(X(f))$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> 
+<span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$ [Hz]&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Re$(X(f))$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> 
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Im$(X(f))$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -552,11 +551,11 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3de320faed6d8fe7007bb264ba5be72390d498fa30d5372eb9a89b6b35e7712a.png" src="../_images/3de320faed6d8fe7007bb264ba5be72390d498fa30d5372eb9a89b6b35e7712a.png" />
-<img alt="../_images/03ccbdc4aaf74e881b9a195ed673c00c92a4c30cb36b9fd8bee7dbf693133ee4.png" src="../_images/03ccbdc4aaf74e881b9a195ed673c00c92a4c30cb36b9fd8bee7dbf693133ee4.png" />
+<img alt="../_images/3d422855238010d6bfbe95dbdb9d43b55c70f9442abf31479f9f0a63de487b19.png" src="../_images/3d422855238010d6bfbe95dbdb9d43b55c70f9442abf31479f9f0a63de487b19.png" />
+<img alt="../_images/84b400786808a957582da13196596f6783d39d2b68dc83dfd4c86542f9821008.png" src="../_images/84b400786808a957582da13196596f6783d39d2b68dc83dfd4c86542f9821008.png" />
 </div>
 </div>
-<p>Sicer pa velja poudariti, da v splošnem realni signali <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj, <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje enotsko funkcijo stopnice). Časovni signali so v splošnem lahko kompleksne oblike in takrat v frekvenčni domeni v splošnem ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
+<p>Sicer pa velja poudariti, da v splošnem realni signali <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj; <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje enotsko funkcijo stopnice). Časovni signali so v splošnem lahko kompleksne oblike in takrat v frekvenčni domeni v splošnem ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -578,7 +577,7 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 <span class="n">X2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 <span class="n">X3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t [s]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> 
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">,</span> 
               <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>  <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">im</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Im($</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="si">}</span><span class="s1">$)&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -586,16 +585,16 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f [Hz]$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> 
-         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$ [Hz]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> 
+         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.05</span><span class="p">,</span><span class="mf">.05</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X3</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.075</span><span class="p">,</span><span class="mf">.075</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span>
-         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza&#39;</span><span class="p">,</span>  <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$ [Hz]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span>
+         <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ faza&#39;</span><span class="p">,</span>  <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X2</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X3</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">latex</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -607,9 +606,9 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5ecfcf088fd2eb23a88f65afe1cd8389f60089eb47f2079ed1bf4bfcaeededdb.png" src="../_images/5ecfcf088fd2eb23a88f65afe1cd8389f60089eb47f2079ed1bf4bfcaeededdb.png" />
-<img alt="../_images/a3364cce4b0327ab95cc7f1d7a7c4a23ca5805ba33062b2e0afdf8878caccc6e.png" src="../_images/a3364cce4b0327ab95cc7f1d7a7c4a23ca5805ba33062b2e0afdf8878caccc6e.png" />
-<img alt="../_images/e220e9dc35b578da9b7871785f23f7585ba34ca645ef52de1b751dc4ba751d8f.png" src="../_images/e220e9dc35b578da9b7871785f23f7585ba34ca645ef52de1b751dc4ba751d8f.png" />
+<img alt="../_images/884f876c30e99e73aa2cb87eb454cdc822f6ef9deca75fa03851b31c7fc7d434.png" src="../_images/884f876c30e99e73aa2cb87eb454cdc822f6ef9deca75fa03851b31c7fc7d434.png" />
+<img alt="../_images/9a63daf32212fbd483edb48a3eec386d8008a4d845d47e5daf847a0b220ab5d3.png" src="../_images/9a63daf32212fbd483edb48a3eec386d8008a4d845d47e5daf847a0b220ab5d3.png" />
+<img alt="../_images/926cd678d1638807c401f9c87718041465ab63016cbfdb4ed037081472c7591c.png" src="../_images/926cd678d1638807c401f9c87718041465ab63016cbfdb4ed037081472c7591c.png" />
 </div>
 </div>
 </section>
@@ -647,11 +646,11 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 \[\displaystyle \frac{i A \left(\mathcal{F}_{t}\left[e^{- 2 i \pi p t}\right]\left(f\right) - \mathcal{F}_{t}\left[e^{2 i \pi p t}\right]\left(f\right)\right)}{2}\]</div>
 </div>
 </div>
-<p>V zgornji strojni izpeljavi <span class="math notranslate nohighlight">\(\mathcal{F}_{t}[\cdot]\)</span> predstavlja Fourierovo transformacijo.  Glede na lastnosti Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>) vemo <span class="math notranslate nohighlight">\(\mathcal{F}_{t}\left[\mathrm{e}^{-2 \textrm{i}\,\pi\,p\,t}\right]\left(f\right)=\delta(p+f)\)</span> in torej sledi:</p>
+<p>V zgornji strojni izpeljavi <span class="math notranslate nohighlight">\(\mathcal{F}_{t}[\cdot]\)</span> predstavlja Fourierovo transformacijo.  Glede na lastnosti Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>) vemo, da velja <span class="math notranslate nohighlight">\(\mathcal{F}_{t}\left[\mathrm{e}^{-2\,\textrm{i}\,\pi\,p\,t}\right]\left(f\right)=\delta(p+f)\)</span>, iz česar sledi:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}_{t}\left( A\,\sin(2\pi\,p\,t)\right)=
-\frac{\mathrm{i} A}{2} \delta(f - p) - \frac{\mathrm{i} A}{2}\delta(f + p)
+\frac{\mathrm{i} A}{2} \delta(f - p) - \frac{\mathrm{i} A}{2}\delta(f + p),
 \]</div>
 <p>kar prikažemo na sliki spodaj.</p>
 <div class="cell tag_hide-input docutils container">
@@ -715,22 +714,22 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 \[\begin{split}
 x(t) =
 \begin{cases}
-a&amp;;\qquad |t|&lt;b\\
+a&amp;;\qquad |t|&lt;b,\\
 0&amp;;\qquad \textrm{sicer,}
 \end{cases}
 \end{split}\]</div>
-<p>kar v primeru Fourierove transformacije vodi v:</p>
+<p>kar v primeru Fourierove transformacije vodi v izraz:</p>
 <div class="math notranslate nohighlight">
 \[
 X(f)=\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=
-\int_{-b}^{+b} a\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{a \sin\left(2 \pi\,b\,f \right)}{\pi\,f}
+\int_{-b}^{+b} a\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{a \sin\left(2\pi\,b\,f \right)}{\pi\,f},
 \]</div>
-<p>in lahko preoblikujemo v:</p>
+<p>ki ga lahko preoblikujemo v:</p>
 <div class="math notranslate nohighlight">
 \[
-X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
+X(f)=2\,a\,b\,\frac{\sin\left(2\pi\,b\,f \right)}{2\pi\,b\,f }.
 \]</div>
-<p>Zgornji izraz jasno kaže: ko <span class="math notranslate nohighlight">\(f\)</span> limitira proti 0, <span class="math notranslate nohighlight">\(X(f)\)</span> limitira k <span class="math notranslate nohighlight">\(2\,a\,b\)</span>; sicer pa v frekvenčni domeni oscilira s frekvenco <span class="math notranslate nohighlight">\(1/b\)</span>. Nekatere karakteristike vidimo iz slike spodaj: ponovno opazimo, da bolj, ko so podatki široki v času, bolj so ozki v frekvenci.</p>
+<p>Zgornji izraz jasno kaže: ko <span class="math notranslate nohighlight">\(f\)</span> limitira proti 0, <span class="math notranslate nohighlight">\(X(f)\)</span> limitira k <span class="math notranslate nohighlight">\(2\,a\,b\)</span>; sicer pa v frekvenčni domeni oscilira s frekvenco <span class="math notranslate nohighlight">\(1/b\)</span>. Nekatere karakteristike vidimo iz slike spodaj: ponovno opazimo, da širši kot so podatki v času, ožji so v frekvenci.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -768,8 +767,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2 \pi\,b\,f \right)}{2 \pi\,b\,f }.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/08467525bebe8b4f2eb56971713921f1b021a86e98c575221f60966379a7edcd.png" src="../_images/08467525bebe8b4f2eb56971713921f1b021a86e98c575221f60966379a7edcd.png" />
-<img alt="../_images/e9724d31e55d5df847f902b77bbd0881103e78fb68eb10d48dec577e09805db1.png" src="../_images/e9724d31e55d5df847f902b77bbd0881103e78fb68eb10d48dec577e09805db1.png" />
+<img alt="../_images/d41a68023d76ee5f1f6180778de363ccb380206af32111283d574669146c3ae1.png" src="../_images/d41a68023d76ee5f1f6180778de363ccb380206af32111283d574669146c3ae1.png" />
+<img alt="../_images/fb9bcc70931efd1066319e32b8d1ddddc93422fc7377d67f2b492dfeb79d12ac.png" src="../_images/fb9bcc70931efd1066319e32b8d1ddddc93422fc7377d67f2b492dfeb79d12ac.png" />
 </div>
 </div>
 </section>
@@ -785,7 +784,7 @@ x_1(t) = \mathrm{e}^{-\delta\,|t|}\,\cos(2\pi\,f_0\,t)
 \[\begin{split}
 x_2(t) = 
 \begin{cases}
-\mathrm{e}^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0\\
+\mathrm{e}^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0,\\
 0&amp;;\qquad \textrm{sicer.}
 \end{cases}
 \end{split}\]</div>
@@ -843,13 +842,13 @@ x_2(t) =
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">+</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -858,23 +857,23 @@ x_2(t) =
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/86a3b01b3b24cca67797d5ecb19ae4220fd0602d261f2396c7d64e02bf3251d8.png" src="../_images/86a3b01b3b24cca67797d5ecb19ae4220fd0602d261f2396c7d64e02bf3251d8.png" />
-<img alt="../_images/9354f5073b4d427ce1145d7ed2874bc909b72b04d2b5276067f65088dac4bd00.png" src="../_images/9354f5073b4d427ce1145d7ed2874bc909b72b04d2b5276067f65088dac4bd00.png" />
-<img alt="../_images/5f0a4ea86addbfa824875c0bf1a3191a9ca4bfaf823e4f96220bd2a1b6fa0f15.png" src="../_images/5f0a4ea86addbfa824875c0bf1a3191a9ca4bfaf823e4f96220bd2a1b6fa0f15.png" />
+<img alt="../_images/b4ab2f3e6767a408077578318eab2e4d81b4e762a579243289f429dfef05f478.png" src="../_images/b4ab2f3e6767a408077578318eab2e4d81b4e762a579243289f429dfef05f478.png" />
+<img alt="../_images/249f064303ad22ad64323e125cc9968d7bbb502735a46abaa6aad3ce8ecdf98e.png" src="../_images/249f064303ad22ad64323e125cc9968d7bbb502735a46abaa6aad3ce8ecdf98e.png" />
+<img alt="../_images/ca097119b17d7b1985a5a85046c67784e76ee1db1dd292dd468fc2e10a2a257b.png" src="../_images/ca097119b17d7b1985a5a85046c67784e76ee1db1dd292dd468fc2e10a2a257b.png" />
 </div>
 </div>
 </section>
 <section id="gaussov-impulz">
 <span id="sec-gaussov-impulz"></span><h3>Gaussov impulz<a class="headerlink" href="#gaussov-impulz" title="Link to this heading">#</a></h3>
-<p>Gaussovo okno ima zelo pomembno mesto pri različnih teoretičnih izpeljavah (npr.: porazdelitev verjetnosti, okna, valčna transformacija) in zato si bomo tukaj pogledali njegovo obliko v frekvenčni domeni. Najprej definirajmo :</p>
+<p>Gaussovo okno ima zelo pomembno mesto pri različnih teoretičnih izpeljavah (npr. porazdelitev verjetnosti, okna, valčna transformacija) in zato si bomo tukaj pogledali njegovo obliko v frekvenčni domeni. Najprej definirajmo:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = \mathrm{e}^{-a\,t^2};\qquad a&gt;0.
 \]</div>
-<p>Fourierovo transformacijo izpeljemo (spodaj) in rezultira v:</p>
+<p>Fourierovo transformacijo izpeljemo (spodaj), pri čemer rezultira v:</p>
 <div class="math notranslate nohighlight">
 \[
-X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
+X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -893,7 +892,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle \frac{\sqrt{\pi} e^{- \frac{\pi^{2} f^{2}}{a}}}{\sqrt{a}}\]</div>
 </div>
 </div>
-<p>Rezultat nato še prikažemo (ker je Gaussova funkcija soda, je faza v frekvenčni domeni enaka 0):</p>
+<p>Rezultat nato še grafično prikažemo (ker je Gaussova funkcija soda, je faza v frekvenčni domeni enaka 0):</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -916,8 +915,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$a=</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="o">+</span><span class="s1">&#39;, Max=$</span><span class="se">\\</span><span class="s1">sqrt{</span><span class="se">\\</span><span class="s1">pi/a}=$&#39;</span><span class="o">+</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$a=</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">}</span><span class="s1">$&#39;</span><span class="o">+</span><span class="s1">&#39;, Max$=</span><span class="se">\\</span><span class="s1">sqrt{</span><span class="se">\\</span><span class="s1">pi/a}=$&#39;</span><span class="o">+</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -925,8 +924,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/51625f14cc19615d3c2c0af0ad6157f798741bf4dcbbb13cf9d91c009d42be78.png" src="../_images/51625f14cc19615d3c2c0af0ad6157f798741bf4dcbbb13cf9d91c009d42be78.png" />
-<img alt="../_images/550b45886dea5526c17bb1012e4eca02c39bfc3367821f7c836d1d816d70575e.png" src="../_images/550b45886dea5526c17bb1012e4eca02c39bfc3367821f7c836d1d816d70575e.png" />
+<img alt="../_images/136d33d07efaeb87381453487a99d3f4daba06d10124be2f6215211910d1e167.png" src="../_images/136d33d07efaeb87381453487a99d3f4daba06d10124be2f6215211910d1e167.png" />
+<img alt="../_images/7ce48e232b7caa6e58cf62b1f44c4b95a1e1319a096b5262d9c9e92426020c19.png" src="../_images/7ce48e232b7caa6e58cf62b1f44c4b95a1e1319a096b5262d9c9e92426020c19.png" />
 </div>
 </div>
 </section>
@@ -934,7 +933,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <section id="lastnosti-fourierove-transformacije">
 <h2>Lastnosti Fourierove transformacije<a class="headerlink" href="#lastnosti-fourierove-transformacije" title="Link to this heading">#</a></h2>
 <section id="linearnost-ang-linearity">
-<h3>Linearnost (ang. linearity)<a class="headerlink" href="#linearnost-ang-linearity" title="Link to this heading">#</a></h3>
+<h3>Linearnost (ang. <em>linearity</em>)<a class="headerlink" href="#linearnost-ang-linearity" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Fourierova transformacija je linearna, kar pomeni:</p>
@@ -1005,7 +1004,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_1(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|X_2(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -1016,13 +1015,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3d32294254571e1bbb3f6ac43a152ea75fc37a3bb604573d7de673424f61dcc5.png" src="../_images/3d32294254571e1bbb3f6ac43a152ea75fc37a3bb604573d7de673424f61dcc5.png" />
-<img alt="../_images/a81a9358eff32ad6bb6cdb2cf3608c706574c2b2c725cbd8f2f403335bd44bec.png" src="../_images/a81a9358eff32ad6bb6cdb2cf3608c706574c2b2c725cbd8f2f403335bd44bec.png" />
+<img alt="../_images/942141704fa00be1ed38cbde3fc748f34724bf7a266d9dfbcfa9d51d421edfc0.png" src="../_images/942141704fa00be1ed38cbde3fc748f34724bf7a266d9dfbcfa9d51d421edfc0.png" />
+<img alt="../_images/9d79d71616a0a8c9e5164004da514c52953ecb75099a98dcf295c96d0fbab665.png" src="../_images/9d79d71616a0a8c9e5164004da514c52953ecb75099a98dcf295c96d0fbab665.png" />
 </div>
 </div>
 </section>
 <section id="casovno-skaliranje-ang-time-scaling">
-<h3>Časovno skaliranje (ang. time scaling)<a class="headerlink" href="#casovno-skaliranje-ang-time-scaling" title="Link to this heading">#</a></h3>
+<h3>Časovno skaliranje (ang. <em>time scaling</em>)<a class="headerlink" href="#casovno-skaliranje-ang-time-scaling" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Časovno skaliranje je definirano kot <span class="math notranslate nohighlight">\(a\,t\)</span> in ima na Fourierovo transformacijo vpliv:</p>
@@ -1051,7 +1050,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle \int\limits_{-\infty}^{\infty} x{\left(a t \right)} e^{- 2 i \pi f t}\, dt = \int\limits_{-\infty}^{\infty} \frac{x{\left(\tau \right)} e^{- \frac{2 i \pi f \tau}{a}}}{a}\, d\tau\]</div>
 </div>
 </div>
-<p>Časovno skaliranje postane pomembno na primer, ko spremljamo isto dogajanje z dvema različnima urama.</p>
+<p>Časovno skaliranje npr. postane pomembno takrat, ko isto dogajanje spremljamo z dvema različnima urama.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1080,7 +1079,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=a</span><span class="se">\\</span><span class="s1">,t$, $a=$</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -1091,8 +1090,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/4376cde4610d73359c1ad949df5735b16c263458c9efb0aaa9d50d6d15085f66.png" src="../_images/4376cde4610d73359c1ad949df5735b16c263458c9efb0aaa9d50d6d15085f66.png" />
-<img alt="../_images/38e07fdf39e296c23a368cde8436a4139184aaf4a5721f890295c73954fc502a.png" src="../_images/38e07fdf39e296c23a368cde8436a4139184aaf4a5721f890295c73954fc502a.png" />
+<img alt="../_images/e5ff01b8152f6b5294cd97b2ceecf41e62ee849b3473c7214106924007a8ca07.png" src="../_images/e5ff01b8152f6b5294cd97b2ceecf41e62ee849b3473c7214106924007a8ca07.png" />
+<img alt="../_images/07c49542efac38feec3ffaad2f81dbee636ee97f3e3bd1d6ce653adec9ed84f1.png" src="../_images/07c49542efac38feec3ffaad2f81dbee636ee97f3e3bd1d6ce653adec9ed84f1.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1120,7 +1119,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </section>
 <section id="casovni-obrat-ang-time-reversal">
-<h3>Časovni obrat (ang. time reversal)<a class="headerlink" href="#casovni-obrat-ang-time-reversal" title="Link to this heading">#</a></h3>
+<h3>Časovni obrat (ang. <em>time reversal</em>)<a class="headerlink" href="#casovni-obrat-ang-time-reversal" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Časovni obrat ima na Fourierovo transformacijo vpliv:</p>
@@ -1151,10 +1150,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </section>
 <section id="casovni-premik-ang-time-shifting">
-<h3>Časovni premik (ang. time shifting)<a class="headerlink" href="#casovni-premik-ang-time-shifting" title="Link to this heading">#</a></h3>
+<h3>Časovni premik (ang. <em>time shifting</em>)<a class="headerlink" href="#casovni-premik-ang-time-shifting" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Časovni premik je definiran z <span class="math notranslate nohighlight">\(t_0\)</span> in ima na Fourierovo transformacijo vpliv</p>
+<p>Časovni premik je definiran s <span class="math notranslate nohighlight">\(t_0\)</span> in ima na Fourierovo transformacijo vpliv:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}\{x(t-t_0)\} = \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t_0}\,X(f).
@@ -1181,7 +1180,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </div>
 <p>Opazimo, da člen <span class="math notranslate nohighlight">\(\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t_0}\)</span> lahko izpostavimo iz integrala.</p>
-<p>Časovno skaliranje postane pomembno, kadar obravnavamo zakasnjene meritve (npr. da eno meritev merimo z zakasnitvijo glede na ostale): glejte primer spodaj.</p>
+<p>Časovno skaliranje postane pomembno, kadar obravnavamo zakasnjene meritve (npr. če eno meritev merimo z zakasnitvijo glede na ostale): glejte primer spodaj.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1214,7 +1213,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t-t_0$, $t_0=$</span><span class="si">{</span><span class="n">t_0</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -1223,7 +1222,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t-t_0$, $t_0=$</span><span class="si">{</span><span class="n">t_0</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -1232,22 +1231,22 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_3</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$t=t$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">],</span>
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza - korekcija: $</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="se">\\</span><span class="s1">{x(t-t_0)</span><span class="se">\\</span><span class="s1">} / </span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{e}</span><span class="s1">^{-i</span><span class="se">\\</span><span class="s1">,2</span><span class="se">\\</span><span class="s1">pi</span><span class="se">\\</span><span class="s1">,f</span><span class="se">\\</span><span class="s1">,t_0}$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ faza $-$ korekcija: $</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="se">\\</span><span class="s1">{x(t-t_0)</span><span class="se">\\</span><span class="s1">} / </span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{e}</span><span class="s1">^{-i</span><span class="se">\\</span><span class="s1">,2</span><span class="se">\\</span><span class="s1">pi</span><span class="se">\\</span><span class="s1">,f</span><span class="se">\\</span><span class="s1">,t_0}$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5ba62faaeeb28e4d9aa5a574ed36b6e1a19dc7daf9a8daacacbeba47aee1674e.png" src="../_images/5ba62faaeeb28e4d9aa5a574ed36b6e1a19dc7daf9a8daacacbeba47aee1674e.png" />
-<img alt="../_images/e1d4ffd1cb73c4d1ea4f9c97215d57f8fce7d102f6e9df53061d87b8dda91392.png" src="../_images/e1d4ffd1cb73c4d1ea4f9c97215d57f8fce7d102f6e9df53061d87b8dda91392.png" />
-<img alt="../_images/aa36339f3a4b86e3dcf4e28c52b87cbdbb69e96955f28d3b1d0e92f68c83b1aa.png" src="../_images/aa36339f3a4b86e3dcf4e28c52b87cbdbb69e96955f28d3b1d0e92f68c83b1aa.png" />
-<img alt="../_images/2fb71a12a1bd984ec0b4eff4821f8f2382e340545eac254ba2e54a08a2ca980e.png" src="../_images/2fb71a12a1bd984ec0b4eff4821f8f2382e340545eac254ba2e54a08a2ca980e.png" />
+<img alt="../_images/31433d32e3f778bb0594bc6ee5a76f9bbb67d698069c3b693a78de214c7d2c50.png" src="../_images/31433d32e3f778bb0594bc6ee5a76f9bbb67d698069c3b693a78de214c7d2c50.png" />
+<img alt="../_images/e5db2c7f334acf05e4e2d939b2fa839e31f647ab34024a1b1a577d5af9c1e950.png" src="../_images/e5db2c7f334acf05e4e2d939b2fa839e31f647ab34024a1b1a577d5af9c1e950.png" />
+<img alt="../_images/939d8f314e39cd62498ff47b34fe70bcaf12784d0facd61f7c6a59d0e3ffc480.png" src="../_images/939d8f314e39cd62498ff47b34fe70bcaf12784d0facd61f7c6a59d0e3ffc480.png" />
+<img alt="../_images/9e13b9eb8ba780ce42139b942372ef1d4c28c38ca7b137d3696d9a2b9ccbff5b.png" src="../_images/9e13b9eb8ba780ce42139b942372ef1d4c28c38ca7b137d3696d9a2b9ccbff5b.png" />
 </div>
 </div>
 </section>
 <section id="amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">
-<h3>Amplitudna modulacija (ang. modulation, tudi frequency-shifting)<a class="headerlink" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting" title="Link to this heading">#</a></h3>
+<h3>Amplitudna modulacija (ang. <em>modulation</em>, tudi <em>frequency-shifting</em>)<a class="headerlink" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Amplitudna modulacija je definirana z <span class="math notranslate nohighlight">\(\mathrm{e}^{\textrm{i}\,2\pi\,f_0\,t}\)</span> in ima na Fourierovo transformacijo vpliv:</p>
@@ -1255,7 +1254,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 \[
 \mathcal{F}\{x(t)\,\mathrm{e}^{\textrm{i}\,2\pi\,f_0\,t}\} = X(f-f_0).
 \]</div>
-<p>Amplitudno modulacijo srečamo tudi v obliki, pomnoženi s cosinusno funkcijo:</p>
+<p>Amplitudno modulacijo srečamo tudi v obliki, pomnoženi s kosinusno funkcijo:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{F}\{x(t)\,\cos(2\pi\,f_0\,t)\} = \frac{1}{2}\big(X(f-f_0)+X(f+f_0)\big).
@@ -1281,7 +1280,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle \int\limits_{-\infty}^{\infty} x{\left(t \right)} e^{- 2 i \pi f t} e^{2 i \pi f_{0} t}\, dt = \int\limits_{-\infty}^{\infty} x{\left(t \right)} e^{2 i \pi t \left(- f + f_{0}\right)}\, dt\]</div>
 </div>
 </div>
-<p>Amplitudna modulacija je v praksi relativno pogosta. Opazimo jo na primer, ko merimo nihanje plošče z laserjem in se nam podlaga laserja trese; v spodnjih slikah je pomik merjene strukture označen z <span class="math notranslate nohighlight">\(x(t)\)</span>, podlaga laserja pa niha z <span class="math notranslate nohighlight">\(\cos(2\pi\,f_0\,t)\)</span>.</p>
+<p>Amplitudna modulacija je v praksi relativno pogosta. Opazimo jo na primer, ko merimo nihanje plošče z laserjem in se nam podlaga laserja trese; v spodnjih slikah je pomik merjene strukture označen z <span class="math notranslate nohighlight">\(x(t)\)</span>, podlaga laserja pa niha s <span class="math notranslate nohighlight">\(\cos(2\pi\,f_0\,t)\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1318,7 +1317,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="se">\\</span><span class="s1">{x(t)</span><span class="se">\\</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="se">\\</span><span class="s1">{x(t)</span><span class="se">\\</span><span class="s1">,</span><span class="se">\\</span><span class="s1">cos(2</span><span class="se">\\</span><span class="s1">pi</span><span class="se">\\</span><span class="s1">,f_0</span><span class="se">\\</span><span class="s1">,t)</span><span class="se">\\</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -1329,8 +1328,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/64b49ceee45c91b155bd56fca782ccbfbf4756a94543c4ec06aea6d0ea4a7173.png" src="../_images/64b49ceee45c91b155bd56fca782ccbfbf4756a94543c4ec06aea6d0ea4a7173.png" />
-<img alt="../_images/ca171e8655478d9192603905ec6a7a7f92e4de7a1f7d1e48b4c878aea05c5207.png" src="../_images/ca171e8655478d9192603905ec6a7a7f92e4de7a1f7d1e48b4c878aea05c5207.png" />
+<img alt="../_images/7ab4c9161622b646ba1e53320a25705acbcfcd6bb25b985c0a13fb792f99c516.png" src="../_images/7ab4c9161622b646ba1e53320a25705acbcfcd6bb25b985c0a13fb792f99c516.png" />
+<img alt="../_images/670f2aa93b8a80b4a8d061adb80c0e68414ecbb48383e8f3d7797809b390d047.png" src="../_images/670f2aa93b8a80b4a8d061adb80c0e68414ecbb48383e8f3d7797809b390d047.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1340,10 +1339,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <h3>Odvajanje<a class="headerlink" href="#odvajanje" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Če je <span class="math notranslate nohighlight">\(\dot x(t)\)</span> časovni odvod <span class="math notranslate nohighlight">\(x(t)\)</span>, je njuna relacija v frekvenčni domeni:</p>
+<p>Če je <span class="math notranslate nohighlight">\(\dot{x}(t)\)</span> časovni odvod <span class="math notranslate nohighlight">\(x(t)\)</span>, je njuna relacija v frekvenčni domeni:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\{\dot x(t)\} = \textrm{i}\,2\pi\,f\,X(f)
+\mathcal{F}\{\dot x(t)\} = \textrm{i}\,2\pi\,f\,X(f),
 \]</div>
 <p>kjer velja predpostavka, da gre <span class="math notranslate nohighlight">\(x(t)\rightarrow 0\)</span>, ko gre <span class="math notranslate nohighlight">\(t\rightarrow \pm\infty\)</span>.</p>
 </div>
@@ -1366,7 +1365,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle \int\limits_{-\infty}^{\infty} e^{- 2 i \pi f t} \frac{d}{d t} x{\left(t \right)}\, dt\]</div>
 </div>
 </div>
-<p>Uporabiti moramo integriranje po delih <span class="math notranslate nohighlight">\(u = \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\)</span>, <span class="math notranslate nohighlight">\(\textrm{d}v= \dot x(t)\,\textrm{d}t\)</span>; pripravimo <span class="math notranslate nohighlight">\(\textrm{d}u\)</span> in <span class="math notranslate nohighlight">\(v\)</span>:</p>
+<p>Uporabiti moramo integriranje po delih <span class="math notranslate nohighlight">\(u = \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\)</span>, <span class="math notranslate nohighlight">\(\textrm{d}v= \dot{x}(t)\,\textrm{d}t\)</span>; pripravimo <span class="math notranslate nohighlight">\(\textrm{d}u\)</span> in <span class="math notranslate nohighlight">\(v\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
@@ -1390,7 +1389,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle x{\left(t \right)} e^{- 2 i \pi f t}\]</div>
 </div>
 </div>
-<p>izračunati ob mejah <span class="math notranslate nohighlight">\(+\infty\)</span> in <span class="math notranslate nohighlight">\(-\infty\)</span>; glede na definicijo zgoraj, v obeh primerih (zaradi predhodne predpostavke) velja <span class="math notranslate nohighlight">\(x(t=\pm \infty)=0\)</span>.</p>
+<p>izračunati ob mejah <span class="math notranslate nohighlight">\(+\infty\)</span> in <span class="math notranslate nohighlight">\(-\infty\)</span>; glede na definicijo zgoraj v obeh primerih (zaradi predhodne predpostavke) velja <span class="math notranslate nohighlight">\(x(t=\pm \infty)=0\)</span>.</p>
 <p>Preostane torej samo še drugi del integriranja po delih:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1412,18 +1411,18 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <p>Če je <span class="math notranslate nohighlight">\(\int_{-\infty}^t x(\tau)\,\textrm{d}\tau\)</span> integral funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, je njuna relacija v frekvenčni domeni:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\big{\{}\int_{-\infty}^t x(\tau)\,\textrm{d}\tau\big{\}} = \frac{X(f)}{\textrm{i}\,2\pi\,f}.
+\mathcal{F}\left\{\int_{-\infty}^t x(\tau)\,\textrm{d}\tau \right\} = \frac{X(f)}{\textrm{i}\,2\pi\,f}.
 \]</div>
 </div>
 <p>Izpeljava za integriranje sledi iz tiste za odvajanje:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\{\dot x(t)\} = \textrm{i}\,2\pi\,f\,\mathcal{F}\{x(t)\},
+\mathcal{F}\{\dot{x}(t)\} = \textrm{i}\,2\pi\,f\,\mathcal{F}\{x(t)\},
 \]</div>
-<p>pri čemer naredimo zamenjavo funkcije: <span class="math notranslate nohighlight">\(u(t)=\dot x(t)\)</span> in <span class="math notranslate nohighlight">\(\int_{-\infty}^t u(t)\,\textrm{d}\tau=x(t)\)</span>:</p>
+<p>pri čemer naredimo zamenjavo funkcije: <span class="math notranslate nohighlight">\(u(t)=\dot{x}(t)\)</span> in <span class="math notranslate nohighlight">\(\int_{-\infty}^t u(t)\,\textrm{d}\tau=x(t)\)</span>.</p>
 <p>Odvajanje in integriranje v frekvenčni domeni sta zelo pomembni lastnosti Fourierove transformacije, saj nam omogočata enostaven prehod med odvajanimi in integriranimi podatki.</p>
-<p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacijo, saj temelji na razliki števil, ki se razlikujeta/jo malo (razlika pa se nato deli z majhnim številom, kar dodatno povečuje negotovost). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljeno.</p>
-<p>Nadalje velja poudariti, da je časovno integriranje nestabilna numerična operacija, saj se napaka posameznega koraka sešteva in zato s časom raste. Integracija v frekvenčni domeni taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0Hz nedoločen rezultat (deljenje z 0).</p>
+<p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacija, saj temelji na majhni razliki števil (razlika pa se nato deli z majhnim številom, kar dodatno povečuje negotovost). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljeno.</p>
+<p>Nadalje poudarimo, da je časovno integriranje nestabilna numerična operacija, saj se napaka posameznega koraka sešteva in zato s časom raste. Integracija v frekvenčni domeni taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0 Hz nedoločen rezultat (deljenje z 0).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1458,7 +1457,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_1(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_2(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_3</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mf">.25</span><span class="p">,</span> <span class="o">+</span><span class="mf">.25</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span>
@@ -1470,7 +1469,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_1</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_1(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_2</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_2(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_3</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span>
@@ -1482,7 +1481,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_1(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_2(f)|$ z integracijo v frekvenčni domeni&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -1491,7 +1490,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_1</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_1(f)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ faza&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X(f)$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">X_2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">f</span><span class="p">)),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle X_2(f)$ z integracijo v frekvenčni domeni&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -1502,11 +1501,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/37aee933dddd1d99a5c3dbab1c0d1da5a61aef1dfb67989e37b373505152d128.png" src="../_images/37aee933dddd1d99a5c3dbab1c0d1da5a61aef1dfb67989e37b373505152d128.png" />
-<img alt="../_images/6c4c356152e5ef458c267a3cca0093477e7cc91aa26ec143e3534a57e1c26ef7.png" src="../_images/6c4c356152e5ef458c267a3cca0093477e7cc91aa26ec143e3534a57e1c26ef7.png" />
-<img alt="../_images/3431687dc52bca17355bcb5c886b617c085f976b76718d9911995622641f4823.png" src="../_images/3431687dc52bca17355bcb5c886b617c085f976b76718d9911995622641f4823.png" />
-<img alt="../_images/360e74fb4596d9386f47dca163e72fd2ea80c69e7e6a7f600d2fefd19c484c12.png" src="../_images/360e74fb4596d9386f47dca163e72fd2ea80c69e7e6a7f600d2fefd19c484c12.png" />
-<img alt="../_images/4713f60bf856a264ddf0caf5b5c04b3f1e738b1ac5b20ecbeefa8af1bdcb5bf6.png" src="../_images/4713f60bf856a264ddf0caf5b5c04b3f1e738b1ac5b20ecbeefa8af1bdcb5bf6.png" />
+<img alt="../_images/47b5384c358a3d4638fcbe4eda622586d7156b8623b4c628766037e55c3df543.png" src="../_images/47b5384c358a3d4638fcbe4eda622586d7156b8623b4c628766037e55c3df543.png" />
+<img alt="../_images/9f6bd94729d1ccd3a32e0f7fcf6ce1288091c4cd5a914524638d1194686b53c2.png" src="../_images/9f6bd94729d1ccd3a32e0f7fcf6ce1288091c4cd5a914524638d1194686b53c2.png" />
+<img alt="../_images/4ea40382adca8a4367642d28e71c8f385b109a6a1dfe3c55943e45a7bc93450d.png" src="../_images/4ea40382adca8a4367642d28e71c8f385b109a6a1dfe3c55943e45a7bc93450d.png" />
+<img alt="../_images/be191880600c4c555192d1a2c76910aa5f46bdaa9197dab5757d491cd5f1e2f8.png" src="../_images/be191880600c4c555192d1a2c76910aa5f46bdaa9197dab5757d491cd5f1e2f8.png" />
+<img alt="../_images/47da48320cabf57fd15f4c4af0ddea4dd797cf0dcef425ed19ac267e333b5650.png" src="../_images/47da48320cabf57fd15f4c4af0ddea4dd797cf0dcef425ed19ac267e333b5650.png" />
 </div>
 </div>
 </section>
@@ -1517,13 +1516,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <p>Fourierova transformacija konvolucije dveh funkcij je enaka produktu Fourierovih transformirank:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\big{\{}x(t)*y(t)\big{\}} = X(f)\,Y(f).
+\mathcal{F}\left\{x(t)*y(t)\right\} = X(f)\,Y(f).
 \]</div>
 </div>
 <p>Znak <span class="math notranslate nohighlight">\(*\)</span> označuje konvolucijo:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{-\infty}^{+\infty}\big(x(t)*y(t)\big)\,\mathrm{e}^{-\textrm{i}2\pi\,f\,t}\textrm{d}t=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau\,\,\mathrm{e}^{-\textrm{i}2\pi\,f\,t}\,\textrm{d}t
+\int_{-\infty}^{+\infty}\big(x(t)*y(t)\big)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\textrm{d}t=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau\,\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t.
 \]</div>
 <p>Zgornjo povezavo izpeljemo:</p>
 <div class="cell docutils container">
@@ -1560,7 +1559,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 \[\displaystyle \int\limits_{-\infty}^{\infty} e^{- 2 i \pi f \left(\tau + v\right)} \int\limits_{-\infty}^{\infty} x{\left(\tau \right)} y{\left(v \right)}\, d\tau\, dv\]</div>
 </div>
 </div>
-<p>Zgoraj je očitno, da lahko integral po <span class="math notranslate nohighlight">\(\tau\)</span> in <span class="math notranslate nohighlight">\(v\)</span> ločimo, kjer vsak integal predstavlja Fourierovo transformiranko <span class="math notranslate nohighlight">\(X(t)\)</span> in <span class="math notranslate nohighlight">\(Y(f)\)</span>.</p>
+<p>Zgoraj je očitno, da lahko integral po <span class="math notranslate nohighlight">\(\tau\)</span> in <span class="math notranslate nohighlight">\(v\)</span> ločimo, ločeni integral pa predstavlja Fourierovo transformiranko <span class="math notranslate nohighlight">\(X(t)\)</span> in <span class="math notranslate nohighlight">\(Y(f)\)</span>.</p>
 <p>Fourierova transformacija konvolucije je mogoče najbolj uporabna lastnost Fourierove transformacije, saj množenje v frekvenčni domeni bistveno pohitri izračun konvolucije dveh funkcij. Lastnost bomo s pridom uporabljali pri diskretni Fourierovi transformaciji, preprost primer spodaj pa pokaže ekvivalentnost rezultata v času napram tistemu v frekvenci.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1580,7 +1579,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <span class="n">X_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 <span class="n">X_2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 
-<span class="n">X_3</span> <span class="o">=</span> <span class="n">X_1</span><span class="o">*</span><span class="n">X_1</span> <span class="c1"># konvolucija v frekvenčni domeni</span>
+<span class="n">X_3</span> <span class="o">=</span> <span class="n">X_1</span><span class="o">*</span><span class="n">X_1</span> <span class="c1"># produkt v frekvenčni domeni</span>
 <span class="n">x_3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">inverse_fourier_transform</span><span class="p">(</span><span class="n">X_2</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> 
@@ -1597,7 +1596,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_1(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_2(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_1</span><span class="o">*</span><span class="n">X_1</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mf">.25</span><span class="p">,</span> <span class="o">+</span><span class="mf">.25</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span>
@@ -1611,8 +1610,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8742db660d4a86ca0f4bcef5dff5ef5c932568abc2f904f0300cbe39a1521e80.png" src="../_images/8742db660d4a86ca0f4bcef5dff5ef5c932568abc2f904f0300cbe39a1521e80.png" />
-<img alt="../_images/cfaeb7b1e21c9ef87b9e940c5424329e9f615a24f74aa401ca0df0003b3a6aa8.png" src="../_images/cfaeb7b1e21c9ef87b9e940c5424329e9f615a24f74aa401ca0df0003b3a6aa8.png" />
+<img alt="../_images/fe3ef754ed54c1809079966fdb0be3bb19a24275a2509551ee51a900d2139bdf.png" src="../_images/fe3ef754ed54c1809079966fdb0be3bb19a24275a2509551ee51a900d2139bdf.png" />
+<img alt="../_images/888994982a2531fa04bee33924af76933dc4d51e1868560f43ad327c5debba85.png" src="../_images/888994982a2531fa04bee33924af76933dc4d51e1868560f43ad327c5debba85.png" />
 </div>
 </div>
 </section>
@@ -1623,19 +1622,19 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <p>Fourierova transformacija produkta dveh funkcij v frekvenčni domeni predstavlja konvolucijo Fourierovih transformirank:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{F}\big{\{}x(t)\,y(t)\big{\}} = X(f)*Y(f).
+\mathcal{F}\left\{x(t)\,y(t)\right\} = X(f)*Y(f).
 \]</div>
 </div>
 <p>Zgornjo povezavo izpeljemo:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_{-\infty}^{+\infty} \underbrace{x(t)}_{\int_{-\infty}^{+\infty} X(f_1)\,\mathrm{e}^{\mathrm{i}\,2\pi\,t\,f_1}\, \mathrm{d}f_1}\, \overbrace{y(t)}^{\int_{-\infty}^{+\infty} Y(f_2)\,\mathrm{e}^{\mathrm{i}\,2\pi\,t\,f_2}\, \mathrm{d}f_2}\,\mathrm{e}^{-\mathrm{i}\,2\pi\,f\,t}\, \mathrm{d}t=
-\int_{-\infty}^{+\infty} X(f_1)\,\int_{-\infty}^{+\infty} Y(f_2)\, \int_{-\infty}^{+\infty} \mathrm{e}^{-\mathrm{i}\,2\pi\,(f-f_1-f_2)\,t}\, \mathrm{d}t\,\mathrm{d}f_2\,\mathrm{d}f_1
+\int_{-\infty}^{+\infty} X(f_1)\,\int_{-\infty}^{+\infty} Y(f_2)\, \int_{-\infty}^{+\infty} \mathrm{e}^{-\mathrm{i}\,2\pi\,(f-f_1-f_2)\,t}\, \mathrm{d}t\,\mathrm{d}f_2\,\mathrm{d}f_1.
 \]</div>
-<p>Sedaj upoštevamo <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,2\,\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>) in dokažemo zgornjo izpeljavo:</p>
+<p>Sedaj upoštevamo <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,2\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>) in dokažemo zgornjo izpeljavo:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{-\infty}^{+\infty} X(f_1)\,\underbrace{\int_{-\infty}^{+\infty} Y(f_2)\, \delta(f-f_1-f_2)\,\mathrm{d}f_2}_{Y(f-f_1)}\,\mathrm{d}f_1=\int_{-\infty}^{+\infty} X(f_1)\,Y(f-f_1)\,\mathrm{d}f_1= X(f)*Y(f)
+\int_{-\infty}^{+\infty} X(f_1)\,\underbrace{\int_{-\infty}^{+\infty} Y(f_2)\, \delta(f-f_1-f_2)\,\mathrm{d}f_2}_{Y(f-f_1)}\,\mathrm{d}f_1=\int_{-\infty}^{+\infty} X(f_1)\,Y(f-f_1)\,\mathrm{d}f_1= X(f)*Y(f).
 \]</div>
 <p>Spodaj si poglejmo še konkreten zgled.</p>
 <div class="cell tag_hide-input docutils container">
@@ -1653,7 +1652,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 <span class="n">x_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">x_2</span> <span class="o">=</span> <span class="n">x_1</span><span class="o">*</span><span class="n">x_1</span>
 <span class="n">X_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-<span class="n">X_2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="c1">#produkt v času</span>
+<span class="n">X_2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">fourier_transform</span><span class="p">(</span><span class="n">x_2</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="c1"># produkt v času</span>
 
 <span class="n">X_3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">X_1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f_1</span><span class="p">)</span><span class="o">*</span><span class="n">X_1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="o">-</span><span class="n">f_1</span><span class="p">),</span> <span class="p">(</span><span class="n">f_1</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span> <span class="c1"># konvolucija v frekvenci</span>
 <span class="n">x_3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">inverse_fourier_transform</span><span class="p">(</span><span class="n">X_3</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
@@ -1672,7 +1671,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_2(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
-              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena - amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
+              <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Frekvenčna domena $-$ amplituda&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$f$&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">X_3</span><span class="p">),</span> <span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mf">.5</span><span class="p">,</span> <span class="o">+</span><span class="mf">.5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span>
               <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$|X_3(f)|$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
@@ -1683,15 +1682,15 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/40de3622542712a1efcbd516bf49968d81e7a06d3aa317e6e4d081b62955f564.png" src="../_images/40de3622542712a1efcbd516bf49968d81e7a06d3aa317e6e4d081b62955f564.png" />
-<img alt="../_images/3c56db7e8a9bb07d240716787ad234e22edab003ac547115cc9b42684009fb59.png" src="../_images/3c56db7e8a9bb07d240716787ad234e22edab003ac547115cc9b42684009fb59.png" />
+<img alt="../_images/28c89e67601043766da99ac830f87f26e0fb3f6a253a1412ece3e2b01b7e103a.png" src="../_images/28c89e67601043766da99ac830f87f26e0fb3f6a253a1412ece3e2b01b7e103a.png" />
+<img alt="../_images/158fd45d25e33813b39373c73ca56077e57b166c4be7c5fdf1065cf87a282475.png" src="../_images/158fd45d25e33813b39373c73ca56077e57b166c4be7c5fdf1065cf87a282475.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="uporaba-oken">
 <span id="sec-okna"></span><h2>Uporaba oken<a class="headerlink" href="#uporaba-oken" title="Link to this heading">#</a></h2>
-<p>Predpostavimo, da želimo izračunati Fourierovo tranformacijo determinističnega signala <span class="math notranslate nohighlight">\(x(t)\)</span>, ki je načeloma definiran od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>, vendar pa ga gledamo samo na območju od <span class="math notranslate nohighlight">\(-T/2\)</span> do <span class="math notranslate nohighlight">\(+T/2\)</span>. Rezultirajoči podatki so tako:</p>
+<p>Predpostavimo, da želimo izračunati Fourierovo tranformacijo determinističnega signala <span class="math notranslate nohighlight">\(x(t)\)</span>, ki je načeloma definiran od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>, vendar pa ga gledamo samo na območju od <span class="math notranslate nohighlight">\(-T/2\)</span> do <span class="math notranslate nohighlight">\(+T/2\)</span>. Dobimo naslednje podatke:</p>
 <div class="math notranslate nohighlight">
 \[
 x_T(t)=x(t)\,w(t),
@@ -1701,14 +1700,14 @@ x_T(t)=x(t)\,w(t),
 \[\begin{split}
 w(t)=
 \begin{cases}
-1;\quad\textrm{za:}\quad |t|\le T/2\\
+1;\quad\textrm{za:}\quad |t|\le T/2,\\
 0;\quad\textrm{sicer}.
 \end{cases}
 \end{split}\]</div>
-<p>Če pridobimo Fourierovo transformacijo <span class="math notranslate nohighlight">\(x_T(t)\)</span> velja:</p>
+<p>Če pridobimo Fourierovo transformacijo <span class="math notranslate nohighlight">\(x_T(t)\)</span>, velja:</p>
 <div class="math notranslate nohighlight">
 \[
-X_T(t)=\mathcal{F}\{x(t)\,w(t)\}= X(f)*W(f)=\int_{-\infty}^{+\infty} X(g)\,W(f-g)\,\textrm{d}g
+X_T(t)=\mathcal{F}\{x(t)\,w(t)\}= X(f)*W(f)=\int_{-\infty}^{+\infty} X(g)\,W(f-g)\,\textrm{d}g.
 \]</div>
 <p>Sporočilo torej je: <span class="math notranslate nohighlight">\(X(f)\)</span> predstavlja frekvenčno transformiranko funkcije <span class="math notranslate nohighlight">\(x(t)\)</span>, ki jo lahko gledamo samo v nekem časovno omejenem oknu <span class="math notranslate nohighlight">\(w(t)\)</span>, le-to pa povzroči, da je Fourierova transformacija popačena. Pravokotni impulz <span class="math notranslate nohighlight">\(w(t)\)</span> smo si že pogledali zgoraj (<a class="reference internal" href="#sec-pravokotni-impulz"><span class="std std-ref">Pravokotni impulz</span></a>) in ugotovili, da je frekvenčna transformiranka definirana kot:</p>
 <div class="math notranslate nohighlight">
@@ -1738,20 +1737,20 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 <span class="n">fT_teor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
 <span class="n">Wp_teor</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">T</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span>
 
-<span class="c1">#Bartlett</span>
+<span class="c1"># Bartlett</span>
 <span class="n">wBartlett</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="n">wBartlett</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">wBartlett</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">WBartlett_teor</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c1">#Hann</span>
+<span class="c1"># Hann</span>
 <span class="n">wHann</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">WHann_teor</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">fT_teor</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 
-<span class="c1">#Hamming</span>
+<span class="c1"># Hamming</span>
 <span class="n">wHamming</span> <span class="o">=</span> <span class="mf">0.54</span><span class="o">+</span><span class="mf">0.46</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">)</span>
 <span class="n">WHamming_teor</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.54</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">0.08</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fT_teor</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">wp</span><span class="p">,</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pravokotno - simuliramo T/4!&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">wp</span><span class="p">,</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pravokotno $-$ simuliramo T/4!&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">wBartlett</span><span class="p">,</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bartlett&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">wHann</span><span class="p">,</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hann&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">wHamming</span><span class="p">,</span><span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hamming&#39;</span><span class="p">)</span>
@@ -1762,7 +1761,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">narisi</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span>
-<span class="c1">#narisi = plt.semilogy #s to opcijo je treba popraviti ylim</span>
+<span class="c1"># narisi = plt.semilogy # s to opcijo je treba popraviti ylim</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">narisi</span><span class="p">(</span><span class="n">fT_teor</span><span class="p">,</span> <span class="n">Wp_teor</span><span class="p">,</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pravokotno&#39;</span><span class="p">)</span>
 <span class="n">narisi</span><span class="p">(</span><span class="n">fT_teor</span><span class="p">,</span> <span class="n">WBartlett_teor</span><span class="p">,</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bartlett&#39;</span><span class="p">)</span>
@@ -1778,11 +1777,11 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/323e200bfe8ae336980d611e5292d738873a64d860230d515a4508acc4082279.png" src="../_images/323e200bfe8ae336980d611e5292d738873a64d860230d515a4508acc4082279.png" />
+<img alt="../_images/0ab7868e613e3a76039475d0ae1e57f0ff7dbfc34384e45eaf3bfe2c56cbac31.png" src="../_images/0ab7868e613e3a76039475d0ae1e57f0ff7dbfc34384e45eaf3bfe2c56cbac31.png" />
 <img alt="../_images/4893bdeecdbee53eafe29ccc6e94738b64f0d3237b6a0bc7693300456f67fcc8.png" src="../_images/4893bdeecdbee53eafe29ccc6e94738b64f0d3237b6a0bc7693300456f67fcc8.png" />
 </div>
 </div>
-<p>Za sinusuido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusuido, si tako lahko ogledamo, če konvuliramo njuni frekvenčni trasformiranki (primer spodaj).</p>
+<p>Za sinusoido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusoido, si lahko ogledamo, tako da konvuliramo njuni frekvenčni trasformiranki (primer spodaj).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1808,10 +1807,10 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 <span class="n">XW</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">W</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="o">-</span><span class="n">τ</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span> <span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">,</span> <span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span> <span class="c1"># konvolucija v frekvenci</span>
 
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(t)=sin(2</span><span class="se">\\</span><span class="s1">,</span><span class="se">\\</span><span class="s1">pi</span><span class="se">\\</span><span class="s1">,fr</span><span class="se">\\</span><span class="s1">,t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(t)=sin(2</span><span class="se">\\</span><span class="s1">pi</span><span class="se">\\</span><span class="s1">,fr</span><span class="se">\\</span><span class="s1">,t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
               <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
 <span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">+</span><span class="mi">2</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$w(t)$, prakovotno okno T=</span><span class="si">{</span><span class="n">T</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+              <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$w(t)$, prakovotno okno $T=</span><span class="si">{</span><span class="n">T</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1834,8 +1833,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f946028c32d4ad5144ae4d104aa0d6697d5e6bf94f651fb7769c62469e2a7fd5.png" src="../_images/f946028c32d4ad5144ae4d104aa0d6697d5e6bf94f651fb7769c62469e2a7fd5.png" />
-<img alt="../_images/91f33ac537851e48133eb1e75fbaafc560cad5dd527c32b1c4a7fffb6b2f3679.png" src="../_images/91f33ac537851e48133eb1e75fbaafc560cad5dd527c32b1c4a7fffb6b2f3679.png" />
+<img alt="../_images/061c93812fa9019aa3e5d303460860bfeddf541fbf6c5988d8178958e5c611a4.png" src="../_images/061c93812fa9019aa3e5d303460860bfeddf541fbf6c5988d8178958e5c611a4.png" />
+<img alt="../_images/2dad41f03de4f78b561168132644b1cb80a6380702bd597cd65ae295cbfe9a68.png" src="../_images/2dad41f03de4f78b561168132644b1cb80a6380702bd597cd65ae295cbfe9a68.png" />
 </div>
 </div>
 </section>
@@ -1905,7 +1904,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekateri-primeri-fourierove-transformacije">Nekateri primeri Fourierove transformacije</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nekaj-primerov-fourierove-transformacije">Nekaj primerov Fourierove transformacije</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diracova-delta-funkcija">Diracova delta funkcija</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetricna-eksponentno-padajoca-funkcija">Simetrična eksponentno padajoča funkcija</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sinusna-funkcija">Sinusna funkcija</a></li>
@@ -1915,11 +1914,11 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lastnosti-fourierove-transformacije">Lastnosti Fourierove transformacije</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearnost-ang-linearity">Linearnost (ang. linearity)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje-ang-time-scaling">Časovno skaliranje (ang. time scaling)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-obrat-ang-time-reversal">Časovni obrat (ang. time reversal)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-premik-ang-time-shifting">Časovni premik (ang. time shifting)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">Amplitudna modulacija (ang. modulation, tudi frequency-shifting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linearnost-ang-linearity">Linearnost (ang. <em>linearity</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje-ang-time-scaling">Časovno skaliranje (ang. <em>time scaling</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-obrat-ang-time-reversal">Časovni obrat (ang. <em>time reversal</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-premik-ang-time-shifting">Časovni premik (ang. <em>time shifting</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitudna-modulacija-ang-modulation-tudi-frequency-shifting">Amplitudna modulacija (ang. <em>modulation</em>, tudi <em>frequency-shifting</em>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#odvajanje">Odvajanje</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integriranje">Integriranje</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konvolucija-funkcij">Konvolucija funkcij</a></li>

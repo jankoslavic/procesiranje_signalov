@@ -188,7 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20Diskretna%20Fourierova%20transformacija.html">6. Diskretna Fourierova transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Naklju%C4%8Dni%20procesi.html">7. Osnove naključnih procesov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08%20-%20Odziv%20linearnih%20sistemov%20na%20naklju%C4%8Dno%20vzbujanje.html">8. Odziv linearnih sistemov na naključno vzbujanje</a></li>
-
 </ul>
 
     </div>
@@ -416,26 +415,26 @@ x_s(t)=x(t)\,i(t),
 <p>kjer je:</p>
 <div class="math notranslate nohighlight">
 \[
-i(t)= \sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t)
+i(t)= \sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t).
 \]</div>
 <p>Fourierova transformacija <span class="math notranslate nohighlight">\(x_s(t)\)</span> je:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-X_s(f)&amp;=\int_{-\infty}^{+\infty} x(t)\,\sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,\\
-&amp;=\sum_{n=-\infty}^{+\infty}\,\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\delta(t-n\,\Delta t)\,\textrm{d} t,\\
+X_s(f)&amp;=\int_{-\infty}^{+\infty} x(t)\,\sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,\int_{-\infty}^{+\infty} x(t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\delta(t-n\,\Delta t)\,\textrm{d} t\\
 &amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}.
 \end{split}
 \end{split}\]</div>
 <p>Pri prehodu v zadnjo vrstico uporabimo sejalno lastnost Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>).</p>
-<p>Ključna posledica zgornje izpeljave je: <strong>za vzorčene podatke se integral preoblikuje v vsoto vzorčenih vrednostih</strong> (pomnoženih s harmonsko modulacijo).</p>
-<p>Ugotovimo tudi, da se Fourierova transformacija enakomerno vzorčene vrste <span class="math notranslate nohighlight">\(X_s(f)\)</span> ponavlja (je periodična) s frekvenco <span class="math notranslate nohighlight">\(1/\Delta t\)</span>, to dokažemo tako:</p>
+<p>Ključna posledica zgornje izpeljave je: <strong>za vzorčene podatke se integral preoblikuje v vsoto vzorčenih vrednosti</strong> (pomnoženih s harmonsko modulacijo).</p>
+<p>Ugotovimo tudi, da se Fourierova transformacija enakomerno vzorčene vrste <span class="math notranslate nohighlight">\(X_s(f)\)</span> ponavlja (je periodična) s frekvenco <span class="math notranslate nohighlight">\(1/\Delta t\)</span>, kar dokažemo tako:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-X_s(f+r/\Delta t)&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,(f+r/\Delta t)\,n\,\Delta t},\\
-&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,\underbrace{\mathrm{e}^{-\textrm{i}\,2\pi\,r\,n}}_{=1},\\
-&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t},\\
+X_s(f+r/\Delta t)&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,(f+r/\Delta t)\,n\,\Delta t}\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,\underbrace{\mathrm{e}^{-\textrm{i}\,2\pi\,r\,n}}_{=1}\\
+&amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\\
 &amp;=X_s(f),
 \end{split}
 \end{split}\]</div>
@@ -456,26 +455,26 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <p>Poskusimo sedaj izpeljati inverzno Fourierovo transformacijo; najprej izraz v frekvenčni domeni pomnožimo z <span class="math notranslate nohighlight">\(\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\)</span> (pri tem je <span class="math notranslate nohighlight">\(p\,\Delta t\)</span> čas, pri katerem nas zanima vrednost v času <span class="math notranslate nohighlight">\(x(p\,\Delta t)\)</span>) in integriramo po frekvenci <span class="math notranslate nohighlight">\(f\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f=\int_{-1/2\Delta t}^{+1/2\Delta t}\,\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f,
+\int_{-1/(2\Delta t)}^{+1/(2\Delta t)}\,X_s(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f=\int_{-1/(2\Delta t)}^{+1/(2\Delta t)}\,\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f,
 \]</div>
 <p>kjer smo integrirali samo po eni periodi v frekvenci (po več ne bi bilo smiselno, saj je <span class="math notranslate nohighlight">\(X_s(f)\)</span> periodična funkcija).</p>
 <p>Zgornji izraz preoblikujemo v:</p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,\underbrace{\mathrm{e}^{-\textrm{i}\,2\pi\,f\,(n-p)\,\Delta t}}_{=1,\textrm{ ko je } n=p\quad\textrm{sicer je integral izraza: }0}\,\textrm{d}f=x(p\,\Delta t)\,\frac{1}{\Delta t}.
+\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\int_{-1/(2\Delta t)}^{+1/(2\Delta t)}\,\underbrace{\mathrm{e}^{-\textrm{i}\,2\pi\,f\,(n-p)\,\Delta t}}_{=1,\textrm{ ko je } n = p;\quad\textrm{sicer je integral izraza: }0}\,\textrm{d}f=x(p\,\Delta t)\,\frac{1}{\Delta t}.
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p>Izpeljali smo torej <strong>inverzno Fourierovo transformacijo</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-x(p\,\Delta t) = \Delta t\,\int_{-1/2\Delta t}^{+1/2\Delta t}\,X_s(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f
+x(p\,\Delta t) = \Delta t\,\int_{-1/(2\Delta t)}^{+1/(2\Delta t)}\,X_s(f)\,\mathrm{e}^{\textrm{i}\,2\pi\,f\,p\,\Delta t}\,\textrm{d}f.
 \]</div>
 </div>
 </section>
 <section id="frekvencno-prekrivanje">
 <h2>Frekvenčno prekrivanje<a class="headerlink" href="#frekvencno-prekrivanje" title="Link to this heading">#</a></h2>
-<p>Frekvenčno prekrivanje ali tudi frekvenčno zrcaljenje (ang. <em>aliasing</em>) je pojav, pri katerem pride do napačne identifikacije frekvence v signalu, razlog pa je neprimerno vzorčenje časovnega signala. Poglejmo detajle: vlak impulzov <span class="math notranslate nohighlight">\(i(t)\)</span> lahko vidimo kot periodične podatke s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> ter jih popišemo s Fourierovo vrsto:</p>
+<p>Frekvenčno prekrivanje ali tudi frekvenčno zrcaljenje (ang. <em>aliasing</em>) je pojav, pri katerem pride do napačne identifikacije frekvence v signalu, razlog za to pa je neprimerno vzorčenje časovnega signala. Poglejmo detajle: vlak impulzov <span class="math notranslate nohighlight">\(i(t)\)</span> lahko obravnavamo kot periodične podatke s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> ter jih popišemo s Fourierovo vrsto:</p>
 <div class="math notranslate nohighlight">
 \[
 i(t)= \sum_{n=-\infty}^{+\infty}\delta(t-n\,\Delta t) = \sum_{n=-\infty}^{+\infty}c_n\,\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t},
@@ -490,25 +489,25 @@ c_n=\frac{1}{\Delta t}\,\int_{-\Delta t/2}^{+\Delta t/2}i(t)\,\mathrm{e}^{-\text
 \[
 i(t)= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t}.
 \]</div>
-<p>Fourierova transformacija <span class="math notranslate nohighlight">\(i(t)\)</span>, definiranega s pomočjo Forierovih vrst:</p>
+<p>Fourierova transformacija <span class="math notranslate nohighlight">\(i(t)\)</span>, definirana s pomočjo Fourierovih vrst:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-I(f)&amp;= \int_{-\infty}^{+\infty}\Big(\frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t}\Big)\, \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t,\\
+I(f)&amp;= \int_{-\infty}^{+\infty}\Big(\frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t}\Big)\, \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t\\
 &amp;= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\int_{-\infty}^{+\infty}
-\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t}\, \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t,\\
+\mathrm{e}^{\textrm{i}\,2\pi\,n\,t/\Delta t}\, \mathrm{e}^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d}t\\
 &amp;= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}\int_{-\infty}^{+\infty}
-\mathrm{e}^{-\textrm{i}\,2\pi\,(f-n/\Delta t)\,t}\,\textrm{d}t,\\
+\mathrm{e}^{-\textrm{i}\,2\pi\,(f-n/\Delta t)\,t}\,\textrm{d}t\\
 &amp;= \frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}
 \delta\Big(f-\frac{n}{\Delta t}\Big).\\
 \end{split}
 \end{split}\]</div>
-<p>Zgoraj smo uporabli lastnost Diracove delta funkcije <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,2\,\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>). Fourierova tranformacija <span class="math notranslate nohighlight">\(i(t)\)</span> je torej v frekvenčni domeni periodično ponavljajoča s frekvenčno periodo <span class="math notranslate nohighlight">\(1/\Delta t\)</span>.</p>
+<p>Zgoraj smo uporabili lastnost Diracove delta funkcije <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,2\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>). Fourierova transformacija <span class="math notranslate nohighlight">\(i(t)\)</span> je torej v frekvenčni domeni periodično ponavljajoča se s frekvenčno periodo <span class="math notranslate nohighlight">\(1/\Delta t\)</span>.</p>
 <p>Poglejmo si sedaj povezavo <span class="math notranslate nohighlight">\(X(f)\)</span> in <span class="math notranslate nohighlight">\(X_s(f)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{split}
-X_s(f) =\mathcal{F}(i(t)\,x(t)) &amp;= I(f)*X(f)\\
+X_s(f) =\mathcal{F}\left\{i(t)\,x(t)\right\} &amp;= I(f)*X(f)\\
 &amp;=\int_{-\infty}^{+\infty}I(p)\,X(f-p)\,\textrm{d}p\\
 &amp;=\int_{-\infty}^{+\infty}\frac{1}{\Delta t}\, \sum_{n=-\infty}^{+\infty}
 \delta\Big(p-\frac{n}{\Delta t}\Big)\,X(f-p)\,\textrm{d}p\\
@@ -517,13 +516,13 @@ X_s(f) =\mathcal{F}(i(t)\,x(t)) &amp;= I(f)*X(f)\\
 &amp;=\frac{1}{\Delta t}\,\sum_{n=-\infty}^{+\infty}\,X\Big(f-\frac{n}{\Delta t}\Big)\\
 \end{split}
 \end{split}\]</div>
-<p>Kako interpretiramo zgornjo izpeljavo? Če imamo časovno vzorčene podakte <span class="math notranslate nohighlight">\(x_s(t)\)</span>, kar vodi v frekvenčni domeni do <span class="math notranslate nohighlight">\(X_s(f)\)</span>, imamo pri določeni frekvenci <span class="math notranslate nohighlight">\(f\)</span> vsebnost vsote zveznih podatkov <span class="math notranslate nohighlight">\(X(f)\)</span> pri frekvencah <span class="math notranslate nohighlight">\(f-n/\Delta t\)</span>, kjer gre celo število <span class="math notranslate nohighlight">\(n\)</span> od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. V praksi to pomeni, da se nam vsebnost dejanskega (zveznega) signala iz frekvenčnega področja izven področja <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span> zrcali in prekriva v frekvenčno področje od <span class="math notranslate nohighlight">\([-1/2\Delta t, +1/2\Delta t]\)</span>; glejte zgled spodaj.</p>
+<p>Kako interpretiramo zgornjo izpeljavo? Če imamo časovno vzorčene podatke <span class="math notranslate nohighlight">\(x_s(t)\)</span>, kar vodi v frekvenčni domeni do <span class="math notranslate nohighlight">\(X_s(f)\)</span>, imamo pri določeni frekvenci <span class="math notranslate nohighlight">\(f\)</span> vsebnost vsote zveznih podatkov <span class="math notranslate nohighlight">\(X(f)\)</span> pri frekvencah <span class="math notranslate nohighlight">\(f-n/\Delta t\)</span>, kjer gre celo število <span class="math notranslate nohighlight">\(n\)</span> od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. V praksi to pomeni, da se nam vsebnost dejanskega (zveznega) signala iz frekvenčnega področja izven področja <span class="math notranslate nohighlight">\([-1/(2\Delta t), +1/(2\Delta t)]\)</span> zrcali in prekriva v frekvenčno področje od <span class="math notranslate nohighlight">\([-1/(2\Delta t),\,+1/(2\Delta t)]\)</span>; glejte zgled spodaj.</p>
 <section id="zgled-gaussov-impulz">
 <h3>Zgled: Gaussov impulz<a class="headerlink" href="#zgled-gaussov-impulz" title="Link to this heading">#</a></h3>
 <p>Časovno vzorčenje in frekvenčno prekrivanje si bomo tukaj pogledali na primeru Gaussovega impulza/okna (glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-gaussov-impulz"><span class="std std-ref">Gaussov impulz</span></a>), ki je v časovni in frekvenčni domeni definirano kot:</p>
 <div class="math notranslate nohighlight">
 \[
-x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a};\qquad a&gt;0 
+x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a};\qquad a&gt;0.
 \]</div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -536,7 +535,7 @@ x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># navodilo: spreminaj parameter `a`</span>
+<span class="c1"># navodilo: spreminjaj parameter `a`</span>
 
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">n</span><span class="p">,</span> <span class="n">Δt</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n, Δt&#39;</span><span class="p">)</span>
@@ -556,7 +555,7 @@ x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{
 <span class="n">t_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="mi">10</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">t_i</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">]</span>
-<span class="n">K</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># koliko sosednijih preslikav X(f) prikažemo</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># koliko sosednjih preslikav X(f) prikažemo</span>
 <span class="n">fr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">K</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span><span class="n">K</span><span class="o">/</span><span class="n">podatki</span><span class="p">[</span><span class="n">Δt</span><span class="p">],</span> <span class="n">num</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
@@ -588,7 +587,7 @@ x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{
 <img alt="../_images/ce0c1992f725738e8ecd71eef0df22c3a59e050ebfa796631a7e3a4f3e06cd56.png" src="../_images/ce0c1992f725738e8ecd71eef0df22c3a59e050ebfa796631a7e3a4f3e06cd56.png" />
 </div>
 </div>
-<p>Še en primer frekvenčnega prekrivanja predstavlja spodnji zgled, kjer obravnavamo harmonske podatke. Ko je frekvenca vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>, glede na frekvenco harmonskih podatov <code class="docutils literal notranslate"><span class="pre">f</span></code>, prenizka (<span class="math notranslate nohighlight">\(f&gt;fs/2\)</span>), se dejanska frekvenca zrcali v frekvenčno področje do <code class="docutils literal notranslate"><span class="pre">fs/2</span></code>. V spodnji kodi frekvenco sinusnega signala <code class="docutils literal notranslate"><span class="pre">f</span></code> poskusite počasi dvigovati proti (in nad) frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>.</p>
+<p>Še en primer frekvenčnega prekrivanja predstavlja spodnji zgled, kjer obravnavamo harmonske podatke. Ko je frekvenca vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code> glede na frekvenco harmonskih podatkov <code class="docutils literal notranslate"><span class="pre">f</span></code> prenizka (<span class="math notranslate nohighlight">\(f&gt;fs/2\)</span>), se dejanska frekvenca zrcali v frekvenčno področje do <code class="docutils literal notranslate"><span class="pre">fs/2</span></code>. V spodnji kodi frekvenco sinusnega signala <code class="docutils literal notranslate"><span class="pre">f</span></code> poskusite počasi dvigovati proti (in nad) frekvenco vzorčenja <code class="docutils literal notranslate"><span class="pre">fs</span></code>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -611,7 +610,7 @@ x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{
 <span class="n">f1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">dt</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Amplitudni spekter&#39;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pričakovani vrh&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;fs/2 = </span><span class="si">{</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">Hz&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;fs/2 = </span><span class="si">{</span><span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1"> Hz&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">50</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
@@ -619,26 +618,26 @@ x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/af271a4ef61f994e4b6732c42e86111acee0a776924caceb26b1eca83a3c0fa1.png" src="../_images/af271a4ef61f994e4b6732c42e86111acee0a776924caceb26b1eca83a3c0fa1.png" />
+<img alt="../_images/eb2a56c3c739165d09121f2ef15fab73d6b99abc35d27a8736775c4c481e77a6.png" src="../_images/eb2a56c3c739165d09121f2ef15fab73d6b99abc35d27a8736775c4c481e77a6.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="preprecevanje-frekvencnega-prekrivanja">
 <h2>Preprečevanje frekvenčnega prekrivanja<a class="headerlink" href="#preprecevanje-frekvencnega-prekrivanja" title="Link to this heading">#</a></h2>
-<p>Če je <span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> frekvenca vzorčenja, potem se frekvenčnemu prekrivanju lahko izognemo tako, da uporabimo <strong>nizko-pasovni</strong> (ang. <em>low-pass</em>) filter na frekvenci:</p>
+<p>Če je <span class="math notranslate nohighlight">\(f_s=1/\Delta t\)</span> frekvenca vzorčenja, potem se frekvenčnemu prekrivanju lahko izognemo, tako da uporabimo <strong>nizkopasovni</strong> (ang. <em>low-pass</em>) filter na frekvenci:</p>
 <div class="math notranslate nohighlight">
 \[
 f_{np}&lt;\frac{f_s}{2}.
 \]</div>
-<p>Pri tem je pomembno, da se uporabi analogni filter, <em>preden</em> se izvede časovno vzorčenje. Frekvenci <span class="math notranslate nohighlight">\(f_{np}\)</span> rečemo tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquistova frekvenca</a>.</p>
+<p>Pri tem je pomembno, da uporabimo analogni filter, <em>preden</em> izvedemo časovno vzorčenje. Frekvenci <span class="math notranslate nohighlight">\(f_{np}\)</span> rečemo tudi <a class="reference external" href="https://en.wikipedia.org/wiki/Nyquist_frequency">Nyquistova frekvenca</a>.</p>
 </section>
 <section id="kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne">
 <h2>Kvantizacija podatkov: pretvorba zveznih podatkov v diskretne<a class="headerlink" href="#kvantizacija-podatkov-pretvorba-zveznih-podatkov-v-diskretne" title="Link to this heading">#</a></h2>
-<p>Za obdelavo v računalnikih moramo merjene zvezne podatke pretvoriti v diskretne numerične vrednosti, zajete z določeno frekvenco vzorčenja. Zajemne kartice danes omogočajo relativno hitro zajemanje (vsaj 100 kHz) pri relativno veliki dinamični globini (vsaj 24 bit). Tukaj si bomo bolj podrobno pogledali dinamično globino, ki predstavlja število diskretnih nivojev, na kateri zajemna kartica razpozna analogne podatke.</p>
-<p>Zapis števil v računalniku je končne natančnosti, tipično današnji računalniki uporabljajo 64 bitno natančnost zapisa, kar je bistveno več kakor pa je natančnost zajemnih merilnih kartic.</p>
-<p>Poglejmo si naslednji zgled, kjer obravnavamo sinusoido. Če uporabimo 24 bitno kartico in tipično območje merjenja [-10, 10], je razlika med dvema nivojema kvantizacije približno 1e-6, ker je za večino meritev povsem dovolj. Razmerje med najmanjšo in največjo vrednostjo, ki jo lahko na določeni zajemin kartici merimo, imenujemo <strong>dinamični razpon</strong> ali tudi <strong>dinamična globina</strong>.</p>
-<p>V kolikor pa uporabljamo sistem z nižjim dinamičnim razponom, pa je treba biti na območje merjenja v povezavi z dinamičnim razponom zelo pozoren in morebiti ojačati merjene podatke. Takšen primer je sinusoida spodaj, ki jo kvantiziramo na dveh območjih ([-1, 1] in [-5, 5]) s 4 bitno natančnostjo (16 nivojev)</p>
+<p>Za računalniško obdelavo moramo merjene zvezne podatke pretvoriti v diskretne numerične vrednosti, zajete z določeno frekvenco vzorčenja. Zajemne kartice danes omogočajo relativno hitro zajemanje (vsaj 100 kHz) pri relativno veliki dinamični globini (vsaj 24 bit). Tukaj si bomo podrobneje pogledali dinamično globino, ki predstavlja število diskretnih nivojev, na katerih zajemna kartica razpozna analogne podatke.</p>
+<p>Zapis števil v računalniku je končne natančnosti; običajno današnji računalniki uporabljajo 64-bitno natančnost zapisa, kar je bistveno natančneje kot to omogočajo zajemne merilne kartice.</p>
+<p>Poglejmo si naslednji zgled, kjer obravnavamo sinusoido. Če uporabimo 24-bitno kartico in tipično območje merjenja [-10, 10], je razlika med dvema nivojema kvantizacije približno 1e-6, kar je za večino meritev povsem dovolj. Razmerje med najmanjšo in največjo vrednostjo, ki jo lahko merimo na določeni zajemni kartici, imenujemo <strong>dinamični razpon</strong> ali tudi <strong>dinamična globina</strong>.</p>
+<p>V kolikor pa uporabljamo sistem z nižjim dinamičnim razponom, pa je treba biti na območje merjenja v povezavi z dinamičnim razponom zelo pozoren in morebiti ojačati merjene podatke. Takšen primer je sinusoida spodaj, ki jo kvantiziramo na dveh območjih ([-1, 1] in [-5, 5]) s 4-bitno natančnostjo (16 nivojev).</p>
 <p>Pri merjenju je treba paziti tudi na <strong>porezane podatke</strong> (ang. <em>clipping</em>), ko je območje merjenja premajhno (primer spodaj: [-0.5, 0.5]).</p>
 <p>Opomba: koda za spodnjo sliko vključuje tudi primer, ko nam šum lahko pomaga, da izmerimo veličine, ki so manjše od nivoja kvantizacije.</p>
 <div class="cell tag_hide-input docutils container">
@@ -657,7 +656,7 @@ f_{np}&lt;\frac{f_s}{2}.
 <span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">angle</span> <span class="o">=</span> <span class="mf">0.5</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fr</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">angle</span><span class="p">)</span>
-<span class="c1"># Ta primer prikaže kako lahko nakčjučni šum pomaga, da izmerimo nekaj kar je pod nivojem kvantizacije</span>
+<span class="c1"># Ta primer prikaže, kako lahko naključni šum pomaga, da izmerimo nekaj kar je pod nivojem kvantizacije.</span>
 <span class="c1">#x = 0.03*np.cos(2*np.pi*fr*t+angle)</span>
 <span class="c1">#x = x+.2*(np.random.rand(N)-0.5)</span>
 
@@ -680,7 +679,7 @@ f_{np}&lt;\frac{f_s}{2}.
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Zvezni podatki&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija na razponu [-1, 1]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija na razponu [-5, 5]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="s1">&#39;C4&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija na razponu [-0.5, 0.5] - porezani podatki&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x4</span><span class="p">,</span> <span class="s1">&#39;C4&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Kvantizacija na razponu [-0.5, 0.5] $-$ porezani podatki&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
@@ -690,7 +689,7 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/05d8969e297668ba27c39f9dce3c580b9b0be301163f411b76f9ffc5ef0b36f9.png" src="../_images/05d8969e297668ba27c39f9dce3c580b9b0be301163f411b76f9ffc5ef0b36f9.png" />
+<img alt="../_images/c4ece574fbc05a3f8739f6c726f02f586d837b78becabd0c10c207622f9db47d.png" src="../_images/c4ece574fbc05a3f8739f6c726f02f586d837b78becabd0c10c207622f9db47d.png" />
 </div>
 </div>
 </section>
@@ -701,15 +700,15 @@ f_{np}&lt;\frac{f_s}{2}.
 \[
 \sigma_e=\frac{A/2^b}{\sqrt{12}},
 \]</div>
-<p>kjer je <span class="math notranslate nohighlight">\(A\)</span> celotni razpon območja kvantizacije in je <span class="math notranslate nohighlight">\(b\)</span> število bitov kvantizacije, brez bita za predznak. Pri 24 bitni kvantizaciji na območju od -10 do 10 (<span class="math notranslate nohighlight">\(A=20\)</span>) je standardna deviacija šuma:</p>
+<p>kjer je <span class="math notranslate nohighlight">\(A\)</span> celotni razpon območja kvantizacije in <span class="math notranslate nohighlight">\(b\)</span> število bitov kvantizacije, brez bita za predznak. Pri 24-bitni kvantizaciji na območju od -10 do 10 (<span class="math notranslate nohighlight">\(A=20\)</span>) je standardna deviacija šuma:</p>
 <div class="math notranslate nohighlight">
 \[
-\sigma_e = \frac{20/2^{23}}{\sqrt{12}}=6.88\cdot 10^{-7},
+\sigma_e = \frac{20/2^{23}}{\sqrt{12}}=6.88\cdot 10^{-7}.
 \]</div>
-<p>Da vrednotimo delež koristnih informacij proti šumu, si pomagamo z:</p>
+<p>Pri vrednotenju deleža koristnih informacij proti šumu si pomagamo z:</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Razmerjem med signalom in šumom (ang. <em>signal-to-noise ratio</em>):</p>
+<p>razmerjem med signalom in šumom (ang. <em>signal-to-noise ratio</em>):</p>
 <div class="math notranslate nohighlight">
 \[
 \textrm{SNR}=10\log_{10}\Big(\frac{\sigma_x^2}{\sigma_e^2}\Big),
@@ -720,9 +719,9 @@ f_{np}&lt;\frac{f_s}{2}.
 <div class="math notranslate nohighlight">
 \[
 \textrm{SNR}=10\log_{10}\Big(\frac{(A/4)^2}{\big(\frac{A/2^b}{\sqrt{12}}\big)^2}\Big)=
-10\log_{10}\big(3/4\cdot 2^{2b}\big)\approx -1.25+6\,b\,\textrm{dB},
+10\log_{10}\big(3/4\cdot 2^{2b}\big)\approx -1.25+6\,b\,\textrm{dB}.
 \]</div>
-<p>V primeru 12 bitne kvantizacije je <span class="math notranslate nohighlight">\(b=11\)</span> in imamo na voljo približno 65 dB dinamičnega razpona, v primeru 24 bitne kvantizacije pa bi bil teoretični razpon približno 137 dB. V praksi imamo opravka še z drugimi viri šuma, ki vodijo v to, da so vrednosti SNR bistveno nižje. Spodaj je prikazan idealizirani primer šuma in podatkov, ki niso obremenjeni s šumom.</p>
+<p>V primeru 12-bitne kvantizacije je <span class="math notranslate nohighlight">\(b=11\)</span> in imamo na voljo približno 65 dB dinamičnega razpona, v primeru 24-bitne kvantizacije pa bi bil teoretično razpon približno 137 dB. V praksi imamo opravka še z drugimi viri šuma, ki povzročijo, da so vrednosti SNR bistveno nižje. Spodaj je prikazan idealiziran primer šuma in podatkov, ki niso obremenjeni s šumom.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -743,7 +742,7 @@ f_{np}&lt;\frac{f_s}{2}.
 <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="mf">0.5</span> <span class="o">&gt;</span> <span class="n">t</span> <span class="p">,</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="n">w</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="mf">0.5</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Prikaz podatkov s SNR=</span><span class="si">{</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">dB&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Prikaz podatkov s SNR = </span><span class="si">{</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1"> dB&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Šum&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal + šum&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
@@ -755,7 +754,7 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9de03a39b22c020aba6099d8bd782d1e7a6778a98f2a659cf421c7b6c615eb5a.png" src="../_images/9de03a39b22c020aba6099d8bd782d1e7a6778a98f2a659cf421c7b6c615eb5a.png" />
+<img alt="../_images/c18e5c5c2849dfbe5d617da3042673a541ff669f6246962b9acf69921abfdfc9.png" src="../_images/c18e5c5c2849dfbe5d617da3042673a541ff669f6246962b9acf69921abfdfc9.png" />
 </div>
 </div>
 </section>
