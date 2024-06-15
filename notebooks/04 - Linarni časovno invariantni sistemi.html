@@ -389,7 +389,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonsko-vzbujanje">Harmonsko vzbujanje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prehodni-odziv-in-odziv-v-ustaljenem-stanju">Prehodni odziv in odziv v ustaljenem stanju</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvecna-prenosna-funkcija">Frekvečna prenosna funkcija</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencna-prenosna-funkcija">Frekvenčna prenosna funkcija</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razlicne-oblike-frf">Različne oblike FRF</a></li>
 </ul>
 </li>
@@ -517,7 +517,7 @@ c_{c} = 2\,\sqrt{k\,m}
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-		x(0)&amp;=0\to&amp; X_{h,1}+X_{h,2}&amp;=0\\
+		x(0)&amp;=0\to&amp; X_{h,1}+X_{h,2}&amp;=0,\\
 		\dot{x}(0)&amp;=\dot{x}_0\to&amp; X_{h,1}\,\lambda_1+X_{h,2}\,\lambda_2&amp;=\dot{x}_0.
 	\end{aligned}
 \end{split}\]</div>
@@ -562,7 +562,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2ad6a6b66dcf06b9b93c84bc2c254d60e4afb1948c6617205ae0ef86afc811e7.png" src="../_images/2ad6a6b66dcf06b9b93c84bc2c254d60e4afb1948c6617205ae0ef86afc811e7.png" />
+<img alt="../_images/ec1796f87ca4babf7f9efd31886189b081b79027737f33009e47776e2e196c57.png" src="../_images/ec1796f87ca4babf7f9efd31886189b081b79027737f33009e47776e2e196c57.png" />
 </div>
 </div>
 </section>
@@ -643,8 +643,8 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f3b30272578484d0b49270fb6d01c3a22d79418e5aac9bce4e8a819bdc50e305.png" src="../_images/f3b30272578484d0b49270fb6d01c3a22d79418e5aac9bce4e8a819bdc50e305.png" />
-<img alt="../_images/f7f567eb568ead08bbaa1390542bffbe4c37d74525fbaaad11576f84e8fe31d6.png" src="../_images/f7f567eb568ead08bbaa1390542bffbe4c37d74525fbaaad11576f84e8fe31d6.png" />
+<img alt="../_images/9c62e89d71b4661ed21bd8bec199e09d89df7ab4a2823a92d9dc0370d6a487e8.png" src="../_images/9c62e89d71b4661ed21bd8bec199e09d89df7ab4a2823a92d9dc0370d6a487e8.png" />
+<img alt="../_images/e73ce02e6c4715b1b0fe441b5ae31b7e7346ad5f3f91e40fac6a0e14b3cc3916.png" src="../_images/e73ce02e6c4715b1b0fe441b5ae31b7e7346ad5f3f91e40fac6a0e14b3cc3916.png" />
 </div>
 </div>
 <p>Partikularna rešitev je torej:</p>
@@ -659,8 +659,8 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 <p>Najprej smo določili homogeno rešitev <span class="math notranslate nohighlight">\(x_{h}(t)\)</span>, ki predstavlja prehodni odziv na neko začetno motnjo. Partikularna rešitev <span class="math notranslate nohighlight">\(x_{p}(t)\)</span> predstavlja rešitev na stacionarno harmonsko motnjo. Splošna rešitev je določena z vsoto obeh (slika spodaj).</p>
 <p><img alt="sdof_homo_part_trans_steady" src="../_images/sdof_homo_part_trans_steady.svg" /></p>
 </section>
-<section id="frekvecna-prenosna-funkcija">
-<span id="sec-frf"></span><h2>Frekvečna prenosna funkcija<a class="headerlink" href="#frekvecna-prenosna-funkcija" title="Link to this heading">#</a></h2>
+<section id="frekvencna-prenosna-funkcija">
+<span id="sec-frf"></span><h2>Frekvenčna prenosna funkcija<a class="headerlink" href="#frekvencna-prenosna-funkcija" title="Link to this heading">#</a></h2>
 <p>Najprej se bomo osredotočili zgolj na partikularno rešitev (vendar ne bomo več uporabljali podpisa <span class="math notranslate nohighlight">\(p\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -678,7 +678,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 <p>Z uporabo nedušene lastne krožne frekvence <span class="math notranslate nohighlight">\(\omega_0^2=k/m\)</span>, razmernika dušenja <span class="math notranslate nohighlight">\(\delta=c/(2\,\sqrt{k\,m})\)</span> in razmernika frekvenc ali tudi relativne frekvence <span class="math notranslate nohighlight">\(r=\omega/\omega_0\)</span>, dobimo frekvenčni odziv v standardni obliki:</p>
 <div class="math notranslate nohighlight">
 \[
-	\alpha(\omega)=\frac{1}{k}\cdot\frac{1}{1-r^2+2\, \mathrm{i}\,\delta\,r}.
+	\alpha(r)=\frac{1}{k}\cdot\frac{1}{1-r^2+2\, \mathrm{i}\,\delta\,r}.
 \]</div>
 <p><span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> se imenuje frekvenčna prenosna funkcija ali bolj natančno <strong>dimenzijska frekvenčna prenosna funkcija</strong> (ang. <em>Dimensional Frequency Response Function</em>). V nasprotju z <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> je <span class="math notranslate nohighlight">\(H_0(\omega)\)</span> opredeljena kot:</p>
 <div class="math notranslate nohighlight">
@@ -722,13 +722,13 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 <div class="math notranslate nohighlight">
 \[\begin{split}
 	\begin{aligned}
-		\alpha(\omega)&amp;=\frac{X(\omega)}{F(\omega)},&amp;&amp;\textrm{podajnost ali receptanca (ang. \textit{receptance}),}\\
-		Y(\omega)&amp;=\frac{\dot{X}(\omega)}{F(\omega)}= \mathrm{i}\,\omega\,\alpha(\omega),&amp;&amp;\textrm{pomičnost (ang. \textit{mobility}),}\\
-		A(\omega)&amp;=\frac{\ddot{X}(\omega)}{F(\omega)}=-\omega^2\,\alpha(\omega),&amp;&amp;\textrm{pospešenost (ang. \textit{accelerance}),}\\
+		\alpha(\omega)&amp;=\frac{X(\omega)}{F(\omega)},&amp;&amp;\textrm{podajnost ali receptanca (ang. }receptance\text{),}\\
+		Y(\omega)&amp;=\frac{\dot{X}(\omega)}{F(\omega)}= \mathrm{i}\,\omega\,\alpha(\omega),&amp;&amp;\textrm{pomičnost (ang. }mobility\text{),}\\
+		A(\omega)&amp;=\frac{\ddot{X}(\omega)}{F(\omega)}=-\omega^2\,\alpha(\omega),&amp;&amp;\textrm{pospešenost (ang. }accelerance\text{),}\\
 	\end{aligned}
 \end{split}\]</div>
 </div>
-<p>kjer <span class="math notranslate nohighlight">\(\dot{X}(\omega)\)</span> in <span class="math notranslate nohighlight">\(\ddot{X}(\omega)\)</span> označujeta kompleksni amplitudi hitrosti in pospeška v frekvenčni domeni. Odziv različih oblik FRF je prikazan na sliki spodaj:</p>
+<p>kjer <span class="math notranslate nohighlight">\(\dot{X}(\omega)\)</span> in <span class="math notranslate nohighlight">\(\ddot{X}(\omega)\)</span> označujeta kompleksni amplitudi hitrosti in pospeška v frekvenčni domeni. Odziv različnih oblik FRF je prikazan na sliki spodaj:</p>
 <ul class="simple">
 <li><p>podajnost: podresonančno konvergira k statičnemu inverzu togosti <span class="math notranslate nohighlight">\(1/k\)</span>, nadresonančno pa kvadratično konvergira proti nič,</p></li>
 <li><p>pomičnost: podresonančno linearno konvergira k nič, nadresonančno linearno konvergira proti nič,</p></li>
@@ -764,7 +764,7 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8c1c98cc15cae149fa2a2445112ddfccd9b4472af6776d14b0be649d9fab70e5.png" src="../_images/8c1c98cc15cae149fa2a2445112ddfccd9b4472af6776d14b0be649d9fab70e5.png" />
+<img alt="../_images/d0b7e04d16d4c681481f03b9c83d81ed4cab4ec2dca88f53d64560921dfcacb3.png" src="../_images/d0b7e04d16d4c681481f03b9c83d81ed4cab4ec2dca88f53d64560921dfcacb3.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -828,7 +828,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 </section>
 <section id="zapis-odziva-s-pomocjo-fourierovih-vrst">
 <h3>Zapis odziva s pomočjo Fourierovih vrst<a class="headerlink" href="#zapis-odziva-s-pomocjo-fourierovih-vrst" title="Link to this heading">#</a></h3>
-<p>Tukaj nadaljujemo z izračunom rešitve za vsako harmonsko komponento vzbujanja posebej (glejte <a class="reference internal" href="#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>):</p>
+<p>Tukaj nadaljujemo z izračunom rešitve za vsako harmonsko komponento vzbujanja posebej (glejte <a class="reference internal" href="#sec-frf"><span class="std std-ref">Frekvenčna prenosna funkcija</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 	\begin{split}
@@ -874,7 +874,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 </section>
 <section id="vzbujanje-z-enotskim-impulzom">
 <h2>Vzbujanje z enotskim impulzom<a class="headerlink" href="#vzbujanje-z-enotskim-impulzom" title="Link to this heading">#</a></h2>
-<p>Obravnavajmo sedaj vzbujanje enomasnega sistema z enotskim impulzom <span class="math notranslate nohighlight">\(f_1(t)=\delta(t-\tau)\)</span>, kjer je <span class="math notranslate nohighlight">\(\delta(t)\)</span> Diracova delta funkcija (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-cas"><span class="std std-ref">Diracova delta funkcija</span></a>):</p>
+<p>Obravnavajmo sedaj vzbujanje enomasnega sistema z enotskim impulzom <span class="math notranslate nohighlight">\(f_1(t)=\delta(t-\tau)\)</span>, kjer je <span class="math notranslate nohighlight">\(\delta(t)\)</span> Diracova delta funkcija (glejte poglavje <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-cas"><span class="std std-ref">Diracova delta funkcija</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
 	\Delta I_1=\lim_{\Delta \tau\to 0}\int_{\tau}^{\tau+\Delta \tau}f_1(t)\,\textrm{d}t =1.
@@ -884,7 +884,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 \[
 	\dot{x}_0 = \frac{\Delta I_1}{m}= \frac{1}{m}.
 \]</div>
-<p>Po enotskem impulzu <span class="math notranslate nohighlight">\(t\ge \tau\)</span> je sila <span class="math notranslate nohighlight">\(f_1(t)\)</span> nič in sistem se odziva glede na homogeno rešitev pri ničelnem začetnem premiku <span class="math notranslate nohighlight">\(x=0\)</span> in <span class="math notranslate nohighlight">\(\dot{x}=\dot{x}_0\)</span> (glejte <a class="reference internal" href="#sec-impulzna-prenosna-funkcija-d-x-0"><span class="std std-ref">Impulzna prenosna funkcija</span></a>):</p>
+<p>Po enotskem impulzu <span class="math notranslate nohighlight">\(t\ge \tau\)</span> je sila <span class="math notranslate nohighlight">\(f_1(t)\)</span> nič in sistem se odziva glede na homogeno rešitev pri ničelnem začetnem premiku <span class="math notranslate nohighlight">\(x=0\)</span> in <span class="math notranslate nohighlight">\(\dot{x}=\dot{x}_0\)</span> (glejte poglavje <a class="reference internal" href="#sec-impulzna-prenosna-funkcija-d-x-0"><span class="std std-ref">Impulzna prenosna funkcija</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
 	h(t-\tau)=x(t)=\frac{1}{m\,\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,(t-\tau)}\,\sin(\omega_{d}\,(t-\tau)),\quad \textrm{za: } t&gt;\tau,
@@ -959,7 +959,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/36219c0410ec43de8036bc003be4f25c6e258817173082071476231b94134d02.png" src="../_images/36219c0410ec43de8036bc003be4f25c6e258817173082071476231b94134d02.png" />
+<img alt="../_images/9a2e649296e1177485d720abf0cd01970495cc57b1ef554ae62ffbafce9e1f9b.png" src="../_images/9a2e649296e1177485d720abf0cd01970495cc57b1ef554ae62ffbafce9e1f9b.png" />
 </div>
 </div>
 <p>In še malo bolj podrobna slika:</p>
@@ -1007,13 +1007,13 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/48f4a0a804002751f4cdbf94a4cbd8ff4d8300d603dc310ef28b04e2695289bf.png" src="../_images/48f4a0a804002751f4cdbf94a4cbd8ff4d8300d603dc310ef28b04e2695289bf.png" />
+<img alt="../_images/bef55e535c9a91876eda71fd4a622e4fa23074d003ad9b66bbc4ca23a714dea5.png" src="../_images/bef55e535c9a91876eda71fd4a622e4fa23074d003ad9b66bbc4ca23a714dea5.png" />
 </div>
 </div>
 <p>Iz slike zgoraj lahko vidimo, zakaj <span class="math notranslate nohighlight">\(h(\tau)\)</span> včasih imenujemo dinamični spomin sistema; <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> namreč poskrbi, da na rešitev pri času <span class="math notranslate nohighlight">\(t\)</span> vpliva dogajanje do časa <span class="math notranslate nohighlight">\(t\)</span> (glejte podintegralsko funkcijo <span class="math notranslate nohighlight">\(f(\tau)\,h(t-\tau)\)</span> zgoraj). Iz istega razloga <span class="math notranslate nohighlight">\(\tau\)</span> imenujemo spominska spremenljivka.</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
-<p>Opomba: če je sistem <strong>nevzročen</strong> in je odziv odvisen tudi od prihodnjega vzbujanja vnosa, se meje integracije razširijo in komutativna lastnost konvolucije je:</p>
+<p>Če je sistem <strong>nevzročen</strong> in je odziv odvisen tudi od prihodnjega vzbujanja vnosa, se meje integracije razširijo in komutativna lastnost konvolucije je:</p>
 <div class="math notranslate nohighlight">
 \[
 	x(t) = \int_{-\infty}^{+\infty}\,f(t-\tau)\,h(\tau)\,\textrm{d}  \tau =
@@ -1128,7 +1128,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonsko-vzbujanje">Harmonsko vzbujanje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prehodni-odziv-in-odziv-v-ustaljenem-stanju">Prehodni odziv in odziv v ustaljenem stanju</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvecna-prenosna-funkcija">Frekvečna prenosna funkcija</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencna-prenosna-funkcija">Frekvenčna prenosna funkcija</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#razlicne-oblike-frf">Različne oblike FRF</a></li>
 </ul>
 </li>

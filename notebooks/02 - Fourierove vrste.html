@@ -584,7 +584,7 @@ b_n\sin\left(\frac{2\pi\,n\,t}{T_p} \right)
 \mathrm{e}^{\pm \mathrm{i}\,\alpha} = \cos\alpha \pm  \mathrm{i}\,\sin\alpha,
 \]</div>
 <p>kjer je <span class="math notranslate nohighlight">\(\mathrm{i}=\sqrt{-1}\)</span>.</p>
-<p>Če uporabimo <span class="math notranslate nohighlight">\(\alpha=2\,\pi\,n\,t/T_p\)</span>, lahko zapišemo:</p>
+<p>Če uporabimo <span class="math notranslate nohighlight">\(\alpha=2\pi\,n\,t/T_p\)</span>, lahko zapišemo:</p>
 <div class="math notranslate nohighlight">
 \[
 \cos\alpha=\frac{1}{2}\mathrm{e}^{\mathrm{i}\,\alpha}+\frac{1}{2}\mathrm{e}^{-\mathrm{i}\,\alpha} \qquad\textrm{ in } \qquad \sin\alpha=-\frac{1}{2}\,\mathrm{i}\,\mathrm{e}^{\mathrm{i}\,\alpha}+\frac{1}{2}\,\mathrm{i}\,\mathrm{e}^{-\mathrm{i}\,\alpha}
@@ -828,8 +828,8 @@ b_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\sin(2\pi\,n\,t/T_p)\,\mathrm{d}t.
 <div class="math notranslate nohighlight">
 \[
 x(t)=\frac{a_0}{2}+\sum_{n=1}^{N}
-a_n\,\cos(2\pi\,n\,t/T_p)+
-b_n\,\sin(2\pi\,n\,t/T_p).
+\big(a_n\,\cos(2\pi\,n\,t/T_p)+
+b_n\,\sin(2\pi\,n\,t/T_p)\big).
 \]</div>
 </div>
 </section>
@@ -864,7 +864,7 @@ c_n &amp;= c_{-n}^*.\\
 <p class="admonition-title">Opomba</p>
 <p>Fourierove vrste <span class="math notranslate nohighlight">\(x(t)\)</span> konvergirajo k danemu periodičnemu signalu <span class="math notranslate nohighlight">\(f(t)\)</span>, če so izpolnjeni trije <strong>Dirichletovi pogoji</strong>:</p>
 <ul class="simple">
-<li><p>signal je absolutno integrabilen: <span class="math notranslate nohighlight">\(\int_0^{T_p}|f(x)|\mathrm{d}t\)</span>,</p></li>
+<li><p>signal je absolutno integrabilen: <span class="math notranslate nohighlight">\(\int_0^{T_p}|f(x)|\mathrm{d}t &lt; \infty\)</span>,</p></li>
 <li><p>signal ima na območju <span class="math notranslate nohighlight">\([0,\,T_p]\)</span> končno število ekstremov,</p></li>
 <li><p>signal ima na območju <span class="math notranslate nohighlight">\([0,\,T_p]\)</span> končno število nezveznosti.</p></li>
 </ul>
@@ -949,7 +949,7 @@ x(-t)=-x(t),
 <h2>Nekaj zgledov<a class="headerlink" href="#nekaj-zgledov" title="Link to this heading">#</a></h2>
 <section id="kompleksno-periodicni-signal">
 <h3>Kompleksno periodični signal<a class="headerlink" href="#kompleksno-periodicni-signal" title="Link to this heading">#</a></h3>
-<p>Najprej si bomo pogledali kompleksno periodični signal, ki smo ga spoznali in definirali že zgoraj. Signal je definiran z <span class="math notranslate nohighlight">\(N=10\)</span> harmonskimi komponentami <span class="math notranslate nohighlight">\(c_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nam uporaba zgoraj definiranih enačb omogoča njihovo točno identifikacijo.</p>
+<p>Najprej si bomo pogledali kompleksno periodični signal, ki smo ga spoznali in definirali že zgoraj. Signal je definiran z <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">10</span></code> harmonskimi komponentami <span class="math notranslate nohighlight">\(c_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nam uporaba zgoraj definiranih enačb omogoča njihovo točno identifikacijo.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1031,7 +1031,7 @@ x(-t)=-x(t),
 \[
 c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}\,\mathrm{d}t,
 \]</div>
-<p>kar je v numerični implementaciji (za <span class="math notranslate nohighlight">\(n = 1\)</span>):</p>
+<p>kar je v numerični implementaciji (za <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">1</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Poskusite še druge vrednosti, tudi n &gt; N!</span>
@@ -1372,7 +1372,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/983efda53aef9141015d9d9c32ba5dcad838dba5a947ff23857c5b0fb3213e52.png" src="../_images/983efda53aef9141015d9d9c32ba5dcad838dba5a947ff23857c5b0fb3213e52.png" />
+<img alt="../_images/7e732602b589375cf5a067afbbbffe2c6a99728f50a9d095fd5bba80b1777b08.png" src="../_images/7e732602b589375cf5a067afbbbffe2c6a99728f50a9d095fd5bba80b1777b08.png" />
 </div>
 </div>
 </section>
@@ -1432,7 +1432,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/89823c1dc3531d6cdb835b90b2c0ca2b02b8a6a162cbfa26bbf042ba478ca26c.png" src="../_images/89823c1dc3531d6cdb835b90b2c0ca2b02b8a6a162cbfa26bbf042ba478ca26c.png" />
+<img alt="../_images/c87e86000ed6987a57a3ceb80bf1594c301154664b632673a6b859622c2e6ab4.png" src="../_images/c87e86000ed6987a57a3ceb80bf1594c301154664b632673a6b859622c2e6ab4.png" />
 </div>
 </div>
 <p>Do enotskega impulza pridemo z uteženim seštevanjem:</p>
@@ -1470,7 +1470,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/acda23ff8ad901cbbeefea05fe074a5b1100a1024c1e21ff33c34a9af2f60376.png" src="../_images/acda23ff8ad901cbbeefea05fe074a5b1100a1024c1e21ff33c34a9af2f60376.png" />
+<img alt="../_images/c3ec0757813b4a5e0f3fd6989d480355fbd0a81c061de66671a40f24ff38e83b.png" src="../_images/c3ec0757813b4a5e0f3fd6989d480355fbd0a81c061de66671a40f24ff38e83b.png" />
 </div>
 </div>
 <p>in nato integriramo (rezultat je pričakovano enak 1; spremenite <span class="math notranslate nohighlight">\(\varepsilon\)</span> v <code class="docutils literal notranslate"><span class="pre">podatki</span></code> zgoraj!):</p>
@@ -1531,7 +1531,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/14f6bc17ba13b61468ba7fd7bbcd8e7472822101206d1ea8f288376c94f637f9.png" src="../_images/14f6bc17ba13b61468ba7fd7bbcd8e7472822101206d1ea8f288376c94f637f9.png" />
+<img alt="../_images/dd5fc556c968e3f3b9bc03e5adf243e647b860bc18e045cd4707d87a35021350.png" src="../_images/dd5fc556c968e3f3b9bc03e5adf243e647b860bc18e045cd4707d87a35021350.png" />
 </div>
 </div>
 <p>Fourierova vrsta padajočega žagastega signala je definirana kot:</p>
@@ -1603,7 +1603,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/74701517885e85f0c8c691a46d7f7677ac0266604d335d9976f2c127be237d4a.png" src="../_images/74701517885e85f0c8c691a46d7f7677ac0266604d335d9976f2c127be237d4a.png" />
+<img alt="../_images/d1f296a8d6a0cc5688602c2a69e5c93c44a27369b08093e5ecfb6b52e0cbc943.png" src="../_images/d1f296a8d6a0cc5688602c2a69e5c93c44a27369b08093e5ecfb6b52e0cbc943.png" />
 </div>
 </div>
 </section>
@@ -1757,7 +1757,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 \int_0^{T_p}\mathrm{e}^{\mathrm{i}\,2\pi\,(n-m)\,t/T_p}\,\textrm{d}t=
 \begin{cases}
 T_p,&amp;\textrm{če}\quad m=n,\\
-0,&amp;\textrm{sicer.}\\
+0&amp;\textrm{sicer.}\\
 \end{cases}
 \end{split}\]</div>
 <div class="admonition note">

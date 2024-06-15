@@ -411,7 +411,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="odziv-linearnih-sistemov-na-nakljucno-vzbujanje">
 <span id="sec-lti-random"></span><h1>8. Odziv linearnih sistemov na naključno vzbujanje<a class="headerlink" href="#odziv-linearnih-sistemov-na-nakljucno-vzbujanje" title="Link to this heading">#</a></h1>
-<p>Vrnimo se k linearnemu sistemu z eno prostostno stopnjo (glejte <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html#sec-lti-lastnosti"><span class="std std-ref">Lastnosti linearnega časovno invariantnega sistema</span></a>):</p>
+<p>Vrnimo se k linearnemu sistemu z eno prostostno stopnjo (glejte poglavje <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html#sec-lti-lastnosti"><span class="std std-ref">Lastnosti linearnega časovno invariantnega sistema</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[
 	\underbrace{f(t)}_{\textrm{Vzbujanje}}\to {\fbox{Sistem}}\to \underbrace{x(t)}_{\textrm{Odziv}}.
@@ -431,7 +431,7 @@ document.write(`
 	\mu_x = E[x(t)] = E\Big[
 	\int_{0}^{+\infty}\,h(\tau)\,f(t-\tau)\,\textrm{d}  \tau \Big],
 \]</div>
-<p>ker je naključna vrednost samo pri vzbujanju <span class="math notranslate nohighlight">\(f(t)\)</span>, sledi</p>
+<p>ker je naključna vrednost samo pri vzbujanju <span class="math notranslate nohighlight">\(f(t)\)</span>, sledi:</p>
 <div class="math notranslate nohighlight">
 \[
 	\mu_x = 
@@ -465,9 +465,9 @@ R_{xx}(\tau)&amp;=E\big[x(t)\,x(t+\tau)\big]\\
 <div class="math notranslate nohighlight">
 \[
 R_{xx}(\tau)
-=\int_{0}^{+\infty}\int_{0}^{+\infty}\,h(\tau_1)\,h(\tau_2)\,E\Big[f(t-\tau_1)\,f(t+\tau-\tau_2)\big]\,\textrm{d}  \tau_1\,\textrm{d}  \tau_2.
+=\int_{0}^{+\infty}\int_{0}^{+\infty}\,h(\tau_1)\,h(\tau_2)\,E\Big[f(t-\tau_1)\,f(t+\tau-\tau_2)\Big]\,\textrm{d}  \tau_1\,\textrm{d}  \tau_2.
 \]</div>
-<p>Uporabimo zamenjavo <span class="math notranslate nohighlight">\(t_1=t-\tau_1\)</span>, iz česar sledi <span class="math notranslate nohighlight">\(E\Big[f(t-\tau_1)\,f(t+\tau-\tau_2)\big]=E\Big[f(t_1)\,f(t_1+\tau_1+\tau-\tau_2)\big]=R_{ff}(\tau+\tau_1-\tau_2)\)</span> in nato:</p>
+<p>Uporabimo zamenjavo <span class="math notranslate nohighlight">\(t_1=t-\tau_1\)</span>, iz česar sledi <span class="math notranslate nohighlight">\(E\Big[f(t-\tau_1)\,f(t+\tau-\tau_2)\Big]=E\Big[f(t_1)\,f(t_1+\tau_1+\tau-\tau_2)\Big]=R_{ff}(\tau+\tau_1-\tau_2)\)</span> in nato:</p>
 <div class="math notranslate nohighlight">
 \[
 R_{xx}(\tau)
@@ -683,7 +683,7 @@ S_{fx}(f) = H(f)\,S_{ff}(f).
 </section>
 <section id="cenilke-frekvencne-prenosne-funkcije">
 <span id="sec-cenilke-frf"></span><h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Link to this heading">#</a></h2>
-<p>Frekvenčna prenosna funkcija (FRF) karakterizira dinamski sistem; različne oblike frekvenčne prenosne funkcije smo sicer teoretično že spoznali v poglavju <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html#sec-frf"><span class="std std-ref">Frekvečna prenosna funkcija</span></a>. Tukaj si bomo pogledali, kako FRF ocenimo na podlagi izmerjenih podatkov, pri tem pa se bomo omejili na sisteme z enim (sočasnim) vzbujanjem in enim (sočasnim) odzivom (to so tako imenovani sistemi SISO: ang. <em>single input, single output</em>).</p>
+<p>Frekvenčna prenosna funkcija (FRF) karakterizira dinamski sistem; različne oblike frekvenčne prenosne funkcije smo sicer teoretično že spoznali v poglavju <a class="reference internal" href="04%20-%20Linarni%20%C4%8Dasovno%20invariantni%20sistemi.html#sec-frf"><span class="std std-ref">Frekvenčna prenosna funkcija</span></a>. Tukaj si bomo pogledali, kako FRF ocenimo na podlagi izmerjenih podatkov, pri tem pa se bomo omejili na sisteme z enim (sočasnim) vzbujanjem in enim (sočasnim) odzivom (to so tako imenovani sistemi SISO: ang. <em>single input, single output</em>).</p>
 <p>Linearni časovno invariantni sistem SISO je mogoče predstaviti z blokovnim diagramom, kot smo to storili v sliki spodaj, kjer je <span class="math notranslate nohighlight">\(f(t)\)</span> vzbujevalna sila, <span class="math notranslate nohighlight">\(h(t)\)</span> impulzna prenosna funkcija in <span class="math notranslate nohighlight">\(x(t)\)</span> odziv; <span class="math notranslate nohighlight">\(F(\omega)\)</span>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in <span class="math notranslate nohighlight">\(X(\omega)\)</span> pa so njihovi pari v frekvenčni domeni.</p>
 <p><img alt="random_ensemble" src="../_images/FRF_nonoise.svg" /></p>
 <p>FRF je za naključni proces definirana z <span class="math notranslate nohighlight">\(\alpha(\omega)=S_{fx}(\omega)/S_{ff}(\omega)\)</span>, kjer sta <span class="math notranslate nohighlight">\(S_{ff}(\omega)\)</span> in <span class="math notranslate nohighlight">\(S_{fx}(\omega)\)</span> avto- in križnospektralna gostota moči.</p>

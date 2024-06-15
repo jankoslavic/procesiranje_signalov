@@ -401,7 +401,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="diskretna-fourierova-transformacija">
 <span id="sec-dft"></span><h1>6. Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Link to this heading">#</a></h1>
-<p>Prej smo spoznali Fourierovo transformacijo za vzorčene podatke (glejte <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html#sec-enakomerno-casovno-vzorcenje"><span class="std std-ref">Enakomerno časovno vzorčenje</span></a>), kjer vzorčimo s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
+<p>Prej smo spoznali Fourierovo transformacijo za vzorčene podatke (glejte poglavje <a class="reference internal" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html#sec-enakomerno-casovno-vzorcenje"><span class="std std-ref">Enakomerno časovno vzorčenje</span></a>), kjer vzorčimo s korakom <span class="math notranslate nohighlight">\(\Delta t\,n\)</span> in <span class="math notranslate nohighlight">\(n\in\mathbb{Z}\)</span> gre od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
 <p><strong>Diskretna Fourierova transformacija</strong>:</p>
@@ -426,8 +426,8 @@ X_k = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},
 \[\begin{split}
 \sum_{k=0}^{N-1} \mathrm{e}^{-\mathrm{i}\,2\pi\,k\,(n-r)/N}=
 \begin{cases}
-N; \quad n=r,\\
-0; \quad\textrm{sicer.}
+N; &amp;\quad n=r,\\
+0 &amp;\quad\textrm{sicer.}
 \end{cases}
 \end{split}\]</div>
 <p>Sledi:</p>
@@ -633,7 +633,7 @@ x_n;\quad &amp; 0\le n\le N-1,\\
 = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/L}.
 \]</div>
 </div>
-<p>Na takšen način pridobimo frekvenčno ločjivost:</p>
+<p>Na takšen način pridobimo frekvenčno ločljivost:</p>
 <div class="math notranslate nohighlight">
 \[
 \Delta f = \frac{1}{L\,\Delta t},
@@ -791,7 +791,7 @@ x_n;\quad &amp; 0\le n\le N-1,\\
 </section>
 <section id="konvolucija-periodicnih-podatkov">
 <span id="sec-krozna-konvolucija"></span><h2>Konvolucija periodičnih podatkov<a class="headerlink" href="#konvolucija-periodicnih-podatkov" title="Link to this heading">#</a></h2>
-<p>Konvolucijo funkcij v primeru Fourierove integralske transformacije smo obravnavali v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-konvolucija-funkcij"><span class="std std-ref">Konvolucija funkcij</span></a>, tukaj si bomo pogledali posebnosti pri obravnavi dveh periodičnih vrst (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-identifikacija-harmonskih-signalov"><span class="std std-ref">Identifikacija harmonskih signalov, ki sestavljajo periodični signal</span></a>) enake dolžine: <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span>:</p>
+<p>Konvolucijo funkcij v primeru Fourierove integralske transformacije smo obravnavali v poglavju <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-konvolucija-funkcij"><span class="std std-ref">Konvolucija funkcij</span></a>, tukaj si bomo pogledali posebnosti pri obravnavi dveh periodičnih vrst (glejte poglavje <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-identifikacija-harmonskih-signalov"><span class="std std-ref">Identifikacija harmonskih signalov, ki sestavljajo periodični signal</span></a>) enake dolžine: <span class="math notranslate nohighlight">\(x_n\)</span> in <span class="math notranslate nohighlight">\(y_n\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 X_k = \sum_{n=0}^{N-1} x_n\,\mathrm{e}^{-\mathrm{i}\,2\pi\,k\,n/N},

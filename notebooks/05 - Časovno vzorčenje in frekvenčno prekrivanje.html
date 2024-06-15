@@ -426,7 +426,7 @@ X_s(f)&amp;=\int_{-\infty}^{+\infty} x(t)\,\sum_{n=-\infty}^{+\infty}\delta(t-n\
 &amp;=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,\mathrm{e}^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}.
 \end{split}
 \end{split}\]</div>
-<p>Pri prehodu v zadnjo vrstico uporabimo sejalno lastnost Diracove delta funkcije (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>).</p>
+<p>Pri prehodu v zadnjo vrstico uporabimo sejalno lastnost Diracove delta funkcije (glejte poglavje <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>).</p>
 <p>Ključna posledica zgornje izpeljave je: <strong>za vzorčene podatke se integral preoblikuje v vsoto vzorčenih vrednosti</strong> (pomnoženih s harmonsko modulacijo).</p>
 <p>Ugotovimo tudi, da se Fourierova transformacija enakomerno vzorčene vrste <span class="math notranslate nohighlight">\(X_s(f)\)</span> ponavlja (je periodična) s frekvenco <span class="math notranslate nohighlight">\(1/\Delta t\)</span>, kar dokažemo tako:</p>
 <div class="math notranslate nohighlight">
@@ -502,7 +502,7 @@ I(f)&amp;= \int_{-\infty}^{+\infty}\Big(\frac{1}{\Delta t}\, \sum_{n=-\infty}^{+
 \delta\Big(f-\frac{n}{\Delta t}\Big).\\
 \end{split}
 \end{split}\]</div>
-<p>Zgoraj smo uporabili lastnost Diracove delta funkcije <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,2\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>). Fourierova transformacija <span class="math notranslate nohighlight">\(i(t)\)</span> je torej v frekvenčni domeni periodično ponavljajoča se s frekvenčno periodo <span class="math notranslate nohighlight">\(1/\Delta t\)</span>.</p>
+<p>Zgoraj smo uporabili lastnost Diracove delta funkcije <span class="math notranslate nohighlight">\(\int_{-\infty}^{+\infty}\mathrm{e}^{\pm\textrm{i}\,2\pi\,a\,t}\,\textrm{d}t= \delta(a)\)</span> (glejte poglavje <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-dirac-lastnosti"><span class="std std-ref">Lastnosti Diracove delta funkcije</span></a>). Fourierova transformacija <span class="math notranslate nohighlight">\(i(t)\)</span> je torej v frekvenčni domeni periodično ponavljajoča se s frekvenčno periodo <span class="math notranslate nohighlight">\(1/\Delta t\)</span>.</p>
 <p>Poglejmo si sedaj povezavo <span class="math notranslate nohighlight">\(X(f)\)</span> in <span class="math notranslate nohighlight">\(X_s(f)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -519,7 +519,7 @@ X_s(f) =\mathcal{F}\left\{i(t)\,x(t)\right\} &amp;= I(f)*X(f)\\
 <p>Kako interpretiramo zgornjo izpeljavo? Če imamo časovno vzorčene podatke <span class="math notranslate nohighlight">\(x_s(t)\)</span>, kar vodi v frekvenčni domeni do <span class="math notranslate nohighlight">\(X_s(f)\)</span>, imamo pri določeni frekvenci <span class="math notranslate nohighlight">\(f\)</span> vsebnost vsote zveznih podatkov <span class="math notranslate nohighlight">\(X(f)\)</span> pri frekvencah <span class="math notranslate nohighlight">\(f-n/\Delta t\)</span>, kjer gre celo število <span class="math notranslate nohighlight">\(n\)</span> od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>. V praksi to pomeni, da se nam vsebnost dejanskega (zveznega) signala iz frekvenčnega področja izven področja <span class="math notranslate nohighlight">\([-1/(2\Delta t), +1/(2\Delta t)]\)</span> zrcali in prekriva v frekvenčno področje od <span class="math notranslate nohighlight">\([-1/(2\Delta t),\,+1/(2\Delta t)]\)</span>; glejte zgled spodaj.</p>
 <section id="zgled-gaussov-impulz">
 <h3>Zgled: Gaussov impulz<a class="headerlink" href="#zgled-gaussov-impulz" title="Link to this heading">#</a></h3>
-<p>Časovno vzorčenje in frekvenčno prekrivanje si bomo tukaj pogledali na primeru Gaussovega impulza/okna (glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-gaussov-impulz"><span class="std std-ref">Gaussov impulz</span></a>), ki je v časovni in frekvenčni domeni definirano kot:</p>
+<p>Časovno vzorčenje in frekvenčno prekrivanje si bomo tukaj pogledali na primeru Gaussovega impulza/okna (glejte poglavje <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-gaussov-impulz"><span class="std std-ref">Gaussov impulz</span></a>), ki je v časovni in frekvenčni domeni definirano kot:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t) = \mathrm{e}^{-a\,t^2},\quad X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a};\qquad a&gt;0.
@@ -695,7 +695,7 @@ f_{np}&lt;\frac{f_s}{2}.
 </section>
 <section id="razmerje-med-signalom-in-sumom">
 <h2>Razmerje med signalom in šumom<a class="headerlink" href="#razmerje-med-signalom-in-sumom" title="Link to this heading">#</a></h2>
-<p>Razliko med kvantizirano in dejansko vrednostjo lahko obravnavamo kot naključni šum <span class="math notranslate nohighlight">\(e\)</span> z enakomerno porazdelitvijo znotraj koraka kvantizacije. Standardna deviacija takega šuma je definirana kot (<span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>, str: 133):</p>
+<p>Razliko med kvantizirano in dejansko vrednostjo lahko obravnavamo kot naključni šum <span class="math notranslate nohighlight">\(e\)</span> z enakomerno porazdelitvijo znotraj koraka kvantizacije. Standardna deviacija takega šuma je definirana kot (<span id="id1">Shin and Hammond [<a class="reference internal" href="../bibliography.html#id173" title="Kihong Shin and Joseph Hammond. Fundamentals of Signal Processing for Sound and Vibration Engineers. John Wiley &amp; Sons, 2008. ISBN 9780470511886. URL: http://adsabs.harvard.edu/abs/1991VKILV...1Q....P, doi:10.1016/0016-0032(60)90684-0.">2008</a>]</span>, str.: 133):</p>
 <div class="math notranslate nohighlight">
 \[
 \sigma_e=\frac{A/2^b}{\sqrt{12}},
@@ -754,7 +754,7 @@ f_{np}&lt;\frac{f_s}{2}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c18e5c5c2849dfbe5d617da3042673a541ff669f6246962b9acf69921abfdfc9.png" src="../_images/c18e5c5c2849dfbe5d617da3042673a541ff669f6246962b9acf69921abfdfc9.png" />
+<img alt="../_images/d5bc980a60b063b7184fd93a241741092b4928e1df5faa707a3de6352d95693b.png" src="../_images/d5bc980a60b063b7184fd93a241741092b4928e1df5faa707a3de6352d95693b.png" />
 </div>
 </div>
 </section>

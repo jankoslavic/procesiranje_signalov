@@ -493,7 +493,7 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 \[
 \mathcal{F}\{x(t)\} = \int_{-\infty}^{+\infty} \mathrm{e}^{-\eta\,|t|}\,\mathrm{e}^{-\,\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t=\frac{2\,\eta}{\eta^{2} + 4 \pi^{2}\,f^{2}}.
 \]</div>
-<p>Opazimo, da je pri frekvenci 0 Hz amplituda <span class="math notranslate nohighlight">\(|X(0)|=2/\eta\)</span> in pri frekvenci <span class="math notranslate nohighlight">\(f_{1/2}=\eta/(2\pi)\)</span> pade na polovico začetne amplitude. Parameter <span class="math notranslate nohighlight">\(\eta\)</span> definira časovni raztros; večja kot je vrednost <span class="math notranslate nohighlight">\(\eta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni. Podobno kot pri delta funkciji torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
+<p>Opazimo, da je pri frekvenci 0 Hz amplituda <span class="math notranslate nohighlight">\(X(0)=2/\eta\)</span> in pri frekvenci <span class="math notranslate nohighlight">\(f_{1/2}=|\eta/(2\pi)|\)</span> pade na polovico začetne amplitude. Parameter <span class="math notranslate nohighlight">\(\eta\)</span> definira časovni raztros; večja kot je vrednost <span class="math notranslate nohighlight">\(\eta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni. Podobno kot pri delta funkciji torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
 <p>Poglejmo si sedaj zgled v času in frekvenci:</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -520,11 +520,11 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/bed83925f29e5cc499bee5930689149096b3330ac7dd36a216129249f95e1c06.png" src="../_images/bed83925f29e5cc499bee5930689149096b3330ac7dd36a216129249f95e1c06.png" />
-<img alt="../_images/d137ca54a6874639a3a65e8d17f8f7b5434a8c1f4d5eb643b8b7a60923899dd5.png" src="../_images/d137ca54a6874639a3a65e8d17f8f7b5434a8c1f4d5eb643b8b7a60923899dd5.png" />
+<img alt="../_images/e6cf582eeafaa5b7e5cad47ad661c8083cdc13005203cf0955e96f01a80544b0.png" src="../_images/e6cf582eeafaa5b7e5cad47ad661c8083cdc13005203cf0955e96f01a80544b0.png" />
+<img alt="../_images/448d985a7fdc9bea938f3a10b54ea7decdd4f736df9706b77ebe452322ad8571.png" src="../_images/448d985a7fdc9bea938f3a10b54ea7decdd4f736df9706b77ebe452322ad8571.png" />
 </div>
 </div>
-<p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič. To sicer velja za vse <strong>sode funkcije</strong>; za <strong>lihe funkcije</strong> bi veljalo obratno: neničelna bi bila imaginarna komponentna (slika spodaj). Podobno smo sicer ugotovili že pri Fourierovih vrstah sodih in lihih funkcij (za več glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-lih-sod"><span class="std std-ref">Fourierove vrste lihih in sodih funkcij</span></a>).</p>
+<p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič. To sicer velja za vse <strong>sode funkcije</strong>; za <strong>lihe funkcije</strong> bi veljalo obratno: neničelna bi bila imaginarna komponenta (slika spodaj). Podobno smo sicer ugotovili že pri Fourierovih vrstah sodih in lihih funkcij (za več glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-lih-sod"><span class="std std-ref">Fourierove vrste lihih in sodih funkcij</span></a>).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -551,8 +551,8 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3d422855238010d6bfbe95dbdb9d43b55c70f9442abf31479f9f0a63de487b19.png" src="../_images/3d422855238010d6bfbe95dbdb9d43b55c70f9442abf31479f9f0a63de487b19.png" />
-<img alt="../_images/84b400786808a957582da13196596f6783d39d2b68dc83dfd4c86542f9821008.png" src="../_images/84b400786808a957582da13196596f6783d39d2b68dc83dfd4c86542f9821008.png" />
+<img alt="../_images/5e6df36b26f6b0efccc59badeb045449ee70742fd519144dce9a10c18f02a249.png" src="../_images/5e6df36b26f6b0efccc59badeb045449ee70742fd519144dce9a10c18f02a249.png" />
+<img alt="../_images/ce69ae82a73ba2f147d9b8139a62937c07ddeb6aae2c795e12ae46892d1a2975.png" src="../_images/ce69ae82a73ba2f147d9b8139a62937c07ddeb6aae2c795e12ae46892d1a2975.png" />
 </div>
 </div>
 <p>Sicer pa velja poudariti, da v splošnem realni signali <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj; <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje enotsko funkcijo stopnice). Časovni signali so v splošnem lahko kompleksne oblike in takrat v frekvenčni domeni v splošnem ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
@@ -606,9 +606,9 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/884f876c30e99e73aa2cb87eb454cdc822f6ef9deca75fa03851b31c7fc7d434.png" src="../_images/884f876c30e99e73aa2cb87eb454cdc822f6ef9deca75fa03851b31c7fc7d434.png" />
-<img alt="../_images/9a63daf32212fbd483edb48a3eec386d8008a4d845d47e5daf847a0b220ab5d3.png" src="../_images/9a63daf32212fbd483edb48a3eec386d8008a4d845d47e5daf847a0b220ab5d3.png" />
-<img alt="../_images/926cd678d1638807c401f9c87718041465ab63016cbfdb4ed037081472c7591c.png" src="../_images/926cd678d1638807c401f9c87718041465ab63016cbfdb4ed037081472c7591c.png" />
+<img alt="../_images/534665acf46e593ca63f5dca7f59eb7ebb060025707b1389dc17aade551bbc1b.png" src="../_images/534665acf46e593ca63f5dca7f59eb7ebb060025707b1389dc17aade551bbc1b.png" />
+<img alt="../_images/d8cfe1d8dcda52ca4c04de2ed2bcfee36bcbe311dde045abd068f23cc2104196.png" src="../_images/d8cfe1d8dcda52ca4c04de2ed2bcfee36bcbe311dde045abd068f23cc2104196.png" />
+<img alt="../_images/e92cb6dfe4009a02b2139b894a4517448aeb54f3791d40c9099f137ebfb1529f.png" src="../_images/e92cb6dfe4009a02b2139b894a4517448aeb54f3791d40c9099f137ebfb1529f.png" />
 </div>
 </div>
 </section>
@@ -714,8 +714,8 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 \[\begin{split}
 x(t) =
 \begin{cases}
-a&amp;;\qquad |t|&lt;b,\\
-0&amp;;\qquad \textrm{sicer,}
+a;&amp;\quad |t|&lt;b,\\
+0&amp;\quad \textrm{sicer,}
 \end{cases}
 \end{split}\]</div>
 <p>kar v primeru Fourierove transformacije vodi v izraz:</p>
@@ -767,8 +767,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2\pi\,b\,f \right)}{2\pi\,b\,f }.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d41a68023d76ee5f1f6180778de363ccb380206af32111283d574669146c3ae1.png" src="../_images/d41a68023d76ee5f1f6180778de363ccb380206af32111283d574669146c3ae1.png" />
-<img alt="../_images/fb9bcc70931efd1066319e32b8d1ddddc93422fc7377d67f2b492dfeb79d12ac.png" src="../_images/fb9bcc70931efd1066319e32b8d1ddddc93422fc7377d67f2b492dfeb79d12ac.png" />
+<img alt="../_images/817cc9ce131a5acde602c54f52d6a66a65b1453fafaf9043c5a0770585d5312c.png" src="../_images/817cc9ce131a5acde602c54f52d6a66a65b1453fafaf9043c5a0770585d5312c.png" />
+<img alt="../_images/b191024bcc2198a43a8e90288cb6cb82658467972533d020e4d8fee1e012c6fe.png" src="../_images/b191024bcc2198a43a8e90288cb6cb82658467972533d020e4d8fee1e012c6fe.png" />
 </div>
 </div>
 </section>
@@ -784,8 +784,8 @@ x_1(t) = \mathrm{e}^{-\delta\,|t|}\,\cos(2\pi\,f_0\,t)
 \[\begin{split}
 x_2(t) = 
 \begin{cases}
-\mathrm{e}^{-\delta\,t}\,\cos(2\pi\,f_0\,t)&amp;;\qquad t\ge 0,\\
-0&amp;;\qquad \textrm{sicer.}
+\mathrm{e}^{-\delta\,t}\,\cos(2\pi\,f_0\,t);&amp;\quad t\ge 0,\\
+0&amp;\quad \textrm{sicer.}
 \end{cases}
 \end{split}\]</div>
 <p>Fourierovo transformacijo za oba dušena odziva izpeljemo (in nato prikažemo):</p>
@@ -857,9 +857,9 @@ x_2(t) =
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b4ab2f3e6767a408077578318eab2e4d81b4e762a579243289f429dfef05f478.png" src="../_images/b4ab2f3e6767a408077578318eab2e4d81b4e762a579243289f429dfef05f478.png" />
-<img alt="../_images/249f064303ad22ad64323e125cc9968d7bbb502735a46abaa6aad3ce8ecdf98e.png" src="../_images/249f064303ad22ad64323e125cc9968d7bbb502735a46abaa6aad3ce8ecdf98e.png" />
-<img alt="../_images/ca097119b17d7b1985a5a85046c67784e76ee1db1dd292dd468fc2e10a2a257b.png" src="../_images/ca097119b17d7b1985a5a85046c67784e76ee1db1dd292dd468fc2e10a2a257b.png" />
+<img alt="../_images/135a49c28663090d2536bc8014bcc73630da68d1a87ec0023cb9ab8371442d58.png" src="../_images/135a49c28663090d2536bc8014bcc73630da68d1a87ec0023cb9ab8371442d58.png" />
+<img alt="../_images/0bedb014afe320cab86feb1973602e6e5d0ae826ddfb5b549216a064509a6bea.png" src="../_images/0bedb014afe320cab86feb1973602e6e5d0ae826ddfb5b549216a064509a6bea.png" />
+<img alt="../_images/75294bcb4df91ed5cccb922edb69eb3e9a10f980110f01725a7bd5fdc74af24c.png" src="../_images/75294bcb4df91ed5cccb922edb69eb3e9a10f980110f01725a7bd5fdc74af24c.png" />
 </div>
 </div>
 </section>
@@ -924,8 +924,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/136d33d07efaeb87381453487a99d3f4daba06d10124be2f6215211910d1e167.png" src="../_images/136d33d07efaeb87381453487a99d3f4daba06d10124be2f6215211910d1e167.png" />
-<img alt="../_images/7ce48e232b7caa6e58cf62b1f44c4b95a1e1319a096b5262d9c9e92426020c19.png" src="../_images/7ce48e232b7caa6e58cf62b1f44c4b95a1e1319a096b5262d9c9e92426020c19.png" />
+<img alt="../_images/6793195414e80250382c50671b1007d4350225b402b2b05dcc5f0d830d02720c.png" src="../_images/6793195414e80250382c50671b1007d4350225b402b2b05dcc5f0d830d02720c.png" />
+<img alt="../_images/e23a262fe502b8aadc5b7a2dc8e6ef90802a79e714363132ce87ad153fad9a71.png" src="../_images/e23a262fe502b8aadc5b7a2dc8e6ef90802a79e714363132ce87ad153fad9a71.png" />
 </div>
 </div>
 </section>
@@ -1015,8 +1015,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/942141704fa00be1ed38cbde3fc748f34724bf7a266d9dfbcfa9d51d421edfc0.png" src="../_images/942141704fa00be1ed38cbde3fc748f34724bf7a266d9dfbcfa9d51d421edfc0.png" />
-<img alt="../_images/9d79d71616a0a8c9e5164004da514c52953ecb75099a98dcf295c96d0fbab665.png" src="../_images/9d79d71616a0a8c9e5164004da514c52953ecb75099a98dcf295c96d0fbab665.png" />
+<img alt="../_images/0c3c5bf80ac3e219b26a27d51fa8095c056e11ffb8579acb315b4a3bbd279072.png" src="../_images/0c3c5bf80ac3e219b26a27d51fa8095c056e11ffb8579acb315b4a3bbd279072.png" />
+<img alt="../_images/83dd243027d4e3240b3ff93c66b4b957e407bbdc431c067afea8492d8625e9f4.png" src="../_images/83dd243027d4e3240b3ff93c66b4b957e407bbdc431c067afea8492d8625e9f4.png" />
 </div>
 </div>
 </section>
@@ -1090,8 +1090,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e5ff01b8152f6b5294cd97b2ceecf41e62ee849b3473c7214106924007a8ca07.png" src="../_images/e5ff01b8152f6b5294cd97b2ceecf41e62ee849b3473c7214106924007a8ca07.png" />
-<img alt="../_images/07c49542efac38feec3ffaad2f81dbee636ee97f3e3bd1d6ce653adec9ed84f1.png" src="../_images/07c49542efac38feec3ffaad2f81dbee636ee97f3e3bd1d6ce653adec9ed84f1.png" />
+<img alt="../_images/76aedaa6d06a12397290089cb4c13c594509b9c4e3088e16051979a5336b0134.png" src="../_images/76aedaa6d06a12397290089cb4c13c594509b9c4e3088e16051979a5336b0134.png" />
+<img alt="../_images/ec085e3435703db559efffab5930baec5cfb33882811529c7c8755889da961ec.png" src="../_images/ec085e3435703db559efffab5930baec5cfb33882811529c7c8755889da961ec.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1180,7 +1180,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </div>
 <p>Opazimo, da člen <span class="math notranslate nohighlight">\(\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t_0}\)</span> lahko izpostavimo iz integrala.</p>
-<p>Časovno skaliranje postane pomembno, kadar obravnavamo zakasnjene meritve (npr. če eno meritev merimo z zakasnitvijo glede na ostale): glejte primer spodaj.</p>
+<p>Časovni premik postane pomemben, kadar obravnavamo zakasnjene meritve (npr. če eno meritev merimo z zakasnitvijo glede na ostale): glejte primer spodaj.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1238,9 +1238,9 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/31433d32e3f778bb0594bc6ee5a76f9bbb67d698069c3b693a78de214c7d2c50.png" src="../_images/31433d32e3f778bb0594bc6ee5a76f9bbb67d698069c3b693a78de214c7d2c50.png" />
-<img alt="../_images/e5db2c7f334acf05e4e2d939b2fa839e31f647ab34024a1b1a577d5af9c1e950.png" src="../_images/e5db2c7f334acf05e4e2d939b2fa839e31f647ab34024a1b1a577d5af9c1e950.png" />
-<img alt="../_images/939d8f314e39cd62498ff47b34fe70bcaf12784d0facd61f7c6a59d0e3ffc480.png" src="../_images/939d8f314e39cd62498ff47b34fe70bcaf12784d0facd61f7c6a59d0e3ffc480.png" />
+<img alt="../_images/e0e454d1baa4738413733a1979e49619ee0a50c4577b19b3fee1e656d6b1f970.png" src="../_images/e0e454d1baa4738413733a1979e49619ee0a50c4577b19b3fee1e656d6b1f970.png" />
+<img alt="../_images/139c9dc8cdc683807b82a8f120f8ab875d0d635f76196d298e706d53d2b812ef.png" src="../_images/139c9dc8cdc683807b82a8f120f8ab875d0d635f76196d298e706d53d2b812ef.png" />
+<img alt="../_images/5857ea7ac59daf789cae0295b79f5ecf0968af310321cff109eab037d7f271d3.png" src="../_images/5857ea7ac59daf789cae0295b79f5ecf0968af310321cff109eab037d7f271d3.png" />
 <img alt="../_images/9e13b9eb8ba780ce42139b942372ef1d4c28c38ca7b137d3696d9a2b9ccbff5b.png" src="../_images/9e13b9eb8ba780ce42139b942372ef1d4c28c38ca7b137d3696d9a2b9ccbff5b.png" />
 </div>
 </div>
@@ -1328,8 +1328,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7ab4c9161622b646ba1e53320a25705acbcfcd6bb25b985c0a13fb792f99c516.png" src="../_images/7ab4c9161622b646ba1e53320a25705acbcfcd6bb25b985c0a13fb792f99c516.png" />
-<img alt="../_images/670f2aa93b8a80b4a8d061adb80c0e68414ecbb48383e8f3d7797809b390d047.png" src="../_images/670f2aa93b8a80b4a8d061adb80c0e68414ecbb48383e8f3d7797809b390d047.png" />
+<img alt="../_images/b9e56a27118834d0e601d3a0a35bd4b527b411342a1f51ff5cbc2e766c4f52e0.png" src="../_images/b9e56a27118834d0e601d3a0a35bd4b527b411342a1f51ff5cbc2e766c4f52e0.png" />
+<img alt="../_images/a2c396a6933a70322ff509a739ace1adab491e5e1845e0913126b7174769000d.png" src="../_images/a2c396a6933a70322ff509a739ace1adab491e5e1845e0913126b7174769000d.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1419,7 +1419,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 \[
 \mathcal{F}\{\dot{x}(t)\} = \textrm{i}\,2\pi\,f\,\mathcal{F}\{x(t)\},
 \]</div>
-<p>pri čemer naredimo zamenjavo funkcije: <span class="math notranslate nohighlight">\(u(t)=\dot{x}(t)\)</span> in <span class="math notranslate nohighlight">\(\int_{-\infty}^t u(t)\,\textrm{d}\tau=x(t)\)</span>.</p>
+<p>pri čemer naredimo zamenjavo funkcije: <span class="math notranslate nohighlight">\(u(t)=\dot{x}(t)\)</span> in <span class="math notranslate nohighlight">\(\int_{-\infty}^t u(\tau)\,\textrm{d}\tau=x(t)\)</span>.</p>
 <p>Odvajanje in integriranje v frekvenčni domeni sta zelo pomembni lastnosti Fourierove transformacije, saj nam omogočata enostaven prehod med odvajanimi in integriranimi podatki.</p>
 <p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacija, saj temelji na majhni razliki števil (razlika pa se nato deli z majhnim številom, kar dodatno povečuje negotovost). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljeno.</p>
 <p>Nadalje poudarimo, da je časovno integriranje nestabilna numerična operacija, saj se napaka posameznega koraka sešteva in zato s časom raste. Integracija v frekvenčni domeni taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0 Hz nedoločen rezultat (deljenje z 0).</p>
@@ -1501,10 +1501,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/47b5384c358a3d4638fcbe4eda622586d7156b8623b4c628766037e55c3df543.png" src="../_images/47b5384c358a3d4638fcbe4eda622586d7156b8623b4c628766037e55c3df543.png" />
-<img alt="../_images/9f6bd94729d1ccd3a32e0f7fcf6ce1288091c4cd5a914524638d1194686b53c2.png" src="../_images/9f6bd94729d1ccd3a32e0f7fcf6ce1288091c4cd5a914524638d1194686b53c2.png" />
-<img alt="../_images/4ea40382adca8a4367642d28e71c8f385b109a6a1dfe3c55943e45a7bc93450d.png" src="../_images/4ea40382adca8a4367642d28e71c8f385b109a6a1dfe3c55943e45a7bc93450d.png" />
-<img alt="../_images/be191880600c4c555192d1a2c76910aa5f46bdaa9197dab5757d491cd5f1e2f8.png" src="../_images/be191880600c4c555192d1a2c76910aa5f46bdaa9197dab5757d491cd5f1e2f8.png" />
+<img alt="../_images/d1a69c430a8694126f51857e4df276724591c3b49ffefabd973150736faee486.png" src="../_images/d1a69c430a8694126f51857e4df276724591c3b49ffefabd973150736faee486.png" />
+<img alt="../_images/e09ef463ff7964c69c80566450b3e91b97be00df9fc67eec2d70be15c72bf599.png" src="../_images/e09ef463ff7964c69c80566450b3e91b97be00df9fc67eec2d70be15c72bf599.png" />
+<img alt="../_images/b602bc05cf60ef0cdee6f0f824375902520ef1110881b5e565ad81769d58302b.png" src="../_images/b602bc05cf60ef0cdee6f0f824375902520ef1110881b5e565ad81769d58302b.png" />
+<img alt="../_images/d252de750cf83df0a2b3b64d6f5f136954363c36e9b02c305f3407dd15844aa5.png" src="../_images/d252de750cf83df0a2b3b64d6f5f136954363c36e9b02c305f3407dd15844aa5.png" />
 <img alt="../_images/47da48320cabf57fd15f4c4af0ddea4dd797cf0dcef425ed19ac267e333b5650.png" src="../_images/47da48320cabf57fd15f4c4af0ddea4dd797cf0dcef425ed19ac267e333b5650.png" />
 </div>
 </div>
@@ -1559,7 +1559,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 \[\displaystyle \int\limits_{-\infty}^{\infty} e^{- 2 i \pi f \left(\tau + v\right)} \int\limits_{-\infty}^{\infty} x{\left(\tau \right)} y{\left(v \right)}\, d\tau\, dv\]</div>
 </div>
 </div>
-<p>Zgoraj je očitno, da lahko integral po <span class="math notranslate nohighlight">\(\tau\)</span> in <span class="math notranslate nohighlight">\(v\)</span> ločimo, ločeni integral pa predstavlja Fourierovo transformiranko <span class="math notranslate nohighlight">\(X(t)\)</span> in <span class="math notranslate nohighlight">\(Y(f)\)</span>.</p>
+<p>Zgoraj je očitno, da lahko integral po <span class="math notranslate nohighlight">\(\tau\)</span> in <span class="math notranslate nohighlight">\(v\)</span> ločimo, ločeni integral pa predstavlja Fourierovo transformiranko <span class="math notranslate nohighlight">\(X(f)\)</span> in <span class="math notranslate nohighlight">\(Y(f)\)</span>.</p>
 <p>Fourierova transformacija konvolucije je mogoče najbolj uporabna lastnost Fourierove transformacije, saj množenje v frekvenčni domeni bistveno pohitri izračun konvolucije dveh funkcij. Lastnost bomo s pridom uporabljali pri diskretni Fourierovi transformaciji, preprost primer spodaj pa pokaže ekvivalentnost rezultata v času napram tistemu v frekvenci.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1610,8 +1610,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/fe3ef754ed54c1809079966fdb0be3bb19a24275a2509551ee51a900d2139bdf.png" src="../_images/fe3ef754ed54c1809079966fdb0be3bb19a24275a2509551ee51a900d2139bdf.png" />
-<img alt="../_images/888994982a2531fa04bee33924af76933dc4d51e1868560f43ad327c5debba85.png" src="../_images/888994982a2531fa04bee33924af76933dc4d51e1868560f43ad327c5debba85.png" />
+<img alt="../_images/5bf304539369c2f2978883cc6f83f3a94f4767a3d4ea45dc658df0f1ec427638.png" src="../_images/5bf304539369c2f2978883cc6f83f3a94f4767a3d4ea45dc658df0f1ec427638.png" />
+<img alt="../_images/ebd493eea4170cc3f340ec5d30ee798feea42424fe77101d6a3c44ac300866ff.png" src="../_images/ebd493eea4170cc3f340ec5d30ee798feea42424fe77101d6a3c44ac300866ff.png" />
 </div>
 </div>
 </section>
@@ -1682,15 +1682,15 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/28c89e67601043766da99ac830f87f26e0fb3f6a253a1412ece3e2b01b7e103a.png" src="../_images/28c89e67601043766da99ac830f87f26e0fb3f6a253a1412ece3e2b01b7e103a.png" />
-<img alt="../_images/158fd45d25e33813b39373c73ca56077e57b166c4be7c5fdf1065cf87a282475.png" src="../_images/158fd45d25e33813b39373c73ca56077e57b166c4be7c5fdf1065cf87a282475.png" />
+<img alt="../_images/a0d330bb2daa08f7c717bb6c0b911637d1956eb2c14ec3ec99774083fc4f1643.png" src="../_images/a0d330bb2daa08f7c717bb6c0b911637d1956eb2c14ec3ec99774083fc4f1643.png" />
+<img alt="../_images/14bbee7a121c54cd84da403fed8984dbe58aaf2435e7e9642605a73ae27d3d98.png" src="../_images/14bbee7a121c54cd84da403fed8984dbe58aaf2435e7e9642605a73ae27d3d98.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="uporaba-oken">
 <span id="sec-okna"></span><h2>Uporaba oken<a class="headerlink" href="#uporaba-oken" title="Link to this heading">#</a></h2>
-<p>Predpostavimo, da želimo izračunati Fourierovo tranformacijo determinističnega signala <span class="math notranslate nohighlight">\(x(t)\)</span>, ki je načeloma definiran od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>, vendar pa ga gledamo samo na območju od <span class="math notranslate nohighlight">\(-T/2\)</span> do <span class="math notranslate nohighlight">\(+T/2\)</span>. Dobimo naslednje podatke:</p>
+<p>Predpostavimo, da želimo izračunati Fourierovo transformacijo determinističnega signala <span class="math notranslate nohighlight">\(x(t)\)</span>, ki je načeloma definiran od <span class="math notranslate nohighlight">\(-\infty\)</span> do <span class="math notranslate nohighlight">\(+\infty\)</span>, vendar pa ga gledamo samo na območju od <span class="math notranslate nohighlight">\(-T/2\)</span> do <span class="math notranslate nohighlight">\(+T/2\)</span>. Dobimo naslednje podatke:</p>
 <div class="math notranslate nohighlight">
 \[
 x_T(t)=x(t)\,w(t),
@@ -1700,8 +1700,8 @@ x_T(t)=x(t)\,w(t),
 \[\begin{split}
 w(t)=
 \begin{cases}
-1;\quad\textrm{za:}\quad |t|\le T/2,\\
-0;\quad\textrm{sicer}.
+1\quad&amp;\textrm{za:}\quad |t|\le T/2,\\
+0\quad&amp;\textrm{sicer}.
 \end{cases}
 \end{split}\]</div>
 <p>Če pridobimo Fourierovo transformacijo <span class="math notranslate nohighlight">\(x_T(t)\)</span>, velja:</p>
@@ -1781,7 +1781,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 <img alt="../_images/4893bdeecdbee53eafe29ccc6e94738b64f0d3237b6a0bc7693300456f67fcc8.png" src="../_images/4893bdeecdbee53eafe29ccc6e94738b64f0d3237b6a0bc7693300456f67fcc8.png" />
 </div>
 </div>
-<p>Za sinusoido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusoido, si lahko ogledamo, tako da konvuliramo njuni frekvenčni trasformiranki (primer spodaj).</p>
+<p>Za sinusoido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusoido, si lahko ogledamo, tako da konvuliramo njuni frekvenčni transformiranki (primer spodaj).</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1833,8 +1833,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/061c93812fa9019aa3e5d303460860bfeddf541fbf6c5988d8178958e5c611a4.png" src="../_images/061c93812fa9019aa3e5d303460860bfeddf541fbf6c5988d8178958e5c611a4.png" />
-<img alt="../_images/2dad41f03de4f78b561168132644b1cb80a6380702bd597cd65ae295cbfe9a68.png" src="../_images/2dad41f03de4f78b561168132644b1cb80a6380702bd597cd65ae295cbfe9a68.png" />
+<img alt="../_images/742bebed849d04cd3b7cc83d00d6ee2168f7c17ef452b9b9cdc0867dd03d650e.png" src="../_images/742bebed849d04cd3b7cc83d00d6ee2168f7c17ef452b9b9cdc0867dd03d650e.png" />
+<img alt="../_images/0aae6d88f2e8ba1d068c5c2cfaddaad6950283124257e7cba2f5d204360ea466.png" src="../_images/0aae6d88f2e8ba1d068c5c2cfaddaad6950283124257e7cba2f5d204360ea466.png" />
 </div>
 </div>
 </section>
