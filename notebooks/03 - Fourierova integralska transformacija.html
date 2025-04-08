@@ -14,44 +14,47 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../_static/translations.js?v=82705e9b"></script>
+    <script src="../_static/translations.js?v=852ec8ec"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="2. Fourierove vrste" href="02%20-%20Fourierove%20vrste.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -74,31 +78,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -106,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -114,10 +102,15 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -126,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +135,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -154,21 +150,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Procesiranje signalov s Pythonom - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Išči</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Išči</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -196,14 +188,19 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -212,14 +209,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -342,27 +339,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -520,8 +509,8 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/50827178712e8ca07f7df3d8468347923480e81e8d9b908cc94244b084f27bb9.png" src="../_images/50827178712e8ca07f7df3d8468347923480e81e8d9b908cc94244b084f27bb9.png" />
-<img alt="../_images/7818fb4b6f99d176256390523475d5d5b668ff57458a41d4f76d488af6c14e3b.png" src="../_images/7818fb4b6f99d176256390523475d5d5b668ff57458a41d4f76d488af6c14e3b.png" />
+<img alt="../_images/881bf6ccfe45d32d1a86149d85c90d8af7ace315c4c6ca7a919dbe47232fe5b7.png" src="../_images/881bf6ccfe45d32d1a86149d85c90d8af7ace315c4c6ca7a919dbe47232fe5b7.png" />
+<img alt="../_images/91620cac5d2eada6bcc6b2e10ed1ea0beb34f1fe2a65e659652f229d698cdc69.png" src="../_images/91620cac5d2eada6bcc6b2e10ed1ea0beb34f1fe2a65e659652f229d698cdc69.png" />
 </div>
 </div>
 <p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič. To sicer velja za vse <strong>sode funkcije</strong>; za <strong>lihe funkcije</strong> bi veljalo obratno: neničelna bi bila imaginarna komponenta (slika spodaj). Podobno smo sicer ugotovili že pri Fourierovih vrstah sodih in lihih funkcij (za več glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-lih-sod"><span class="std std-ref">Fourierove vrste lihih in sodih funkcij</span></a>).</p>
@@ -551,8 +540,8 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5bac046f2741865943e47c129900625650ac20d5c257a56930e1b526cd749b71.png" src="../_images/5bac046f2741865943e47c129900625650ac20d5c257a56930e1b526cd749b71.png" />
-<img alt="../_images/222ab4a979c2f8959c32b03a479e73c801d6bbf8f146b9e7383d7033e1884363.png" src="../_images/222ab4a979c2f8959c32b03a479e73c801d6bbf8f146b9e7383d7033e1884363.png" />
+<img alt="../_images/bddd0ab6f1fc0fb9f99ca1d75470fce3f7cc68e43d70c559e33be8e091bc4acd.png" src="../_images/bddd0ab6f1fc0fb9f99ca1d75470fce3f7cc68e43d70c559e33be8e091bc4acd.png" />
+<img alt="../_images/79d8cb20ad85f4ba6bb5acb1ea871065f158da725711d28a518b2023a5a3e8c0.png" src="../_images/79d8cb20ad85f4ba6bb5acb1ea871065f158da725711d28a518b2023a5a3e8c0.png" />
 </div>
 </div>
 <p>Sicer pa velja poudariti, da v splošnem realni signali <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj; <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje enotsko funkcijo stopnice). Časovni signali so v splošnem lahko kompleksne oblike in takrat v frekvenčni domeni v splošnem ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
@@ -606,9 +595,9 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d6e9686f7c54950742666efeb61afe110f471f7c6b04c7e3b6f6a997b2e0b380.png" src="../_images/d6e9686f7c54950742666efeb61afe110f471f7c6b04c7e3b6f6a997b2e0b380.png" />
-<img alt="../_images/6b0eaeb7e7e31ed34099b977f6ae7d9928e0be191a2f4b39391fb78cd5e428fd.png" src="../_images/6b0eaeb7e7e31ed34099b977f6ae7d9928e0be191a2f4b39391fb78cd5e428fd.png" />
-<img alt="../_images/d1db74eb7879e012a0ed18402679486c3aa9efa387f71d22c7e6523cfcfc7727.png" src="../_images/d1db74eb7879e012a0ed18402679486c3aa9efa387f71d22c7e6523cfcfc7727.png" />
+<img alt="../_images/3702dd00a68dedc640c435bcabec433176cc52925c3206c2cb466e9b89ec8ba5.png" src="../_images/3702dd00a68dedc640c435bcabec433176cc52925c3206c2cb466e9b89ec8ba5.png" />
+<img alt="../_images/0548dee892125f69a2a61b629d6905e046b6f9771969a6a14788269595c55a18.png" src="../_images/0548dee892125f69a2a61b629d6905e046b6f9771969a6a14788269595c55a18.png" />
+<img alt="../_images/68c14c54770cfd7dd279d712009e7e7d0aa611051b441494e23f48db0c1a6591.png" src="../_images/68c14c54770cfd7dd279d712009e7e7d0aa611051b441494e23f48db0c1a6591.png" />
 </div>
 </div>
 </section>
@@ -703,7 +692,7 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/87ddb3b071e39b30d1a9b622e98d4d367bf71ba79e8d135fbd332e719b066719.png" src="../_images/87ddb3b071e39b30d1a9b622e98d4d367bf71ba79e8d135fbd332e719b066719.png" />
+<img alt="../_images/ef9d2d09443000f77c6a0f5bb781d446533517f3a9756497c0e045de6a1eb71a.png" src="../_images/ef9d2d09443000f77c6a0f5bb781d446533517f3a9756497c0e045de6a1eb71a.png" />
 </div>
 </div>
 </section>
@@ -767,8 +756,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2\pi\,b\,f \right)}{2\pi\,b\,f }.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/05311318f98d224d702747abec704815f86f512d9115779603083e46a4834190.png" src="../_images/05311318f98d224d702747abec704815f86f512d9115779603083e46a4834190.png" />
-<img alt="../_images/ae27978626327b78dec5a4fc7c54c97f68a79f47783e86d57f9c0f86c6fd9a4f.png" src="../_images/ae27978626327b78dec5a4fc7c54c97f68a79f47783e86d57f9c0f86c6fd9a4f.png" />
+<img alt="../_images/c7af1b5c927c288c595d0c9efd15a95458cde54c957e85e8104293506768ac70.png" src="../_images/c7af1b5c927c288c595d0c9efd15a95458cde54c957e85e8104293506768ac70.png" />
+<img alt="../_images/0ecf5593aa4923b0407b2ed9a5df7ede76cc0d78caafa3e2e7b86a73a0bbe468.png" src="../_images/0ecf5593aa4923b0407b2ed9a5df7ede76cc0d78caafa3e2e7b86a73a0bbe468.png" />
 </div>
 </div>
 </section>
@@ -857,9 +846,9 @@ x_2(t) =
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6f21542e24d017b0b7c0730c80a5ee9ba41c5ee442a8ba0cc40b090525316c76.png" src="../_images/6f21542e24d017b0b7c0730c80a5ee9ba41c5ee442a8ba0cc40b090525316c76.png" />
-<img alt="../_images/a3aae31ffcb3a9845aa7bc5df579fc4071d3a2c3716fb6826b9a199ef6b51eff.png" src="../_images/a3aae31ffcb3a9845aa7bc5df579fc4071d3a2c3716fb6826b9a199ef6b51eff.png" />
-<img alt="../_images/0e8cc8ce947078153beecc46417cc03df4135c0a38e08c15b8f247f9a9c2beac.png" src="../_images/0e8cc8ce947078153beecc46417cc03df4135c0a38e08c15b8f247f9a9c2beac.png" />
+<img alt="../_images/cd5fcd624f35d01d6d522f847b2a63034a6987e3855a0589173d48e29703ce96.png" src="../_images/cd5fcd624f35d01d6d522f847b2a63034a6987e3855a0589173d48e29703ce96.png" />
+<img alt="../_images/dc2fd9cefd29e0c78e8ad143686943709abfee7926c96bddca7150edc36cff51.png" src="../_images/dc2fd9cefd29e0c78e8ad143686943709abfee7926c96bddca7150edc36cff51.png" />
+<img alt="../_images/7201a44998e846d3fa26554fb0058a2ee4e8341950dad12eb354ba922b55ede4.png" src="../_images/7201a44998e846d3fa26554fb0058a2ee4e8341950dad12eb354ba922b55ede4.png" />
 </div>
 </div>
 </section>
@@ -924,8 +913,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e701992d2793aa17aaca48bf4768336903d83900b11d1efd60a92cad84432a83.png" src="../_images/e701992d2793aa17aaca48bf4768336903d83900b11d1efd60a92cad84432a83.png" />
-<img alt="../_images/6fea8fb74cb6dbb2ce3db2fdad913a74299e12bfdc5a245b4ff87e8c5bb26703.png" src="../_images/6fea8fb74cb6dbb2ce3db2fdad913a74299e12bfdc5a245b4ff87e8c5bb26703.png" />
+<img alt="../_images/33319dfc79e93bdc4d16cd2df2198b7b09f57876a6a1d3e87827b62abee9c2e6.png" src="../_images/33319dfc79e93bdc4d16cd2df2198b7b09f57876a6a1d3e87827b62abee9c2e6.png" />
+<img alt="../_images/28dddab839bd6121089e3e98357979a51bd676e5e066f1e54186f32e6e37fccb.png" src="../_images/28dddab839bd6121089e3e98357979a51bd676e5e066f1e54186f32e6e37fccb.png" />
 </div>
 </div>
 </section>
@@ -1015,8 +1004,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8a322839e8f17b1cc4ee43aa61a20ea06edfe89e7e2c5a37710fcb5b72de38ae.png" src="../_images/8a322839e8f17b1cc4ee43aa61a20ea06edfe89e7e2c5a37710fcb5b72de38ae.png" />
-<img alt="../_images/77897746525fe7843b15914c2a8c37b698d0ca01954a449ad90107ee2423180f.png" src="../_images/77897746525fe7843b15914c2a8c37b698d0ca01954a449ad90107ee2423180f.png" />
+<img alt="../_images/17e37228728c45141f1a4530580e73e32a0a4958385531866eec80fb089739db.png" src="../_images/17e37228728c45141f1a4530580e73e32a0a4958385531866eec80fb089739db.png" />
+<img alt="../_images/7385a910ae3607fcac47b62cf9970aa30beb5dc9e963ccac428efdb8322832ee.png" src="../_images/7385a910ae3607fcac47b62cf9970aa30beb5dc9e963ccac428efdb8322832ee.png" />
 </div>
 </div>
 </section>
@@ -1090,8 +1079,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/05c0b221b6ac155495b5e479c5cfe61bc01397181a93f972d7aecb958c851762.png" src="../_images/05c0b221b6ac155495b5e479c5cfe61bc01397181a93f972d7aecb958c851762.png" />
-<img alt="../_images/19148cc96140a5b91a4a41b59d0172932c03852e3268fe55592c166b2d56f741.png" src="../_images/19148cc96140a5b91a4a41b59d0172932c03852e3268fe55592c166b2d56f741.png" />
+<img alt="../_images/92fd9f54c6cd840632be51f2247f1dd323ca7daa1469391ec27451095f1e87e2.png" src="../_images/92fd9f54c6cd840632be51f2247f1dd323ca7daa1469391ec27451095f1e87e2.png" />
+<img alt="../_images/06df48bca3b534ce2256cb3c7fe8cd12b6d7e4cfc23aa7095e2540ee8242f93f.png" src="../_images/06df48bca3b534ce2256cb3c7fe8cd12b6d7e4cfc23aa7095e2540ee8242f93f.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1238,10 +1227,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3767ed5ef02de849d93560da117c65750cf0634951dc5ebd0618d5cd2234988c.png" src="../_images/3767ed5ef02de849d93560da117c65750cf0634951dc5ebd0618d5cd2234988c.png" />
-<img alt="../_images/463c8a3baa15ac9834ae672f02898bf29376f256f129f924062a51b4ab530f57.png" src="../_images/463c8a3baa15ac9834ae672f02898bf29376f256f129f924062a51b4ab530f57.png" />
-<img alt="../_images/74912aa63ed4953b4a71b4c3994b59eb694d9f8ef8e4e669fb59784f1f17ccf7.png" src="../_images/74912aa63ed4953b4a71b4c3994b59eb694d9f8ef8e4e669fb59784f1f17ccf7.png" />
-<img alt="../_images/9e13b9eb8ba780ce42139b942372ef1d4c28c38ca7b137d3696d9a2b9ccbff5b.png" src="../_images/9e13b9eb8ba780ce42139b942372ef1d4c28c38ca7b137d3696d9a2b9ccbff5b.png" />
+<img alt="../_images/b5321026142f23a55c365467b7691eb04fabf7e228982eb0159670800646ef7f.png" src="../_images/b5321026142f23a55c365467b7691eb04fabf7e228982eb0159670800646ef7f.png" />
+<img alt="../_images/13776eaf486a207aa7ed7f44ffb2cbb72a1c21cea599e38b829ac5b04e5491c3.png" src="../_images/13776eaf486a207aa7ed7f44ffb2cbb72a1c21cea599e38b829ac5b04e5491c3.png" />
+<img alt="../_images/063b079719b0c864cffd26c1111294bf879f308321f1196212dc30a5a1920b63.png" src="../_images/063b079719b0c864cffd26c1111294bf879f308321f1196212dc30a5a1920b63.png" />
+<img alt="../_images/9af5942f03769feef992cb0148ffe56d26cb52e97903a9dd834036ea1cd547c1.png" src="../_images/9af5942f03769feef992cb0148ffe56d26cb52e97903a9dd834036ea1cd547c1.png" />
 </div>
 </div>
 </section>
@@ -1328,8 +1317,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ee8cc98835c829fda941a4aed8c2d7392d8acc06ad729157db563e7eccdf2a5f.png" src="../_images/ee8cc98835c829fda941a4aed8c2d7392d8acc06ad729157db563e7eccdf2a5f.png" />
-<img alt="../_images/304b79fbb8e2c680410fa32e62cc8f61d6f1a35b573ad9b4f36cd58ef8e799bc.png" src="../_images/304b79fbb8e2c680410fa32e62cc8f61d6f1a35b573ad9b4f36cd58ef8e799bc.png" />
+<img alt="../_images/8be08c58f6999f7212ca97c4c686cd52d8d7b767094c866e199e10f4bf77fa95.png" src="../_images/8be08c58f6999f7212ca97c4c686cd52d8d7b767094c866e199e10f4bf77fa95.png" />
+<img alt="../_images/e140e62a8c962737ac3f9cf4d3364048028b6ed2d94a986fd5cb913e33fda70f.png" src="../_images/e140e62a8c962737ac3f9cf4d3364048028b6ed2d94a986fd5cb913e33fda70f.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1501,11 +1490,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/abea43188f5d5ddf931e4e72a20aa0c6f2eb37c8dc49be2b4010b4dc8fd32589.png" src="../_images/abea43188f5d5ddf931e4e72a20aa0c6f2eb37c8dc49be2b4010b4dc8fd32589.png" />
-<img alt="../_images/bd833d53b9fbfd9fd308c22eaec58ab84f68009bd9dc8f24136affefc7735370.png" src="../_images/bd833d53b9fbfd9fd308c22eaec58ab84f68009bd9dc8f24136affefc7735370.png" />
-<img alt="../_images/3675811476c2871c6a15c5a17b03cc826a8e108985e087207f738d3367c5899e.png" src="../_images/3675811476c2871c6a15c5a17b03cc826a8e108985e087207f738d3367c5899e.png" />
-<img alt="../_images/10d1abe3d05424261b27d0e70678e10abe2b9e5eeee2231ee49d01a27c45dc12.png" src="../_images/10d1abe3d05424261b27d0e70678e10abe2b9e5eeee2231ee49d01a27c45dc12.png" />
-<img alt="../_images/47da48320cabf57fd15f4c4af0ddea4dd797cf0dcef425ed19ac267e333b5650.png" src="../_images/47da48320cabf57fd15f4c4af0ddea4dd797cf0dcef425ed19ac267e333b5650.png" />
+<img alt="../_images/ed45ec6b5d8b0ae2767231965d3f56b56d7375a03ab7f77d602a8d8f5647790f.png" src="../_images/ed45ec6b5d8b0ae2767231965d3f56b56d7375a03ab7f77d602a8d8f5647790f.png" />
+<img alt="../_images/0607ac85e72ccdf888131c406bcf95a9764cbe62a36d045b0baaa1675f3ec83e.png" src="../_images/0607ac85e72ccdf888131c406bcf95a9764cbe62a36d045b0baaa1675f3ec83e.png" />
+<img alt="../_images/bd943f91d1124b6d3af23a276192a6f29449c8031dd876387ef6937fec9fd78f.png" src="../_images/bd943f91d1124b6d3af23a276192a6f29449c8031dd876387ef6937fec9fd78f.png" />
+<img alt="../_images/053317685bd7b1f2f8d0d74aa888189bc38ea6289f2b74e948380952303d5a72.png" src="../_images/053317685bd7b1f2f8d0d74aa888189bc38ea6289f2b74e948380952303d5a72.png" />
+<img alt="../_images/d60ed0f293d74c74325226484caf5fe787bec35f21a37a9530173392b3be7277.png" src="../_images/d60ed0f293d74c74325226484caf5fe787bec35f21a37a9530173392b3be7277.png" />
 </div>
 </div>
 </section>
@@ -1610,8 +1599,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f7610a694bd45042327676b4dfecd7593cc65f732f4c3ec3ee75d3b1467fed28.png" src="../_images/f7610a694bd45042327676b4dfecd7593cc65f732f4c3ec3ee75d3b1467fed28.png" />
-<img alt="../_images/c34944b653d73d73078255ae4cd7a3cc04dad698b956bec6c2d2745ce611d22b.png" src="../_images/c34944b653d73d73078255ae4cd7a3cc04dad698b956bec6c2d2745ce611d22b.png" />
+<img alt="../_images/cc75cbdd7ddf36642bede2a1c87b6d8de3f0dbee86389da18824b25a562ba103.png" src="../_images/cc75cbdd7ddf36642bede2a1c87b6d8de3f0dbee86389da18824b25a562ba103.png" />
+<img alt="../_images/15b17fb4a6a42da287ace36a206a7ce9edc21ac566d9c76d6ff90a6df99a2cf2.png" src="../_images/15b17fb4a6a42da287ace36a206a7ce9edc21ac566d9c76d6ff90a6df99a2cf2.png" />
 </div>
 </div>
 </section>
@@ -1682,8 +1671,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/42300b2fbc7ed08ffb9b48b4a91dfdc86847f9069c51719b430d6ee98e60f1ea.png" src="../_images/42300b2fbc7ed08ffb9b48b4a91dfdc86847f9069c51719b430d6ee98e60f1ea.png" />
-<img alt="../_images/79f2c5968c72216beddfaa7cedad19924f6b8592dc6fa1c2a58a1922293670eb.png" src="../_images/79f2c5968c72216beddfaa7cedad19924f6b8592dc6fa1c2a58a1922293670eb.png" />
+<img alt="../_images/c01db15936a2818a70a05d245cb89e3f6c85fe024ff14c688eb3a9e7dbde09ed.png" src="../_images/c01db15936a2818a70a05d245cb89e3f6c85fe024ff14c688eb3a9e7dbde09ed.png" />
+<img alt="../_images/33b30bd5fa9cc4550255102918e3f5b6206c75cbe23fb9fd337970f7e4d5227c.png" src="../_images/33b30bd5fa9cc4550255102918e3f5b6206c75cbe23fb9fd337970f7e4d5227c.png" />
 </div>
 </div>
 </section>
@@ -1777,8 +1766,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/0ab7868e613e3a76039475d0ae1e57f0ff7dbfc34384e45eaf3bfe2c56cbac31.png" src="../_images/0ab7868e613e3a76039475d0ae1e57f0ff7dbfc34384e45eaf3bfe2c56cbac31.png" />
-<img alt="../_images/4893bdeecdbee53eafe29ccc6e94738b64f0d3237b6a0bc7693300456f67fcc8.png" src="../_images/4893bdeecdbee53eafe29ccc6e94738b64f0d3237b6a0bc7693300456f67fcc8.png" />
+<img alt="../_images/d245d882f1e6dc733f474d735bbf67e223bac547dbf4c81e14cac60f38796ba6.png" src="../_images/d245d882f1e6dc733f474d735bbf67e223bac547dbf4c81e14cac60f38796ba6.png" />
+<img alt="../_images/4aad9095a1560fa754fbff1f3ae8244ec51aa743e7e2db791d3b4299f86d0a60.png" src="../_images/4aad9095a1560fa754fbff1f3ae8244ec51aa743e7e2db791d3b4299f86d0a60.png" />
 </div>
 </div>
 <p>Za sinusoido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusoido, si lahko ogledamo, tako da konvuliramo njuni frekvenčni transformiranki (primer spodaj).</p>
@@ -1833,8 +1822,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2dc73254cbdef1d0d6b529e7a643d8090872d93a43b0e62f53a1efdc9c1e10b7.png" src="../_images/2dc73254cbdef1d0d6b529e7a643d8090872d93a43b0e62f53a1efdc9c1e10b7.png" />
-<img alt="../_images/b37b1581c82d7c5347d3c2756fc881c4c6f36b7c081f37cfa8654aa9bcac78f6.png" src="../_images/b37b1581c82d7c5347d3c2756fc881c4c6f36b7c081f37cfa8654aa9bcac78f6.png" />
+<img alt="../_images/1a5cabdcd60ddb60430c63428b9023fcd0c0f9573573d4b1b61a2018ce20bd05.png" src="../_images/1a5cabdcd60ddb60430c63428b9023fcd0c0f9573573d4b1b61a2018ce20bd05.png" />
+<img alt="../_images/99fbe3dd7182dec37dce7829b080f715928af5a1893bdc9c878981037e459fc4.png" src="../_images/99fbe3dd7182dec37dce7829b080f715928af5a1893bdc9c878981037e459fc4.png" />
 </div>
 </div>
 </section>
@@ -1867,7 +1856,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1895,7 +1884,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1974,8 +1964,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

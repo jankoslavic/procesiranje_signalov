@@ -14,44 +14,47 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="../_static/translations.js?v=82705e9b"></script>
+    <script src="../_static/translations.js?v=852ec8ec"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -67,6 +70,7 @@
     <link rel="prev" title="1. Uvod v procesiranje signalov" href="01%20-%20Uvod.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -74,31 +78,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -106,7 +95,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -114,10 +102,15 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -126,7 +119,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -141,6 +135,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -154,21 +150,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Procesiranje signalov s Pythonom - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Išči</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Išči</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -196,14 +188,19 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -212,14 +209,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -342,27 +339,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -501,7 +490,7 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3685991a8b852256ab4f5c5534978f131d34e728ee3bf25934437c70e6463251.png" src="../_images/3685991a8b852256ab4f5c5534978f131d34e728ee3bf25934437c70e6463251.png" />
+<img alt="../_images/e10c20ac7bcc6dbf0c158278677040586925b1f6a91fdfecd62358921944c59e.png" src="../_images/e10c20ac7bcc6dbf0c158278677040586925b1f6a91fdfecd62358921944c59e.png" />
 </div>
 </div>
 <p>Nadaljujmo z vsoto harmonskih signalov, pri čemer se bomo omejili na kompleksno periodične signale (glejte <a class="reference internal" href="01%20-%20Uvod.html#sec-klasifikacija-pod"><span class="std std-ref">Klasifikacija signalov</span></a>), kjer je razmerje med frekvencami posameznih harmonikov racionalno število. Frekvence harmonskih signalov bomo dodatno omejili: če je osnovna krožna frekvenca <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> definirana z osnovno periodo <span class="math notranslate nohighlight">\(T_p\)</span>, potem morajo imeti vsi ostali harmoniki krožno frekvenco, ki je večkratnik osnovne krožne frekvence.</p>
@@ -574,7 +563,7 @@ b_n\sin\left(\frac{2\pi\,n\,t}{T_p} \right)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a1a38b33bf72168775dacb47f0bbab52253617e68f164a2d51e99ea8e544db34.png" src="../_images/a1a38b33bf72168775dacb47f0bbab52253617e68f164a2d51e99ea8e544db34.png" />
+<img alt="../_images/49197a6c63c26dc07e20f6f54a4e58129cb58b7f9970d8c6ff15d6f190b3920c.png" src="../_images/49197a6c63c26dc07e20f6f54a4e58129cb58b7f9970d8c6ff15d6f190b3920c.png" />
 </div>
 </div>
 <p>Periodični signal, ki smo si ga pogledali zgoraj, je ključnega pomena za razumevanje Fourierovih vrst (in pozneje Fourierove transformacije, glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">3. Fourierova integralska transformacija</span></a>). V nadaljevanju bomo periodični signal najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
@@ -738,7 +727,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/840deda23de3b83c8fda90e495681255c2870102aae6b943dcf65fd2b089115b.png" src="../_images/840deda23de3b83c8fda90e495681255c2870102aae6b943dcf65fd2b089115b.png" />
+<img alt="../_images/adfde8441fa62c9799f6634cf0d92b8fe7a5f1bb9aec0689aa63ab6c8e5a26e5.png" src="../_images/adfde8441fa62c9799f6634cf0d92b8fe7a5f1bb9aec0689aa63ab6c8e5a26e5.png" />
 </div>
 </div>
 </section>
@@ -909,7 +898,7 @@ x(-t)=-x(t),
 <p>Izpostavimo lahko, da je funkcija <span class="math notranslate nohighlight">\(\cos()\)</span> soda, funkcija <span class="math notranslate nohighlight">\(\sin()\)</span> pa liha.</p>
 <p>Za poznejšo obravnavo je pomembna sodost/lihost produkta  funkcij <span class="math notranslate nohighlight">\(x(t)\,y(t)\)</span>. Sodost oz. lihost je odvisna od sodosti oz. lihosti funkcij <span class="math notranslate nohighlight">\(x(t)\)</span> in <span class="math notranslate nohighlight">\(y(t)\)</span>.</p>
 <p>Odnosi so definirani v tabeli spodaj.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>če <span class="math notranslate nohighlight">\(x(t)\)</span></p></th>
 <th class="head text-right"><p>če <span class="math notranslate nohighlight">\(y(t)\)</span></p></th>
@@ -935,6 +924,7 @@ x(-t)=-x(t),
 </tr>
 </tbody>
 </table>
+</div>
 <p>Glede na zgornjo tabelo lahko sklenemo (glejte tudi <a class="reference internal" href="#sec-fv-sin-cos"><span class="std std-ref">Fourierove vrste v sinusno-kosinusni obliki</span></a>):</p>
 <div class="admonition note">
 <p class="admonition-title">Opomba</p>
@@ -1000,7 +990,7 @@ x(-t)=-x(t),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c05c5367206d8d11a43c4c4ed436788ce7b17f639821bc7cb7dcb255e6f2401d.png" src="../_images/c05c5367206d8d11a43c4c4ed436788ce7b17f639821bc7cb7dcb255e6f2401d.png" />
+<img alt="../_images/3206394ec24a9361f11a73828f34a1ef1a94713843eafe1fdc4e20276077b1fd.png" src="../_images/3206394ec24a9361f11a73828f34a1ef1a94713843eafe1fdc4e20276077b1fd.png" />
 </div>
 </div>
 <p>V primeru zgoraj je periodični signal generiran na podlagi vektorja Fourierovih koeficientov:</p>
@@ -1041,7 +1031,11 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.06286511054669663+0.3116372312686761j)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_10180\3306829075.py:3: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  np.trapz(x[sel]*np.exp(-2j*np.pi*n*t[sel]/Tp), dx=dt)/Tp
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.complex128(0.06286511054669663+0.3116372312686761j)
 </pre></div>
 </div>
 </div>
@@ -1109,7 +1103,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/44bc5af011c0b7cbd1ce30980b435daa7adc8d2b4b05cfb904c2996be2ee0348.png" src="../_images/44bc5af011c0b7cbd1ce30980b435daa7adc8d2b4b05cfb904c2996be2ee0348.png" />
+<img alt="../_images/1f74a5535d05ef72f8aea332dcf11381c6bc336435a4c374a95befad4c0fea28.png" src="../_images/1f74a5535d05ef72f8aea332dcf11381c6bc336435a4c374a95befad4c0fea28.png" />
 </div>
 </div>
 <p>Zgornji primer lahko nadaljujemo in izvorni pomik <span class="math notranslate nohighlight">\(x(t)\)</span> identificiramo iz Fourierovih vrst za hitrost <span class="math notranslate nohighlight">\(\dot x(t)\)</span> (glejte kodo in sliko spodaj). Pri integriranju imamo težavo v primeru Fourierovega koeficienta s frekvenco 0 (statična komponenta); v kodi spodaj to frekvenco enostavno preskočimo, saj je ne moremo določiti. Podobno težavo bi imeli v času; če integriramo nedoločeni integral, potem pri integriranju potrebujemo začetno vrednost. Na sliki spodaj se zato med obema pristopoma pokaže odstopanje v velikosti statične komponente.</p>
@@ -1150,7 +1144,11 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8b2d1f8ee3d55fdd2ed03223bb9b278bc65a4e7635fdcf3faacf4e293a002fc6.png" src="../_images/8b2d1f8ee3d55fdd2ed03223bb9b278bc65a4e7635fdcf3faacf4e293a002fc6.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_10180\2130594448.py:8: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  c_d[i+N] = np.trapz(x_d_t[sel]*np.exp(-2j*np.pi*i*t[sel]/Tp), dx=dt)/Tp
+</pre></div>
+</div>
+<img alt="../_images/ad7bee999ffb9b21fe010e18587b3f3a07d4a5b634fdaddf9d3324c69db49cd0.png" src="../_images/ad7bee999ffb9b21fe010e18587b3f3a07d4a5b634fdaddf9d3324c69db49cd0.png" />
 </div>
 </div>
 </section>
@@ -1188,7 +1186,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c4b0eef0288bd04b2851d7f95e8ed71f69ee5478eb7e3c28e35ff92ae38ad62e.png" src="../_images/c4b0eef0288bd04b2851d7f95e8ed71f69ee5478eb7e3c28e35ff92ae38ad62e.png" />
+<img alt="../_images/8071e2318501df2b7d4d50fc44394c889912221e6cdd30adb6f246e1b14d36c2.png" src="../_images/8071e2318501df2b7d4d50fc44394c889912221e6cdd30adb6f246e1b14d36c2.png" />
 </div>
 </div>
 <p>Kljub temu da signal ni kompleksno periodičen, teorija Fourierovih vrst pa je bila izpeljana ob tej predpostavki, poskusimo identificirati harmonske komponente. Najprej to naredimo na diskretni časovni vrsti. Osredotočimo se na del podatkov, ki se ponavlja:</p>
@@ -1223,7 +1221,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/4178f27f03fe63f0a3d46bca753aa7b28ad5a1845624bc918adccb67d185b03e.png" src="../_images/4178f27f03fe63f0a3d46bca753aa7b28ad5a1845624bc918adccb67d185b03e.png" />
+<img alt="../_images/fdef47c5c1d65ce591710bb33f53a4ff797054de2974c5e6461d0354c0a2fdc4.png" src="../_images/fdef47c5c1d65ce591710bb33f53a4ff797054de2974c5e6461d0354c0a2fdc4.png" />
 </div>
 </div>
 <p>Identificiramo Fourierove koeficiente:</p>
@@ -1239,6 +1237,10 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_10180\1221259669.py:5: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  c[i+N] = np.trapz(x*np.exp(-2j*np.pi*i*t/Tp), dx=dt)/Tp
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-3.85108612e-16-0.03077684j, -3.83373888e-16-0.03442023j,
        -5.03069808e-16-0.03894743j, -2.68882139e-16-0.04473743j,
         1.52655666e-16-0.05242184j, -5.37764278e-17-0.06313752j,
@@ -1293,7 +1295,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/53e5969aa2bbe15c6a81363c3b4e55d56dbf5aaacbcedc8616def2307b0d622e.png" src="../_images/53e5969aa2bbe15c6a81363c3b4e55d56dbf5aaacbcedc8616def2307b0d622e.png" />
+<img alt="../_images/1e4c9a7d37b77dfd896da1707b2889aedf7b2a6e0eab5a979b312dcff1fddb91.png" src="../_images/1e4c9a7d37b77dfd896da1707b2889aedf7b2a6e0eab5a979b312dcff1fddb91.png" />
 </div>
 </div>
 <p>Opazimo, da identificirani kompleksno periodični signal relativno dobro opiše izvorni periodični signal. Če bi število harmonskih (<span class="math notranslate nohighlight">\(N\)</span>) komponent povečali, bi se identificirana funkcija izvornim podatkom bolje prilegala, vendar pa bi na mestu nezveznosti še vedno imeli odstopanje. Odstopanje na mestu nezveznosti je znano pod terminom <strong>Gibbsov</strong> fenomen. Resnici na ljubo je večina inženirskih aplikacij zveznih in zato ponavadi Gibbsov fenomen v praksi nima večjega pomena.</p>
@@ -1372,7 +1374,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7e732602b589375cf5a067afbbbffe2c6a99728f50a9d095fd5bba80b1777b08.png" src="../_images/7e732602b589375cf5a067afbbbffe2c6a99728f50a9d095fd5bba80b1777b08.png" />
+<img alt="../_images/d46486eacf419d028225aec30dd3eee939f840aab363592791747d0fa9f54558.png" src="../_images/d46486eacf419d028225aec30dd3eee939f840aab363592791747d0fa9f54558.png" />
 </div>
 </div>
 </section>
@@ -1432,7 +1434,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c87e86000ed6987a57a3ceb80bf1594c301154664b632673a6b859622c2e6ab4.png" src="../_images/c87e86000ed6987a57a3ceb80bf1594c301154664b632673a6b859622c2e6ab4.png" />
+<img alt="../_images/3c4094abbd59d63b5c4f922a1781487cb855f40410a3725762d1c921d0bf31d8.png" src="../_images/3c4094abbd59d63b5c4f922a1781487cb855f40410a3725762d1c921d0bf31d8.png" />
 </div>
 </div>
 <p>Do enotskega impulza pridemo z uteženim seštevanjem:</p>
@@ -1470,7 +1472,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c3ec0757813b4a5e0f3fd6989d480355fbd0a81c061de66671a40f24ff38e83b.png" src="../_images/c3ec0757813b4a5e0f3fd6989d480355fbd0a81c061de66671a40f24ff38e83b.png" />
+<img alt="../_images/8283ede67a94f19742b37b7c626bce9c0274d382a87eb55def3c85590ecdfbf7.png" src="../_images/8283ede67a94f19742b37b7c626bce9c0274d382a87eb55def3c85590ecdfbf7.png" />
 </div>
 </div>
 <p>in nato integriramo (rezultat je pričakovano enak 1; spremenite <span class="math notranslate nohighlight">\(\varepsilon\)</span> v <code class="docutils literal notranslate"><span class="pre">podatki</span></code> zgoraj!):</p>
@@ -1531,7 +1533,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/dd5fc556c968e3f3b9bc03e5adf243e647b860bc18e045cd4707d87a35021350.png" src="../_images/dd5fc556c968e3f3b9bc03e5adf243e647b860bc18e045cd4707d87a35021350.png" />
+<img alt="../_images/b73920eb06ef952d4086c700b29b4363e23d8e123d0f807e4861dc90ad1c48d3.png" src="../_images/b73920eb06ef952d4086c700b29b4363e23d8e123d0f807e4861dc90ad1c48d3.png" />
 </div>
 </div>
 <p>Fourierova vrsta padajočega žagastega signala je definirana kot:</p>
@@ -1603,7 +1605,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d1f296a8d6a0cc5688602c2a69e5c93c44a27369b08093e5ecfb6b52e0cbc943.png" src="../_images/d1f296a8d6a0cc5688602c2a69e5c93c44a27369b08093e5ecfb6b52e0cbc943.png" />
+<img alt="../_images/fa7cb2fd468903a777122342279d50a350fe6f1655fc33c718e57706b63eac16.png" src="../_images/fa7cb2fd468903a777122342279d50a350fe6f1655fc33c718e57706b63eac16.png" />
 </div>
 </div>
 </section>
@@ -1666,7 +1668,11 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b4aa060f21e4d77f214215c00085ea8775aba9f13cb68dbed03aba5b85bfdf6d.png" src="../_images/b4aa060f21e4d77f214215c00085ea8775aba9f13cb68dbed03aba5b85bfdf6d.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_10180\4214418181.py:27: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  c[i+N] = np.trapz(x[sel]*np.exp(-2j*np.pi*i*t[sel]/T_p), dx=dt)/T_p
+</pre></div>
+</div>
+<img alt="../_images/7f3f0a9def110eb2735476b2a021f07d2f41d81750f7c0e2f7083608b5b8e3aa.png" src="../_images/7f3f0a9def110eb2735476b2a021f07d2f41d81750f7c0e2f7083608b5b8e3aa.png" />
 </div>
 </div>
 <p>Pri pripravi podatkov zgoraj smo izračunali Fourierove koeficiente <span class="math notranslate nohighlight">\(c\)</span>:</p>
@@ -1726,7 +1732,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6c996eef52593e9b3bdf4625a0ba34890266eb2b11e29962a4e4c7ca1d50d1fd.png" src="../_images/6c996eef52593e9b3bdf4625a0ba34890266eb2b11e29962a4e4c7ca1d50d1fd.png" />
+<img alt="../_images/96010e7db22b1dc3570e04701649fe7511ea40d5582b16af3a0e8d2b50fb25c4.png" src="../_images/96010e7db22b1dc3570e04701649fe7511ea40d5582b16af3a0e8d2b50fb25c4.png" />
 </div>
 </div>
 </section>
@@ -1803,6 +1809,10 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_10180\3032259182.py:1: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  np.trapz(x**2,dx=dt)/T_p
+</pre></div>
+</div>
 <img alt="../_images/829d159c7e2d6f94c2de6ea60a87cf65e24b08cfeccc4fe51f451725ab202424.png" src="../_images/829d159c7e2d6f94c2de6ea60a87cf65e24b08cfeccc4fe51f451725ab202424.png" />
 </div>
 </div>
@@ -1814,7 +1824,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.4912052334566629+0j)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.complex128(0.4912052334566629+0j)
 </pre></div>
 </div>
 </div>
@@ -1861,7 +1871,11 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9ff66a9c6cdf18c077cf1a607549ca242611254b05c73b07d0864a90be92a814.png" src="../_images/9ff66a9c6cdf18c077cf1a607549ca242611254b05c73b07d0864a90be92a814.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_10180\2792508058.py:16: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  c[i+N] = np.trapz(x[sel]*np.exp(-2j*np.pi*i*t[sel]/T_p), dx=dt)/T_p
+</pre></div>
+</div>
+<img alt="../_images/5321bd2ed4511908f6070af168e8d214e10eb105d87e9dc4ecb7f76feb32f90a.png" src="../_images/5321bd2ed4511908f6070af168e8d214e10eb105d87e9dc4ecb7f76feb32f90a.png" />
 </div>
 </div>
 </section>
@@ -1895,7 +1909,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1923,7 +1937,8 @@ T_p,&amp;\textrm{če}\quad m=n,\\
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2011,8 +2026,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

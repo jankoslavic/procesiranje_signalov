@@ -1,44 +1,49 @@
 Traceback (most recent call last):
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 782, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 198, in ensure_async
-    result = await obj
-             ^^^^^^^^^
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_client\channels.py", line 315, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1314, in execute
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1319, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 685, in run_until_complete
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 687, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
   File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1005, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 806, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 856, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['import numpy as np', 'import matplotlib.pyplot as plt', 'import pyExSi as es', '', 'fs = 44000']
-...
-['ax2 = ax1.twinx() ', "ax2.set_ylabel('Frekvenca [Hz]', color='C1')", "ax2.plot(t, fr, color='C1', alpha=0.8) ", "ax2.tick_params(axis='y', labelcolor='C1')", 'plt.show()']
--------------------
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\janko\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+import matplotlib.pyplot as plt
+import pyuff
+
+uff = pyuff.UFF('./data/uff/beam.uff').read_sets(setn=4)
+fr = uff['x']
+H1 = uff['data']
+
+sel = fr<500
+plt.semilogy(fr[sel], np.abs(H1[sel]), label='H1')
+plt.xlabel('Frekvenca [Hz]')
+plt.ylabel('FRF [m$\\,$s$^{-2}$/N]')
+plt.grid()
+plt.legend()
+plt.show()
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[2], line 3[0m
+[0;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m----> 3[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyuff[39;00m
+[0;32m      5[0m uff [38;5;241m=[39m pyuff[38;5;241m.[39mUFF([38;5;124m'[39m[38;5;124m./data/uff/beam.uff[39m[38;5;124m'[39m)[38;5;241m.[39mread_sets(setn[38;5;241m=[39m[38;5;241m4[39m)
+[0;32m      6[0m fr [38;5;241m=[39m uff[[38;5;124m'[39m[38;5;124mx[39m[38;5;124m'[39m]
+
+[1;31mModuleNotFoundError[0m: No module named 'pyuff'
 
