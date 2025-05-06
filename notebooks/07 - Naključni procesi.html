@@ -670,8 +670,8 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a1cce2f01964e6b9e70f8076b08e7788c4fb7f67913024f1904405adc8f6450a.png" src="../_images/a1cce2f01964e6b9e70f8076b08e7788c4fb7f67913024f1904405adc8f6450a.png" />
-<img alt="../_images/4a1bcb0358daa98f3081ab4532e7fcd465c5f3748765da858c3f02e07a6b2be4.png" src="../_images/4a1bcb0358daa98f3081ab4532e7fcd465c5f3748765da858c3f02e07a6b2be4.png" />
+<img alt="../_images/01b6191d38d7372ac8e024bed652146245fee8ee7773ebe23b0e6530c425c0bb.png" src="../_images/01b6191d38d7372ac8e024bed652146245fee8ee7773ebe23b0e6530c425c0bb.png" />
+<img alt="../_images/4c98be5db6cd4df15af43813e2d1b6c0a4d2aaea9cf14896a9bbe5f8c6b9c047.png" src="../_images/4c98be5db6cd4df15af43813e2d1b6c0a4d2aaea9cf14896a9bbe5f8c6b9c047.png" />
 </div>
 </div>
 </section>
@@ -911,10 +911,10 @@ S_{xx}(f),&amp; f=0,\\
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$S_</span><span class="si">{xx}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integral v času: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">),</span> 
-      <span class="s1">&#39;, integral PSD (Sxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">Sxx</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">)),</span> 
-      <span class="s1">&#39;, integral PSD (Gxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">Gxx</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">)),</span>
-      <span class="s1">&#39;, integral PSD (Gxx) Welch: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">Gxx2</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integral v času: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">),</span> 
+      <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Integral PSD (Sxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">Sxx</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">)),</span> 
+      <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Integral PSD (Gxx): &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">Gxx</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">)),</span>
+      <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Integral PSD (Gxx) Welch: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">Gxx2</span><span class="p">),</span> <span class="n">dx</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">fs</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -923,17 +923,10 @@ S_{xx}(f),&amp; f=0,\\
 <img alt="../_images/ab9ebaa91c4d01b3a47098d31243300bc362f39d20f63348bda2f4c1b5f584f4.png" src="../_images/ab9ebaa91c4d01b3a47098d31243300bc362f39d20f63348bda2f4c1b5f584f4.png" />
 <img alt="../_images/21e5e5c7f2a822d11e31d814e3d3d9f9a19975229a5991128e57f2e47aba3cc4.png" src="../_images/21e5e5c7f2a822d11e31d814e3d3d9f9a19975229a5991128e57f2e47aba3cc4.png" />
 <img alt="../_images/d00b343642e08662436fb88c2280334177309df42be777a4ab790a31ea6f9dfb.png" src="../_images/d00b343642e08662436fb88c2280334177309df42be777a4ab790a31ea6f9dfb.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral v času:  0.9904720416233659 , integral PSD (Sxx):  0.9906062124167659 , integral PSD (Gxx):  0.9908307702229943 , integral PSD (Gxx) Welch:  0.9907922407740426
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_36640\2103181218.py:43: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
-  print(&#39;Integral v času: &#39;, np.trapz(x*x, dx=dt)/(N/fs),
-C:\Users\janko\AppData\Local\Temp\ipykernel_36640\2103181218.py:44: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
-  &#39;, integral PSD (Sxx): &#39;, np.trapz(np.real(Sxx), dx=1/(N/fs)),
-C:\Users\janko\AppData\Local\Temp\ipykernel_36640\2103181218.py:45: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
-  &#39;, integral PSD (Gxx): &#39;, np.trapz(np.real(Gxx), dx=1/(N/fs)),
-C:\Users\janko\AppData\Local\Temp\ipykernel_36640\2103181218.py:46: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
-  &#39;, integral PSD (Gxx) Welch: &#39;, np.trapz(np.real(Gxx2), dx=1/(N/fs)))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral v času:  0.9904720416233659 
+Integral PSD (Sxx):  0.9906062124167659 
+Integral PSD (Gxx):  0.9908307702229943 
+Integral PSD (Gxx) Welch:  0.9907922407740426
 </pre></div>
 </div>
 </div>
@@ -947,6 +940,19 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_36640\2103181218.py:46: DeprecationW
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9908102289544899)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Do majhnih razlik pride, ker smo v naši kodi predpostavili (<code class="docutils literal notranslate"><span class="pre">np.var</span></code> te predpostavke ne naredi), da ima časovna vrsta <code class="docutils literal notranslate"><span class="pre">x</span></code> srednjo vrednost nič, kar pa ni povsem res:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.004532247621656686)
 </pre></div>
 </div>
 </div>
@@ -995,15 +1001,11 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_36640\2103181218.py:46: DeprecationW
 <span class="n">fs</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">dt</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">σ</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
 
-<span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
+<span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_36640\3486755953.py:11: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
-  np.trapz(x**2, dx=dt)/T
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(9.01211481059612)
 </pre></div>
 </div>
@@ -1015,18 +1017,6 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_36640\2103181218.py:46: DeprecationW
 \sigma_x^2 = \int_{-\infty}^{+\infty} S_{xx}(f)\,\textrm{d} f.
 \]</div>
 <p>Ali z uporabo enostranskega amplitudnega spektra:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Gxx</span><span class="p">)</span><span class="o">*</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.complex128(495443148482.5529+1.261851904481853e-07j)
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
@@ -1048,6 +1038,12 @@ C:\Users\janko\AppData\Local\Temp\ipykernel_36640\2103181218.py:46: DeprecationW
 <span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
 <span class="n">Gxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">X_r</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X_r</span><span class="p">)</span> <span class="o">*</span> <span class="n">scale</span>
 <span class="n">Gxx</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">Gxx</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Gxx</span><span class="p">)</span><span class="o">*</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(9.012110027353884)
 </pre></div>
 </div>
 </div>
@@ -1103,16 +1099,12 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f.
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
 
-<span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
+<span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_36640\723233333.py:17: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
-  np.trapz(x**2, dx=dt)/T
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.5000000000000002)
 </pre></div>
 </div>
@@ -1161,15 +1153,11 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">dt</span>
-<span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
+<span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_36640\3415475614.py:2: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
-  np.trapz(v**2, dx=dt)/T
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(197389.49045450424)
 </pre></div>
 </div>
@@ -1192,15 +1180,11 @@ m_i = \int_{0}^{+\infty} (2\pi\,f)^i \, G_{xx}(f) \,\textrm{d} f.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">/</span><span class="n">dt</span>
-<span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
+<span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="n">dt</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\janko\AppData\Local\Temp\ipykernel_36640\284112396.py:2: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
-  np.trapz(a**2, dx=dt)/T
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(77925221885.31581)
 </pre></div>
 </div>
