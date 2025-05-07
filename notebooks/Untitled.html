@@ -400,6 +400,42 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<span class="n">σ</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">sigma, </span><span class="se">\\</span><span class="s1">mu, x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">σ</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="p">))</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">σ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">σ</span><span class="p">:</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">μ</span><span class="p">:</span> <span class="mf">0.</span><span class="p">}</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">))</span>
+
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1">#x = rng.normal(loc=podatki[μ], scale=podatki[σ], size=5000)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span> <span class="c1"># enakomerna porazdelitev</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Naključni dogodek&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vrednost $x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Gostota verjetnosti $-$ histogram&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">σ</span><span class="p">],</span><span class="mi">3</span><span class="o">*</span><span class="n">podatki</span><span class="p">[</span><span class="n">σ</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Funkcija gostote verjetnosti&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ff750ef670fef8491fbe763504f693e48b92e8dfe8114b3de99ed4dc41d72085.png" src="../_images/ff750ef670fef8491fbe763504f693e48b92e8dfe8114b3de99ed4dc41d72085.png" />
+<img alt="../_images/afa388ba6f1bb0747fa1ff5aba6de8b8e2b1510d5ae4ed667342a3189735b670.png" src="../_images/afa388ba6f1bb0747fa1ff5aba6de8b8e2b1510d5ae4ed667342a3189735b670.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
 </pre></div>
 </div>
@@ -420,7 +456,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cdfeefc4510ec3620ee61a9c7a44d56ab73cff4e40f3987c5dcec2d22a5e154b.png" src="../_images/cdfeefc4510ec3620ee61a9c7a44d56ab73cff4e40f3987c5dcec2d22a5e154b.png" />
+<img alt="../_images/eea5a75d85b1cd6d5bfe7645581ab671c97b705d945d77dbb96c673322e8d6ba.png" src="../_images/eea5a75d85b1cd6d5bfe7645581ab671c97b705d945d77dbb96c673322e8d6ba.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -438,7 +474,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.complex128(0.06378053937882851+2.4424906541753444e-17j)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.complex128(-1.2279335440838877-0.019289921564506603j)
 </pre></div>
 </div>
 </div>
@@ -454,7 +490,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;FFT of sine wave&#39;)
 </pre></div>
 </div>
-<img alt="../_images/706df200cbdc17c380b68d0df06e83f18334a65b2b3676c4e155331615b79485.png" src="../_images/706df200cbdc17c380b68d0df06e83f18334a65b2b3676c4e155331615b79485.png" />
+<img alt="../_images/2c992cb642abd0614aa12137dbac04e730c3849afa38ecef1fd112a3dca791d6.png" src="../_images/2c992cb642abd0614aa12137dbac04e730c3849afa38ecef1fd112a3dca791d6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -465,7 +501,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.complex128(3.7747582837255325e-17-6.661338147750939e-18j)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.complex128(-0.03030303030303031+0.9642580592052715j)
 </pre></div>
 </div>
 </div>
