@@ -19,12 +19,11 @@ Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bral
 Za strokovno recenzijo knjige se najlepše zahvaljujem prof. dr. Mihi Boltežarju in prof. dr. Sašu Tomažiču.
 
 :::{admonition} Kolofon
-Naslov dela: Procesiranje signalov
-
-Izdaja: 1. izdaja
-
-Avtor: \\
-prof. dr. Janko Slavič, u.d.i.s.
+|:---|:---|
+|Naslov dela:| Procesiranje signalov|
+|Izdaja:| 1. izdaja|
+|  |  |
+|Avtor:| prof. dr. Janko Slavič, u.d.i.s.|
 
 Recenzenta: 
 prof. dr. Miha Boltežar, univ. dipl. inž.,
