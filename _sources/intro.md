@@ -19,5 +19,18 @@ Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bral
 Za strokovno recenzijo knjige se najlepše zahvaljujem prof. dr. Mihi Boltežarju in prof. dr. Sašu Tomažiču.
 
 :::{note}
-Tako bomo označevali posebne opombe!
+Naslov dela: Procesiranje signalov
+Izdaja: 1. izdaja
+
+Avtor: prof. dr. Janko Slavič, u.d.i.s.
+Recenzenta: prof. dr. Miha Boltežar, univ. dipl. inž. in pred. dr. Sašo Tomažič, univ. dipl. inž. el.
+Jezikovni pregled: Manja Ocepek, mag. prim. knjiž. in mag. slov.
+
+Izdala in založila: Univerza v Ljubljani, Fakulteta za strojništvo, Ljubljana, maj, 2025
+:::
+
+:::{note}
+Kataložni zapis o publikaciji (CIP) pripravili v Narodni in univerzitetni knjižnici v Ljubljani.
+[COBISS.SI](http://COBISS.SI)-ID [235134723](https://plus.cobiss.net/cobiss/si/sl/bib/235134723)
+ISBN 978-961-7187-16-8 (HTML)
 :::
