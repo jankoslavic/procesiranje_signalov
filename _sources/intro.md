@@ -18,7 +18,7 @@ Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bral
 
 Za strokovno recenzijo knjige se najlepše zahvaljujem prof. dr. Mihi Boltežarju in prof. dr. Sašu Tomažiču.
 
-:::{note}
+:::{admonition} Kolofon
 Naslov dela: Procesiranje signalov
 Izdaja: 1. izdaja
 
@@ -29,8 +29,8 @@ Jezikovni pregled: Manja Ocepek, mag. prim. knjiž. in mag. slov.
 Izdala in založila: Univerza v Ljubljani, Fakulteta za strojništvo, Ljubljana, maj, 2025
 :::
 
-:::{note}
-Kataložni zapis o publikaciji (CIP) pripravili v Narodni in univerzitetni knjižnici v Ljubljani.
+:::{admonition} CIP - Kataložni zapis o publikaciji
+Narodna in univerzitetna knjižnica v Ljubljani.
 [COBISS.SI](http://COBISS.SI)-ID [235134723](https://plus.cobiss.net/cobiss/si/sl/bib/235134723)
 ISBN 978-961-7187-16-8 (HTML)
 :::
