@@ -23,7 +23,7 @@ Naslov dela: Procesiranje signalov
 
 Izdaja: 1. izdaja
 
-Avtor: 
+Avtor: \\
 prof. dr. Janko Slavič, u.d.i.s.
 
 Recenzenta: 
