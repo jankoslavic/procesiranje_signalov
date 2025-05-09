@@ -18,6 +18,8 @@ Pojasnilo: ker gre za izvršljivo knjigo, katere ključni element je, da jo bral
 
 Za strokovno recenzijo knjige se najlepše zahvaljujem prof. dr. Mihi Boltežarju in prof. dr. Sašu Tomažiču.
 
+# Kolofon in CIP
+
 :::{admonition} Kolofon
 Naslov dela: **Procesiranje signalov**
 Izdaja: 1. izdaja
