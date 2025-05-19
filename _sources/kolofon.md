@@ -10,7 +10,7 @@ Recenzenta: prof. dr. Miha Boltežar, univ. dipl. inž., pred. dr. Sašo Tomaži
 
 Jezikovni pregled: Manja Ocepek, mag. prim. knjiž. in mag. slov.
 
-Izdala in založila: Univerza v Ljubljani, Fakulteta za strojništvo, Ljubljana, maj, 2025
+Izdala in založila: Univerza v Ljubljani, Fakulteta za strojništvo, Ljubljana, 2025
 :::
 
 :::{admonition} CIP - Kataložni zapis o publikaciji
