@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="3. Fourierova integralska transformacija" href="03%20-%20Fourierova%20integralska%20transformacija.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Procesiranje signalov s Pythonom - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Išči</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -189,14 +200,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -340,16 +346,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -524,13 +538,13 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </div>
 <p>Odziv je sestavljen iz ovojnice <span class="math notranslate nohighlight">\({\dot x_0}/{\omega_{d}}\,\exp(-\delta\, \omega_0\,t)\)</span> in nihajočega dela <span class="math notranslate nohighlight">\(\sin(\omega_{d}\,t)\)</span>, glejte sliko spodaj.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, </span><span class="se">\\</span><span class="s1">omega_0, </span><span class="se">\\</span><span class="s1">omega_d, d_x_0, </span><span class="se">\\</span><span class="s1">delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
 
@@ -552,7 +566,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8e0cabd1d09817b86dd463fa21a7470a214190d919147265671995ba34a7f664.png" src="../_images/8e0cabd1d09817b86dd463fa21a7470a214190d919147265671995ba34a7f664.png" />
+<img alt="../_images/071d25a0890f3f88cfbe182baccff078e3458810dfb433d1d753a5b4e31e2f88.png" src="../_images/071d25a0890f3f88cfbe182baccff078e3458810dfb433d1d753a5b4e31e2f88.png" />
 </div>
 </div>
 </section>
@@ -597,13 +611,13 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 \]</div>
 <p>V nadaljevanju izpeljani izraz prikažemo grafično.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">r</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r, </span><span class="se">\\</span><span class="s1">delta, k&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 
@@ -633,8 +647,8 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8b36a97a0127134182890233b57ac14767dbee977836696a9631b7636a93a274.png" src="../_images/8b36a97a0127134182890233b57ac14767dbee977836696a9631b7636a93a274.png" />
-<img alt="../_images/7e0b6f239a3147641cc0cbc444bc78d25498ae818e65e3368415699cc102d35a.png" src="../_images/7e0b6f239a3147641cc0cbc444bc78d25498ae818e65e3368415699cc102d35a.png" />
+<img alt="../_images/0811769880e504ff7a92169851c06b6748632d64a24262284e15e1a3fe45b0fd.png" src="../_images/0811769880e504ff7a92169851c06b6748632d64a24262284e15e1a3fe45b0fd.png" />
+<img alt="../_images/85a73ca59a1c9f22b52f8165b70ed531e040fea517254aa9f20ee71db0ff9d68.png" src="../_images/85a73ca59a1c9f22b52f8165b70ed531e040fea517254aa9f20ee71db0ff9d68.png" />
 </div>
 </div>
 <p>Partikularna rešitev je torej:</p>
@@ -725,13 +739,13 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 <li><p>pospešenost: podresonančno kvadratično konvergira proti nič, nadresonančno konvergira k inverzu mase <span class="math notranslate nohighlight">\(1/m\)</span>.</p></li>
 </ul>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">ω</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">omega, m, c, k&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 
@@ -754,7 +768,7 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f69b0a4b6f0f84e511f9a193ebd299c5ed92ccf7c2269402ad876fc9d9e86ca3.png" src="../_images/f69b0a4b6f0f84e511f9a193ebd299c5ed92ccf7c2269402ad876fc9d9e86ca3.png" />
+<img alt="../_images/96ef36f303a7f3f1e4d63f53d46db7deaee1907ea3ef1f5fc968ca85b742c438.png" src="../_images/96ef36f303a7f3f1e4d63f53d46db7deaee1907ea3ef1f5fc968ca85b742c438.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -921,7 +935,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 <p>kjer <span class="math notranslate nohighlight">\(*\)</span> označuje konvolucijo. Primer spodaj prikazuje vzbujanje s koračno funkcijo višine <span class="math notranslate nohighlight">\(A\)</span> in dolžine <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, </span><span class="se">\\</span><span class="s1">omega_0, </span><span class="se">\\</span><span class="s1">omega_d, d_x_0, </span><span class="se">\\</span><span class="s1">delta, A, B, </span><span class="se">\\</span><span class="s1">tau&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="mf">10.</span><span class="p">}</span>
@@ -949,14 +963,14 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1f25d72e868020c3ac9d708885b7ba101cb457e3f04130ab54ae2d3200d82726.png" src="../_images/1f25d72e868020c3ac9d708885b7ba101cb457e3f04130ab54ae2d3200d82726.png" />
+<img alt="../_images/d597893825750815a6e2ee43dd2405639277d70eb7983eaa456abc1b2fc8a463.png" src="../_images/d597893825750815a6e2ee43dd2405639277d70eb7983eaa456abc1b2fc8a463.png" />
 </div>
 </div>
 <p>In še malo bolj podrobna slika:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">τ</span><span class="p">,</span> <span class="n">t0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, </span><span class="se">\\</span><span class="s1">omega_0, </span><span class="se">\\</span><span class="s1">omega_d, d_x_0, </span><span class="se">\\</span><span class="s1">delta, A, B, </span><span class="se">\\</span><span class="s1">tau, t0&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="mf">10.</span><span class="p">,</span> <span class="n">t0</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
@@ -997,7 +1011,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/810a283e13409a7a55a17bbfa3f6aa2fd05fbec2cfef1c2de2732b7027fb5c3d.png" src="../_images/810a283e13409a7a55a17bbfa3f6aa2fd05fbec2cfef1c2de2732b7027fb5c3d.png" />
+<img alt="../_images/75a47e05c52c33fd831e16575c6de1283229b0ac81e266b0b34271df29fa738d.png" src="../_images/75a47e05c52c33fd831e16575c6de1283229b0ac81e266b0b34271df29fa738d.png" />
 </div>
 </div>
 <p>Iz slike zgoraj lahko vidimo, zakaj <span class="math notranslate nohighlight">\(h(\tau)\)</span> včasih imenujemo dinamični spomin sistema; <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> namreč poskrbi, da na rešitev pri času <span class="math notranslate nohighlight">\(t\)</span> vpliva dogajanje do časa <span class="math notranslate nohighlight">\(t\)</span> (glejte podintegralsko funkcijo <span class="math notranslate nohighlight">\(f(\tau)\,h(t-\tau)\)</span> zgoraj). Iz istega razloga <span class="math notranslate nohighlight">\(\tau\)</span> imenujemo spominska spremenljivka.</p>
@@ -1103,8 +1117,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1181,8 +1194,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

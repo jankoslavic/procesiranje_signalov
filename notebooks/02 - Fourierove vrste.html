@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="1. Uvod v procesiranje signalov" href="01%20-%20Uvod.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Procesiranje signalov s Pythonom - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Išči</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -189,14 +200,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -340,16 +346,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -434,14 +448,14 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 <p>kjer je <span class="math notranslate nohighlight">\(A\)</span> amplituda, <span class="math notranslate nohighlight">\(\omega\)</span> krožna frekvenca (enota: rad/s) in <span class="math notranslate nohighlight">\(\varphi\)</span> fazni kot (enota: rad) glede na izhodišče časa. Pri tem je <span class="math notranslate nohighlight">\(\omega=2\pi\,f\)</span> in je <span class="math notranslate nohighlight">\(f\)</span> (sekundna) frekvenca (enota: 1/s = Hz). Pozitivna faza pomakne harmonsko funkcijo proti levi, negativna faza pa proti desni. Perioda <span class="math notranslate nohighlight">\(T\)</span> je definirana s krožno frekvenco: <span class="math notranslate nohighlight">\(T=2\pi/\omega\)</span>.</p>
 <p>Primer harmonskega signala z amplitudo <span class="math notranslate nohighlight">\(A=1\)</span>, krožno frekvenco <span class="math notranslate nohighlight">\(\omega=1\)</span> rad/s in pozitivno fazo <span class="math notranslate nohighlight">\(\varphi=1\)</span> rad je prikazan spodaj.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 
 <span class="n">T</span> <span class="o">=</span> <span class="mi">6</span>
@@ -491,7 +505,7 @@ x(t) = A\,\sin(\omega\,t+\varphi),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e10c20ac7bcc6dbf0c158278677040586925b1f6a91fdfecd62358921944c59e.png" src="../_images/e10c20ac7bcc6dbf0c158278677040586925b1f6a91fdfecd62358921944c59e.png" />
+<img alt="../_images/238b5b67c2b8d1b2c6b88d0d0f39b153b0ea9f23740c71bf3ae7bd58a111777d.png" src="../_images/238b5b67c2b8d1b2c6b88d0d0f39b153b0ea9f23740c71bf3ae7bd58a111777d.png" />
 </div>
 </div>
 <p>Nadaljujmo z vsoto harmonskih signalov, pri čemer se bomo omejili na kompleksno periodične signale (glejte <a class="reference internal" href="01%20-%20Uvod.html#sec-klasifikacija-pod"><span class="std std-ref">Klasifikacija signalov</span></a>), kjer je razmerje med frekvencami posameznih harmonikov racionalno število. Frekvence harmonskih signalov bomo dodatno omejili: če je osnovna krožna frekvenca <span class="math notranslate nohighlight">\(\omega_p=2\pi/T_p\)</span> definirana z osnovno periodo <span class="math notranslate nohighlight">\(T_p\)</span>, potem morajo imeti vsi ostali harmoniki krožno frekvenco, ki je večkratnik osnovne krožne frekvence.</p>
@@ -508,14 +522,14 @@ b_n\sin\left(\frac{2\pi\,n\,t}{T_p} \right)
 <p>kjer je <span class="math notranslate nohighlight">\(a_0\)</span> konstanta, <span class="math notranslate nohighlight">\(a_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te kosinusne komponente in <span class="math notranslate nohighlight">\(b_n\)</span> amplituda <span class="math notranslate nohighlight">\(n\)</span>-te sinusne komponente.</p>
 <p>Spodaj si poglejmo primer harmonskega signala, ki ustreza omejitvam kompleksno periodičnega signala.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 
 <span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
@@ -564,7 +578,7 @@ b_n\sin\left(\frac{2\pi\,n\,t}{T_p} \right)
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/49197a6c63c26dc07e20f6f54a4e58129cb58b7f9970d8c6ff15d6f190b3920c.png" src="../_images/49197a6c63c26dc07e20f6f54a4e58129cb58b7f9970d8c6ff15d6f190b3920c.png" />
+<img alt="../_images/cfe7bb207914cf26a4ab5f02552e940968414b149fdb3f519291343a6efab330.png" src="../_images/cfe7bb207914cf26a4ab5f02552e940968414b149fdb3f519291343a6efab330.png" />
 </div>
 </div>
 <p>Periodični signal, ki smo si ga pogledali zgoraj, je ključnega pomena za razumevanje Fourierovih vrst (in pozneje Fourierove transformacije, glejte <a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html#sec-fourierova-int-transf"><span class="std std-ref">3. Fourierova integralska transformacija</span></a>). V nadaljevanju bomo periodični signal najprej preoblikovali v kompleksno obliko, saj nam bo to zelo poenostavilo matematični zapis in fizikalno jasnost.</p>
@@ -659,14 +673,14 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p}.
 </div>
 <p>Oba zapisa zgoraj seveda vodita v isti rezultat (glejte primer spodaj).</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 
 <span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
@@ -728,7 +742,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/adfde8441fa62c9799f6634cf0d92b8fe7a5f1bb9aec0689aa63ab6c8e5a26e5.png" src="../_images/adfde8441fa62c9799f6634cf0d92b8fe7a5f1bb9aec0689aa63ab6c8e5a26e5.png" />
+<img alt="../_images/1da4fbf8dd5746aa383dac182419067c58de5fca83d5a842b814dd05bca207b8.png" src="../_images/1da4fbf8dd5746aa383dac182419067c58de5fca83d5a842b814dd05bca207b8.png" />
 </div>
 </div>
 </section>
@@ -942,14 +956,14 @@ x(-t)=-x(t),
 <h3>Kompleksno periodični signal<a class="headerlink" href="#kompleksno-periodicni-signal" title="Link to this heading">#</a></h3>
 <p>Najprej si bomo pogledali kompleksno periodični signal, ki smo ga spoznali in definirali že zgoraj. Signal je definiran z <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">10</span></code> harmonskimi komponentami <span class="math notranslate nohighlight">\(c_n\)</span>, ki so v spodnjem primeru znane; tukaj bomo pokazali, da nam uporaba zgoraj definiranih enačb omogoča njihovo točno identifikacijo.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 
 <span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
@@ -991,7 +1005,7 @@ x(-t)=-x(t),
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3206394ec24a9361f11a73828f34a1ef1a94713843eafe1fdc4e20276077b1fd.png" src="../_images/3206394ec24a9361f11a73828f34a1ef1a94713843eafe1fdc4e20276077b1fd.png" />
+<img alt="../_images/cd6c8830df4c69e86ed29eaeaa44dd61cd3be738f567f2998e3bd2ef16df5082.png" src="../_images/cd6c8830df4c69e86ed29eaeaa44dd61cd3be738f567f2998e3bd2ef16df5082.png" />
 </div>
 </div>
 <p>V primeru zgoraj je periodični signal generiran na podlagi vektorja Fourierovih koeficientov:</p>
@@ -1039,12 +1053,8 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 <p>Pri tem smo izbrali (<code class="docutils literal notranslate"><span class="pre">sel</span></code>) samo eno periodo v časovni vrsti. Tukaj velja poudariti, da moramo integrirati po celotni periodi. Če je napaka numerične integracije dovolj majhna (kar velja za primer zgoraj), je rezultat <strong>točen</strong> do nivoja natančnosti zapisa v računalnik.</p>
 <p>Vredno je opozoriti, da moramo biti pri implementaciji izpeljanih izrazov zelo natančni. Hitro lahko dobimo <em>zelo dober</em> rezultat; vendar dokler ni <em>točen</em> do nivoja natančnosti zapisa v računalnik, je nekje v implementaciji napaka.</p>
-<p>Napako bi lahko naredili, če naša diskretizacija ne bi vključevala točke pri 0 s in točke pri <span class="math notranslate nohighlight">\(T_p\)</span>. Tako napako lahko preizkusite tako, da greste par vrstic navzgor v definicijo slike in vrstico:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">301</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>spremenite v (301 v 300):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mf">2.5</span><span class="o">*</span><span class="n">Tp</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span>
+<p>Napako bi lahko naredili, če naša diskretizacija ne bi vključevala točke pri 0 s in točke pri <span class="math notranslate nohighlight">\(T_p\)</span>. Tako napako lahko preizkusite tako, da greste par vrstic navzgor naredite tole spremembo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">&lt;</span><span class="n">Tp</span><span class="p">)</span>  <span class="c1"># napačno: t &lt; Tp; pravilno je: t &lt;= Tp</span>
 </pre></div>
 </div>
 </section>
@@ -1052,14 +1062,14 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 <h3>Odvod/integral kompleksno periodičnega signala<a class="headerlink" href="#odvod-integral-kompleksno-periodicnega-signala" title="Link to this heading">#</a></h3>
 <p>Nadaljujmo z zgledom in poglejmo odvod po času. V kodi spodaj pokažemo, da je Fourierova vrsta odvoda po času res enaka Fourierovi vrsti, kjer smo vsakega od členov Fourierove vrste osnovnih podatkov preprosto odvajali.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 
 <span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1100,15 +1110,15 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1f74a5535d05ef72f8aea332dcf11381c6bc336435a4c374a95befad4c0fea28.png" src="../_images/1f74a5535d05ef72f8aea332dcf11381c6bc336435a4c374a95befad4c0fea28.png" />
+<img alt="../_images/b8c393053f0c7d419c8cc6d73c04cce6a5848678fd1e5ef74de654540d8e5054.png" src="../_images/b8c393053f0c7d419c8cc6d73c04cce6a5848678fd1e5ef74de654540d8e5054.png" />
 </div>
 </div>
 <p>Zgornji primer lahko nadaljujemo in izvorni pomik <span class="math notranslate nohighlight">\(x(t)\)</span> identificiramo iz Fourierovih vrst za hitrost <span class="math notranslate nohighlight">\(\dot x(t)\)</span> (glejte kodo in sliko spodaj). Pri integriranju imamo težavo v primeru Fourierovega koeficienta s frekvenco 0 (statična komponenta); v kodi spodaj to frekvenco enostavno preskočimo, saj je ne moremo določiti. Podobno težavo bi imeli v času; če integriramo nedoločeni integral, potem pri integriranju potrebujemo začetno vrednost. Na sliki spodaj se zato med obema pristopoma pokaže odstopanje v velikosti statične komponente.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x_d_t je hitrost, a_0 pa statična komponenta, prenešena iz primera zgoraj</span>
@@ -1141,7 +1151,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ad7bee999ffb9b21fe010e18587b3f3a07d4a5b634fdaddf9d3324c69db49cd0.png" src="../_images/ad7bee999ffb9b21fe010e18587b3f3a07d4a5b634fdaddf9d3324c69db49cd0.png" />
+<img alt="../_images/faf9752f9c7d4d11038bc8c1516aa8083b9144ff45227eeaf42da3558f9d68a6.png" src="../_images/faf9752f9c7d4d11038bc8c1516aa8083b9144ff45227eeaf42da3558f9d68a6.png" />
 </div>
 </div>
 </section>
@@ -1149,14 +1159,14 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 <h3>Periodični signal<a class="headerlink" href="#periodicni-signal" title="Link to this heading">#</a></h3>
 <p>Tukaj si bomo pogledali periodični signal, ki pa s končnim številom harmonskih komponent ni kompleksno periodičen. Primer takšne funkcije je naraščajoča žaga, prikazana na spodnji sliki.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 
 <span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1179,19 +1189,19 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8071e2318501df2b7d4d50fc44394c889912221e6cdd30adb6f246e1b14d36c2.png" src="../_images/8071e2318501df2b7d4d50fc44394c889912221e6cdd30adb6f246e1b14d36c2.png" />
+<img alt="../_images/a2c4703149c0fe303c6a900fd50bf9d655af7112a77fbcaf58b6ca4eb8060727.png" src="../_images/a2c4703149c0fe303c6a900fd50bf9d655af7112a77fbcaf58b6ca4eb8060727.png" />
 </div>
 </div>
 <p>Kljub temu da signal ni kompleksno periodičen, teorija Fourierovih vrst pa je bila izpeljana ob tej predpostavki, poskusimo identificirati harmonske komponente. Najprej to naredimo na diskretni časovni vrsti. Osredotočimo se na del podatkov, ki se ponavlja:</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 
 <span class="n">Tp</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1214,7 +1224,7 @@ c_n = \frac{1}{T_p}\,\int_0^{T_p} x(t)\,\mathrm{e}^{-\mathrm{i}\,2\pi\,n\,t/T_p}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/fdef47c5c1d65ce591710bb33f53a4ff797054de2974c5e6461d0354c0a2fdc4.png" src="../_images/fdef47c5c1d65ce591710bb33f53a4ff797054de2974c5e6461d0354c0a2fdc4.png" />
+<img alt="../_images/8bba4772724cbc33c15be62fcad823a5140dbf6e8b74a6d649e005e4ceffe15e.png" src="../_images/8bba4772724cbc33c15be62fcad823a5140dbf6e8b74a6d649e005e4ceffe15e.png" />
 </div>
 </div>
 <p>Identificiramo Fourierove koeficiente:</p>
@@ -1263,10 +1273,10 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -1284,7 +1294,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1e4c9a7d37b77dfd896da1707b2889aedf7b2a6e0eab5a979b312dcff1fddb91.png" src="../_images/1e4c9a7d37b77dfd896da1707b2889aedf7b2a6e0eab5a979b312dcff1fddb91.png" />
+<img alt="../_images/eab9d14dbf53d0a8ff9a167637d0a13f93e4e667925bf2c232a51718358832dd.png" src="../_images/eab9d14dbf53d0a8ff9a167637d0a13f93e4e667925bf2c232a51718358832dd.png" />
 </div>
 </div>
 <p>Opazimo, da identificirani kompleksno periodični signal relativno dobro opiše izvorni periodični signal. Če bi število harmonskih (<span class="math notranslate nohighlight">\(N\)</span>) komponent povečali, bi se identificirana funkcija izvornim podatkom bolje prilegala, vendar pa bi na mestu nezveznosti še vedno imeli odstopanje. Odstopanje na mestu nezveznosti je znano pod terminom <strong>Gibbsov</strong> fenomen. Resnici na ljubo je večina inženirskih aplikacij zveznih in zato ponavadi Gibbsov fenomen v praksi nima večjega pomena.</p>
@@ -1294,7 +1304,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 <p>Zgoraj smo Fourierovo vrsto izračunali na diskretnih podatkih, zato smo omejeni, koliko harmonskih komponent lahko izračunamo (<code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">&lt;</span> <span class="pre">len(t)/2</span></code>; zakaj je <span class="math notranslate nohighlight">\(N\)</span> vezan na dolžino časovne vrste, bomo spoznali pozneje). Tukaj si bomo pogledali obravnavo zveznih sistemov in Fourierovo vrsto določili s pomočjo strojnega izpeljevanja. Kot primer periodičnega signala si bomo izbrali naraščajočo žago, ki bo proporcionalna s časom <code class="docutils literal notranslate"><span class="pre">t</span></code>, perioda bo <code class="docutils literal notranslate"><span class="pre">Tp</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 
 <span class="n">t</span><span class="p">,</span> <span class="n">T_p</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, T_p&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1340,13 +1350,13 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 <p>Slika pri <code class="docutils literal notranslate"><span class="pre">T_p</span> <span class="pre">=</span> <span class="pre">2</span></code> in različnem številu členov v vrsti:</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 
 <span class="n">t</span><span class="p">,</span> <span class="n">T_p</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, T_p&#39;</span><span class="p">)</span>
@@ -1363,7 +1373,7 @@ c_n\,\mathrm{e}^{\mathrm{i}\,2\pi\,n\,t/T_p},\qquad c_n=c_{-n}^*.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d46486eacf419d028225aec30dd3eee939f840aab363592791747d0fa9f54558.png" src="../_images/d46486eacf419d028225aec30dd3eee939f840aab363592791747d0fa9f54558.png" />
+<img alt="../_images/c8a1d5f3a8424768c64768e6a8e69035893aa9a107940e834fcb7bb1ccf4ece5.png" src="../_images/c8a1d5f3a8424768c64768e6a8e69035893aa9a107940e834fcb7bb1ccf4ece5.png" />
 </div>
 </div>
 </section>
@@ -1402,13 +1412,13 @@ u(t)=
 \end{split}\]</div>
 <p>Enotski impulz tako definiramo s pomočjo dveh funkcij enotskega koraka:</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">ε</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;t, \varepsilon&#39;</span><span class="p">)</span>
 <span class="n">unit_step</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">ε</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unit_step</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">ε</span><span class="p">,</span> <span class="o">+</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">line_style</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> 
@@ -1423,7 +1433,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3c4094abbd59d63b5c4f922a1781487cb855f40410a3725762d1c921d0bf31d8.png" src="../_images/3c4094abbd59d63b5c4f922a1781487cb855f40410a3725762d1c921d0bf31d8.png" />
+<img alt="../_images/319a38f414da88d01ab71c4b86d9c6e6c4eab400b193dead164db29be4fe544e.png" src="../_images/319a38f414da88d01ab71c4b86d9c6e6c4eab400b193dead164db29be4fe544e.png" />
 </div>
 </div>
 <p>Do enotskega impulza pridemo z uteženim seštevanjem:</p>
@@ -1434,7 +1444,7 @@ u(t)=
 <p>Poglejmo si, kako koračno funkcijo pretvorimo v enotski impulz:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">ε</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;t, \varepsilon&#39;</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ε</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
 <span class="n">unit_step</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Heaviside</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">ε</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Tukaj moramo pravilno normirati (H0), glej help!</span>
@@ -1448,10 +1458,10 @@ u(t)=
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">δ_ε</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span><span class="mf">.5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">line_style</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> 
@@ -1461,7 +1471,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8283ede67a94f19742b37b7c626bce9c0274d382a87eb55def3c85590ecdfbf7.png" src="../_images/8283ede67a94f19742b37b7c626bce9c0274d382a87eb55def3c85590ecdfbf7.png" />
+<img alt="../_images/d8938325a4d7b40b045ef44c0c90760f2b031e556918850ffc00a649c8f23eba.png" src="../_images/d8938325a4d7b40b045ef44c0c90760f2b031e556918850ffc00a649c8f23eba.png" />
 </div>
 </div>
 <p>in nato integriramo (rezultat je pričakovano enak 1; spremenite <span class="math notranslate nohighlight">\(\varepsilon\)</span> v <code class="docutils literal notranslate"><span class="pre">podatki</span></code> zgoraj!):</p>
@@ -1497,13 +1507,13 @@ u(t)=
 <h3>Padajoča žaga in njen odvod<a class="headerlink" href="#padajoca-zaga-in-njen-odvod" title="Link to this heading">#</a></h3>
 <p>Predpostavimo periodični signal oblike padajoče žage, kot je prikazana spodaj:</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 
 <span class="n">t</span><span class="p">,</span> <span class="n">T_p</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, T_p&#39;</span><span class="p">)</span>
@@ -1522,7 +1532,7 @@ u(t)=
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b73920eb06ef952d4086c700b29b4363e23d8e123d0f807e4861dc90ad1c48d3.png" src="../_images/b73920eb06ef952d4086c700b29b4363e23d8e123d0f807e4861dc90ad1c48d3.png" />
+<img alt="../_images/75b0b40806f9a4db5e002652899a749b7cee6caae0354efc05fd9c7beed5eaac.png" src="../_images/75b0b40806f9a4db5e002652899a749b7cee6caae0354efc05fd9c7beed5eaac.png" />
 </div>
 </div>
 <p>Fourierova vrsta padajočega žagastega signala je definirana kot:</p>
@@ -1533,7 +1543,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 <p>Ali s pomočjo strojnega izpeljevanja:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 
 <span class="n">t</span><span class="p">,</span> <span class="n">T_p</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, T_p&#39;</span><span class="p">)</span>
@@ -1570,13 +1580,13 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 </div>
 <p>To ugotovitev bomo potrebovali, ko bomo obravnavali vzorčenje signalov.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 
 <span class="n">t</span><span class="p">,</span> <span class="n">T_p</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, T_p&#39;</span><span class="p">)</span>
@@ -1594,7 +1604,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/fa7cb2fd468903a777122342279d50a350fe6f1655fc33c718e57706b63eac16.png" src="../_images/fa7cb2fd468903a777122342279d50a350fe6f1655fc33c718e57706b63eac16.png" />
+<img alt="../_images/569899e105863abd3e05334eb3c12dcf4bea2680f6efc8b4b87ff65b3602a61a.png" src="../_images/569899e105863abd3e05334eb3c12dcf4bea2680f6efc8b4b87ff65b3602a61a.png" />
 </div>
 </div>
 </section>
@@ -1603,14 +1613,14 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 <h2>Amplitudni in fazni spekter<a class="headerlink" href="#amplitudni-in-fazni-spekter" title="Link to this heading">#</a></h2>
 <p>Fourierovi koeficienti <span class="math notranslate nohighlight">\(c_n\)</span>, ki jih obravnavamo pri Fourierovih vrstah, predstavljajo amplitudno in fazno informacijo o določeni harmonski komponenti. Poglejmo si primer periodičnega pravokotnega vala na sliki spodaj:</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># signal</span>
 <span class="n">T_p</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1657,7 +1667,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7f3f0a9def110eb2735476b2a021f07d2f41d81750f7c0e2f7083608b5b8e3aa.png" src="../_images/7f3f0a9def110eb2735476b2a021f07d2f41d81750f7c0e2f7083608b5b8e3aa.png" />
+<img alt="../_images/9f2389bab1df60f3e21015e5a3d52c64513787b65e1e3822508e663d04759ad4.png" src="../_images/9f2389bab1df60f3e21015e5a3d52c64513787b65e1e3822508e663d04759ad4.png" />
 </div>
 </div>
 <p>Pri pripravi podatkov zgoraj smo izračunali Fourierove koeficiente <span class="math notranslate nohighlight">\(c\)</span>:</p>
@@ -1685,14 +1695,14 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 </div>
 <p>Fourierove koeficiente lahko prikažemo v grafični obliki. Če prikažemo amplitudo kompleksnega števila <span class="math notranslate nohighlight">\(|c|\)</span>, potem govorimo o amplitudnem spektru: za določeni večkratnik osnovne frekvence <span class="math notranslate nohighlight">\(1/T_p\)</span> prikažemo vsebnost amplitude harmonske komponente. Podobno govorimo o faznem spektru, če prikažemo <span class="math notranslate nohighlight">\(\angle c_n\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -1717,7 +1727,7 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/96010e7db22b1dc3570e04701649fe7511ea40d5582b16af3a0e8d2b50fb25c4.png" src="../_images/96010e7db22b1dc3570e04701649fe7511ea40d5582b16af3a0e8d2b50fb25c4.png" />
+<img alt="../_images/3e5bd4ac73893c44c15abb454e13acc0e9f34628bcf22fb957ab51546c7dd707.png" src="../_images/3e5bd4ac73893c44c15abb454e13acc0e9f34628bcf22fb957ab51546c7dd707.png" />
 </div>
 </div>
 </section>
@@ -1816,14 +1826,14 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 <h3>Močnostni spekter<a class="headerlink" href="#mocnostni-spekter" title="Link to this heading">#</a></h3>
 <p>Parsevalov teorem povprečno moč definira kot vsoto kvadratov Fourierovih koeficientov oz. frekvenčnih komponent. Prikaz kvadratov posameznih frekvenčnih komponent imenujemo močnostni spekter. Pri tem je treba poudariti, da močnostni spekter izgubi informacijo o fazi in je vedno definiran z realnimi vrednostmi.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># signal</span>
 <span class="n">T_p</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1852,7 +1862,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5321bd2ed4511908f6070af168e8d214e10eb105d87e9dc4ecb7f76feb32f90a.png" src="../_images/5321bd2ed4511908f6070af168e8d214e10eb105d87e9dc4ecb7f76feb32f90a.png" />
+<img alt="../_images/caf2a65771afa405cd6f69735af4e7b22de8eaef4573b07c15568764b750d6f4.png" src="../_images/caf2a65771afa405cd6f69735af4e7b22de8eaef4573b07c15568764b750d6f4.png" />
 </div>
 </div>
 </section>
@@ -1914,8 +1924,7 @@ T_p,&amp;\textrm{če}\quad m=n,\\
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2003,8 +2012,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

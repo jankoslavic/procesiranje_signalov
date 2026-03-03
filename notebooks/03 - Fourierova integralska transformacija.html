@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="2. Fourierove vrste" href="02%20-%20Fourierove%20vrste.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
-    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Procesiranje signalov s Pythonom - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Išči</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -189,14 +200,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -340,16 +346,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -486,13 +500,13 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 <p>Opazimo, da je pri frekvenci 0 Hz amplituda <span class="math notranslate nohighlight">\(X(0)=2/\eta\)</span> in pri frekvenci <span class="math notranslate nohighlight">\(f_{1/2}=|\eta/(2\pi)|\)</span> pade na polovico začetne amplitude. Parameter <span class="math notranslate nohighlight">\(\eta\)</span> definira časovni raztros; večja kot je vrednost <span class="math notranslate nohighlight">\(\eta\)</span>, hitreje bo funkcija konvergirala k vrednosti nič v časovni domeni in počasneje v frekvenčni domeni. Podobno kot pri delta funkciji torej ugotovimo, da majhen časovni raztros rezultira v velik frekvenčni raztros in obratno.</p>
 <p>Poglejmo si sedaj zgled v času in frekvenci:</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
@@ -510,19 +524,19 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/881bf6ccfe45d32d1a86149d85c90d8af7ace315c4c6ca7a919dbe47232fe5b7.png" src="../_images/881bf6ccfe45d32d1a86149d85c90d8af7ace315c4c6ca7a919dbe47232fe5b7.png" />
-<img alt="../_images/91620cac5d2eada6bcc6b2e10ed1ea0beb34f1fe2a65e659652f229d698cdc69.png" src="../_images/91620cac5d2eada6bcc6b2e10ed1ea0beb34f1fe2a65e659652f229d698cdc69.png" />
+<img alt="../_images/509c03167ff4ad3e6458808399197d523fcf27b794e4b3abe3ef70489aa3b10c.png" src="../_images/509c03167ff4ad3e6458808399197d523fcf27b794e4b3abe3ef70489aa3b10c.png" />
+<img alt="../_images/fb35cb1348414c99cde40196b1bb93c830ed394ac2e45241ea78c71bc2f0fcdd.png" src="../_images/fb35cb1348414c99cde40196b1bb93c830ed394ac2e45241ea78c71bc2f0fcdd.png" />
 </div>
 </div>
 <p>Pri primeru zgoraj opazimo, da simetrična eksponentna funkcija rezultira v Fourierovo transformacijo, ki ima samo realno komponento različno od nič. To sicer velja za vse <strong>sode funkcije</strong>; za <strong>lihe funkcije</strong> bi veljalo obratno: neničelna bi bila imaginarna komponenta (slika spodaj). Podobno smo sicer ugotovili že pri Fourierovih vrstah sodih in lihih funkcij (za več glejte <a class="reference internal" href="02%20-%20Fourierove%20vrste.html#sec-fv-lih-sod"><span class="std std-ref">Fourierove vrste lihih in sodih funkcij</span></a>).</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
@@ -541,19 +555,19 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/bddd0ab6f1fc0fb9f99ca1d75470fce3f7cc68e43d70c559e33be8e091bc4acd.png" src="../_images/bddd0ab6f1fc0fb9f99ca1d75470fce3f7cc68e43d70c559e33be8e091bc4acd.png" />
-<img alt="../_images/79d8cb20ad85f4ba6bb5acb1ea871065f158da725711d28a518b2023a5a3e8c0.png" src="../_images/79d8cb20ad85f4ba6bb5acb1ea871065f158da725711d28a518b2023a5a3e8c0.png" />
+<img alt="../_images/c045da81fa240cd0778c87559c0e88db71d2077ffd69c9108cd7afd1bf2052c3.png" src="../_images/c045da81fa240cd0778c87559c0e88db71d2077ffd69c9108cd7afd1bf2052c3.png" />
+<img alt="../_images/58a0d4975195cee970ac1eb13fd607f42252e7be9756a133c00d5fc8e0b61ae4.png" src="../_images/58a0d4975195cee970ac1eb13fd607f42252e7be9756a133c00d5fc8e0b61ae4.png" />
 </div>
 </div>
 <p>Sicer pa velja poudariti, da v splošnem realni signali <span class="math notranslate nohighlight">\(x(t)\)</span> po Fourierovi transformaciji postanejo kompleksni, njihova amplituda je soda, faza pa liha funkcija (slika spodaj; <span class="math notranslate nohighlight">\(\theta(t)\)</span> označuje enotsko funkcijo stopnice). Časovni signali so v splošnem lahko kompleksne oblike in takrat v frekvenčni domeni v splošnem ne opazimo sodosti/lihosti amplitude ali faze (poskusite spremeniti kodo spodaj).</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, d&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">η</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">eta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">η</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">d</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
@@ -596,9 +610,9 @@ x(t)=\mathrm{e}^{-\eta\,|t|},\qquad\textrm{kjer je:}\qquad\eta&gt;0.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3702dd00a68dedc640c435bcabec433176cc52925c3206c2cb466e9b89ec8ba5.png" src="../_images/3702dd00a68dedc640c435bcabec433176cc52925c3206c2cb466e9b89ec8ba5.png" />
-<img alt="../_images/0548dee892125f69a2a61b629d6905e046b6f9771969a6a14788269595c55a18.png" src="../_images/0548dee892125f69a2a61b629d6905e046b6f9771969a6a14788269595c55a18.png" />
-<img alt="../_images/68c14c54770cfd7dd279d712009e7e7d0aa611051b441494e23f48db0c1a6591.png" src="../_images/68c14c54770cfd7dd279d712009e7e7d0aa611051b441494e23f48db0c1a6591.png" />
+<img alt="../_images/f5d3cf609557624efadcd23313c2414a94b459ef407c0c994cc41a86b2d32e95.png" src="../_images/f5d3cf609557624efadcd23313c2414a94b459ef407c0c994cc41a86b2d32e95.png" />
+<img alt="../_images/99e3d8f58d193d5f2caa8aec56d13289fbaca1628d32b4399160b1105d3c6423.png" src="../_images/99e3d8f58d193d5f2caa8aec56d13289fbaca1628d32b4399160b1105d3c6423.png" />
+<img alt="../_images/a46acbc9a78886296529453cb8767f4280b2319a9174216d43e776734622a202.png" src="../_images/a46acbc9a78886296529453cb8767f4280b2319a9174216d43e776734622a202.png" />
 </div>
 </div>
 </section>
@@ -619,7 +633,7 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 <p>in potem nadaljujemo z izračunom Fourierove transformacije:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">A</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;A, t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
@@ -644,14 +658,14 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 \]</div>
 <p>kar prikažemo na sliki spodaj.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">p</span> <span class="o">=</span> <span class="mi">10</span>
@@ -693,7 +707,7 @@ x(t) = \frac{A}{2\,\textrm{i}}\,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ef9d2d09443000f77c6a0f5bb781d446533517f3a9756497c0e045de6a1eb71a.png" src="../_images/ef9d2d09443000f77c6a0f5bb781d446533517f3a9756497c0e045de6a1eb71a.png" />
+<img alt="../_images/784d9132a96aa1ee31773f3c14c6c98646255ce94f23cab8373abe5e22c8c1da.png" src="../_images/784d9132a96aa1ee31773f3c14c6c98646255ce94f23cab8373abe5e22c8c1da.png" />
 </div>
 </div>
 </section>
@@ -721,13 +735,13 @@ X(f)=2\,a\,b\,\frac{\sin\left(2\pi\,b\,f \right)}{2\pi\,b\,f }.
 \]</div>
 <p>Zgornji izraz jasno kaže: ko <span class="math notranslate nohighlight">\(f\)</span> limitira proti 0, <span class="math notranslate nohighlight">\(X(f)\)</span> limitira k <span class="math notranslate nohighlight">\(2\,a\,b\)</span>; sicer pa v frekvenčni domeni oscilira s frekvenco <span class="math notranslate nohighlight">\(1/b\)</span>. Nekatere karakteristike vidimo iz slike spodaj: ponovno opazimo, da širši kot so podatki v času, ožji so v frekvenci.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, b, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
@@ -757,8 +771,8 @@ X(f)=2\,a\,b\,\frac{\sin\left(2\pi\,b\,f \right)}{2\pi\,b\,f }.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c7af1b5c927c288c595d0c9efd15a95458cde54c957e85e8104293506768ac70.png" src="../_images/c7af1b5c927c288c595d0c9efd15a95458cde54c957e85e8104293506768ac70.png" />
-<img alt="../_images/0ecf5593aa4923b0407b2ed9a5df7ede76cc0d78caafa3e2e7b86a73a0bbe468.png" src="../_images/0ecf5593aa4923b0407b2ed9a5df7ede76cc0d78caafa3e2e7b86a73a0bbe468.png" />
+<img alt="../_images/77be50c9ca4a5f78d8bd463266473dc451922898c7910c1a8fa955e61890e732.png" src="../_images/77be50c9ca4a5f78d8bd463266473dc451922898c7910c1a8fa955e61890e732.png" />
+<img alt="../_images/aabe6936e439d506455e6f9caa92d05c5d5e018825d3e406ad69f5fd95af31c9.png" src="../_images/aabe6936e439d506455e6f9caa92d05c5d5e018825d3e406ad69f5fd95af31c9.png" />
 </div>
 </div>
 </section>
@@ -781,7 +795,7 @@ x_2(t) =
 <p>Fourierovo transformacijo za oba dušena odziva izpeljemo (in nato prikažemo):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">δ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">f_0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;f_0&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -803,13 +817,13 @@ x_2(t) =
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">δ</span><span class="p">,</span> <span class="n">f_0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">delta, f_0&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
@@ -847,9 +861,9 @@ x_2(t) =
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/cd5fcd624f35d01d6d522f847b2a63034a6987e3855a0589173d48e29703ce96.png" src="../_images/cd5fcd624f35d01d6d522f847b2a63034a6987e3855a0589173d48e29703ce96.png" />
-<img alt="../_images/dc2fd9cefd29e0c78e8ad143686943709abfee7926c96bddca7150edc36cff51.png" src="../_images/dc2fd9cefd29e0c78e8ad143686943709abfee7926c96bddca7150edc36cff51.png" />
-<img alt="../_images/7201a44998e846d3fa26554fb0058a2ee4e8341950dad12eb354ba922b55ede4.png" src="../_images/7201a44998e846d3fa26554fb0058a2ee4e8341950dad12eb354ba922b55ede4.png" />
+<img alt="../_images/cb026315cbf7773923cd692f6d73cd140c563184faae9dad2154426602ea3099.png" src="../_images/cb026315cbf7773923cd692f6d73cd140c563184faae9dad2154426602ea3099.png" />
+<img alt="../_images/575618b0e5a0359d5fa9e6dc79ba0402a3452ae2fbd12d51cd5da460bd3033eb.png" src="../_images/575618b0e5a0359d5fa9e6dc79ba0402a3452ae2fbd12d51cd5da460bd3033eb.png" />
+<img alt="../_images/abb5ff5d41b039f4c0394625e7d7ff7188a3512b8b198927fb7ae4ae9c60113d.png" src="../_images/abb5ff5d41b039f4c0394625e7d7ff7188a3512b8b198927fb7ae4ae9c60113d.png" />
 </div>
 </div>
 </section>
@@ -867,7 +881,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -884,13 +898,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 <p>Rezultat nato še grafično prikažemo (ker je Gaussova funkcija soda, je faza v frekvenčni domeni enaka 0):</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -914,8 +928,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/33319dfc79e93bdc4d16cd2df2198b7b09f57876a6a1d3e87827b62abee9c2e6.png" src="../_images/33319dfc79e93bdc4d16cd2df2198b7b09f57876a6a1d3e87827b62abee9c2e6.png" />
-<img alt="../_images/28dddab839bd6121089e3e98357979a51bd676e5e066f1e54186f32e6e37fccb.png" src="../_images/28dddab839bd6121089e3e98357979a51bd676e5e066f1e54186f32e6e37fccb.png" />
+<img alt="../_images/63c939b161a8de99c0c5f1d2b60b35dcee5dd121eaf5a616ed4254580d1483b0.png" src="../_images/63c939b161a8de99c0c5f1d2b60b35dcee5dd121eaf5a616ed4254580d1483b0.png" />
+<img alt="../_images/be7adefb4676a76a9dea2ddf70e64b67f38b0ab73d691a5359d867cf0866c6d2.png" src="../_images/be7adefb4676a76a9dea2ddf70e64b67f38b0ab73d691a5359d867cf0866c6d2.png" />
 </div>
 </div>
 </section>
@@ -935,7 +949,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Še izpeljava:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a, b&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -967,13 +981,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 <p>Spodaj si poglejmo konkreten primer.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, a, b&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">x_2</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x_1</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">x_1</span>
@@ -1005,8 +1019,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/17e37228728c45141f1a4530580e73e32a0a4958385531866eec80fb089739db.png" src="../_images/17e37228728c45141f1a4530580e73e32a0a4958385531866eec80fb089739db.png" />
-<img alt="../_images/7385a910ae3607fcac47b62cf9970aa30beb5dc9e963ccac428efdb8322832ee.png" src="../_images/7385a910ae3607fcac47b62cf9970aa30beb5dc9e963ccac428efdb8322832ee.png" />
+<img alt="../_images/c820de09c9d76e4189fe58e10ce8278705c1ab81704748f1e7f1a091615fee8a.png" src="../_images/c820de09c9d76e4189fe58e10ce8278705c1ab81704748f1e7f1a091615fee8a.png" />
+<img alt="../_images/b5d1c7b2238540cabc531981e71ac51646c02b4ea8cba51ed1c25f70652f1e06.png" src="../_images/b5d1c7b2238540cabc531981e71ac51646c02b4ea8cba51ed1c25f70652f1e06.png" />
 </div>
 </div>
 </section>
@@ -1023,7 +1037,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Še izpeljava (za pozitivni <span class="math notranslate nohighlight">\(a\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, tau&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -1042,13 +1056,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 <p>Časovno skaliranje npr. postane pomembno takrat, ko isto dogajanje spremljamo z dvema različnima urama.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">x_2</span> <span class="o">=</span> <span class="n">x_1</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
@@ -1080,8 +1094,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/92fd9f54c6cd840632be51f2247f1dd323ca7daa1469391ec27451095f1e87e2.png" src="../_images/92fd9f54c6cd840632be51f2247f1dd323ca7daa1469391ec27451095f1e87e2.png" />
-<img alt="../_images/06df48bca3b534ce2256cb3c7fe8cd12b6d7e4cfc23aa7095e2540ee8242f93f.png" src="../_images/06df48bca3b534ce2256cb3c7fe8cd12b6d7e4cfc23aa7095e2540ee8242f93f.png" />
+<img alt="../_images/6bf3a1c8291e780f21487f66a52116647ccb125ce66c2bad2510edbe011b207b.png" src="../_images/6bf3a1c8291e780f21487f66a52116647ccb125ce66c2bad2510edbe011b207b.png" />
+<img alt="../_images/624cf0f57ecdc0b4f0208a5b1b9a4a2979c9b67ced3594958443d5b2635f039e.png" src="../_images/624cf0f57ecdc0b4f0208a5b1b9a4a2979c9b67ced3594958443d5b2635f039e.png" />
 </div>
 </div>
 <p>Fourierova transformacija časovno skalirane funkcije je enaka ustrezno korigirani neskalirani Fourierovi transformiranki:</p>
@@ -1121,7 +1135,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Še izpeljava:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, tau&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -1152,7 +1166,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Še izpeljava:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">t_0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, t_0, f, tau&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -1172,13 +1186,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Opazimo, da člen <span class="math notranslate nohighlight">\(\mathrm{e}^{-\textrm{i}\,2\pi\,f\,t_0}\)</span> lahko izpostavimo iz integrala.</p>
 <p>Časovni premik postane pomemben, kadar obravnavamo zakasnjene meritve (npr. če eno meritev merimo z zakasnitvijo glede na ostale): glejte primer spodaj.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">t_0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, t_0, f, a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
@@ -1228,10 +1242,10 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b5321026142f23a55c365467b7691eb04fabf7e228982eb0159670800646ef7f.png" src="../_images/b5321026142f23a55c365467b7691eb04fabf7e228982eb0159670800646ef7f.png" />
-<img alt="../_images/13776eaf486a207aa7ed7f44ffb2cbb72a1c21cea599e38b829ac5b04e5491c3.png" src="../_images/13776eaf486a207aa7ed7f44ffb2cbb72a1c21cea599e38b829ac5b04e5491c3.png" />
-<img alt="../_images/063b079719b0c864cffd26c1111294bf879f308321f1196212dc30a5a1920b63.png" src="../_images/063b079719b0c864cffd26c1111294bf879f308321f1196212dc30a5a1920b63.png" />
-<img alt="../_images/9af5942f03769feef992cb0148ffe56d26cb52e97903a9dd834036ea1cd547c1.png" src="../_images/9af5942f03769feef992cb0148ffe56d26cb52e97903a9dd834036ea1cd547c1.png" />
+<img alt="../_images/7cc9fb2eddf5fc2b7414e0171171abbf69bf60080ed3ebff20e372cca90bcdf0.png" src="../_images/7cc9fb2eddf5fc2b7414e0171171abbf69bf60080ed3ebff20e372cca90bcdf0.png" />
+<img alt="../_images/a461eceb38894a9e6bf9a00b959037ce895d2c919a93eb9506937b5e35441dfe.png" src="../_images/a461eceb38894a9e6bf9a00b959037ce895d2c919a93eb9506937b5e35441dfe.png" />
+<img alt="../_images/079ef96c469c69608724f238d91b98642e8276a9d3c976e62a7749e68e38cd2f.png" src="../_images/079ef96c469c69608724f238d91b98642e8276a9d3c976e62a7749e68e38cd2f.png" />
+<img alt="../_images/d2d19e07fd65022404a32b49adf21cd3ecee1cf818ba82db909c501d3bd80e11.png" src="../_images/d2d19e07fd65022404a32b49adf21cd3ecee1cf818ba82db909c501d3bd80e11.png" />
 </div>
 </div>
 </section>
@@ -1253,7 +1267,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Še izpeljava:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, tau&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">f_0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;f_0&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -1272,13 +1286,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 <p>Amplitudna modulacija je v praksi relativno pogosta. Opazimo jo na primer, ko merimo nihanje plošče z laserjem in se nam podlaga laserja trese; v spodnjih slikah je pomik merjene strukture označen z <span class="math notranslate nohighlight">\(x(t)\)</span>, podlaga laserja pa niha s <span class="math notranslate nohighlight">\(\cos(2\pi\,f_0\,t)\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">f_0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;f_0&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
@@ -1318,8 +1332,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8be08c58f6999f7212ca97c4c686cd52d8d7b767094c866e199e10f4bf77fa95.png" src="../_images/8be08c58f6999f7212ca97c4c686cd52d8d7b767094c866e199e10f4bf77fa95.png" />
-<img alt="../_images/e140e62a8c962737ac3f9cf4d3364048028b6ed2d94a986fd5cb913e33fda70f.png" src="../_images/e140e62a8c962737ac3f9cf4d3364048028b6ed2d94a986fd5cb913e33fda70f.png" />
+<img alt="../_images/e16ba6ce00ef893466000ea3574bb088aed55703d8708248d9c69be5ccf921e9.png" src="../_images/e16ba6ce00ef893466000ea3574bb088aed55703d8708248d9c69be5ccf921e9.png" />
+<img alt="../_images/e7428763223b172d0973ab8e73bcab8e8a1990767fb9d8c1986ab275e36b29a2.png" src="../_images/e7428763223b172d0973ab8e73bcab8e8a1990767fb9d8c1986ab275e36b29a2.png" />
 </div>
 </div>
 <p>Mimogrede: <a class="reference external" href="https://en.wikipedia.org/wiki/Amplitude_modulation">amplitudna modulacija</a> (AM) in <a class="reference external" href="https://en.wikipedia.org/wiki/Frequency_modulation">frekvenča modulacija</a> (FM) sta klasična načina prenosa informacij (npr. radijskega signala).
@@ -1339,7 +1353,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Še izpeljava:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
@@ -1414,13 +1428,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Tukaj velja poudariti, da je časovno odvajanje negotova numerična operacija, saj temelji na majhni razliki števil (razlika pa se nato deli z majhnim številom, kar dodatno povečuje negotovost). Odvajanje v frekvenčni domeni taki negotovosti ni izpostavljeno.</p>
 <p>Nadalje poudarimo, da je časovno integriranje nestabilna numerična operacija, saj se napaka posameznega koraka sešteva in zato s časom raste. Integracija v frekvenčni domeni taki nestabilnosti ni izpostavljena; res pa je, da imamo pri frekvenci 0 Hz nedoločen rezultat (deljenje z 0).</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
@@ -1491,11 +1505,11 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ed45ec6b5d8b0ae2767231965d3f56b56d7375a03ab7f77d602a8d8f5647790f.png" src="../_images/ed45ec6b5d8b0ae2767231965d3f56b56d7375a03ab7f77d602a8d8f5647790f.png" />
-<img alt="../_images/0607ac85e72ccdf888131c406bcf95a9764cbe62a36d045b0baaa1675f3ec83e.png" src="../_images/0607ac85e72ccdf888131c406bcf95a9764cbe62a36d045b0baaa1675f3ec83e.png" />
-<img alt="../_images/bd943f91d1124b6d3af23a276192a6f29449c8031dd876387ef6937fec9fd78f.png" src="../_images/bd943f91d1124b6d3af23a276192a6f29449c8031dd876387ef6937fec9fd78f.png" />
-<img alt="../_images/053317685bd7b1f2f8d0d74aa888189bc38ea6289f2b74e948380952303d5a72.png" src="../_images/053317685bd7b1f2f8d0d74aa888189bc38ea6289f2b74e948380952303d5a72.png" />
-<img alt="../_images/d60ed0f293d74c74325226484caf5fe787bec35f21a37a9530173392b3be7277.png" src="../_images/d60ed0f293d74c74325226484caf5fe787bec35f21a37a9530173392b3be7277.png" />
+<img alt="../_images/23310cab0f08a56d7fbc09224b0d5b09ffeaaeeec5aa65ffd9726ee199948b97.png" src="../_images/23310cab0f08a56d7fbc09224b0d5b09ffeaaeeec5aa65ffd9726ee199948b97.png" />
+<img alt="../_images/639f455b9375f677724d51e7a1161ac1150d820d55da0664f785075cb119c227.png" src="../_images/639f455b9375f677724d51e7a1161ac1150d820d55da0664f785075cb119c227.png" />
+<img alt="../_images/82dd600c59f83b3efa88423d3ef406421582d7d00f4f0da80850e721097e61ef.png" src="../_images/82dd600c59f83b3efa88423d3ef406421582d7d00f4f0da80850e721097e61ef.png" />
+<img alt="../_images/5416241398d7c1dc16eae211de9bf8bfd2dc556364c18a28c3231152a54bf021.png" src="../_images/5416241398d7c1dc16eae211de9bf8bfd2dc556364c18a28c3231152a54bf021.png" />
+<img alt="../_images/d68a64d1cb3b8bee496be342bc865ca05aeda25b2c175c8fd3fc60b62b0b899a.png" src="../_images/d68a64d1cb3b8bee496be342bc865ca05aeda25b2c175c8fd3fc60b62b0b899a.png" />
 </div>
 </div>
 </section>
@@ -1517,7 +1531,7 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Zgornjo povezavo izpeljemo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, tau, v&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
@@ -1552,13 +1566,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 <p>Zgoraj je očitno, da lahko integral po <span class="math notranslate nohighlight">\(\tau\)</span> in <span class="math notranslate nohighlight">\(v\)</span> ločimo, ločeni integral pa predstavlja Fourierovo transformiranko <span class="math notranslate nohighlight">\(X(f)\)</span> in <span class="math notranslate nohighlight">\(Y(f)\)</span>.</p>
 <p>Fourierova transformacija konvolucije je mogoče najbolj uporabna lastnost Fourierove transformacije, saj množenje v frekvenčni domeni bistveno pohitri izračun konvolucije dveh funkcij. Lastnost bomo s pridom uporabljali pri diskretni Fourierovi transformaciji, preprost primer spodaj pa pokaže ekvivalentnost rezultata v času napram tistemu v frekvenci.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, τ&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
@@ -1600,8 +1614,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/cc75cbdd7ddf36642bede2a1c87b6d8de3f0dbee86389da18824b25a562ba103.png" src="../_images/cc75cbdd7ddf36642bede2a1c87b6d8de3f0dbee86389da18824b25a562ba103.png" />
-<img alt="../_images/15b17fb4a6a42da287ace36a206a7ce9edc21ac566d9c76d6ff90a6df99a2cf2.png" src="../_images/15b17fb4a6a42da287ace36a206a7ce9edc21ac566d9c76d6ff90a6df99a2cf2.png" />
+<img alt="../_images/8215acee3e483a481f6cca094d4916ccaac2741845563aee26c0eccc2acc1f4e.png" src="../_images/8215acee3e483a481f6cca094d4916ccaac2741845563aee26c0eccc2acc1f4e.png" />
+<img alt="../_images/126b152edcc2119e6a5deaade4e099a5f7087aa0e0a4e2350ebf4cdc03cf174f.png" src="../_images/126b152edcc2119e6a5deaade4e099a5f7087aa0e0a4e2350ebf4cdc03cf174f.png" />
 </div>
 </div>
 </section>
@@ -1628,13 +1642,13 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 \]</div>
 <p>Spodaj si poglejmo še konkreten zgled.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, f_1&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
@@ -1672,8 +1686,8 @@ X(f)=\sqrt{\frac{\pi}{a}}\, \mathrm{e}^{-\pi^{2}\,f^{2}/a}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c01db15936a2818a70a05d245cb89e3f6c85fe024ff14c688eb3a9e7dbde09ed.png" src="../_images/c01db15936a2818a70a05d245cb89e3f6c85fe024ff14c688eb3a9e7dbde09ed.png" />
-<img alt="../_images/33b30bd5fa9cc4550255102918e3f5b6206c75cbe23fb9fd337970f7e4d5227c.png" src="../_images/33b30bd5fa9cc4550255102918e3f5b6206c75cbe23fb9fd337970f7e4d5227c.png" />
+<img alt="../_images/abdf9e5aece7691047610bbbe348896fc4baae99811177fbab824482a9b0fd12.png" src="../_images/abdf9e5aece7691047610bbbe348896fc4baae99811177fbab824482a9b0fd12.png" />
+<img alt="../_images/8f6c597c5fbbb9d305f637df86d4ceb3a798d896c57e92534e899b8376fcfef2.png" src="../_images/8f6c597c5fbbb9d305f637df86d4ceb3a798d896c57e92534e899b8376fcfef2.png" />
 </div>
 </div>
 </section>
@@ -1706,14 +1720,14 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 \]</div>
 <p>kjer smo uporabili zapis, ki razkrije limito, ko gre <span class="math notranslate nohighlight">\(T\to 0\)</span>, gre: <span class="math notranslate nohighlight">\(W(0)=T\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">T</span> <span class="o">=</span> <span class="mf">1.</span>
@@ -1767,19 +1781,19 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d245d882f1e6dc733f474d735bbf67e223bac547dbf4c81e14cac60f38796ba6.png" src="../_images/d245d882f1e6dc733f474d735bbf67e223bac547dbf4c81e14cac60f38796ba6.png" />
-<img alt="../_images/4aad9095a1560fa754fbff1f3ae8244ec51aa743e7e2db791d3b4299f86d0a60.png" src="../_images/4aad9095a1560fa754fbff1f3ae8244ec51aa743e7e2db791d3b4299f86d0a60.png" />
+<img alt="../_images/bc7e3d0f5eba7be8d2224a16e00779ec520f77af40abd6320a9f66b1eb56199a.png" src="../_images/bc7e3d0f5eba7be8d2224a16e00779ec520f77af40abd6320a9f66b1eb56199a.png" />
+<img alt="../_images/9aeae05a723d047bda084d877f45641994fa546d067f58de937ff68945c62a73.png" src="../_images/9aeae05a723d047bda084d877f45641994fa546d067f58de937ff68945c62a73.png" />
 </div>
 </div>
 <p>Za sinusoido frekvence <code class="docutils literal notranslate"><span class="pre">fr</span></code> z amplitudo 1 vemo, da ima v frekvenčni domeni amplitudo 1/2 pri frekvencah <code class="docutils literal notranslate"><span class="pre">-fr</span></code> in <code class="docutils literal notranslate"><span class="pre">fr</span></code>; po drugi strani smo zgoraj definirali frekvenčno funkcijo pravokotnega okna. Kako pravokotno okno popači sinusoido, si lahko ogledamo, tako da konvuliramo njuni frekvenčni transformiranki (primer spodaj).</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
 <span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">τ</span><span class="p">,</span> <span class="n">fr</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, f, τ, fr, T&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
@@ -1823,8 +1837,8 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1a5cabdcd60ddb60430c63428b9023fcd0c0f9573573d4b1b61a2018ce20bd05.png" src="../_images/1a5cabdcd60ddb60430c63428b9023fcd0c0f9573573d4b1b61a2018ce20bd05.png" />
-<img alt="../_images/99fbe3dd7182dec37dce7829b080f715928af5a1893bdc9c878981037e459fc4.png" src="../_images/99fbe3dd7182dec37dce7829b080f715928af5a1893bdc9c878981037e459fc4.png" />
+<img alt="../_images/8243f43f1b25d952c9c867d966c17b5b652e590a51da6a0d94658127b436aaa2.png" src="../_images/8243f43f1b25d952c9c867d966c17b5b652e590a51da6a0d94658127b436aaa2.png" />
+<img alt="../_images/48dd2afb458e2f9bcbe1adc9675db20a6967f0e74d6cc9f783899d5d59aec24d.png" src="../_images/48dd2afb458e2f9bcbe1adc9675db20a6967f0e74d6cc9f783899d5d59aec24d.png" />
 </div>
 </div>
 </section>
@@ -1885,8 +1899,7 @@ W(f)=T\,\frac{\sin\left(\pi\,T\,f \right)}{\pi\,T\,f },
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1965,8 +1978,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
