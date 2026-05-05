@@ -1635,8 +1635,8 @@ x(t) = \frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{1}{n}\sin\left(\frac{2\
 <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="c1"># Zakaj je ta koda napačna?</span>
-<span class="c1"># t, dt = np.linspace(-0.5*Tp,1.5*Tp,201, retstep=True)</span>
-<span class="c1"># x = np.sign(np.sin(2*np.pi*t/Tp))</span>
+<span class="c1"># t, dt = np.linspace(-0.5*T_p,1.5*T_p,201, retstep=True) # pravilno 201 -&gt; 200</span>
+<span class="c1"># x = np.sign(np.sin(2*np.pi*t/T_p))</span>
 
 <span class="c1"># Fourierove vrste</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>

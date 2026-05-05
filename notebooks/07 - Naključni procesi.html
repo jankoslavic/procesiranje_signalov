@@ -685,8 +685,8 @@ Srednja vrednost <span class="math notranslate nohighlight">\(\mu\)</span> in va
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a385ab40ca18a8a6cb1704e13fdd7f5c6d402e3a9405e5a0f1c1552a9ce711e0.png" src="../_images/a385ab40ca18a8a6cb1704e13fdd7f5c6d402e3a9405e5a0f1c1552a9ce711e0.png" />
-<img alt="../_images/3286b483b6f127ad54af5d7dae8ad9a013fc8b09cb79ff9b9964d3e0d1c684bd.png" src="../_images/3286b483b6f127ad54af5d7dae8ad9a013fc8b09cb79ff9b9964d3e0d1c684bd.png" />
+<img alt="../_images/5d85872617793d404d321329fe86db9c9faa40dd761f238f9790d14ec8c21eb6.png" src="../_images/5d85872617793d404d321329fe86db9c9faa40dd761f238f9790d14ec8c21eb6.png" />
+<img alt="../_images/01ed9f57ce3c7b98fccc04635aca17fcf994ae81b93546ff9704c9117d057ab4.png" src="../_images/01ed9f57ce3c7b98fccc04635aca17fcf994ae81b93546ff9704c9117d057ab4.png" />
 </div>
 </div>
 </section>
@@ -1034,15 +1034,16 @@ Integral PSD (Gxx) Welch:  0.9907922407740424
 <p>Ali z uporabo enostranskega amplitudnega spektra:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
-<span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>  <span class="c1"># skaliranje na amplitudo</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">fs</span><span class="o">/</span><span class="n">N</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">df</span>     <span class="c1"># skaliranje na gostoto (frekvenčno os)</span>
 <span class="n">Sxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="n">scale</span>
-<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Sxx</span><span class="p">)</span><span class="o">*</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Sxx</span><span class="p">)</span><span class="o">/</span><span class="n">scale</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(9.012106104865358)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(9.01210610486536)
 </pre></div>
 </div>
 </div>
@@ -1050,15 +1051,16 @@ Integral PSD (Gxx) Welch:  0.9907922407740424
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
-<span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">fs</span><span class="o">/</span><span class="n">N</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">df</span>
 <span class="n">Gxx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">X_r</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">*</span><span class="n">X_r</span><span class="p">)</span> <span class="o">*</span> <span class="n">scale</span>
 <span class="n">Gxx</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">Gxx</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Gxx</span><span class="p">)</span><span class="o">*</span><span class="n">fs</span><span class="o">*</span><span class="n">N</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">Gxx</span><span class="p">)</span><span class="o">/</span><span class="n">scale</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(9.012110027353884)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(9.012110027353886)
 </pre></div>
 </div>
 </div>
