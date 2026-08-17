@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=a3a20203"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script src="../_static/translations.js?v=852ec8ec"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=36754332"></script>
@@ -61,40 +64,37 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/04 - Linarni časovno invariantni sistemi';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Abecedni seznam" href="../genindex.html" />
     <link rel="search" title="Išči" href="../search.html" />
     <link rel="next" title="5. Kvantizacija podatkov" href="05%20-%20%C4%8Casovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html" />
     <link rel="prev" title="3. Fourierova integralska transformacija" href="03%20-%20Fourierova%20integralska%20transformacija.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sl"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -102,7 +102,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -110,15 +109,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Išči</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Išči</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -127,7 +170,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -157,21 +201,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Procesiranje signalov s Pythonom - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Procesiranje signalov s Pythonom - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Procesiranje signalov s Pythonom - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Išči</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Išči</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -200,9 +240,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -332,7 +377,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Celozaslonski način"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -346,25 +391,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -386,7 +423,7 @@ document.write(`
                 <h2> Vsebina </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosti-odziv-homogena-resitev">Prosti odziv (homogena rešitev)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impulzna-prenosna-funkcija">Impulzna prenosna funkcija</a></li>
 </ul>
@@ -545,7 +582,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
-<span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, </span><span class="se">\\</span><span class="s1">omega_0, </span><span class="se">\\</span><span class="s1">omega_d, d_x_0, </span><span class="se">\\</span><span class="s1">delta&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'t, </span><span class="se">\\</span><span class="s1">omega_0, </span><span class="se">\\</span><span class="s1">omega_d, d_x_0, </span><span class="se">\\</span><span class="s1">delta'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
 
 <span class="n">ω_d</span> <span class="o">=</span> <span class="n">ω_0</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">δ</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -554,10 +591,10 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">ovojnica</span> <span class="o">*</span> <span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ω_d</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ovojnica</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$x_h(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Ovojnica&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x_h(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ovojnica</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C0'</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">'$t$ [s]'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">'$x_h(t)$'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Časovna domena'</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">'Ovojnica'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C1'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="s1">'$x_h(t)$'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -566,7 +603,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/071d25a0890f3f88cfbe182baccff078e3458810dfb433d1d753a5b4e31e2f88.png" src="../_images/071d25a0890f3f88cfbe182baccff078e3458810dfb433d1d753a5b4e31e2f88.png" />
+<img alt="../_images/740fb9caeb65f313794a8327ec9da3917f4271ca8faba2ec474f20a19419a880.png" src="../_images/740fb9caeb65f313794a8327ec9da3917f4271ca8faba2ec474f20a19419a880.png" />
 </div>
 </div>
 </section>
@@ -618,27 +655,27 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
-<span class="n">r</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r, </span><span class="se">\\</span><span class="s1">delta, k&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">r</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'r, </span><span class="se">\\</span><span class="s1">delta, k'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 
 <span class="n">α</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">δ</span><span class="o">*</span><span class="n">r</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span><span class="mf">0.1</span><span class="p">}</span>
 <span class="n">podatki2</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span><span class="mf">0.5</span><span class="p">}</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$r$ [/]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">alpha(r)|$&#39;</span><span class="p">,</span> 
-             <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Amplituda frekvenčne prenosne funkcije&#39;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">delta=$</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">2.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">)),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">delta=$</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">)</span><span class="si">:</span><span class="s1">2.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C0'</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">'$r$ [/]'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">'$|</span><span class="se">\\</span><span class="s1">alpha(r)|$'</span><span class="p">,</span> 
+             <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Amplituda frekvenčne prenosne funkcije'</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">delta=$</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">2.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">)),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C1'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">delta=$</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">)</span><span class="si">:</span><span class="s1">2.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$r$ [/]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle</span><span class="se">\\</span><span class="s1">alpha(r)$&#39;</span><span class="p">,</span> 
-             <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Faza frekvenčne prenosne funkcije&#39;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">delta=$</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">2.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">)),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">delta=$</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">)</span><span class="si">:</span><span class="s1">2.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C0'</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">'$r$ [/]'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">angle</span><span class="se">\\</span><span class="s1">alpha(r)$'</span><span class="p">,</span> 
+             <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Faza frekvenčne prenosne funkcije'</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">delta=$</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">2.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">)),</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C1'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">delta=$</span><span class="si">{</span><span class="n">δ</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki2</span><span class="p">)</span><span class="si">:</span><span class="s1">2.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -647,8 +684,8 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/0811769880e504ff7a92169851c06b6748632d64a24262284e15e1a3fe45b0fd.png" src="../_images/0811769880e504ff7a92169851c06b6748632d64a24262284e15e1a3fe45b0fd.png" />
-<img alt="../_images/85a73ca59a1c9f22b52f8165b70ed531e040fea517254aa9f20ee71db0ff9d68.png" src="../_images/85a73ca59a1c9f22b52f8165b70ed531e040fea517254aa9f20ee71db0ff9d68.png" />
+<img alt="../_images/5bf6424b8fa155ee4a9ea653ff078371d64d12e7927201e57bb50528de56bf44.png" src="../_images/5bf6424b8fa155ee4a9ea653ff078371d64d12e7927201e57bb50528de56bf44.png" />
+<img alt="../_images/ebf8954b6e0e154d4b986af0f203c0206c6c85bca2aad8e6b9f886e099344893.png" src="../_images/ebf8954b6e0e154d4b986af0f203c0206c6c85bca2aad8e6b9f886e099344893.png" />
 </div>
 </div>
 <p>Partikularna rešitev je torej:</p>
@@ -691,7 +728,7 @@ x_{h}(t)=\frac{\dot x_0}{\omega_{d}}\,\mathrm{e}^{-\delta\,\omega_0\,t}\,\sin(\o
 		H_0(\omega)&amp;=\frac{X(\omega)}{X_0}
 	\end{split}
 \]</div>
-<p>in je v nekaterih virih (npr. <span id="id1">Géradin and Rixen [<a class="reference internal" href="../bibliography.html#id174" title="Michel Géradin and Daniel J. Rixen. Mechanical Vibrations: Theory and Application to Structural Dynamics. John Wiley &amp; Sons, 3$^\text rd$ edition, 2015. ISBN 9782225841682.">2015</a>]</span>) imenovana <strong>brezdimenzijska frekvenčna prenosna funkcija</strong> (ang. <em>Nondimensional Frequency Response Function</em>). V izrazu zgoraj je statični poves <span class="math notranslate nohighlight">\(X_0\)</span> zaradi statične sile <span class="math notranslate nohighlight">\(F\)</span> definiran kot:</p>
+<p>in je v nekaterih virih (npr. <span class="bibtex-citation" id="id1">Géradin and Rixen [<a class="reference internal" href="../bibliography.html#id174" title="Michel Géradin and Daniel J. Rixen. Mechanical Vibrations: Theory and Application to Structural Dynamics. John Wiley &amp; Sons, 3$^\text rd$ edition, 2015. ISBN 9782225841682.">2015</a>]</span>) imenovana <strong>brezdimenzijska frekvenčna prenosna funkcija</strong> (ang. <em>Nondimensional Frequency Response Function</em>). V izrazu zgoraj je statični poves <span class="math notranslate nohighlight">\(X_0\)</span> zaradi statične sile <span class="math notranslate nohighlight">\(F\)</span> definiran kot:</p>
 <div class="math notranslate nohighlight">
 \[
 	X_0=\frac{F}{k}.
@@ -746,19 +783,19 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
-<span class="n">ω</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">omega, m, c, k&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ω</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">omega, m, c, k'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">I</span>
 
 <span class="n">α</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="o">-</span><span class="n">ω</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">ω</span><span class="o">*</span><span class="n">c</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">ω</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">omega$ [rad/s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>  
-             <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Amplituda frekvenčne prenosne funkcije ($</span><span class="se">\\</span><span class="s1">omega_0=$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">alpha(</span><span class="se">\\</span><span class="s1">omega)|$ $-$ Podajnost&#39;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">ω</span><span class="o">*</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">ω</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|Y(</span><span class="se">\\</span><span class="s1">omega)|$ $-$ Pomičnost&#39;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="o">-</span><span class="n">ω</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">ω</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$|A(</span><span class="se">\\</span><span class="s1">omega)|$ $-$ Pospešenost&#39;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">ω</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C0'</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">omega$ [rad/s]'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span>  
+             <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Amplituda frekvenčne prenosne funkcije ($</span><span class="se">\\</span><span class="s1">omega_0=$</span><span class="si">{</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="n">subs</span><span class="o">=</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.2f</span><span class="si">}</span><span class="s1">)'</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">'$|</span><span class="se">\\</span><span class="s1">alpha(</span><span class="se">\\</span><span class="s1">omega)|$ $-$ Podajnost'</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">'log'</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">'log'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">ω</span><span class="o">*</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">ω</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C1'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="s1">'$|Y(</span><span class="se">\\</span><span class="s1">omega)|$ $-$ Pomičnost'</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">'log'</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">'log'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="o">-</span><span class="n">ω</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">α</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)),</span> <span class="p">(</span><span class="n">ω</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C2'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="s1">'$|A(</span><span class="se">\\</span><span class="s1">omega)|$ $-$ Pospešenost'</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">'log'</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">'log'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
@@ -768,7 +805,7 @@ x(t)=\alpha(\omega=\omega_f)\,F\,\mathrm{e}^{ \mathrm{i}\,\omega_f\,t}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/96ef36f303a7f3f1e4d63f53d46db7deaee1907ea3ef1f5fc968ca85b742c438.png" src="../_images/96ef36f303a7f3f1e4d63f53d46db7deaee1907ea3ef1f5fc968ca85b742c438.png" />
+<img alt="../_images/9262511f0f1efd34e40fadbd8318e643a0c7cb66d2ca97e804fa1c368bdbebe2.png" src="../_images/9262511f0f1efd34e40fadbd8318e643a0c7cb66d2ca97e804fa1c368bdbebe2.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -936,7 +973,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
-<span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, </span><span class="se">\\</span><span class="s1">omega_0, </span><span class="se">\\</span><span class="s1">omega_d, d_x_0, </span><span class="se">\\</span><span class="s1">delta, A, B, </span><span class="se">\\</span><span class="s1">tau&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">τ</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'t, </span><span class="se">\\</span><span class="s1">omega_0, </span><span class="se">\\</span><span class="s1">omega_d, d_x_0, </span><span class="se">\\</span><span class="s1">delta, A, B, </span><span class="se">\\</span><span class="s1">tau'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="mf">2.</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="mf">10.</span><span class="p">}</span>
 
@@ -949,12 +986,12 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 <span class="n">fh</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">))</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span>
 <span class="n">fh</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$h(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$f(t)$, $A=$</span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">, $B=$</span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(t)*h(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C0'</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">'$t$ [s]'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Časovna domena'</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">'$h(t)$'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C1'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'$f(t)$, $A=$</span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">, $B=$</span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C2'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="s1">'$f(t)*h(t)$'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span>
@@ -963,7 +1000,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d597893825750815a6e2ee43dd2405639277d70eb7983eaa456abc1b2fc8a463.png" src="../_images/d597893825750815a6e2ee43dd2405639277d70eb7983eaa456abc1b2fc8a463.png" />
+<img alt="../_images/4e7e78c345c048308d0d0c95e9a38777b13a125affafee616b70570234f486bd.png" src="../_images/4e7e78c345c048308d0d0c95e9a38777b13a125affafee616b70570234f486bd.png" />
 </div>
 </div>
 <p>In še malo bolj podrobna slika:</p>
@@ -971,7 +1008,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sym</span>
-<span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">τ</span><span class="p">,</span> <span class="n">t0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;t, </span><span class="se">\\</span><span class="s1">omega_0, </span><span class="se">\\</span><span class="s1">omega_d, d_x_0, </span><span class="se">\\</span><span class="s1">delta, A, B, </span><span class="se">\\</span><span class="s1">tau, t0&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">ω_0</span><span class="p">,</span> <span class="n">ω_d</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">,</span> <span class="n">δ</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">τ</span><span class="p">,</span> <span class="n">t0</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'t, </span><span class="se">\\</span><span class="s1">omega_0, </span><span class="se">\\</span><span class="s1">omega_d, d_x_0, </span><span class="se">\\</span><span class="s1">delta, A, B, </span><span class="se">\\</span><span class="s1">tau, t0'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">π</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">podatki</span> <span class="o">=</span> <span class="p">{</span><span class="n">ω_0</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">d_x_0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">δ</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">A</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="mf">10.</span><span class="p">,</span> <span class="n">t0</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 
@@ -987,20 +1024,20 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 <span class="n">x_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">podatki</span><span class="p">[</span><span class="n">t0</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">f_array</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">τ</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">))(</span><span class="n">x_array</span><span class="p">)</span>
 
-<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> 
-              <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$ [s]&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$h(t-</span><span class="se">\\</span><span class="s1">tau)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-             <span class="n">fill</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">x_array</span><span class="p">,</span>
-                   <span class="s1">&#39;y1&#39;</span><span class="p">:</span> <span class="n">f_array</span><span class="p">,</span>
-                   <span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="p">})</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$f(</span><span class="se">\\</span><span class="s1">tau)$, $A=$</span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">, $B=$</span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p5</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot_parametric</span><span class="p">((</span><span class="n">t0</span><span class="p">,</span><span class="n">fh</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)),</span> <span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="mf">4.95</span><span class="p">,</span><span class="mf">5.05</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Vrednost $\int_{-\infty}^{t=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">podatki</span><span class="p">[</span><span class="n">t0</span><span class="p">])</span><span class="o">+</span><span class="sa">r</span><span class="s1">&#39;\,s} f(\tau)\,h(t-\tau)\,\text</span><span class="si">{d}</span><span class="s1">\tau$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C5&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Podintegralska funkcija: $f(</span><span class="se">\\</span><span class="s1">tau)</span><span class="se">\\</span><span class="s1">,h(t-</span><span class="se">\\</span><span class="s1">tau)$, $A=$</span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">, $B=$</span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">p4</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> 
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f(t)*h(t)$&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nr_of_points</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C0'</span><span class="p">,</span> 
+              <span class="n">xlabel</span><span class="o">=</span><span class="s1">'$t$ [s]'</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Časovna domena'</span><span class="p">,</span>
+             <span class="n">label</span><span class="o">=</span><span class="s1">'$h(t-</span><span class="se">\\</span><span class="s1">tau)$'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+             <span class="n">fill</span><span class="o">=</span><span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="n">x_array</span><span class="p">,</span>
+                   <span class="s1">'y1'</span><span class="p">:</span> <span class="n">f_array</span><span class="p">,</span>
+                   <span class="s1">'color'</span><span class="p">:</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'alpha'</span><span class="p">:</span><span class="mf">0.5</span><span class="p">})</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C1'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'$f(</span><span class="se">\\</span><span class="s1">tau)$, $A=$</span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">, $B=$</span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p5</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot_parametric</span><span class="p">((</span><span class="n">t0</span><span class="p">,</span><span class="n">fh</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)),</span> <span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="mf">4.95</span><span class="p">,</span><span class="mf">5.05</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'Vrednost $\int_{-\infty}^{t='</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">podatki</span><span class="p">[</span><span class="n">t0</span><span class="p">])</span><span class="o">+</span><span class="sa">r</span><span class="s1">'\,s} f(\tau)\,h(t-\tau)\,\text</span><span class="si">{d}</span><span class="s1">\tau$'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">-</span><span class="n">τ</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">),</span> <span class="p">(</span><span class="n">τ</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C5'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Podintegralska funkcija: $f(</span><span class="se">\\</span><span class="s1">tau)</span><span class="se">\\</span><span class="s1">,h(t-</span><span class="se">\\</span><span class="s1">tau)$, $A=$</span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">, $B=$</span><span class="si">{</span><span class="n">B</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">podatki</span><span class="p">)</span><span class="si">:</span><span class="s1">3.1f</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">'C2'</span><span class="p">,</span> 
+             <span class="n">label</span><span class="o">=</span><span class="s1">'$f(t)*h(t)$'</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nr_of_points</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">p4</span><span class="p">)</span>
@@ -1011,7 +1048,7 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/75a47e05c52c33fd831e16575c6de1283229b0ac81e266b0b34271df29fa738d.png" src="../_images/75a47e05c52c33fd831e16575c6de1283229b0ac81e266b0b34271df29fa738d.png" />
+<img alt="../_images/aa4accf3fc40b2d0523dbb0560937a45e764ed13efd453b719a7b11e11ef6158.png" src="../_images/aa4accf3fc40b2d0523dbb0560937a45e764ed13efd453b719a7b11e11ef6158.png" />
 </div>
 </div>
 <p>Iz slike zgoraj lahko vidimo, zakaj <span class="math notranslate nohighlight">\(h(\tau)\)</span> včasih imenujemo dinamični spomin sistema; <span class="math notranslate nohighlight">\(h(t-\tau)\)</span> namreč poskrbi, da na rešitev pri času <span class="math notranslate nohighlight">\(t\)</span> vpliva dogajanje do časa <span class="math notranslate nohighlight">\(t\)</span> (glejte podintegralsko funkcijo <span class="math notranslate nohighlight">\(f(\tau)\,h(t-\tau)\)</span> zgoraj). Iz istega razloga <span class="math notranslate nohighlight">\(\tau\)</span> imenujemo spominska spremenljivka.</p>
@@ -1117,15 +1154,17 @@ a\,f(t)  \to  {\fbox{Linearni sistem}} \to   a\,x(t).
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Vsebina
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prosti-odziv-homogena-resitev">Prosti odziv (homogena rešitev)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impulzna-prenosna-funkcija">Impulzna prenosna funkcija</a></li>
 </ul>
@@ -1194,8 +1233,8 @@ Avtor Janko Slavič
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
